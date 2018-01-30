@@ -1,0 +1,217 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterInicio.Master" AutoEventWireup="true" CodeBehind="MasterProceso.master.cs" Inherits="MyMainApp.MasterProceso" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="CPHPrincipal">
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+        <asp:Panel ID="Panel1" runat="server" Width="100%">
+            <form id="form1" runat="server" class="form-horizontal">
+                <%--inicio formulario--%>
+                <div class="text-center">
+                    <%--  div titulo--%>
+                    <asp:Label ID="LblTitulo" runat="server" Text="Registro Aspirante" Font-Bold="True" Font-Size="18pt"></asp:Label>
+                </div>
+                <%--fin div titulo--%>
+                <div class="container-fluid">
+                    <div id="content">
+                        <%--inicio container-fluid--%>
+                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                        <ajaxtoolkit:tabcontainer id="TabContainer1" runat="server" activetabindex="0" bordercolor="#66CCFF" scrollbars="Vertical" height="375px" width="100%">
+                        <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
+                            <ContentTemplate>
+                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server">
+                                    <Triggers><asp:AsyncPostBackTrigger ControlID="BtnGuardarDatoGeneral" /></Triggers>
+                                    <ContentTemplate>
+                            <%--inicio contenido tab--%>
+                                <%--inicio tab datos--%>
+                                <br />
+                                    <div class="form-group">
+                                        <asp:Label class="control-label  col-sm-2" ID="Label1" runat="server" Text="NOMBRES:" Font-Bold="True"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:TextBox class="form-control" ID="TextBox2" runat="server"></asp:TextBox>
+                                        </div>
+                                        <asp:Label class="control-label  col-sm-2" ID="Label3" runat="server" Text="APELLIDOS:" Font-Bold="True"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:TextBox class="form-control" ID="TextBox3" runat="server"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label class="control-label  col-sm-2" ID="Label2" runat="server" Text="FECHA NACIMIENTO:" Font-Bold="True"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:TextBox class="form-control" ID="TextBox4" runat="server" readonly TextMode="Date"></asp:TextBox>
+                                        </div>
+                                        <asp:Label class="control-label  col-sm-2" ID="Label5" runat="server" Text="EDAD:" Font-Bold="True"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:TextBox class="form-control" ID="TextBox5" runat="server" readonly></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label class="control-label  col-sm-2" ID="Label4" runat="server" Text="TELÉFONO:" Font-Bold="True"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:TextBox class="form-control" ID="TextBox6" runat="server"></asp:TextBox>
+                                        </div>
+                                        <asp:Label class="control-label  col-sm-2" ID="Label6" runat="server" Text="NIT:" Font-Bold="True"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:TextBox class="form-control" ID="TextBox1" runat="server" readonly></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label class="control-label  col-sm-2" ID="Label7" runat="server" Text="SEXO:" Font-Bold="True"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal">
+                                                <asp:ListItem Value="F">&nbsp;FEMENINO&nbsp;&nbsp;&nbsp;</asp:ListItem>
+                                                <asp:ListItem Value="M">&nbsp;MASCULINO</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <asp:Label class="control-label  col-sm-2" ID="Label8" runat="server" Text="TRATAMIENTO:" Font-Bold="True"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:DropDownList ID="DropDownList1" runat="server" class="form-control">
+                                            </asp:DropDownList>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div align="center">
+                                        <asp:Button ID="BtnGuardarDatoGeneral" runat="server" class="btn btn-primary" Text="GUARDAR" />
+                                        &nbsp;<asp:Button ID="Button2" runat="server" Text="CANCELAR" class="btn btn-primary"/>
+                                    </div>
+                                    <br />
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </ContentTemplate>
+                             </ajaxToolkit:TabPanel>
+                            <%--fin tab datos--%>
+                            <ajaxToolkit:TabPanel runat="server" HeaderText="INFO" ID="TabPanel2">
+                            <ContentTemplate>
+                        <asp:UpdatePanel ID="UPInfo" runat="server">
+                            <Triggers><asp:AsyncPostBackTrigger ControlID="BtnInfoGuardar" /></Triggers>
+                            <ContentTemplate>
+                                    <br />
+                                    <div class="form-group">
+                                        <asp:Label class="control-label  col-sm-2" ID="Label17" runat="server" Font-Bold="True" Text="DEPARTAMENTO:"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:DropDownList ID="DropDownList2" runat="server" class="form-control">
+                                            </asp:DropDownList>
+                                        </div>
+                                        <asp:Label class="control-label  col-sm-2" ID="Label23" runat="server" Font-Bold="True" Text="MUNICIPIO:"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:DropDownList ID="DropDownList3" runat="server" class="form-control">
+                                            </asp:DropDownList>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label class="control-label  col-sm-2" ID="Label18" runat="server" Font-Bold="True" Text="DIRECCIÓN:"></asp:Label>
+                                        <div class="col-md-8">
+                                            <asp:TextBox class="form-control" ID="TextBox13" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label class="control-label  col-sm-2" ID="Label19" runat="server" Font-Bold="True" Text="INSTITUCIÓN EDUCATIVA:"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:DropDownList ID="DropDownList10" runat="server" class="form-control">
+                                            </asp:DropDownList>
+                                        </div>
+                                        <asp:Label class="control-label  col-sm-2" ID="Label28" runat="server" Font-Bold="True" Text="OTRO:"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:TextBox class="form-control" ID="TextBox18" runat="server"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label class="control-label  col-sm-2" ID="Label20" runat="server" Font-Bold="True" Text="EMAIL:"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:TextBox class="form-control" ID="TextBox15" runat="server" TextMode="Email"></asp:TextBox>
+                                        </div>
+                                        <asp:Label class="control-label  col-sm-2" ID="Label26" runat="server" Font-Bold="True" Text="DISCAPACIDAD:"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:TextBox class="form-control" ID="TextBox17" runat="server"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label class="control-label  col-sm-2" ID="Label21" runat="server" Font-Bold="True" Text="PROMEDIO DE NOTAS:"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:TextBox class="form-control" ID="TextBox16" runat="server"></asp:TextBox>
+                                        </div>
+                                        <asp:Label class="control-label  col-sm-2" ID="Label27" runat="server" Font-Bold="True" Text="ESCOLARIDAD:"></asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:DropDownList ID="DropDownList4" runat="server" class="form-control">
+                                            </asp:DropDownList>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label class="control-label  col-sm-2" ID="Label22" runat="server" Font-Bold="True" Text="ADJUNTAR DOCUMENTOS:"></asp:Label>
+                                        <div class="col-md-3">
+                                            <input type="button" value="Adjuntar" onclick="open_win_doc">
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div align="center">
+                                        <asp:Button ID="BtnInfoGuardar" runat="server" Text="GUARDAR" class="btn btn-primary"/>
+                                        &nbsp;<asp:Button ID="Button5" runat="server" Text="CANCELAR" class="btn btn-primary"/>
+                                    </div>
+                                    <br />
+      
+                            <%--fin tab informacion adicional--%>
+     
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </ContentTemplate>
+                             </ajaxToolkit:TabPanel>
+                            <%--fin tab datos--%>
+                            <ajaxToolkit:TabPanel runat="server" HeaderText="DETALLE" ID="TabPanel3">
+                            <ContentTemplate>
+                        <asp:UpdatePanel ID="UPDetalle" runat="server">
+                            <Triggers><asp:AsyncPostBackTrigger ControlID="BtnDetalleGuardar" /></Triggers>
+                            <ContentTemplate>
+            <%--inicio tab habilidades--%>
+                <br />
+                <div class="form-group">
+                    <asp:Label class="control-label  col-sm-2" ID="Label9" runat="server" Font-Bold="True" Text="CONOCIMIENTO:"></asp:Label>
+                    <div class="col-md-3">
+                        <asp:DropDownList ID="DropDownList5" runat="server" class="form-control">
+                        </asp:DropDownList>
+                    </div>
+                    <asp:Label class="control-label  col-sm-2" ID="Label12" runat="server" Font-Bold="True" Text="HABILIDAD:"></asp:Label>
+                    <div class="col-md-3">
+                        <asp:DropDownList ID="DropDownList6" runat="server" class="form-control">
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <asp:Label class="control-label  col-sm-2" ID="Label33" runat="server" Font-Bold="True" Text="NIVEL:"></asp:Label>
+                    <div class="col-md-3">
+                        <asp:DropDownList ID="DropDownList7" runat="server" class="form-control">
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div align="center">
+                    <asp:Button ID="BtnDetalleGuardar" runat="server" Text="GUARDAR" class="btn btn-primary" />
+                    &nbsp;<asp:Button ID="Button6" runat="server" Text="CANCELAR" class="btn btn-primary" />
+                </div>
+                <br />
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+                    <Columns>
+                        <asp:BoundField HeaderText="Conocimientos" />
+                        <asp:BoundField HeaderText="Habilidades" />
+                        <asp:BoundField HeaderText="Nivel" />
+                    </Columns>
+                </asp:GridView>
+                
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </ContentTemplate>
+                             </ajaxToolkit:TabPanel>
+                            
+                    </ajaxtoolkit:tabcontainer>
+                        <%--fin tab habilidades--%>
+                    </div>
+                    <%--fin contenido tab--%>
+                </div>
+                <%--fin container-fluid--%>
+            </form>
+            <%--fin formulario--%>
+        </asp:Panel>
+    </asp:ContentPlaceHolder>
+
+</asp:Content>
+
+

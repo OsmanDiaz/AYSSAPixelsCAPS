@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_TB_EMP" targetNamespace="http://tempuri.org/DS_TB_EMP.xsd" xmlns:mstns="http://tempuri.org/DS_TB_EMP.xsd" xmlns="http://tempuri.org/DS_TB_EMP.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_TB_EMP" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_TB_EMP" msprop:Generator_UserDSName="DS_TB_EMP">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TB_EMPRESA" msprop:Generator_TableClassName="TB_EMPRESADataTable" msprop:Generator_TableVarName="tableTB_EMPRESA" msprop:Generator_TablePropName="TB_EMPRESA" msprop:Generator_RowDeletingName="TB_EMPRESARowDeleting" msprop:Generator_RowChangingName="TB_EMPRESARowChanging" msprop:Generator_RowEvHandlerName="TB_EMPRESARowChangeEventHandler" msprop:Generator_RowDeletedName="TB_EMPRESARowDeleted" msprop:Generator_UserTableName="TB_EMPRESA" msprop:Generator_RowChangedName="TB_EMPRESARowChanged" msprop:Generator_RowEvArgName="TB_EMPRESARowChangeEvent" msprop:Generator_RowClassName="TB_EMPRESARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" />
+              <xs:element name="DS_NOMBRE_EMPRESA" msprop:Generator_ColumnVarNameInTable="columnDS_NOMBRE_EMPRESA" msprop:Generator_ColumnPropNameInRow="DS_NOMBRE_EMPRESA" msprop:Generator_ColumnPropNameInTable="DS_NOMBRE_EMPRESAColumn" msprop:Generator_UserColumnName="DS_NOMBRE_EMPRESA" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_NOMBRE_CONTACTO" msprop:Generator_ColumnVarNameInTable="columnDS_NOMBRE_CONTACTO" msprop:Generator_ColumnPropNameInRow="DS_NOMBRE_CONTACTO" msprop:Generator_ColumnPropNameInTable="DS_NOMBRE_CONTACTOColumn" msprop:Generator_UserColumnName="DS_NOMBRE_CONTACTO" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_EMAIL_CONTACTO" msprop:Generator_ColumnVarNameInTable="columnDS_EMAIL_CONTACTO" msprop:Generator_ColumnPropNameInRow="DS_EMAIL_CONTACTO" msprop:Generator_ColumnPropNameInTable="DS_EMAIL_CONTACTOColumn" msprop:Generator_UserColumnName="DS_EMAIL_CONTACTO" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_TELEFONO_CONTACTO" msprop:Generator_ColumnVarNameInTable="columnDS_TELEFONO_CONTACTO" msprop:Generator_ColumnPropNameInRow="DS_TELEFONO_CONTACTO" msprop:Generator_ColumnPropNameInTable="DS_TELEFONO_CONTACTOColumn" msprop:Generator_UserColumnName="DS_TELEFONO_CONTACTO" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_NIT_EMPRESA" msprop:Generator_ColumnVarNameInTable="columnDS_NIT_EMPRESA" msprop:Generator_ColumnPropNameInRow="DS_NIT_EMPRESA" msprop:Generator_ColumnPropNameInTable="DS_NIT_EMPRESAColumn" msprop:Generator_UserColumnName="DS_NIT_EMPRESA" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_TELEFONO_EMPRESA" msprop:Generator_ColumnVarNameInTable="columnDS_TELEFONO_EMPRESA" msprop:Generator_ColumnPropNameInRow="DS_TELEFONO_EMPRESA" msprop:Generator_ColumnPropNameInTable="DS_TELEFONO_EMPRESAColumn" msprop:Generator_UserColumnName="DS_TELEFONO_EMPRESA" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_DIRECCION_EMPRESA" msprop:Generator_ColumnVarNameInTable="columnDS_DIRECCION_EMPRESA" msprop:Generator_ColumnPropNameInRow="DS_DIRECCION_EMPRESA" msprop:Generator_ColumnPropNameInTable="DS_DIRECCION_EMPRESAColumn" msprop:Generator_UserColumnName="DS_DIRECCION_EMPRESA" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_DEPARTAMENTO" msprop:Generator_ColumnVarNameInTable="columnDS_DEPARTAMENTO" msprop:Generator_ColumnPropNameInRow="DS_DEPARTAMENTO" msprop:Generator_ColumnPropNameInTable="DS_DEPARTAMENTOColumn" msprop:Generator_UserColumnName="DS_DEPARTAMENTO" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_MUNICIPIO" msprop:Generator_ColumnVarNameInTable="columnDS_MUNICIPIO" msprop:Generator_ColumnPropNameInRow="DS_MUNICIPIO" msprop:Generator_ColumnPropNameInTable="DS_MUNICIPIOColumn" msprop:Generator_UserColumnName="DS_MUNICIPIO" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_NOMBRE_REPRESENTANTE" msprop:Generator_ColumnVarNameInTable="columnDS_NOMBRE_REPRESENTANTE" msprop:Generator_ColumnPropNameInRow="DS_NOMBRE_REPRESENTANTE" msprop:Generator_ColumnPropNameInTable="DS_NOMBRE_REPRESENTANTEColumn" msprop:Generator_UserColumnName="DS_NOMBRE_REPRESENTANTE" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_EMAIL_REPRESENTATE" msprop:Generator_ColumnVarNameInTable="columnDS_EMAIL_REPRESENTATE" msprop:Generator_ColumnPropNameInRow="DS_EMAIL_REPRESENTATE" msprop:Generator_ColumnPropNameInTable="DS_EMAIL_REPRESENTATEColumn" msprop:Generator_UserColumnName="DS_EMAIL_REPRESENTATE" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_NIT_REPRESENTANTE" msprop:Generator_ColumnVarNameInTable="columnDS_NIT_REPRESENTANTE" msprop:Generator_ColumnPropNameInRow="DS_NIT_REPRESENTANTE" msprop:Generator_ColumnPropNameInTable="DS_NIT_REPRESENTANTEColumn" msprop:Generator_UserColumnName="DS_NIT_REPRESENTANTE" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_DUI_REPRESENTANTE" msprop:Generator_ColumnVarNameInTable="columnDS_DUI_REPRESENTANTE" msprop:Generator_ColumnPropNameInRow="DS_DUI_REPRESENTANTE" msprop:Generator_ColumnPropNameInTable="DS_DUI_REPRESENTANTEColumn" msprop:Generator_UserColumnName="DS_DUI_REPRESENTANTE" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_ACT_ECO" msprop:Generator_ColumnVarNameInTable="columnDS_ACT_ECO" msprop:Generator_ColumnPropNameInRow="DS_ACT_ECO" msprop:Generator_ColumnPropNameInTable="DS_ACT_ECOColumn" msprop:Generator_UserColumnName="DS_ACT_ECO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TB_PASANTIA" msprop:Generator_TableClassName="TB_PASANTIADataTable" msprop:Generator_TableVarName="tableTB_PASANTIA" msprop:Generator_RowChangedName="TB_PASANTIARowChanged" msprop:Generator_TablePropName="TB_PASANTIA" msprop:Generator_RowDeletingName="TB_PASANTIARowDeleting" msprop:Generator_RowChangingName="TB_PASANTIARowChanging" msprop:Generator_RowEvHandlerName="TB_PASANTIARowChangeEventHandler" msprop:Generator_RowDeletedName="TB_PASANTIARowDeleted" msprop:Generator_RowClassName="TB_PASANTIARow" msprop:Generator_UserTableName="TB_PASANTIA" msprop:Generator_RowEvArgName="TB_PASANTIARowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_NOMBRE_EVAL" msprop:Generator_ColumnVarNameInTable="columnDS_NOMBRE_EVAL" msprop:Generator_ColumnPropNameInRow="DS_NOMBRE_EVAL" msprop:Generator_ColumnPropNameInTable="DS_NOMBRE_EVALColumn" msprop:Generator_UserColumnName="DS_NOMBRE_EVAL" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_EMAIL_CONTACTO" msprop:Generator_ColumnVarNameInTable="columnDS_EMAIL_CONTACTO" msprop:Generator_ColumnPropNameInRow="DS_EMAIL_CONTACTO" msprop:Generator_ColumnPropNameInTable="DS_EMAIL_CONTACTOColumn" msprop:Generator_UserColumnName="DS_EMAIL_CONTACTO" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_EMPRESA" msprop:Generator_ColumnVarNameInTable="columnDS_EMPRESA" msprop:Generator_ColumnPropNameInRow="DS_EMPRESA" msprop:Generator_ColumnPropNameInTable="DS_EMPRESAColumn" msprop:Generator_UserColumnName="DS_EMPRESA" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_AREA" msprop:Generator_ColumnVarNameInTable="columnDS_AREA" msprop:Generator_ColumnPropNameInRow="DS_AREA" msprop:Generator_ColumnPropNameInTable="DS_AREAColumn" msprop:Generator_UserColumnName="DS_AREA" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_PASANTIA" msprop:Generator_ColumnVarNameInTable="columnDS_PASANTIA" msprop:Generator_ColumnPropNameInRow="DS_PASANTIA" msprop:Generator_ColumnPropNameInTable="DS_PASANTIAColumn" msprop:Generator_UserColumnName="DS_PASANTIA" type="xs:string" minOccurs="0" />
+              <xs:element name="FECH_INICIO_PASANTIA" msprop:Generator_ColumnVarNameInTable="columnFECH_INICIO_PASANTIA" msprop:Generator_ColumnPropNameInRow="FECH_INICIO_PASANTIA" msprop:Generator_ColumnPropNameInTable="FECH_INICIO_PASANTIAColumn" msprop:Generator_UserColumnName="FECH_INICIO_PASANTIA" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_DURACION" msprop:Generator_ColumnVarNameInTable="columnDS_DURACION" msprop:Generator_ColumnPropNameInRow="DS_DURACION" msprop:Generator_ColumnPropNameInTable="DS_DURACIONColumn" msprop:Generator_UserColumnName="DS_DURACION" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_HORARIO_DE" msprop:Generator_ColumnVarNameInTable="columnDS_HORARIO_DE" msprop:Generator_ColumnPropNameInRow="DS_HORARIO_DE" msprop:Generator_ColumnPropNameInTable="DS_HORARIO_DEColumn" msprop:Generator_UserColumnName="DS_HORARIO_DE" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_HORARIO_A" msprop:Generator_ColumnVarNameInTable="columnDS_HORARIO_A" msprop:Generator_ColumnPropNameInRow="DS_HORARIO_A" msprop:Generator_ColumnPropNameInTable="DS_HORARIO_AColumn" msprop:Generator_UserColumnName="DS_HORARIO_A" type="xs:string" minOccurs="0" />
+              <xs:element name="CD_ESTADO_PASANTIA" msprop:Generator_ColumnVarNameInTable="columnCD_ESTADO_PASANTIA" msprop:Generator_ColumnPropNameInRow="CD_ESTADO_PASANTIA" msprop:Generator_ColumnPropNameInTable="CD_ESTADO_PASANTIAColumn" msprop:Generator_UserColumnName="CD_ESTADO_PASANTIA" type="xs:string" minOccurs="0" />
+              <xs:element name="NM_DIAS_DE" msprop:Generator_ColumnVarNameInTable="columnNM_DIAS_DE" msprop:Generator_ColumnPropNameInRow="NM_DIAS_DE" msprop:Generator_ColumnPropNameInTable="NM_DIAS_DEColumn" msprop:Generator_UserColumnName="NM_DIAS_DE" type="xs:string" minOccurs="0" />
+              <xs:element name="NM_DIAS_A" msprop:Generator_ColumnVarNameInTable="columnNM_DIAS_A" msprop:Generator_ColumnPropNameInRow="NM_DIAS_A" msprop:Generator_ColumnPropNameInTable="NM_DIAS_AColumn" msprop:Generator_UserColumnName="NM_DIAS_A" type="xs:string" minOccurs="0" />
+              <xs:element name="NM_EDAD_DE" msprop:Generator_ColumnVarNameInTable="columnNM_EDAD_DE" msprop:Generator_ColumnPropNameInRow="NM_EDAD_DE" msprop:Generator_ColumnPropNameInTable="NM_EDAD_DEColumn" msprop:Generator_UserColumnName="NM_EDAD_DE" type="xs:string" minOccurs="0" />
+              <xs:element name="NM_EDAD_A" msprop:Generator_ColumnVarNameInTable="columnNM_EDAD_A" msprop:Generator_ColumnPropNameInRow="NM_EDAD_A" msprop:Generator_ColumnPropNameInTable="NM_EDAD_AColumn" msprop:Generator_UserColumnName="NM_EDAD_A" type="xs:string" minOccurs="0" />
+              <xs:element name="NM_VACANTES" msprop:Generator_ColumnVarNameInTable="columnNM_VACANTES" msprop:Generator_ColumnPropNameInRow="NM_VACANTES" msprop:Generator_ColumnPropNameInTable="NM_VACANTESColumn" msprop:Generator_UserColumnName="NM_VACANTES" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_ESCOLARIDAD" msprop:Generator_ColumnVarNameInTable="columnDS_ESCOLARIDAD" msprop:Generator_ColumnPropNameInRow="DS_ESCOLARIDAD" msprop:Generator_ColumnPropNameInTable="DS_ESCOLARIDADColumn" msprop:Generator_UserColumnName="DS_ESCOLARIDAD" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_OPCION_ACADEMICA" msprop:Generator_ColumnVarNameInTable="columnDS_OPCION_ACADEMICA" msprop:Generator_ColumnPropNameInRow="DS_OPCION_ACADEMICA" msprop:Generator_ColumnPropNameInTable="DS_OPCION_ACADEMICAColumn" msprop:Generator_UserColumnName="DS_OPCION_ACADEMICA" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_DIRECCION_PASANTIA" msprop:Generator_ColumnVarNameInTable="columnDS_DIRECCION_PASANTIA" msprop:Generator_ColumnPropNameInRow="DS_DIRECCION_PASANTIA" msprop:Generator_ColumnPropNameInTable="DS_DIRECCION_PASANTIAColumn" msprop:Generator_UserColumnName="DS_DIRECCION_PASANTIA" type="xs:string" minOccurs="0" />
+              <xs:element name="NOMBRE_PASANTIA" msprop:Generator_ColumnVarNameInTable="columnNOMBRE_PASANTIA" msprop:Generator_ColumnPropNameInRow="NOMBRE_PASANTIA" msprop:Generator_ColumnPropNameInTable="NOMBRE_PASANTIAColumn" msprop:Generator_UserColumnName="NOMBRE_PASANTIA" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TB_DESTREZA_PASANTIA" msprop:Generator_TableClassName="TB_DESTREZA_PASANTIADataTable" msprop:Generator_TableVarName="tableTB_DESTREZA_PASANTIA" msprop:Generator_RowChangedName="TB_DESTREZA_PASANTIARowChanged" msprop:Generator_TablePropName="TB_DESTREZA_PASANTIA" msprop:Generator_RowDeletingName="TB_DESTREZA_PASANTIARowDeleting" msprop:Generator_RowChangingName="TB_DESTREZA_PASANTIARowChanging" msprop:Generator_RowEvHandlerName="TB_DESTREZA_PASANTIARowChangeEventHandler" msprop:Generator_RowDeletedName="TB_DESTREZA_PASANTIARowDeleted" msprop:Generator_RowClassName="TB_DESTREZA_PASANTIARow" msprop:Generator_UserTableName="TB_DESTREZA_PASANTIA" msprop:Generator_RowEvArgName="TB_DESTREZA_PASANTIARowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_DESTREZA" msprop:Generator_ColumnVarNameInTable="columnDS_DESTREZA" msprop:Generator_ColumnPropNameInRow="DS_DESTREZA" msprop:Generator_ColumnPropNameInTable="DS_DESTREZAColumn" msprop:Generator_UserColumnName="DS_DESTREZA" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TB_ESCOLARIDAD_PASANTIA" msprop:Generator_TableClassName="TB_ESCOLARIDAD_PASANTIADataTable" msprop:Generator_TableVarName="tableTB_ESCOLARIDAD_PASANTIA" msprop:Generator_RowChangedName="TB_ESCOLARIDAD_PASANTIARowChanged" msprop:Generator_TablePropName="TB_ESCOLARIDAD_PASANTIA" msprop:Generator_RowDeletingName="TB_ESCOLARIDAD_PASANTIARowDeleting" msprop:Generator_RowChangingName="TB_ESCOLARIDAD_PASANTIARowChanging" msprop:Generator_RowEvHandlerName="TB_ESCOLARIDAD_PASANTIARowChangeEventHandler" msprop:Generator_RowDeletedName="TB_ESCOLARIDAD_PASANTIARowDeleted" msprop:Generator_RowClassName="TB_ESCOLARIDAD_PASANTIARow" msprop:Generator_UserTableName="TB_ESCOLARIDAD_PASANTIA" msprop:Generator_RowEvArgName="TB_ESCOLARIDAD_PASANTIARowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_ANIO" msprop:Generator_ColumnVarNameInTable="columnDS_ANIO" msprop:Generator_ColumnPropNameInRow="DS_ANIO" msprop:Generator_ColumnPropNameInTable="DS_ANIOColumn" msprop:Generator_UserColumnName="DS_ANIO" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_CARRERA" msprop:Generator_ColumnVarNameInTable="columnDS_CARRERA" msprop:Generator_ColumnPropNameInRow="DS_CARRERA" msprop:Generator_ColumnPropNameInTable="DS_CARRERAColumn" msprop:Generator_UserColumnName="DS_CARRERA" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TB_PASANTIA_HABILIDAD" msprop:Generator_TableClassName="TB_PASANTIA_HABILIDADDataTable" msprop:Generator_TableVarName="tableTB_PASANTIA_HABILIDAD" msprop:Generator_RowChangedName="TB_PASANTIA_HABILIDADRowChanged" msprop:Generator_TablePropName="TB_PASANTIA_HABILIDAD" msprop:Generator_RowDeletingName="TB_PASANTIA_HABILIDADRowDeleting" msprop:Generator_RowChangingName="TB_PASANTIA_HABILIDADRowChanging" msprop:Generator_RowEvHandlerName="TB_PASANTIA_HABILIDADRowChangeEventHandler" msprop:Generator_RowDeletedName="TB_PASANTIA_HABILIDADRowDeleted" msprop:Generator_RowClassName="TB_PASANTIA_HABILIDADRow" msprop:Generator_UserTableName="TB_PASANTIA_HABILIDAD" msprop:Generator_RowEvArgName="TB_PASANTIA_HABILIDADRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_HABILIDAD_CONOCIMIENTO" msprop:Generator_ColumnVarNameInTable="columnDS_HABILIDAD_CONOCIMIENTO" msprop:Generator_ColumnPropNameInRow="DS_HABILIDAD_CONOCIMIENTO" msprop:Generator_ColumnPropNameInTable="DS_HABILIDAD_CONOCIMIENTOColumn" msprop:Generator_UserColumnName="DS_HABILIDAD_CONOCIMIENTO" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_NIVEL_CONOCIMIENTO" msprop:Generator_ColumnVarNameInTable="columnDS_NIVEL_CONOCIMIENTO" msprop:Generator_ColumnPropNameInRow="DS_NIVEL_CONOCIMIENTO" msprop:Generator_ColumnPropNameInTable="DS_NIVEL_CONOCIMIENTOColumn" msprop:Generator_UserColumnName="DS_NIVEL_CONOCIMIENTO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TB_CONSULTORIA" msprop:Generator_TableClassName="TB_CONSULTORIADataTable" msprop:Generator_TableVarName="tableTB_CONSULTORIA" msprop:Generator_TablePropName="TB_CONSULTORIA" msprop:Generator_RowDeletingName="TB_CONSULTORIARowDeleting" msprop:Generator_RowChangingName="TB_CONSULTORIARowChanging" msprop:Generator_RowEvHandlerName="TB_CONSULTORIARowChangeEventHandler" msprop:Generator_RowDeletedName="TB_CONSULTORIARowDeleted" msprop:Generator_UserTableName="TB_CONSULTORIA" msprop:Generator_RowChangedName="TB_CONSULTORIARowChanged" msprop:Generator_RowEvArgName="TB_CONSULTORIARowChangeEvent" msprop:Generator_RowClassName="TB_CONSULTORIARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_NUMERO_CONTRATO" msprop:Generator_ColumnVarNameInTable="columnDS_NUMERO_CONTRATO" msprop:Generator_ColumnPropNameInRow="DS_NUMERO_CONTRATO" msprop:Generator_ColumnPropNameInTable="DS_NUMERO_CONTRATOColumn" msprop:Generator_UserColumnName="DS_NUMERO_CONTRATO" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_NOMBRE_CONSULTORIA" msprop:Generator_ColumnVarNameInTable="columnDS_NOMBRE_CONSULTORIA" msprop:Generator_ColumnPropNameInRow="DS_NOMBRE_CONSULTORIA" msprop:Generator_ColumnPropNameInTable="DS_NOMBRE_CONSULTORIAColumn" msprop:Generator_UserColumnName="DS_NOMBRE_CONSULTORIA" type="xs:string" minOccurs="0" />
+              <xs:element name="FECH_INICIO_CONTRATO" msprop:Generator_ColumnVarNameInTable="columnFECH_INICIO_CONTRATO" msprop:Generator_ColumnPropNameInRow="FECH_INICIO_CONTRATO" msprop:Generator_ColumnPropNameInTable="FECH_INICIO_CONTRATOColumn" msprop:Generator_UserColumnName="FECH_INICIO_CONTRATO" type="xs:string" minOccurs="0" />
+              <xs:element name="NM_MONTO_CONSULTORIA" msprop:Generator_ColumnVarNameInTable="columnNM_MONTO_CONSULTORIA" msprop:Generator_ColumnPropNameInRow="NM_MONTO_CONSULTORIA" msprop:Generator_ColumnPropNameInTable="NM_MONTO_CONSULTORIAColumn" msprop:Generator_UserColumnName="NM_MONTO_CONSULTORIA" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_CONTRATO_DURACION" msprop:Generator_ColumnVarNameInTable="columnDS_CONTRATO_DURACION" msprop:Generator_ColumnPropNameInRow="DS_CONTRATO_DURACION" msprop:Generator_ColumnPropNameInTable="DS_CONTRATO_DURACIONColumn" msprop:Generator_UserColumnName="DS_CONTRATO_DURACION" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_ESTADO" msprop:Generator_ColumnVarNameInTable="columnDS_ESTADO" msprop:Generator_ColumnPropNameInRow="DS_ESTADO" msprop:Generator_ColumnPropNameInTable="DS_ESTADOColumn" msprop:Generator_UserColumnName="DS_ESTADO" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_DESCRIPCION" msprop:Generator_ColumnVarNameInTable="columnDS_DESCRIPCION" msprop:Generator_ColumnPropNameInRow="DS_DESCRIPCION" msprop:Generator_ColumnPropNameInTable="DS_DESCRIPCIONColumn" msprop:Generator_UserColumnName="DS_DESCRIPCION" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TB_ACTIVIDAD_ASPIRANTE" msprop:Generator_TableClassName="TB_ACTIVIDAD_ASPIRANTEDataTable" msprop:Generator_TableVarName="tableTB_ACTIVIDAD_ASPIRANTE" msprop:Generator_RowChangedName="TB_ACTIVIDAD_ASPIRANTERowChanged" msprop:Generator_TablePropName="TB_ACTIVIDAD_ASPIRANTE" msprop:Generator_RowDeletingName="TB_ACTIVIDAD_ASPIRANTERowDeleting" msprop:Generator_RowChangingName="TB_ACTIVIDAD_ASPIRANTERowChanging" msprop:Generator_RowEvHandlerName="TB_ACTIVIDAD_ASPIRANTERowChangeEventHandler" msprop:Generator_RowDeletedName="TB_ACTIVIDAD_ASPIRANTERowDeleted" msprop:Generator_RowClassName="TB_ACTIVIDAD_ASPIRANTERow" msprop:Generator_UserTableName="TB_ACTIVIDAD_ASPIRANTE" msprop:Generator_RowEvArgName="TB_ACTIVIDAD_ASPIRANTERowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_ACTIVIDAD" msprop:Generator_ColumnVarNameInTable="columnDS_ACTIVIDAD" msprop:Generator_ColumnPropNameInRow="DS_ACTIVIDAD" msprop:Generator_ColumnPropNameInTable="DS_ACTIVIDADColumn" msprop:Generator_UserColumnName="DS_ACTIVIDAD" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_DESCRIPCION_ACT" msprop:Generator_ColumnVarNameInTable="columnDS_DESCRIPCION_ACT" msprop:Generator_ColumnPropNameInRow="DS_DESCRIPCION_ACT" msprop:Generator_ColumnPropNameInTable="DS_DESCRIPCION_ACTColumn" msprop:Generator_UserColumnName="DS_DESCRIPCION_ACT" type="xs:string" minOccurs="0" />
+              <xs:element name="FECH_ENTREGA_ACT" msprop:Generator_ColumnVarNameInTable="columnFECH_ENTREGA_ACT" msprop:Generator_ColumnPropNameInRow="FECH_ENTREGA_ACT" msprop:Generator_ColumnPropNameInTable="FECH_ENTREGA_ACTColumn" msprop:Generator_UserColumnName="FECH_ENTREGA_ACT" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_DURACION_ACT" msprop:Generator_ColumnVarNameInTable="columnDS_DURACION_ACT" msprop:Generator_ColumnPropNameInRow="DS_DURACION_ACT" msprop:Generator_ColumnPropNameInTable="DS_DURACION_ACTColumn" msprop:Generator_UserColumnName="DS_DURACION_ACT" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_ASPIRANTE" msprop:Generator_ColumnVarNameInTable="columnID_ASPIRANTE" msprop:Generator_ColumnPropNameInRow="ID_ASPIRANTE" msprop:Generator_ColumnPropNameInTable="ID_ASPIRANTEColumn" msprop:Generator_UserColumnName="ID_ASPIRANTE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TB_CONSULTORIA_ENTREGABLE" msprop:Generator_TableClassName="TB_CONSULTORIA_ENTREGABLEDataTable" msprop:Generator_TableVarName="tableTB_CONSULTORIA_ENTREGABLE" msprop:Generator_RowChangedName="TB_CONSULTORIA_ENTREGABLERowChanged" msprop:Generator_TablePropName="TB_CONSULTORIA_ENTREGABLE" msprop:Generator_RowDeletingName="TB_CONSULTORIA_ENTREGABLERowDeleting" msprop:Generator_RowChangingName="TB_CONSULTORIA_ENTREGABLERowChanging" msprop:Generator_RowEvHandlerName="TB_CONSULTORIA_ENTREGABLERowChangeEventHandler" msprop:Generator_RowDeletedName="TB_CONSULTORIA_ENTREGABLERowDeleted" msprop:Generator_RowClassName="TB_CONSULTORIA_ENTREGABLERow" msprop:Generator_UserTableName="TB_CONSULTORIA_ENTREGABLE" msprop:Generator_RowEvArgName="TB_CONSULTORIA_ENTREGABLERowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_ENTREGABLE" msprop:Generator_ColumnVarNameInTable="columnDS_ENTREGABLE" msprop:Generator_ColumnPropNameInRow="DS_ENTREGABLE" msprop:Generator_ColumnPropNameInTable="DS_ENTREGABLEColumn" msprop:Generator_UserColumnName="DS_ENTREGABLE" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_DESCRIPCION_ENT" msprop:Generator_ColumnVarNameInTable="columnDS_DESCRIPCION_ENT" msprop:Generator_ColumnPropNameInRow="DS_DESCRIPCION_ENT" msprop:Generator_ColumnPropNameInTable="DS_DESCRIPCION_ENTColumn" msprop:Generator_UserColumnName="DS_DESCRIPCION_ENT" type="xs:string" minOccurs="0" />
+              <xs:element name="FECH_ENTREGA_ENT" msprop:Generator_ColumnVarNameInTable="columnFECH_ENTREGA_ENT" msprop:Generator_ColumnPropNameInRow="FECH_ENTREGA_ENT" msprop:Generator_ColumnPropNameInTable="FECH_ENTREGA_ENTColumn" msprop:Generator_UserColumnName="FECH_ENTREGA_ENT" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_DURACION_ENT" msprop:Generator_ColumnVarNameInTable="columnDS_DURACION_ENT" msprop:Generator_ColumnPropNameInRow="DS_DURACION_ENT" msprop:Generator_ColumnPropNameInTable="DS_DURACION_ENTColumn" msprop:Generator_UserColumnName="DS_DURACION_ENT" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_CONSULTORIA" msprop:Generator_ColumnVarNameInTable="columnID_CONSULTORIA" msprop:Generator_ColumnPropNameInRow="ID_CONSULTORIA" msprop:Generator_ColumnPropNameInTable="ID_CONSULTORIAColumn" msprop:Generator_UserColumnName="ID_CONSULTORIA" type="xs:string" minOccurs="0" />
+              <xs:element name="CD_ESTADO_ENTREGABLE" msprop:Generator_ColumnVarNameInTable="columnCD_ESTADO_ENTREGABLE" msprop:Generator_ColumnPropNameInRow="CD_ESTADO_ENTREGABLE" msprop:Generator_ColumnPropNameInTable="CD_ESTADO_ENTREGABLEColumn" msprop:Generator_UserColumnName="CD_ESTADO_ENTREGABLE" type="xs:string" minOccurs="0" />
+              <xs:element name="URL_ENTREGABLE" msprop:Generator_ColumnVarNameInTable="columnURL_ENTREGABLE" msprop:Generator_ColumnPropNameInRow="URL_ENTREGABLE" msprop:Generator_ColumnPropNameInTable="URL_ENTREGABLEColumn" msprop:Generator_UserColumnName="URL_ENTREGABLE" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_OBSERVACION_ENTREGABLE" msprop:Generator_ColumnVarNameInTable="columnDS_OBSERVACION_ENTREGABLE" msprop:Generator_ColumnPropNameInRow="DS_OBSERVACION_ENTREGABLE" msprop:Generator_ColumnPropNameInTable="DS_OBSERVACION_ENTREGABLEColumn" msprop:Generator_UserColumnName="DS_OBSERVACION_ENTREGABLE" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_ASPIRANTE" msprop:Generator_ColumnVarNameInTable="columnID_ASPIRANTE" msprop:Generator_ColumnPropNameInRow="ID_ASPIRANTE" msprop:Generator_ColumnPropNameInTable="ID_ASPIRANTEColumn" msprop:Generator_UserColumnName="ID_ASPIRANTE" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_NOMBRE_CONSULTORIA" msprop:Generator_ColumnVarNameInTable="columnDS_NOMBRE_CONSULTORIA" msprop:Generator_ColumnPropNameInRow="DS_NOMBRE_CONSULTORIA" msprop:Generator_ColumnPropNameInTable="DS_NOMBRE_CONSULTORIAColumn" msprop:Generator_UserColumnName="DS_NOMBRE_CONSULTORIA" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TB_PASANTIA_ASPIRANTE" msprop:Generator_TableClassName="TB_PASANTIA_ASPIRANTEDataTable" msprop:Generator_TableVarName="tableTB_PASANTIA_ASPIRANTE" msprop:Generator_TablePropName="TB_PASANTIA_ASPIRANTE" msprop:Generator_RowDeletingName="TB_PASANTIA_ASPIRANTERowDeleting" msprop:Generator_RowChangingName="TB_PASANTIA_ASPIRANTERowChanging" msprop:Generator_RowEvHandlerName="TB_PASANTIA_ASPIRANTERowChangeEventHandler" msprop:Generator_RowDeletedName="TB_PASANTIA_ASPIRANTERowDeleted" msprop:Generator_UserTableName="TB_PASANTIA_ASPIRANTE" msprop:Generator_RowChangedName="TB_PASANTIA_ASPIRANTERowChanged" msprop:Generator_RowEvArgName="TB_PASANTIA_ASPIRANTERowChangeEvent" msprop:Generator_RowClassName="TB_PASANTIA_ASPIRANTERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_NOMBRE" msprop:Generator_ColumnVarNameInTable="columnDS_NOMBRE" msprop:Generator_ColumnPropNameInRow="DS_NOMBRE" msprop:Generator_ColumnPropNameInTable="DS_NOMBREColumn" msprop:Generator_UserColumnName="DS_NOMBRE" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_ESTADO" msprop:Generator_ColumnVarNameInTable="columnDS_ESTADO" msprop:Generator_ColumnPropNameInRow="DS_ESTADO" msprop:Generator_ColumnPropNameInTable="DS_ESTADOColumn" msprop:Generator_UserColumnName="DS_ESTADO" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_PASANTIA" msprop:Generator_ColumnVarNameInTable="columnDS_PASANTIA" msprop:Generator_ColumnPropNameInRow="DS_PASANTIA" msprop:Generator_ColumnPropNameInTable="DS_PASANTIAColumn" msprop:Generator_UserColumnName="DS_PASANTIA" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TB_PASANTIA_ACTIVIDAD" msprop:Generator_TableClassName="TB_PASANTIA_ACTIVIDADDataTable" msprop:Generator_TableVarName="tableTB_PASANTIA_ACTIVIDAD" msprop:Generator_TablePropName="TB_PASANTIA_ACTIVIDAD" msprop:Generator_RowDeletingName="TB_PASANTIA_ACTIVIDADRowDeleting" msprop:Generator_RowChangingName="TB_PASANTIA_ACTIVIDADRowChanging" msprop:Generator_RowEvHandlerName="TB_PASANTIA_ACTIVIDADRowChangeEventHandler" msprop:Generator_RowDeletedName="TB_PASANTIA_ACTIVIDADRowDeleted" msprop:Generator_UserTableName="TB_PASANTIA_ACTIVIDAD" msprop:Generator_RowChangedName="TB_PASANTIA_ACTIVIDADRowChanged" msprop:Generator_RowEvArgName="TB_PASANTIA_ACTIVIDADRowChangeEvent" msprop:Generator_RowClassName="TB_PASANTIA_ACTIVIDADRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_ACTIVIDAD" msprop:Generator_ColumnVarNameInTable="columnDS_ACTIVIDAD" msprop:Generator_ColumnPropNameInRow="DS_ACTIVIDAD" msprop:Generator_ColumnPropNameInTable="DS_ACTIVIDADColumn" msprop:Generator_UserColumnName="DS_ACTIVIDAD" type="xs:string" minOccurs="0" />
+              <xs:element name="FECH_ENTREGA_ACT" msprop:Generator_ColumnVarNameInTable="columnFECH_ENTREGA_ACT" msprop:Generator_ColumnPropNameInRow="FECH_ENTREGA_ACT" msprop:Generator_ColumnPropNameInTable="FECH_ENTREGA_ACTColumn" msprop:Generator_UserColumnName="FECH_ENTREGA_ACT" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_DESCRIPCION_ACT" msprop:Generator_ColumnVarNameInTable="columnDS_DESCRIPCION_ACT" msprop:Generator_ColumnPropNameInRow="DS_DESCRIPCION_ACT" msprop:Generator_ColumnPropNameInTable="DS_DESCRIPCION_ACTColumn" msprop:Generator_UserColumnName="DS_DESCRIPCION_ACT" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="TB_EMPRESAKey1">
+      <xs:selector xpath=".//mstns:TB_EMPRESA" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="TB_PASANTIAKey1">
+      <xs:selector xpath=".//mstns:TB_PASANTIA" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="TB_DESTREZA_PASANTIAKey1">
+      <xs:selector xpath=".//mstns:TB_DESTREZA_PASANTIA" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="TB_ESCOLARIDAD_PASANTIAKey1">
+      <xs:selector xpath=".//mstns:TB_ESCOLARIDAD_PASANTIA" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="TB_PASANTIA_HABILIDADKey1">
+      <xs:selector xpath=".//mstns:TB_PASANTIA_HABILIDAD" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="TB_CONSULTORIAKey1">
+      <xs:selector xpath=".//mstns:TB_CONSULTORIA" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="TB_ACTIVIDAD_ASPIRANTEKey1">
+      <xs:selector xpath=".//mstns:TB_ACTIVIDAD_ASPIRANTE" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="TB_CONSULTORIA_ENTREGABLEKey1">
+      <xs:selector xpath=".//mstns:TB_CONSULTORIA_ENTREGABLE" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="TB_PASANTIA_ASPIRANTEKey1">
+      <xs:selector xpath=".//mstns:TB_PASANTIA_ASPIRANTE" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="TB_PASANTIA_ACTIVIDADKey1">
+      <xs:selector xpath=".//mstns:TB_PASANTIA_ACTIVIDAD" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
