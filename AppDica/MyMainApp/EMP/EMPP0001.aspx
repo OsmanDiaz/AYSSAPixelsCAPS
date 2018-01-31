@@ -30,7 +30,7 @@
             <div class="container-fluid">
                 <div id="content">
                     <%--inicio container-fluid--%>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="2" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server">
@@ -137,13 +137,7 @@
                                         <br />
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
-                                  <asp:Panel ID="PanelFicha" runat="server" CssClass="modalPopup"  Height="540px">
-        <br /><center>
-        <rsweb:ReportViewer ID="RVEmpresa" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="75%" style="margin-right: 0px"><LocalReport ReportPath="EMP\RptEmpresa.rdlc"></LocalReport></rsweb:ReportViewer></center>
-       <div align="center"><br /><br /><asp:Button ID="BtnCerrarFicha" runat="server" Text="Cerrar" /></div>
-             </asp:Panel>
-          <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="PanelFicha" BackgroundCssClass="modalBackround" TargetControlID="BtnFicha" CancelControlID="BtnCerrarFicha"></ajaxToolkit:ModalPopupExtender>
- 
+                                
                             </ContentTemplate>
                         </ajaxToolkit:TabPanel>
                         <%--fin tab datos--%>
@@ -506,7 +500,7 @@
                                                 </div>
                                             </div>
                                         </asp:Panel>
-                                        <asp:GridView ID="GVPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnRowUpdating="GVPasantia_RowUpdating">
+                                        <asp:GridView ID="GVPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnRowUpdating="GVPasantia_RowUpdating" OnSelectedIndexChanged="GVPasantia_SelectedIndexChanged" DataKeyNames="ID">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
                                                 <asp:TemplateField HeaderText="" Visible="false">
@@ -545,8 +539,9 @@
                                         <asp:GridView ID="GVAspirantes" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Visible="False" Width="100%">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
-                                                <asp:BoundField HeaderText="NOMBRE ASPIRANTE" />
-                                                <asp:BoundField HeaderText="ESTADO" />
+                                                <asp:BoundField DataField="ID" Visible="False" />
+                                                <asp:BoundField HeaderText="NOMBRE ASPIRANTE" DataField="NOMBRE" />
+                                                <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" />
                                             </Columns>
                                             <EditRowStyle BackColor="#2461BF" />
                                             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -651,7 +646,7 @@
                                             </div>
                                             <br />
 
-                                            <asp:GridView ID="GVContrato" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVContrato_SelectedIndexChanged">
+                                            <asp:GridView ID="GVContrato" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVContrato_SelectedIndexChanged" DataKeyNames="ID">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
                                                     <asp:TemplateField HeaderText="" Visible="false">
@@ -659,7 +654,6 @@
                                                             <asp:TextBox ID="TxtIDPasantiaGV" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:BoundField HeaderText="ID" DataField="ID" />
                                                     <asp:BoundField HeaderText="NOMBRE DE PROYECTO" DataField="DS_NOMBRE_CONSULTORIA" />
                                                     <asp:BoundField HeaderText="FECHA DE CONTRATO" DataField="FECH_INICIO_CONTRATO" />
                                                     <asp:BoundField HeaderText="DURACIÓN DE CONTRATO" DataField="DS_CONTRATO_DURACION" />
@@ -747,6 +741,13 @@
                 <%--fin contenido tab--%>
             </div>
             <%--fin container-fluid--%>
+              <asp:Panel ID="PanelFicha" runat="server" CssClass="modalPopup"  Height="540px">
+        <br /><center>
+        <rsweb:ReportViewer ID="RVEmpresa" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="75%" style="margin-right: 0px"><LocalReport ReportPath="EMP\RptEmpresa.rdlc"></LocalReport></rsweb:ReportViewer></center>
+       <div align="center"><br /><br /><asp:Button ID="BtnCerrarFicha" runat="server" Text="Cerrar" /></div>
+             </asp:Panel>
+          <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="PanelFicha" BackgroundCssClass="modalBackround" TargetControlID="BtnFicha" CancelControlID="BtnCerrarFicha"></ajaxToolkit:ModalPopupExtender>
+ 
         </form>
         <%--fin formulario--%>
     </asp:Panel>
