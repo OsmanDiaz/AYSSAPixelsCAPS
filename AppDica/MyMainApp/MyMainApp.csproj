@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ASP\ASPP0001.aspx" />
+    <Content Include="ASP\ASPP0002.aspx" />
     <Content Include="ASP\FichaAspirante.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />

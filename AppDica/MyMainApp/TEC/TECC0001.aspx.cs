@@ -31,7 +31,7 @@ namespace MyMainApp.TEC
         {
             FillGVRegistroAspirante();
             FillGVAspiranteAsignado();
-            FillCboPeriodoAsignado();
+            
         }
         public void Adicionar() { }
         public void Modificar() { }
@@ -62,14 +62,29 @@ namespace MyMainApp.TEC
             GVAspiranteAsignado.DataBind();
         }
 
-        protected void FillCboPeriodoAsignado()
+        protected void GVRegistroAspirante_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CPeriodo objPeriodoAsignado = new CPeriodo(_DataSistema.ConexionBaseDato);
-            DataView dvPeriodoAsignado = new DataView(objPeriodoAsignado.Detalle("", "", DateTime.Now, DateTime.Now, "", "", DateTime.Now, "", DateTime.Now, 0).TBC_PERIODO);
+            try
+            {
+                string Id = GVRegistroAspirante.SelectedRow.Cells[1].Text;
+                TxtIdAspirante.Text = Id;
+                PanelRegistroAspirante.Visible = false;
+                PanelRegistroIq.Visible = true;
+            }
 
-            CboPeriodoAsignado.DataSource = dvPeriodoAsignado;
-            CboPeriodoAsignado.DataBind();
-
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPRegistroAspirante);
+            }
         }
+        
+
+        //protected void BtnGuardarNotaIq_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+              
+        //    }
+        //}
     }
 }

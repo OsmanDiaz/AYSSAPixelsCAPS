@@ -32,13 +32,26 @@
                                         <ContentTemplate>
                                             <%--inicio contenido tab--%><%--inicio tab datos--%>
                                             <br />
-                                            ||<br />
+                                            <br />
+                                            <asp:Panel ID="PanelRegistroAspirante" runat="server">
+                                            <asp:TextBox ID="TxtIdAspirante" runat="server" Text="0" Visible="False"></asp:TextBox>
                                             <asp:GridView ID="GVRegistroAspirante" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
-                                                    <asp:BoundField HeaderText="NOMBRE COMPLETO" DataField="DS_COMPLETO" />
-                                                    <asp:BoundField HeaderText="SEXO" DataField="DS_SEXO" />
-                                                    <asp:BoundField HeaderText="ESTADO" DataField="CD_ESTADO_ASPIRANTE" />
+                                                    <asp:BoundField DataField="ID" HeaderText="ID" />
+                                                    <asp:TemplateField HeaderText="" Visible="false">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="TxtIdAspirante" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:BoundField DataField="DS_COMPLETO" HeaderText="NOMBRE COMPLETO" />
+                                                    <asp:BoundField DataField="DS_SEXO" HeaderText="SEXO" />
+                                                    <asp:BoundField DataField="CD_ESTADO_ASPIRANTE" HeaderText="ESTADO" />
+                                                    <asp:TemplateField HeaderText="REGISTRO IQ">
+                                                        <ItemTemplate>
+                                                            <asp:Button ID="BtnAgregarIq" runat="server" CommandName="Select" Text="Agregar IQ" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
                                                 </Columns>
                                                 <EditRowStyle BackColor="#2461BF" />
                                                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -51,6 +64,55 @@
                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                             </asp:GridView>
+                                           </asp:Panel>
+                                            <asp:Panel ID="PanelRegistroIq" runat="server" Visible="false">
+                                                <div align="center">
+                                                <asp:Label ID="Label63" runat="server" Text="Registro de Nota IQ" Font-Size="14pt"></asp:Label>
+                                                </div>
+                                                 <div class="form-group">
+                                                <asp:Label ID="Label64" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOTA:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox ID="TxtNotaIq" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                                <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-3" ID="Label67" runat="server" Font-Bold="True" Text="OBSERVACION:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox class="form-control" ID="TxtObservacion" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                                <div class="form-group">
+                                                    <asp:Label ID="Label22" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="ADJUNTAR DOCUMENTOS:"></asp:Label>
+                                                    <div class="col-md-3">
+                                                        
+                                                        <ajaxtoolkit:AsyncFileUpload ID="FileDocumento" runat="server"  PersistFile="True" />
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div align="center">
+                                                <asp:Button ID="btnGuardarNotaIq" runat="server" class="btn btn-primary" Text="GUARDAR" />
+                                                &nbsp;<asp:Button ID="btnAtrasEnt" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False"/>
+                                            </div>
+                                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                                                    <AlternatingRowStyle BackColor="White" />
+                                                    <Columns>
+                                                        <asp:BoundField HeaderText="NOTA" />
+                                                        <asp:BoundField HeaderText="OBSERVACION" />
+                                                    </Columns>
+                                                    <EditRowStyle BackColor="#2461BF" />
+                                                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                    <RowStyle BackColor="#EFF3FB" />
+                                                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                                </asp:GridView>
+                                                <br />
+
+                                            </asp:Panel>
                                             <br />
                                         </ContentTemplate>
                                     </asp:UpdatePanel>

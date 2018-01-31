@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_TB_TEC" targetNamespace="http://tempuri.org/DS_TB_TEC.xsd" xmlns:mstns="http://tempuri.org/DS_TB_TEC.xsd" xmlns="http://tempuri.org/DS_TB_TEC.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_TB_TEC" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_TB_TEC" msprop:Generator_UserDSName="DS_TB_TEC">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TB_NOTA_IQ" msprop:Generator_TableClassName="TB_NOTA_IQDataTable" msprop:Generator_TableVarName="tableTB_NOTA_IQ" msprop:Generator_TablePropName="TB_NOTA_IQ" msprop:Generator_RowDeletingName="TB_NOTA_IQRowDeleting" msprop:Generator_RowChangingName="TB_NOTA_IQRowChanging" msprop:Generator_RowEvHandlerName="TB_NOTA_IQRowChangeEventHandler" msprop:Generator_RowDeletedName="TB_NOTA_IQRowDeleted" msprop:Generator_UserTableName="TB_NOTA_IQ" msprop:Generator_RowChangedName="TB_NOTA_IQRowChanged" msprop:Generator_RowEvArgName="TB_NOTA_IQRowChangeEvent" msprop:Generator_RowClassName="TB_NOTA_IQRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="NM_NOTA_IQ" msprop:Generator_ColumnVarNameInTable="columnNM_NOTA_IQ" msprop:Generator_ColumnPropNameInRow="NM_NOTA_IQ" msprop:Generator_ColumnPropNameInTable="NM_NOTA_IQColumn" msprop:Generator_UserColumnName="NM_NOTA_IQ" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_OBSERVACION_IQ" msprop:Generator_ColumnVarNameInTable="columnDS_OBSERVACION_IQ" msprop:Generator_ColumnPropNameInRow="DS_OBSERVACION_IQ" msprop:Generator_ColumnPropNameInTable="DS_OBSERVACION_IQColumn" msprop:Generator_UserColumnName="DS_OBSERVACION_IQ" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_ASPIRANTE" msprop:Generator_ColumnVarNameInTable="columnID_ASPIRANTE" msprop:Generator_ColumnPropNameInRow="ID_ASPIRANTE" msprop:Generator_ColumnPropNameInTable="ID_ASPIRANTEColumn" msprop:Generator_UserColumnName="ID_ASPIRANTE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

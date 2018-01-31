@@ -878,7 +878,7 @@ namespace ClsDataSets {
             
             private global::System.Data.DataColumn columnID_PERIODO;
             
-            private global::System.Data.DataColumn columnDS_PERIODO;
+            private global::System.Data.DataColumn columnDS_DESCRIPCION;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -931,9 +931,9 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DS_PERIODOColumn {
+            public global::System.Data.DataColumn DS_DESCRIPCIONColumn {
                 get {
-                    return this.columnDS_PERIODO;
+                    return this.columnDS_DESCRIPCION;
                 }
             }
             
@@ -974,12 +974,12 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TBC_PERIODORow AddTBC_PERIODORow(string ID_EJERCICIO, string ID_PERIODO, string DS_PERIODO) {
+            public TBC_PERIODORow AddTBC_PERIODORow(string ID_EJERCICIO, string ID_PERIODO, string DS_DESCRIPCION) {
                 TBC_PERIODORow rowTBC_PERIODORow = ((TBC_PERIODORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_EJERCICIO,
                         ID_PERIODO,
-                        DS_PERIODO};
+                        DS_DESCRIPCION};
                 rowTBC_PERIODORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTBC_PERIODORow);
                 return rowTBC_PERIODORow;
@@ -1012,7 +1012,7 @@ namespace ClsDataSets {
             internal void InitVars() {
                 this.columnID_EJERCICIO = base.Columns["ID_EJERCICIO"];
                 this.columnID_PERIODO = base.Columns["ID_PERIODO"];
-                this.columnDS_PERIODO = base.Columns["DS_PERIODO"];
+                this.columnDS_DESCRIPCION = base.Columns["DS_DESCRIPCION"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1022,8 +1022,8 @@ namespace ClsDataSets {
                 base.Columns.Add(this.columnID_EJERCICIO);
                 this.columnID_PERIODO = new global::System.Data.DataColumn("ID_PERIODO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_PERIODO);
-                this.columnDS_PERIODO = new global::System.Data.DataColumn("DS_PERIODO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDS_PERIODO);
+                this.columnDS_DESCRIPCION = new global::System.Data.DataColumn("DS_DESCRIPCION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_DESCRIPCION);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_EJERCICIO,
                                 this.columnID_PERIODO}, true));
@@ -5769,30 +5769,30 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DS_PERIODO {
+            public string DS_DESCRIPCION {
                 get {
                     try {
-                        return ((string)(this[this.tableTBC_PERIODO.DS_PERIODOColumn]));
+                        return ((string)(this[this.tableTBC_PERIODO.DS_DESCRIPCIONColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_PERIODO\' de la tabla \'TBC_PERIODO\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_DESCRIPCION\' de la tabla \'TBC_PERIODO\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTBC_PERIODO.DS_PERIODOColumn] = value;
+                    this[this.tableTBC_PERIODO.DS_DESCRIPCIONColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDS_PERIODONull() {
-                return this.IsNull(this.tableTBC_PERIODO.DS_PERIODOColumn);
+            public bool IsDS_DESCRIPCIONNull() {
+                return this.IsNull(this.tableTBC_PERIODO.DS_DESCRIPCIONColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDS_PERIODONull() {
-                this[this.tableTBC_PERIODO.DS_PERIODOColumn] = global::System.Convert.DBNull;
+            public void SetDS_DESCRIPCIONNull() {
+                this[this.tableTBC_PERIODO.DS_DESCRIPCIONColumn] = global::System.Convert.DBNull;
             }
         }
         
