@@ -958,13 +958,13 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.Button BtnGuardarPasantia;
         
         /// <summary>
-        /// Control BtnCancelarHabilidad.
+        /// Control BtnCancelarPasantia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnCancelarHabilidad;
+        protected global::System.Web.UI.WebControls.Button BtnCancelarPasantia;
         
         /// <summary>
         /// Control RoundedCornersExtender2.
@@ -1507,6 +1507,15 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.GridView GVPasantia;
         
         /// <summary>
+        /// Control PanelAspirantes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelAspirantes;
+        
+        /// <summary>
         /// Control GVAspirantes.
         /// </summary>
         /// <remarks>
@@ -1516,6 +1525,24 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.GridView GVAspirantes;
         
         /// <summary>
+        /// Control BtnRegresarPasantias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnRegresarPasantias;
+        
+        /// <summary>
+        /// Control PanelActividadAspirante.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelActividadAspirante;
+        
+        /// <summary>
         /// Control GVActividadAspirante.
         /// </summary>
         /// <remarks>
@@ -1523,6 +1550,15 @@ namespace MyMainApp.EMP {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GVActividadAspirante;
+        
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// Control TabPanel3.

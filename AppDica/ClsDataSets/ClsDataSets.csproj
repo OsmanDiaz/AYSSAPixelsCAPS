@@ -84,6 +84,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_TB_EMP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_TB_TEC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_TB_TEC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +135,17 @@
     </None>
     <Content Include="DS_TB_EMP.xss">
       <DependentUpon>DS_TB_EMP.xsd</DependentUpon>
+    </Content>
+    <Content Include="DS_TB_TEC.xsc">
+      <DependentUpon>DS_TB_TEC.xsd</DependentUpon>
+    </Content>
+    <None Include="DS_TB_TEC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_TB_TEC.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DS_TB_TEC.xss">
+      <DependentUpon>DS_TB_TEC.xsd</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
