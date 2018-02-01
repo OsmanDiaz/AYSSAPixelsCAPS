@@ -17,7 +17,7 @@ namespace ClsDataApp
         }
 
         public ClsDataSets.DS_TB_EMP Detalle(int Id, string IdAspirante, int IdActividad, string Comentario, char Estado, string Observacion, 
-            string UsuaCrea, DateTime FechCrea, string UsuaActu, DateTime FechActu, int OpcionConsulta)
+            string UrlActividad, string UsuaCrea, DateTime FechCrea, string UsuaActu, DateTime FechActu, int OpcionConsulta)
         {
             ClsDataSets.DS_TB_EMP objDataSet = new ClsDataSets.DS_TB_EMP();
             
@@ -34,6 +34,7 @@ namespace ClsDataApp
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_COMENTARIO", Comentario);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_ESTADO", Estado);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_OBSERVACION", Observacion);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@URL_ACTIVIDAD", UrlActividad);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_CREA", UsuaCrea);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_CREA", FechCrea);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_ACTU", UsuaActu);
@@ -56,7 +57,7 @@ namespace ClsDataApp
             return objDataSet;
             }
         public DataQuery Actualizacion(int Id, string IdAspirante, int IdActividad, string Comentario, char Estado, string Observacion,
-            DateTime FechActu, string LoginUsuario, TipoActualizacion OpcionActualizacion)
+            string UrlActividad, DateTime FechActu, string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
             DataQuery objResultado = new DataQuery();
             try
@@ -69,7 +70,7 @@ namespace ClsDataApp
                         StrCommand = "SP_TB_ACTIVIDAD_ASPIRANTE_INSERT";
                         break;
                     case TipoActualizacion.Actualizar:
-                        StrCommand = " ";
+                        StrCommand = "SP_TB_ACTIVIDAD_ASPIRANTE_UPDATE";
                         break;
                     case TipoActualizacion.Eliminar:
                         StrCommand = "";
@@ -99,6 +100,8 @@ namespace ClsDataApp
                 ObjCommand.Parameters.AddWithValue("@ID_ASPIRANTE", IdAspirante);
                 ObjCommand.Parameters.AddWithValue("@ID_PASANTIA_ACTIVIDAD", IdActividad);
                 ObjCommand.Parameters.AddWithValue("@DS_COMENTARIO", Comentario);
+                ObjCommand.Parameters.AddWithValue("@DS_OBSERVACION", Observacion);
+                ObjCommand.Parameters.AddWithValue("@URL_ACTIVIDAD", UrlActividad);
                 ObjCommand.Parameters.AddWithValue("@CD_ESTADO", Estado);
                 ObjCommand.Parameters.AddWithValue("@FECH_ACTU", FechActu);
                 ObjCommand.Parameters.AddWithValue("@LOGIN_USUARIO", LoginUsuario);

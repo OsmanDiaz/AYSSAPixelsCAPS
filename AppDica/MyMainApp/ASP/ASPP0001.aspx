@@ -9,7 +9,7 @@
     <form id="form1" runat="server" class="form-horizontal">
         <%--fin tab ENTREGABLE--%>
         <div class="text-center">
-            <%--fin contenido tab--%>
+            <%--fin formulario--%>
             <asp:Label ID="LblTitulo" runat="server" Text="Registro Aspirante" Font-Bold="True" Font-Size="18pt"></asp:Label>
         </div>
         <%--fin container-fluid--%>
@@ -21,7 +21,7 @@
         <div class="container-fluid">
             <div id="content">
                 <asp:Panel ID="Panel1" runat="server" Width="100%">
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="6" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="4" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
 
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
@@ -213,7 +213,6 @@
                                                         <asp:TextBox ID="TxtIdEntregableGV" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:BoundField HeaderText="ID" DataField="ID" />
                                                 <asp:BoundField HeaderText="NOMBRE CONSULTORIA" DataField="DS_NOMBRE_CONSULTORIA" />
                                                 <asp:BoundField HeaderText="NOMBRE DE PROYECTO" DataField="DS_ENTREGABLE" />
                                                 <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ENT" />
@@ -329,28 +328,29 @@
                            <ContentTemplate>
                                <asp:UpdatePanel ID="UPACTPAS" runat="server"><ContentTemplate>
                                <asp:Panel ID="PanelListaPasantia" runat="server"><br />                                   
-                                       
+                                           <asp:TextBox ID="TxtIdActividad" runat="server" Text="0" Visible="False"></asp:TextBox>
                                            <asp:TextBox ID="TxtIdActividadAspirante" runat="server" Text="0" Visible="False"></asp:TextBox>
                                            <asp:TextBox ID="TxtIdAspirante" runat="server" Text="0" Visible="False"></asp:TextBox>
-                                           <asp:TextBox ID="TxtIdPasantiaActividad" runat="server" Text="0" Visible="False"></asp:TextBox>
-                                            <asp:GridView ID="GVListaPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVEntregable_SelectedIndexChanged">
+                                           <asp:TextBox ID="TxtNombrePasantiaAct" runat="server" Text="0" Visible="False"></asp:TextBox>
+                                            <asp:TextBox ID="TxtNombreAct" runat="server" Text="0" Visible="False"></asp:TextBox>
+                                            <asp:TextBox ID="TxtUrlActiText" runat="server" Text="0" Visible="False"></asp:TextBox>
+                                            <asp:GridView ID="GVListaPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVActividad_SelectedIndexChanged">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
                                                 <asp:TemplateField HeaderText="" Visible="false">
                                                     <ItemTemplate>
-                                                        <asp:TextBox ID="TxtIdEntregableGV" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
+                                                        <asp:TextBox ID="TxtActividadGV" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:BoundField HeaderText="ID" DataField="ID" />
                                                 <asp:BoundField HeaderText="NOMBRE PASANTIA" DataField="NOMBRE_PASANTIA" />
                                                 <asp:BoundField HeaderText="ACTIVIDAD PASANTIA" DataField="DS_ACTIVIDAD" />
                                                 <asp:BoundField HeaderText="DESCRIPCION ACTIVIDAD" DataField="DS_DESCRIPCION_ACT" />
                                                 <asp:BoundField HeaderText="TIEMPO DE DESARROLLO" DataField="DS_DURACION_ACT" />
                                                 <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ACT" />
-                                                <asp:TemplateField HeaderText="ENTREGABLES">
+                                                <asp:TemplateField HeaderText="ACTIVIDAD">
                                                     <ItemTemplate>
-                                                        <asp:Button ID="BtnVerEntregable" runat="server" CommandName="Select"
-                                                            Text="Ver Entregables"  />
+                                                        <asp:Button ID="BtnVerActividad" runat="server" CommandName="Select"
+                                                            Text="Ver Actividades"  />
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                             </Columns>
@@ -366,10 +366,10 @@
                                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                         </asp:GridView>                                   
                                </asp:Panel> 
-                               <asp:Panel ID="Panel3" runat="server" Visible="False">
+                               <asp:Panel ID="PanelActividadDesc" runat="server" Visible="False">
                                    <br />
                                           <div align="center">
-                                                <asp:Label ID="Label49" runat="server" Text="Entregables" Font-Size="14pt"></asp:Label></div>
+                                                <asp:Label ID="Label49" runat="server" Text="Actividades" Font-Size="14pt"></asp:Label></div>
                                           <div class="form-group">
                                                 <asp:Label ID="Label51" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE ACTIVIDAD:"></asp:Label>
                                                 <div class="col-md-9">
@@ -393,38 +393,55 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-3" ID="Label57" runat="server" Font-Bold="True" Text="OBSERVACION:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox class="form-control" ID="TxtObservacion" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
                                                 <asp:Label ID="Label55" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="ESTADO ACTIVIDAD:"></asp:Label>
                                                 <div class="col-md-3">
                                                     <asp:TextBox ID="TxtEstadoActividad" runat="server" class="form-control"  Enabled="False" Width="100%"></asp:TextBox>
                                                 </div>  
                                             </div> 
                                             <div class="form-group">                                                
-                                                <asp:Label ID="Label56" runat="server" class="control-label col-sm-3" Font-Bold="True" Text="ADJUNTAR ENTREGABLE:"></asp:Label>
+                                                <asp:Label ID="Label56" runat="server" class="control-label col-sm-3" Font-Bold="True" Text="ADJUNTAR ACTIVIDAD:"></asp:Label>
                                                 <div class="col-md-9">
-                                                    <ajaxToolkit:AsyncFileUpload ID="AsyncFileUpload1" runat="server" FailedValidation="False" OnUploadedComplete="FileEntregable_UploadedComplete" PersistFile="True" />
+                                                    <ajaxToolkit:AsyncFileUpload ID="FileActividad" runat="server" FailedValidation="False" OnUploadedComplete="FileActividad_UploadedComplete" PersistFile="True" />
                                                 </div>                                                
                                             </div>                                             
                                             <br />
                                             <div align="center">
-                                                <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="BtnGuardarEntregableConsultoria_Click"/>
+                                                <asp:Button ID="BtnPasantiaActividad" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="BtnGuardarPasantiaActividad_Click"/>
                                                 &nbsp;<asp:Button ID="Button2" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False"/>
                                             </div>
                                             <br />
-                                            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                                            <asp:GridView ID="GVActividadAspirante" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
-                                                    <asp:BoundField HeaderText="NOMBRE DE ENTREGABLE" DataField="DS_ENTREGABLE" />
-                                                    <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ENT" />
-                                                    <asp:BoundField HeaderText="DESCRIPCIÓN" DataField="DS_DESCRIPCION_ENT" />
+                                                    <asp:BoundField HeaderText="NOMBRE ACTIVIDAD" DataField="DS_ACTIVIDAD" />
+                                                    <asp:BoundField HeaderText="DESCRIPCION" DataField="DS_DESCRIPCION_ACT" />
+                                                    <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ACT" />
+                                                    <asp:BoundField HeaderText="COMENTARIO" DataField="DS_COMENTARIO"/>
                                                     <asp:TemplateField HeaderText="Descargar">
                                                         <ItemTemplate>
-                                                            <a href='<%# "http://"+Request.Url.Authority +"/ASP/Entregables/"+Eval("DS_NOMBRE_CONSULTORIA")+"/"+Eval("URL_ENTREGABLE") %>' target="_blank">Descargar</a>
+                                                            <%
+                                                                if (TxtUrlActiText.Text == "" || TxtUrlActiText.Text == null)
+                                                                { 
+                                                                    %>
+                                                                        No ha adjuntado actividad
+                                                                    <%
+                                                                }else{
+                                                             %>
+                                                                        <a href='<%# "http://"+Request.Url.Authority +"/ASP/Actividades/"+Eval("NOMBRE_PASANTIA")+"/"+Eval("DS_ACTIVIDAD")+"/"+Eval("URL_ACTIVIDAD") %>' target="_blank">Descargar</a>
+                                                             <%
+                                                                } %>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 
                                                     <asp:TemplateField HeaderText="Eliminar">
                                                             <ItemTemplate>
-                                                                <asp:Button ID="BtnEliminarEntregable" runat="server" CommandName="Delete" OnClientClick="return confirm('¿Desea eliminar este archivo?');" Text="Eliminar" />
+                                                                <asp:Button ID="BtnEliminarActividad" runat="server" CommandName="Delete" OnClientClick="return confirm('¿Desea eliminar este archivo?');" Text="Eliminar" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                 </Columns>

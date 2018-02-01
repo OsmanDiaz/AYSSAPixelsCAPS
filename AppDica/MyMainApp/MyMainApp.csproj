@@ -285,7 +285,9 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ASP\Actividades\" />
     <Folder Include="ASP\Documentos\" />
+    <Folder Include="ASP\Entregables\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

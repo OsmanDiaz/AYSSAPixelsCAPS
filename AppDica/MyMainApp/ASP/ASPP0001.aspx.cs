@@ -18,7 +18,8 @@ namespace MyMainApp
     {
         private DataView dvTituloAcademico, dvPais, dvDepartamento, dvMunicipio, dvTipoDocumento, dvDestreza,
             dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvInstitucion,
-            dvEscolaridad, dvHabilidad, dvDocumento, dvPantallas, dvEntregables, dvCategoriaEscolaridad, dvListaPasantia;
+            dvEscolaridad, dvHabilidad, dvDocumento, dvPantallas, dvEntregables, dvCategoriaEscolaridad, dvListaPasantia,
+            dvListaActividad;
         private DataSet dsEscolaridad, dsPantalla;
         DataQuery objResultado = new DataQuery();
         protected void Page_Load(object sender, EventArgs e)
@@ -392,7 +393,7 @@ namespace MyMainApp
         private void FillGVPasantia()
         {
             CActividadAspirante objActividad = new CActividadAspirante(_DataSistema.ConexionBaseDato);
-            dvListaPasantia = new DataView(objActividad.Detalle(0,_DataSistema.Cusuario,0,"",'X',"",_DataSistema.Cusuario,DateTime.Today,_DataSistema.Cusuario,DateTime.Today,2).TB_ACTIVIDAD_ASPIRANTE);
+            dvListaPasantia = new DataView(objActividad.Detalle(0,_DataSistema.Cusuario,0,"",'X',"", "",_DataSistema.Cusuario,DateTime.Today,_DataSistema.Cusuario,DateTime.Today,2).TB_ACTIVIDAD_ASPIRANTE);
 
             GVListaPasantia.DataSource = dvListaPasantia;
             GVListaPasantia.DataBind();
@@ -526,9 +527,10 @@ namespace MyMainApp
         {
             try
             {
-               /* if (FileDocumento.HasFile)
-                {*/
+                if (FileDocumento.FileName!="")
+                { 
                     string nombreArchivo = _DataSistema.Cusuario + "_" + CboTipoDocumento.SelectedValue + FileDocumento.FileName;
+                    FileDocumento.PersistFile = false; FileDocumento.PersistFile = true;
                  /*   string ruta = Server.MapPath("~/ASP/Documentos/");
                     FileDocumento.PostedFile.SaveAs(ruta + nombreArchivo);*/
 
@@ -544,11 +546,11 @@ namespace MyMainApp
                     {
                         DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPDocumento);
                     }
-               /*  }
+                 }
                else
                 {
-                    DespliegaMensaje("Adjuntar Archivo");
-                }*/
+                    DespliegaMensajeUpdatePanel("Adjuntar Archivo", UPDocumento);
+                } 
             }
             catch (Exception ex)
             {
@@ -793,7 +795,7 @@ namespace MyMainApp
             }
             catch (Exception ex)
             {
-                DespliegaMensajeUpdatePanel(ex.Message, UPDocumento);
+                DespliegaMensajeUpdatePanel(ex.Message, UUPEntregable);
             }
         }
 
@@ -817,5 +819,83 @@ namespace MyMainApp
             GVEntregableAspirante.DataBind();
 
         }
+
+        protected void GVActividad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Id = GVListaPasantia.SelectedRow.Cells[1].Text;
+                TxtIdActividadAspirante.Text = Id;
+                FillCamposActividad();
+                FillGVListaActividadPasantia();
+                PanelListaPasantia.Visible = false;
+                PanelActividadDesc.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UUPEntregable);
+            }
+        }
+
+        private void FillCamposActividad()
+        {
+            CActividadAspirante objActividadAspirante = new CActividadAspirante(_DataSistema.ConexionBaseDato);
+            dvListaActividad = new DataView(objActividadAspirante.Detalle(0, _DataSistema.Cusuario, 0, "", 'x', "", "", _DataSistema.Cusuario, DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 2).TB_ACTIVIDAD_ASPIRANTE);
+            if (dvListaActividad.Count > 0) {
+                TxtIdActividadAspirante.Text = dvListaActividad.Table.Rows[0]["ID"].ToString();
+                TxtIdAspirante.Text = dvListaActividad.Table.Rows[0]["ID_ASPIRANTE"].ToString(); 
+                TxtNombrePasantiaAct.Text = dvListaActividad.Table.Rows[0]["NOMBRE_PASANTIA"].ToString();
+                TxtNombreAct.Text = dvListaActividad.Table.Rows[0]["DS_ACTIVIDAD"].ToString();
+                TxtUrlActiText.Text = dvListaActividad.Table.Rows[0]["URL_ACTIVIDAD"].ToString();
+                TxtNombrePasantia.Text = dvListaActividad.Table.Rows[0]["NOMBRE_PASANTIA"].ToString();
+                TxtDuracionActividad.Text = dvListaActividad.Table.Rows[0]["DS_DURACION_ACT"].ToString();
+                TxtFechaEntrega.Text = dvListaActividad.Table.Rows[0]["FECH_ENTREGA_ACT"].ToString();
+                TxtComentario.Text = dvListaActividad.Table.Rows[0]["DS_COMENTARIO"].ToString();
+                TxtObservacion.Text = dvListaActividad.Table.Rows[0]["DS_OBSERVACION"].ToString();
+                TxtEstadoActividad.Text = dvListaActividad.Table.Rows[0]["CD_ESTADO"].ToString();
+                TxtIdActividad.Text = dvListaActividad.Table.Rows[0]["ID_PASANTIA_ACTIVIDAD"].ToString();
+            }
+        }
+
+        private void FillGVListaActividadPasantia()
+        {
+            CActividadAspirante objActividadAspirante = new CActividadAspirante(_DataSistema.ConexionBaseDato);
+            dvListaActividad = new DataView(objActividadAspirante.Detalle(0, _DataSistema.Cusuario, 0, "", 'x', "", "", _DataSistema.Cusuario, DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 2).TB_ACTIVIDAD_ASPIRANTE);
+            GVActividadAspirante.DataSource = dvListaActividad;
+            GVActividadAspirante.DataBind();
+        }
+
+        protected void FileActividad_UploadedComplete(object sender, AjaxControlToolkit.AsyncFileUploadEventArgs e)
+        {
+            bool exists = System.IO.Directory.Exists(Server.MapPath("~/ASP/Actividades/" + Convert.ToString(TxtNombrePasantia.Text) + "/" + Convert.ToString(TxtNombreAct.Text) + "/"));
+            if (!exists)
+            {
+                System.IO.Directory.CreateDirectory(Server.MapPath("~/ASP/Actividades/" + Convert.ToString(TxtNombrePasantia.Text) + "/" + Convert.ToString(TxtNombreAct.Text) + "/"));
+            }
+            string savePath = MapPath("~/ASP/Actividades/" + TxtNombrePasantia.Text + "/" + TxtNombreAct.Text + "/" + _DataSistema.Cusuario + "_" + Convert.ToString(TxtIdActividadAspirante.Text) + "_" + Convert.ToString(TxtIdActividad.Text) + "_" + Path.GetFileName(e.FileName));
+            ((AsyncFileUpload)sender).SaveAs(savePath);
+        }
+
+        protected void BtnGuardarPasantiaActividad_Click(object sender, EventArgs e)
+        {
+            try{
+                string nombreArchivoAct = _DataSistema.Cusuario + "_" + Convert.ToString(TxtIdActividadAspirante.Text) + "_" + Convert.ToString(TxtIdActividad.Text) + "_" + FileActividad.FileName;
+                CActividadAspirante objActividadAsp = new CActividadAspirante(_DataSistema.ConexionBaseDato);
+                objResultado = objActividadAsp.Actualizacion(Convert.ToInt32(TxtIdActividadAspirante.Text), _DataSistema.Cusuario, Convert.ToInt32(TxtIdActividad.Text), TxtComentario.Text, Convert.ToChar(TxtEstadoActividad.Text), TxtObservacion.Text, Convert.ToString(nombreArchivoAct), Convert.ToDateTime(TxtFechaEntrega.Text), _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+                if (objResultado.CodigoError == 0)
+                {
+                    FillGVListaActividadPasantia();
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPACTPAS);
+                }
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPACTPAS);
+            }
+        }
+
     }
 }

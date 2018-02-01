@@ -1426,6 +1426,15 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.Panel PanelListaPasantia;
         
         /// <summary>
+        /// Control TxtIdActividad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIdActividad;
+        
+        /// <summary>
         /// Control TxtIdActividadAspirante.
         /// </summary>
         /// <remarks>
@@ -1444,13 +1453,31 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.TextBox TxtIdAspirante;
         
         /// <summary>
-        /// Control TxtIdPasantiaActividad.
+        /// Control TxtNombrePasantiaAct.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtIdPasantiaActividad;
+        protected global::System.Web.UI.WebControls.TextBox TxtNombrePasantiaAct;
+        
+        /// <summary>
+        /// Control TxtNombreAct.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtNombreAct;
+        
+        /// <summary>
+        /// Control TxtUrlActiText.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtUrlActiText;
         
         /// <summary>
         /// Control GVListaPasantia.
@@ -1462,13 +1489,13 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.GridView GVListaPasantia;
         
         /// <summary>
-        /// Control Panel3.
+        /// Control PanelActividadDesc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel3;
+        protected global::System.Web.UI.WebControls.Panel PanelActividadDesc;
         
         /// <summary>
         /// Control Label49.
@@ -1552,6 +1579,24 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.TextBox TxtComentario;
         
         /// <summary>
+        /// Control Label57.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label57;
+        
+        /// <summary>
+        /// Control TxtObservacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtObservacion;
+        
+        /// <summary>
         /// Control Label55.
         /// </summary>
         /// <remarks>
@@ -1579,22 +1624,22 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.Label Label56;
         
         /// <summary>
-        /// Control AsyncFileUpload1.
+        /// Control FileActividad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AjaxControlToolkit.AsyncFileUpload AsyncFileUpload1;
+        protected global::AjaxControlToolkit.AsyncFileUpload FileActividad;
         
         /// <summary>
-        /// Control Button1.
+        /// Control BtnPasantiaActividad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button BtnPasantiaActividad;
         
         /// <summary>
         /// Control Button2.
@@ -1606,13 +1651,13 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// Control GridView2.
+        /// Control GVActividadAspirante.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
+        protected global::System.Web.UI.WebControls.GridView GVActividadAspirante;
         
         /// <summary>
         /// Control PanelFicha.
