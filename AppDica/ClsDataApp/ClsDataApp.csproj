@@ -60,7 +60,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CNotaIq.cs" />
     <Compile Include="CAceptacionHorario.cs" />
     <Compile Include="CAceptacionPasantia.cs" />
     <Compile Include="CActividadAspirante.cs" />

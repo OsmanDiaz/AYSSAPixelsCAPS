@@ -295,6 +295,9 @@ namespace MyMainApp
             CAspirante objAspirante = new CAspirante(_DataSistema.ConexionBaseDato);
             DataView dvAspirante = new DataView(objAspirante.Detalle(_DataSistema.Cusuario, "", "", DateTime.Today, 'X',
          "", "", "", "", "", "", 'X', 0, "", 0, 0, 0, "", "", "", "", "", DateTime.Today, "", DateTime.Today, 3).TB_ASPIRANTE);
+            CNotaIq objNota = new CNotaIq(_DataSistema.ConexionBaseDato);
+            DataView dvNotaA = new DataView(objNota.Detalle(0, 0, "", _DataSistema.Cusuario, "", DateTime.Today, "", DateTime.Today, 3).TB_NOTA_IQ);
+
             
             if (dvAspirante.Count > 0)
             {   /* CARGA DE DATOS DE EL PRIMER REGISTRO */
@@ -306,7 +309,15 @@ namespace MyMainApp
                 TxtNit.Text = dvAspirante.Table.Rows[0]["DS_NIT"].ToString();
                 TxtTipoAspirante.Text = dvAspirante.Table.Rows[0]["DS_TIPO_ASPIRANTE"].ToString();
                 TxtEmail.Text = dvAspirante.Table.Rows[0]["DS_EMAIL"].ToString();
-              
+
+                if (dvNotaA.Count == 0)
+                { }
+                else
+                {
+                    TxtNotaQI.Text = dvNotaA.Table.Rows[0]["NM_NOTA_IQ"].ToString();
+                    TxtObservacionQI.Text = dvNotaA.Table.Rows[0]["DS_OBSERVACION_IQ"].ToString();
+                }
+
                 if (Convert.ToInt32(dvAspirante.Table.Rows[0]["EDAD"].ToString()) < 18)
                 {
                     PanelRepresentante.Visible = true;
