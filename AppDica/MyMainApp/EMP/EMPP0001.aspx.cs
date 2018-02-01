@@ -16,7 +16,7 @@ namespace MyMainApp.EMP
     {
         private DataView dvActividadEconomica, dvEmpresa, dvDepartamento, dvMunicipio, dvHabilidad, dvDestreza, dvPasantia,
             dvAreaPasantia, dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvEscolaridadPasantia,
-            dvConsultoria, dvEntregable, dvCategoriaEscolaridad, dvPasantiaActividad, dvPasantiaAspirante;
+            dvConsultoria, dvEntregable, dvCategoriaEscolaridad, dvPasantiaActividad, dvPasantiaAspirante, dvActividadAspirante;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -504,7 +504,7 @@ namespace MyMainApp.EMP
             {
                 int Id = GVContrato.SelectedIndex;
 
-                TxtIdProyecto.Text = GVContrato.DataKeys[Id].Value.ToString();
+                TxtIdProyecto.Text = GVContrato.DataKeys[Id].Value.ToString();  
                 FillCamposProyecto();
                 FillGVEntregable();
                 PanelProyecto.Visible = false;
@@ -676,10 +676,9 @@ namespace MyMainApp.EMP
                  Consultar();
                  FillGVAspirantes();
                  GVPasantia.Visible = false;
-                 GVAspirantes.Visible = true;
-                PanelEntregable.Visible = true;
-                BtnCancelarHabilidad.Visible = false;
-                BtnGuardarPasantia.Visible = false;
+                 PanelAspirantes.Visible = true;
+              /*  BtnCancelarHabilidad.Visible = false;
+                BtnGuardarPasantia.Visible = false;*/
             }
             catch (Exception ex)
             {
@@ -690,11 +689,44 @@ namespace MyMainApp.EMP
         protected void FillGVAspirantes()
         {
             CPasantiaAspirante objPasantiaAspirante = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
-            dvPasantiaAspirante = new DataView(objPasantiaAspirante.Detalle(0,"", Convert.ToInt32(TxtIDPasantia.Text), 
-            "", DateTime.Now, "", DateTime.Now, 2).TB_PASANTIA_ACTIVIDAD);
+            dvPasantiaAspirante = new DataView(objPasantiaAspirante.Detalle(0,"", Convert.ToInt32(TxtIDPasantia.Text),
+            "", DateTime.Now, "", DateTime.Now, 2).TB_PASANTIA_ASPIRANTE);
 
             GVAspirantes.DataSource = dvPasantiaAspirante;
             GVAspirantes.DataBind();
+        }
+
+        protected void BtnRegresarPasantias_Click(object sender, EventArgs e)
+        {
+            GVPasantia.Visible = true;
+            PanelAspirantes.Visible = false;
+        }
+
+        protected void GVAspirantes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int Id = GVAspirantes.SelectedIndex;
+
+            string Usuario = GVAspirantes.DataKeys[Id].Value.ToString();
+            FillGVActividadAspirante(Usuario);
+            PanelActividadAspirante.Visible = true;
+            PanelAspirantes.Visible = false;
+        }
+
+        protected void FillGVActividadAspirante(string Usuario)
+        {
+            CActividadAspirante objActividadAspirante = new CActividadAspirante(_DataSistema.ConexionBaseDato);
+            dvActividadAspirante = new DataView(objActividadAspirante.Detalle(0, Usuario, 0, "", 'A', "","",
+            "", DateTime.Now, "", DateTime.Now, 2).TB_PASANTIA_ASPIRANTE);
+
+            GVActividadAspirante.DataSource = dvActividadAspirante;
+            GVActividadAspirante.DataBind();
+        }
+
+        protected void BtnRegresarAspirantes_Click(object sender, EventArgs e)
+        {
+
+            PanelAspirantes.Visible = true;
+            PanelActividadAspirante.Visible = false;
         }
     }
 }
