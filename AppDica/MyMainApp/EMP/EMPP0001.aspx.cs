@@ -16,7 +16,7 @@ namespace MyMainApp.EMP
     {
         private DataView dvActividadEconomica, dvEmpresa, dvDepartamento, dvMunicipio, dvHabilidad, dvDestreza, dvPasantia,
             dvAreaPasantia, dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvEscolaridadPasantia,
-            dvConsultoria, dvEntregable, dvCategoriaEscolaridad, dvPasantiaActividad;
+            dvConsultoria, dvEntregable, dvCategoriaEscolaridad, dvPasantiaActividad, dvPasantiaAspirante;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -502,8 +502,9 @@ namespace MyMainApp.EMP
         {
             try
             {
-                string Id = GVContrato.SelectedRow.Cells[1].Text;
-                TxtIdProyecto.Text = Id;
+                int Id = GVContrato.SelectedIndex;
+
+                TxtIdProyecto.Text = GVContrato.DataKeys[Id].Value.ToString();
                 FillCamposProyecto();
                 FillGVEntregable();
                 PanelProyecto.Visible = false;
@@ -665,6 +666,35 @@ namespace MyMainApp.EMP
             GVActividades.DataBind();
         }
 
+        protected void GVPasantia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int Id =  GVPasantia.SelectedIndex;
 
+                TxtIDPasantia.Text = GVPasantia.DataKeys[Id].Value.ToString();
+                 Consultar();
+                 FillGVAspirantes();
+                 GVPasantia.Visible = false;
+                 GVAspirantes.Visible = true;
+                PanelEntregable.Visible = true;
+                BtnCancelarHabilidad.Visible = false;
+                BtnGuardarPasantia.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPPasantia);
+            }
+        }
+
+        protected void FillGVAspirantes()
+        {
+            CPasantiaAspirante objPasantiaAspirante = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
+            dvPasantiaAspirante = new DataView(objPasantiaAspirante.Detalle(0,"", Convert.ToInt32(TxtIDPasantia.Text), 
+            "", DateTime.Now, "", DateTime.Now, 2).TB_PASANTIA_ACTIVIDAD);
+
+            GVAspirantes.DataSource = dvPasantiaAspirante;
+            GVAspirantes.DataBind();
+        }
     }
 }
