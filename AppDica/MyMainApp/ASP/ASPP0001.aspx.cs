@@ -295,6 +295,7 @@ namespace MyMainApp
             CAspirante objAspirante = new CAspirante(_DataSistema.ConexionBaseDato);
             DataView dvAspirante = new DataView(objAspirante.Detalle(_DataSistema.Cusuario, "", "", DateTime.Today, 'X',
          "", "", "", "", "", "", 'X', 0, "", 0, 0, 0, "", "", "", "", "", DateTime.Today, "", DateTime.Today, 3).TB_ASPIRANTE);
+            
             if (dvAspirante.Count > 0)
             {   /* CARGA DE DATOS DE EL PRIMER REGISTRO */
                 TxtNombre.Text = dvAspirante.Table.Rows[0]["DS_NOMBRE"].ToString();
@@ -305,6 +306,11 @@ namespace MyMainApp
                 TxtNit.Text = dvAspirante.Table.Rows[0]["DS_NIT"].ToString();
                 TxtTipoAspirante.Text = dvAspirante.Table.Rows[0]["DS_TIPO_ASPIRANTE"].ToString();
                 TxtEmail.Text = dvAspirante.Table.Rows[0]["DS_EMAIL"].ToString();
+              
+                if (Convert.ToInt32(dvAspirante.Table.Rows[0]["EDAD"].ToString()) < 18)
+                {
+                    PanelRepresentante.Visible = true;
+                }
                 if (Convert.ToInt32(dvAspirante.Table.Rows[0]["EDAD"].ToString())<18) {
                     PanelRepresentante.Visible = true;
                 }
@@ -746,10 +752,12 @@ namespace MyMainApp
         {
             try
             {
-                string Id = GVEntregable.SelectedRow.Cells[1].Text;                
-                TxtIdEntregable.Text = Id;
+                int Id = GVEntregable.SelectedIndex;
+
+                TxtIdEntregable.Text = GVEntregable.DataKeys[Id].Value.ToString();
                 FillCamposEntregable();
                 FillGVEntregables();
+                FillGVEntregableDetalle();
                 PanelListaEntregable.Visible = false;
                 PanelEntregable.Visible = true;
             }
@@ -861,6 +869,7 @@ namespace MyMainApp
         {
             CActividadAspirante objActividadAspirante = new CActividadAspirante(_DataSistema.ConexionBaseDato);
             dvListaActividad = new DataView(objActividadAspirante.Detalle(0, _DataSistema.Cusuario, 0, "", 'x', "", "", _DataSistema.Cusuario, DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 2).TB_ACTIVIDAD_ASPIRANTE);
+
             GVActividadAspirante.DataSource = dvListaActividad;
             GVActividadAspirante.DataBind();
         }
@@ -878,13 +887,19 @@ namespace MyMainApp
 
         protected void BtnGuardarPasantiaActividad_Click(object sender, EventArgs e)
         {
-            try{
-                string nombreArchivoAct = _DataSistema.Cusuario + "_" + Convert.ToString(TxtIdActividadAspirante.Text) + "_" + Convert.ToString(TxtIdActividad.Text) + "_" + FileActividad.FileName;
+            try{ 
+                string estadoActividad = (TxtEstadoActividad.Text).Substring(0,1);
+                string nombreArchivoAct = _DataSistema.Cusuario + "_" + Convert.ToString(TxtIdActividadAspirante.Text) + "_" + Convert.ToString(TxtIdActividad.Text) + "_" + FileActividad.FileName; ;
+                //if (FileActividad.HasFile == true) { 
+                //    nombreArchivoAct = _DataSistema.Cusuario + "_" + Convert.ToString(TxtIdActividadAspirante.Text) + "_" + Convert.ToString(TxtIdActividad.Text) + "_" + FileActividad.FileName;
+                //}else{
+                //    nombreArchivoAct = "";
+                //}
                 CActividadAspirante objActividadAsp = new CActividadAspirante(_DataSistema.ConexionBaseDato);
-                objResultado = objActividadAsp.Actualizacion(Convert.ToInt32(TxtIdActividadAspirante.Text), _DataSistema.Cusuario, Convert.ToInt32(TxtIdActividad.Text), TxtComentario.Text, Convert.ToChar(TxtEstadoActividad.Text), TxtObservacion.Text, Convert.ToString(nombreArchivoAct), Convert.ToDateTime(TxtFechaEntrega.Text), _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+                objResultado = objActividadAsp.Actualizacion(Convert.ToInt32(TxtIdActividadAspirante.Text), _DataSistema.Cusuario, Convert.ToInt32(TxtIdActividad.Text), TxtComentario.Text, Convert.ToChar(estadoActividad), TxtObservacion.Text, Convert.ToString(nombreArchivoAct), Convert.ToDateTime(TxtFechaEntrega.Text), _DataSistema.Cusuario, TipoActualizacion.Actualizar);
                 if (objResultado.CodigoError == 0)
                 {
-                    FillGVListaActividadPasantia();
+                    FillGVListaActividadPasantia();                    
                 }
                 else
                 {
