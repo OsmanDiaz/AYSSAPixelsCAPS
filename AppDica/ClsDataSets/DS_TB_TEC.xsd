@@ -12,7 +12,7 @@
   <xs:element name="DS_TB_TEC" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_TB_TEC" msprop:Generator_UserDSName="DS_TB_TEC">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="TB_NOTA_IQ" msprop:Generator_TableClassName="TB_NOTA_IQDataTable" msprop:Generator_TableVarName="tableTB_NOTA_IQ" msprop:Generator_TablePropName="TB_NOTA_IQ" msprop:Generator_RowDeletingName="TB_NOTA_IQRowDeleting" msprop:Generator_RowChangingName="TB_NOTA_IQRowChanging" msprop:Generator_RowEvHandlerName="TB_NOTA_IQRowChangeEventHandler" msprop:Generator_RowDeletedName="TB_NOTA_IQRowDeleted" msprop:Generator_UserTableName="TB_NOTA_IQ" msprop:Generator_RowChangedName="TB_NOTA_IQRowChanged" msprop:Generator_RowEvArgName="TB_NOTA_IQRowChangeEvent" msprop:Generator_RowClassName="TB_NOTA_IQRow">
+        <xs:element name="TB_NOTA_IQ" msprop:Generator_TableClassName="TB_NOTA_IQDataTable" msprop:Generator_TableVarName="tableTB_NOTA_IQ" msprop:Generator_RowChangedName="TB_NOTA_IQRowChanged" msprop:Generator_TablePropName="TB_NOTA_IQ" msprop:Generator_RowDeletingName="TB_NOTA_IQRowDeleting" msprop:Generator_RowChangingName="TB_NOTA_IQRowChanging" msprop:Generator_RowEvHandlerName="TB_NOTA_IQRowChangeEventHandler" msprop:Generator_RowDeletedName="TB_NOTA_IQRowDeleted" msprop:Generator_RowClassName="TB_NOTA_IQRow" msprop:Generator_UserTableName="TB_NOTA_IQ" msprop:Generator_RowEvArgName="TB_NOTA_IQRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
@@ -22,7 +22,22 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ASIGNACION_PASANTIA" msprop:Generator_TableClassName="ASIGNACION_PASANTIADataTable" msprop:Generator_TableVarName="tableASIGNACION_PASANTIA" msprop:Generator_TablePropName="ASIGNACION_PASANTIA" msprop:Generator_RowDeletingName="ASIGNACION_PASANTIARowDeleting" msprop:Generator_RowChangingName="ASIGNACION_PASANTIARowChanging" msprop:Generator_RowEvHandlerName="ASIGNACION_PASANTIARowChangeEventHandler" msprop:Generator_RowDeletedName="ASIGNACION_PASANTIARowDeleted" msprop:Generator_UserTableName="ASIGNACION_PASANTIA" msprop:Generator_RowChangedName="ASIGNACION_PASANTIARowChanged" msprop:Generator_RowEvArgName="ASIGNACION_PASANTIARowChangeEvent" msprop:Generator_RowClassName="ASIGNACION_PASANTIARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_aspirante" msprop:Generator_ColumnVarNameInTable="columnid_aspirante" msprop:Generator_ColumnPropNameInRow="id_aspirante" msprop:Generator_ColumnPropNameInTable="id_aspiranteColumn" msprop:Generator_UserColumnName="id_aspirante" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="edad" msprop:Generator_ColumnVarNameInTable="columnedad" msprop:Generator_ColumnPropNameInRow="edad" msprop:Generator_ColumnPropNameInTable="edadColumn" msprop:Generator_UserColumnName="edad" type="xs:string" minOccurs="0" />
+              <xs:element name="Discapacidad" msprop:Generator_ColumnVarNameInTable="columnDiscapacidad" msprop:Generator_ColumnPropNameInRow="Discapacidad" msprop:Generator_ColumnPropNameInTable="DiscapacidadColumn" msprop:Generator_UserColumnName="Discapacidad" type="xs:string" minOccurs="0" />
+              <xs:element name="Semejanzas" msprop:Generator_ColumnVarNameInTable="columnSemejanzas" msprop:Generator_ColumnPropNameInRow="Semejanzas" msprop:Generator_ColumnPropNameInTable="SemejanzasColumn" msprop:Generator_UserColumnName="Semejanzas" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="ASIGNACION_PASANTIAKey1">
+      <xs:selector xpath=".//mstns:ASIGNACION_PASANTIA" />
+      <xs:field xpath="mstns:id_aspirante" />
+    </xs:unique>
   </xs:element>
 </xs:schema>

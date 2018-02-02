@@ -51,8 +51,7 @@ namespace ClsDataApp
 
             return objDataSet;
         }
-        public DataQuery Actualizacion(int Id, string IdAspirante, int IdPasantia,
-            int OpcionConsulta, string LoginUsuario, TipoActualizacion OpcionActualizacion)
+        public DataQuery Actualizacion(int Id, string IdAspirante, int IdPasantia, string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
             DataQuery objResultado = new DataQuery();
             try
@@ -62,7 +61,7 @@ namespace ClsDataApp
                 switch (OpcionActualizacion)
                 {
                     case TipoActualizacion.Adicionar:
-                        StrCommand = " ";
+                        StrCommand = "SP_TB_PASANTIA_ASPIRANTE_INSERT";
                         break;
                     case TipoActualizacion.Actualizar:
                         StrCommand = " ";
