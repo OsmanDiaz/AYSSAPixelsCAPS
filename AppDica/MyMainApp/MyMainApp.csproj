@@ -127,7 +127,7 @@
     <Content Include="Logout.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="TEC\TECC0001.aspx" />
-    <Content Include="TEC\TEC0002.aspx" />
+    <Content Include="TEC\TECC0002.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -235,12 +235,12 @@
     <Compile Include="TEC\TECC0001.aspx.designer.cs">
       <DependentUpon>TECC0001.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TEC\TEC0002.aspx.cs">
-      <DependentUpon>TEC0002.aspx</DependentUpon>
+    <Compile Include="TEC\TECC0002.aspx.cs">
+      <DependentUpon>TECC0002.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TEC\TEC0002.aspx.designer.cs">
-      <DependentUpon>TEC0002.aspx</DependentUpon>
+    <Compile Include="TEC\TECC0002.aspx.designer.cs">
+      <DependentUpon>TECC0002.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

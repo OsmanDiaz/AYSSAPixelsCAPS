@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterProceso.master" AutoEventWireup="true" CodeBehind="TEC0002.aspx.cs" Inherits="MyMainApp.TEC.TEC0002" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterProceso.master" AutoEventWireup="true" CodeBehind="TECC0002.aspx.cs" Inherits="MyMainApp.TEC.TECC0002" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxtoolkit" %>
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
@@ -33,11 +33,26 @@
                                     <ContentTemplate>
                                         <%--inicio contenido tab--%><%--inicio tab datos--%>
                                         <br />
-                                        <asp:GridView ID="GVListaEmpresa" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                                        <asp:TextBox ID="TxtIdEmpresa" runat="server" Visible="False"></asp:TextBox>
+                                        <asp:Panel ID="PanelListaEmpresa" runat="server" >
+                                        <asp:GridView ID="GVListaEmpresa" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaEmpresa_SelectedIndexChanged">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
-                                                <asp:BoundField HeaderText="NOMBRE EMPRESA" />
-                                                <asp:BoundField HeaderText="DEPARTAMENTO" />
+                                                <asp:TemplateField HeaderText="" Visible="false">
+                                                    <ItemTemplate>
+                                                        <asp:TextBox ID="TxtIdEmpresaGV" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:BoundField HeaderText="NOMBRE EMPRESA" DataField="DS_NOMBRE_EMPRESA" />
+                                                <asp:BoundField HeaderText="NOMBRE DE CONTACTO" DataField="DS_NOMBRE_CONTACTO" />
+                                                <asp:BoundField DataField="DS_TELEFONO_EMPRESA" HeaderText="TELEFONO EMPRESA" />
+                                                <asp:BoundField DataField="DS_EMAIL_CONTACTO" HeaderText="CORREO" />
+                                                <asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        <asp:Button ID="BtnInfoEmpresa" runat="server" CommandName="Select"
+                                                            Text="Informacion Empresa"  />
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
                                             </Columns>
                                             <EditRowStyle BackColor="#2461BF" />
                                             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -51,6 +66,74 @@
                                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                         </asp:GridView>
                                         <br />
+                                        </asp:Panel>
+                                        <asp:Panel ID="PanelDetalleInfoEmpresa" runat="server" Visible="False">
+                                            <br />
+                                          <div align="center">
+                                                <asp:Label ID="Label49" runat="server" Text="INFORMACION EMPRESA" Font-Size="14pt"></asp:Label></div>
+                                          <div class="form-group">
+                                                <asp:Label ID="Label51" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE EMPRESA:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox ID="TxtNombreEmp" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label ID="Label52" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE CONTACTO:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtNombreContacto" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                                <asp:Label ID="Label53" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="EMAIL CONTACTO:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtEmailContacto" runat="server" class="form-control"  Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label ID="Label10" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="TELEFONO CONTACTO:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtTelefonoContacto" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                                <asp:Label ID="Label11" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NIT EMPRESA:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtNitEmpresa" runat="server" class="form-control"  Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label ID="Label12" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="TELEFONO EMPRESA:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtTelefonoEmpresa" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-3" ID="Label67" runat="server" Font-Bold="True" Text="DIRECCION:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox class="form-control" ID="TxtDireccionEmpresa" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label ID="Label14" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE REPRESENTANTE LEGAL:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtRepresentanteLegal" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                                <asp:Label ID="Label15" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="EMAIL REPRESENTANTE LEGAL:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtEmailRepresentanteLegal" runat="server" class="form-control"  Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label ID="Label16" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NIT REPRESENTANTE LEGAL:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtNitRepresentanteLegal" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                                <asp:Label ID="Label17" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="DUI REPRESENTANTE LEGAL:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtDuiRepresentanteLegal" runat="server" class="form-control"  Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div align="center">
+                                                <asp:Button ID="btnAtrasEnt" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" OnClick="BtnAtrasDetalleEmpresa_Click"/>
+                                            </div>
+                                            <br />
+                                        </asp:Panel>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
                             </ContentTemplate>
