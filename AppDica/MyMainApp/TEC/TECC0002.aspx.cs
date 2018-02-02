@@ -13,7 +13,7 @@ namespace MyMainApp.TEC
 {
     public partial class TECC0002 : FormaSISWeb, IAcciones
     {
-        private DataView dvEmpresa, dvPasantia, dvEscolaridad, dvHabilidad;
+        private DataView dvEmpresa, dvPasantia, dvEscolaridad, dvHabilidad, dvConsultoria;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -32,6 +32,7 @@ namespace MyMainApp.TEC
         {
             FillGVListaEmpresa();
             FillGVListaPasantia();
+            FillInfoProyecto();
             //FillGVAspiranteAsignado();
             //FillCboTipoDocumento();
         }
@@ -157,6 +158,36 @@ namespace MyMainApp.TEC
         {
             PanelListadoPasantia.Visible = true;
             PanelListadoAspPas.Visible = false;
+        }
+
+        protected void GVListaProyectos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int Id = GVListaProyectos.SelectedIndex;
+
+                TxtIdEmpresa.Text = GVListaProyectos.DataKeys[Id].Value.ToString();
+                FillInfoProyecto();
+                PanelListaProyectos.Visible = false;
+                PanelEntregables.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPActividad);
+            }
+        }
+
+        private void FillInfoProyecto()
+        {
+            CConsultoria objConsultoria = new CConsultoria(_DataSistema.ConexionBaseDato);
+            dvConsultoria = new DataView(objConsultoria.Detalle(0, "", "", "", DateTime.Today, 0, "", 'x', 0, "", DateTime.Today, "", DateTime.Today, 5).TB_CONSULTORIA);
+            GVListaProyectos.DataSource = dvConsultoria;
+            GVListaProyectos.DataBind();
+        }
+
+        protected void GVListaEntregables_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
 
