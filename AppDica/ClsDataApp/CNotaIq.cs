@@ -61,7 +61,7 @@ namespace ClsDataApp
                 switch (OpcionActualizacion)
                 {
                     case TipoActualizacion.Adicionar:
-                        StrCommand = "";
+                        StrCommand = "SP_TB_NOTA_IQ_INSERT";
                         break;
                     case TipoActualizacion.Actualizar:
                         StrCommand = " ";

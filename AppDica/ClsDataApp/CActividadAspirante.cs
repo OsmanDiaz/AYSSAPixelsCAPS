@@ -73,7 +73,7 @@ namespace ClsDataApp
                         StrCommand = "SP_TB_ACTIVIDAD_ASPIRANTE_UPDATE";
                         break;
                     case TipoActualizacion.Eliminar:
-                        StrCommand = "";
+                        StrCommand = "SP_TB_ACTIVIDAD_ASPIRANTE_DELETE";
                         break;
                     case TipoActualizacion.No_Definida:
                         objResultado.CodigoError = -1;

@@ -139,6 +139,60 @@ namespace MyMainApp.TEC {
         protected global::System.Web.UI.WebControls.Label Label63;
         
         /// <summary>
+        /// Control Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// Control TxtNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtNombre;
+        
+        /// <summary>
+        /// Control Label3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+        
+        /// <summary>
+        /// Control TxtApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtApellido;
+        
+        /// <summary>
+        /// Control Label6.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label6;
+        
+        /// <summary>
+        /// Control TxtNit.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtNit;
+        
+        /// <summary>
         /// Control Label64.
         /// </summary>
         /// <remarks>
@@ -157,22 +211,22 @@ namespace MyMainApp.TEC {
         protected global::System.Web.UI.WebControls.TextBox TxtNotaIq;
         
         /// <summary>
-        /// Control Label67.
+        /// Control Label43.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label67;
+        protected global::System.Web.UI.WebControls.Label Label43;
         
         /// <summary>
-        /// Control TxtObservacion.
+        /// Control CboTipoDocumento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtObservacion;
+        protected global::System.Web.UI.WebControls.DropDownList CboTipoDocumento;
         
         /// <summary>
         /// Control Label22.
@@ -193,31 +247,31 @@ namespace MyMainApp.TEC {
         protected global::AjaxControlToolkit.AsyncFileUpload FileDocumento;
         
         /// <summary>
-        /// Control btnGuardarNotaIq.
+        /// Control Label67.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarNotaIq;
+        protected global::System.Web.UI.WebControls.Label Label67;
         
         /// <summary>
-        /// Control btnAtrasEnt.
+        /// Control TxtObservacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAtrasEnt;
+        protected global::System.Web.UI.WebControls.TextBox TxtObservacion;
         
         /// <summary>
-        /// Control GridView1.
+        /// Control BtnGuardarNotaIq.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Button BtnGuardarNotaIq;
         
         /// <summary>
         /// Control TabPanel2.

@@ -88,6 +88,7 @@
     <Compile Include="CMenu.cs" />
     <Compile Include="CMunicipio.cs" />
     <Compile Include="CNivelConocimiento.cs" />
+    <Compile Include="CNotaIq.cs" />
     <Compile Include="COpcionAcademica.cs" />
     <Compile Include="CPais.cs" />
     <Compile Include="CPasantia.cs" />

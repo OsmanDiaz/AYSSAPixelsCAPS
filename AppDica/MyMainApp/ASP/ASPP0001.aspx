@@ -205,7 +205,7 @@
                                            <asp:TextBox ID="TxtIdEntregable" runat="server" Text="0" Visible="False"></asp:TextBox>
                                            <asp:TextBox ID="TxtIdConsultoria" runat="server" Text="0" Visible="False"></asp:TextBox>
                                            <asp:TextBox ID="TxtNombreConsultoria" runat="server" Text="0" Visible="False"></asp:TextBox>
-                                            <asp:GridView ID="GVEntregable" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVEntregable_SelectedIndexChanged">
+                                            <asp:GridView ID="GVEntregable" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVEntregable_SelectedIndexChanged" DataKeyNames="ID">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
                                                 <asp:TemplateField HeaderText="" Visible="false">
@@ -291,12 +291,6 @@
                                                             <a href='<%# "http://"+Request.Url.Authority +"/ASP/Entregables/"+Eval("DS_NOMBRE_CONSULTORIA")+"/"+Eval("URL_ENTREGABLE") %>' target="_blank">Descargar</a>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-
-                                                    <asp:TemplateField HeaderText="Eliminar">
-                                                            <ItemTemplate>
-                                                                <asp:Button ID="BtnEliminarEntregable" runat="server" CommandName="Delete" OnClientClick="return confirm('¿Desea eliminar este archivo?');" Text="Eliminar" />
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
                                                 </Columns>
                                                 <EditRowStyle BackColor="#2461BF" />
                                                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -333,8 +327,8 @@
                                            <asp:TextBox ID="TxtIdAspirante" runat="server" Text="0" Visible="False"></asp:TextBox>
                                            <asp:TextBox ID="TxtNombrePasantiaAct" runat="server" Text="0" Visible="False"></asp:TextBox>
                                             <asp:TextBox ID="TxtNombreAct" runat="server" Text="0" Visible="False"></asp:TextBox>
-                                            <asp:TextBox ID="TxtUrlActiText" runat="server" Text="0" Visible="False"></asp:TextBox>
-                                            <asp:GridView ID="GVListaPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVActividad_SelectedIndexChanged">
+                                            <asp:TextBox ID="TxtUrlActiText" runat="server" Visible="False"></asp:TextBox>
+                                            <asp:GridView ID="GVListaPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVActividad_SelectedIndexChanged" DataKeyNames="ID">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
                                                 <asp:TemplateField HeaderText="" Visible="false">
@@ -419,6 +413,12 @@
                                             <asp:GridView ID="GVActividadAspirante" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
+                                                    <asp:TemplateField HeaderText="" Visible="false">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="TxtIdActividadGV" runat="server" Text='<%#Eval("ID")%>' Visible="False">
+                                                            </asp:TextBox>
+                                                    </ItemTemplate>
+                                                    </asp:TemplateField>
                                                     <asp:BoundField HeaderText="NOMBRE ACTIVIDAD" DataField="DS_ACTIVIDAD" />
                                                     <asp:BoundField HeaderText="DESCRIPCION" DataField="DS_DESCRIPCION_ACT" />
                                                     <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ACT" />
@@ -436,12 +436,6 @@
                                                                         <a href='<%# "http://"+Request.Url.Authority +"/ASP/Actividades/"+Eval("NOMBRE_PASANTIA")+"/"+Eval("DS_ACTIVIDAD")+"/"+Eval("URL_ACTIVIDAD") %>' target="_blank">Descargar</a>
                                                              <%
                                                                 } %>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-
-                                                    <asp:TemplateField HeaderText="Eliminar">
-                                                            <ItemTemplate>
-                                                                <asp:Button ID="BtnEliminarActividad" runat="server" CommandName="Delete" OnClientClick="return confirm('¿Desea eliminar este archivo?');" Text="Eliminar" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                 </Columns>
