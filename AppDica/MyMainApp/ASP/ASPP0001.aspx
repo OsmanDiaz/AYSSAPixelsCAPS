@@ -199,8 +199,10 @@
                         
                       <ajaxToolkit:TabPanel runat="server" HeaderText="ENTREGABLE" ID="TabPanel7">
                            <ContentTemplate>
-                               <asp:UpdatePanel ID="UUPEntregable" runat="server"><ContentTemplate>
-                               <asp:Panel ID="PanelListaEntregable" runat="server"><br />                                   
+                               <asp:UpdatePanel ID="UUPEntregable" runat="server">
+                                   <ContentTemplate>
+                               <asp:Panel ID="PanelListaEntregable" runat="server">
+                                   <br />                                   
                                        
                                            <asp:TextBox ID="TxtIdEntregable" runat="server" Text="0" Visible="False"></asp:TextBox>
                                            <asp:TextBox ID="TxtIdConsultoria" runat="server" Text="0" Visible="False"></asp:TextBox>
@@ -320,7 +322,8 @@
                <%--inicio tab PASANTIA  --%>
                       <ajaxToolkit:TabPanel runat="server" HeaderText="ACTIVIDAD PASANTIA" ID="TabPanel6">
                            <ContentTemplate>
-                               <asp:UpdatePanel ID="UPACTPAS" runat="server"><ContentTemplate>
+                               <asp:UpdatePanel ID="UPACTPAS" runat="server">
+                                   <ContentTemplate>
                                <asp:Panel ID="PanelListaPasantia" runat="server"><br />                                   
                                            <asp:TextBox ID="TxtIdActividad" runat="server" Text="0" Visible="False"></asp:TextBox>
                                            <asp:TextBox ID="TxtIdActividadAspirante" runat="server" Text="0" Visible="False"></asp:TextBox>
