@@ -312,7 +312,7 @@
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
                                                     <asp:BoundField DataField="DS_ESCOLARIDAD" HeaderText="CATEGORIA ESCOLARIDAD" />
-                                                    <asp:BoundField HeaderText="NIVEL EDUCATIVO" DataField="DS_ESCOLARIDAD" />
+                                                    <asp:BoundField HeaderText="NIVEL EDUCATIVO" DataField="DS_ANIO" />
                                                     <asp:BoundField HeaderText="OPCIÓN ACADÉMICA" DataField="DS_CARRERA" />
                                                 </Columns>
                                                 <EditRowStyle BackColor="#2461BF" />

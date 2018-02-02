@@ -21,7 +21,7 @@
         <div class="container-fluid">
             <div id="content">
                 <asp:Panel ID="Panel1" runat="server" Width="100%">
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="4" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="6" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
 
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
@@ -277,7 +277,7 @@
                                             <br />
                                             <div align="center">
                                                 <asp:Button ID="btnGuardarEntregable" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="BtnGuardarEntregableConsultoria_Click"/>
-                                                &nbsp;<asp:Button ID="btnAtrasEnt" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False"/>
+                                                &nbsp;<asp:Button ID="btnAtrasEnt" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" OnClick="BtnCancelarEntregableConsultoria_Click"/>
                                             </div>
                                             <br />
                                             <asp:GridView ID="GVEntregableAspirante" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
@@ -407,7 +407,7 @@
                                             <br />
                                             <div align="center">
                                                 <asp:Button ID="BtnPasantiaActividad" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="BtnGuardarPasantiaActividad_Click"/>
-                                                &nbsp;<asp:Button ID="Button2" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False"/>
+                                                &nbsp;<asp:Button ID="BtnAtrasActividad" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" OnClick="BtnCancelarPasantiaActividad_Click"/>
                                             </div>
                                             <br />
                                             <asp:GridView ID="GVActividadAspirante" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">

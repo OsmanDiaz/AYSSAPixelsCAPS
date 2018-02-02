@@ -818,6 +818,13 @@ namespace MyMainApp
             }
         }
 
+
+        protected void BtnCancelarEntregableConsultoria_Click(object sender, EventArgs e)
+        {
+            PanelListaEntregable.Visible = true;
+            PanelEntregable.Visible = false;
+        }
+
         protected void FileEntregable_UploadedComplete(object sender, AjaxControlToolkit.AsyncFileUploadEventArgs e)
         {
             bool exists = System.IO.Directory.Exists(Server.MapPath("~/ASP/Entregables/" + Convert.ToString(TxtNombreConsultoria.Text) + "/"));
@@ -922,6 +929,13 @@ namespace MyMainApp
                 DespliegaMensajeUpdatePanel(ex.Message, UPACTPAS);
             }
         }
+
+        protected void BtnCancelarPasantiaActividad_Click(object sender, EventArgs e)
+        {
+            PanelListaPasantia.Visible = true;
+            PanelActividadDesc.Visible = false;
+        }
+
 
     }
 }

@@ -107,11 +107,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\menu.css" />
     <Content Include="Default.aspx" />
-    <Content Include="EMP\DetalleAspirante.aspx" />
-    <Content Include="EMP\DetallePasantia.aspx" />
     <Content Include="EMP\EMPP0001.aspx" />
-    <Content Include="EMP\RegistroActividad.aspx" />
-    <Content Include="EMP\RegistroEntregable.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="images\logo.png" />
@@ -127,7 +123,7 @@
     <Content Include="Logout.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="TEC\TECC0001.aspx" />
-    <Content Include="TEC\TEC0002.aspx" />
+    <Content Include="TEC\TECC0002.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -154,40 +150,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EMP\DetalleAspirante.aspx.cs">
-      <DependentUpon>DetalleAspirante.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EMP\DetalleAspirante.aspx.designer.cs">
-      <DependentUpon>DetalleAspirante.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EMP\DetallePasantia.aspx.cs">
-      <DependentUpon>DetallePasantia.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EMP\DetallePasantia.aspx.designer.cs">
-      <DependentUpon>DetallePasantia.aspx</DependentUpon>
-    </Compile>
     <Compile Include="EMP\EMPP0001.aspx.cs">
       <DependentUpon>EMPP0001.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EMP\EMPP0001.aspx.designer.cs">
       <DependentUpon>EMPP0001.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EMP\RegistroActividad.aspx.cs">
-      <DependentUpon>RegistroActividad.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EMP\RegistroActividad.aspx.designer.cs">
-      <DependentUpon>RegistroActividad.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EMP\RegistroEntregable.aspx.cs">
-      <DependentUpon>RegistroEntregable.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EMP\RegistroEntregable.aspx.designer.cs">
-      <DependentUpon>RegistroEntregable.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -235,12 +203,12 @@
     <Compile Include="TEC\TECC0001.aspx.designer.cs">
       <DependentUpon>TECC0001.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TEC\TEC0002.aspx.cs">
-      <DependentUpon>TEC0002.aspx</DependentUpon>
+    <Compile Include="TEC\TECC0002.aspx.cs">
+      <DependentUpon>TECC0002.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TEC\TEC0002.aspx.designer.cs">
-      <DependentUpon>TEC0002.aspx</DependentUpon>
+    <Compile Include="TEC\TECC0002.aspx.designer.cs">
+      <DependentUpon>TECC0002.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
