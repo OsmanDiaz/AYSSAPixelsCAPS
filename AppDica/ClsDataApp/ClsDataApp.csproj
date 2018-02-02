@@ -65,6 +65,7 @@
     <Compile Include="CActividadAspirante.cs" />
     <Compile Include="CActividadEconomica.cs" />
     <Compile Include="CAreaPasantia.cs" />
+    <Compile Include="CAsignacionAspirante.cs" />
     <Compile Include="CAspirante.cs" />
     <Compile Include="CCategoriaEscolaridad.cs" />
     <Compile Include="CCategoriaHabilidad.cs" />
