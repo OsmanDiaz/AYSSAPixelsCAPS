@@ -15,22 +15,22 @@
                 <asp:Label ID="LblTitulo" runat="server" Text="Registro para Empresa" Font-Bold="True" Font-Size="18pt"></asp:Label>
             </div>
             <div style="text-align: right; right: 25px; left: 25px">
-                
-                        <asp:Button ID="BtnFicha" runat="server" Text="Ver Ficha" /><br />
-                      
+
+                <asp:Button ID="BtnFicha" runat="server" Text="Ver Ficha" /><br />
+
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                    <ContentTemplate>     
-                         <asp:Label ID="LblEmpresa" runat="server" Text="" Font-Bold="True"></asp:Label><br />
+                    <ContentTemplate>
+                        <asp:Label ID="LblEmpresa" runat="server" Text="" Font-Bold="True"></asp:Label><br />
                         <asp:Label ID="LblPasantia" runat="server" Text="" Font-Bold="True"></asp:Label><br />
                         <asp:Label ID="LblProyecto" runat="server" Text="" Font-Bold="True"></asp:Label>
-                </ContentTemplate>
+                    </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
             <%--fin div titulo--%>
             <div class="container-fluid">
                 <div id="content">
                     <%--inicio container-fluid--%>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="3" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server">
@@ -132,12 +132,12 @@
                                         <br />
                                         <div align="center">
                                             <asp:Button ID="BtnGuardarDatosGenerales" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="BtnGuardarDatosGenerales_Click" ValidationGroup="DatoGeneral" />
-                                       
+
                                         </div>
                                         <br />
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
-                                
+
                             </ContentTemplate>
                         </ajaxToolkit:TabPanel>
                         <%--fin tab datos--%>
@@ -420,51 +420,51 @@
                                             <div align="center">
                                                 <asp:Label ID="Label63" runat="server" Text="Actividades" Font-Size="14pt"></asp:Label>
                                             </div>
- <div class="form-group">
-                    <asp:Label ID="Label64" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE ACTIVIDAD:"></asp:Label>
-                    <div class="col-md-9">
-                        <asp:TextBox ID="TxtActividad" runat="server"  class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
-                    </div>
-                </div>
-            <div class="form-group">
-                    <asp:Label ID="Label65" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="DURACION EN DIAS:"></asp:Label>
-                    <div class="col-md-3">
-                        <asp:TextBox ID="TxtDuracionA" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
-                    </div>
-                    <asp:Label ID="Label66" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="FECHA DE ENTREGA:"></asp:Label>
-                    <div class="col-md-3">
-                        <asp:TextBox ID="TxtFechaEntregaA" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
-                    </div>
-                </div>
-            <div class="form-group">
-                    <asp:Label class="control-label  col-sm-3" ID="Label67" runat="server" Font-Bold="True" Text="DESCRIPCION:"></asp:Label>
-                    <div class="col-md-9">
-                        <asp:TextBox class="form-control" ID="TxtDescripActividad" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
-                    </div>
-                </div>
-            <br />
-                <div align="center">
-                    <asp:Button ID="BtnActividades" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="BtnActividades_Click" />
-                    &nbsp;<asp:Button ID="BtnCancelarActivades" runat="server" Text="CANCELAR" class="btn btn-primary"/>
-                </div>
-            <asp:GridView ID="GVActividades" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
-                <AlternatingRowStyle BackColor="White" />
-                <Columns>
-                    <asp:BoundField HeaderText="NOMBRE ACTIVIDAD" DataField="DS_ACTIVIDAD" />
-                    <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ACT" />
-                    <asp:BoundField HeaderText="DESCRIPCIÓN" DataField="DS_DURACION_ACT" />
-                </Columns>
-                <EditRowStyle BackColor="#2461BF" />
-                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#EFF3FB" />
-                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                <SortedDescendingHeaderStyle BackColor="#4870BE" />
-            </asp:GridView>
+                                            <div class="form-group">
+                                                <asp:Label ID="Label64" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE ACTIVIDAD:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox ID="TxtActividad" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label ID="Label65" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="DURACION EN DIAS:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtDuracionA" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
+                                                </div>
+                                                <asp:Label ID="Label66" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="FECHA DE ENTREGA:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtFechaEntregaA" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-3" ID="Label67" runat="server" Font-Bold="True" Text="DESCRIPCION:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox class="form-control" ID="TxtDescripActividad" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div align="center">
+                                                <asp:Button ID="BtnActividades" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="BtnActividades_Click" />
+                                                &nbsp;<asp:Button ID="BtnCancelarActivades" runat="server" Text="CANCELAR" class="btn btn-primary" />
+                                            </div>
+                                            <asp:GridView ID="GVActividades" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:BoundField HeaderText="NOMBRE ACTIVIDAD" DataField="DS_ACTIVIDAD" />
+                                                    <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ACT" />
+                                                    <asp:BoundField HeaderText="DESCRIPCIÓN" DataField="DS_DURACION_ACT" />
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>
                                         </asp:Panel>
                                         <br />
 
@@ -519,11 +519,11 @@
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="VER ASPIRANTES">
-                                                        <ItemTemplate>
-                                                            <asp:Button ID="BtnVerAspirantes" runat="server" CommandName="Select"
-                                                                Text="Ver Aspirantes" />
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        <asp:Button ID="BtnVerAspirantes" runat="server" CommandName="Select"
+                                                            Text="Ver Aspirantes" />
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
                                             </Columns>
                                             <EditRowStyle BackColor="#2461BF" />
                                             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -537,53 +537,54 @@
                                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                         </asp:GridView>
                                         <asp:Panel ID="PanelAspirantes" runat="server" Visible="False">
-                                        <asp:GridView ID="GVAspirantes" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVAspirantes_SelectedIndexChanged" EmptyDataText="No existen registros">
-                                            <AlternatingRowStyle BackColor="White" />
-                                            <Columns>
-                                                <asp:BoundField HeaderText="NOMBRE ASPIRANTE" DataField="NOMBRE" />
-                                                <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" />
-                                                <asp:TemplateField HeaderText="ACTIVIDADES">
+                                            <asp:GridView ID="GVAspirantes" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVAspirantes_SelectedIndexChanged" EmptyDataText="No existen registros">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:BoundField HeaderText="NOMBRE ASPIRANTE" DataField="NOMBRE" />
+                                                    <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" />
+                                                    <asp:TemplateField HeaderText="ACTIVIDADES">
                                                         <ItemTemplate>
                                                             <asp:Button ID="BtnVerActividades" runat="server" CommandName="Select"
                                                                 Text="Ver Actividades" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                            </Columns>
-                                            <EditRowStyle BackColor="#2461BF" />
-                                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                                            <RowStyle BackColor="#EFF3FB" />
-                                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                                        </asp:GridView>
-                                       <center> <asp:Button ID="BtnRegresarPasantias" runat="server" class="btn btn-primary" OnClick="BtnRegresarPasantias_Click" Text="Regresar a Listado Pasantias" /></center>
-                                       </asp:Panel> <br />
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>
+                                            <center> <asp:Button ID="BtnRegresarPasantias" runat="server" class="btn btn-primary" OnClick="BtnRegresarPasantias_Click" Text="Regresar a Listado Pasantias" /></center>
+                                        </asp:Panel>
+                                        <br />
                                         <asp:Panel ID="PanelActividadAspirante" runat="server" Visible="False">
-                                        <asp:GridView ID="GVActividadAspirante" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Visible="False" Width="100%" EmptyDataText="No existen registros">
-                                            <AlternatingRowStyle BackColor="White" />
-                                            <Columns>
-                                                <asp:BoundField HeaderText="NOMBRE ACTIVIDAD" DataField="DS_ACTIVIDAD" />
-                                                <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ACT" />
-                                                <asp:BoundField HeaderText="ESTADO" DataField="CD_ESTADO" />
-                                                <asp:BoundField HeaderText="COMENTARIO ASPIRANTE" DataField="DS_COMENTARIO" />
-                                            </Columns>
-                                            <EditRowStyle BackColor="#2461BF" />
-                                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                                            <RowStyle BackColor="#EFF3FB" />
-                                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                                        </asp:GridView>
-                                         <center> <asp:Button ID="Button1" runat="server" class="btn btn-primary" OnClick="BtnRegresarAspirantes_Click" Text="Regresar a Listado Aspirantes" /></center>
-                                     </asp:Panel>
+                                            <asp:GridView ID="GVActividadAspirante" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Visible="False" Width="100%" EmptyDataText="No existen registros">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:BoundField HeaderText="NOMBRE ACTIVIDAD" DataField="DS_ACTIVIDAD" />
+                                                    <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ACT" />
+                                                    <asp:BoundField HeaderText="ESTADO" DataField="CD_ESTADO" />
+                                                    <asp:BoundField HeaderText="COMENTARIO ASPIRANTE" DataField="DS_COMENTARIO" />
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>
+                                            <center> <asp:Button ID="Button1" runat="server" class="btn btn-primary" OnClick="BtnRegresarAspirantes_Click" Text="Regresar a Listado Aspirantes" /></center>
+                                        </asp:Panel>
                                         <br />
 
                                     </ContentTemplate>
@@ -744,20 +745,150 @@
                             </ContentTemplate>
                         </ajaxToolkit:TabPanel>
 
+                        <ajaxToolkit:TabPanel ID="TabPanel5" runat="server" HeaderText="LISTA DE PROYECTOS">
+                            
+                            <ContentTemplate>
+                                <asp:UpdatePanel ID="UPListaProyecto" runat="server">
+                                    <ContentTemplate>
+                                        <br />
+                                        <asp:Panel ID="PanelAspiranteEntregable" runat="server">
+                                            <div align="center">
+                                                <asp:Label ID="Label68" runat="server" Text="LISTA DE PROYECTOS"  Font-Size="14pt"></asp:Label> <br />
+                                                </div>
+                                            <asp:TextBox ID="TxtIdEntregable" runat="server" Text="0" Visible="False"></asp:TextBox>
+                                           <asp:TextBox ID="TxtIdConsultoria" runat="server" Text="0" Visible="False"></asp:TextBox>
+                                             <asp:TextBox ID="TxtIdAspirante" runat="server" Text="0" Visible="False"></asp:TextBox>
+                                            <asp:GridView ID="GVAspiranteEntregable" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVAspiranteEntregable_SelectedIndexChanged" DataKeyNames="ID">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:BoundField HeaderText="PROYECTO" DataField="DS_NOMBRE_CONSULTORIA" />
+                                                    <asp:BoundField HeaderText="ENTREGABLE" DataField="DS_ENTREGABLE" />
+                                                    <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ENT" />
+                                                    <asp:TemplateField HeaderText="VER ENTREGABLE">
+                                                        <ItemTemplate>
+                                                            <asp:Button ID="BtnVerEntregable" runat="server" CommandName="Select" Text="Ver Entregable" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>
+                                        </asp:Panel><br />
+                                        
+                                        <asp:Panel ID="PanelEntregableA" runat="server" Visible="false">
+                                            <div align="center">
+                                            <asp:Label ID="Label69" runat="server" Text="LISTA DE ENTREGABLES"  Font-Size="14pt"></asp:Label><br />
+                                                </div>
+                                            <asp:GridView ID="GVListaEntregable" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaEntregable_SelectedIndexChanged">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:BoundField HeaderText="ENTREGABLE" DataField="DS_ENTREGABLE" />
+                                                    <asp:BoundField HeaderText="ASPIRANTE" DataField="DS_COMPLETO" />
+                                                    <asp:BoundField HeaderText="OBSERVACION" DataField="DS_OBSERVACION_ENTREGABLE" />
+                                                    <asp:TemplateField HeaderText="VER DETALLE">
+                                                        <ItemTemplate>
+                                                            <asp:Button ID="BtnVerDetalle" runat="server" CommandName="Select" Text="Ver Detalle" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>
+                                        </asp:Panel>
+                                        <asp:Panel ID="PanelDetalleEntregable" runat="server" Visible="false">
+                                            <br />
+                                            <div align="center">
+                                            <asp:Label ID="Label75" runat="server" Text="DETALLE DE ENTREGABLE"  Font-Size="14pt"></asp:Label><br />
+                                                </div>
+                                            <div class="form-group">
+                                            <asp:Label ID="Label76" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRES:"></asp:Label>
+                                                <div class="col-md-3">
+                                                <asp:TextBox ID="TxtNombre" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                            <asp:Label ID="Label77" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="APELLIDOS:"></asp:Label>
+                                                <div class="col-md-3">
+                                                <asp:TextBox ID="TxtApellido" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                 </div>
+                                        </div>
+                                        <div class="form-group">
+                                                <asp:Label ID="Label70" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE ENTREGABLE:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox ID="TxtNombreEntregable" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label ID="Label71" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="DURACION EN DIAS:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtDuracionEntregable" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                                <asp:Label ID="Label72" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="FECHA DE ENTREGA:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtFechaEntregaEntregable" runat="server" class="form-control"  Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-3" ID="Label73" runat="server" Font-Bold="True" Text="DESCRIPCION:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox class="form-control" ID="TxtDescripcion" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label ID="Label74" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="ESTADO ENTREGABLE:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:DropDownList ID="CboEstadoEntregable" runat="server">
+                                                        <asp:ListItem Value="B">Aprobado</asp:ListItem>
+                                                        <asp:ListItem Value="R">Rechazado</asp:ListItem>
+                                                        <asp:ListItem Value="O">Con Observación</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </div>  
+                                            </div> 
+                                             <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-3" ID="Label78" runat="server" Font-Bold="True" Text="OBSERVACIÓN:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox class="form-control" ID="TxtObservEntregable" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="true" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                        </asp:Panel>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </ContentTemplate>
+                            
+                        </ajaxToolkit:TabPanel>
+
                     </ajaxToolkit:TabContainer>
                     <%--fin tab habilidades--%>
-
                 </div>
                 <%--fin contenido tab--%>
             </div>
             <%--fin container-fluid--%>
-              <asp:Panel ID="PanelFicha" runat="server" CssClass="modalPopup"  Height="540px">
-        <br /><center>
+            <asp:Panel ID="PanelFicha" runat="server" CssClass="modalPopup" Height="540px">
+                <br />
+                <center>
         <rsweb:ReportViewer ID="RVEmpresa" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="75%" style="margin-right: 0px"><LocalReport ReportPath="EMP\RptEmpresa.rdlc"></LocalReport></rsweb:ReportViewer></center>
-       <div align="center"><br /><br /><asp:Button ID="BtnCerrarFicha" runat="server" Text="Cerrar" /></div>
-             </asp:Panel>
-          <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="PanelFicha" BackgroundCssClass="modalBackround" TargetControlID="BtnFicha" CancelControlID="BtnCerrarFicha"></ajaxToolkit:ModalPopupExtender>
- 
+                <div align="center">
+                    <br />
+                    <br />
+                    <asp:Button ID="BtnCerrarFicha" runat="server" Text="Cerrar" />
+                </div>
+            </asp:Panel>
+            <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="PanelFicha" BackgroundCssClass="modalBackround" TargetControlID="BtnFicha" CancelControlID="BtnCerrarFicha"></ajaxToolkit:ModalPopupExtender>
+
         </form>
         <%--fin formulario--%>
     </asp:Panel>

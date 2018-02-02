@@ -20,10 +20,10 @@ namespace MyMainApp.EMP
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
-             if (_DataSistema.Cusuario == null)
+            if (_DataSistema.Cusuario == null)
             {
                 Response.Redirect("~/Default.aspx");
-            } 
+            }
 
             if (!IsPostBack)
             {
@@ -62,7 +62,8 @@ namespace MyMainApp.EMP
             }
         }
 
-        public void Consultar() {
+        public void Consultar()
+        {
             FillCamposDatosGenerales();
             FillCamposPasantia();
             FillCboActEcono();
@@ -82,6 +83,10 @@ namespace MyMainApp.EMP
             FillGVNivelEducativo();
             FillGVContrato();
             CargarReporte();
+            FillGVAspiranteEntregable();
+            FillGVListaEntregable();
+            FillCamposEntregable();
+            FillCamposAspirante();
         }
 
         public void Adicionar() { }
@@ -99,29 +104,30 @@ namespace MyMainApp.EMP
             CEmpresa objEmpresa = new CEmpresa(_DataSistema.ConexionBaseDato);
             dvEmpresa = new DataView(objEmpresa.Detalle(0, TxtEmpresa.Text, TxtNombreContact.Text, TxtEmailC.Text, TxtTelC.Text, _DataSistema.Cusuario,
                 TxtTelEmpresa.Text, TxtDirEmpresa.Text, 0, 0,
-            TxtNombRepre.Text, TxtEmailRep.Text, TxtNitRep.Text, TxtDuiRep.Text,0, _DataSistema.Cusuario, _DataSistema.Cusuario, DateTime.Now, "", DateTime.Now, 2).TB_EMPRESA);
+            TxtNombRepre.Text, TxtEmailRep.Text, TxtNitRep.Text, TxtDuiRep.Text, 0, _DataSistema.Cusuario, _DataSistema.Cusuario, DateTime.Now, "", DateTime.Now, 2).TB_EMPRESA);
             if (dvEmpresa.Count > 0)
             {
                 TxtIDEmpresa.Text = dvEmpresa.Table.Rows[0]["ID"].ToString();
                 TxtEmpresa.Text = dvEmpresa.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString();
                 LblEmpresa.Text = TxtEmpresa.Text;
-                CboActEcono.SelectedValue=dvEmpresa.Table.Rows[0]["ID_ACT_ECO"].ToString();
-                TxtNombreContact.Text=dvEmpresa.Table.Rows[0]["DS_NOMBRE_CONTACTO"].ToString();
-                TxtEmailC.Text=dvEmpresa.Table.Rows[0]["DS_EMAIL_CONTACTO"].ToString();
-                TxtTelC.Text=dvEmpresa.Table.Rows[0]["DS_TELEFONO_CONTACTO"].ToString();
-                TxtNitEmpresa.Text=dvEmpresa.Table.Rows[0]["DS_NIT_EMPRESA"].ToString();
-                TxtTelEmpresa.Text =dvEmpresa.Table.Rows[0]["DS_TELEFONO_EMPRESA"].ToString();
-                TxtDirEmpresa.Text =dvEmpresa.Table.Rows[0]["DS_DIRECCION_EMPRESA"].ToString();
-                CboDepartamento.SelectedValue =dvEmpresa.Table.Rows[0]["ID_DEPARTAMENTO"].ToString();
-                CboMunicipio.SelectedValue =dvEmpresa.Table.Rows[0]["ID_MUNICIPIO"].ToString();
-                TxtNombRepre.Text =dvEmpresa.Table.Rows[0]["DS_NOMBRE_REPRESENTANTE"].ToString();
-                TxtEmailRep.Text =dvEmpresa.Table.Rows[0]["DS_EMAIL_REPRESENTATE"].ToString();
-                TxtNitRep.Text =dvEmpresa.Table.Rows[0]["DS_NIT_REPRESENTANTE"].ToString();
-                TxtDuiRep.Text =dvEmpresa.Table.Rows[0]["DS_DUI_REPRESENTANTE"].ToString();     
+                CboActEcono.SelectedValue = dvEmpresa.Table.Rows[0]["ID_ACT_ECO"].ToString();
+                TxtNombreContact.Text = dvEmpresa.Table.Rows[0]["DS_NOMBRE_CONTACTO"].ToString();
+                TxtEmailC.Text = dvEmpresa.Table.Rows[0]["DS_EMAIL_CONTACTO"].ToString();
+                TxtTelC.Text = dvEmpresa.Table.Rows[0]["DS_TELEFONO_CONTACTO"].ToString();
+                TxtNitEmpresa.Text = dvEmpresa.Table.Rows[0]["DS_NIT_EMPRESA"].ToString();
+                TxtTelEmpresa.Text = dvEmpresa.Table.Rows[0]["DS_TELEFONO_EMPRESA"].ToString();
+                TxtDirEmpresa.Text = dvEmpresa.Table.Rows[0]["DS_DIRECCION_EMPRESA"].ToString();
+                CboDepartamento.SelectedValue = dvEmpresa.Table.Rows[0]["ID_DEPARTAMENTO"].ToString();
+                CboMunicipio.SelectedValue = dvEmpresa.Table.Rows[0]["ID_MUNICIPIO"].ToString();
+                TxtNombRepre.Text = dvEmpresa.Table.Rows[0]["DS_NOMBRE_REPRESENTANTE"].ToString();
+                TxtEmailRep.Text = dvEmpresa.Table.Rows[0]["DS_EMAIL_REPRESENTATE"].ToString();
+                TxtNitRep.Text = dvEmpresa.Table.Rows[0]["DS_NIT_REPRESENTANTE"].ToString();
+                TxtDuiRep.Text = dvEmpresa.Table.Rows[0]["DS_DUI_REPRESENTANTE"].ToString();
             }
         }
 
-        protected void FillCboActEcono() {
+        protected void FillCboActEcono()
+        {
             CActividadEconomica objActividadEconomica = new CActividadEconomica(_DataSistema.ConexionBaseDato);
             dvActividadEconomica = new DataView(objActividadEconomica.Detalle(0, "", "", DateTime.Now, "", DateTime.Now, 0).TBC_ACTIVIDAD_ECONOMICA);
 
@@ -132,7 +138,7 @@ namespace MyMainApp.EMP
         protected void FillCboDepartamento()
         {
             CDepartamento objDepartamento = new CDepartamento(_DataSistema.ConexionBaseDato);
-            dvDepartamento = new DataView(objDepartamento.Detalle(0,"SV", "", "", DateTime.Now, "", DateTime.Now, 2).TBC_DEPARTAMENTO);
+            dvDepartamento = new DataView(objDepartamento.Detalle(0, "SV", "", "", DateTime.Now, "", DateTime.Now, 2).TBC_DEPARTAMENTO);
 
             CboDepartamento.DataSource = dvDepartamento;
             CboDepartamento.DataBind();
@@ -165,7 +171,7 @@ namespace MyMainApp.EMP
         protected void FillGVDestreza()
         {
             CDestrezaPasantia objDestrezaPasantia = new CDestrezaPasantia(_DataSistema.ConexionBaseDato);
-            dvDestreza = new DataView(objDestrezaPasantia.Detalle(0, Convert.ToInt32(TxtIDPasantia.Text),0, "", DateTime.Now, "", DateTime.Now, 2).TB_DESTREZA_PASANTIA);
+            dvDestreza = new DataView(objDestrezaPasantia.Detalle(0, Convert.ToInt32(TxtIDPasantia.Text), 0, "", DateTime.Now, "", DateTime.Now, 2).TB_DESTREZA_PASANTIA);
 
             GVDestreza.DataSource = dvDestreza;
             GVDestreza.DataBind();
@@ -175,7 +181,7 @@ namespace MyMainApp.EMP
         {
             CPasantia objPasantia = new CPasantia(_DataSistema.ConexionBaseDato);
             dvPasantia = new DataView(objPasantia.Detalle(0, "", "", Convert.ToInt32(TxtIDEmpresa.Text), 0, "", "", DateTime.Now,
-            "", "", "", 'A', 0, 0, 0, 0, 0,"",  "", "", DateTime.Now, "", DateTime.Now, 3).TB_PASANTIA);
+            "", "", "", 'A', 0, 0, 0, 0, 0, "", "", "", DateTime.Now, "", DateTime.Now, 3).TB_PASANTIA);
 
             GVPasantia.DataSource = dvPasantia;
             GVPasantia.DataBind();
@@ -191,7 +197,7 @@ namespace MyMainApp.EMP
             {
                 if (dvPasantia.Count > 0)
                 {
-                    objResultado = objPasantia.Actualizacion(Convert.ToInt32(TxtIDPasantia.Text), TxtNombEva.Text , TxtEmailEva.Text
+                    objResultado = objPasantia.Actualizacion(Convert.ToInt32(TxtIDPasantia.Text), TxtNombEva.Text, TxtEmailEva.Text
                         , Convert.ToInt32(TxtIDEmpresa.Text), Convert.ToInt32(CboAreaPasantia.SelectedValue), TxtTituloPasantia.Text, TxtDescPasantia.Text, Convert.ToDateTime(TxtFechInicio.Text),
           TxtDuracion.Text, TxtDe.Text, TxtA.Text, Convert.ToChar(CboEstadoPasantia.SelectedValue), Convert.ToInt32(CboDias1.SelectedValue), Convert.ToInt32(CboDias2.SelectedValue), Convert.ToInt32(TxtEdadDe.Text), Convert.ToInt32(TxtEdadA.Text), Convert.ToInt32(TxtCantVacantes.Text),
              TxtSucursal.Text, TxtDireccion.Text, _DataSistema.Cusuario, TipoActualizacion.Actualizar);
@@ -199,7 +205,7 @@ namespace MyMainApp.EMP
                 else
                 {
                     objResultado = objPasantia.Actualizacion(Convert.ToInt32(TxtIDPasantia.Text), TxtNombEva.Text, TxtEmailEva.Text
-                        , Convert.ToInt32(TxtIDEmpresa.Text), Convert.ToInt32(CboAreaPasantia.SelectedValue),TxtTituloPasantia.Text, TxtDescPasantia.Text, Convert.ToDateTime(TxtFechInicio.Text),
+                        , Convert.ToInt32(TxtIDEmpresa.Text), Convert.ToInt32(CboAreaPasantia.SelectedValue), TxtTituloPasantia.Text, TxtDescPasantia.Text, Convert.ToDateTime(TxtFechInicio.Text),
           TxtDuracion.Text, TxtDe.Text, TxtA.Text, Convert.ToChar(CboEstadoPasantia.SelectedValue), Convert.ToInt32(CboDias1.SelectedValue), Convert.ToInt32(CboDias2.SelectedValue), Convert.ToInt32(TxtEdadDe.Text), Convert.ToInt32(TxtEdadA.Text), Convert.ToInt32(TxtCantVacantes.Text),
              TxtSucursal.Text, TxtDireccion.Text, _DataSistema.Cusuario, TipoActualizacion.Adicionar);
                     if (objResultado.CodigoError == 0)
@@ -218,7 +224,7 @@ namespace MyMainApp.EMP
                 {
                     DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPasantia);
                 }
-              
+
             }
             catch (Exception ex)
             {
@@ -239,7 +245,7 @@ namespace MyMainApp.EMP
         protected void FillCamposPasantia()
         {
             CPasantia objPasantia = new CPasantia(_DataSistema.ConexionBaseDato);
-            dvPasantia = new DataView(objPasantia.Detalle(Convert.ToInt32(TxtIDPasantia.Text), "", "", 0, 0, "","", DateTime.Now,
+            dvPasantia = new DataView(objPasantia.Detalle(Convert.ToInt32(TxtIDPasantia.Text), "", "", 0, 0, "", "", DateTime.Now,
              "", "", "", 'A', 0, 0, 0, 0, 0, "", "", "", DateTime.Now, "", DateTime.Now, 1).TB_PASANTIA);
             if (dvPasantia.Count > 0)
             {
@@ -251,7 +257,7 @@ namespace MyMainApp.EMP
                 TxtIDEmpresa.Text = dvPasantia.Table.Rows[0]["ID_EMPRESA"].ToString();
                 CboAreaPasantia.SelectedValue = dvPasantia.Table.Rows[0]["ID_AREA"].ToString();
                 TxtDescPasantia.Text = dvPasantia.Table.Rows[0]["DS_PASANTIA"].ToString();
-                TxtFechInicio.Text = (dvPasantia.Table.Rows[0]["FECH_INICIO_PASANTIA"].ToString()).Substring(0,10);
+                TxtFechInicio.Text = (dvPasantia.Table.Rows[0]["FECH_INICIO_PASANTIA"].ToString()).Substring(0, 10);
                 TxtDuracion.Text = dvPasantia.Table.Rows[0]["DS_DURACION"].ToString();
                 TxtDe.Text = dvPasantia.Table.Rows[0]["DS_HORARIO_DE"].ToString();
                 TxtA.Text = dvPasantia.Table.Rows[0]["DS_HORARIO_A"].ToString();
@@ -268,7 +274,7 @@ namespace MyMainApp.EMP
 
         protected void BtnGuardarHabilidad_Click(object sender, EventArgs e)
         {
-             try
+            try
             {
                 if (Convert.ToInt32(TxtIDPasantia.Text) > 0)
                 {
@@ -286,7 +292,8 @@ namespace MyMainApp.EMP
                         DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPasantia);
                     }
                 }
-                else {
+                else
+                {
                     DespliegaMensajeUpdatePanel("No se ha seleccionado una pasantia para agregar Habilidad", UPPasantia);
                 }
             }
@@ -362,7 +369,7 @@ namespace MyMainApp.EMP
             CboCategoriaHabilidad.DataBind();
         }
 
-        
+
         protected void FillCboConocimiento()
         {
             CHabilidadConocimiento objConocimiento = new CHabilidadConocimiento(_DataSistema.ConexionBaseDato);
@@ -389,7 +396,7 @@ namespace MyMainApp.EMP
             CboNivelEducativo.DataSource = dvNivelEducativo;
             CboNivelEducativo.DataBind();
         }
-        
+
         protected void FillCboOpcionAcademica()
         {
             COpcionAcademica objOpcionAcademica = new COpcionAcademica(_DataSistema.ConexionBaseDato);
@@ -404,7 +411,7 @@ namespace MyMainApp.EMP
             FillCboConocimiento();
         }
 
-        
+
         protected void BtnGuardarNivel_Click(object sender, EventArgs e)
         {
             try
@@ -439,7 +446,7 @@ namespace MyMainApp.EMP
         protected void FillGVNivelEducativo()
         {
             CEscolaridadPasantia objEscolaridadPasantia = new CEscolaridadPasantia(_DataSistema.ConexionBaseDato);
-            dvEscolaridadPasantia = new DataView(objEscolaridadPasantia.Detalle(0,Convert.ToInt32(TxtIDPasantia.Text),0, 0, 0, "", DateTime.Now, "", DateTime.Now, 2).TB_ESCOLARIDAD_PASANTIA);
+            dvEscolaridadPasantia = new DataView(objEscolaridadPasantia.Detalle(0, Convert.ToInt32(TxtIDPasantia.Text), 0, 0, 0, "", DateTime.Now, "", DateTime.Now, 2).TB_ESCOLARIDAD_PASANTIA);
 
             GVNivelEducativo.DataSource = dvEscolaridadPasantia;
             GVNivelEducativo.DataBind();
@@ -448,21 +455,21 @@ namespace MyMainApp.EMP
         protected void BtnProyectoGuardar_Click(object sender, EventArgs e)
         {
             CConsultoria objConsultoria = new CConsultoria(_DataSistema.ConexionBaseDato);
-            dvConsultoria = new DataView(objConsultoria.Detalle(Convert.ToInt32(TxtIdProyecto.Text), TxtContrato.Text,"", TxtDescProyecto.Text, DateTime.Now, 0, TxtDuracionC.Text,
-               Convert.ToChar(CboEstadoPro.SelectedValue),Convert.ToInt32(TxtIDEmpresa.Text), _DataSistema.Cusuario, DateTime.Now, "", DateTime.Now, 1).TB_PASANTIA);
+            dvConsultoria = new DataView(objConsultoria.Detalle(Convert.ToInt32(TxtIdProyecto.Text), TxtContrato.Text, "", TxtDescProyecto.Text, DateTime.Now, 0, TxtDuracionC.Text,
+               Convert.ToChar(CboEstadoPro.SelectedValue), Convert.ToInt32(TxtIDEmpresa.Text), _DataSistema.Cusuario, DateTime.Now, "", DateTime.Now, 1).TB_PASANTIA);
 
             try
             {
-                  double Monto = Convert.ToDouble(TxtMontoPro.Text);
+                double Monto = Convert.ToDouble(TxtMontoPro.Text);
                 if (dvConsultoria.Count > 0)
                 {
-                    objResultado = objConsultoria.Actualizacion(Convert.ToInt32(TxtIdProyecto.Text), TxtContrato.Text,TxtTituloProyecto.Text, TxtDescProyecto.Text, DateTime.Now, Monto, TxtDuracionC.Text,
-               Convert.ToChar(CboEstadoPro.SelectedValue),Convert.ToInt32(TxtIDEmpresa.Text), _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+                    objResultado = objConsultoria.Actualizacion(Convert.ToInt32(TxtIdProyecto.Text), TxtContrato.Text, TxtTituloProyecto.Text, TxtDescProyecto.Text, DateTime.Now, Monto, TxtDuracionC.Text,
+               Convert.ToChar(CboEstadoPro.SelectedValue), Convert.ToInt32(TxtIDEmpresa.Text), _DataSistema.Cusuario, TipoActualizacion.Actualizar);
                 }
                 else
                 {
                     objResultado = objConsultoria.Actualizacion(Convert.ToInt32(TxtIdProyecto.Text), TxtContrato.Text, TxtTituloProyecto.Text, TxtDescProyecto.Text, DateTime.Now, Monto, TxtDuracionC.Text,
-               Convert.ToChar(CboEstadoPro.SelectedValue),Convert.ToInt32(TxtIDEmpresa.Text), _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+               Convert.ToChar(CboEstadoPro.SelectedValue), Convert.ToInt32(TxtIDEmpresa.Text), _DataSistema.Cusuario, TipoActualizacion.Adicionar);
                     if (objResultado.CodigoError == 0)
                     {
                         TxtIdProyecto.Text = Convert.ToString(objResultado.CodigoAuxiliar);
@@ -491,7 +498,7 @@ namespace MyMainApp.EMP
         protected void FillGVContrato()
         {
             CConsultoria objConsultoria = new CConsultoria(_DataSistema.ConexionBaseDato);
-            dvConsultoria = new DataView(objConsultoria.Detalle(0, TxtContrato.Text,"", TxtDescProyecto.Text, DateTime.Now, 0, TxtDuracionC.Text,
+            dvConsultoria = new DataView(objConsultoria.Detalle(0, TxtContrato.Text, "", TxtDescProyecto.Text, DateTime.Now, 0, TxtDuracionC.Text,
                 Convert.ToChar(CboEstadoPro.SelectedValue), Convert.ToInt32(TxtIDEmpresa.Text), _DataSistema.Cusuario, DateTime.Now, "", DateTime.Now, 2).TB_CONSULTORIA);
 
             GVContrato.DataSource = dvConsultoria;
@@ -504,7 +511,7 @@ namespace MyMainApp.EMP
             {
                 int Id = GVContrato.SelectedIndex;
 
-                TxtIdProyecto.Text = GVContrato.DataKeys[Id].Value.ToString();  
+                TxtIdProyecto.Text = GVContrato.DataKeys[Id].Value.ToString();
                 FillCamposProyecto();
                 FillGVEntregable();
                 PanelProyecto.Visible = false;
@@ -557,7 +564,7 @@ namespace MyMainApp.EMP
         protected void FillGVEntregable()
         {
             CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
-            dvEntregable = new DataView(objEntregable.Detalle(0, Convert.ToInt32(TxtIdProyecto.Text), "", "", DateTime.Now, "", 
+            dvEntregable = new DataView(objEntregable.Detalle(0, Convert.ToInt32(TxtIdProyecto.Text), "", "", DateTime.Now, "",
                 'A', "", "", "",
                 _DataSistema.Cusuario, DateTime.Now, "", DateTime.Now, 2).TB_CONSULTORIA_ENTREGABLE);
 
@@ -568,7 +575,7 @@ namespace MyMainApp.EMP
         protected void FillCamposProyecto()
         {
             CConsultoria objConsultoria = new CConsultoria(_DataSistema.ConexionBaseDato);
-            dvConsultoria = new DataView(objConsultoria.Detalle(Convert.ToInt32(TxtIdProyecto.Text), TxtContrato.Text,"", TxtDescProyecto.Text, DateTime.Now, 0, TxtDuracionC.Text,
+            dvConsultoria = new DataView(objConsultoria.Detalle(Convert.ToInt32(TxtIdProyecto.Text), TxtContrato.Text, "", TxtDescProyecto.Text, DateTime.Now, 0, TxtDuracionC.Text,
                 Convert.ToChar(CboEstadoPro.SelectedValue), Convert.ToInt32(TxtIDEmpresa.Text), _DataSistema.Cusuario, DateTime.Now, "", DateTime.Now, 3).TB_CONSULTORIA);
 
             if (dvConsultoria.Count > 0)
@@ -578,7 +585,7 @@ namespace MyMainApp.EMP
                 TxtContrato.Text = dvConsultoria.Table.Rows[0]["DS_NUMERO_CONTRATO"].ToString();
                 TxtDuracionC.Text = dvConsultoria.Table.Rows[0]["DS_CONTRATO_DURACION"].ToString();
                 TxtDescProyecto.Text = dvConsultoria.Table.Rows[0]["DS_DESCRIPCION"].ToString();
-                TxtFechIniCont.Text = (dvConsultoria.Table.Rows[0]["FECH_INICIO_CONTRATO"].ToString()).Substring(0,10);
+                TxtFechIniCont.Text = (dvConsultoria.Table.Rows[0]["FECH_INICIO_CONTRATO"].ToString()).Substring(0, 10);
                 CboEstadoPro.SelectedValue = dvConsultoria.Table.Rows[0]["CD_ESTADO"].ToString();
                 TxtMontoPro.Text = dvConsultoria.Table.Rows[0]["NM_MONTO_CONSULTORIA"].ToString();
             }
@@ -629,29 +636,31 @@ namespace MyMainApp.EMP
         {
             if (Convert.ToInt32(TxtIDPasantia.Text) > 0)
             {
-         try
-         {   CPasantiaActividad objPasantiaActividad = new CPasantiaActividad(_DataSistema.ConexionBaseDato);
-            objResultado = objPasantiaActividad.Actualizacion(0, Convert.ToInt32(TxtIDPasantia.Text), TxtActividad.Text,
-           TxtDescripActividad.Text,Convert.ToDateTime(TxtFechaEntregaA.Text),    TxtDuracionA.Text
-            , _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+                try
+                {
+                    CPasantiaActividad objPasantiaActividad = new CPasantiaActividad(_DataSistema.ConexionBaseDato);
+                    objResultado = objPasantiaActividad.Actualizacion(0, Convert.ToInt32(TxtIDPasantia.Text), TxtActividad.Text,
+                   TxtDescripActividad.Text, Convert.ToDateTime(TxtFechaEntregaA.Text), TxtDuracionA.Text
+                    , _DataSistema.Cusuario, TipoActualizacion.Adicionar);
 
-            if (objResultado.CodigoError == 0)
-            {
-                FillGVActividades();
+                    if (objResultado.CodigoError == 0)
+                    {
+                        FillGVActividades();
+                    }
+                    else
+                    {
+                        DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPasantia);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DespliegaMensajeUpdatePanel(ex.Message, UPPasantia);
+                }
             }
             else
             {
-                DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPasantia);
+                DespliegaMensajeUpdatePanel("No se ha seleccionado una pasantia para agregar Actividad", UPPasantia);
             }
-         }
-         catch (Exception ex)
-         {
-                DespliegaMensajeUpdatePanel(ex.Message, UPPasantia);
-         }
-               }
-                else {
-                    DespliegaMensajeUpdatePanel("No se ha seleccionado una pasantia para agregar Actividad", UPPasantia);
-                }
 
         }
 
@@ -670,15 +679,15 @@ namespace MyMainApp.EMP
         {
             try
             {
-                int Id =  GVPasantia.SelectedIndex;
+                int Id = GVPasantia.SelectedIndex;
 
                 TxtIDPasantia.Text = GVPasantia.DataKeys[Id].Value.ToString();
-                 Consultar();
-                 FillGVAspirantes();
-                 GVPasantia.Visible = false;
-                 PanelAspirantes.Visible = true;
-              /*  BtnCancelarHabilidad.Visible = false;
-                BtnGuardarPasantia.Visible = false;*/
+                Consultar();
+                FillGVAspirantes();
+                GVPasantia.Visible = false;
+                PanelAspirantes.Visible = true;
+                /*  BtnCancelarHabilidad.Visible = false;
+                  BtnGuardarPasantia.Visible = false;*/
             }
             catch (Exception ex)
             {
@@ -689,7 +698,7 @@ namespace MyMainApp.EMP
         protected void FillGVAspirantes()
         {
             CPasantiaAspirante objPasantiaAspirante = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
-            dvPasantiaAspirante = new DataView(objPasantiaAspirante.Detalle(0,"", Convert.ToInt32(TxtIDPasantia.Text),
+            dvPasantiaAspirante = new DataView(objPasantiaAspirante.Detalle(0, "", Convert.ToInt32(TxtIDPasantia.Text),
             "", DateTime.Now, "", DateTime.Now, 2).TB_PASANTIA_ASPIRANTE);
 
             GVAspirantes.DataSource = dvPasantiaAspirante;
@@ -715,7 +724,7 @@ namespace MyMainApp.EMP
         protected void FillGVActividadAspirante(string Usuario)
         {
             CActividadAspirante objActividadAspirante = new CActividadAspirante(_DataSistema.ConexionBaseDato);
-            dvActividadAspirante = new DataView(objActividadAspirante.Detalle(0, Usuario, 0, "", 'A', "","",
+            dvActividadAspirante = new DataView(objActividadAspirante.Detalle(0, Usuario, 0, "", 'A', "", "",
             "", DateTime.Now, "", DateTime.Now, 2).TB_PASANTIA_ASPIRANTE);
 
             GVActividadAspirante.DataSource = dvActividadAspirante;
@@ -727,6 +736,95 @@ namespace MyMainApp.EMP
 
             PanelAspirantes.Visible = true;
             PanelActividadAspirante.Visible = false;
+        }
+
+        private void FillGVAspiranteEntregable()//pestaña lista de proyectos para empresa
+        {
+            CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
+            DataView dvEntregables = new DataView(objEntregable.Detalle(0, 0, "", "", DateTime.Today, "", 'X', "", "", _DataSistema.Cusuario, "", DateTime.Today, "", DateTime.Today, 3).TB_CONSULTORIA_ENTREGABLE);
+            if (dvEntregables.Count > 0) {
+                
+                TxtIdEntregable.Text = dvEntregables.Table.Rows[0]["ID"].ToString();
+                TxtIdConsultoria.Text = dvEntregables.Table.Rows[0]["ID_CONSULTORIA"].ToString();
+            }
+            GVAspiranteEntregable.DataSource = dvEntregables;
+            GVAspiranteEntregable.DataBind();
+
+        }
+
+            
+        protected void GVAspiranteEntregable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int Id = GVAspiranteEntregable.SelectedIndex;
+                TxtIdEntregable.Text = GVAspiranteEntregable.DataKeys[Id].Value.ToString();
+                FillGVAspiranteEntregable();
+                FillGVListaEntregable();
+                PanelAspiranteEntregable.Visible = false;
+                PanelEntregableA.Visible = true;
+            }
+
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPListaProyecto);
+            }
+        }
+
+        protected void FillGVListaEntregable()
+        {
+            CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
+            DataView dvEntregablesA = new DataView(objEntregable.Detalle(Convert.ToInt32(TxtIdEntregable.Text), Convert.ToInt32(TxtIdConsultoria.Text), "", "", DateTime.Today, "", 'X', "", "","", "", DateTime.Today, "", DateTime.Today, 4).TB_CONSULTORIA_ENTREGABLE);
+
+            GVListaEntregable.DataSource = dvEntregablesA;
+            GVListaEntregable.DataBind();
+        }
+
+        private void FillCamposEntregable()
+        {
+            CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
+            DataView dvEntregables = new DataView(objEntregable.Detalle(0, 0, "", "", DateTime.Today, "", 'X', "", "", _DataSistema.Cusuario, "", DateTime.Today, "", DateTime.Today, 3).TB_CONSULTORIA_ENTREGABLE);
+            if (dvEntregables.Count > 0)
+            {
+                TxtIdConsultoria.Text = dvEntregables.Table.Rows[0]["ID_CONSULTORIA"].ToString();
+                TxtNombreEntregable.Text = dvEntregables.Table.Rows[0]["DS_ENTREGABLE"].ToString();
+                TxtDuracionEntregable.Text = dvEntregables.Table.Rows[0]["DS_DURACION_ENT"].ToString();
+                TxtFechaEntregaEntregable.Text = dvEntregables.Table.Rows[0]["FECH_ENTREGA_ENT"].ToString();
+                TxtDescripcion.Text = dvEntregables.Table.Rows[0]["DS_DESCRIPCION_ENT"].ToString();
+                TxtIdAspirante.Text = dvEntregables.Table.Rows[0]["ID_ASPIRANTE"].ToString();
+               
+            }
+        }
+
+        protected void FillCamposAspirante()
+        {
+            CAspirante objAspirante = new CAspirante(_DataSistema.ConexionBaseDato);
+            DataView dvAspirante = new DataView(objAspirante.Detalle(TxtIdAspirante.Text, "", "", DateTime.Today, 'X',
+         "", "", "", "", "", "", 'X', 0, "", 0, 0, 0, "", "", "", "", "", DateTime.Today, "", DateTime.Today, 3).TB_ASPIRANTE);
+            if (dvAspirante.Count > 0)
+            {   /* CARGA DE DATOS DE EL PRIMER REGISTRO */
+                TxtNombre.Text = dvAspirante.Table.Rows[0]["DS_NOMBRE"].ToString();
+                TxtApellido.Text = dvAspirante.Table.Rows[0]["DS_APELLIDO"].ToString();
+                
+            }
+        }
+        protected void GVListaEntregable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int Id = GVListaEntregable.SelectedIndex;
+
+                TxtIdEntregable.Text = GVListaEntregable.DataKeys[Id].Value.ToString();
+                FillCamposEntregable();
+                FillCamposAspirante(); 
+                //FillGVEntregableDetalle();
+                PanelEntregableA.Visible = false;
+                PanelDetalleEntregable.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPListaProyecto);
+            }
         }
     }
 }
