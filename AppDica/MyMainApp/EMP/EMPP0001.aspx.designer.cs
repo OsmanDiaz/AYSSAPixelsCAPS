@@ -1579,6 +1579,24 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.UpdatePanel UPProyecto;
         
         /// <summary>
+        /// Control PanelRegistroProyecto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelRegistroProyecto;
+        
+        /// <summary>
+        /// Control Label68.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label68;
+        
+        /// <summary>
         /// Control TxtIdProyecto.
         /// </summary>
         /// <remarks>
@@ -1921,49 +1939,22 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.GridView GVEntregable;
         
         /// <summary>
-        /// Control TabPanel5.
+        /// Control PanelAspirantesE.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AjaxControlToolkit.TabPanel TabPanel5;
+        protected global::System.Web.UI.WebControls.Panel PanelAspirantesE;
         
         /// <summary>
-        /// Control UPListaProyecto.
+        /// Control BtnRegresar1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UPListaProyecto;
-        
-        /// <summary>
-        /// Control PanelAspiranteEntregable.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelAspiranteEntregable;
-        
-        /// <summary>
-        /// Control Label68.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label68;
-        
-        /// <summary>
-        /// Control TxtIdEntregable.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtIdEntregable;
+        protected global::System.Web.UI.WebControls.Button BtnRegresar1;
         
         /// <summary>
         /// Control TxtIdConsultoria.
@@ -1984,40 +1975,13 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.TextBox TxtIdAspirante;
         
         /// <summary>
-        /// Control GVAspiranteEntregable.
+        /// Control GVAspirantesEntregables.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GVAspiranteEntregable;
-        
-        /// <summary>
-        /// Control PanelEntregableA.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelEntregableA;
-        
-        /// <summary>
-        /// Control Label69.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label69;
-        
-        /// <summary>
-        /// Control GVListaEntregable.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GVListaEntregable;
+        protected global::System.Web.UI.WebControls.GridView GVAspirantesEntregables;
         
         /// <summary>
         /// Control PanelDetalleEntregable.
@@ -2180,6 +2144,24 @@ namespace MyMainApp.EMP {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtObservEntregable;
+        
+        /// <summary>
+        /// Control BtnGuardarObservacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnGuardarObservacion;
+        
+        /// <summary>
+        /// Control BtnCancelarObservacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnCancelarObservacion;
         
         /// <summary>
         /// Control PanelFicha.
