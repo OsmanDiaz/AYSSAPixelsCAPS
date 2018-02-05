@@ -30,7 +30,7 @@
             <div class="container-fluid">
                 <div id="content">
                     <%--inicio container-fluid--%>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="2" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server">
@@ -602,6 +602,10 @@
 
                                         <%--inicio tab proyecto--%>
                                         <br />
+                                        <asp:Panel ID="PanelRegistroProyecto" runat="server">
+                                        <div align="center">
+                                                <asp:Label ID="Label68" runat="server" Text="REGISTRO DE PROYECTO"  Font-Size="14pt"></asp:Label> <br />
+                                                </div><br />
                                         <asp:TextBox ID="TxtIdProyecto" runat="server" Text="0" Visible="False"></asp:TextBox>
                                         <div class="form-group">
                                             <asp:Label class="control-label  col-sm-3" ID="Label61" runat="server" Font-Bold="True" Text="TITULO PROYECTO:"></asp:Label>
@@ -650,9 +654,10 @@
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator27" runat="server" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ControlToValidate="TxtMontoPro" ValidationGroup="proyecto">Llenar monto de proyecto</asp:RequiredFieldValidator>
                                             </div>
                                         </div>
+                                            </asp:Panel>
                                         <asp:Panel ID="PanelProyecto" runat="server">
                                             <div align="center">
-                                                <asp:Button ID="BtnProyectoGuardar" runat="server" Text="GUARDAR" class="btn btn-primary" ValidationGroup="proyecto" OnClick="BtnProyectoGuardar_Click" />
+                                                <asp:Button ID="BtnProyectoGuardar" runat="server" Text="GUARDAR PROYECTO" class="btn btn-primary" ValidationGroup="proyecto" OnClick="BtnProyectoGuardar_Click" />
                                                 &nbsp;<asp:Button ID="Button6" runat="server" Text="CANCELAR" class="btn btn-primary" CausesValidation="False" />
                                             </div>
                                             <br />
@@ -690,8 +695,8 @@
                                         </asp:Panel>
                                         <asp:Panel ID="PanelEntregable" runat="server" Visible="False">
                                             <div align="center">
-                                                <asp:Label ID="Label59" runat="server" Text="Entregables" Font-Size="14pt"></asp:Label>
-                                            </div>
+                                                <asp:Label ID="Label59" runat="server" Text="REGISTRO DE ENTREGABLES" Font-Size="14pt"></asp:Label>
+                                            </div><br />
                                             <div class="form-group">
                                                 <asp:Label ID="Label55" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE ENTREGABLE:"></asp:Label>
                                                 <div class="col-md-9">
@@ -716,16 +721,21 @@
                                             </div>
                                             <br />
                                             <div align="center">
-                                                <asp:Button ID="BtnGuardarEntregable" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="BtnGuardarEntregable_Click" />
+                                                <asp:Button ID="BtnGuardarEntregable" runat="server" class="btn btn-primary" Text="GUARDAR ENTREGABLE" OnClick="BtnGuardarEntregable_Click" />
                                                 &nbsp;<asp:Button ID="BtnCancelarEntregable" runat="server" Text="CANCELAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnCancelarEntregable_Click" />
                                             </div>
                                             <br />
-                                            <asp:GridView ID="GVEntregable" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                                            <asp:GridView ID="GVEntregable" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVEntregable_SelectedIndexChanged" DataKeyNames="ID">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
                                                     <asp:BoundField HeaderText="NOMBRE DE ENTREGABLE" DataField="DS_ENTREGABLE" />
                                                     <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ENT" />
                                                     <asp:BoundField HeaderText="DESCRIPCIÓN" DataField="DS_DESCRIPCION_ENT" />
+                                                    <asp:TemplateField HeaderText="VER ASPIRANTES">
+                                                        <ItemTemplate>
+                                                            <asp:Button ID="BtnVerAspirantes" runat="server" CommandName="Select"  Text="Ver Aspirantes" />
+                                                          </ItemTemplate>
+                                                    </asp:TemplateField>
                                                 </Columns>
                                                 <EditRowStyle BackColor="#2461BF" />
                                                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -740,34 +750,21 @@
                                             </asp:GridView>
                                             <br />
                                         </asp:Panel>
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
-                            </ContentTemplate>
-                        </ajaxToolkit:TabPanel>
-
-                        <ajaxToolkit:TabPanel ID="TabPanel5" runat="server" HeaderText="LISTA DE PROYECTOS">
-                            
-                            <ContentTemplate>
-                                <asp:UpdatePanel ID="UPListaProyecto" runat="server">
-                                    <ContentTemplate>
-                                        <br />
-                                        <asp:Panel ID="PanelAspiranteEntregable" runat="server">
-                                            <div align="center">
-                                                <asp:Label ID="Label68" runat="server" Text="LISTA DE PROYECTOS"  Font-Size="14pt"></asp:Label> <br />
-                                                </div>
-                                            <asp:TextBox ID="TxtIdEntregable" runat="server" Text="0" Visible="False"></asp:TextBox>
+                                        <asp:Panel ID="PanelAspirantesE" runat="server" Visible="false">
+                                             <br />
+                                           <asp:Button ID="BtnRegresar1" runat="server" Text="REGRESAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresar1_Click"  /><br />
                                            <asp:TextBox ID="TxtIdConsultoria" runat="server" Text="0" Visible="False"></asp:TextBox>
                                              <asp:TextBox ID="TxtIdAspirante" runat="server" Text="0" Visible="False"></asp:TextBox>
-                                            <asp:GridView ID="GVAspiranteEntregable" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVAspiranteEntregable_SelectedIndexChanged" DataKeyNames="ID">
+                                            
+                                            <asp:GridView ID="GVAspirantesEntregables" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVAspirantesEntregables_SelectedIndexChanged">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
-                                                    <asp:BoundField HeaderText="PROYECTO" DataField="DS_NOMBRE_CONSULTORIA" />
-                                                    <asp:BoundField HeaderText="ENTREGABLE" DataField="DS_ENTREGABLE" />
-                                                    <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ENT" />
-                                                    <asp:TemplateField HeaderText="VER ENTREGABLE">
+                                                    <asp:BoundField DataField="DS_COMPLETO" HeaderText="ASPIRANTE" />
+                                                    <asp:BoundField HeaderText="DESCARGAR" />
+                                                    <asp:TemplateField HeaderText="VER DETALLE">
                                                         <ItemTemplate>
-                                                            <asp:Button ID="BtnVerEntregable" runat="server" CommandName="Select" Text="Ver Entregable" />
-                                                        </ItemTemplate>
+                                                            <asp:Button ID="BtnVerDetalles" runat="server" CommandName="Select"  Text="Ver Detalle" />
+                                                          </ItemTemplate>
                                                     </asp:TemplateField>
                                                 </Columns>
                                                 <EditRowStyle BackColor="#2461BF" />
@@ -782,40 +779,11 @@
                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                             </asp:GridView>
                                         </asp:Panel><br />
-                                        
-                                        <asp:Panel ID="PanelEntregableA" runat="server" Visible="false">
-                                            <div align="center">
-                                            <asp:Label ID="Label69" runat="server" Text="LISTA DE ENTREGABLES"  Font-Size="14pt"></asp:Label><br />
-                                                </div>
-                                            <asp:GridView ID="GVListaEntregable" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaEntregable_SelectedIndexChanged">
-                                                <AlternatingRowStyle BackColor="White" />
-                                                <Columns>
-                                                    <asp:BoundField HeaderText="ENTREGABLE" DataField="DS_ENTREGABLE" />
-                                                    <asp:BoundField HeaderText="ASPIRANTE" DataField="DS_COMPLETO" />
-                                                    <asp:BoundField HeaderText="OBSERVACION" DataField="DS_OBSERVACION_ENTREGABLE" />
-                                                    <asp:TemplateField HeaderText="VER DETALLE">
-                                                        <ItemTemplate>
-                                                            <asp:Button ID="BtnVerDetalle" runat="server" CommandName="Select" Text="Ver Detalle" />
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                </Columns>
-                                                <EditRowStyle BackColor="#2461BF" />
-                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                                                <RowStyle BackColor="#EFF3FB" />
-                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                                            </asp:GridView>
-                                        </asp:Panel>
                                         <asp:Panel ID="PanelDetalleEntregable" runat="server" Visible="false">
-                                            <br />
+                                            
                                             <div align="center">
                                             <asp:Label ID="Label75" runat="server" Text="DETALLE DE ENTREGABLE"  Font-Size="14pt"></asp:Label><br />
-                                                </div>
+                                                </div><br />
                                             <div class="form-group">
                                             <asp:Label ID="Label76" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRES:"></asp:Label>
                                                 <div class="col-md-3">
@@ -864,13 +832,15 @@
                                                     <asp:TextBox class="form-control" ID="TxtObservEntregable" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="true" Width="100%"></asp:TextBox>
                                                 </div>
                                             </div>
+                                             <div align="center">
+                                                <asp:Button ID="BtnGuardarObservacion" runat="server" class="btn btn-primary" Text="GUARDAR OBSERVACIÓN" />
+                                                &nbsp;<asp:Button ID="BtnCancelarObservacion" runat="server" Text="REGRESAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnCancelarObservacion_Click" />
+                                            </div>
                                         </asp:Panel>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
                             </ContentTemplate>
-                            
                         </ajaxToolkit:TabPanel>
-
                     </ajaxToolkit:TabContainer>
                     <%--fin tab habilidades--%>
                 </div>

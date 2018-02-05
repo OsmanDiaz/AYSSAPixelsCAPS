@@ -83,8 +83,9 @@ namespace MyMainApp.EMP
             FillGVNivelEducativo();
             FillGVContrato();
             CargarReporte();
-            FillGVAspiranteEntregable();
-            FillGVListaEntregable();
+            FillGVAspirantesEntregables();
+            //FillGVAspiranteEntregable();
+            //FillGVListaEntregable();
             FillCamposEntregable();
             FillCamposAspirante();
         }
@@ -738,61 +739,32 @@ namespace MyMainApp.EMP
             PanelActividadAspirante.Visible = false;
         }
 
-        private void FillGVAspiranteEntregable()//pestaña lista de proyectos para empresa
+        protected void FillGVAspirantesEntregables()
         {
             CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
-            DataView dvEntregables = new DataView(objEntregable.Detalle(0, 0, "", "", DateTime.Today, "", 'X', "", "", _DataSistema.Cusuario, "", DateTime.Today, "", DateTime.Today, 3).TB_CONSULTORIA_ENTREGABLE);
-            if (dvEntregables.Count > 0) {
-                
-                TxtIdEntregable.Text = dvEntregables.Table.Rows[0]["ID"].ToString();
-                TxtIdConsultoria.Text = dvEntregables.Table.Rows[0]["ID_CONSULTORIA"].ToString();
-            }
-            GVAspiranteEntregable.DataSource = dvEntregables;
-            GVAspiranteEntregable.DataBind();
+            DataView dvEntregablesA = new DataView(objEntregable.Detalle(Convert.ToInt32(TxtIdProyecto.Text), 
+              Convert.ToInt32(TxtIdConsultoria.Text), "", "", DateTime.Today, "", 'X', "", "","", "", DateTime.Today,
+              "", DateTime.Today, 4).TB_CONSULTORIA_ENTREGABLE);
 
+               GVAspirantesEntregables.DataSource = dvEntregablesA;
+               GVAspirantesEntregables.DataBind();
         }
 
-            
-        protected void GVAspiranteEntregable_SelectedIndexChanged(object sender, EventArgs e)
+        protected void GVEntregable_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                int Id = GVAspiranteEntregable.SelectedIndex;
-                TxtIdEntregable.Text = GVAspiranteEntregable.DataKeys[Id].Value.ToString();
-                FillGVAspiranteEntregable();
-                FillGVListaEntregable();
-                PanelAspiranteEntregable.Visible = false;
-                PanelEntregableA.Visible = true;
-            }
+                int Id = GVEntregable.SelectedIndex;
 
+                TxtIdProyecto.Text = GVEntregable.DataKeys[Id].Value.ToString();
+                FillGVAspirantesEntregables();
+                PanelEntregable.Visible = false;
+                PanelAspirantesE.Visible = true;
+                PanelRegistroProyecto.Visible = false;
+            }
             catch (Exception ex)
             {
-                DespliegaMensajeUpdatePanel(ex.Message, UPListaProyecto);
-            }
-        }
-
-        protected void FillGVListaEntregable()
-        {
-            CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
-            DataView dvEntregablesA = new DataView(objEntregable.Detalle(Convert.ToInt32(TxtIdEntregable.Text), Convert.ToInt32(TxtIdConsultoria.Text), "", "", DateTime.Today, "", 'X', "", "","", "", DateTime.Today, "", DateTime.Today, 4).TB_CONSULTORIA_ENTREGABLE);
-
-            GVListaEntregable.DataSource = dvEntregablesA;
-            GVListaEntregable.DataBind();
-        }
-
-        private void FillCamposEntregable()
-        {
-            CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
-            DataView dvEntregables = new DataView(objEntregable.Detalle(0, 0, "", "", DateTime.Today, "", 'X', "", "", _DataSistema.Cusuario, "", DateTime.Today, "", DateTime.Today, 3).TB_CONSULTORIA_ENTREGABLE);
-            if (dvEntregables.Count > 0)
-            {
-                TxtIdConsultoria.Text = dvEntregables.Table.Rows[0]["ID_CONSULTORIA"].ToString();
-                TxtNombreEntregable.Text = dvEntregables.Table.Rows[0]["DS_ENTREGABLE"].ToString();
-                TxtDuracionEntregable.Text = dvEntregables.Table.Rows[0]["DS_DURACION_ENT"].ToString();
-                TxtFechaEntregaEntregable.Text = dvEntregables.Table.Rows[0]["FECH_ENTREGA_ENT"].ToString();
-                TxtDescripcion.Text = dvEntregables.Table.Rows[0]["DS_DESCRIPCION_ENT"].ToString();
-                TxtIdAspirante.Text = dvEntregables.Table.Rows[0]["ID_ASPIRANTE"].ToString();
-               
+               DespliegaMensajeUpdatePanel(ex.Message, UPProyecto);
             }
         }
 
@@ -802,29 +774,60 @@ namespace MyMainApp.EMP
             DataView dvAspirante = new DataView(objAspirante.Detalle(TxtIdAspirante.Text, "", "", DateTime.Today, 'X',
          "", "", "", "", "", "", 'X', 0, "", 0, 0, 0, "", "", "", "", "", DateTime.Today, "", DateTime.Today, 3).TB_ASPIRANTE);
             if (dvAspirante.Count > 0)
-            {   /* CARGA DE DATOS DE EL PRIMER REGISTRO */
+            {   /* muestra los datos del aspirante seleccionado */
                 TxtNombre.Text = dvAspirante.Table.Rows[0]["DS_NOMBRE"].ToString();
                 TxtApellido.Text = dvAspirante.Table.Rows[0]["DS_APELLIDO"].ToString();
-                
+
             }
         }
-        protected void GVListaEntregable_SelectedIndexChanged(object sender, EventArgs e)
+
+        protected void GVAspirantesEntregables_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                int Id = GVListaEntregable.SelectedIndex;
+                int Id = GVAspirantesEntregables.SelectedIndex;
 
-                TxtIdEntregable.Text = GVListaEntregable.DataKeys[Id].Value.ToString();
+                TxtIdProyecto.Text = GVAspirantesEntregables.DataKeys[Id].Value.ToString();
                 FillCamposEntregable();
                 FillCamposAspirante(); 
                 //FillGVEntregableDetalle();
-                PanelEntregableA.Visible = false;
+                PanelAspirantesE.Visible = false;
                 PanelDetalleEntregable.Visible = true;
+                PanelRegistroProyecto.Visible = false;
             }
             catch (Exception ex)
             {
-                DespliegaMensajeUpdatePanel(ex.Message, UPListaProyecto);
+                DespliegaMensajeUpdatePanel(ex.Message, UPProyecto);
             }
         }
+
+        protected void BtnCancelarObservacion_Click(object sender, EventArgs e)
+        {/*regresa al panel anterior*/
+            PanelAspirantesE.Visible = true;
+            PanelDetalleEntregable.Visible = false;
+        }
+
+        private void FillCamposEntregable()
+        {
+            CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
+            DataView dvEntregables = new DataView(objEntregable.Detalle(0, 0, "", "", DateTime.Today, "", 'X', "", "", _DataSistema.Cusuario, "", DateTime.Today, "", DateTime.Today, 3).TB_CONSULTORIA_ENTREGABLE);
+            if (dvEntregables.Count > 0)
+            {  /*muestra los datos del entregable perteneciente al aspirante */
+                TxtIdConsultoria.Text = dvEntregables.Table.Rows[0]["ID_CONSULTORIA"].ToString();
+                TxtNombreEntregable.Text = dvEntregables.Table.Rows[0]["DS_ENTREGABLE"].ToString();
+                TxtDuracionEntregable.Text = dvEntregables.Table.Rows[0]["DS_DURACION_ENT"].ToString();
+                TxtFechaEntregaEntregable.Text = dvEntregables.Table.Rows[0]["FECH_ENTREGA_ENT"].ToString();
+                TxtDescripcion.Text = dvEntregables.Table.Rows[0]["DS_DESCRIPCION_ENT"].ToString();
+                TxtIdAspirante.Text = dvEntregables.Table.Rows[0]["ID_ASPIRANTE"].ToString();
+
+            }
+        }
+
+        protected void BtnRegresar1_Click(object sender, EventArgs e)
+        {
+            PanelAspirantesE.Visible = false;
+            PanelEntregable.Visible = true;
+        }
+       
     }
 }
