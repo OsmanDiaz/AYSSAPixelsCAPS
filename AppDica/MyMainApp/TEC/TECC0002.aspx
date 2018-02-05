@@ -34,9 +34,7 @@
                                         <%--inicio contenido tab--%><%--inicio tab datos--%>
                                         <br />
                                         <asp:TextBox ID="TxtIdEmpresa" runat="server" Visible="False"></asp:TextBox>
-                                        <asp:TextBox ID="TxtIdPasantia" runat="server" Visible="False"></asp:TextBox>
-                                        <asp:TextBox ID="TextBox2" runat="server" Visible="False"></asp:TextBox>
-                                        <asp:TextBox ID="TextBox3" runat="server" Visible="False"></asp:TextBox>
+                                        <asp:TextBox ID="TxtIdPasantia" runat="server" Visible="False"></asp:TextBox>                                        
                                         <asp:Panel ID="PanelListaEmpresa" runat="server" >
                                         <asp:GridView ID="GVListaEmpresa" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaEmpresa_SelectedIndexChanged">
                                             <AlternatingRowStyle BackColor="White" />
@@ -148,6 +146,7 @@
 
                                     <ContentTemplate>
                                         <br />
+                                        
                                         <asp:Panel ID="PanelListadoPasantia" runat="server" >
                                         <div class="form-group">
                                             <asp:Label ID="Label1" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE DE EMPRESA:"></asp:Label>
@@ -293,6 +292,8 @@
                                     <ContentTemplate>
                                         <%--inicio tab habilidades--%>
                                         <br />
+                                        <asp:TextBox ID="TxtIdEntregable" runat="server" Visible="False"></asp:TextBox>
+                                        <asp:TextBox ID="TxtIdConsultoria" runat="server" Visible="False"></asp:TextBox>
                                         <asp:Panel ID="PanelListaProyectos" runat="server">
                                         <asp:GridView ID="GVListaProyectos" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaProyectos_SelectedIndexChanged">
                                             <AlternatingRowStyle BackColor="White" />
@@ -341,9 +342,6 @@
                                                 <asp:BoundField HeaderText="NOMBRE ENTREGABLE" DataField="DS_ENTREGABLE" />
                                                 <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ENT" />
                                                 <asp:BoundField HeaderText="DURACION" DataField="DS_DURACION_ENT" />
-                                                <asp:BoundField HeaderText="FECHA INICIO" DataField="FECH_INICIO_CONTRATO" />
-                                                <asp:BoundField HeaderText="DURACION" DataField="DS_CONTRATO_DURACION" />
-                                                <asp:BoundField HeaderText="MONTO" DataField="NM_MONTO_ENTREGABLE" />
                                                 <asp:TemplateField>
                                                     <ItemTemplate>
                                                         <asp:Button ID="BtnProyecto" runat="server" CommandName="Select"

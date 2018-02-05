@@ -13,7 +13,8 @@ namespace MyMainApp.TEC
 {
     public partial class TECC0002 : FormaSISWeb, IAcciones
     {
-        private DataView dvEmpresa, dvPasantia, dvEscolaridad, dvHabilidad, dvConsultoria;
+        private DataView dvEmpresa, dvPasantia, dvEscolaridad, dvHabilidad, dvConsultoria,
+            dvEntregable;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -167,7 +168,7 @@ namespace MyMainApp.TEC
                 int Id = GVListaProyectos.SelectedIndex;
 
                 TxtIdEmpresa.Text = GVListaProyectos.DataKeys[Id].Value.ToString();
-                FillInfoProyecto();
+                FillInfoEntregable();
                 PanelListaProyectos.Visible = false;
                 PanelEntregables.Visible = true;
             }
@@ -181,8 +182,24 @@ namespace MyMainApp.TEC
         {
             CConsultoria objConsultoria = new CConsultoria(_DataSistema.ConexionBaseDato);
             dvConsultoria = new DataView(objConsultoria.Detalle(0, "", "", "", DateTime.Today, 0, "", 'x', 0, "", DateTime.Today, "", DateTime.Today, 5).TB_CONSULTORIA);
+            if(dvConsultoria.Count >0){
+                TxtIdConsultoria.Text = dvConsultoria.Table.Rows[0]["ID"].ToString();
+            }
             GVListaProyectos.DataSource = dvConsultoria;
             GVListaProyectos.DataBind();
+        }
+
+
+
+        private void FillInfoEntregable()
+        {
+            CConsultoriaEntregable objConsultoriaEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
+            dvEntregable = new DataView(objConsultoriaEntregable.Detalle(0,Convert.ToInt32(TxtIdConsultoria.Text),"","",DateTime.Today,"",'x',"","","","",DateTime.Today,"",DateTime.Today,2).TB_CONSULTORIA_ENTREGABLE);
+            if(dvEntregable.Count > 0){
+                TxtIdEntregable.Text = dvEntregable.Table.Rows[0]["ID"].ToString();
+            }
+            GVEntregables.DataSource = dvEntregable;
+            GVEntregables.DataBind();
         }
 
         protected void GVListaEntregables_SelectedIndexChanged(object sender, EventArgs e)
@@ -190,6 +207,6 @@ namespace MyMainApp.TEC
 
         }
 
-
+        
     }
 }
