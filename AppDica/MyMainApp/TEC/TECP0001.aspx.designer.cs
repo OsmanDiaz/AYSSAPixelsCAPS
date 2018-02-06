@@ -67,13 +67,13 @@ namespace MyMainApp.TEC {
         protected global::AjaxControlToolkit.TabPanel TabPanel1;
         
         /// <summary>
-        /// Control UPDatoGeneral.
+        /// Control UPBrecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UPDatoGeneral;
+        protected global::System.Web.UI.UpdatePanel UPBrecha;
         
         /// <summary>
         /// Control GVBrecha.

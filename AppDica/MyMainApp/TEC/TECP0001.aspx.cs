@@ -55,7 +55,22 @@ namespace MyMainApp.TEC
 
         protected void GVBrecha_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                int Id = GVBrecha.SelectedIndex;
+               
+                string IdHabilidadConocimiento = GVBrecha.DataKeys[Id].Value.ToString();
+             //   string IdNivelConocimiento = GVBrecha.DataKeys[id_nivel_conocimiento].Value.ToString();
+               /* FillCamposProyecto();
+                FillGVEntregable();
+                PanelProyecto.Visible = false;
+                PanelEntregable.Visible = false;
+                PanelListaEntregable.Visible = true;*/
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPBrecha);
+            }
         }
 
     }

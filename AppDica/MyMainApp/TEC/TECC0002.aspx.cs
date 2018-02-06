@@ -14,7 +14,7 @@ namespace MyMainApp.TEC
     public partial class TECC0002 : FormaSISWeb, IAcciones
     {
         private DataView dvEmpresa, dvPasantia, dvEscolaridad, dvHabilidad, dvConsultoria,
-            dvEntregable;
+            dvEntregable, dvAsignacionAspirante, dvPasantiaAspirante;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -107,6 +107,8 @@ namespace MyMainApp.TEC
 
             TxtIdPasantia.Text = GVListaPasantia.DataKeys[Id].Value.ToString();
             FillInfoPasantia();
+            FillGVAsignacionAspirantes();
+            FillGVAspirantes();
             PanelListadoPasantia.Visible = false;
             PanelListadoAspPas.Visible = true;
         }
@@ -203,6 +205,50 @@ namespace MyMainApp.TEC
         }
 
         protected void GVListaEntregables_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GVAsignacionAspirantes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int Id = GVAsignacionAspirantes.SelectedIndex;
+
+                string IdAspirante = GVAsignacionAspirantes.DataKeys[Id].Value.ToString();
+
+                CPasantiaAspirante objPasantiaAspirante = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
+                objResultado = objPasantiaAspirante.Actualizacion(0, IdAspirante, 2,
+                 _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+
+                FillGVAspirantes();
+            }
+            catch (Exception ex)
+            {
+                // DespliegaMensajeUpdatePanel(ex.Message, UPProyecto);
+            }
+        }
+
+        protected void FillGVAsignacionAspirantes()
+        {
+            CAsignacionAspirante objAsignacionAspirante = new CAsignacionAspirante(_DataSistema.ConexionBaseDato);
+            dvAsignacionAspirante = new DataView(objAsignacionAspirante.Detalle(Convert.ToInt32(TxtIdPasantia.Text), 0).ASIGNACION_PASANTIA);
+
+            GVAsignacionAspirantes.DataSource = dvAsignacionAspirante;
+            GVAsignacionAspirantes.DataBind();
+        }
+
+        protected void FillGVAspirantes()
+        {
+            CPasantiaAspirante objPasantiaAspirante = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
+            dvPasantiaAspirante = new DataView(objPasantiaAspirante.Detalle(0, "", Convert.ToInt32(TxtIdPasantia.Text),
+            "", DateTime.Now, "", DateTime.Now, 2).TB_PASANTIA_ASPIRANTE);
+
+            GVAspirantes.DataSource = dvPasantiaAspirante;
+            GVAspirantes.DataBind();
+        }
+
+        protected void GVAspirantes_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

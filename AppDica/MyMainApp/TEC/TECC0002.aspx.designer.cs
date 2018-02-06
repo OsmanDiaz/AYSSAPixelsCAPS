@@ -616,6 +616,42 @@ namespace MyMainApp.TEC {
         protected global::System.Web.UI.WebControls.GridView GVHabilidadesPasantia;
         
         /// <summary>
+        /// Control Label29.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label29;
+        
+        /// <summary>
+        /// Control PanelAspirantes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelAspirantes;
+        
+        /// <summary>
+        /// Control GVAsignacionAspirantes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVAsignacionAspirantes;
+        
+        /// <summary>
+        /// Control GVAspirantes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVAspirantes;
+        
+        /// <summary>
         /// Control BtnAtras.
         /// </summary>
         /// <remarks>
