@@ -13,12 +13,8 @@ namespace MyMainApp.TEC
 {
     public partial class TECC0002 : FormaSISWeb, IAcciones
     {
-<<<<<<< HEAD
         private DataView dvEmpresa, dvPasantia, dvEscolaridad, dvHabilidad, dvConsultoria,
             dvEntregable;
-=======
-        private DataView dvEmpresa, dvPasantia, dvEscolaridad, dvHabilidad;
->>>>>>> 896a17109aeea0e06dc96e38e15b043a6ec1e367
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -37,6 +33,7 @@ namespace MyMainApp.TEC
         {
             FillGVListaEmpresa();
             FillGVListaPasantia();
+            FillInfoProyecto();
             //FillGVAspiranteAsignado();
             //FillCboTipoDocumento();
         }
@@ -164,7 +161,6 @@ namespace MyMainApp.TEC
             PanelListadoAspPas.Visible = false;
         }
 
-<<<<<<< HEAD
         protected void GVListaProyectos_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -212,8 +208,5 @@ namespace MyMainApp.TEC
         }
 
         
-=======
-
->>>>>>> 896a17109aeea0e06dc96e38e15b043a6ec1e367
     }
 }

@@ -643,7 +643,6 @@ namespace MyMainApp.TEC {
         protected global::System.Web.UI.UpdatePanel UPActividad;
         
         /// <summary>
-<<<<<<< HEAD
         /// Control TxtIdEntregable.
         /// </summary>
         /// <remarks>
@@ -663,33 +662,30 @@ namespace MyMainApp.TEC {
         
         /// <summary>
         /// Control PanelListaProyectos.
-=======
-        /// Control PanelListaEntregables.
->>>>>>> 896a17109aeea0e06dc96e38e15b043a6ec1e367
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelListaEntregables;
+        protected global::System.Web.UI.WebControls.Panel PanelListaProyectos;
         
         /// <summary>
-        /// Control GVListaEntregable.
+        /// Control GVListaProyectos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GVListaEntregable;
+        protected global::System.Web.UI.WebControls.GridView GVListaProyectos;
         
         /// <summary>
-        /// Control Panel.
+        /// Control Panel2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel;
+        protected global::System.Web.UI.WebControls.Panel Panel2;
         
         /// <summary>
         /// Control Label2.
@@ -834,5 +830,41 @@ namespace MyMainApp.TEC {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtDescripPasantia;
+        
+        /// <summary>
+        /// Control PanelListaEntregables.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelListaEntregables;
+        
+        /// <summary>
+        /// Control GVListaEntregable.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVListaEntregable;
+        
+        /// <summary>
+        /// Control PanelEntregables.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelEntregables;
+        
+        /// <summary>
+        /// Control GVEntregables.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVEntregables;
     }
 }
