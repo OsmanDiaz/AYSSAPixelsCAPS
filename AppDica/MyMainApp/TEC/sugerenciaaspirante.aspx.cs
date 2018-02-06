@@ -28,11 +28,7 @@ namespace MyMainApp.EMP
             }
         }
         public void Consultar() {
-            CAsignacionAspirante objAsignacionAspirante = new CAsignacionAspirante(_DataSistema.ConexionBaseDato);
-            dvAsignacionAspirante = new DataView(objAsignacionAspirante.Detalle(2, 0).ASIGNACION_PASANTIA);
-
-            GVAsignacionAspirantes.DataSource = dvAsignacionAspirante;
-            GVAsignacionAspirantes.DataBind();
+            FillGVAsignacionAspirantes();
         }
 
         public void Adicionar() { }
@@ -65,7 +61,14 @@ namespace MyMainApp.EMP
             }
         }
 
+        protected void FillGVAsignacionAspirantes()
+        {
+            CAsignacionAspirante objAsignacionAspirante = new CAsignacionAspirante(_DataSistema.ConexionBaseDato);
+            dvAsignacionAspirante = new DataView(objAsignacionAspirante.Detalle(2, 0).ASIGNACION_PASANTIA);
 
+            GVAsignacionAspirantes.DataSource = dvAsignacionAspirante;
+            GVAsignacionAspirantes.DataBind();
+        }
 
         protected void FillGVAspirantes(string IdAspirante)
         {

@@ -14,7 +14,7 @@ namespace ClsDataApp
         {
             _ConexionData = ConexionData;
         }
-        public DS_TB_TEC Detalle(int IdPasantia,  int OpcionConsulta)
+        public DS_TB_TEC Detalle(char Estado,int IdHabilidadConocimiento,int IdNivelConocimiento, int OpcionConsulta)
         {
 
             DS_TB_TEC objDataSet = new DS_TB_TEC();
@@ -26,6 +26,9 @@ namespace ClsDataApp
                 ObjParam = new SqlParameter();
                 ObjAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
 
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_ESTADO", Estado);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_HABILIDAD_CONOCIMIENTO", IdHabilidadConocimiento);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_NIVEL_CONOCIMIENTO", IdNivelConocimiento);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@OPCI_CONS", OpcionConsulta);
 
 
