@@ -776,8 +776,22 @@
                                                 </div>
                                            <asp:TextBox ID="TxtIdConsultoria" runat="server" Text="0" Visible="False"></asp:TextBox>
                                              <asp:TextBox ID="TxtIdAspirante" runat="server" Text="0" Visible="False"></asp:TextBox>
-                                            
                                             <br />
+                                               <div class="form-group">
+                                            <asp:Label class="control-label  col-sm-2" ID="Label69" runat="server" Font-Bold="True" Text="TITULO PROYECTO:"></asp:Label>
+                                            <div class="col-md-9">
+                                                <asp:TextBox class="form-control" ID="TextBox1" runat="server" ReadOnly="true" AutoCompleteType="Disabled"></asp:TextBox>
+                                                
+                                            </div>
+                                        </div>
+                                             <div class="form-group">
+                                            <asp:Label class="control-label  col-sm-2" ID="Label80" runat="server" Font-Bold="True" Text="NOMBRE ENTREGABLE:"></asp:Label>
+                                            <div class="col-md-9">
+                                                <asp:TextBox class="form-control" ID="TextBox2" runat="server" ReadOnly="true" AutoCompleteType="Disabled"></asp:TextBox>
+                                                
+                                            </div>
+                                        </div>
+                                             <br />
                                             <asp:GridView ID="GVAspirantesEntregables" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVAspirantesEntregables_SelectedIndexChanged">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
