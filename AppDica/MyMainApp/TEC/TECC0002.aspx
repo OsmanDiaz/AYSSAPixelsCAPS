@@ -34,9 +34,7 @@
                                         <%--inicio contenido tab--%><%--inicio tab datos--%>
                                         <br />
                                         <asp:TextBox ID="TxtIdEmpresa" runat="server" Visible="False"></asp:TextBox>
-                                        <asp:TextBox ID="TxtIdPasantia" runat="server" Visible="False"></asp:TextBox>
-                                        <asp:TextBox ID="TextBox2" runat="server" Visible="False"></asp:TextBox>
-                                        <asp:TextBox ID="TextBox3" runat="server" Visible="False"></asp:TextBox>
+                                        <asp:TextBox ID="TxtIdPasantia" runat="server" Visible="False"></asp:TextBox>                                        
                                         <asp:Panel ID="PanelListaEmpresa" runat="server" >
                                         <asp:GridView ID="GVListaEmpresa" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaEmpresa_SelectedIndexChanged">
                                             <AlternatingRowStyle BackColor="White" />
@@ -148,6 +146,7 @@
 
                                     <ContentTemplate>
                                         <br />
+                                        
                                         <asp:Panel ID="PanelListadoPasantia" runat="server" >
                                         <div class="form-group">
                                             <asp:Label ID="Label1" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE DE EMPRESA:"></asp:Label>
@@ -293,6 +292,12 @@
                                     <ContentTemplate>
                                         <%--inicio tab habilidades--%>
                                         <br />
+<<<<<<< HEAD
+                                        <asp:TextBox ID="TxtIdEntregable" runat="server" Visible="False"></asp:TextBox>
+                                        <asp:TextBox ID="TxtIdConsultoria" runat="server" Visible="False"></asp:TextBox>
+                                        <asp:Panel ID="PanelListaProyectos" runat="server">
+                                        <asp:GridView ID="GVListaProyectos" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaProyectos_SelectedIndexChanged">
+=======
                                         <asp:Panel ID="Panel2" runat="server" Visible="false">
                                         <div class="form-group">
                     <asp:Label ID="Label2" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE DE EMPRESA:"></asp:Label>
@@ -342,6 +347,7 @@
             <br />
                                         <asp:Panel ID="PanelListaEntregables" runat="server">
                                         <asp:GridView ID="GVListaEntregable" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+>>>>>>> 896a17109aeea0e06dc96e38e15b043a6ec1e367
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
                                                 <asp:BoundField HeaderText="NOMBRE ENTREGABLE" />
@@ -361,6 +367,43 @@
                                         </asp:GridView>
                                             </asp:Panel>
                                         <br />
+<<<<<<< HEAD
+
+                                        <asp:Panel ID="PanelEntregables" runat="server" Visible="false">                  
+                             <asp:GridView ID="GVEntregables" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaEntregables_SelectedIndexChanged">
+                                            <AlternatingRowStyle BackColor="White" />
+                                            <Columns>
+                                                <asp:TemplateField HeaderText="" >
+                                                    <ItemTemplate>
+                                                        <asp:TextBox ID="TxtIdEntregableGV" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:BoundField HeaderText="NOMBRE ENTREGABLE" DataField="DS_ENTREGABLE" />
+                                                <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ENT" />
+                                                <asp:BoundField HeaderText="DURACION" DataField="DS_DURACION_ENT" />
+                                                <asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        <asp:Button ID="BtnProyecto" runat="server" CommandName="Select"
+                                                            Text="Informacion Proyecto"  />
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                            </Columns>
+                                            <EditRowStyle BackColor="#2461BF" />
+                                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                            <RowStyle BackColor="#EFF3FB" />
+                                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                        </asp:GridView>
+                                        </asp:Panel>
+            <br />
+                                        
+=======
+>>>>>>> 896a17109aeea0e06dc96e38e15b043a6ec1e367
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
                             </ContentTemplate>
