@@ -84,10 +84,9 @@ namespace MyMainApp.EMP
             FillGVContrato();
             CargarReporte();
             FillGVAspirantesEntregables();
-            //FillGVAspiranteEntregable();
-            //FillGVListaEntregable();
             FillCamposEntregable();
             FillCamposAspirante();
+            
         }
 
         public void Adicionar() { }
@@ -476,6 +475,8 @@ namespace MyMainApp.EMP
                         TxtIdProyecto.Text = Convert.ToString(objResultado.CodigoAuxiliar);
                         Consultar();
                         DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPProyecto);
+                        PanelProyecto.Visible = true;
+                        PanelRegistroProyecto.Visible = false;
                     }
                 }
                 if (objResultado.CodigoError == 0)
@@ -516,7 +517,8 @@ namespace MyMainApp.EMP
                 FillCamposProyecto();
                 FillGVEntregable();
                 PanelProyecto.Visible = false;
-                PanelEntregable.Visible = true;
+                PanelEntregable.Visible = false;
+                PanelListaEntregable.Visible = true;
             }
             catch (Exception ex)
             {
@@ -525,8 +527,8 @@ namespace MyMainApp.EMP
         }
 
         protected void BtnCancelarEntregable_Click(object sender, EventArgs e)
-        {
-            PanelProyecto.Visible = true;
+        {//de registro entregable regresar a listado entregable
+            PanelListaEntregable.Visible = true;
             PanelEntregable.Visible = false;
         }
 
@@ -545,6 +547,13 @@ namespace MyMainApp.EMP
                     if (objResultado.CodigoError == 0)
                     {
                         FillGVEntregable();
+                    }
+                    if (objResultado.CodigoError == 0)
+                    {
+                        Consultar();
+                        DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPProyecto);
+                        PanelEntregable.Visible = false;
+                        PanelListaEntregable.Visible = true;
                     }
                     else
                     {
@@ -592,6 +601,7 @@ namespace MyMainApp.EMP
             }
         }
 
+        
         protected void CboCategoriaEscolaridad_SelectedIndexChanged(object sender, EventArgs e)
         {
             FillCboNivelEducativo();
@@ -758,9 +768,9 @@ namespace MyMainApp.EMP
 
                 TxtIdProyecto.Text = GVEntregable.DataKeys[Id].Value.ToString();
                 FillGVAspirantesEntregables();
-                PanelEntregable.Visible = false;
                 PanelAspirantesE.Visible = true;
-                PanelRegistroProyecto.Visible = false;
+                PanelListaEntregable.Visible = false;
+                
             }
             catch (Exception ex)
             {
@@ -790,10 +800,9 @@ namespace MyMainApp.EMP
                 TxtIdProyecto.Text = GVAspirantesEntregables.DataKeys[Id].Value.ToString();
                 FillCamposEntregable();
                 FillCamposAspirante(); 
-                //FillGVEntregableDetalle();
                 PanelAspirantesE.Visible = false;
                 PanelDetalleEntregable.Visible = true;
-                PanelRegistroProyecto.Visible = false;
+                
             }
             catch (Exception ex)
             {
@@ -802,7 +811,7 @@ namespace MyMainApp.EMP
         }
 
         protected void BtnCancelarObservacion_Click(object sender, EventArgs e)
-        {/*regresa al panel anterior*/
+        {/* de observacion entregable regresar a listado aspirante*/
             PanelAspirantesE.Visible = true;
             PanelDetalleEntregable.Visible = false;
         }
@@ -824,10 +833,36 @@ namespace MyMainApp.EMP
         }
 
         protected void BtnRegresar1_Click(object sender, EventArgs e)
-        {
+        {//de lista aspirante regresar a lista de entregables
             PanelAspirantesE.Visible = false;
-            PanelEntregable.Visible = true;
+            PanelListaEntregable.Visible = true;
         }
+
+        protected void BtnNuevoProyecto_Click(object sender, EventArgs e)
+        {//registro de nuevo proyecto
+            PanelProyecto.Visible = false;
+            PanelRegistroProyecto.Visible = true;
+        }
+
+        protected void BtnRegresarPro_Click(object sender, EventArgs e)
+        {//de nuevo proyecto regresar a listado de proyecto
+            PanelProyecto.Visible = true;
+            PanelRegistroProyecto.Visible = false;
+        }
+
+        protected void BtnNuevoEntregable_Click(object sender, EventArgs e)
+        {//nuevo registro de entregable
+            PanelEntregable.Visible = true;
+            PanelListaEntregable.Visible = false;
+        }
+
+        protected void BtnRegresarProyec_Click(object sender, EventArgs e)
+        {//lista de entregable regresar a lista proyecto
+            PanelListaEntregable.Visible = false;
+            PanelProyecto.Visible = true;
+        }
+
+       
        
     }
 }

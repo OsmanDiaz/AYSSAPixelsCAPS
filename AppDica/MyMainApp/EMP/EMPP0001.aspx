@@ -602,7 +602,7 @@
 
                                         <%--inicio tab proyecto--%>
                                         <br />
-                                        <asp:Panel ID="PanelRegistroProyecto" runat="server">
+                                        <asp:Panel ID="PanelRegistroProyecto" runat="server"  Visible="false">
                                         <div align="center">
                                                 <asp:Label ID="Label68" runat="server" Text="REGISTRO DE PROYECTO"  Font-Size="14pt"></asp:Label> <br />
                                                 </div><br />
@@ -654,12 +654,18 @@
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator27" runat="server" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ControlToValidate="TxtMontoPro" ValidationGroup="proyecto">Llenar monto de proyecto</asp:RequiredFieldValidator>
                                             </div>
                                         </div>
-                                            </asp:Panel>
-                                        <asp:Panel ID="PanelProyecto" runat="server">
+                                            
+                                       
                                             <div align="center">
                                                 <asp:Button ID="BtnProyectoGuardar" runat="server" Text="GUARDAR PROYECTO" class="btn btn-primary" ValidationGroup="proyecto" OnClick="BtnProyectoGuardar_Click" />
-                                                &nbsp;<asp:Button ID="Button6" runat="server" Text="CANCELAR" class="btn btn-primary" CausesValidation="False" />
+                                                &nbsp;<asp:Button ID="BtnRegresarPro" runat="server" Text="CANCELAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresarPro_Click" />
                                             </div>
+                                            </asp:Panel>
+                                        
+                                         <asp:Panel ID="PanelProyecto" runat="server">
+                                             <div align="left">
+                                        <asp:Button ID="BtnNuevoProyecto" runat="server" Text="NUEVO PROYECTO" class="btn btn-primary" CausesValidation="False" OnClick="BtnNuevoProyecto_Click" />
+                                             </div>
                                             <br />
 
                                             <asp:GridView ID="GVContrato" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVContrato_SelectedIndexChanged" DataKeyNames="ID">
@@ -693,8 +699,8 @@
                                             </asp:GridView>
                                             <br />
                                         </asp:Panel>
-                                        <asp:Panel ID="PanelEntregable" runat="server" Visible="False">
-                                            <div align="center">
+                                        <asp:Panel ID="PanelEntregable" runat="server" Visible="false">
+                                             <div align="center">
                                                 <asp:Label ID="Label59" runat="server" Text="REGISTRO DE ENTREGABLES" Font-Size="14pt"></asp:Label>
                                             </div><br />
                                             <div class="form-group">
@@ -724,7 +730,21 @@
                                                 <asp:Button ID="BtnGuardarEntregable" runat="server" class="btn btn-primary" Text="GUARDAR ENTREGABLE" OnClick="BtnGuardarEntregable_Click" />
                                                 &nbsp;<asp:Button ID="BtnCancelarEntregable" runat="server" Text="CANCELAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnCancelarEntregable_Click" />
                                             </div>
-                                            <br />
+                                            </asp:Panel>
+                                            <asp:Panel ID="PanelListaEntregable" runat="server" Visible="false">
+                                            <div align="left"><asp:TextBox ID="TxtIdProyecto1" runat="server" Text="0" Visible="False"></asp:TextBox>
+                                        <asp:Button ID="BtnNuevoEntregable" runat="server" Text="NUEVO ENTREGABLE" class="btn btn-primary" CausesValidation="False" OnClick="BtnNuevoEntregable_Click"  />
+                                                <asp:Button ID="BtnRegresarProyec" runat="server" Text="REGRESAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresarProyec_Click"  />
+                                             </div><br />
+                                               <div class="form-group">
+                                            <asp:Label class="control-label  col-sm-2" ID="Label79" runat="server" Font-Bold="True" Text="TITULO PROYECTO:"></asp:Label>
+                                            <div class="col-md-9">
+                                                <asp:TextBox class="form-control" ID="TxtNombrePro" runat="server" ReadOnly="true" AutoCompleteType="Disabled"></asp:TextBox>
+                                                
+                                            </div>
+                                        </div>
+                                             <br />  
+                                                
                                             <asp:GridView ID="GVEntregable" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVEntregable_SelectedIndexChanged" DataKeyNames="ID">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
@@ -748,14 +768,16 @@
                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                             </asp:GridView>
-                                            <br />
-                                        </asp:Panel>
+                                                </asp:Panel>
+                                                                                   
                                         <asp:Panel ID="PanelAspirantesE" runat="server" Visible="false">
-                                             <br />
-                                           <asp:Button ID="BtnRegresar1" runat="server" Text="REGRESAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresar1_Click"  /><br />
+                                            <div align="left">
+                                                <asp:Button ID="BtnRegresar1" runat="server" Text="REGRESAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresar1_Click"  />
+                                                </div>
                                            <asp:TextBox ID="TxtIdConsultoria" runat="server" Text="0" Visible="False"></asp:TextBox>
                                              <asp:TextBox ID="TxtIdAspirante" runat="server" Text="0" Visible="False"></asp:TextBox>
                                             
+                                            <br />
                                             <asp:GridView ID="GVAspirantesEntregables" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVAspirantesEntregables_SelectedIndexChanged">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>

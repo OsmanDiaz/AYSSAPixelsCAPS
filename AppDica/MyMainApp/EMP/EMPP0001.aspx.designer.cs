@@ -1786,15 +1786,6 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator27;
         
         /// <summary>
-        /// Control PanelProyecto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelProyecto;
-        
-        /// <summary>
         /// Control BtnProyectoGuardar.
         /// </summary>
         /// <remarks>
@@ -1804,13 +1795,31 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.Button BtnProyectoGuardar;
         
         /// <summary>
-        /// Control Button6.
+        /// Control BtnRegresarPro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button6;
+        protected global::System.Web.UI.WebControls.Button BtnRegresarPro;
+        
+        /// <summary>
+        /// Control PanelProyecto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelProyecto;
+        
+        /// <summary>
+        /// Control BtnNuevoProyecto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnNuevoProyecto;
         
         /// <summary>
         /// Control GVContrato.
@@ -1928,6 +1937,60 @@ namespace MyMainApp.EMP {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnCancelarEntregable;
+        
+        /// <summary>
+        /// Control PanelListaEntregable.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelListaEntregable;
+        
+        /// <summary>
+        /// Control TxtIdProyecto1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIdProyecto1;
+        
+        /// <summary>
+        /// Control BtnNuevoEntregable.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnNuevoEntregable;
+        
+        /// <summary>
+        /// Control BtnRegresarProyec.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnRegresarProyec;
+        
+        /// <summary>
+        /// Control Label79.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label79;
+        
+        /// <summary>
+        /// Control TxtNombrePro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtNombrePro;
         
         /// <summary>
         /// Control GVEntregable.
