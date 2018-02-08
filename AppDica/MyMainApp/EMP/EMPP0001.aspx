@@ -150,6 +150,9 @@
                                     <ContentTemplate>
                                         <%--inicio tab Pasantia--%>
                                         <asp:Panel ID="PanelPasantia" runat="server" Visible="false">
+                                           <div align="left">
+                                               <asp:Button ID="BtnRegresarListaPasantia" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresarListaPasantia_Click" />
+                                            </div>
                                             <div align="center">
                                                 <asp:Label ID="Label81" runat="server" Text="REGISTRO DE PASANTIA"  Font-Size="14pt"></asp:Label> <br />
                                                 </div><br />

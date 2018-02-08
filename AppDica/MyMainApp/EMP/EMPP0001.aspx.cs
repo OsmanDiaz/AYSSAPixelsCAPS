@@ -201,6 +201,7 @@ namespace MyMainApp.EMP
                         , Convert.ToInt32(TxtIDEmpresa.Text), Convert.ToInt32(CboAreaPasantia.SelectedValue), TxtTituloPasantia.Text, TxtDescPasantia.Text, Convert.ToDateTime(TxtFechInicio.Text),
           TxtDuracion.Text, TxtDe.Text, TxtA.Text, Convert.ToChar(CboEstadoPasantia.SelectedValue), Convert.ToInt32(CboDias1.SelectedValue), Convert.ToInt32(CboDias2.SelectedValue), Convert.ToInt32(TxtEdadDe.Text), Convert.ToInt32(TxtEdadA.Text), Convert.ToInt32(TxtCantVacantes.Text),
              TxtSucursal.Text, TxtDireccion.Text, _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+                    
                 }
                 else
                 {
@@ -341,6 +342,9 @@ namespace MyMainApp.EMP
                 TextBox Id = GVPasantia.Rows[e.RowIndex].FindControl("TxtIDPasantiaGV") as TextBox;
                 TxtIDPasantia.Text = Id.Text;
                 Consultar();
+                //-------------paneles visibles para actualizar pasantia--------------------
+                PanelPasantia.Visible = true;
+                PanelListadoPasantia.Visible = false;
 
                 DespliegaMensajeUpdatePanel("Registro Seleccionado", UPPasantia);
             }
@@ -863,9 +867,15 @@ namespace MyMainApp.EMP
         }
 
         protected void BtnNuevaPasantia_Click(object sender, EventArgs e)
-        {
+        {//de lista pasantia a nuevo registro pasantia
             PanelPasantia.Visible = true;
             PanelListadoPasantia.Visible = false;
+        }
+
+        protected void BtnRegresarListaPasantia_Click(object sender, EventArgs e)
+        {//de nuevo registro pasantia a listado pasantia
+            PanelPasantia.Visible = false;
+            PanelListadoPasantia.Visible = true;
         }
 
                    

@@ -517,6 +517,15 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.Panel PanelPasantia;
         
         /// <summary>
+        /// Control BtnRegresarListaPasantia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnRegresarListaPasantia;
+        
+        /// <summary>
         /// Control Label81.
         /// </summary>
         /// <remarks>
