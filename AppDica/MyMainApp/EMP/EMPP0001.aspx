@@ -30,7 +30,7 @@
             <div class="container-fluid">
                 <div id="content">
                     <%--inicio container-fluid--%>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="2" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server">
@@ -149,6 +149,10 @@
                                     </Triggers>
                                     <ContentTemplate>
                                         <%--inicio tab Pasantia--%>
+                                        <asp:Panel ID="PanelPasantia" runat="server" Visible="false">
+                                            <div align="center">
+                                                <asp:Label ID="Label81" runat="server" Text="REGISTRO DE PASANTIA"  Font-Size="14pt"></asp:Label> <br />
+                                                </div><br />
                                         <asp:TextBox ID="TxtIDPasantia" runat="server" Visible="False">0</asp:TextBox>
                                         <br />
                                         <div class="form-group">
@@ -307,6 +311,7 @@
                                                 <asp:Button ID="BtnGuardarNivel" runat="server" Text="GUARDAR" class="btn btn-primary" OnClick="BtnGuardarNivel_Click" />
                                                 &nbsp;<asp:Button ID="BtnCancelarNivel" runat="server" Text="CANCELAR" class="btn btn-primary" CausesValidation="False" />
                                             </div>
+
                                             <br />
                                             <asp:GridView ID="GVNivelEducativo" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
                                                 <AlternatingRowStyle BackColor="White" />
@@ -500,6 +505,11 @@
                                                 </div>
                                             </div>
                                         </asp:Panel>
+                                        </asp:Panel><br />
+                                        <asp:Panel ID="PanelListadoPasantia" runat="server" Visible="true">
+                                            <div align="left">
+                                        <asp:Button ID="BtnNuevaPasantia" runat="server" Text="NUEVA PASANTIA" class="btn btn-primary" CausesValidation="False" OnClick="BtnNuevaPasantia_Click"  />
+                                             </div><br />
                                         <asp:GridView ID="GVPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnRowUpdating="GVPasantia_RowUpdating" OnSelectedIndexChanged="GVPasantia_SelectedIndexChanged" DataKeyNames="ID">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
@@ -585,6 +595,7 @@
                                             </asp:GridView>
                                             <center> <asp:Button ID="Button1" runat="server" class="btn btn-primary" OnClick="BtnRegresarAspirantes_Click" Text="Regresar a Listado Aspirantes" /></center>
                                         </asp:Panel>
+                                       </asp:Panel>
                                         <br />
 
                                     </ContentTemplate>
@@ -737,7 +748,7 @@
                                                 <asp:Button ID="BtnRegresarProyec" runat="server" Text="REGRESAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresarProyec_Click"  />
                                              </div><br />
                                                <div class="form-group">
-                                            <asp:Label class="control-label  col-sm-2" ID="Label79" runat="server" Font-Bold="True" Text="TITULO PROYECTO:"></asp:Label>
+                                            <asp:Label class="control-label  col-sm-2" ID="Label79" runat="server" Font-Bold="True" Text="NOMBRE DE PROYECTO:"></asp:Label>
                                             <div class="col-md-9">
                                                 <asp:TextBox class="form-control" ID="TxtNombrePro" runat="server" ReadOnly="true" AutoCompleteType="Disabled"></asp:TextBox>
                                                 
@@ -778,7 +789,7 @@
                                              <asp:TextBox ID="TxtIdAspirante" runat="server" Text="0" Visible="False"></asp:TextBox>
                                             <br />
                                                <div class="form-group">
-                                            <asp:Label class="control-label  col-sm-2" ID="Label69" runat="server" Font-Bold="True" Text="TITULO PROYECTO:"></asp:Label>
+                                            <asp:Label class="control-label  col-sm-2" ID="Label69" runat="server" Font-Bold="True" Text="NOMBRE DE PROYECTO:"></asp:Label>
                                             <div class="col-md-9">
                                                 <asp:TextBox class="form-control" ID="TextBox1" runat="server" ReadOnly="true" AutoCompleteType="Disabled"></asp:TextBox>
                                                 

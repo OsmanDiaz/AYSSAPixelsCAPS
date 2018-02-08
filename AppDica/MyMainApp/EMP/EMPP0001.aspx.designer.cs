@@ -508,6 +508,24 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.UpdatePanel UPPasantia;
         
         /// <summary>
+        /// Control PanelPasantia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelPasantia;
+        
+        /// <summary>
+        /// Control Label81.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label81;
+        
+        /// <summary>
         /// Control TxtIDPasantia.
         /// </summary>
         /// <remarks>
@@ -1496,6 +1514,24 @@ namespace MyMainApp.EMP {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtNit;
+        
+        /// <summary>
+        /// Control PanelListadoPasantia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelListadoPasantia;
+        
+        /// <summary>
+        /// Control BtnNuevaPasantia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnNuevaPasantia;
         
         /// <summary>
         /// Control GVPasantia.

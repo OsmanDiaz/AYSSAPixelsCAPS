@@ -514,8 +514,8 @@ namespace MyMainApp.EMP
                 int Id = GVContrato.SelectedIndex;
 
                 TxtIdProyecto.Text = GVContrato.DataKeys[Id].Value.ToString();
-                FillCamposProyecto();
-                FillGVEntregable();
+                //FillCamposProyecto();
+                //FillGVEntregable();
                 PanelProyecto.Visible = false;
                 PanelEntregable.Visible = false;
                 PanelListaEntregable.Visible = true;
@@ -862,7 +862,13 @@ namespace MyMainApp.EMP
             PanelProyecto.Visible = true;
         }
 
-       
+        protected void BtnNuevaPasantia_Click(object sender, EventArgs e)
+        {
+            PanelPasantia.Visible = true;
+            PanelListadoPasantia.Visible = false;
+        }
+
+                   
        
     }
 }

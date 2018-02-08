@@ -56,9 +56,37 @@
                                     </asp:GridView>
                                     
 
-                                    <br /><div align="center"><asp:Button ID="BtnGuardarDatoGeneral" runat="server" class="btn btn-primary" Text="GUARDAR" /><asp:Button ID="Button2" runat="server" class="btn btn-primary" Text="CANCELAR" /></div>
-                                    
-
+                                    <br /><asp:GridView ID="GVAsignacionAspirantes" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="id_aspirante" OnSelectedIndexChanged="GVAsignacionAspirantes_SelectedIndexChanged" EmptyDataText="No existen registros">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:BoundField HeaderText="NOMBRE ASPIRANTE" DataField="NOMBRE" />
+                                                    <asp:BoundField DataField="Edad" HeaderText="EDAD" />
+                                                    <asp:BoundField DataField="discapacidad" HeaderText="DISCAPACIDAD" />
+                                                    <asp:BoundField DataField="Semejanzas" HeaderText="SEMEJANZA" />
+                                                    <asp:TemplateField HeaderText="ASIGNAR">
+                                                        <ItemTemplate>
+                                                            <asp:Button ID="BtnAsignarPasantia" runat="server" CommandName="Select"
+                                                                Text="Agregar a Curso" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                     <asp:TemplateField HeaderText="Ver Aspirante">
+                                                        <ItemTemplate>
+                                                            <asp:Button ID="BtnVerAspirante" runat="server" CommandName="Select"
+                                                                Text="Ver Aspirante" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>
                                     <br />
                                     </ContentTemplate>
                                     
