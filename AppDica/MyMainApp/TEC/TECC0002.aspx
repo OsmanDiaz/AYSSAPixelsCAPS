@@ -23,7 +23,55 @@
                             </asp:DropDownList>
                         </div>
                     </div>
-                    <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" Height="375px" ScrollBars="Vertical" Width="100%">
+                    <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" BorderColor="#66CCFF" Height="375px" ScrollBars="Vertical" Width="100%">
+                        
+                         <ajaxtoolkit:TabPanel ID="TabPanelGeneral" runat="server" HeaderText="Monitoreo">
+                            <ContentTemplate>
+                                <asp:UpdatePanel ID="UPGeneral" runat="server">
+
+                                    <ContentTemplate>
+                                        <br />
+                                        
+                                        <asp:Panel ID="Panel3" runat="server" >
+                                        <br />
+                                        <asp:GridView ID="GVListaGeneral" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaGeneral_SelectedIndexChaged">
+
+                                            <AlternatingRowStyle BackColor="White" />
+                                            <Columns>
+                                                <asp:TemplateField HeaderText="" Visible="false">
+                                                    <ItemTemplate>
+                                                        <asp:TextBox ID="TxtIdProyectosGV" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:BoundField HeaderText="NOMBRE PROYECTO" DataField="DS_NOMBRE_CONSULTORIA"/>
+                                                <asp:BoundField HeaderText="NOMBRE ENTREGABLE" DataField="DS_ENTREGABLE"/>
+                                                <asp:BoundField HeaderText="FECHA ENTREGA" DataField="FECH_ENTREGA_ENT"/>
+                                                <asp:BoundField HeaderText="BANDERA" DataField="BANDERA"/>
+                                                <asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        <asp:Button ID="BtnGeneral" runat="server" CommandName="Select"
+                                                            Text="Informacion Pasantia"  />
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                            </Columns>
+                                            <EditRowStyle BackColor="#2461BF" />
+                                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                            <RowStyle BackColor="#EFF3FB" />
+                                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+
+                                        </asp:GridView>
+                                        <%--fin tab informacion adicional--%>
+                                       </asp:Panel>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </ContentTemplate>
+                        </ajaxtoolkit:TabPanel>
                         <ajaxtoolkit:TabPanel ID="TabPanel1" runat="server" HeaderText="REGISTROS DE EMPRESAS" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPRegistroEmp" runat="server">

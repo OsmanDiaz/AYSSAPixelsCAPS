@@ -76,6 +76,42 @@ namespace MyMainApp.TEC {
         protected global::AjaxControlToolkit.TabContainer TabContainer1;
         
         /// <summary>
+        /// Control TabPanelGeneral.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.TabPanel TabPanelGeneral;
+        
+        /// <summary>
+        /// Control UPGeneral.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UPGeneral;
+        
+        /// <summary>
+        /// Control Panel3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel3;
+        
+        /// <summary>
+        /// Control GVListaGeneral.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVListaGeneral;
+        
+        /// <summary>
         /// Control TabPanel1.
         /// </summary>
         /// <remarks>

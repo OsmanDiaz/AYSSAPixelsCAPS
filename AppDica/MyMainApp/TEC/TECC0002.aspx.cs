@@ -14,7 +14,7 @@ namespace MyMainApp.TEC
     public partial class TECC0002 : FormaSISWeb, IAcciones
     {
         private DataView dvEmpresa, dvPasantia, dvEscolaridad, dvHabilidad, dvConsultoria,
-            dvEntregable, dvAsignacionAspirante, dvPasantiaAspirante;
+            dvEntregable, dvAsignacionAspirante, dvPasantiaAspirante, dvGeneral;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -34,9 +34,11 @@ namespace MyMainApp.TEC
             FillGVListaEmpresa();
             FillGVListaPasantia();
             FillInfoProyecto();
+            FillInfoGeneral();
             //FillGVAspiranteAsignado();
             //FillCboTipoDocumento();
         }
+
 
         public void Adicionar() { }
         public void Modificar() { }
@@ -249,6 +251,19 @@ namespace MyMainApp.TEC
         }
 
         protected void GVAspirantes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void FillInfoGeneral()
+        {
+            CConsultoriaEntregable objConsultoriaEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
+            dvGeneral = new DataView(objConsultoriaEntregable.Detalle(0,0,"","",DateTime.Today,"",'X',"","","","",DateTime.Today,"",DateTime.Today,5).TB_CONSULTORIA_ENTREGABLE);
+            GVListaGeneral.DataSource = dvGeneral;
+            GVListaGeneral.DataBind();
+        }
+        protected void GVListaGeneral_SelectedIndexChaged(object sender, EventArgs e)
         {
 
         }
