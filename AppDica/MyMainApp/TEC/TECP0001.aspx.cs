@@ -58,8 +58,10 @@ namespace MyMainApp.TEC
             try
             {
                 int Id = GVBrecha.SelectedIndex;
-               
-                string IdHabilidadConocimiento = GVBrecha.DataKeys[Id].Value.ToString();
+
+
+                string IdHabilidadConocimiento = Convert.ToString(GVBrecha.DataKeys[Id].Values[0]);
+                string IdNivelConocimiento = Convert.ToString(GVBrecha.DataKeys[Id].Values[1]);
              //   string IdNivelConocimiento = GVBrecha.DataKeys[id_nivel_conocimiento].Value.ToString();
                /* FillCamposProyecto();
                 FillGVEntregable();
