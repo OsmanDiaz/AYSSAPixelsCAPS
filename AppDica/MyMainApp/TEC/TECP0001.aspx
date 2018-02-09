@@ -54,7 +54,7 @@
                                                 <asp:BoundField DataField="nivel" HeaderText="NIVEL CONOCIMIENTO" />
                                                 <asp:TemplateField HeaderText="Ver Aspirantes">
                                                     <ItemTemplate>
-                                                        <asp:Button ID="BtnVerAspirante" runat="server" CommandName="Select" Text="Ver Aspirante" />
+                                                        <asp:Button ID="BtnVerAspirante" runat="server" CommandName="Select" Text="Ver Aspirantes" />
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
 
@@ -71,17 +71,22 @@
                                             <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                         </asp:GridView>
-
+                                        
+                                        <asp:Panel ID="PanelSugerida" runat="server" Visible="false">
                                         <div align="center">
                                             <asp:Label ID="Label1" runat="server" Text="Personal sugerido a enviar a curso" Font-Size="14pt"></asp:Label>
                                         </div>
-                                        <asp:GridView ID="GVAspirantes" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="id_aspirante" EmptyDataText="No existen registros" Visible="False">
+                                        <asp:GridView ID="GVAspirantes" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="id_aspirante" EmptyDataText="No existen registros" Visible="True" OnRowUpdating="GVAspirantes_RowUpdating">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
+                                                <asp:TemplateField HeaderText="" Visible="false">
+                                   <ItemTemplate><asp:TextBox ID="TxtIDAspiranteGV" runat="server" Text='<%#Eval("ID_ASPIRANTE")%>' Visible="False"></asp:TextBox>
+                                   </ItemTemplate>
+                                   </asp:TemplateField>
                                                 <asp:BoundField HeaderText="NOMBRE ASPIRANTE" DataField="NOMBRE" />
                                                 <asp:TemplateField HeaderText="ASIGNAR">
                                                     <ItemTemplate>
-                                                        <asp:Button ID="BtnAsignarPasantia" runat="server" CommandName="Select"
+                                                        <asp:Button ID="BtnAsignarPasantia" runat="server" CommandName="Update"
                                                             Text="Agregar a Curso" />
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
@@ -104,18 +109,35 @@
                                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                         </asp:GridView>
                                         <br />
-                                        <asp:Panel ID="Panel2" runat="server">
                                                     <div class="form-group">
-                                            <asp:Label ID="Label2" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="INSTITUCIÓN EDUCATIVA:"></asp:Label>
+                                            <asp:Label ID="Label2" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CURSO"></asp:Label>
                           <div class="col-md-3">
- <asp:DropDownList ID="DropDownList1" runat="server" class="form-control">
+ <asp:DropDownList ID="CboCurso" runat="server" class="form-control" DataTextField="DS_NOMBRE_CURSO" DataValueField="ID">
                                                 </asp:DropDownList>
+                              <asp:TextBox ID="TxtIdHabilidadConocimiento" runat="server" Visible="False">0</asp:TextBox>
+                              <asp:TextBox ID="TxtIdAspirante" runat="server" Visible="False">0</asp:TextBox>
   </div>
- <asp:Label ID="Label3" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="OTRO:"></asp:Label>
- <div class="col-md-3">
-     <asp:TextBox ID="TextBox1" runat="server" class="form-control"></asp:TextBox>
-   </div>
+                                                        <asp:Button ID="BtnAgregarACurso" runat="server" Text="Agregar a Curso"  />
   </div>
+                                            <asp:Label ID="Label3" runat="server" Text="Aspirantes en este Curso" Font-Size="14pt"></asp:Label>
+                                            <br />
+<asp:GridView ID="GVAspirantesCurso" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="id_aspirante" EmptyDataText="No existen registros" Visible="False">
+                                            <AlternatingRowStyle BackColor="White" />
+                                            <Columns>
+                                                <asp:BoundField HeaderText="NOMBRE ASPIRANTE" DataField="NOMBRE" />
+                                            </Columns>
+                                            <EditRowStyle BackColor="#2461BF" />
+                                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                            <RowStyle BackColor="#EFF3FB" />
+                                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                        </asp:GridView>
+
                                         </asp:Panel>
                                         <br />
                                     </ContentTemplate>

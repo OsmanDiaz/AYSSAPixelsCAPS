@@ -74,6 +74,7 @@
     <Compile Include="CConfMail.cs" />
     <Compile Include="CConsultoria.cs" />
     <Compile Include="CConsultoriaEntregable.cs" />
+    <Compile Include="CCurso.cs" />
     <Compile Include="CDepartamento.cs" />
     <Compile Include="CDestreza.cs" />
     <Compile Include="CDestrezaAspirante.cs" />
