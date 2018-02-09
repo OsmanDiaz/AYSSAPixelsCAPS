@@ -56,6 +56,8 @@ namespace MyMainApp.TEC
             dvEmpresa = new DataView (objEmpresa.Detalle(0,_DataSistema.Cusuario,"","","","","","",0,0,"","","","",0,"",_DataSistema.Cusuario,DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 0).TB_EMPRESA);
             GVListaEmpresa.DataSource = dvEmpresa;
             GVListaEmpresa.DataBind();
+            GVInfoEmpresa.DataSource = dvEmpresa;
+            GVInfoEmpresa.DataBind();
         }
 
         protected void GVListaEmpresa_SelectedIndexChanged(object sender, EventArgs e)
@@ -91,9 +93,22 @@ namespace MyMainApp.TEC
                 TxtEmailRepresentanteLegal.Text = dvEmpresa.Table.Rows[0]["DS_NOMBRE_REPRESENTANTE"].ToString();
                 TxtNitRepresentanteLegal.Text = dvEmpresa.Table.Rows[0]["DS_NIT_REPRESENTANTE"].ToString();
                 TxtDuiRepresentanteLegal.Text = dvEmpresa.Table.Rows[0]["DS_DUI_REPRESENTANTE"].ToString();
+
+                TxtNEmpresa.Text = dvEmpresa.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString();
+                TxtNContacto.Text = dvEmpresa.Table.Rows[0]["DS_NOMBRE_CONTACTO"].ToString();
+                TxtEContacto.Text = dvEmpresa.Table.Rows[0]["DS_EMAIL_CONTACTO"].ToString();
+                TxtTelContacto.Text = dvEmpresa.Table.Rows[0]["DS_TELEFONO_CONTACTO"].ToString();
+                TxtNitEmpresa1.Text = dvEmpresa.Table.Rows[0]["DS_NIT_EMPRESA"].ToString();
+                TxtTelEmpresa.Text = dvEmpresa.Table.Rows[0]["DS_TELEFONO_EMPRESA"].ToString();
+                TxtDirEmpresa.Text = dvEmpresa.Table.Rows[0]["DS_DIRECCION_EMPRESA"].ToString();
+                TxtNRepresentante.Text = dvEmpresa.Table.Rows[0]["DS_NOMBRE_CONTACTO"].ToString();
+                TxtERepresentante.Text = dvEmpresa.Table.Rows[0]["DS_NOMBRE_REPRESENTANTE"].ToString();
+                TxtNitRepresentante.Text = dvEmpresa.Table.Rows[0]["DS_NIT_REPRESENTANTE"].ToString();
+                TxtDuiRepresentante.Text = dvEmpresa.Table.Rows[0]["DS_DUI_REPRESENTANTE"].ToString();
             }
             GVListaEmpresa.DataSource = dvEmpresa;
             GVListaEmpresa.DataBind();
+
         }
 
         protected void BtnAtrasDetalleEmpresa_Click(object sender, EventArgs e)
@@ -198,12 +213,14 @@ namespace MyMainApp.TEC
         private void FillInfoEntregable()
         {
             CConsultoriaEntregable objConsultoriaEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
-            dvEntregable = new DataView(objConsultoriaEntregable.Detalle(0,Convert.ToInt32(TxtIdConsultoria.Text),"","",DateTime.Today,"",'x',"","","","",DateTime.Today,"",DateTime.Today,2).TB_CONSULTORIA_ENTREGABLE);
+            dvEntregable = new DataView(objConsultoriaEntregable.Detalle(0,Convert.ToInt32(TxtIdConsultoria.Text),"","",DateTime.Today,"",'x',"","","","",DateTime.Today,"",DateTime.Today,6).TB_CONSULTORIA_ENTREGABLE);
             if(dvEntregable.Count > 0){
                 TxtIdEntregable.Text = dvEntregable.Table.Rows[0]["ID"].ToString();
             }
             GVEntregables.DataSource = dvEntregable;
             GVEntregables.DataBind();
+            GVlistaEntregab.DataSource = dvEntregable;
+            GVlistaEntregab.DataBind();
         }
 
         protected void GVListaEntregables_SelectedIndexChanged(object sender, EventArgs e)
@@ -265,7 +282,52 @@ namespace MyMainApp.TEC
         }
         protected void GVListaGeneral_SelectedIndexChaged(object sender, EventArgs e)
         {
+            try
+            {
+                int Id = GVListaGeneral.SelectedIndex;
 
+                TxtIdEmpresa.Text = GVListaProyectos.DataKeys[Id].Value.ToString();
+                FillInfoEmpresa();
+                FillInfoEntregable();
+                PanelGeneral.Visible = false;
+                PanelListadoProyectoEntregable.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPActividad);
+            }
+        }
+
+        protected void GVListaEmpreNuevo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int Id = GVInfoEmpresa.SelectedIndex;
+
+                TxtIdEmpresa.Text = GVListaEmpresa.DataKeys[Id].Value.ToString();
+                FillInfoEmpresa();
+                PanelListadoProyectoEntregable.Visible = false;
+                PanelInfoEmpre.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPRegistroEmp);
+            }
+        }
+
+        protected void BtnAtrasInfoEmpre_Click(object sender, EventArgs e)
+        {
+            PanelListadoProyectoEntregable.Visible = true;
+            PanelInfoEmpre.Visible = false;
+        }
+
+        protected void GVListaEntregables1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int Id = GVlistaEntregab.SelectedIndex;
+
+            TxtIdEntregable.Text = GVlistaEntregab.DataKeys[Id].Value.ToString();
+            FillInfoEntregable();
+            PanelListadoProyectoEntregable.Visible = true;
         }
 
         
