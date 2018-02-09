@@ -751,10 +751,10 @@
                                                 <asp:Button ID="BtnRegresarProyec" runat="server" Text="REGRESAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresarProyec_Click"  />
                                              </div><br />
                                                <div class="form-group">
-                                            <asp:Label class="control-label  col-sm-2" ID="Label79" runat="server" Font-Bold="True" Text="NOMBRE DE PROYECTO:"></asp:Label>
+                                            <asp:Label class="control-label  col-sm-2" ID="LblProyecto1" runat="server" Font-Bold="True" Text="NOMBRE DE PROYECTO:"></asp:Label>
                                             <div class="col-md-9">
                                                 <asp:TextBox class="form-control" ID="TxtNombrePro" runat="server" ReadOnly="true" AutoCompleteType="Disabled"></asp:TextBox>
-                                                
+                                                <asp:TextBox ID="TxtIdConsultoA" runat="server" Text="0" Visible="False"></asp:TextBox>
                                             </div>
                                         </div>
                                              <br />  
@@ -806,7 +806,7 @@
                                             </div>
                                         </div>
                                              <br />
-                                            <asp:GridView ID="GVAspirantesEntregables" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVAspirantesEntregables_SelectedIndexChanged">
+                                            <asp:GridView ID="GVAspirantesEntregables" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID1" OnSelectedIndexChanged="GVAspirantesEntregables_SelectedIndexChanged">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
                                                     <asp:BoundField DataField="DS_COMPLETO" HeaderText="ASPIRANTE" />

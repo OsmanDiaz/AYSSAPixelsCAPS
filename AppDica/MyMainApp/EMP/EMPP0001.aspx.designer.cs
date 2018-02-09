@@ -2020,13 +2020,13 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.Button BtnRegresarProyec;
         
         /// <summary>
-        /// Control Label79.
+        /// Control LblProyecto1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label79;
+        protected global::System.Web.UI.WebControls.Label LblProyecto1;
         
         /// <summary>
         /// Control TxtNombrePro.
@@ -2036,6 +2036,15 @@ namespace MyMainApp.EMP {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtNombrePro;
+        
+        /// <summary>
+        /// Control TxtIdConsultoA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIdConsultoA;
         
         /// <summary>
         /// Control GVEntregable.
