@@ -84,9 +84,9 @@ namespace MyMainApp.EMP
             FillGVContrato();
             CargarReporte();
             FillGVAspirantesEntregables();
-            FillCamposEntregable();
+           
             FillCamposAspirante();
-            
+                     
         }
 
         public void Adicionar() { }
@@ -212,6 +212,7 @@ namespace MyMainApp.EMP
                     if (objResultado.CodigoError == 0)
                     {
                         TxtIDPasantia.Text = Convert.ToString(objResultado.CodigoAuxiliar);
+                        LimpiarDatosPasantia();
                         Consultar();
                         DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPPasantia);
                     }
@@ -479,14 +480,18 @@ namespace MyMainApp.EMP
                         TxtIdProyecto.Text = Convert.ToString(objResultado.CodigoAuxiliar);
                         Consultar();
                         DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPProyecto);
-                        PanelProyecto.Visible = true;
+                        PanelProyecto.Visible = true; 
+                        
                         PanelRegistroProyecto.Visible = false;
+                      
+                        
                     }
                 }
                 if (objResultado.CodigoError == 0)
                 {
                     Consultar();
                     DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPProyecto);
+                    
                 }
                 else
                 {
@@ -518,17 +523,20 @@ namespace MyMainApp.EMP
                 int Id = GVContrato.SelectedIndex;
 
                 TxtIdProyecto.Text = GVContrato.DataKeys[Id].Value.ToString();
-                //FillCamposProyecto();
-                //FillGVEntregable();
+                FillCamposProyecto();
+                FillGVEntregable();
                 PanelProyecto.Visible = false;
                 PanelEntregable.Visible = false;
                 PanelListaEntregable.Visible = true;
+               
             }
             catch (Exception ex)
             {
                 DespliegaMensajeUpdatePanel(ex.Message, UPProyecto);
             }
         }
+
+        
 
         protected void BtnCancelarEntregable_Click(object sender, EventArgs e)
         {//de registro entregable regresar a listado entregable
@@ -756,8 +764,8 @@ namespace MyMainApp.EMP
         protected void FillGVAspirantesEntregables()
         {
             CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
-            DataView dvEntregablesA = new DataView(objEntregable.Detalle(Convert.ToInt32(TxtIdProyecto.Text), 
-              Convert.ToInt32(TxtIdConsultoria.Text), "", "", DateTime.Today, "", 'X', "", "","", "", DateTime.Today,
+            DataView dvEntregablesA = new DataView(objEntregable.Detalle(Convert.ToInt32(TxtIdProyecto.Text),
+              Convert.ToInt32(TxtIdConsultoA.Text), "", "", DateTime.Today, "", 'X', "", "", "", "", DateTime.Today,
               "", DateTime.Today, 4).TB_CONSULTORIA_ENTREGABLE);
 
                GVAspirantesEntregables.DataSource = dvEntregablesA;
@@ -801,8 +809,8 @@ namespace MyMainApp.EMP
             {
                 int Id = GVAspirantesEntregables.SelectedIndex;
 
-                TxtIdProyecto.Text = GVAspirantesEntregables.DataKeys[Id].Value.ToString();
-                FillCamposEntregable();
+                TxtIdAspirante.Text = GVAspirantesEntregables.DataKeys[Id].Value.ToString();
+                FillCamposEntregable(TxtIdAspirante.Text);
                 FillCamposAspirante(); 
                 PanelAspirantesE.Visible = false;
                 PanelDetalleEntregable.Visible = true;
@@ -820,10 +828,11 @@ namespace MyMainApp.EMP
             PanelDetalleEntregable.Visible = false;
         }
 
-        private void FillCamposEntregable()
+        private void FillCamposEntregable(string IdAspirante)
         {
             CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
-            DataView dvEntregables = new DataView(objEntregable.Detalle(0, 0, "", "", DateTime.Today, "", 'X', "", "", _DataSistema.Cusuario, "", DateTime.Today, "", DateTime.Today, 3).TB_CONSULTORIA_ENTREGABLE);
+            DataView dvEntregables = new DataView(objEntregable.Detalle(0, 0, "", "", DateTime.Today, "", 'X', "", ""
+                , IdAspirante, _DataSistema.Cusuario, DateTime.Today, "", DateTime.Today, 3).TB_CONSULTORIA_ENTREGABLE);
             if (dvEntregables.Count > 0)
             {  /*muestra los datos del entregable perteneciente al aspirante */
                 TxtIdConsultoria.Text = dvEntregables.Table.Rows[0]["ID_CONSULTORIA"].ToString();
@@ -844,8 +853,10 @@ namespace MyMainApp.EMP
 
         protected void BtnNuevoProyecto_Click(object sender, EventArgs e)
         {//registro de nuevo proyecto
+            LimpiarDatosProyecto();
             PanelProyecto.Visible = false;
             PanelRegistroProyecto.Visible = true;
+           
         }
 
         protected void BtnRegresarPro_Click(object sender, EventArgs e)
@@ -868,6 +879,7 @@ namespace MyMainApp.EMP
 
         protected void BtnNuevaPasantia_Click(object sender, EventArgs e)
         {//de lista pasantia a nuevo registro pasantia
+            LimpiarDatosPasantia();
             PanelPasantia.Visible = true;
             PanelListadoPasantia.Visible = false;
         }
@@ -878,7 +890,41 @@ namespace MyMainApp.EMP
             PanelListadoPasantia.Visible = true;
         }
 
-                   
+        protected void LimpiarDatosProyecto()
+        {
+           TxtIdProyecto.Text = "";
+           TxtContrato.Text= "";
+           TxtDescProyecto.Text= "";
+           TxtDuracionC.Text= "";
+           TxtTituloProyecto.Text = "";
+           TxtFechIniCont.Text = "";
+           TxtMontoPro.Text = "";
+    
+        }
+
+        protected void LimpiarDatosPasantia()
+        {
+            TxtIdConsultoria.Text = "";
+            TxtTituloPasantia.Text = "";
+            TxtNombEva.Text = "";
+            TxtEmailEva.Text = "";
+            FillCboAreaPasantia();
+          //  CboEstadoPasantia.Text = "";
+            TxtDescPasantia.Text = "";
+            TxtFechInicio.Text = "";
+            TxtDuracion.Text = "";
+            TxtDe.Text = "";
+            TxtA.Text = "";
+          //  CboDias1.Text = "";
+         //   CboDias2.Text = "";
+            TxtEdadDe.Text = "";
+            TxtEdadA.Text = "";
+            TxtCantVacantes.Text = "";
+            TxtSucursal.Text = "";
+            TxtDireccion.Text = "";
+            TxtIDPasantia.Text = "0";
+
+        }
        
     }
 }

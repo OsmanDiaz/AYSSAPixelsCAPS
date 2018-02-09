@@ -18,7 +18,7 @@
 
                     <%--inicio container-fluid--%>
                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                    <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxtoolkit:TabPanel runat="server" HeaderText="BRECHA" ID="TabPanel1" Width="100%">
 
                             <ContentTemplate>
@@ -105,6 +105,17 @@
                                         </asp:GridView>
                                         <br />
                                         <asp:Panel ID="Panel2" runat="server">
+                                                    <div class="form-group">
+                                            <asp:Label ID="Label2" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="INSTITUCIÓN EDUCATIVA:"></asp:Label>
+                          <div class="col-md-3">
+ <asp:DropDownList ID="DropDownList1" runat="server" class="form-control">
+                                                </asp:DropDownList>
+  </div>
+ <asp:Label ID="Label3" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="OTRO:"></asp:Label>
+ <div class="col-md-3">
+     <asp:TextBox ID="TextBox1" runat="server" class="form-control"></asp:TextBox>
+   </div>
+  </div>
                                         </asp:Panel>
                                         <br />
                                     </ContentTemplate>
