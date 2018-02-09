@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterInicio.Master" AutoEventWireup="true" CodeBehind="ASPP0002.aspx.cs" Inherits="MyMainApp.ASP.ASPP0002" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="CPHPrincipal" runat="server">
-
+    
     <form id="form1" runat="server">
         <p>
 
@@ -120,7 +119,7 @@
         </table>
         <br />
         <div align="center">
-            <asp:Button ID="BtnGuardarEncuesta" runat="server" class="btn btn-primary" Text="GUARDAR" ValidationGroup="Encuesta" />
+            <asp:Button ID="BtnGuardarEncuesta" runat="server" class="btn btn-primary" Text="GUARDAR" ValidationGroup="Encuesta" OnClick="BtnGuardarEncuesta_Click" />
         </div>
         <br />
         <br />
@@ -136,5 +135,4 @@
 
             </asp:UpdatePanel>
     </form>
-
 </asp:Content>
