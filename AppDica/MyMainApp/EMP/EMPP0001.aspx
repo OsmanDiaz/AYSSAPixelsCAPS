@@ -30,7 +30,7 @@
             <div class="container-fluid">
                 <div id="content">
                     <%--inicio container-fluid--%>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server">
@@ -460,7 +460,7 @@
                                                 <Columns>
                                                     <asp:BoundField HeaderText="NOMBRE ACTIVIDAD" DataField="DS_ACTIVIDAD" />
                                                     <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ACT" />
-                                                    <asp:BoundField HeaderText="DESCRIPCIÓN" DataField="DS_DURACION_ACT" />
+                                                    <asp:BoundField HeaderText="DESCRIPCIÓN" DataField="DS_DESCRIPCION_ACT" />
                                                 </Columns>
                                                 <EditRowStyle BackColor="#2461BF" />
                                                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
