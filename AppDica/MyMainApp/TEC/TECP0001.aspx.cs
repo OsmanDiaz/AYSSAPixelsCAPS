@@ -13,7 +13,7 @@ namespace MyMainApp.TEC
 {
     public partial class TECP0001 : FormaSISWeb, IAcciones
     {
-        private DataView dvBrecha;
+        private DataView dvBrecha, dvAspirantes;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -60,19 +60,24 @@ namespace MyMainApp.TEC
                 int Id = GVBrecha.SelectedIndex;
 
 
-                string IdHabilidadConocimiento = Convert.ToString(GVBrecha.DataKeys[Id].Values[0]);
-                string IdNivelConocimiento = Convert.ToString(GVBrecha.DataKeys[Id].Values[1]);
-             //   string IdNivelConocimiento = GVBrecha.DataKeys[id_nivel_conocimiento].Value.ToString();
-               /* FillCamposProyecto();
-                FillGVEntregable();
-                PanelProyecto.Visible = false;
-                PanelEntregable.Visible = false;
-                PanelListaEntregable.Visible = true;*/
+                int IdHabilidadConocimiento = Convert.ToInt32(GVBrecha.DataKeys[Id].Values[0]);
+                int IdNivelConocimiento = Convert.ToInt32(GVBrecha.DataKeys[Id].Values[1]);
+                FillGVAspirantes(IdHabilidadConocimiento, IdNivelConocimiento);
+                GVAspirantes.Visible=true;
             }
             catch (Exception ex)
             {
                 DespliegaMensajeUpdatePanel(ex.Message, UPBrecha);
             }
+        }
+
+        protected void FillGVAspirantes(int HabilidadConocimiento,int NivelConocimiento)
+        {
+            CBrecha objAspirantes = new CBrecha(_DataSistema.ConexionBaseDato);
+            dvAspirantes = new DataView(objAspirantes.Detalle('A', HabilidadConocimiento, NivelConocimiento, 1).BRECHA);
+
+            GVAspirantes.DataSource = dvAspirantes;
+            GVAspirantes.DataBind();
         }
 
     }

@@ -53,6 +53,9 @@
                                                             Text="Informacion Pasantia"  />
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
+                                                <asp:TemplateField><ItemTemplate><asp:Image runat="server" imageurl='<%# string.Concat("~/images/buttons/",Eval("BANDERA"), ".png")%>' Width="25px"/></ItemTemplate></asp:TemplateField>
+                                                <asp:ImageField DataImageUrlField="BANDERA">
+                                                </asp:ImageField>
                                             </Columns>
                                             <EditRowStyle BackColor="#2461BF" />
                                             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

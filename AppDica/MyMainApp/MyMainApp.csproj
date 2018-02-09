@@ -110,6 +110,10 @@
     <Content Include="EMP\EMPP0001.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\buttons\a.png" />
+    <Content Include="images\buttons\gray.png" />
+    <Content Include="images\buttons\r.png" />
+    <Content Include="images\buttons\v.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\logoder.png" />
     <Content Include="images\logoizq.png" />
