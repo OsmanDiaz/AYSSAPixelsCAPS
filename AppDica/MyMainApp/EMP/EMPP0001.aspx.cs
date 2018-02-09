@@ -212,7 +212,7 @@ namespace MyMainApp.EMP
                     if (objResultado.CodigoError == 0)
                     {
                         TxtIDPasantia.Text = Convert.ToString(objResultado.CodigoAuxiliar);
-                        LimpiarDatosPasantia();
+                       
                         Consultar();
                         DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPPasantia);
                     }
