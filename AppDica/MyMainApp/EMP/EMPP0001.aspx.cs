@@ -892,7 +892,7 @@ namespace MyMainApp.EMP
 
         protected void LimpiarDatosProyecto()
         {
-           TxtIdProyecto.Text = "";
+           TxtIdProyecto.Text = "0";
            TxtContrato.Text= "";
            TxtDescProyecto.Text= "";
            TxtDuracionC.Text= "";
