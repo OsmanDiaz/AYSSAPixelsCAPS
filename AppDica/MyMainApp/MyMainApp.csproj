@@ -141,6 +141,13 @@
     <Compile Include="ASP\ASPP0001.aspx.designer.cs">
       <DependentUpon>ASPP0001.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ASP\ASPP0002.aspx.cs">
+      <DependentUpon>ASPP0002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASP\ASPP0002.aspx.designer.cs">
+      <DependentUpon>ASPP0002.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ASP\FichaAspirante.aspx.cs">
       <DependentUpon>FichaAspirante.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

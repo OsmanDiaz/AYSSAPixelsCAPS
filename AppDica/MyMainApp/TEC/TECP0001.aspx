@@ -33,6 +33,8 @@
                                         <asp:GridView ID="GVBrecha" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id_habilidad_conocimiento,id_nivel_conocimiento" EmptyDataText="No existen registros" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GVBrecha_SelectedIndexChanged" Width="100%">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
+                                                <asp:BoundField DataField="habilidad" HeaderText="HABILIDAD" />
+                                                <asp:BoundField DataField="nivel" HeaderText="NIVEL CONOCIMIENTO" />
                                                 <asp:BoundField DataField="disponibles" HeaderText="ASPIRANTES DISPONIBLES">
 
 
@@ -50,8 +52,6 @@
                                                 </asp:BoundField>
 
 
-                                                <asp:BoundField DataField="habilidad" HeaderText="HABILIDAD" />
-                                                <asp:BoundField DataField="nivel" HeaderText="NIVEL CONOCIMIENTO" />
                                                 <asp:TemplateField HeaderText="Ver Aspirantes">
                                                     <ItemTemplate>
                                                         <asp:Button ID="BtnVerAspirante" runat="server" CommandName="Select" Text="Ver Aspirantes" />
@@ -83,11 +83,15 @@
                                    <ItemTemplate><asp:TextBox ID="TxtIDAspiranteGV" runat="server" Text='<%#Eval("ID_ASPIRANTE")%>' Visible="False"></asp:TextBox>
                                    </ItemTemplate>
                                    </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="" Visible="false">
+                                   <ItemTemplate><asp:TextBox ID="TxtNombreAspiranteGV" runat="server" Text='<%#Eval("NOMBRE")%>' Visible="False"></asp:TextBox>
+                                   </ItemTemplate>
+                                   </asp:TemplateField>
                                                 <asp:BoundField HeaderText="NOMBRE ASPIRANTE" DataField="NOMBRE" />
                                                 <asp:TemplateField HeaderText="ASIGNAR">
                                                     <ItemTemplate>
                                                         <asp:Button ID="BtnAsignarPasantia" runat="server" CommandName="Update"
-                                                            Text="Agregar a Curso" />
+                                                            Text="Enviar a Capacitación" />
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="Ver Aspirante">
@@ -109,19 +113,22 @@
                                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                         </asp:GridView>
                                         <br />
-                                                    <div class="form-group">
-                                            <asp:Label ID="Label2" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CURSO"></asp:Label>
-                          <div class="col-md-3">
- <asp:DropDownList ID="CboCurso" runat="server" class="form-control" DataTextField="DS_NOMBRE_CURSO" DataValueField="ID">
+                                            <asp:Panel ID="PanelCurso" runat="server" Visible="False">         <div class="form-group">
+                                           <div class="col-md-3">
+                              <asp:TextBox ID="TxtNombreAspirante" runat="server" ReadOnly></asp:TextBox>
+                                                </div>   
+                                                 <asp:Label ID="Label2" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CURSO"></asp:Label>
+                        <div class="col-md-3">
+ <asp:DropDownList ID="CboCurso" runat="server" class="form-control" DataTextField="DS_NOMBRE_CURSO" DataValueField="ID" AutoPostBack="True" OnSelectedIndexChanged="CboCurso_SelectedIndexChanged">
                                                 </asp:DropDownList>
                               <asp:TextBox ID="TxtIdHabilidadConocimiento" runat="server" Visible="False">0</asp:TextBox>
                               <asp:TextBox ID="TxtIdAspirante" runat="server" Visible="False">0</asp:TextBox>
   </div>
-                                                        <asp:Button ID="BtnAgregarACurso" runat="server" Text="Agregar a Curso"  />
+                                                        <asp:Button ID="BtnAgregarACurso" runat="server" Text="Agregar a Curso" OnClick="BtnAgregarACurso_Click"  />
   </div>
-                                            <asp:Label ID="Label3" runat="server" Text="Aspirantes en este Curso" Font-Size="14pt"></asp:Label>
-                                            <br />
-<asp:GridView ID="GVAspirantesCurso" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="id_aspirante" EmptyDataText="No existen registros" Visible="False">
+                                            <div align="center"><asp:Label ID="Label3" runat="server" Text="Aspirantes en este Curso" Font-Size="14pt"></asp:Label></div>
+           </asp:Panel>                                 <br />
+<asp:GridView ID="GVAspirantesCurso" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="id" EmptyDataText="No existen registros">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
                                                 <asp:BoundField HeaderText="NOMBRE ASPIRANTE" DataField="NOMBRE" />
