@@ -236,8 +236,9 @@ namespace MyMainApp.TEC
 
                 string IdAspirante = GVAsignacionAspirantes.DataKeys[Id].Value.ToString();
 
-                CPasantiaAspirante objPasantiaAspirante = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
-                objResultado = objPasantiaAspirante.Actualizacion(0, IdAspirante, 2,
+                CAceptacionPasantia objAceptacionPasantia = new CAceptacionPasantia(_DataSistema.ConexionBaseDato);
+                objResultado = objAceptacionPasantia.Actualizacion(0, IdAspirante, Convert.ToInt32(TxtIdPasantia.Text),
+                  "",  'X','P',
                  _DataSistema.Cusuario, TipoActualizacion.Adicionar);
 
                 FillGVAspirantes();
