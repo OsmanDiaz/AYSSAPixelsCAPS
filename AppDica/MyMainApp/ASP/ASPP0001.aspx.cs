@@ -19,19 +19,19 @@ namespace MyMainApp
         private DataView dvTituloAcademico, dvPais, dvDepartamento, dvMunicipio, dvTipoDocumento, dvDestreza,
             dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvInstitucion,
             dvEscolaridad, dvHabilidad, dvDocumento, dvPantallas, dvEntregables, dvCategoriaEscolaridad, dvListaPasantia,
-            dvListaActividad;
+            dvListaActividad, dvAceptacionPasantia;
         private DataSet dsEscolaridad, dsPantalla;
         DataQuery objResultado = new DataQuery();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-                
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
+
 
             /*
                 Se Declara la constante Pantalla con la que se evaluara si el perfil de la persona posee privilegios
                 para Abrir esta Pantalla
             */
+
             String Pantalla = "ASPP0001";
             String accesoPantalla;
             Boolean booleanPantalla = false;
@@ -54,7 +54,14 @@ namespace MyMainApp
             {
                 Response.Redirect("~/Default.aspx");
             }
-           
+
+            CAceptacionPasantia objAceptacionPasantia = new CAceptacionPasantia(_DataSistema.ConexionBaseDato);
+            dvAceptacionPasantia = new DataView(objAceptacionPasantia.Detalle(0, _DataSistema.Cusuario, 0,
+              "", 'X', 'P', "", DateTime.Now, "", DateTime.Now, 3).TB_ACEPTACION_PASANTIA);
+            if (dvAceptacionPasantia.Count > 0)
+            {
+                TabAceptacionPasantia.Visible = true;
+            }
             if (!IsPostBack)
             {
                 Consultar();
@@ -934,6 +941,11 @@ namespace MyMainApp
         {
             PanelListaPasantia.Visible = true;
             PanelActividadDesc.Visible = false;
+        }
+
+        protected void BtnGuardarEncuesta_Click(object sender, EventArgs e)
+        {
+
         }
 
 
