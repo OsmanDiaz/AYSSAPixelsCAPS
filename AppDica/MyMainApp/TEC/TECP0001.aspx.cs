@@ -85,10 +85,14 @@ namespace MyMainApp.TEC
         {
 
             TextBox Id = GVAspirantes.Rows[e.RowIndex].FindControl("TxtIDAspiranteGV") as TextBox;
-
+            TextBox Nombre=GVAspirantes.Rows[e.RowIndex].FindControl("TxtNombreAspiranteGV") as TextBox;
 
             TxtIdAspirante.Text = Id.Text;
+            TxtNombreAspirante.Text = Nombre.Text;
             FillCboCurso(Convert.ToInt32(TxtIdHabilidadConocimiento.Text), 0);
+            PanelCurso.Visible = true;
+
+            FillGVAspirantesCurso();
         }
 
         protected void FillCboCurso(int HabilidadConocimiento, int NivelConocimiento)
@@ -99,6 +103,52 @@ namespace MyMainApp.TEC
             CboCurso.DataSource = dvCurso;
             CboCurso.DataBind();
         }
+
+        protected void BtnAgregarACurso_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (TxtIdAspirante.Text != "0")
+                {
+                    CCurso objCurso = new CCurso(_DataSistema.ConexionBaseDato);
+                    objResultado = objCurso.ActualizacionDetalle(0,Convert.ToInt32(CboCurso.SelectedValue),TxtIdAspirante.Text, 0, "",  'A'
+                    , _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+
+                    if (objResultado.CodigoError == 0)
+                    {
+                        FillGVAspirantesCurso();
+                    }
+                    else
+                    {
+                        DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPBrecha);
+                    }
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel("No se ha seleccionado un Aspirante", UPBrecha);
+                }
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPBrecha);
+            }
+        }
+
+
+        protected void FillGVAspirantesCurso()
+        {
+            CCurso objCurso = new CCurso(_DataSistema.ConexionBaseDato);
+            dvCurso = new DataView(objCurso.Detalle(0,Convert.ToInt32(CboCurso.SelectedValue),TxtIdAspirante.Text, 0, "",  'A', "", DateTime.Now, "", DateTime.Now, 2).TB_DETA_CURSO);
+
+            GVAspirantesCurso.DataSource = dvCurso;
+            GVAspirantesCurso.DataBind();
+        }
+
+        protected void CboCurso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillGVAspirantesCurso();
+        }
+
 
     }
 }

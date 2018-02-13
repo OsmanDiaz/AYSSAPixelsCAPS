@@ -47,7 +47,7 @@ namespace MyMainApp
                 try
                 {
 
-                    objResultado = objUsuario.Actualizacion(nit, nombres+" "+apellidos, password, perfil,
+                    objResultado = objUsuario.Actualizacion(nit.Replace("-",""), nombres+" "+apellidos, password, perfil,
             email, 'A', nit, TipoActualizacion.Adicionar);
 
                     if (objResultado.CodigoError == 0)
@@ -60,7 +60,7 @@ namespace MyMainApp
                     DataView dvConfMail = new DataView(objConfMail.Detalle(1, "", "", "", 0,"", "","", DateTime.Now, "", DateTime.Now, 1).TBC_CONF_MAIL);
                         string asunto,body,correo;
                         asunto="Registro Usuario PIXELS CAPS";
-                        body = "<h3 align='center'>Registrado a PIXELS CAPS</h3><br><label>Usuario:" + nit + "</label><br><label>Contraseña:" + password + "</label>";
+                        body = "<h3 align='center'>Registrado a PIXELS CAPS</h3><br><label>Usuario:" + nit.Replace("-", "") + "</label><br><label>Contraseña:" + password + "</label>";
                         correo = email;
                     objConfMail.SendMail(dvConfMail.Table.Rows[0]["DS_MAIL_FROM"].ToString(), dvConfMail.Table.Rows[0]["DS_MAIL_HEAD"].ToString(), dvConfMail.Table.Rows[0]["DS_SMTP"].ToString(),
                        Convert.ToInt32(dvConfMail.Table.Rows[0]["DS_PORT"].ToString()), dvConfMail.Table.Rows[0]["DS_MAIL"].ToString(), dvConfMail.Table.Rows[0]["DS_PASSWORD"].ToString(),

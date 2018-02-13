@@ -121,6 +121,24 @@ namespace MyMainApp.TEC {
         protected global::System.Web.UI.WebControls.GridView GVAspirantes;
         
         /// <summary>
+        /// Control PanelCurso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelCurso;
+        
+        /// <summary>
+        /// Control TxtNombreAspirante.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtNombreAspirante;
+        
+        /// <summary>
         /// Control Label2.
         /// </summary>
         /// <remarks>
