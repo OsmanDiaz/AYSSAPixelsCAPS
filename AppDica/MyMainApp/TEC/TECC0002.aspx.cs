@@ -276,8 +276,8 @@ namespace MyMainApp.TEC
 
         private void FillInfoGeneral()
         {
-            CConsultoriaEntregable objConsultoriaEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
-            dvGeneral = new DataView(objConsultoriaEntregable.Detalle(0,0,"","",DateTime.Today,"",'X',"","","","",DateTime.Today,"",DateTime.Today,5).TB_CONSULTORIA_ENTREGABLE);
+            CCProyectoPasantia objConsultoriaEntregable = new CCProyectoPasantia(_DataSistema.ConexionBaseDato);
+            dvGeneral = new DataView(objConsultoriaEntregable.Detalle(0,0,0,"","",DateTime.Today,"",'x', "", "", "","", DateTime.Today,"",DateTime.Today, 2).TB_CONSULTORIA_ENTREGABLE);
             GVListaGeneral.DataSource = dvGeneral;
             GVListaGeneral.DataBind();
         }

@@ -44,8 +44,6 @@
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:BoundField HeaderText="EMPRESA" DataField="DS_NOMBRE_EMPRESA"/>
-                                                <asp:BoundField HeaderText="NOMBRE PROYECTO" DataField="DS_NOMBRE_CONSULTORIA"/>
-                                                <asp:BoundField HeaderText="FECHA ENTREGA" DataField="FECH_ENTREGA_ENT"/>
                                                 <asp:BoundField HeaderText="BANDERA" DataField="BANDERA" Visible="false"/>
                                                 <asp:TemplateField>
                                                     <ItemTemplate>
