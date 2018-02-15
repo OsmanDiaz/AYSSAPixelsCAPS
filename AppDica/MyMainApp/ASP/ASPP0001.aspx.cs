@@ -57,10 +57,15 @@ namespace MyMainApp
 
             CAceptacionPasantia objAceptacionPasantia = new CAceptacionPasantia(_DataSistema.ConexionBaseDato);
             dvAceptacionPasantia = new DataView(objAceptacionPasantia.Detalle(0, _DataSistema.Cusuario, 0,
-              "", 'X', 'P', "", DateTime.Now, "", DateTime.Now, 3).TB_ACEPTACION_PASANTIA);
+              "", 'X', 'P', "","", DateTime.Now, "", DateTime.Now, 3).TB_ACEPTACION_PASANTIA);
             if (dvAceptacionPasantia.Count > 0)
             {
                 TabAceptacionPasantia.Visible = true;
+                LblParrafo1.Text = LblParrafo1.Text.Replace("{{fecha_inicio_pasantia}}", dvAceptacionPasantia.Table.Rows[0]["FECH_INICIO_PASANTIA"].ToString());
+                TxtIdPasantia.Text = dvAceptacionPasantia.Table.Rows[0]["ID_PASANTIA"].ToString();
+                LblLaptop.Text = LblLaptop.Text.Replace("{{duracion_pasantia}}", dvAceptacionPasantia.Table.Rows[0]["DS_DURACION"].ToString());
+                LblNombreEstudiante.Text = LblNombreEstudiante.Text.Replace("{{nombre_aspirante}}", _DataSistema.NombreUsuario);
+                LblAceptacion.Text = LblAceptacion.Text.Replace("{{duracion_pasantia}}", dvAceptacionPasantia.Table.Rows[0]["DS_DURACION"].ToString());
             }
             if (!IsPostBack)
             {
@@ -946,6 +951,186 @@ namespace MyMainApp
         protected void BtnGuardarEncuesta_Click(object sender, EventArgs e)
         {
 
+            if (CBsi.Checked == false && CBno.Checked == false)
+            {
+                DespliegaMensajeUpdatePanel("Favor seleccionar Respuesta", UPEncuesta);
+            }
+            else
+            {
+                char Aceptacion,Estado;
+                string Respuestas;
+                if (CBsi.Checked)
+                {
+                    Aceptacion = 'S';
+                    Estado = 'A';
+                    Respuestas = TxtPregunta.Text;
+                }
+                else
+                {
+                    Aceptacion = 'N';
+                    Estado = 'R';
+                    Respuestas = TxtPregunta1.Text;
+                }
+                CAceptacionPasantia objAceptacionPasantia = new CAceptacionPasantia(_DataSistema.ConexionBaseDato);
+                objResultado = objAceptacionPasantia.Actualizacion(0, _DataSistema.Cusuario, Convert.ToInt32(TxtIdPasantia.Text),
+                 Respuestas, Aceptacion, Estado, TxtRespuestaLaptop.Text,
+                 _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+            }
+        }
+
+        protected void CBsi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CBsi.Checked)
+            {
+                CBno.Checked = false;
+                TxtPregunta.Enabled = true;
+                TxtPregunta1.Enabled = false;
+                TxtPregunta1.Text = "";
+            }
+            else {
+                TxtPregunta.Enabled = false;
+                TxtPregunta1.Enabled = false;
+                TxtPregunta1.Text = "";
+            }
+        }
+
+        protected void CBno_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CBno.Checked)
+            {
+                CBsi.Checked = false;
+                TxtPregunta1.Enabled = true;
+                TxtPregunta.Enabled = false;
+                TxtPregunta.Text = "";
+            }
+            else
+            {
+                TxtPregunta.Enabled = false;
+                TxtPregunta1.Enabled = false;
+                TxtPregunta.Text = "";
+            }
+        }
+
+        protected void CBam_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (CBam.Checked)
+            {
+                CBpm.Checked = false;
+                CBLunesP.Checked = false;
+                CBMartesP.Checked = false;
+                CBMiercolesP.Checked = false;
+                CBJuevesP.Checked = false;
+                CBViernesP.Checked = false;
+                CBSabadoP.Checked = false;
+                CBDomingoP.Checked = false;
+                CBLunesA.Enabled = true;
+                CBMartesA.Enabled = true;
+                CBMiercolesA.Enabled = true;
+                CBJuevesA.Enabled = true;
+                CBViernesA.Enabled = true;
+                CBSabadoA.Enabled = true;
+                CBDomingoA.Enabled = true;
+                CBLunesP.Enabled = false;
+                CBMartesP.Enabled = false;
+                CBMiercolesP.Enabled = false;
+                CBJuevesP.Enabled = false;
+                CBViernesP.Enabled = false;
+                CBSabadoP.Enabled = false;
+                CBDomingoP.Enabled = false;
+            }
+            else
+            {
+                CBLunesP.Enabled = false;
+                CBMartesP.Enabled = false;
+                CBMiercolesP.Enabled = false;
+                CBJuevesP.Enabled = false;
+                CBViernesP.Enabled = false;
+                CBSabadoP.Enabled = false;
+                CBDomingoP.Enabled = false;
+                CBLunesA.Enabled = false;
+                CBMartesA.Enabled = false;
+                CBMiercolesA.Enabled = false;
+                CBJuevesA.Enabled = false;
+                CBViernesA.Enabled = false;
+                CBSabadoA.Enabled = false;
+                CBDomingoA.Enabled = false;
+                CBLunesP.Checked = false;
+                CBMartesP.Checked = false;
+                CBMiercolesP.Checked = false;
+                CBJuevesP.Checked = false;
+                CBViernesP.Checked = false;
+                CBSabadoP.Checked = false;
+                CBDomingoP.Checked = false;
+                CBLunesA.Checked = false;
+                CBMartesA.Checked = false;
+                CBMiercolesA.Checked = false;
+                CBJuevesA.Checked = false;
+                CBViernesA.Checked = false;
+                CBSabadoA.Checked = false;
+                CBDomingoA.Checked = false;
+            }
+        }
+
+        protected void CBpm_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (CBpm.Checked)
+            {
+                CBam.Checked = false;
+                CBLunesA.Checked = false;
+                CBMartesA.Checked = false;
+                CBMiercolesA.Checked = false;
+                CBJuevesA.Checked = false;
+                CBViernesA.Checked = false;
+                CBSabadoA.Checked = false;
+                CBDomingoA.Checked = false;
+                CBLunesP.Enabled = true;
+                CBMartesP.Enabled = true;
+                CBMiercolesP.Enabled = true;
+                CBJuevesP.Enabled = true;
+                CBViernesP.Enabled = true;
+                CBSabadoP.Enabled = true;
+                CBDomingoP.Enabled = true;
+                CBLunesA.Enabled = false;
+                CBMartesA.Enabled = false;
+                CBMiercolesA.Enabled = false;
+                CBJuevesA.Enabled = false;
+                CBViernesA.Enabled = false;
+                CBSabadoA.Enabled = false;
+                CBDomingoA.Enabled = false;
+            }
+            else
+            {
+                CBLunesP.Enabled = false;
+                CBMartesP.Enabled = false;
+                CBMiercolesP.Enabled = false;
+                CBJuevesP.Enabled = false;
+                CBViernesP.Enabled = false;
+                CBSabadoP.Enabled = false;
+                CBDomingoP.Enabled = false;
+                CBLunesA.Enabled = false;
+                CBMartesA.Enabled = false;
+                CBMiercolesA.Enabled = false;
+                CBJuevesA.Enabled = false;
+                CBViernesA.Enabled = false;
+                CBSabadoA.Enabled = false;
+                CBDomingoA.Enabled = false;
+                CBLunesP.Checked = false;
+                CBMartesP.Checked = false;
+                CBMiercolesP.Checked = false;
+                CBJuevesP.Checked = false;
+                CBViernesP.Checked = false;
+                CBSabadoP.Checked = false;
+                CBDomingoP.Checked = false;
+                CBLunesA.Checked = false;
+                CBMartesA.Checked = false;
+                CBMiercolesA.Checked = false;
+                CBJuevesA.Checked = false;
+                CBViernesA.Checked = false;
+                CBSabadoA.Checked = false;
+                CBDomingoA.Checked = false;
+            }
         }
 
 

@@ -469,14 +469,16 @@
                     <asp:AsyncPostBackTrigger ControlID="BtnGuardarEncuesta" />
                 </Triggers>
                 <ContentTemplate>
-            <p class="text-justify">
-                <br />
+                    <asp:TextBox ID="TxtIdPasantia" runat="server" Visible="false"></asp:TextBox>
+                    <p class="text-justify">
+                        <asp:Label ID="LblParrafo1" runat="server" Text="Label"  class="text-justify">
                 Estimados estudiantes, esta encuesta tiene como objetivo conocer su interés para ser parte de los jóvenes
-                         que haran una <b>pasantía no remunerada</b>, la cual se desarrollará en {{fecha_inicio_pasantia}}, donde pondrán 
+                         que haran una PASANTIA NO REMUNERADA, la cual se desarrollará en {{fecha_inicio_pasantia}}, donde pondrán 
                         en práctica sus conocimientos y habilidades adquiridas en los módulos de formación con empresas ya constituidas 
                         dentro del programa PIXELS PRO y dentro del sector que elaboran videojuegos y los comercializan. Por tal motivo 
                         agradecemos que responda a cada uno de los siguientes ítems:
-            </p>
+                    </asp:Label>
+                    </p>
         <br />
         <ol>
             <li style="font-weight: bold">Está interesado en participar en una pasantía no remunerada con una empresa salvadoreña que se dedica a elaborar videojuegos. </li>
@@ -486,10 +488,10 @@
                    
                     <div class="form-group">
                         <div class="col-sm-1">
-                            <asp:CheckBox ID="CBsi" runat="server" Text="SI-" TextAlign="Left" />
+                            <asp:CheckBox ID="CBsi" runat="server" Text="SI-" TextAlign="Left" AutoPostBack="True" OnCheckedChanged="CBsi_CheckedChanged" />
                         </div>
                         <div class="col-sm-10">
-                            <asp:TextBox class="form-control" ID="TxtPregunta" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                            <asp:TextBox class="form-control" ID="TxtPregunta" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="False"></asp:TextBox>
                         </div>
                     </div>
             <br />
@@ -500,21 +502,23 @@
                    
                     <div class="form-group">
                         <div class="col-sm-1">
-                            <asp:CheckBox ID="CBno" runat="server" Text="NO-" TextAlign="Left" />
+                            <asp:CheckBox ID="CBno" runat="server" Text="NO-" TextAlign="Left" AutoPostBack="True" OnCheckedChanged="CBno_CheckedChanged" />
                         </div>
                         <div class="col-sm-10">
-                            <asp:TextBox class="form-control" ID="TxtPregunta1" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                            <asp:TextBox class="form-control" ID="TxtPregunta1" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="False"></asp:TextBox>
                         </div>
                     </div>
             <br />
             <br />
             <br />
             <br />
-            <li style="font-weight: bold">Indicar si tiene laptop personal y estaría dispuesto a utilizarla durante {{duracion_pasantia}} que durará
-                            la pasantía, en caso que quiera formar parte de ella. </li>
+            <li style="font-weight: bold">
+                <asp:Label ID="LblLaptop" runat="server" Text="Indicar si tiene laptop personal y estaría dispuesto a utilizarla durante {{duracion_pasantia}} que durará
+                            la pasantía, en caso que quiera formar parte de ella."></asp:Label>
+                 </li>
             <div class="form-group">
                 <div class="col-sm-10">
-                    <asp:TextBox class="form-control" ID="TextBox1" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="TxtRespuestaLaptop" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
                 </div>
             </div>
             <br />
@@ -540,39 +544,39 @@
             </tr>
             <tr>
                 <td>
-                    <asp:CheckBox ID="CBam" runat="server" Text="AM" TextAlign="Left"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBam" runat="server" Text="AM" TextAlign="Left" AutoPostBack="True" OnCheckedChanged="CBam_CheckedChanged"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBLunesA" runat="server"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBLunesA" runat="server" Enabled="False"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBMartesA" runat="server"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBMartesA" runat="server" Enabled="False"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBMiercolesA" runat="server"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBMiercolesA" runat="server" Enabled="False"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBJuevesA" runat="server"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBJuevesA" runat="server" Enabled="False"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBViernesA" runat="server"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBViernesA" runat="server" Enabled="False"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBSabadoA" runat="server"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBSabadoA" runat="server" Enabled="False"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBDomingoA" runat="server"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBDomingoA" runat="server" Enabled="False"></asp:CheckBox></td>
             </tr>
             <tr>
                 <td>
-                    <asp:CheckBox ID="CBpm" runat="server" Text="PM" TextAlign="Left"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBpm" runat="server" Text="PM" TextAlign="Left" AutoPostBack="True" OnCheckedChanged="CBpm_CheckedChanged"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBLunesP" runat="server"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBLunesP" runat="server" Enabled="False"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBMartesP" runat="server"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBMartesP" runat="server" Enabled="False"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBMiercolesP" runat="server"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBMiercolesP" runat="server" Enabled="False"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBJuevesP" runat="server"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBJuevesP" runat="server" Enabled="False"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBViernesP" runat="server"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBViernesP" runat="server" Enabled="False"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBSabadoP" runat="server"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBSabadoP" runat="server" Enabled="False"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBDomingoP" runat="server"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBDomingoP" runat="server" Enabled="False"></asp:CheckBox></td>
             </tr>
         </table>
         <br />
@@ -581,13 +585,13 @@
         </div>
         <br />
         <br />
-        Nombre del Estudiante: {{nombre_aspirante}}<br />
+                    <asp:Label ID="LblNombreEstudiante" runat="server" Text="Nombre del Estudiante: {{nombre_aspirante}}"></asp:Label><br />
         <br />
-        <p class="text-justify">
-            Durante {{duracion_pasantia}} que durará la pasantía no remunerada, el estudiante debe
+                    <asp:Label ID="LblAceptacion" runat="server" Text="  Durante {{duracion_pasantia}} que durará la pasantía no remunerada, el estudiante debe
                         costear su transporte, no recibirá ningún pago de parte de la empresa donde realizará la pasantía y por su
-                        cuenta debe correr el pago de su alimentación u otro tipo de gasto.
-        </p>
+                        cuenta debe correr el pago de su alimentación u otro tipo de gasto."  class="text-justify"></asp:Label>
+          
+      
         </ContentTemplate>
 
 
