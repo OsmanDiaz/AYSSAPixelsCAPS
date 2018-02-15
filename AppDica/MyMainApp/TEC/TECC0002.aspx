@@ -23,7 +23,7 @@
                             </asp:DropDownList>
                         </div>
                     </div>
-                    <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="2" BorderColor="#66CCFF" Height="375px" ScrollBars="Vertical" Width="100%">
+                    <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" BorderColor="#66CCFF" Height="375px" ScrollBars="Vertical" Width="100%">
                         
                          <ajaxtoolkit:TabPanel ID="TabPanelGeneral" runat="server" HeaderText="MONITOREO">
                             <ContentTemplate>
@@ -34,7 +34,7 @@
                                         
                                         <asp:Panel ID="PanelGeneral" runat="server" >
                                         <center><h3>Informacion Proyectos</h3></center>
-                                        <asp:GridView ID="GVListaGeneral" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID_CONSULTORIA" OnSelectedIndexChanged="GVListaGeneral_SelectedIndexChaged">
+                                        <asp:GridView ID="GVListaGeneral" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaGeneral_SelectedIndexChaged">
 
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>

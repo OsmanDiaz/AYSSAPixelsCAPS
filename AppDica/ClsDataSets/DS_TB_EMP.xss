@@ -16,7 +16,7 @@
     <Shape ID="DesignTable:TB_CONSULTORIA_ENTREGABLE" ZOrder="6" X="751" Y="410" Height="238" Width="254" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="24" SplitterPosition="234" />
     <Shape ID="DesignTable:TB_PASANTIA_ASPIRANTE" ZOrder="5" X="12" Y="327" Height="105" Width="220" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
     <Shape ID="DesignTable:TB_PASANTIA_ACTIVIDAD" ZOrder="4" X="14" Y="432" Height="105" Width="219" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
-    <Shape ID="DesignTable:TB_CONSULTORIA_ENTREGABLE_PASANTIA" ZOrder="1" X="388" Y="533" Height="257" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="253" />
+    <Shape ID="DesignTable:TB_PROYECTO_PASANTIA" ZOrder="1" X="486" Y="641" Height="49" Width="219" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="45" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

@@ -14,7 +14,7 @@ namespace MyMainApp.TEC
     public partial class TECC0002 : FormaSISWeb, IAcciones
     {
         private DataView dvEmpresa, dvPasantia, dvEscolaridad, dvHabilidad, dvConsultoria,
-            dvEntregable, dvAsignacionAspirante, dvPasantiaAspirante, dvGeneral;
+            dvEntregable, dvAsignacionAspirante, dvPasantiaAspirante, dvGeneral, dvListaGeneral;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -212,15 +212,13 @@ namespace MyMainApp.TEC
 
         private void FillInfoEntregable()
         {
-            CConsultoriaEntregable objConsultoriaEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
-            dvEntregable = new DataView(objConsultoriaEntregable.Detalle(0,Convert.ToInt32(TxtIdConsultoria.Text),"","",DateTime.Today,"",'x',"","","","",DateTime.Today,"",DateTime.Today,6).TB_CONSULTORIA_ENTREGABLE);
+            CCProyectoPasantia objConsultoriaEntregable = new CCProyectoPasantia(_DataSistema.ConexionBaseDato);
+            dvEntregable = new DataView(objConsultoriaEntregable.Detalle(0,0,Convert.ToInt32(TxtIdEmpresa.Text),"","",DateTime.Today,"",'x',"","","","",DateTime.Today,"",DateTime.Today,1).TB_CONSULTORIA_ENTREGABLE);
             if(dvEntregable.Count > 0){
                 TxtIdEntregable.Text = dvEntregable.Table.Rows[0]["ID"].ToString();
             }
             GVEntregables.DataSource = dvEntregable;
             GVEntregables.DataBind();
-            GVlistaEntregab.DataSource = dvEntregable;
-            GVlistaEntregab.DataBind();
         }
 
         protected void GVListaEntregables_SelectedIndexChanged(object sender, EventArgs e)
@@ -287,9 +285,10 @@ namespace MyMainApp.TEC
             {
                 int Id = GVListaGeneral.SelectedIndex;
 
-                TxtIdEmpresa.Text = GVListaProyectos.DataKeys[Id].Value.ToString();
+                TxtIdEmpresa.Text = GVListaGeneral.DataKeys[Id].Value.ToString();
                 FillInfoEmpresa();
-                FillInfoEntregable();
+                //FillInfoEntregable();
+                FillInfoEntregablePasantia();
                 PanelGeneral.Visible = false;
                 PanelListadoProyectoEntregable.Visible = true;
             }
@@ -297,6 +296,18 @@ namespace MyMainApp.TEC
             {
                 DespliegaMensajeUpdatePanel(ex.Message, UPActividad);
             }
+        }
+
+        private void FillInfoEntregablePasantia()
+        {
+            CCProyectoPasantia objConsultoriaEntregable = new CCProyectoPasantia(_DataSistema.ConexionBaseDato);
+            dvEntregable = new DataView(objConsultoriaEntregable.Detalle2(0, Convert.ToInt32(TxtIdConsultoria.Text),Convert.ToInt32(TxtIdEmpresa.Text), "", "", DateTime.Today, "", 'x', "", "", "", "", DateTime.Today, "", DateTime.Today, 1).TB_PROYECTO_PASANTIA);
+            if (dvEntregable.Count > 0)
+            {
+                TxtIdEntregable.Text = dvEntregable.Table.Rows[0]["ID"].ToString();
+            }
+            GVlistaEntregab.DataSource = dvEntregable;
+            GVlistaEntregab.DataBind();
         }
 
         protected void GVListaEmpreNuevo_SelectedIndexChanged(object sender, EventArgs e)
