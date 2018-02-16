@@ -1678,6 +1678,24 @@ namespace MyMainApp {
         protected global::System.Web.UI.UpdatePanel UPEncuesta;
         
         /// <summary>
+        /// Control TxtIdPasantia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIdPasantia;
+        
+        /// <summary>
+        /// Control LblParrafo1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblParrafo1;
+        
+        /// <summary>
         /// Control CBsi.
         /// </summary>
         /// <remarks>
@@ -1714,13 +1732,22 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.TextBox TxtPregunta1;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control LblLaptop.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.Label LblLaptop;
+        
+        /// <summary>
+        /// Control TxtRespuestaLaptop.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtRespuestaLaptop;
         
         /// <summary>
         /// Control CBam.
@@ -1874,6 +1901,24 @@ namespace MyMainApp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnGuardarEncuesta;
+        
+        /// <summary>
+        /// Control LblNombreEstudiante.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblNombreEstudiante;
+        
+        /// <summary>
+        /// Control LblAceptacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblAceptacion;
         
         /// <summary>
         /// Control PanelFicha.

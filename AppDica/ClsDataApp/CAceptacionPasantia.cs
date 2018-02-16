@@ -15,7 +15,7 @@ namespace ClsDataApp
             _ConexionData = ConexionData;
         }
 
-        public ClsDataSets.DS_TB_ASP Detalle(int Id, string IdAspirante, int IdPasantia, string Respuesta, char Respuesta2,char Estado,
+        public ClsDataSets.DS_TB_ASP Detalle(int Id, string IdAspirante, int IdPasantia, string Respuesta, char Respuesta2,char Estado,string RespuestaLaptop,
             string UsuaCrea, DateTime FechCrea, string UsuaActu, DateTime FechActu, int OpcionConsulta)
              {
             ClsDataSets.DS_TB_ASP objDataSet = new ClsDataSets.DS_TB_ASP();
@@ -33,6 +33,7 @@ namespace ClsDataApp
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_RESPUESTA", Respuesta);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_RESPUESTA", Respuesta2);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_ESTADO", Estado);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_RESPUESTA_LAPTOP", RespuestaLaptop);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_CREA", UsuaCrea);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_CREA", FechCrea);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_ACTU", UsuaActu);
@@ -55,6 +56,7 @@ namespace ClsDataApp
             return objDataSet;
              }
         public DataQuery Actualizacion(int Id, string IdAspirante, int IdPasantia, string Respuesta, char Respuesta2,char Estado,
+            string RespuestaLaptop,
             string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
             DataQuery objResultado = new DataQuery();
@@ -100,6 +102,7 @@ namespace ClsDataApp
                 ObjCommand.Parameters.AddWithValue("@DS_RESPUESTA", Respuesta);
                 ObjCommand.Parameters.AddWithValue("@CD_RESPUESTA", Respuesta2);
                 ObjCommand.Parameters.AddWithValue("@CD_ESTADO", Estado);
+                ObjCommand.Parameters.AddWithValue("@DS_RESPUESTA_LAPTOP", RespuestaLaptop);
                 ObjCommand.Parameters.AddWithValue("@LOGIN_USUARIO", LoginUsuario);
 
                 ObjParam = ObjCommand.Parameters.Add("@FILAS_AFECTADAS", SqlDbType.Int, 0);
