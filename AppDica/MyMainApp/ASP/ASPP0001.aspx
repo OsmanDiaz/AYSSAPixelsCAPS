@@ -581,7 +581,7 @@
         </table>
         <br />
         <div align="center">
-            <asp:Button ID="BtnGuardarEncuesta" runat="server" class="btn btn-primary" Text="GUARDAR" ValidationGroup="Encuesta" OnClick="BtnGuardarEncuesta_Click" />
+            <asp:Button ID="BtnGuardarEncuesta" runat="server" class="btn btn-primary" Text="GUARDAR" ValidationGroup="Encuesta" OnClick="BtnGuardarEncuesta_Click"  OnClientClick="return confirm('¿Desea enviar los resultados?');" />
         </div>
         <br />
         <br />
