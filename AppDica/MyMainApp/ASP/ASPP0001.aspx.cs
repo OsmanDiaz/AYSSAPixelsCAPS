@@ -951,9 +951,9 @@ namespace MyMainApp
         protected void BtnGuardarEncuesta_Click(object sender, EventArgs e)
         {
 
-            if (CBsi.Checked == false && CBno.Checked == false)
+            if (CBsi.Checked == false && CBno.Checked == false && CBam.Checked == false && CBpm.Checked == false)
             {
-                DespliegaMensajeUpdatePanel("Favor seleccionar Respuesta", UPEncuesta);
+                DespliegaMensajeUpdatePanel("Favor seleccionar Respuesta y Horario", UPEncuesta);
             }
             else
             {
@@ -975,6 +975,81 @@ namespace MyMainApp
                 objResultado = objAceptacionPasantia.Actualizacion(0, _DataSistema.Cusuario, Convert.ToInt32(TxtIdPasantia.Text),
                  Respuestas, Aceptacion, Estado, TxtRespuestaLaptop.Text,
                  _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+
+                if (Aceptacion == 'S')
+                {
+                    char Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Domingo,Horario;
+                    Horario = 'X';
+                    if (CBam.Checked )
+                    {
+                        Horario = 'A';
+                    }
+                    if (CBpm.Checked)
+                    {
+                        Horario = 'P';
+                    }
+                    
+                    if (CBLunesA.Checked || CBLunesP.Checked)
+                    {
+                        Lunes = 'S';
+                    }
+                    else
+                    {
+                        Lunes = 'N';
+                    }
+                    if (CBMartesA.Checked || CBMartesP.Checked)
+                    {
+                        Martes = 'S';
+                    }
+                    else
+                    {
+                        Martes = 'N';
+                    }
+                    if (CBMiercolesA.Checked || CBMiercolesP.Checked)
+                    {
+                        Miercoles = 'S';
+                    }
+                    else
+                    {
+                        Miercoles = 'N';
+                    }
+                    if (CBJuevesA.Checked || CBJuevesP.Checked)
+                    {
+                        Jueves = 'S';
+                    }
+                    else
+                    {
+                        Jueves = 'N';
+                    }
+                    if (CBViernesA.Checked || CBViernesP.Checked)
+                    {
+                        Viernes = 'S';
+                    }
+                    else
+                    {
+                        Viernes = 'N';
+                    }
+                    if (CBSabadoA.Checked || CBSabadoP.Checked)
+                    {
+                        Sabado = 'S';
+                    }
+                    else
+                    {
+                        Sabado = 'N';
+                    }
+                    if (CBDomingoA.Checked || CBDomingoP.Checked)
+                    {
+                        Domingo = 'S';
+                    }
+                    else
+                    {
+                        Domingo = 'N';
+                    }
+                    CAceptacionHorario objAceptacionHorario = new CAceptacionHorario(_DataSistema.ConexionBaseDato);
+                    objResultado = objAceptacionHorario.Actualizacion(0, Convert.ToInt32(objResultado.CodigoAuxiliar), Lunes,Martes,Miercoles,
+                        Jueves,Viernes,Sabado,Domingo,Horario,
+                     _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+                }
             }
         }
 
