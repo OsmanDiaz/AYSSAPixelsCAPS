@@ -1723,15 +1723,6 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.TextBox TxtDuracionC;
         
         /// <summary>
-        /// Control RequiredFieldValidator24.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator24;
-        
-        /// <summary>
         /// Control Label33.
         /// </summary>
         /// <remarks>
@@ -2101,13 +2092,13 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.Label Label69;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control TxtProyectoNomb.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TxtProyectoNomb;
         
         /// <summary>
         /// Control Label80.
@@ -2119,13 +2110,13 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.Label Label80;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control TxtEntregableNomb.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox TxtEntregableNomb;
         
         /// <summary>
         /// Control GVAspirantesEntregables.

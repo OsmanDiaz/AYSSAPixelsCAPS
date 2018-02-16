@@ -30,7 +30,7 @@
             <div class="container-fluid">
                 <div id="content">
                     <%--inicio container-fluid--%>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="2" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server">
@@ -636,9 +636,8 @@
                                             </div>
                                             <asp:Label class="control-label  col-sm-3" ID="Label12" runat="server" Font-Bold="True" Text="DURACIÓN DE CONTRATO (DÍAS):"></asp:Label>
                                             <div class="col-md-3">
-                                                <asp:TextBox class="form-control" ID="TxtDuracionC" runat="server" AutoCompleteType="Disabled" TextMode="Number"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator24" runat="server" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ControlToValidate="TxtDuracionC" ValidationGroup="proyecto">Llenar duracion de contrato</asp:RequiredFieldValidator>
-                                            </div>
+                                                <asp:TextBox class="form-control" ID="TxtDuracionC" runat="server" AutoCompleteType="Disabled" TextMode="Number" ReadOnly="true"></asp:TextBox>
+                                                </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label class="control-label  col-sm-3" ID="Label33" runat="server" Font-Bold="True" Text="DESCRIPCIÓN DE PROYECTO:"></asp:Label>
@@ -726,7 +725,7 @@
                                             <div class="form-group">
                                                 <asp:Label ID="Label56" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="DURACION EN DIAS:"></asp:Label>
                                                 <div class="col-md-3">
-                                                    <asp:TextBox ID="TxtDuracionE" runat="server" class="form-control" AutoCompleteType="Disabled" TextMode="Number"></asp:TextBox>
+                                                    <asp:TextBox ID="TxtDuracionE" runat="server" class="form-control" AutoCompleteType="Disabled" ReadOnly="true" TextMode="Number"></asp:TextBox>
                                                 </div>
                                                 <asp:Label ID="Label57" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="FECHA DE ENTREGA:"></asp:Label>
                                                 <div class="col-md-3">
@@ -759,7 +758,7 @@
                                         </div>
                                              <br />  
                                                 
-                                            <asp:GridView ID="GVEntregable" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVEntregable_SelectedIndexChanged" DataKeyNames="ID">
+                                            <asp:GridView ID="GVEntregable" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVEntregable_SelectedIndexChanged" DataKeyNames="ID,DS_ENTREGABLE">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
                                                     <asp:BoundField HeaderText="NOMBRE DE ENTREGABLE" DataField="DS_ENTREGABLE" />
@@ -794,14 +793,14 @@
                                                <div class="form-group">
                                             <asp:Label class="control-label  col-sm-2" ID="Label69" runat="server" Font-Bold="True" Text="NOMBRE DE PROYECTO:"></asp:Label>
                                             <div class="col-md-9">
-                                                <asp:TextBox class="form-control" ID="TextBox1" runat="server" ReadOnly="true" AutoCompleteType="Disabled"></asp:TextBox>
+                                                <asp:TextBox class="form-control" ID="TxtProyectoNomb" runat="server" ReadOnly="true" AutoCompleteType="Disabled"></asp:TextBox>
                                                 
                                             </div>
                                         </div>
                                              <div class="form-group">
                                             <asp:Label class="control-label  col-sm-2" ID="Label80" runat="server" Font-Bold="True" Text="NOMBRE ENTREGABLE:"></asp:Label>
                                             <div class="col-md-9">
-                                                <asp:TextBox class="form-control" ID="TextBox2" runat="server" ReadOnly="true" AutoCompleteType="Disabled"></asp:TextBox>
+                                                <asp:TextBox class="form-control" ID="TxtEntregableNomb" runat="server" ReadOnly="true" AutoCompleteType="Disabled"></asp:TextBox>
                                                 
                                             </div>
                                         </div>
@@ -883,7 +882,7 @@
                                                 </div>
                                             </div>
                                              <div align="center">
-                                                <asp:Button ID="BtnGuardarObservacion" runat="server" class="btn btn-primary" Text="GUARDAR OBSERVACIÓN" />
+                                                <asp:Button ID="BtnGuardarObservacion" runat="server" class="btn btn-primary" Text="GUARDAR OBSERVACIÓN" OnClick="BtnGuardarObservacion_Click" />
                                                 &nbsp;<asp:Button ID="BtnCancelarObservacion" runat="server" Text="REGRESAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnCancelarObservacion_Click" />
                                             </div>
                                         </asp:Panel>
