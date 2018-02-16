@@ -525,6 +525,7 @@ namespace MyMainApp.EMP
                 TxtIdProyecto.Text = GVContrato.DataKeys[Id].Value.ToString();
                 FillCamposProyecto();
                 FillGVEntregable();
+                TxtNombrePro.Text = TxtTituloProyecto.Text;
                 PanelProyecto.Visible = false;
                 PanelEntregable.Visible = false;
                 PanelListaEntregable.Visible = true;
@@ -553,8 +554,7 @@ namespace MyMainApp.EMP
                     CConsultoriaEntregable objConsultoriaEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
                     objResultado = objConsultoriaEntregable.Actualizacion(0, Convert.ToInt32(TxtIdProyecto.Text), TxtNombEntregable.Text,
                         TxtDescripPasantia.Text, Convert.ToDateTime(TxtFechaEntrega.Text), TxtDuracionE.Text,
-                        'P', "", "", ""
-                    , _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+                        'P', "", "", "", _DataSistema.Cusuario, TipoActualizacion.Adicionar);
 
                     if (objResultado.CodigoError == 0)
                     {
@@ -778,8 +778,10 @@ namespace MyMainApp.EMP
             {
                 int Id = GVEntregable.SelectedIndex;
 
-                TxtIdProyecto.Text = GVEntregable.DataKeys[Id].Value.ToString();
+                TxtIdProyecto.Text =Convert.ToString(GVEntregable.DataKeys[Id].Values[0]);
+                TxtEntregableNomb.Text =Convert.ToString(GVEntregable.DataKeys[Id].Values[1]);
                 FillGVAspirantesEntregables();
+                TxtProyectoNomb.Text = TxtTituloProyecto.Text;//
                 PanelAspirantesE.Visible = true;
                 PanelListaEntregable.Visible = false;
                 
@@ -811,7 +813,7 @@ namespace MyMainApp.EMP
 
                 TxtIdAspirante.Text = GVAspirantesEntregables.DataKeys[Id].Value.ToString();
                 FillCamposEntregable(TxtIdAspirante.Text);
-                FillCamposAspirante(); 
+                FillCamposAspirante();
                 PanelAspirantesE.Visible = false;
                 PanelDetalleEntregable.Visible = true;
                 
@@ -904,26 +906,63 @@ namespace MyMainApp.EMP
 
         protected void LimpiarDatosPasantia()
         {
-            TxtIdConsultoria.Text = "";
+            TxtIdConsultoria.Text = "0";
             TxtTituloPasantia.Text = "";
             TxtNombEva.Text = "";
             TxtEmailEva.Text = "";
             FillCboAreaPasantia();
-          //  CboEstadoPasantia.Text = "";
             TxtDescPasantia.Text = "";
             TxtFechInicio.Text = "";
             TxtDuracion.Text = "";
             TxtDe.Text = "";
             TxtA.Text = "";
-          //  CboDias1.Text = "";
-         //   CboDias2.Text = "";
             TxtEdadDe.Text = "";
             TxtEdadA.Text = "";
             TxtCantVacantes.Text = "";
             TxtSucursal.Text = "";
             TxtDireccion.Text = "";
             TxtIDPasantia.Text = "0";
+            FillGVNivelEducativo();
+            FillGVHabilidad();
+            FillGVDestreza();
+        }
 
+        protected void BtnGuardarObservacion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(TxtIdProyecto.Text) > 0)
+                {
+                    CConsultoriaEntregableAp objAprobarEntregable = new CConsultoriaEntregableAp(_DataSistema.ConexionBaseDato);
+                    objResultado = objAprobarEntregable.Actualizacion(0, Convert.ToInt32(TxtIdProyecto.Text), TxtNombreEntregable.Text,
+                        TxtDescripcion.Text, DateTime.Today, TxtDuracionEntregable.Text, Convert.ToChar(CboEstadoEntregable.Text), "",
+                        TxtObservEntregable.Text, "", _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+
+                    if (objResultado.CodigoError == 0)
+                    {
+                        FillGVEntregable();
+                    }
+                    if (objResultado.CodigoError == 0)
+                    {
+                        Consultar();
+                        DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPProyecto);
+                        PanelDetalleEntregable.Visible = false;
+                        PanelAspirantesE.Visible = true;
+                    }
+                    else
+                    {
+                        DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPProyecto);
+                    }
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel("No se ha seleccionado una pasantia para agregar Entregables", UPProyecto);
+                }
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPProyecto);
+            }
         }
        
     }
