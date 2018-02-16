@@ -55,9 +55,9 @@ namespace MyMainApp.TEC
             CEmpresa objEmpresa = new CEmpresa(_DataSistema.ConexionBaseDato);
             dvEmpresa = new DataView (objEmpresa.Detalle(0,_DataSistema.Cusuario,"","","","","","",0,0,"","","","",0,"",_DataSistema.Cusuario,DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 0).TB_EMPRESA);
             GVListaEmpresa.DataSource = dvEmpresa;
-            GVListaEmpresa.DataBind();
-            GVInfoEmpresa.DataSource = dvEmpresa;
-            GVInfoEmpresa.DataBind();
+            //GVListaEmpresa.DataBind();
+            //GVInfoEmpresa.DataSource = dvEmpresa;
+            //GVInfoEmpresa.DataBind();
         }
 
         protected void GVListaEmpresa_SelectedIndexChanged(object sender, EventArgs e)
@@ -310,22 +310,22 @@ namespace MyMainApp.TEC
             GVlistaEntregab.DataBind();
         }
 
-        protected void GVListaEmpreNuevo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                int Id = GVInfoEmpresa.SelectedIndex;
+        //protected void GVListaEmpreNuevo_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        int Id = GVListaEmpreNuevo.SelectedIndex;
 
-                TxtIdEmpresa.Text = GVListaEmpresa.DataKeys[Id].Value.ToString();
-                FillInfoEmpresa();
-                PanelListadoProyectoEntregable.Visible = false;
-                PanelInfoEmpre.Visible = true;
-            }
-            catch (Exception ex)
-            {
-                DespliegaMensajeUpdatePanel(ex.Message, UPRegistroEmp);
-            }
-        }
+        //        TxtIdEmpresa.Text = GVListaEmpresa.DataKeys[Id].Value.ToString();
+        //        FillInfoEmpresa();
+        //        PanelListadoProyectoEntregable.Visible = false;
+        //        PanelInfoEmpre.Visible = true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        DespliegaMensajeUpdatePanel(ex.Message, UPRegistroEmp);
+        //    }
+        //}
 
         protected void BtnAtrasInfoEmpre_Click(object sender, EventArgs e)
         {
