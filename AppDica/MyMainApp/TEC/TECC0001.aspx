@@ -100,7 +100,7 @@
                                                
                                                 <div align="center">
                                                 <asp:Button ID="BtnGuardarNotaIq" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="BtnGuardarNotaIq_Click" />
-                                                &nbsp;</div>
+                                                &nbsp;<asp:Button ID="BtnRegresar" runat="server" Text="REGRESAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresar_Click"/></div>
                                                 <br />
 
                                             </asp:Panel>
