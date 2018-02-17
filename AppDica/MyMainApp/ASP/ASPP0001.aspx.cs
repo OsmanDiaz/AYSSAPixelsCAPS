@@ -1048,7 +1048,7 @@ namespace MyMainApp
                     CAceptacionHorario objAceptacionHorario = new CAceptacionHorario(_DataSistema.ConexionBaseDato);
                     objResultado = objAceptacionHorario.Actualizacion(0, Convert.ToInt32(objResultado.CodigoAuxiliar), Lunes,Martes,Miercoles,
                         Jueves,Viernes,Sabado,Domingo,Horario,
-                     _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+                     _DataSistema.Cusuario, TipoActualizacion.Adicionar);
                 }
             }
         }

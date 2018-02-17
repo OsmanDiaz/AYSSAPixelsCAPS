@@ -72,7 +72,7 @@
                                         <%--fin tab informacion adicional--%>
                                        </asp:Panel>                                       
                                         <asp:Panel ID="PanelListadoProyectoEntregable" runat="server" Visible ="false">
-                                            <center><h3>Informacion Empresa</h3></center>
+                                       <%--     <center><h3>Informacion Empresa</h3></center>
                                         <asp:GridView ID="GVInfoEmpresa" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaEmpreNuevo_SelectedIndexChanged">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
@@ -103,7 +103,7 @@
                                             <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                         </asp:GridView>
-                                        <br />
+                                        <br />--%>
                                             <center><h3>Información Entregables</h3></center>
                                             <br />
                                             <asp:GridView ID="GVlistaEntregab" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaEntregables1_SelectedIndexChanged">

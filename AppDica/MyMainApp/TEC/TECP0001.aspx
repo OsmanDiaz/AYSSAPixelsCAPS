@@ -165,7 +165,7 @@
                         </ajaxtoolkit:TabPanel>
                         <%--fin tab datos--%>
 
-                        <ajaxtoolkit:TabPanel runat="server" HeaderText="INFO" ID="TabPanel2">
+                        <ajaxtoolkit:TabPanel runat="server" HeaderText="INFO" ID="TabPanel2" Visible="false">
 
 
                             <ContentTemplate>
@@ -335,7 +335,7 @@
                         </ajaxtoolkit:TabPanel>
                         <%--fin tab datos--%>
 
-                        <ajaxtoolkit:TabPanel runat="server" HeaderText="DETALLE" ID="TabPanel3">
+                        <ajaxtoolkit:TabPanel runat="server" HeaderText="DETALLE" ID="TabPanel3"  Visible="false">
 
 
                             <ContentTemplate>
