@@ -1687,6 +1687,15 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.TextBox TxtIdPasantia;
         
         /// <summary>
+        /// Control TxtIdAceptacionPasantia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIdAceptacionPasantia;
+        
+        /// <summary>
         /// Control LblParrafo1.
         /// </summary>
         /// <remarks>
@@ -1750,13 +1759,13 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.TextBox TxtRespuestaLaptop;
         
         /// <summary>
-        /// Control CBam.
+        /// Control Label59.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CBam;
+        protected global::System.Web.UI.WebControls.Label Label59;
         
         /// <summary>
         /// Control CBLunesA.
@@ -1822,13 +1831,13 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.CheckBox CBDomingoA;
         
         /// <summary>
-        /// Control CBpm.
+        /// Control Label58.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CBpm;
+        protected global::System.Web.UI.WebControls.Label Label58;
         
         /// <summary>
         /// Control CBLunesP.

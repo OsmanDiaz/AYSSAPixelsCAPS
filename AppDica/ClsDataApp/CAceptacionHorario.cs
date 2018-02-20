@@ -15,8 +15,9 @@ namespace ClsDataApp
             _ConexionData = ConexionData;
         }
 
-        public ClsDataSets.DS_TB_ASP Detalle(int Id, int IdAceptacionPasantia, char Lunes, char Martes, char Miercoles, 
-            char Jueves, char Viernes, char Sabado, char Domingo, char Horario,
+        public ClsDataSets.DS_TB_ASP Detalle(int Id, int IdAceptacionPasantia, char LunesA, char MartesA, char MiercolesA,
+            char JuevesA, char ViernesA, char SabadoA, char DomingoA, char LunesP, char MartesP, char MiercolesP,
+            char JuevesP, char ViernesP, char SabadoP, char DomingoP, 
             string UsuaCrea, DateTime FechCrea, string UsuaActu, DateTime FechActu, int OpcionConsulta)
 
      {
@@ -31,14 +32,20 @@ namespace ClsDataApp
 
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID", Id);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_ACEPTACION_PASANTIA", IdAceptacionPasantia);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_LUNES", Lunes);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_MARTES", Martes);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_MIERCOLES", Miercoles);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_JUEVES", Jueves);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_VIERNES", Viernes);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_SABADO", Sabado);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_DOMINGO", Domingo);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_HORARIO", Horario);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_LUNES_A", LunesA);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_MARTES_A", MartesA);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_MIERCOLES_A", MiercolesA);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_JUEVES_A", JuevesA);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_VIERNES_A", ViernesA);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_SABADO_A", SabadoA);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_DOMINGO_A", DomingoA);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_LUNES_P", LunesP);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_MARTES_P", MartesP);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_MIERCOLES_P", MiercolesP);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_JUEVES_P", JuevesP);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_VIERNES_P", ViernesP);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_SABADO_P", SabadoP);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_DOMINGO_P", DomingoP);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_CREA", UsuaCrea);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_CREA", FechCrea);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_ACTU", UsuaActu);
@@ -60,8 +67,9 @@ namespace ClsDataApp
 
             return objDataSet;
              }
-        public DataQuery Actualizacion(int Id, int IdAceptacionPasantia, char Lunes, char Martes, char Miercoles,
-            char Jueves, char Viernes, char Sabado, char Domingo, char Horario,
+        public DataQuery Actualizacion(int Id, int IdAceptacionPasantia, char LunesA, char MartesA, char MiercolesA,
+            char JuevesA, char ViernesA, char SabadoA, char DomingoA, char LunesP, char MartesP, char MiercolesP,
+            char JuevesP, char ViernesP, char SabadoP, char DomingoP, 
            string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
             DataQuery objResultado = new DataQuery();
@@ -72,7 +80,7 @@ namespace ClsDataApp
                 switch (OpcionActualizacion)
                 {
                     case TipoActualizacion.Adicionar:
-                        StrCommand = "";
+                        StrCommand = "SP_TB_ACEPTACION_HORARIO_INSERT";
                         break;
                     case TipoActualizacion.Actualizar:
                         StrCommand = " ";
@@ -103,14 +111,20 @@ namespace ClsDataApp
                     ObjCommand.Parameters.AddWithValue("@ID", Id);
                 }
                 ObjCommand.Parameters.AddWithValue("@ID_ACEPTACION_PASANTIA", IdAceptacionPasantia);
-                ObjCommand.Parameters.AddWithValue("@CD_LUNES", Lunes);
-                ObjCommand.Parameters.AddWithValue("@CD_MARTES", Martes);
-                ObjCommand.Parameters.AddWithValue("@CD_MIERCOLES", Miercoles);
-                ObjCommand.Parameters.AddWithValue("@CD_JUEVES", Jueves);
-                ObjCommand.Parameters.AddWithValue("@CD_VIERNES", Viernes);
-                ObjCommand.Parameters.AddWithValue("@CD_SABADO", Sabado);
-                ObjCommand.Parameters.AddWithValue("@CD_DOMINGO", Domingo);
-                ObjCommand.Parameters.AddWithValue("@CD_HORARIO", Horario);;
+                ObjCommand.Parameters.AddWithValue("@CD_LUNES_A", LunesA);
+                ObjCommand.Parameters.AddWithValue("@CD_MARTES_A", MartesA);
+                ObjCommand.Parameters.AddWithValue("@CD_MIERCOLES_A", MiercolesA);
+                ObjCommand.Parameters.AddWithValue("@CD_JUEVES_A", JuevesA);
+                ObjCommand.Parameters.AddWithValue("@CD_VIERNES_A", ViernesA);
+                ObjCommand.Parameters.AddWithValue("@CD_SABADO_A", SabadoA);
+                ObjCommand.Parameters.AddWithValue("@CD_DOMINGO_A", DomingoA);
+                ObjCommand.Parameters.AddWithValue("@CD_LUNES_P", LunesP);
+                ObjCommand.Parameters.AddWithValue("@CD_MARTES_P", MartesP);
+                ObjCommand.Parameters.AddWithValue("@CD_MIERCOLES_P", MiercolesP);
+                ObjCommand.Parameters.AddWithValue("@CD_JUEVES_P", JuevesP);
+                ObjCommand.Parameters.AddWithValue("@CD_VIERNES_P", ViernesP);
+                ObjCommand.Parameters.AddWithValue("@CD_SABADO_P", SabadoP);
+                ObjCommand.Parameters.AddWithValue("@CD_DOMINGO_P", DomingoP); 
                 ObjCommand.Parameters.AddWithValue("@LOGIN_USUARIO", LoginUsuario);
 
                 ObjParam = ObjCommand.Parameters.Add("@FILAS_AFECTADAS", SqlDbType.Int, 0);

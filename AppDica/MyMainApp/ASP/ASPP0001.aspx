@@ -6,13 +6,11 @@
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="CPHPrincipal">
 
-    <form id="form1" runat="server" class="form-horizontal">
-        <%--fin tab ENTREGABLE--%>
-        <div class="text-center">
-            <%--fin formulario--%>
+    <form id="form1" runat="server" class="form-horizontal"> 
+        <div class="text-center"> 
             <asp:Label ID="LblTitulo" runat="server" Text="Registro Aspirante" Font-Bold="True" Font-Size="18pt"></asp:Label>
         </div>
-        <%--fin container-fluid--%>
+        <%--</div>--%>
         
                         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div ALIGN="RIGHT">
@@ -470,6 +468,7 @@
                 </Triggers>
                 <ContentTemplate>
                     <asp:TextBox ID="TxtIdPasantia" runat="server" Visible="false"></asp:TextBox>
+                    <asp:TextBox ID="TxtIdAceptacionPasantia" runat="server" Visible="False"></asp:TextBox>
                     <p class="text-justify">
                         <asp:Label ID="LblParrafo1" runat="server" Text="Label"  class="text-justify">
                 Estimados estudiantes, esta encuesta tiene como objetivo conocer su interés para ser parte de los jóvenes
@@ -544,39 +543,39 @@
             </tr>
             <tr>
                 <td>
-                    <asp:CheckBox ID="CBam" runat="server" Text="AM" TextAlign="Left" AutoPostBack="True" OnCheckedChanged="CBam_CheckedChanged"></asp:CheckBox></td>
+                     <asp:Label ID="Label59" runat="server" Text="PM"></asp:Label></td>
                 <td>
-                    <asp:CheckBox ID="CBLunesA" runat="server" Enabled="False"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBLunesA" runat="server" ></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBMartesA" runat="server" Enabled="False"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBMartesA" runat="server" ></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBMiercolesA" runat="server" Enabled="False"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBMiercolesA" runat="server" ></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBJuevesA" runat="server" Enabled="False"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBJuevesA" runat="server" ></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBViernesA" runat="server" Enabled="False"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBViernesA" runat="server"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBSabadoA" runat="server" Enabled="False"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBSabadoA" runat="server"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBDomingoA" runat="server" Enabled="False"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBDomingoA" runat="server"></asp:CheckBox></td>
             </tr>
             <tr>
                 <td>
-                    <asp:CheckBox ID="CBpm" runat="server" Text="PM" TextAlign="Left" AutoPostBack="True" OnCheckedChanged="CBpm_CheckedChanged"></asp:CheckBox></td>
+                    <asp:Label ID="Label58" runat="server" Text="AM"></asp:Label></td>
                 <td>
-                    <asp:CheckBox ID="CBLunesP" runat="server" Enabled="False"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBLunesP" runat="server"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBMartesP" runat="server" Enabled="False"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBMartesP" runat="server" ></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBMiercolesP" runat="server" Enabled="False"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBMiercolesP" runat="server" ></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBJuevesP" runat="server" Enabled="False"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBJuevesP" runat="server" ></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBViernesP" runat="server" Enabled="False"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBViernesP" runat="server" ></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBSabadoP" runat="server" Enabled="False"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBSabadoP" runat="server"></asp:CheckBox></td>
                 <td>
-                    <asp:CheckBox ID="CBDomingoP" runat="server" Enabled="False"></asp:CheckBox></td>
+                    <asp:CheckBox ID="CBDomingoP" runat="server"></asp:CheckBox></td>
             </tr>
         </table>
         <br />
@@ -601,10 +600,10 @@
                     </ajaxToolkit:TabContainer>
                     </asp:Panel>
             </div>
-            <%--fin formulario--%>
+            <%--fin tab ENTREGABLE--%>
         </div>
         
-            <%--fin container-fluid--%>
+            <%--fin formulario--%>
          <asp:Panel ID="PanelFicha" runat="server" CssClass="modalPopup"  Height="527px">
         <br /><center>
         <rsweb:ReportViewer ID="RVFichaAspirante" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="75%" style="margin-right: 0px"><LocalReport ReportPath="ASP\RptFichaAspirante.rdlc"></LocalReport></rsweb:ReportViewer></center>
@@ -614,7 +613,7 @@
           <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="PanelFicha" BackgroundCssClass="modalBackround" TargetControlID="BtnFicha" CancelControlID="BtnCerrarFicha"></ajaxToolkit:ModalPopupExtender>
  
     </form>
-    <%--fin formulario--%>
+    <%--fin container-fluid--%>
 </asp:Content>
 
 
