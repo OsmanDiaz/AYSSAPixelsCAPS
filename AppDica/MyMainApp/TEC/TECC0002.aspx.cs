@@ -35,8 +35,6 @@ namespace MyMainApp.TEC
             FillGVListaPasantia();
             FillInfoProyecto();
             FillInfoGeneral();
-            //FillGVAspiranteAsignado();
-            //FillCboTipoDocumento();
         }
 
 
@@ -55,9 +53,6 @@ namespace MyMainApp.TEC
             CEmpresa objEmpresa = new CEmpresa(_DataSistema.ConexionBaseDato);
             dvEmpresa = new DataView (objEmpresa.Detalle(0,_DataSistema.Cusuario,"","","","","","",0,0,"","","","",0,"",_DataSistema.Cusuario,DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 0).TB_EMPRESA);
             GVListaEmpresa.DataSource = dvEmpresa;
-            //GVListaEmpresa.DataBind();
-            //GVInfoEmpresa.DataSource = dvEmpresa;
-            //GVInfoEmpresa.DataBind();
         }
 
         protected void GVListaEmpresa_SelectedIndexChanged(object sender, EventArgs e)
@@ -243,7 +238,7 @@ namespace MyMainApp.TEC
             }
             catch (Exception ex)
             {
-                // DespliegaMensajeUpdatePanel(ex.Message, UPProyecto);
+                DespliegaMensajeUpdatePanel(ex.Message, UPGeneral);
             }
         }
 
@@ -287,7 +282,6 @@ namespace MyMainApp.TEC
 
                 TxtIdEmpresa.Text = GVListaGeneral.DataKeys[Id].Value.ToString();
                 FillInfoEmpresa();
-                //FillInfoEntregable();
                 FillInfoEntregablePasantia();
                 PanelGeneral.Visible = false;
                 PanelListadoProyectoEntregable.Visible = true;
@@ -301,7 +295,7 @@ namespace MyMainApp.TEC
         private void FillInfoEntregablePasantia()
         {
             CCProyectoPasantia objConsultoriaEntregable = new CCProyectoPasantia(_DataSistema.ConexionBaseDato);
-            dvEntregable = new DataView(objConsultoriaEntregable.Detalle2(0, Convert.ToInt32(TxtIdConsultoria.Text),Convert.ToInt32(TxtIdEmpresa.Text), "", "", DateTime.Today, "", 'x', "", "", "", "", DateTime.Today, "", DateTime.Today, 1).TB_PROYECTO_PASANTIA);
+            dvEntregable = new DataView(objConsultoriaEntregable.Detalle2(0, Convert.ToInt32(TxtIdConsultoria.Text), Convert.ToInt32(TxtIdEmpresa.Text), "", "", DateTime.Today, "", 'x', "", "", "", "", DateTime.Today, "", DateTime.Today, 1).TB_PROYECTO_PASANTIA);
             if (dvEntregable.Count > 0)
             {
                 TxtIdEntregable.Text = dvEntregable.Table.Rows[0]["ID"].ToString();
@@ -310,22 +304,6 @@ namespace MyMainApp.TEC
             GVlistaEntregab.DataBind();
         }
 
-        //protected void GVListaEmpreNuevo_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        int Id = GVListaEmpreNuevo.SelectedIndex;
-
-        //        TxtIdEmpresa.Text = GVListaEmpresa.DataKeys[Id].Value.ToString();
-        //        FillInfoEmpresa();
-        //        PanelListadoProyectoEntregable.Visible = false;
-        //        PanelInfoEmpre.Visible = true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        DespliegaMensajeUpdatePanel(ex.Message, UPRegistroEmp);
-        //    }
-        //}
 
         protected void BtnAtrasInfoEmpre_Click(object sender, EventArgs e)
         {
