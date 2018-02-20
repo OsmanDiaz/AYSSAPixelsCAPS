@@ -811,9 +811,11 @@ namespace MyMainApp.EMP
             {
                 int Id = GVAspirantesEntregables.SelectedIndex;
 
-                TxtIdAspirante.Text = GVAspirantesEntregables.DataKeys[Id].Value.ToString();
+                TxtIdAspirante.Text = Convert.ToString(GVAspirantesEntregables.DataKeys[Id].Values[0]);
+                TxtIdConsulEntrega.Text = Convert.ToString(GVAspirantesEntregables.DataKeys[Id].Values[1]);
                 FillCamposEntregable(TxtIdAspirante.Text);
                 FillCamposAspirante();
+                LimpiarDatosObser();
                 PanelAspirantesE.Visible = false;
                 PanelDetalleEntregable.Visible = true;
                 
@@ -823,7 +825,11 @@ namespace MyMainApp.EMP
                 DespliegaMensajeUpdatePanel(ex.Message, UPProyecto);
             }
         }
+        protected void LimpiarDatosObser()
+        {
+            TxtObservEntregable.Text = "";
 
+        }
         protected void BtnCancelarObservacion_Click(object sender, EventArgs e)
         {/* de observacion entregable regresar a listado aspirante*/
             PanelAspirantesE.Visible = true;
@@ -931,12 +937,11 @@ namespace MyMainApp.EMP
         {
             try
             {
-                if (Convert.ToInt32(TxtIdProyecto.Text) > 0)
-                {
+                
                     CConsultoriaEntregableAp objAprobarEntregable = new CConsultoriaEntregableAp(_DataSistema.ConexionBaseDato);
-                    objResultado = objAprobarEntregable.Actualizacion(0, Convert.ToInt32(TxtIdProyecto.Text), TxtNombreEntregable.Text,
-                        TxtDescripcion.Text, DateTime.Today, TxtDuracionEntregable.Text, Convert.ToChar(CboEstadoEntregable.Text), "",
-                        TxtObservEntregable.Text, "", _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+                    objResultado = objAprobarEntregable.Actualizacion(Convert.ToInt32(TxtIdConsulEntrega.Text), Convert.ToInt32(TxtIdProyecto.Text), TxtNombreEntregable.Text,
+                        TxtDescripcion.Text, Convert.ToDateTime(TxtFechaEntregaEntregable.Text), TxtDuracionEntregable.Text, Convert.ToChar(CboEstadoEntregable.SelectedValue), "",
+                        TxtObservEntregable.Text, TxtIdAspirante.Text, _DataSistema.Cusuario, TipoActualizacion.Actualizar);
 
                     if (objResultado.CodigoError == 0)
                     {
@@ -953,11 +958,7 @@ namespace MyMainApp.EMP
                     {
                         DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPProyecto);
                     }
-                }
-                else
-                {
-                    DespliegaMensajeUpdatePanel("No se ha seleccionado una pasantia para agregar Entregables", UPProyecto);
-                }
+                
             }
             catch (Exception ex)
             {

@@ -70,7 +70,7 @@ namespace ClsDataApp
                         StrCommand = "SP_TB_ACEPTACION_PASANTIA_INSERT";
                         break;
                     case TipoActualizacion.Actualizar:
-                        StrCommand = " ";
+                        StrCommand = "SP_TB_ACEPTACION_PASANTIA_UPDATE";
                         break;
                     case TipoActualizacion.Eliminar:
                         StrCommand = "";
