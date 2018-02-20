@@ -49,9 +49,10 @@ namespace MyMainApp.TEC
             CAspirante objRegistroAspirante = new CAspirante(_DataSistema.ConexionBaseDato);
             DataView dvRegistroAspirante = new DataView(objRegistroAspirante.Detalle("", "", "", DateTime.Now, 'X',
            "", "", "", "", "", "", 'X', 0, "", 0, 0, 0, "", "", "", "", "", DateTime.Now, "", DateTime.Now, 5).TB_ASPIRANTE);
-
+            
             GVRegistroAspirante.DataSource = dvRegistroAspirante;
             GVRegistroAspirante.DataBind();
+            
         }
 
         protected void FillGVAspiranteAsignado()
@@ -71,8 +72,8 @@ namespace MyMainApp.TEC
                 int Id = GVRegistroAspirante.SelectedIndex;
 
                 TxtIdAspirante.Text = GVRegistroAspirante.DataKeys[Id].Value.ToString();
-
                 FillCamposDatosGenerales();
+                LimpiarIq();
                 PanelRegistroAspirante.Visible = false;
                 PanelRegistroIq.Visible = true;
 
@@ -100,7 +101,7 @@ namespace MyMainApp.TEC
             try
             {
                 CNotaIq objNotasIqAspirante = new CNotaIq(_DataSistema.ConexionBaseDato);
-                objResultado = objNotasIqAspirante.Actualizacion(0, Convert.ToDouble(TxtNotaIq.Text), TxtObservacion.Text, _DataSistema.Cusuario, _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+                objResultado = objNotasIqAspirante.Actualizacion(0, Convert.ToDouble(TxtNotaIq.Text), TxtObservacion.Text,TxtIdAspirante.Text, _DataSistema.Cusuario, TipoActualizacion.Adicionar);
                 
                 string nombreArchivo = _DataSistema.Cusuario + "_" + CboTipoDocumento.SelectedValue + FileDocumento.FileName;
                 
@@ -148,7 +149,18 @@ namespace MyMainApp.TEC
                 TxtNit.Text = dvAspirante.Table.Rows[0]["DS_NIT"].ToString();
             }
         }
-        
+
+        protected void BtnRegresar_Click(object sender, EventArgs e)
+        {
+            PanelRegistroIq.Visible = false;
+            PanelRegistroAspirante.Visible = true;
+        }
+        protected void LimpiarIq()
+        {
+            TxtNotaIq.Text = "";
+            TxtObservacion.Text = "";
+
+        }
 
     }
 }

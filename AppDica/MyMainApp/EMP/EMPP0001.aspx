@@ -805,11 +805,12 @@
                                             </div>
                                         </div>
                                              <br />
-                                            <asp:GridView ID="GVAspirantesEntregables" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID1" OnSelectedIndexChanged="GVAspirantesEntregables_SelectedIndexChanged">
+                                            <asp:GridView ID="GVAspirantesEntregables" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID1,ID" OnSelectedIndexChanged="GVAspirantesEntregables_SelectedIndexChanged">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
                                                     <asp:BoundField DataField="DS_COMPLETO" HeaderText="ASPIRANTE" />
                                                     <asp:BoundField HeaderText="DESCARGAR" />
+                                                    <asp:BoundField DataField="CD_ESTADO_ENTREGABLE" HeaderText="ESTADO" />
                                                     <asp:TemplateField HeaderText="VER DETALLE">
                                                         <ItemTemplate>
                                                             <asp:Button ID="BtnVerDetalles" runat="server" CommandName="Select"  Text="Ver Detalle" />
@@ -829,10 +830,11 @@
                                             </asp:GridView>
                                         </asp:Panel><br />
                                         <asp:Panel ID="PanelDetalleEntregable" runat="server" Visible="false">
-                                            
+                                            <asp:TextBox ID="TxtIdConsulEntrega" runat="server" Text="0" Visible="False"></asp:TextBox>
                                             <div align="center">
                                             <asp:Label ID="Label75" runat="server" Text="DETALLE DE ENTREGABLE"  Font-Size="14pt"></asp:Label><br />
                                                 </div><br />
+                                            
                                             <div class="form-group">
                                             <asp:Label ID="Label76" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRES:"></asp:Label>
                                                 <div class="col-md-3">

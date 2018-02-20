@@ -22,7 +22,7 @@
                                 </asp:DropDownList>
                             </div>
                         </div>
-                        <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" activetabindex="0" bordercolor="#66CCFF" height="375px" scrollbars="Vertical" width="100%">
+                        <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" activetabindex="1" bordercolor="#66CCFF" height="375px" scrollbars="Vertical" width="100%">
                             <ajaxtoolkit:TabPanel ID="TabPanel1" runat="server" HeaderText="REGISTROS DE ASPIRANTES" Width="100%">
                                 <ContentTemplate>
                                     <asp:UpdatePanel ID="UPRegistroAspirante" runat="server">
@@ -100,7 +100,7 @@
                                                
                                                 <div align="center">
                                                 <asp:Button ID="BtnGuardarNotaIq" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="BtnGuardarNotaIq_Click" />
-                                                &nbsp;</div>
+                                                &nbsp;<asp:Button ID="BtnRegresar" runat="server" Text="REGRESAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresar_Click"/></div>
                                                 <br />
 
                                             </asp:Panel>
@@ -123,9 +123,12 @@
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
                                                     <asp:BoundField HeaderText="NOMBRE COMPLETO" DataField="DS_COMPLETO" />
+                                                    <asp:BoundField DataField="DS_NOMBRE_EMPRESA" HeaderText="EMPRESA" />
+                                                    <asp:BoundField DataField="NOMBRE_PASANTIA" HeaderText="PASANTIA" />
                                                     <asp:BoundField HeaderText="ÁREA PASANTÍA" DataField="DS_AREA" />
+                                                    <asp:BoundField DataField="FECH_INICIO_PASANTIA" HeaderText="FECHA INICIO" />
                                                     <asp:BoundField HeaderText="DURACIÓN PASANTÍA" DataField="DS_DURACION" />
-                                                    <asp:BoundField HeaderText="ESTADO" DataField="CD_ESTADO_ASPIRANTE" />
+                                                    <asp:BoundField HeaderText="EVALUADOR" DataField="DS_NOMBRE_EVAL" />
                                                 </Columns>
                                                 <EditRowStyle BackColor="#2461BF" />
                                                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
