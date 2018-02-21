@@ -31,7 +31,7 @@
 
                                     <ContentTemplate>
                                         <br />
-                                        
+                                        <asp:TextBox ID="TxtTipoEntregable" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%" Visible="false"></asp:TextBox>
                                         <asp:Panel ID="PanelGeneral" runat="server" >
                                         <center><h3>Informacion Proyectos</h3></center>
                                         <asp:GridView ID="GVListaGeneral" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaGeneral_SelectedIndexChaged">
@@ -75,7 +75,7 @@
                               
                                             <center><h3>Información Entregables</h3></center>
                                             <br />
-                                            <asp:GridView ID="GVlistaEntregab" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaEntregables1_SelectedIndexChanged">
+                                            <asp:GridView ID="GVlistaEntregab" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID,DS_TIPO" OnSelectedIndexChanged="GVListaEntregables1_SelectedIndexChanged">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
                                                 <asp:TemplateField HeaderText="" >
@@ -86,6 +86,7 @@
                                                 <asp:BoundField HeaderText="PROYECTO" DataField="DS_NOMBRE_CONSULTORIA" />
                                                 <asp:BoundField HeaderText="NOMBRE ENTREGABLE" DataField="DS_ENTREGABLE" />
                                                 <asp:BoundField HeaderText="ADVERTENCIA" DataField="MSJ" />
+                                                <asp:BoundField HeaderText="TIPO" DataField="DS_TIPO" />
                                                 <asp:BoundField HeaderText="BANDERA" DataField="BANDERA" Visible="false"/>
                                                 <asp:TemplateField>
                                                     <ItemTemplate>
@@ -181,7 +182,51 @@
                                             <br />
                                         </asp:Panel>
 
-
+                                        <asp:Panel ID="PanelInfoEntregable" runat="server" Visible="False">
+                                            <br />
+                                          <div align="center">
+                                                <asp:Label ID="Label43" runat="server" Text="INFORMACION ENTREGABLE" Font-Size="14pt"></asp:Label></div>
+                                          <div class="form-group">
+                                                <asp:Label ID="Label44" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE EMPRESA:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox ID="TxtNombreEmpresa1" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label ID="Label45" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE CONTACTO:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtContacto" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                                <asp:Label ID="Label46" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="EMAIL CONTACTO:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtEmailCon" runat="server" class="form-control"  Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <asp:Panel ID="PanelPEntregableActivity" runat="server" Visible="False">
+                                                <div class="form-group">
+                                                    <asp:Label ID="Label47" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE CONSULTORIA:"></asp:Label>
+                                                    <div class="col-md-3">
+                                                        <asp:TextBox ID="TxtConsultoria" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                    </div>
+                                                    <asp:Label ID="Label48" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="ENTREGABLE:"></asp:Label>
+                                                    <div class="col-md-3">
+                                                        <asp:TextBox ID="TxtEntregable" runat="server" class="form-control"  Enabled="False" Width="100%"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                            </asp:Panel>
+                                            <asp:Panel ID="PanelPasantiaActivity" runat="server" Visible="False">
+                                                <div class="form-group">
+                                                    <asp:Label ID="Label50" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE PASANTIA:"></asp:Label>
+                                                    <div class="col-md-3">
+                                                        <asp:TextBox ID="TxtPasantiaName" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                    </div>
+                                                    <asp:Label ID="Label54" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="ACTIVIDAD:"></asp:Label>
+                                                    <div class="col-md-3">
+                                                        <asp:TextBox ID="TxtActividad" runat="server" class="form-control"  Enabled="False" Width="100%"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                            </asp:Panel>
+                                        </asp:Panel>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
                             </ContentTemplate>

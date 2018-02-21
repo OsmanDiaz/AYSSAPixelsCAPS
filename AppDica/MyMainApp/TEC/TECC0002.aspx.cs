@@ -315,9 +315,52 @@ namespace MyMainApp.TEC
         {
             int Id = GVlistaEntregab.SelectedIndex;
 
-            TxtIdEntregable.Text = GVlistaEntregab.DataKeys[Id].Value.ToString();
-            FillInfoEntregable();
-            PanelListadoProyectoEntregable.Visible = true;
+            TxtIdEntregable.Text = Convert.ToString(GVlistaEntregab.DataKeys[Id].Values[0]);
+            TxtTipoEntregable.Text = Convert.ToString(GVlistaEntregab.DataKeys[Id].Values[1]);
+            FillEntregableInfoEstado();
+            PanelListadoProyectoEntregable.Visible = false;
+            PanelInfoEntregable.Visible = true;
+            if (TxtTipoEntregable.Text == "PASANTIA")
+            {
+                PanelPasantiaActivity.Visible = true;
+                PanelPEntregableActivity.Visible = false;
+            }
+            else if (TxtTipoEntregable.Text == "PROYECTO")
+            {
+                PanelPEntregableActivity.Visible = true;
+                PanelPasantiaActivity.Visible = false;
+            }
+        }
+
+        private void FillEntregableInfoEstado()
+        {
+            if (TxtTipoEntregable.Text == "PASANTIA") {
+                CPasantiaActividad objPasantia = new CPasantiaActividad(_DataSistema.ConexionBaseDato);
+                dvPasantia = new DataView(objPasantia.Detalle(Convert.ToInt32(TxtIdEntregable.Text),Convert.ToInt32(TxtIdConsultoria.Text),"","",DateTime.Today,"","",DateTime.Today,"",DateTime.Today,3).TB_PASANTIA_ACTIVIDAD);
+                //if (dvPasantia.Count > 0) {
+                //    TxtIdEntregable.Text = dvEntregable.Table.Rows[0]["ID"].ToString();
+                //    TxtNombreEmpresa1.Text = dvEntregable.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString();
+                //    TxtContacto.Text = dvEntregable.Table.Rows[0]["DS_NOMBRE_CONTACTO"].ToString();
+                //    TxtEmailCon.Text = dvEntregable.Table.Rows[0]["DS_EMAIL_CONTACTO"].ToString();
+                //    TxtConsultoria.Text = dvEntregable.Table.Rows[0]["DS_NOMBRE_CONSULTORIA"].ToString();
+                //    TxtEntregable.Text = dvEntregable.Table.Rows[0]["DS_ENTREGABLE"].ToString();
+                //}
+            }
+            else if (TxtTipoEntregable.Text == "PROYECTO") { 
+            
+            }
+
+            //CCProyectoPasantia objConsultoriaEntregable = new CCProyectoPasantia(_DataSistema.ConexionBaseDato);
+            //dvEntregable = new DataView(objConsultoriaEntregable.Detalle2(Convert.ToInt32(TxtIdEntregable.Text), Convert.ToInt32(TxtIdConsultoria.Text), Convert.ToInt32(TxtIdEmpresa.Text), "", "", DateTime.Today, "", 'x', "", "", "", "", DateTime.Today, "", DateTime.Today, 1).TB_PROYECTO_PASANTIA);
+            //if (dvEntregable.Count > 0)
+            //{
+            //    TxtIdEntregable.Text = dvEntregable.Table.Rows[0]["ID"].ToString();
+            //    TxtNombreEmpresa1.Text = dvEntregable.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString();
+            //    TxtContacto.Text = dvEntregable.Table.Rows[0]["DS_NOMBRE_CONTACTO"].ToString();
+            //    TxtEmailCon.Text = dvEntregable.Table.Rows[0]["DS_EMAIL_CONTACTO"].ToString();
+            //    TxtConsultoria.Text = dvEntregable.Table.Rows[0]["DS_NOMBRE_CONSULTORIA"].ToString();
+            //    TxtEntregable.Text = dvEntregable.Table.Rows[0]["DS_ENTREGABLE"].ToString();
+            //}
         }
 
         
