@@ -72,38 +72,7 @@
                                         <%--fin tab informacion adicional--%>
                                        </asp:Panel>                                       
                                         <asp:Panel ID="PanelListadoProyectoEntregable" runat="server" Visible ="false">
-                                       <%--     <center><h3>Informacion Empresa</h3></center>
-                                        <asp:GridView ID="GVInfoEmpresa" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaEmpreNuevo_SelectedIndexChanged">
-                                            <AlternatingRowStyle BackColor="White" />
-                                            <Columns>
-                                                <asp:TemplateField HeaderText="" Visible="false">
-                                                    <ItemTemplate>
-                                                        <asp:TextBox ID="TxtIdEmpresaGV" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
-                                                    </ItemTemplate>
-                                                </asp:TemplateField>
-                                                <asp:BoundField HeaderText="NOMBRE EMPRESA" DataField="DS_NOMBRE_EMPRESA" />
-                                                <asp:BoundField HeaderText="NOMBRE DE CONTACTO" DataField="DS_NOMBRE_CONTACTO" />
-                                                <asp:BoundField DataField="DS_TELEFONO_EMPRESA" HeaderText="TELEFONO EMPRESA" />
-                                                <asp:BoundField DataField="DS_EMAIL_CONTACTO" HeaderText="CORREO" />
-                                                <asp:TemplateField>
-                                                    <ItemTemplate>
-                                                        <asp:Button ID="BtnInfoEmpresa" runat="server" CommandName="Select"
-                                                            Text="Informacion Empresa"  />
-                                                    </ItemTemplate>
-                                                </asp:TemplateField>
-                                            </Columns>
-                                            <EditRowStyle BackColor="#2461BF" />
-                                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                                            <RowStyle BackColor="#EFF3FB" />
-                                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                                        </asp:GridView>
-                                        <br />--%>
+                              
                                             <center><h3>Información Entregables</h3></center>
                                             <br />
                                             <asp:GridView ID="GVlistaEntregab" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaEntregables1_SelectedIndexChanged">
@@ -114,9 +83,9 @@
                                                         <asp:TextBox ID="TxtIdEntregableGV" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
+                                                <asp:BoundField HeaderText="PROYECTO" DataField="DS_NOMBRE_CONSULTORIA" />
                                                 <asp:BoundField HeaderText="NOMBRE ENTREGABLE" DataField="DS_ENTREGABLE" />
-                                                <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ENT" />
-                                                <asp:BoundField HeaderText="DURACION" DataField="DS_DURACION_ENT" />
+                                                <asp:BoundField HeaderText="ADVERTENCIA" DataField="MSJ" />
                                                 <asp:BoundField HeaderText="BANDERA" DataField="BANDERA" Visible="false"/>
                                                 <asp:TemplateField>
                                                     <ItemTemplate>
