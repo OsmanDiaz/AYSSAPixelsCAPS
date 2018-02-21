@@ -15,9 +15,9 @@ namespace ClsDataApp
             _ConexionData = ConexionData;
         }
 
-        public ClsDataSets.DS_TB_ASP Detalle(int Id, int IdAceptacionPasantia, char LunesA, char MartesA, char MiercolesA,
-            char JuevesA, char ViernesA, char SabadoA, char DomingoA, char LunesP, char MartesP, char MiercolesP,
-            char JuevesP, char ViernesP, char SabadoP, char DomingoP, 
+        public ClsDataSets.DS_TB_ASP Detalle(int Id, int IdAceptacionPasantia, bool LunesA, bool MartesA, bool MiercolesA,
+            bool JuevesA, bool ViernesA, bool SabadoA, bool DomingoA, bool LunesP, bool MartesP, bool MiercolesP,
+            bool JuevesP, bool ViernesP, bool SabadoP, bool DomingoP, 
             string UsuaCrea, DateTime FechCrea, string UsuaActu, DateTime FechActu, int OpcionConsulta)
 
      {
@@ -67,9 +67,9 @@ namespace ClsDataApp
 
             return objDataSet;
              }
-        public DataQuery Actualizacion(int Id, int IdAceptacionPasantia, char LunesA, char MartesA, char MiercolesA,
-            char JuevesA, char ViernesA, char SabadoA, char DomingoA, char LunesP, char MartesP, char MiercolesP,
-            char JuevesP, char ViernesP, char SabadoP, char DomingoP, 
+        public DataQuery Actualizacion(int Id, int IdAceptacionPasantia, bool LunesA, bool MartesA, bool MiercolesA,
+            bool JuevesA, bool ViernesA, bool SabadoA, bool DomingoA, bool LunesP, bool MartesP, bool MiercolesP,
+            bool JuevesP, bool ViernesP, bool SabadoP, bool DomingoP, 
            string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
             DataQuery objResultado = new DataQuery();
