@@ -61,12 +61,17 @@ namespace MyMainApp
             if (dvAceptacionPasantia.Count > 0)
             {
                 TabAceptacionPasantia.Visible = true;
+                TabAspirante.ActiveTab = TabAceptacionPasantia;
                 TxtIdAceptacionPasantia.Text = dvAceptacionPasantia.Table.Rows[0]["ID"].ToString();
                 LblParrafo1.Text = LblParrafo1.Text.Replace("{{fecha_inicio_pasantia}}", dvAceptacionPasantia.Table.Rows[0]["FECH_INICIO_PASANTIA"].ToString());
                 TxtIdPasantia.Text = dvAceptacionPasantia.Table.Rows[0]["ID_PASANTIA"].ToString();
                 LblLaptop.Text = LblLaptop.Text.Replace("{{duracion_pasantia}}", dvAceptacionPasantia.Table.Rows[0]["DS_DURACION"].ToString());
                 LblNombreEstudiante.Text = LblNombreEstudiante.Text.Replace("{{nombre_aspirante}}", _DataSistema.NombreUsuario);
                 LblAceptacion.Text = LblAceptacion.Text.Replace("{{duracion_pasantia}}", dvAceptacionPasantia.Table.Rows[0]["DS_DURACION"].ToString());
+            }
+            else
+            {
+                TabAspirante.ActiveTabIndex = 0;
             }
             if (!IsPostBack)
             {
@@ -980,9 +985,9 @@ namespace MyMainApp
                 if (Aceptacion == 'S')
                 {                  
                     CAceptacionHorario objAceptacionHorario = new CAceptacionHorario(_DataSistema.ConexionBaseDato);
-                    objResultado = objAceptacionHorario.Actualizacion(0, Convert.ToInt32(objResultado.CodigoAuxiliar), Convert.ToChar(CBLunesA.Checked),Convert.ToChar(CBMartesA.Checked),Convert.ToChar(CBMiercolesA.Checked),
-                       Convert.ToChar(CBJuevesA.Checked), Convert.ToChar(CBViernesA.Checked), Convert.ToChar(CBSabadoA.Checked), Convert.ToChar(CBDomingoA.Checked), Convert.ToChar(CBLunesP.Checked), Convert.ToChar(CBMartesP.Checked), Convert.ToChar(CBMiercolesP.Checked),
-                       Convert.ToChar( CBJuevesP.Checked), Convert.ToChar(CBViernesP.Checked), Convert.ToChar(CBSabadoP.Checked), Convert.ToChar(CBDomingoP.Checked),  
+                    objResultado = objAceptacionHorario.Actualizacion(0, Convert.ToInt32(objResultado.CodigoAuxiliar), CBLunesA.Checked,CBMartesA.Checked,CBMiercolesA.Checked,
+                       CBJuevesA.Checked, CBViernesA.Checked, CBSabadoA.Checked, CBDomingoA.Checked, CBLunesP.Checked, CBMartesP.Checked, CBMiercolesP.Checked,
+                       CBJuevesP.Checked, CBViernesP.Checked, CBSabadoP.Checked, CBDomingoP.Checked,  
                      _DataSistema.Cusuario, TipoActualizacion.Adicionar);
                 }
             }
@@ -996,11 +1001,13 @@ namespace MyMainApp
                 TxtPregunta.Enabled = true;
                 TxtPregunta1.Enabled = false;
                 TxtPregunta1.Text = "";
+                PanelHorario.Visible = true;
             }
             else {
                 TxtPregunta.Enabled = false;
                 TxtPregunta1.Enabled = false;
                 TxtPregunta1.Text = "";
+                PanelHorario.Visible = false;
             }
         }
 
@@ -1012,12 +1019,14 @@ namespace MyMainApp
                 TxtPregunta1.Enabled = true;
                 TxtPregunta.Enabled = false;
                 TxtPregunta.Text = "";
+                PanelHorario.Visible = false;
             }
             else
             {
                 TxtPregunta.Enabled = false;
                 TxtPregunta1.Enabled = false;
                 TxtPregunta.Text = "";
+                PanelHorario.Visible = false;
             }
         }
 

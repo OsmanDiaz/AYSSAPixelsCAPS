@@ -12,7 +12,7 @@
   <xs:element name="DS_TB_ASP" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_TB_ASP" msprop:Generator_UserDSName="DS_TB_ASP">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="TB_ASPIRANTE" msprop:Generator_TableClassName="TB_ASPIRANTEDataTable" msprop:Generator_TableVarName="tableTB_ASPIRANTE" msprop:Generator_RowChangedName="TB_ASPIRANTERowChanged" msprop:Generator_TablePropName="TB_ASPIRANTE" msprop:Generator_RowDeletingName="TB_ASPIRANTERowDeleting" msprop:Generator_RowChangingName="TB_ASPIRANTERowChanging" msprop:Generator_RowEvHandlerName="TB_ASPIRANTERowChangeEventHandler" msprop:Generator_RowDeletedName="TB_ASPIRANTERowDeleted" msprop:Generator_RowClassName="TB_ASPIRANTERow" msprop:Generator_UserTableName="TB_ASPIRANTE" msprop:Generator_RowEvArgName="TB_ASPIRANTERowChangeEvent">
+        <xs:element name="TB_ASPIRANTE" msprop:Generator_TableClassName="TB_ASPIRANTEDataTable" msprop:Generator_TableVarName="tableTB_ASPIRANTE" msprop:Generator_TablePropName="TB_ASPIRANTE" msprop:Generator_RowDeletingName="TB_ASPIRANTERowDeleting" msprop:Generator_RowChangingName="TB_ASPIRANTERowChanging" msprop:Generator_RowEvHandlerName="TB_ASPIRANTERowChangeEventHandler" msprop:Generator_RowDeletedName="TB_ASPIRANTERowDeleted" msprop:Generator_UserTableName="TB_ASPIRANTE" msprop:Generator_RowChangedName="TB_ASPIRANTERowChanged" msprop:Generator_RowEvArgName="TB_ASPIRANTERowChangeEvent" msprop:Generator_RowClassName="TB_ASPIRANTERow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
@@ -41,7 +41,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TB_ESCOLARIDAD_ASPIRANTE" msprop:Generator_TableClassName="TB_ESCOLARIDAD_ASPIRANTEDataTable" msprop:Generator_TableVarName="tableTB_ESCOLARIDAD_ASPIRANTE" msprop:Generator_RowChangedName="TB_ESCOLARIDAD_ASPIRANTERowChanged" msprop:Generator_TablePropName="TB_ESCOLARIDAD_ASPIRANTE" msprop:Generator_RowDeletingName="TB_ESCOLARIDAD_ASPIRANTERowDeleting" msprop:Generator_RowChangingName="TB_ESCOLARIDAD_ASPIRANTERowChanging" msprop:Generator_RowEvHandlerName="TB_ESCOLARIDAD_ASPIRANTERowChangeEventHandler" msprop:Generator_RowDeletedName="TB_ESCOLARIDAD_ASPIRANTERowDeleted" msprop:Generator_RowClassName="TB_ESCOLARIDAD_ASPIRANTERow" msprop:Generator_UserTableName="TB_ESCOLARIDAD_ASPIRANTE" msprop:Generator_RowEvArgName="TB_ESCOLARIDAD_ASPIRANTERowChangeEvent">
+        <xs:element name="TB_ESCOLARIDAD_ASPIRANTE" msprop:Generator_TableClassName="TB_ESCOLARIDAD_ASPIRANTEDataTable" msprop:Generator_TableVarName="tableTB_ESCOLARIDAD_ASPIRANTE" msprop:Generator_TablePropName="TB_ESCOLARIDAD_ASPIRANTE" msprop:Generator_RowDeletingName="TB_ESCOLARIDAD_ASPIRANTERowDeleting" msprop:Generator_RowChangingName="TB_ESCOLARIDAD_ASPIRANTERowChanging" msprop:Generator_RowEvHandlerName="TB_ESCOLARIDAD_ASPIRANTERowChangeEventHandler" msprop:Generator_RowDeletedName="TB_ESCOLARIDAD_ASPIRANTERowDeleted" msprop:Generator_UserTableName="TB_ESCOLARIDAD_ASPIRANTE" msprop:Generator_RowChangedName="TB_ESCOLARIDAD_ASPIRANTERowChanged" msprop:Generator_RowEvArgName="TB_ESCOLARIDAD_ASPIRANTERowChangeEvent" msprop:Generator_RowClassName="TB_ESCOLARIDAD_ASPIRANTERow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
@@ -55,7 +55,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TB_HABILIDAD_ASPIRANTE" msprop:Generator_TableClassName="TB_HABILIDAD_ASPIRANTEDataTable" msprop:Generator_TableVarName="tableTB_HABILIDAD_ASPIRANTE" msprop:Generator_RowChangedName="TB_HABILIDAD_ASPIRANTERowChanged" msprop:Generator_TablePropName="TB_HABILIDAD_ASPIRANTE" msprop:Generator_RowDeletingName="TB_HABILIDAD_ASPIRANTERowDeleting" msprop:Generator_RowChangingName="TB_HABILIDAD_ASPIRANTERowChanging" msprop:Generator_RowEvHandlerName="TB_HABILIDAD_ASPIRANTERowChangeEventHandler" msprop:Generator_RowDeletedName="TB_HABILIDAD_ASPIRANTERowDeleted" msprop:Generator_RowClassName="TB_HABILIDAD_ASPIRANTERow" msprop:Generator_UserTableName="TB_HABILIDAD_ASPIRANTE" msprop:Generator_RowEvArgName="TB_HABILIDAD_ASPIRANTERowChangeEvent">
+        <xs:element name="TB_HABILIDAD_ASPIRANTE" msprop:Generator_TableClassName="TB_HABILIDAD_ASPIRANTEDataTable" msprop:Generator_TableVarName="tableTB_HABILIDAD_ASPIRANTE" msprop:Generator_TablePropName="TB_HABILIDAD_ASPIRANTE" msprop:Generator_RowDeletingName="TB_HABILIDAD_ASPIRANTERowDeleting" msprop:Generator_RowChangingName="TB_HABILIDAD_ASPIRANTERowChanging" msprop:Generator_RowEvHandlerName="TB_HABILIDAD_ASPIRANTERowChangeEventHandler" msprop:Generator_RowDeletedName="TB_HABILIDAD_ASPIRANTERowDeleted" msprop:Generator_UserTableName="TB_HABILIDAD_ASPIRANTE" msprop:Generator_RowChangedName="TB_HABILIDAD_ASPIRANTERowChanged" msprop:Generator_RowEvArgName="TB_HABILIDAD_ASPIRANTERowChangeEvent" msprop:Generator_RowClassName="TB_HABILIDAD_ASPIRANTERow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
@@ -65,7 +65,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TB_DESTREZA_ASPIRANTE" msprop:Generator_TableClassName="TB_DESTREZA_ASPIRANTEDataTable" msprop:Generator_TableVarName="tableTB_DESTREZA_ASPIRANTE" msprop:Generator_RowChangedName="TB_DESTREZA_ASPIRANTERowChanged" msprop:Generator_TablePropName="TB_DESTREZA_ASPIRANTE" msprop:Generator_RowDeletingName="TB_DESTREZA_ASPIRANTERowDeleting" msprop:Generator_RowChangingName="TB_DESTREZA_ASPIRANTERowChanging" msprop:Generator_RowEvHandlerName="TB_DESTREZA_ASPIRANTERowChangeEventHandler" msprop:Generator_RowDeletedName="TB_DESTREZA_ASPIRANTERowDeleted" msprop:Generator_RowClassName="TB_DESTREZA_ASPIRANTERow" msprop:Generator_UserTableName="TB_DESTREZA_ASPIRANTE" msprop:Generator_RowEvArgName="TB_DESTREZA_ASPIRANTERowChangeEvent">
+        <xs:element name="TB_DESTREZA_ASPIRANTE" msprop:Generator_TableClassName="TB_DESTREZA_ASPIRANTEDataTable" msprop:Generator_TableVarName="tableTB_DESTREZA_ASPIRANTE" msprop:Generator_TablePropName="TB_DESTREZA_ASPIRANTE" msprop:Generator_RowDeletingName="TB_DESTREZA_ASPIRANTERowDeleting" msprop:Generator_RowChangingName="TB_DESTREZA_ASPIRANTERowChanging" msprop:Generator_RowEvHandlerName="TB_DESTREZA_ASPIRANTERowChangeEventHandler" msprop:Generator_RowDeletedName="TB_DESTREZA_ASPIRANTERowDeleted" msprop:Generator_UserTableName="TB_DESTREZA_ASPIRANTE" msprop:Generator_RowChangedName="TB_DESTREZA_ASPIRANTERowChanged" msprop:Generator_RowEvArgName="TB_DESTREZA_ASPIRANTERowChangeEvent" msprop:Generator_RowClassName="TB_DESTREZA_ASPIRANTERow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
@@ -73,7 +73,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TB_DOCUMENTO_ASPIRANTE" msprop:Generator_TableClassName="TB_DOCUMENTO_ASPIRANTEDataTable" msprop:Generator_TableVarName="tableTB_DOCUMENTO_ASPIRANTE" msprop:Generator_RowChangedName="TB_DOCUMENTO_ASPIRANTERowChanged" msprop:Generator_TablePropName="TB_DOCUMENTO_ASPIRANTE" msprop:Generator_RowDeletingName="TB_DOCUMENTO_ASPIRANTERowDeleting" msprop:Generator_RowChangingName="TB_DOCUMENTO_ASPIRANTERowChanging" msprop:Generator_RowEvHandlerName="TB_DOCUMENTO_ASPIRANTERowChangeEventHandler" msprop:Generator_RowDeletedName="TB_DOCUMENTO_ASPIRANTERowDeleted" msprop:Generator_RowClassName="TB_DOCUMENTO_ASPIRANTERow" msprop:Generator_UserTableName="TB_DOCUMENTO_ASPIRANTE" msprop:Generator_RowEvArgName="TB_DOCUMENTO_ASPIRANTERowChangeEvent">
+        <xs:element name="TB_DOCUMENTO_ASPIRANTE" msprop:Generator_TableClassName="TB_DOCUMENTO_ASPIRANTEDataTable" msprop:Generator_TableVarName="tableTB_DOCUMENTO_ASPIRANTE" msprop:Generator_TablePropName="TB_DOCUMENTO_ASPIRANTE" msprop:Generator_RowDeletingName="TB_DOCUMENTO_ASPIRANTERowDeleting" msprop:Generator_RowChangingName="TB_DOCUMENTO_ASPIRANTERowChanging" msprop:Generator_RowEvHandlerName="TB_DOCUMENTO_ASPIRANTERowChangeEventHandler" msprop:Generator_RowDeletedName="TB_DOCUMENTO_ASPIRANTERowDeleted" msprop:Generator_UserTableName="TB_DOCUMENTO_ASPIRANTE" msprop:Generator_RowChangedName="TB_DOCUMENTO_ASPIRANTERowChanged" msprop:Generator_RowEvArgName="TB_DOCUMENTO_ASPIRANTERowChangeEvent" msprop:Generator_RowClassName="TB_DOCUMENTO_ASPIRANTERow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
@@ -83,7 +83,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TBC_REPRESENTANTE_LEGAL" msprop:Generator_TableClassName="TBC_REPRESENTANTE_LEGALDataTable" msprop:Generator_TableVarName="tableTBC_REPRESENTANTE_LEGAL" msprop:Generator_RowChangedName="TBC_REPRESENTANTE_LEGALRowChanged" msprop:Generator_TablePropName="TBC_REPRESENTANTE_LEGAL" msprop:Generator_RowDeletingName="TBC_REPRESENTANTE_LEGALRowDeleting" msprop:Generator_RowChangingName="TBC_REPRESENTANTE_LEGALRowChanging" msprop:Generator_RowEvHandlerName="TBC_REPRESENTANTE_LEGALRowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_REPRESENTANTE_LEGALRowDeleted" msprop:Generator_RowClassName="TBC_REPRESENTANTE_LEGALRow" msprop:Generator_UserTableName="TBC_REPRESENTANTE_LEGAL" msprop:Generator_RowEvArgName="TBC_REPRESENTANTE_LEGALRowChangeEvent">
+        <xs:element name="TBC_REPRESENTANTE_LEGAL" msprop:Generator_TableClassName="TBC_REPRESENTANTE_LEGALDataTable" msprop:Generator_TableVarName="tableTBC_REPRESENTANTE_LEGAL" msprop:Generator_TablePropName="TBC_REPRESENTANTE_LEGAL" msprop:Generator_RowDeletingName="TBC_REPRESENTANTE_LEGALRowDeleting" msprop:Generator_RowChangingName="TBC_REPRESENTANTE_LEGALRowChanging" msprop:Generator_RowEvHandlerName="TBC_REPRESENTANTE_LEGALRowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_REPRESENTANTE_LEGALRowDeleted" msprop:Generator_UserTableName="TBC_REPRESENTANTE_LEGAL" msprop:Generator_RowChangedName="TBC_REPRESENTANTE_LEGALRowChanged" msprop:Generator_RowEvArgName="TBC_REPRESENTANTE_LEGALRowChangeEvent" msprop:Generator_RowClassName="TBC_REPRESENTANTE_LEGALRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
@@ -101,7 +101,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TB_ACEPTACION_HORARIO" msprop:Generator_TableClassName="TB_ACEPTACION_HORARIODataTable" msprop:Generator_TableVarName="tableTB_ACEPTACION_HORARIO" msprop:Generator_TablePropName="TB_ACEPTACION_HORARIO" msprop:Generator_RowDeletingName="TB_ACEPTACION_HORARIORowDeleting" msprop:Generator_RowChangingName="TB_ACEPTACION_HORARIORowChanging" msprop:Generator_RowEvHandlerName="TB_ACEPTACION_HORARIORowChangeEventHandler" msprop:Generator_RowDeletedName="TB_ACEPTACION_HORARIORowDeleted" msprop:Generator_UserTableName="TB_ACEPTACION_HORARIO" msprop:Generator_RowChangedName="TB_ACEPTACION_HORARIORowChanged" msprop:Generator_RowEvArgName="TB_ACEPTACION_HORARIORowChangeEvent" msprop:Generator_RowClassName="TB_ACEPTACION_HORARIORow">
+        <xs:element name="TB_ACEPTACION_HORARIO" msprop:Generator_TableClassName="TB_ACEPTACION_HORARIODataTable" msprop:Generator_TableVarName="tableTB_ACEPTACION_HORARIO" msprop:Generator_RowChangedName="TB_ACEPTACION_HORARIORowChanged" msprop:Generator_TablePropName="TB_ACEPTACION_HORARIO" msprop:Generator_RowDeletingName="TB_ACEPTACION_HORARIORowDeleting" msprop:Generator_RowChangingName="TB_ACEPTACION_HORARIORowChanging" msprop:Generator_RowEvHandlerName="TB_ACEPTACION_HORARIORowChangeEventHandler" msprop:Generator_RowDeletedName="TB_ACEPTACION_HORARIORowDeleted" msprop:Generator_RowClassName="TB_ACEPTACION_HORARIORow" msprop:Generator_UserTableName="TB_ACEPTACION_HORARIO" msprop:Generator_RowEvArgName="TB_ACEPTACION_HORARIORowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
@@ -117,7 +117,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TB_ACEPTACION_PASANTIA" msprop:Generator_TableClassName="TB_ACEPTACION_PASANTIADataTable" msprop:Generator_TableVarName="tableTB_ACEPTACION_PASANTIA" msprop:Generator_TablePropName="TB_ACEPTACION_PASANTIA" msprop:Generator_RowDeletingName="TB_ACEPTACION_PASANTIARowDeleting" msprop:Generator_RowChangingName="TB_ACEPTACION_PASANTIARowChanging" msprop:Generator_RowEvHandlerName="TB_ACEPTACION_PASANTIARowChangeEventHandler" msprop:Generator_RowDeletedName="TB_ACEPTACION_PASANTIARowDeleted" msprop:Generator_UserTableName="TB_ACEPTACION_PASANTIA" msprop:Generator_RowChangedName="TB_ACEPTACION_PASANTIARowChanged" msprop:Generator_RowEvArgName="TB_ACEPTACION_PASANTIARowChangeEvent" msprop:Generator_RowClassName="TB_ACEPTACION_PASANTIARow">
+        <xs:element name="TB_ACEPTACION_PASANTIA" msprop:Generator_TableClassName="TB_ACEPTACION_PASANTIADataTable" msprop:Generator_TableVarName="tableTB_ACEPTACION_PASANTIA" msprop:Generator_RowChangedName="TB_ACEPTACION_PASANTIARowChanged" msprop:Generator_TablePropName="TB_ACEPTACION_PASANTIA" msprop:Generator_RowDeletingName="TB_ACEPTACION_PASANTIARowDeleting" msprop:Generator_RowChangingName="TB_ACEPTACION_PASANTIARowChanging" msprop:Generator_RowEvHandlerName="TB_ACEPTACION_PASANTIARowChangeEventHandler" msprop:Generator_RowDeletedName="TB_ACEPTACION_PASANTIARowDeleted" msprop:Generator_RowClassName="TB_ACEPTACION_PASANTIARow" msprop:Generator_UserTableName="TB_ACEPTACION_PASANTIA" msprop:Generator_RowEvArgName="TB_ACEPTACION_PASANTIARowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
@@ -125,6 +125,20 @@
               <xs:element name="ID_PASANTIA" msprop:Generator_ColumnVarNameInTable="columnID_PASANTIA" msprop:Generator_ColumnPropNameInRow="ID_PASANTIA" msprop:Generator_ColumnPropNameInTable="ID_PASANTIAColumn" msprop:Generator_UserColumnName="ID_PASANTIA" type="xs:string" minOccurs="0" />
               <xs:element name="DS_RESPUESTA" msprop:Generator_ColumnVarNameInTable="columnDS_RESPUESTA" msprop:Generator_ColumnPropNameInRow="DS_RESPUESTA" msprop:Generator_ColumnPropNameInTable="DS_RESPUESTAColumn" msprop:Generator_UserColumnName="DS_RESPUESTA" type="xs:string" minOccurs="0" />
               <xs:element name="CD_RESPUESTA" msprop:Generator_ColumnVarNameInTable="columnCD_RESPUESTA" msprop:Generator_ColumnPropNameInRow="CD_RESPUESTA" msprop:Generator_ColumnPropNameInTable="CD_RESPUESTAColumn" msprop:Generator_UserColumnName="CD_RESPUESTA" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TB_ENCUESTA_SEMANAL_ASPIRANTE" msprop:Generator_TableClassName="TB_ENCUESTA_SEMANAL_ASPIRANTEDataTable" msprop:Generator_TableVarName="tableTB_ENCUESTA_SEMANAL_ASPIRANTE" msprop:Generator_TablePropName="TB_ENCUESTA_SEMANAL_ASPIRANTE" msprop:Generator_RowDeletingName="TB_ENCUESTA_SEMANAL_ASPIRANTERowDeleting" msprop:Generator_RowChangingName="TB_ENCUESTA_SEMANAL_ASPIRANTERowChanging" msprop:Generator_RowEvHandlerName="TB_ENCUESTA_SEMANAL_ASPIRANTERowChangeEventHandler" msprop:Generator_RowDeletedName="TB_ENCUESTA_SEMANAL_ASPIRANTERowDeleted" msprop:Generator_UserTableName="TB_ENCUESTA_SEMANAL_ASPIRANTE" msprop:Generator_RowChangedName="TB_ENCUESTA_SEMANAL_ASPIRANTERowChanged" msprop:Generator_RowEvArgName="TB_ENCUESTA_SEMANAL_ASPIRANTERowChangeEvent" msprop:Generator_RowClassName="TB_ENCUESTA_SEMANAL_ASPIRANTERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_ASPIRANTE" msprop:Generator_ColumnVarNameInTable="columnID_ASPIRANTE" msprop:Generator_ColumnPropNameInRow="ID_ASPIRANTE" msprop:Generator_ColumnPropNameInTable="ID_ASPIRANTEColumn" msprop:Generator_UserColumnName="ID_ASPIRANTE" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_RESPUESTA_ATENCION" msprop:Generator_ColumnVarNameInTable="columnDS_RESPUESTA_ATENCION" msprop:Generator_ColumnPropNameInRow="DS_RESPUESTA_ATENCION" msprop:Generator_ColumnPropNameInTable="DS_RESPUESTA_ATENCIONColumn" msprop:Generator_UserColumnName="DS_RESPUESTA_ATENCION" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_RESPUESTA_CLASES" msprop:Generator_ColumnVarNameInTable="columnDS_RESPUESTA_CLASES" msprop:Generator_ColumnPropNameInRow="DS_RESPUESTA_CLASES" msprop:Generator_ColumnPropNameInTable="DS_RESPUESTA_CLASESColumn" msprop:Generator_UserColumnName="DS_RESPUESTA_CLASES" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_RESPUESTA_INSTALACIONES" msprop:Generator_ColumnVarNameInTable="columnDS_RESPUESTA_INSTALACIONES" msprop:Generator_ColumnPropNameInRow="DS_RESPUESTA_INSTALACIONES" msprop:Generator_ColumnPropNameInTable="DS_RESPUESTA_INSTALACIONESColumn" msprop:Generator_UserColumnName="DS_RESPUESTA_INSTALACIONES" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_RESPUESTA_HARDWARE" msprop:Generator_ColumnVarNameInTable="columnDS_RESPUESTA_HARDWARE" msprop:Generator_ColumnPropNameInRow="DS_RESPUESTA_HARDWARE" msprop:Generator_ColumnPropNameInTable="DS_RESPUESTA_HARDWAREColumn" msprop:Generator_UserColumnName="DS_RESPUESTA_HARDWARE" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_RESPUESTA_OPINION_F" msprop:Generator_ColumnVarNameInTable="columnDS_RESPUESTA_OPINION_F" msprop:Generator_ColumnPropNameInRow="DS_RESPUESTA_OPINION_F" msprop:Generator_ColumnPropNameInTable="DS_RESPUESTA_OPINION_FColumn" msprop:Generator_UserColumnName="DS_RESPUESTA_OPINION_F" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_RESPUESTA_OPINION_I" msprop:Generator_ColumnVarNameInTable="columnDS_RESPUESTA_OPINION_I" msprop:Generator_ColumnPropNameInRow="DS_RESPUESTA_OPINION_I" msprop:Generator_ColumnPropNameInTable="DS_RESPUESTA_OPINION_IColumn" msprop:Generator_UserColumnName="DS_RESPUESTA_OPINION_I" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -156,6 +170,10 @@
     </xs:unique>
     <xs:unique name="TB_ACEPTACION_HORARIOKey1">
       <xs:selector xpath=".//mstns:TB_ACEPTACION_HORARIO" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="TB_ENCUESTA_SEMANAL_ASPIRANTEKey1">
+      <xs:selector xpath=".//mstns:TB_ENCUESTA_SEMANAL_ASPIRANTE" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
   </xs:element>

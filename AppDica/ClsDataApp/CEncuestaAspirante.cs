@@ -8,51 +8,40 @@ using ClsInterface;
 
 namespace ClsDataApp
 {
-    public class CAceptacionHorario:CSqlvars
+    public class CEncuestaAspirante : CSqlvars
     {
-        public CAceptacionHorario(string ConexionData)
+        public CEncuestaAspirante(string ConexionData)
         {
             _ConexionData = ConexionData;
         }
-
-        public ClsDataSets.DS_TB_ASP Detalle(int Id, int IdAceptacionPasantia, bool LunesA, bool MartesA, bool MiercolesA,
-            bool JuevesA, bool ViernesA, bool SabadoA, bool DomingoA, bool LunesP, bool MartesP, bool MiercolesP,
-            bool JuevesP, bool ViernesP, bool SabadoP, bool DomingoP, 
-            string UsuaCrea, DateTime FechCrea, string UsuaActu, DateTime FechActu, int OpcionConsulta)
-
-     {
+        public ClsDataSets.DS_TB_ASP Detalle(int Id, string IdAspirante, char RespuestaAtencion, char RespuestaClases,
+            char RespuestaInstalaciones, char RespuestaHardware, char RespuestaOpinionF, char RespuestaOpinionI, 
+           string UsuaCrea, DateTime FechCrea, string UsuaActu, DateTime FechActu, int OpcionConsulta)
+        {
             ClsDataSets.DS_TB_ASP objDataSet = new ClsDataSets.DS_TB_ASP();
-            
+
             try
             {
                 ObjConnection = new SqlConnection(_ConexionData);
-                ObjAdapter = new SqlDataAdapter("SP_TB_ACEPTACION_HORARIO_GetByAll", ObjConnection);
+                ObjAdapter = new SqlDataAdapter("SP_TB_ENCUESTA_SEMANAL_ASPIRANTE_GetByAll", ObjConnection);
                 ObjParam = new SqlParameter();
                 ObjAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
 
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID", Id);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_ACEPTACION_PASANTIA", IdAceptacionPasantia);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_LUNES_A", LunesA);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_MARTES_A", MartesA);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_MIERCOLES_A", MiercolesA);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_JUEVES_A", JuevesA);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_VIERNES_A", ViernesA);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_SABADO_A", SabadoA);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_DOMINGO_A", DomingoA);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_LUNES_P", LunesP);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_MARTES_P", MartesP);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_MIERCOLES_P", MiercolesP);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_JUEVES_P", JuevesP);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_VIERNES_P", ViernesP);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_SABADO_P", SabadoP);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_DOMINGO_P", DomingoP);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_ASPIRANTE", IdAspirante);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_RESPUESTA_ATENCION", RespuestaAtencion);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_RESPUESTA_CLASES", RespuestaClases);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_RESPUESTA_INSTALACIONES", RespuestaInstalaciones);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_RESPUESTA_HARDWARE", RespuestaHardware);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_RESPUESTA_OPINION_F", RespuestaOpinionF);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_RESPUESTA_OPINION_I", RespuestaOpinionI);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_CREA", UsuaCrea);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_CREA", FechCrea);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_ACTU", UsuaActu);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_ACTU", FechActu);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@OPCI_CONS", OpcionConsulta);
 
-                ObjAdapter.Fill(objDataSet, "TB_ACEPTACION_HORARIO");
+                ObjAdapter.Fill(objDataSet, "TB_ENCUESTA_SEMANAL_ASPIRANTE");
 
                 ObjConnection.Close();
                 if (ObjConnection.State != ConnectionState.Closed)
@@ -66,10 +55,9 @@ namespace ClsDataApp
             }
 
             return objDataSet;
-             }
-        public DataQuery Actualizacion(int Id, int IdAceptacionPasantia, bool LunesA, bool MartesA, bool MiercolesA,
-            bool JuevesA, bool ViernesA, bool SabadoA, bool DomingoA, bool LunesP, bool MartesP, bool MiercolesP,
-            bool JuevesP, bool ViernesP, bool SabadoP, bool DomingoP, 
+        }
+        public DataQuery Actualizacion(int Id, string IdAspirante, char RespuestaAtencion, char RespuestaClases,
+            char RespuestaInstalaciones, char RespuestaHardware, char RespuestaOpinionF, char RespuestaOpinionI,
            string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
             DataQuery objResultado = new DataQuery();
@@ -80,7 +68,7 @@ namespace ClsDataApp
                 switch (OpcionActualizacion)
                 {
                     case TipoActualizacion.Adicionar:
-                        StrCommand = "SP_TB_ACEPTACION_HORARIO_INSERT";
+                        StrCommand = "";
                         break;
                     case TipoActualizacion.Actualizar:
                         StrCommand = " ";
@@ -110,21 +98,13 @@ namespace ClsDataApp
                 {
                     ObjCommand.Parameters.AddWithValue("@ID", Id);
                 }
-                ObjCommand.Parameters.AddWithValue("@ID_ACEPTACION_PASANTIA", IdAceptacionPasantia);
-                ObjCommand.Parameters.AddWithValue("@CD_LUNES_A", LunesA);
-                ObjCommand.Parameters.AddWithValue("@CD_MARTES_A", MartesA);
-                ObjCommand.Parameters.AddWithValue("@CD_MIERCOLES_A", MiercolesA);
-                ObjCommand.Parameters.AddWithValue("@CD_JUEVES_A", JuevesA);
-                ObjCommand.Parameters.AddWithValue("@CD_VIERNES_A", ViernesA);
-                ObjCommand.Parameters.AddWithValue("@CD_SABADO_A", SabadoA);
-                ObjCommand.Parameters.AddWithValue("@CD_DOMINGO_A", DomingoA);
-                ObjCommand.Parameters.AddWithValue("@CD_LUNES_P", LunesP);
-                ObjCommand.Parameters.AddWithValue("@CD_MARTES_P", MartesP);
-                ObjCommand.Parameters.AddWithValue("@CD_MIERCOLES_P", MiercolesP);
-                ObjCommand.Parameters.AddWithValue("@CD_JUEVES_P", JuevesP);
-                ObjCommand.Parameters.AddWithValue("@CD_VIERNES_P", ViernesP);
-                ObjCommand.Parameters.AddWithValue("@CD_SABADO_P", SabadoP);
-                ObjCommand.Parameters.AddWithValue("@CD_DOMINGO_P", DomingoP); 
+                ObjCommand.Parameters.AddWithValue("@ID_ASPIRANTE", IdAspirante);
+                ObjCommand.Parameters.AddWithValue("@CD_RESPUESTA_ATENCION", RespuestaAtencion);
+                ObjCommand.Parameters.AddWithValue("@CD_RESPUESTA_CLASES", RespuestaClases);
+                ObjCommand.Parameters.AddWithValue("@CD_RESPUESTA_INSTALACIONES", RespuestaInstalaciones);
+                ObjCommand.Parameters.AddWithValue("@CD_RESPUESTA_HARDWARE", RespuestaHardware);
+                ObjCommand.Parameters.AddWithValue("@CD_RESPUESTA_OPINION_F", RespuestaOpinionF);
+                ObjCommand.Parameters.AddWithValue("@CD_RESPUESTA_OPINION_I", RespuestaOpinionI);
                 ObjCommand.Parameters.AddWithValue("@LOGIN_USUARIO", LoginUsuario);
 
                 ObjParam = ObjCommand.Parameters.Add("@FILAS_AFECTADAS", SqlDbType.Int, 0);
