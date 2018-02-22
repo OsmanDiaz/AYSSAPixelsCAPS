@@ -103,6 +103,15 @@ namespace MyMainApp.TEC {
         protected global::System.Web.UI.WebControls.TextBox TxtTipoEntregable;
         
         /// <summary>
+        /// Control TxtIdActividadAspirante.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIdActividadAspirante;
+        
+        /// <summary>
         /// Control PanelGeneral.
         /// </summary>
         /// <remarks>
@@ -400,6 +409,15 @@ namespace MyMainApp.TEC {
         protected global::System.Web.UI.WebControls.TextBox TxtNombreEmpresa1;
         
         /// <summary>
+        /// Control PanelPEntregableActivity.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelPEntregableActivity;
+        
+        /// <summary>
         /// Control Label45.
         /// </summary>
         /// <remarks>
@@ -434,15 +452,6 @@ namespace MyMainApp.TEC {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtEmailCon;
-        
-        /// <summary>
-        /// Control PanelPEntregableActivity.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelPEntregableActivity;
         
         /// <summary>
         /// Control Label47.
@@ -481,6 +490,15 @@ namespace MyMainApp.TEC {
         protected global::System.Web.UI.WebControls.TextBox TxtEntregable;
         
         /// <summary>
+        /// Control BtnAtrasConsultoriaEntregable.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnAtrasConsultoriaEntregable;
+        
+        /// <summary>
         /// Control PanelPasantiaActivity.
         /// </summary>
         /// <remarks>
@@ -488,6 +506,42 @@ namespace MyMainApp.TEC {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel PanelPasantiaActivity;
+        
+        /// <summary>
+        /// Control Label55.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label55;
+        
+        /// <summary>
+        /// Control TxtNombreEval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtNombreEval;
+        
+        /// <summary>
+        /// Control Label56.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label56;
+        
+        /// <summary>
+        /// Control TxtEmailEval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtEmailEval;
         
         /// <summary>
         /// Control Label50.
@@ -524,6 +578,24 @@ namespace MyMainApp.TEC {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtActividad;
+        
+        /// <summary>
+        /// Control GVlistaActividadPasantia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVlistaActividadPasantia;
+        
+        /// <summary>
+        /// Control BtnAtrasPasantiaActividad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnAtrasPasantiaActividad;
         
         /// <summary>
         /// Control TabPanel1.

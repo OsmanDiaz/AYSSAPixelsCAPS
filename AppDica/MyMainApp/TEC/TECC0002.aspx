@@ -32,6 +32,7 @@
                                     <ContentTemplate>
                                         <br />
                                         <asp:TextBox ID="TxtTipoEntregable" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%" Visible="false"></asp:TextBox>
+                                        <asp:TextBox ID="TxtIdActividadAspirante" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%" Visible="false"></asp:TextBox>
                                         <asp:Panel ID="PanelGeneral" runat="server" >
                                         <center><h3>Informacion Proyectos</h3></center>
                                         <asp:GridView ID="GVListaGeneral" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaGeneral_SelectedIndexChaged">
@@ -192,17 +193,18 @@
                                                     <asp:TextBox ID="TxtNombreEmpresa1" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <asp:Label ID="Label45" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE CONTACTO:"></asp:Label>
-                                                <div class="col-md-3">
-                                                    <asp:TextBox ID="TxtContacto" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
-                                                </div>
-                                                <asp:Label ID="Label46" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="EMAIL CONTACTO:"></asp:Label>
-                                                <div class="col-md-3">
-                                                    <asp:TextBox ID="TxtEmailCon" runat="server" class="form-control"  Enabled="False" Width="100%"></asp:TextBox>
-                                                </div>
-                                            </div>
+
                                             <asp:Panel ID="PanelPEntregableActivity" runat="server" Visible="False">
+                                                <div class="form-group">
+                                                    <asp:Label ID="Label45" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE CONTACTO:"></asp:Label>
+                                                    <div class="col-md-3">
+                                                        <asp:TextBox ID="TxtContacto" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                    </div>
+                                                    <asp:Label ID="Label46" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="EMAIL CONTACTO:"></asp:Label>
+                                                    <div class="col-md-3">
+                                                        <asp:TextBox ID="TxtEmailCon" runat="server" class="form-control"  Enabled="False" Width="100%"></asp:TextBox>
+                                                    </div>
+                                                </div>
                                                 <div class="form-group">
                                                     <asp:Label ID="Label47" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE CONSULTORIA:"></asp:Label>
                                                     <div class="col-md-3">
@@ -213,8 +215,22 @@
                                                         <asp:TextBox ID="TxtEntregable" runat="server" class="form-control"  Enabled="False" Width="100%"></asp:TextBox>
                                                     </div>
                                                 </div>
+                                                <div align="center">
+                                                    <asp:Button ID="BtnAtrasConsultoriaEntregable" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" OnClick="BtnAtrasConEnt_Click"/>
+                                                </div>
+                                                <br />
                                             </asp:Panel>
                                             <asp:Panel ID="PanelPasantiaActivity" runat="server" Visible="False">
+                                                <div class="form-group">
+                                                    <asp:Label ID="Label55" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE EVALUADOR:"></asp:Label>
+                                                    <div class="col-md-3">
+                                                        <asp:TextBox ID="TxtNombreEval" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                    </div>
+                                                    <asp:Label ID="Label56" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="EMAIL EVALUADOR:"></asp:Label>
+                                                    <div class="col-md-3">
+                                                        <asp:TextBox ID="TxtEmailEval" runat="server" class="form-control"  Enabled="False" Width="100%"></asp:TextBox>
+                                                    </div>
+                                                </div>
                                                 <div class="form-group">
                                                     <asp:Label ID="Label50" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE PASANTIA:"></asp:Label>
                                                     <div class="col-md-3">
@@ -225,6 +241,50 @@
                                                         <asp:TextBox ID="TxtActividad" runat="server" class="form-control"  Enabled="False" Width="100%"></asp:TextBox>
                                                     </div>
                                                 </div>
+
+                                                <br />
+                                            <asp:GridView ID="GVlistaActividadPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID">
+                                            <AlternatingRowStyle BackColor="White" />
+                                            <Columns>
+                                                <asp:TemplateField HeaderText="" >
+                                                    <ItemTemplate>
+                                                        <asp:TextBox ID="TxtIdEntregableGV" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+												<asp:BoundField HeaderText="ID" DataField="ID" Visible="false"/>
+                                                <asp:BoundField HeaderText="ASPIRANTE" DataField="NOMBRE_ASPIRANTE" />
+                                                <asp:BoundField HeaderText="ADVERTENCIA" DataField="MSJ" />
+                                                <asp:BoundField HeaderText="BANDERA" DataField="BANDERA" Visible="false"/>
+                                                <asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        <asp:Image ID="Image1" runat="server" imageurl='<%# string.Concat("~/images/buttons/",Eval("BANDERA"), ".png")%>' Width="25px"/>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        <asp:Button ID="BtnProyecto" runat="server" CommandName="Select"
+                                                            Text="Enviar Notificación"  />
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                            </Columns>
+                                            <EditRowStyle BackColor="#2461BF" />
+                                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                            <RowStyle BackColor="#EFF3FB" />
+                                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                        </asp:GridView>
+                                        <br />
+
+                                                
+                                            <div align="center">
+                                                <asp:Button ID="BtnAtrasPasantiaActividad" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" OnClick="BtnAtrasPasAct_Click"/>
+                                            </div>
+                                            <br />
                                             </asp:Panel>
                                         </asp:Panel>
                                     </ContentTemplate>
