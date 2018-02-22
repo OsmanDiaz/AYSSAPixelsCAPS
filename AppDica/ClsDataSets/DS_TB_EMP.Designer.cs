@@ -46,6 +46,8 @@ namespace ClsDataSets {
         
         private TB_PROYECTO_PASANTIADataTable tableTB_PROYECTO_PASANTIA;
         
+        private TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -106,6 +108,9 @@ namespace ClsDataSets {
                 }
                 if ((ds.Tables["TB_PROYECTO_PASANTIA"] != null)) {
                     base.Tables.Add(new TB_PROYECTO_PASANTIADataTable(ds.Tables["TB_PROYECTO_PASANTIA"]));
+                }
+                if ((ds.Tables["TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE"] != null)) {
+                    base.Tables.Add(new TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable(ds.Tables["TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -237,6 +242,16 @@ namespace ClsDataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE {
+            get {
+                return this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -334,6 +349,9 @@ namespace ClsDataSets {
                 }
                 if ((ds.Tables["TB_PROYECTO_PASANTIA"] != null)) {
                     base.Tables.Add(new TB_PROYECTO_PASANTIADataTable(ds.Tables["TB_PROYECTO_PASANTIA"]));
+                }
+                if ((ds.Tables["TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE"] != null)) {
+                    base.Tables.Add(new TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable(ds.Tables["TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -434,6 +452,12 @@ namespace ClsDataSets {
                     this.tableTB_PROYECTO_PASANTIA.InitVars();
                 }
             }
+            this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE = ((TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable)(base.Tables["TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE"]));
+            if ((initTable == true)) {
+                if ((this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE != null)) {
+                    this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -466,6 +490,8 @@ namespace ClsDataSets {
             base.Tables.Add(this.tableTB_PASANTIA_ACTIVIDAD);
             this.tableTB_PROYECTO_PASANTIA = new TB_PROYECTO_PASANTIADataTable();
             base.Tables.Add(this.tableTB_PROYECTO_PASANTIA);
+            this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE = new TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable();
+            base.Tables.Add(this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -531,6 +557,12 @@ namespace ClsDataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeTB_PROYECTO_PASANTIA() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE() {
             return false;
         }
         
@@ -621,6 +653,9 @@ namespace ClsDataSets {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void TB_PROYECTO_PASANTIARowChangeEventHandler(object sender, TB_PROYECTO_PASANTIARowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChangeEventHandler(object sender, TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4315,6 +4350,396 @@ namespace ClsDataSets {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable : global::System.Data.TypedTableBase<TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnID_EMPRESA;
+            
+            private global::System.Data.DataColumn columnDS_RESPUESTA_1;
+            
+            private global::System.Data.DataColumn columnDS_RESPUESTA_2;
+            
+            private global::System.Data.DataColumn columnDS_RESPUESTA_3;
+            
+            private global::System.Data.DataColumn columnDS_RESPUESTA_4;
+            
+            private global::System.Data.DataColumn columnDS_RESPUESTA_5;
+            
+            private global::System.Data.DataColumn columnDS_RESPUESTA_6;
+            
+            private global::System.Data.DataColumn columnDS_RESPUESTA_7;
+            
+            private global::System.Data.DataColumn columnDS_RESPUESTA_8;
+            
+            private global::System.Data.DataColumn columnDS_RESPUESTA_9;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable() {
+                this.TableName = "TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_EMPRESAColumn {
+                get {
+                    return this.columnID_EMPRESA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_RESPUESTA_1Column {
+                get {
+                    return this.columnDS_RESPUESTA_1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_RESPUESTA_2Column {
+                get {
+                    return this.columnDS_RESPUESTA_2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_RESPUESTA_3Column {
+                get {
+                    return this.columnDS_RESPUESTA_3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_RESPUESTA_4Column {
+                get {
+                    return this.columnDS_RESPUESTA_4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_RESPUESTA_5Column {
+                get {
+                    return this.columnDS_RESPUESTA_5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_RESPUESTA_6Column {
+                get {
+                    return this.columnDS_RESPUESTA_6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_RESPUESTA_7Column {
+                get {
+                    return this.columnDS_RESPUESTA_7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_RESPUESTA_8Column {
+                get {
+                    return this.columnDS_RESPUESTA_8;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_RESPUESTA_9Column {
+                get {
+                    return this.columnDS_RESPUESTA_9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow this[int index] {
+                get {
+                    return ((TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChangeEventHandler TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChangeEventHandler TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChangeEventHandler TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChangeEventHandler TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow(TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow AddTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow(string ID, string ID_EMPRESA, string DS_RESPUESTA_1, string DS_RESPUESTA_2, string DS_RESPUESTA_3, string DS_RESPUESTA_4, string DS_RESPUESTA_5, string DS_RESPUESTA_6, string DS_RESPUESTA_7, string DS_RESPUESTA_8, string DS_RESPUESTA_9) {
+                TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow rowTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow = ((TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ID,
+                        ID_EMPRESA,
+                        DS_RESPUESTA_1,
+                        DS_RESPUESTA_2,
+                        DS_RESPUESTA_3,
+                        DS_RESPUESTA_4,
+                        DS_RESPUESTA_5,
+                        DS_RESPUESTA_6,
+                        DS_RESPUESTA_7,
+                        DS_RESPUESTA_8,
+                        DS_RESPUESTA_9};
+                rowTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow);
+                return rowTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable cln = ((TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.columnID_EMPRESA = base.Columns["ID_EMPRESA"];
+                this.columnDS_RESPUESTA_1 = base.Columns["DS_RESPUESTA_1"];
+                this.columnDS_RESPUESTA_2 = base.Columns["DS_RESPUESTA_2"];
+                this.columnDS_RESPUESTA_3 = base.Columns["DS_RESPUESTA_3"];
+                this.columnDS_RESPUESTA_4 = base.Columns["DS_RESPUESTA_4"];
+                this.columnDS_RESPUESTA_5 = base.Columns["DS_RESPUESTA_5"];
+                this.columnDS_RESPUESTA_6 = base.Columns["DS_RESPUESTA_6"];
+                this.columnDS_RESPUESTA_7 = base.Columns["DS_RESPUESTA_7"];
+                this.columnDS_RESPUESTA_8 = base.Columns["DS_RESPUESTA_8"];
+                this.columnDS_RESPUESTA_9 = base.Columns["DS_RESPUESTA_9"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnID_EMPRESA = new global::System.Data.DataColumn("ID_EMPRESA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_EMPRESA);
+                this.columnDS_RESPUESTA_1 = new global::System.Data.DataColumn("DS_RESPUESTA_1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_RESPUESTA_1);
+                this.columnDS_RESPUESTA_2 = new global::System.Data.DataColumn("DS_RESPUESTA_2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_RESPUESTA_2);
+                this.columnDS_RESPUESTA_3 = new global::System.Data.DataColumn("DS_RESPUESTA_3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_RESPUESTA_3);
+                this.columnDS_RESPUESTA_4 = new global::System.Data.DataColumn("DS_RESPUESTA_4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_RESPUESTA_4);
+                this.columnDS_RESPUESTA_5 = new global::System.Data.DataColumn("DS_RESPUESTA_5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_RESPUESTA_5);
+                this.columnDS_RESPUESTA_6 = new global::System.Data.DataColumn("DS_RESPUESTA_6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_RESPUESTA_6);
+                this.columnDS_RESPUESTA_7 = new global::System.Data.DataColumn("DS_RESPUESTA_7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_RESPUESTA_7);
+                this.columnDS_RESPUESTA_8 = new global::System.Data.DataColumn("DS_RESPUESTA_8", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_RESPUESTA_8);
+                this.columnDS_RESPUESTA_9 = new global::System.Data.DataColumn("DS_RESPUESTA_9", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_RESPUESTA_9);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEKey1", new global::System.Data.DataColumn[] {
+                                this.columnID}, false));
+                this.columnID.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow NewTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow() {
+                return ((TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChanged != null)) {
+                    this.TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChanged(this, new TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChangeEvent(((TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChanging != null)) {
+                    this.TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChanging(this, new TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChangeEvent(((TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowDeleted != null)) {
+                    this.TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowDeleted(this, new TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChangeEvent(((TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowDeleting != null)) {
+                    this.TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowDeleting(this, new TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChangeEvent(((TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow(TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DS_TB_EMP ds = new DS_TB_EMP();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class TB_EMPRESARow : global::System.Data.DataRow {
@@ -6660,6 +7085,340 @@ namespace ClsDataSets {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow : global::System.Data.DataRow {
+            
+            private TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE = ((TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ID\' de la tabla \'TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIR" +
+                                "ANTE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ID_EMPRESA {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.ID_EMPRESAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ID_EMPRESA\' de la tabla \'TB_ENCUESTA_EVALUACION_RENDIMIEN" +
+                                "TO_ASPIRANTE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.ID_EMPRESAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_RESPUESTA_1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_RESPUESTA_1\' de la tabla \'TB_ENCUESTA_EVALUACION_RENDI" +
+                                "MIENTO_ASPIRANTE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_RESPUESTA_2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_RESPUESTA_2\' de la tabla \'TB_ENCUESTA_EVALUACION_RENDI" +
+                                "MIENTO_ASPIRANTE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_RESPUESTA_3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_RESPUESTA_3\' de la tabla \'TB_ENCUESTA_EVALUACION_RENDI" +
+                                "MIENTO_ASPIRANTE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_RESPUESTA_4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_RESPUESTA_4\' de la tabla \'TB_ENCUESTA_EVALUACION_RENDI" +
+                                "MIENTO_ASPIRANTE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_RESPUESTA_5 {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_RESPUESTA_5\' de la tabla \'TB_ENCUESTA_EVALUACION_RENDI" +
+                                "MIENTO_ASPIRANTE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_RESPUESTA_6 {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_RESPUESTA_6\' de la tabla \'TB_ENCUESTA_EVALUACION_RENDI" +
+                                "MIENTO_ASPIRANTE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_RESPUESTA_7 {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_7Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_RESPUESTA_7\' de la tabla \'TB_ENCUESTA_EVALUACION_RENDI" +
+                                "MIENTO_ASPIRANTE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_RESPUESTA_8 {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_8Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_RESPUESTA_8\' de la tabla \'TB_ENCUESTA_EVALUACION_RENDI" +
+                                "MIENTO_ASPIRANTE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_8Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_RESPUESTA_9 {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_9Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_RESPUESTA_9\' de la tabla \'TB_ENCUESTA_EVALUACION_RENDI" +
+                                "MIENTO_ASPIRANTE\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIDNull() {
+                return this.IsNull(this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIDNull() {
+                this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_EMPRESANull() {
+                return this.IsNull(this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.ID_EMPRESAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_EMPRESANull() {
+                this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.ID_EMPRESAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_RESPUESTA_1Null() {
+                return this.IsNull(this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_RESPUESTA_1Null() {
+                this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_RESPUESTA_2Null() {
+                return this.IsNull(this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_RESPUESTA_2Null() {
+                this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_RESPUESTA_3Null() {
+                return this.IsNull(this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_RESPUESTA_3Null() {
+                this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_RESPUESTA_4Null() {
+                return this.IsNull(this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_RESPUESTA_4Null() {
+                this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_RESPUESTA_5Null() {
+                return this.IsNull(this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_RESPUESTA_5Null() {
+                this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_RESPUESTA_6Null() {
+                return this.IsNull(this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_RESPUESTA_6Null() {
+                this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_RESPUESTA_7Null() {
+                return this.IsNull(this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_RESPUESTA_7Null() {
+                this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_RESPUESTA_8Null() {
+                return this.IsNull(this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_8Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_RESPUESTA_8Null() {
+                this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_8Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_RESPUESTA_9Null() {
+                return this.IsNull(this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_9Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_RESPUESTA_9Null() {
+                this[this.tableTB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE.DS_RESPUESTA_9Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -7019,6 +7778,40 @@ namespace ClsDataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TB_PROYECTO_PASANTIARow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChangeEvent : global::System.EventArgs {
+            
+            private TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERowChangeEvent(TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTERow Row {
                 get {
                     return this.eventRow;
                 }

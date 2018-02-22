@@ -84,7 +84,7 @@ namespace MyMainApp.EMP
             FillGVContrato();
             CargarReporte();
             FillGVAspirantesEntregables();
-           
+            FillDatosEmpresa();
             FillCamposAspirante();
                      
         }
@@ -965,6 +965,73 @@ namespace MyMainApp.EMP
                 DespliegaMensajeUpdatePanel(ex.Message, UPProyecto);
             }
         }
+
+        protected void FillDatosEmpresa()
+        {
+            CEmpresa objEmpresa = new CEmpresa(_DataSistema.ConexionBaseDato);
+            dvEmpresa = new DataView(objEmpresa.Detalle(0, TxtEmpresa.Text, TxtNombreContact.Text, TxtEmailC.Text, TxtTelC.Text, _DataSistema.Cusuario,
+                TxtTelEmpresa.Text, TxtDirEmpresa.Text, 0, 0,
+            TxtNombRepre.Text, TxtEmailRep.Text, TxtNitRep.Text, TxtDuiRep.Text, 0, _DataSistema.Cusuario, _DataSistema.Cusuario, DateTime.Now, "", DateTime.Now, 2).TB_EMPRESA);
+            if (dvEmpresa.Count > 0)
+            {
+                TxtIDEmpresa.Text = dvEmpresa.Table.Rows[0]["ID"].ToString();
+                LblInfoEmp.Text = LblInfoEmp.Text.Replace("{{ds_nombre_empresa}}",dvEmpresa.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString());
+                LblInfoEmp.Text = LblInfoEmp.Text.Replace("{{ds_nombre_contacto}}", dvEmpresa.Table.Rows[0]["DS_NOMBRE_CONTACTO"].ToString());
+                LblInfoEmp.Text = LblInfoEmp.Text.Replace("{{ds_telefono_contacto}}", dvEmpresa.Table.Rows[0]["DS_TELEFONO_CONTACTO"].ToString());
+                LblInfoEmp.Text = LblInfoEmp.Text.Replace("{{ds_direccion_empresa}}", dvEmpresa.Table.Rows[0]["DS_DIRECCION_EMPRESA"].ToString());
+            }
+            else
+            {
+                LblInfoEmp.Text = "No existe Empresa registrada para este usuario";
+            }
+        }
+
+        protected void BtnGuardarEncuesta_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(TxtIDEmpresa.Text) > 0)
+            {
+                try
+                {
+                    CEncuestaRendimientoAspirante objRendimientoAspirante = new CEncuestaRendimientoAspirante(_DataSistema.ConexionBaseDato);
+                    objResultado = objRendimientoAspirante.Actualizacion(0, Convert.ToInt32(TxtIDEmpresa.Text),
+                        TxtPregunta1.Text, TxtPregunta2.Text, TxtPregunta3.Text, TxtPregunta4.Text, TxtPregunta5.Text, TxtPregunta6.Text,
+                        TxtPregunta7.Text, TxtPregunta8.Text, TxtPregunta9.Text, _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+
+                    if (objResultado.CodigoError == 0)
+                    {
+                        Consultar();
+                        DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPEncuestaDes);
+                        LimpiarEncuesta();
+                    }
+                    else
+                    {
+                        DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPEncuestaDes);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    DespliegaMensajeUpdatePanel(ex.Message, UPEncuestaDes);
+                }
+            }
+            else
+            {
+                DespliegaMensajeUpdatePanel("No existe Empresa registrada para este usuario", UPEncuestaDes);
+            }
+        }
+        public void LimpiarEncuesta()
+        {
+            TxtIDEmpresa.Text = "0";
+            TxtPregunta1.Text = "";
+            TxtPregunta2.Text = "";
+            TxtPregunta3.Text = "";
+            TxtPregunta4.Text = "";
+            TxtPregunta5.Text = "";
+            TxtPregunta6.Text = "";
+            TxtPregunta7.Text = "";
+            TxtPregunta8.Text = "";
+            TxtPregunta9.Text = "";
+        }
+        }
        
     }
-}
