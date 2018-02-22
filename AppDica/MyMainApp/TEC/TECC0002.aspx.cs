@@ -335,8 +335,8 @@ namespace MyMainApp.TEC
         private void FillEntregableInfoEstado()
         {
             if (TxtTipoEntregable.Text == "PASANTIA") {
-                CPasantiaActividad objPasantia = new CPasantiaActividad(_DataSistema.ConexionBaseDato);
-                dvPasantia = new DataView(objPasantia.Detalle(Convert.ToInt32(TxtIdEntregable.Text),Convert.ToInt32(TxtIdConsultoria.Text),"","",DateTime.Today,"","",DateTime.Today,"",DateTime.Today,3).TB_PASANTIA_ACTIVIDAD);
+                CActividadAspirante objPasantia = new CActividadAspirante(_DataSistema.ConexionBaseDato);
+                dvPasantia = new DataView(objPasantia.Detalle(Convert.ToInt32(TxtIdEntregable.Text), "", 0,"",'x',"","",_DataSistema.Cusuario,DateTime.Today,_DataSistema.Cusuario,DateTime.Today,3).TB_ACTIVIDAD_ASPIRANTE);
                 //if (dvPasantia.Count > 0) {
                 //    TxtIdEntregable.Text = dvEntregable.Table.Rows[0]["ID"].ToString();
                 //    TxtNombreEmpresa1.Text = dvEntregable.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString();
