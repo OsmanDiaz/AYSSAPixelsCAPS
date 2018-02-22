@@ -58,22 +58,22 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// Control TabContainer1.
+        /// Control TabAspirante.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AjaxControlToolkit.TabContainer TabContainer1;
+        protected global::AjaxControlToolkit.TabContainer TabAspirante;
         
         /// <summary>
-        /// Control TabPanel1.
+        /// Control TabDatoGeneral.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AjaxControlToolkit.TabPanel TabPanel1;
+        protected global::AjaxControlToolkit.TabPanel TabDatoGeneral;
         
         /// <summary>
         /// Control UPDatoGeneral.
@@ -1757,6 +1757,15 @@ namespace MyMainApp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtRespuestaLaptop;
+        
+        /// <summary>
+        /// Control PanelHorario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelHorario;
         
         /// <summary>
         /// Control Label59.

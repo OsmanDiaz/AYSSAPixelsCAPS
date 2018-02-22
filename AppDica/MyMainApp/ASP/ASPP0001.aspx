@@ -19,9 +19,9 @@
         <div class="container-fluid">
             <div id="content">
                 <asp:Panel ID="Panel1" runat="server" Width="100%">
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="7" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabAspirante" runat="server" ActiveTabIndex="7" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
 
-                        <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
+                        <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabDatoGeneral" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server"><triggers><asp:AsyncPostBackTrigger ControlID="BtnGuardarDatoGeneral" /></triggers><ContentTemplate><br /><div class="form-group"><asp:Label ID="Label37" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="ESTADO:"></asp:Label><div class="col-md-6"><asp:TextBox ID="TxtEstado" runat="server" class="form-control" ReadOnly="True"></asp:TextBox></div></div><div class="form-group"><asp:Label ID="Label1" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOMBRES:"></asp:Label><div class="col-md-3"><asp:TextBox ID="TxtNombre" runat="server" class="form-control" ReadOnly="True"></asp:TextBox></div><asp:Label ID="Label3" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="APELLIDOS:"></asp:Label><div class="col-md-3"><asp:TextBox ID="TxtApellido" runat="server" class="form-control" ReadOnly="True"></asp:TextBox></div></div><div class="form-group"><asp:Label ID="Label2" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="FECHA NACIMIENTO:"></asp:Label><div class="col-md-3"><asp:TextBox ID="TxtFechNac" runat="server" class="form-control" ReadOnly="True"></asp:TextBox></div><asp:Label ID="Label5" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="EDAD:"></asp:Label><div class="col-md-3"><asp:TextBox ID="TxtEdad" runat="server" class="form-control" ReadOnly="True"></asp:TextBox></div></div><div class="form-group"><asp:Label ID="Label4" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="TELÉFONO (CASA):"></asp:Label><div class="col-md-3"><asp:TextBox ID="TxtTelCasa" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox></div><asp:Label ID="Label41" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="TELÉFONO (CELULAR):"></asp:Label><div class="col-md-3"><asp:TextBox ID="TxtTelCel" runat="server" AutoCompleteType="Disabled" class="form-control" onkeydown="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TxtTelCel" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar Telefono Celular</asp:RequiredFieldValidator></div></div><div class="form-group"><asp:Label ID="Label6" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NIT:"></asp:Label><div class="col-md-3"><asp:TextBox ID="TxtNit" runat="server" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);" ReadOnly="True"></asp:TextBox></div></div><div class="form-group"><asp:Label ID="Label29" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DUI:"></asp:Label><div class="col-md-3"><asp:TextBox ID="TxtDui" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);" TargetControlID="TxtDui"></asp:TextBox></div><asp:Label ID="Label30" runat="server" class="control-label  col-sm-3" Font-Bold="True" readonly="" Text="EMAIL:"></asp:Label><div class="col-md-3"><asp:TextBox ID="TxtEmail" runat="server" AutoCompleteType="Disabled" class="form-control"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TxtEmail" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar email</asp:RequiredFieldValidator></div></div><div class="form-group"><asp:Label ID="Label7" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="SEXO:"></asp:Label><div class="col-md-3"><asp:RadioButtonList ID="RadioSexo" runat="server" RepeatDirection="Horizontal"><asp:ListItem Selected="True" Value="F">&#160;FEMENINO&#160;&#160;&#160;</asp:ListItem><asp:ListItem Value="M">&#160;MASCULINO</asp:ListItem>
                                     </asp:RadioButtonList></div><asp:Label ID="Label31" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="TIPO ASPIRANTE:"></asp:Label><div class="col-md-3"><asp:TextBox ID="TxtTipoAspirante" runat="server" class="form-control" ReadOnly="True"></asp:TextBox></div></div><div class="form-group"><asp:Label ID="Label8" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="TRATAMIENTO:"></asp:Label><div class="col-md-3"><asp:DropDownList ID="CboTratamiento" runat="server" class="form-control" DataTextField="DS_TITULO" DataValueField="ID">
@@ -460,7 +460,7 @@
                       </ajaxToolkit:TabPanel>
                     <%--</div>--%>
                     <%--fin tab ENTREGABLE--%>
-                        <ajaxToolkit:TabPanel ID="TabAceptacionPasantia" runat="server" HeaderText="Aceptacion de Pasantia" Visible="False">
+                        <ajaxToolkit:TabPanel ID="TabAceptacionPasantia" runat="server" HeaderText="ACEPTACION PASANTIA" Visible="False">
                         <ContentTemplate>
                               <asp:UpdatePanel ID="UPEncuesta" runat="server">
                 <Triggers>
@@ -530,6 +530,7 @@
         </ol>
 
         <br />
+                    <asp:Panel ID="PanelHorario" runat="server" Visible="false">
         <table class="table table-striped table-condensed table-bordered" style="font-weight: bold; text-align: center">
             <tr>
                 <td>HORARIO</td>
@@ -543,7 +544,7 @@
             </tr>
             <tr>
                 <td>
-                     <asp:Label ID="Label59" runat="server" Text="PM"></asp:Label></td>
+                     <asp:Label ID="Label59" runat="server" Text="AM"></asp:Label></td>
                 <td>
                     <asp:CheckBox ID="CBLunesA" runat="server" ></asp:CheckBox></td>
                 <td>
@@ -561,7 +562,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="Label58" runat="server" Text="AM"></asp:Label></td>
+                    <asp:Label ID="Label58" runat="server" Text="PM"></asp:Label></td>
                 <td>
                     <asp:CheckBox ID="CBLunesP" runat="server"></asp:CheckBox></td>
                 <td>
@@ -578,6 +579,7 @@
                     <asp:CheckBox ID="CBDomingoP" runat="server"></asp:CheckBox></td>
             </tr>
         </table>
+                        </asp:Panel>
         <br />
         <div align="center">
             <asp:Button ID="BtnGuardarEncuesta" runat="server" class="btn btn-primary" Text="GUARDAR" ValidationGroup="Encuesta" OnClick="BtnGuardarEncuesta_Click"  OnClientClick="return confirm('¿Desea enviar los resultados?');" />
