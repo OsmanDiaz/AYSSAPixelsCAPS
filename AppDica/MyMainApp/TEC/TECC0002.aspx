@@ -23,7 +23,7 @@
                             </asp:DropDownList>
                         </div>
                     </div>
-                    <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" BorderColor="#66CCFF" Height="375px" ScrollBars="Vertical" Width="100%">
+                    <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="2" BorderColor="#66CCFF" Height="375px" ScrollBars="Vertical" Width="100%">
                         
                          <ajaxtoolkit:TabPanel ID="TabPanelGeneral" runat="server" HeaderText="MONITOREO">
                             <ContentTemplate>

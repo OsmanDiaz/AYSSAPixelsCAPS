@@ -261,12 +261,6 @@ namespace MyMainApp.TEC
             GVAspirantes.DataBind();
         }
 
-        protected void GVAspirantes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void FillInfoGeneral()
         {
             CCProyectoPasantia objConsultoriaEntregable = new CCProyectoPasantia(_DataSistema.ConexionBaseDato);
@@ -401,6 +395,11 @@ namespace MyMainApp.TEC
             PanelInfoEntregable.Visible = false;
             PanelPasantiaActivity.Visible = false;
             PanelPEntregableActivity.Visible = false;
+        }
+
+        protected void GVAspirantes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
         
     }
