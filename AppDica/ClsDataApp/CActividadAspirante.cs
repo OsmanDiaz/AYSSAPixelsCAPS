@@ -56,6 +56,51 @@ namespace ClsDataApp
 
             return objDataSet;
             }
+
+
+
+        public ClsDataSets.DS_TB_EMP Detalle1(int Id, string IdAspirante, int IdActividad, string Comentario, char Estado, string Observacion,
+    string UrlActividad, string UsuaCrea, DateTime FechCrea, string UsuaActu, DateTime FechActu, int OpcionConsulta)
+        {
+            ClsDataSets.DS_TB_EMP objDataSet = new ClsDataSets.DS_TB_EMP();
+
+            try
+            {
+                ObjConnection = new SqlConnection(_ConexionData);
+                ObjAdapter = new SqlDataAdapter("SP_TB_ACTIVIDAD_ASPIRANTE_GetByAll", ObjConnection);
+                ObjParam = new SqlParameter();
+                ObjAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID", Id);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_ASPIRANTE", IdAspirante);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_PASANTIA_ACTIVIDAD", IdActividad);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_COMENTARIO", Comentario);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_ESTADO", Estado);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_OBSERVACION", Observacion);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@URL_ACTIVIDAD", UrlActividad);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_CREA", UsuaCrea);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_CREA", FechCrea);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_ACTU", UsuaActu);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_ACTU", FechActu);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@OPCI_CONS", OpcionConsulta);
+
+                ObjAdapter.Fill(objDataSet, "TB_ACTIVIDAD_ASPIRANTE_MONITOREO");
+
+                ObjConnection.Close();
+                if (ObjConnection.State != ConnectionState.Closed)
+                {
+                    ObjConnection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return objDataSet;
+        }
+
+
         public DataQuery Actualizacion(int Id, string IdAspirante, int IdActividad, string Comentario, char Estado, string Observacion,
             string UrlActividad, DateTime FechActu, string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
