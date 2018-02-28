@@ -31,35 +31,45 @@
                                         <br />
                                         <div class="form-group">
                                             <asp:Label ID="Label37" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="ESTADO:"></asp:Label><div class="col-md-6">
-                                                <asp:TextBox ID="TxtEstado" runat="server" class="form-control" ReadOnly="True"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtEstado" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label1" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOMBRES:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtNombre" runat="server" class="form-control" ReadOnly="True"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtNombre" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                            </div>
                                             <asp:Label ID="Label3" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="APELLIDOS:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtApellido" runat="server" class="form-control" ReadOnly="True"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtApellido" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label2" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="FECHA NACIMIENTO:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtFechNac" runat="server" class="form-control" ReadOnly="True"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtFechNac" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                            </div>
                                             <asp:Label ID="Label5" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="EDAD:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtEdad" runat="server" class="form-control" ReadOnly="True"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtEdad" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label4" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="TELÉFONO (CASA):"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtTelCasa" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtTelCasa" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox>
+                                            </div>
                                             <asp:Label ID="Label41" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="TELÉFONO (CELULAR):"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtTelCel" runat="server" AutoCompleteType="Disabled" class="form-control" onkeydown="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TxtTelCel" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar Telefono Celular</asp:RequiredFieldValidator></div>
+                                                <asp:TextBox ID="TxtTelCel" runat="server" AutoCompleteType="Disabled" class="form-control" onkeydown="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TxtTelCel" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar Telefono Celular</asp:RequiredFieldValidator>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label6" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NIT:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtNit" runat="server" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);" ReadOnly="True"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtNit" runat="server" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);" ReadOnly="True"></asp:TextBox>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label29" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DUI:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtDui" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);" TargetControlID="TxtDui"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtDui" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);" TargetControlID="TxtDui"></asp:TextBox>
+                                            </div>
                                             <asp:Label ID="Label30" runat="server" class="control-label  col-sm-3" Font-Bold="True" readonly="" Text="EMAIL:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtEmail" runat="server" AutoCompleteType="Disabled" class="form-control"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TxtEmail" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar email</asp:RequiredFieldValidator></div>
+                                                <asp:TextBox ID="TxtEmail" runat="server" AutoCompleteType="Disabled" class="form-control"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TxtEmail" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar email</asp:RequiredFieldValidator>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label7" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="SEXO:"></asp:Label><div class="col-md-3">
@@ -69,7 +79,8 @@
                                                 </asp:RadioButtonList>
                                             </div>
                                             <asp:Label ID="Label31" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="TIPO ASPIRANTE:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtTipoAspirante" runat="server" class="form-control" ReadOnly="True"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtTipoAspirante" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label8" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="TRATAMIENTO:"></asp:Label><div class="col-md-3">
@@ -77,13 +88,16 @@
                                                 </asp:DropDownList>
                                             </div>
                                             <asp:Label ID="Label26" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="DISCAPACIDAD 1:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtDiscapacidad1" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtDiscapacidad1" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label32" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DISCAPACIDAD 2:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtDiscapacidad2" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtDiscapacidad2" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
+                                            </div>
                                             <asp:Label ID="Label34" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="DISCAPACIDAD 3:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtDiscapacidad3" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtDiscapacidad3" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label38" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="PAIS:"></asp:Label><div class="col-md-3">
@@ -103,25 +117,31 @@
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label18" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DIRECCIÓN:"></asp:Label><div class="col-md-8">
-                                                <asp:TextBox ID="TxtDireccion" runat="server" AutoCompleteType="Disabled" class="form-control" TextMode="MultiLine"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TxtDireccion" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar Direccion</asp:RequiredFieldValidator></div>
+                                                <asp:TextBox ID="TxtDireccion" runat="server" AutoCompleteType="Disabled" class="form-control" TextMode="MultiLine"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TxtDireccion" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar Direccion</asp:RequiredFieldValidator>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label45" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOTA QI:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtNotaQI" runat="server" class="form-control" ReadOnly="True"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtNotaQI" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label46" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="OBSERVACIONES QI:"></asp:Label><div class="col-md-8">
-                                                <asp:TextBox ID="TxtObservacionQI" runat="server" class="form-control" ReadOnly="True" TextMode="MultiLine"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtObservacionQI" runat="server" class="form-control" ReadOnly="True" TextMode="MultiLine"></asp:TextBox>
+                                            </div>
                                         </div>
                                         <asp:Panel ID="PanelRepresentante" runat="server" Visible="false">
                                             <div align="center">
-                                                <asp:Label ID="LblTitulo0" runat="server" Font-Bold="True" Font-Size="14pt" Text="DATOS REPRESENTANTE LEGAL"></asp:Label></div>
+                                                <asp:Label ID="LblTitulo0" runat="server" Font-Bold="True" Font-Size="14pt" Text="DATOS REPRESENTANTE LEGAL"></asp:Label>
+                                            </div>
                                             <br />
                                             <div class="form-group">
                                                 <asp:Label ID="Label15" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOMBRES:"></asp:Label><div class="col-md-3">
-                                                    <asp:TextBox ID="TxtNombreR" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox></div>
+                                                    <asp:TextBox ID="TxtNombreR" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
+                                                </div>
                                                 <asp:Label ID="Label16" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="APELLIDOS:"></asp:Label><div class="col-md-3">
-                                                    <asp:TextBox ID="TextApellidoR" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox></div>
+                                                    <asp:TextBox ID="TextApellidoR" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
+                                                </div>
                                             </div>
                                             <div class="form-group">
                                                 <asp:Label ID="Label24" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="SEXO:"></asp:Label><div class="col-md-3">
@@ -131,23 +151,29 @@
                                                     </asp:RadioButtonList>
                                                 </div>
                                                 <asp:Label ID="Label35" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="FECHA NACIMIENTO:"></asp:Label><div class="col-md-3">
-                                                    <asp:TextBox ID="TextFechNacR" runat="server" class="form-control" TextMode="Date"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="TextFechNacR" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llene la fecha de nacimiento de representante</asp:RequiredFieldValidator></div>
+                                                    <asp:TextBox ID="TextFechNacR" runat="server" class="form-control" TextMode="Date"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="TextFechNacR" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llene la fecha de nacimiento de representante</asp:RequiredFieldValidator>
+                                                </div>
                                             </div>
                                             <div class="form-group">
                                                 <asp:Label ID="Label10" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DUI:"></asp:Label><div class="col-md-3">
-                                                    <asp:TextBox ID="TextDuiR" runat="server" AutoCompleteType="Disabled" class="form-control" onkeydown="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox></div>
+                                                    <asp:TextBox ID="TextDuiR" runat="server" AutoCompleteType="Disabled" class="form-control" onkeydown="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox>
+                                                </div>
                                                 <asp:Label ID="Label13" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NIT:"></asp:Label><div class="col-md-3">
-                                                    <asp:TextBox ID="TextNitR" runat="server" AutoCompleteType="Disabled" class="form-control" onkeydown="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox></div>
+                                                    <asp:TextBox ID="TextNitR" runat="server" AutoCompleteType="Disabled" class="form-control" onkeydown="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox>
+                                                </div>
                                             </div>
                                             <div class="form-group">
                                                 <asp:Label ID="Label11" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="EMAIL:"></asp:Label><div class="col-md-3">
-                                                    <asp:TextBox ID="TextEmailR" runat="server" AutoCompleteType="Disabled" class="form-control" TextMode="Email"></asp:TextBox></div>
+                                                    <asp:TextBox ID="TextEmailR" runat="server" AutoCompleteType="Disabled" class="form-control" TextMode="Email"></asp:TextBox>
+                                                </div>
                                                 <asp:Label ID="Label14" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="TELÉFONO:"></asp:Label><div class="col-md-3">
-                                                    <asp:TextBox ID="TextTelR" runat="server" AutoCompleteType="Disabled" class="form-control" onkeydown="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox></div>
+                                                    <asp:TextBox ID="TextTelR" runat="server" AutoCompleteType="Disabled" class="form-control" onkeydown="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox>
+                                                </div>
                                             </div>
                                             <div class="form-group">
                                                 <asp:Label ID="Label25" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DIRECCIÓN:"></asp:Label><div class="col-md-8">
-                                                    <asp:TextBox ID="TextDireccionR" runat="server" AutoCompleteType="Disabled" class="form-control" TextMode="MultiLine"></asp:TextBox></div>
+                                                    <asp:TextBox ID="TextDireccionR" runat="server" AutoCompleteType="Disabled" class="form-control" TextMode="MultiLine"></asp:TextBox>
+                                                </div>
                                             </div>
                                             <div class="form-group">
                                                 <asp:Label ID="Label36" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="TRATAMIENTO:"></asp:Label><div class="col-md-3">
@@ -158,7 +184,8 @@
                                         </asp:Panel>
                                         <br />
                                         <div align="center">
-                                            <asp:Button ID="BtnGuardarDatoGeneral" runat="server" class="btn btn-primary" OnClick="BtnGuardarDatoGeneral_Click" Text="GUARDAR" ValidationGroup="DatoGeneral" />&#160;</div>
+                                            <asp:Button ID="BtnGuardarDatoGeneral" runat="server" class="btn btn-primary" OnClick="BtnGuardarDatoGeneral_Click" Text="GUARDAR" ValidationGroup="DatoGeneral" />&#160;
+                                        </div>
                                         <br />
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
@@ -200,7 +227,8 @@
                                                 </asp:DropDownList>
                                             </div>
                                             <asp:Label ID="Label21" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="OTRA INSTITUCION:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtOtraInstitucion" runat="server" AutoCompleteType="Disabled" class="form-control"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtOtraInstitucion" runat="server" AutoCompleteType="Disabled" class="form-control"></asp:TextBox>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label27" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="PAIS:"></asp:Label><div class="col-md-3">
@@ -208,15 +236,18 @@
                                                 </asp:DropDownList>
                                             </div>
                                             <asp:Label ID="Label39" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="AÑO DE FINALIZACION:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtAnioFin" runat="server" AutoCompleteType="Disabled" class="form-control" TextMode="Number"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtAnioFin" runat="server" AutoCompleteType="Disabled" class="form-control" TextMode="Number"></asp:TextBox>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label44" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="PROMEDIO DE NOTAS:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtNotas" runat="server" AutoCompleteType="Disabled" class="form-control" ControlToValidate="TxtNotas"></asp:TextBox></div>
+                                                <asp:TextBox ID="TxtNotas" runat="server" AutoCompleteType="Disabled" class="form-control" ControlToValidate="TxtNotas"></asp:TextBox>
+                                            </div>
                                         </div>
                                         <br />
                                         <div align="center">
-                                            <asp:Button ID="BtnEscolaridadGuardar" runat="server" class="btn btn-primary" OnClick="BtnEscolaridadGuardar_Click" Text="GUARDAR" />&#160;<asp:Button ID="BtnEscolaridadCancelar" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" /></div>
+                                            <asp:Button ID="BtnEscolaridadGuardar" runat="server" class="btn btn-primary" OnClick="BtnEscolaridadGuardar_Click" Text="GUARDAR" />&#160;<asp:Button ID="BtnEscolaridadCancelar" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
+                                        </div>
                                         <br />
                                         <asp:GridView ID="GVEscolaridad" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="GVEscolaridad_RowDeleting" Width="100%">
                                             <AlternatingRowStyle BackColor="White" />
@@ -285,7 +316,8 @@
                                                 </div>
                                             </div>
                                             <div align="center">
-                                                <asp:Button ID="BtnGuardarHabilidad" runat="server" class="btn btn-primary" OnClick="BtnGuardarHabilidad_Click" Text="GUARDAR" />&#160;<asp:Button ID="BtnCancelarHabilidad" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" /></div>
+                                                <asp:Button ID="BtnGuardarHabilidad" runat="server" class="btn btn-primary" OnClick="BtnGuardarHabilidad_Click" Text="GUARDAR" />&#160;<asp:Button ID="BtnCancelarHabilidad" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
+                                            </div>
                                             <br />
                                             <asp:GridView ID="GVHabilidad" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="GVHabilidad_RowDeleting" Width="100%">
                                                 <AlternatingRowStyle BackColor="White" />
@@ -402,10 +434,12 @@
                                             </div>
                                             <div class="form-group">
                                                 <asp:Label ID="Label40" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DESCRIPCION:"></asp:Label><div class="col-md-8">
-                                                    <asp:TextBox ID="TxtDescripcionDocumento" runat="server" AutoCompleteType="Disabled" class="form-control" TextMode="MultiLine"></asp:TextBox></div>
+                                                    <asp:TextBox ID="TxtDescripcionDocumento" runat="server" AutoCompleteType="Disabled" class="form-control" TextMode="MultiLine"></asp:TextBox>
+                                                </div>
                                             </div>
                                             <div align="center">
-                                                <asp:Button ID="BtnGuardarDocumento" runat="server" class="btn btn-primary" OnClick="BtnGuardarDocumento_Click" Text="GUARDAR" />&#160;<asp:Button ID="BtnCancelarDocumento" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" /></div>
+                                                <asp:Button ID="BtnGuardarDocumento" runat="server" class="btn btn-primary" OnClick="BtnGuardarDocumento_Click" Text="GUARDAR" />&#160;<asp:Button ID="BtnCancelarDocumento" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
+                                            </div>
                                             <br />
                                             <asp:GridView ID="GVDocumento" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="GVDocumento_RowDeleting" Width="100%">
                                                 <AlternatingRowStyle BackColor="White" />
@@ -865,10 +899,9 @@
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPInformeFinal" runat="server">
                                     <ContentTemplate>
-                                        <ol>
-                                            <li style="font-weight: bold">
-                                                <asp:Label ID="Label60" runat="server" Text="Descripción del proyecto en el que realizó la pasantia."></asp:Label>
-                                            </li>
+                                            <p style="font-weight: bold">
+                                                <asp:Label ID="Label60" runat="server" Text="1. Descripción del proyecto en el que realizó la pasantia."></asp:Label>
+                                            </p>
                                             <br />
                                             <asp:Label ID="Label61" runat="server" Text="(Debe incluir una breve reseña de la empresa y enfocarse en explicar en qué consiste el proyecto en el que trabajó)"></asp:Label>
 
@@ -878,9 +911,9 @@
                                                     <asp:TextBox class="form-control" ID="TextBox1" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
                                                 </div>
                                             </div>
-                                            <li style="font-weight: bold">
-                                                <asp:Label ID="Label62" runat="server" Text="Cronograma de actividades o plan de trabajo"></asp:Label>
-                                            </li>
+                                            <p style="font-weight: bold">
+                                                <asp:Label ID="Label62" runat="server" Text="2. Cronograma de actividades o plan de trabajo"></asp:Label>
+                                            </p>
                                             <br />
 
                                             <div class="form-group">
@@ -888,88 +921,130 @@
                                                     <asp:TextBox class="form-control" ID="TextBox2" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
                                                 </div>
                                             </div>
-                                            <li style="font-weight: bold">
-                                                <asp:Label ID="Label68" runat="server" Text="Descripción de las actividades y tareas realizadas durante las 6 semanas de pasantías(por etapa o semana)"></asp:Label>
-                                            </li>
+                                            <p style="font-weight: bold">
+                                                <asp:Label ID="Label68" runat="server" Text="3. Descripción de las actividades y tareas realizadas durante las 6 semanas de pasantías(por etapa o semana)"></asp:Label>
+                                            </p>
                                             <br />
-                                            <asp:Label ID="Label69" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="ACTIVIDAD:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TextBox3" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox></div>
+                                            <asp:Label ID="Label69" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="ACTIVIDAD:"></asp:Label>
+                                        <div class="col-md-3">
+                                                <asp:TextBox ID="TextBox3" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
                                             </div><div class="form-group">
                                                 <asp:Label ID="Label70" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DESCRIPCIÓN DE LA ACTIVIDAD:"></asp:Label><div class="col-md-3">
-                                                    <asp:TextBox ID="TextBox4" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox></div>
-                                               </div> <div align="center">
-                                                    <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="GUARDAR" />&#160;<asp:Button ID="Button2" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
+                                                    <asp:TextBox ID="TextBox4" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
                                                 </div>
-                                                <br />
-                                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="GVDestreza_RowDeleting" Width="100%">
-                                                    <AlternatingRowStyle BackColor="White" />
-                                                    <Columns>
-                                                        <asp:TemplateField HeaderText="" Visible="false">
-                                                            <ItemTemplate>
-                                                                <asp:TextBox ID="TxtIDDestreza" runat="server" Text='<%#Eval("ID")%>' Visible="False"></asp:TextBox>
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
-                                                        <asp:BoundField DataField="DS_DESTREZA" HeaderText="ACTIVIDAD" />
-                                                        <asp:BoundField HeaderText="DESCRIPCION ACTIVIDAD" />
-                                                        <asp:TemplateField HeaderText="Eliminar">
-                                                            <ItemTemplate>
-                                                                <asp:Button ID="BtnEliminarDestreza" runat="server" CommandName="Delete" OnClientClick="return confirm('¿Desea eliminar este archivo?');" Text="Eliminar" />
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
-                                                    </Columns>
-                                                    <EditRowStyle BackColor="#2461BF" />
-                                                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                                                    <RowStyle BackColor="#EFF3FB" />
-                                                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                                                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                                                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                                                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                                                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                                                </asp:GridView>
-                                                <li style="font-weight: bold">
-                                                    <asp:Label ID="Label71" runat="server" Text="Cuadro comparativo"></asp:Label>
-                                                </li>
-                                                <br />
-                                                <asp:Label ID="Label72" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="APRENDIDO EN PIXELS CAPS:"></asp:Label><div class="col-md-3">
-                                                    <asp:TextBox ID="TextBox5" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox></div>
-                                            
+                                            </div>
+                                            <div align="center">
+                                                <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="GUARDAR" />&#160;<asp:Button ID="Button2" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
+                                            </div>
+                                            <br />
+                                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="GVDestreza_RowDeleting" Width="100%">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:TemplateField HeaderText="" Visible="false">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="TxtIDDestreza" runat="server" Text='<%#Eval("ID")%>' Visible="False"></asp:TextBox>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:BoundField DataField="DS_DESTREZA" HeaderText="ACTIVIDAD" />
+                                                    <asp:BoundField HeaderText="DESCRIPCION ACTIVIDAD" />
+                                                    <asp:TemplateField HeaderText="Eliminar">
+                                                        <ItemTemplate>
+                                                            <asp:Button ID="BtnEliminarDestreza" runat="server" CommandName="Delete" OnClientClick="return confirm('¿Desea eliminar este archivo?');" Text="Eliminar" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>
+                                             <p style="font-weight: bold">
+                                                <asp:Label ID="Label71" runat="server" Text="4. Cuadro comparativo"></asp:Label>
+                                            </p>
+                                            <br />
+                                            <asp:Label ID="Label72" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="APRENDIDO EN PIXELS CAPS:"></asp:Label><div class="col-md-3">
+                                                <asp:TextBox ID="TextBox5" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
+                                            </div>
+
                                             <div class="form-group">
                                                 <asp:Label ID="Label73" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DESCRIPCIÓN DE LA ACTIVIDAD:"></asp:Label><div class="col-md-3">
-                                                    <asp:TextBox ID="TextBox6" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox></div>
-                                               </div> <div align="center">
-                                                    <asp:Button ID="Button3" runat="server" class="btn btn-primary" Text="GUARDAR" />&#160;<asp:Button ID="Button4" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
+                                                    <asp:TextBox ID="TextBox6" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
                                                 </div>
-                                                <br />
-                                                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="GVDestreza_RowDeleting" Width="100%">
-                                                    <AlternatingRowStyle BackColor="White" />
-                                                    <Columns>
-                                                        <asp:TemplateField HeaderText="" Visible="false">
-                                                            <ItemTemplate>
-                                                                <asp:TextBox ID="TxtIDDestreza" runat="server" Text='<%#Eval("ID")%>' Visible="False"></asp:TextBox>
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
-                                                        <asp:BoundField DataField="DS_DESTREZA" HeaderText="Aprendido en PIXELS CAPS" />
-                                                        <asp:BoundField HeaderText="Lo puesto en práctica en la empresa" />
-                                                        <asp:TemplateField HeaderText="Eliminar">
-                                                            <ItemTemplate>
-                                                                <asp:Button ID="BtnEliminarDestreza" runat="server" CommandName="Delete" OnClientClick="return confirm('¿Desea eliminar este archivo?');" Text="Eliminar" />
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
-                                                    </Columns>
-                                                    <EditRowStyle BackColor="#2461BF" />
-                                                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                                                    <RowStyle BackColor="#EFF3FB" />
-                                                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                                                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                                                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                                                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                                                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                                                </asp:GridView>
-                                        </ol>
+                                            </div>
+                                            <div align="center">
+                                                <asp:Button ID="Button3" runat="server" class="btn btn-primary" Text="GUARDAR" />&#160;<asp:Button ID="Button4" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
+                                            </div>
+                                            <br />
+                                            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="GVDestreza_RowDeleting" Width="100%">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:TemplateField HeaderText="" Visible="false">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="TxtIDDestreza" runat="server" Text='<%#Eval("ID")%>' Visible="False"></asp:TextBox>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:BoundField DataField="DS_DESTREZA" HeaderText="Aprendido en PIXELS CAPS" />
+                                                    <asp:BoundField HeaderText="Lo puesto en práctica en la empresa" />
+                                                    <asp:TemplateField HeaderText="Eliminar">
+                                                        <ItemTemplate>
+                                                            <asp:Button ID="BtnEliminarDestreza" runat="server" CommandName="Delete" OnClientClick="return confirm('¿Desea eliminar este archivo?');" Text="Eliminar" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>
+                                            <p style="font-weight: bold">
+                                                <asp:Label ID="Label74" runat="server" Text="5. Cómo fue la relación laboral pasante y empresa."></asp:Label>
+                                            </p>
+
+                                            <div class="form-group">
+                                                <div class="col-sm-10">
+                                                    <asp:TextBox class="form-control" ID="TextBox7" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                        
+                                            <p style="font-weight: bold">
+                                                <asp:Label ID="Label75" runat="server" Text="6. Considera que realizar las pasantías ha generado algún tipo de resultado/beneficio en su vida profesional."></asp:Label>
+                                            </p>
+
+                                            <div class="form-group">
+                                                <div class="col-sm-10">
+                                                    <asp:TextBox class="form-control" ID="TextBox8" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <p style="font-weight: bold">
+                                                <asp:Label ID="Label76" runat="server" Text="7. Describa las limitaciones encontradas durante el proceso de la práctica laboral."></asp:Label>
+                                            </p>
+
+                                            <div class="form-group">
+                                                <div class="col-sm-10">
+                                                    <asp:TextBox class="form-control" ID="TextBox9" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <p style="font-weight: bold">
+                                                <asp:Label ID="Label77" runat="server" Text="8. Conclusiones."></asp:Label>
+                                            </p>
+
+                                            <div class="form-group">
+                                                <div class="col-sm-10">
+                                                    <asp:TextBox class="form-control" ID="TextBox10" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                                                </div>
+                                            </div>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
                             </ContentTemplate>
