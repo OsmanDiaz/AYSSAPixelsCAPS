@@ -884,16 +884,16 @@
                                         <asp:Panel ID="PanelMonitoreoPasantia" runat="server">
                                         <br />
                                         <center><h3>Informacion Pasantias</h3></center>
-                                        <asp:GridView ID="GVListaEmpresaPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                                        <asp:GridView ID="GVListaEmpresaPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVListaEmpresaPasantia_SelectedIndexChanged" DataKeyNames="ID_EMPRESA">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
                                                 <asp:TemplateField HeaderText="" >
                                                     <ItemTemplate>
-                                                        <asp:TextBox ID="TxtIdProyectosGV" runat="server" Text='<%#Eval("ID_CONSULTORIA")%>' Visible="false"></asp:TextBox>
+                                                        <asp:TextBox ID="TxtIdEmpresaGV" runat="server" Text='<%#Eval("ID_EMPRESA")%>' Visible="false"></asp:TextBox>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:BoundField HeaderText="EMPRESA"/>
-                                                <asp:BoundField HeaderText="BANDERA" Visible="false"/>
+                                                <asp:BoundField HeaderText="EMPRESA" DataField="DS_NOMBRE_EMPRESA" />
+                                                <asp:BoundField HeaderText="BANDERA" DataField="BANDERA" Visible="false"/>
                                                 <asp:TemplateField>
                                                     <ItemTemplate>
                                                         <asp:Image ID="Image1" runat="server" imageurl='<%# string.Concat("~/images/buttons/",Eval("BANDERA"), ".png")%>' Width="25px"/>

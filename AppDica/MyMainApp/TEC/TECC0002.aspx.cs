@@ -31,6 +31,7 @@ namespace MyMainApp.TEC
 
         public void Consultar()
         {
+            FillEmpresaPasantia();
             FillGVListaPasantia();
             FillInfoProyecto();
             FillInfoGeneral();
@@ -329,8 +330,25 @@ namespace MyMainApp.TEC
         {
 
         }
-        
 
         // Parte Nueva
+
+
+        protected void GVListaEmpresaPasantia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int Id = GVListaEmpresaPasantia.SelectedIndex;
+
+            TxtIdEmpresa.Text = GVListaEmpresaPasantia.DataKeys[Id].Value.ToString();
+
+        }
+
+        private void FillEmpresaPasantia()
+        {
+            CActividadAspirante objActividadAspirante = new CActividadAspirante(_DataSistema.ConexionBaseDato);
+            dvPasantiaAspirante = new DataView(objActividadAspirante.Detalle1(0, "", 0, "", 'x', "", "", _DataSistema.Cusuario, DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 6).TB_ACTIVIDAD_ASPIRANTE_MONITOREO);
+            GVListaEmpresaPasantia.DataSource = dvPasantiaAspirante;
+            GVListaEmpresaPasantia.DataBind();
+        }
+        
     }
 }
