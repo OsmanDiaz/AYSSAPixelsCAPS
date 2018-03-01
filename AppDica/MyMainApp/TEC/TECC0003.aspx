@@ -159,7 +159,7 @@
                                         realizado en la pasantía y dejar copia a la empresa; g) Toda propiedad intelectual generada por el pasante durante la realización de la pasantía es propiedad de {{nombre_empresa}}.
                                     </asp:Label><br /><br />
                                     <asp:Label ID="LblClausula3" runat="server" Text="Label">
-                                        CLAUSULA TERCERA – DURACIÓN: la pasantía dará inicio del {{fecha_inicio_pasantia}} hasta {{fecha_fin_pasantia}} del presente año. {{nombre_pasante}} debe de cumplir 
+                                        CLAUSULA TERCERA – DURACIÓN: la pasantía dará inicio del {{dia_inicio}} {{fecha_inicio}} de {{mes_inicio}} hasta {{dia_fin}} {{fecha_fin}} de {{mes_fin}} del presente año. {{nombre_pasante}} debe de cumplir 
                                         entre 10 a 15 horas de trabajo distribuidas entre la semana.
                                     </asp:Label><br /><br />
                                     <asp:Label ID="LblClausula4" runat="server" Text="Label">
@@ -175,7 +175,7 @@
                                         {{nombre_empresa}} para con el o la pasante.
                                     </asp:Label><br /><br />
                                     <asp:Label ID="LblFinal" runat="server" Text="Label">
-                                        En fe de lo anterior y por estar de acuerdo, firmamos el presente acuerdo de pasantía no remunerada, en la ciudad de San Salvador a los {{19 días del mes de junio del año dos mil diecisiete}}. 
+                                        En fe de lo anterior y por estar de acuerdo, firmamos el presente acuerdo de pasantía no remunerada, en la ciudad de San Salvador a los {{fecha_actual}}. 
                                     </asp:Label><br /><br /><br /><br />
                                     <div class="form-group">
                                                 <asp:Label ID="Label7" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text=" ___________________________________________"></asp:Label>
