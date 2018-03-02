@@ -68,7 +68,7 @@ namespace ClsDataApp
                 switch (OpcionActualizacion)
                 {
                     case TipoActualizacion.Adicionar:
-                        StrCommand = "";
+                        StrCommand = "SP_TB_ENCUESTA_SEMANAL_ASPIRANTE_INSERT";
                         break;
                     case TipoActualizacion.Actualizar:
                         StrCommand = " ";
