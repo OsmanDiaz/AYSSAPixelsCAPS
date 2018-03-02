@@ -286,6 +286,9 @@ namespace MyMainApp.TEC
                     CActividadAspirante objPasantia2 = new CActividadAspirante(_DataSistema.ConexionBaseDato);
                     dvPasantia = null;
                     dvPasantia = new DataView(objPasantia2.Detalle1(0,"",Convert.ToInt32(TxtIdEntregable.Text),"",'X',"","","",DateTime.Today,"",DateTime.Today,5).TB_ACTIVIDAD_ASPIRANTE_MONITOREO);
+                    if (dvPasantia.Count > 0) {
+                        TxtIdAspirante.Text = dvPasantia.Table.Rows[0]["ID_ASPIRANTE"].ToString();
+                    }
                     GVlistaActividadPasantia.DataSource = dvPasantia;
                     GVlistaActividadPasantia.DataBind();
                 }
