@@ -7,19 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace MyMainApp {
+namespace MyMainApp.MANTENIMIENTOS {
     
     
-    public partial class MasterMantenimiento {
-        
-        /// <summary>
-        /// Control ContentPlaceHolder1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+    public partial class MTTP0001 {
         
         /// <summary>
         /// Control form1.
@@ -67,13 +58,13 @@ namespace MyMainApp {
         protected global::System.Web.UI.UpdatePanel UPDatos;
         
         /// <summary>
-        /// Control GridView1.
+        /// Control GVDetalle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView GVDetalle;
         
         /// <summary>
         /// Control TabPanel2.

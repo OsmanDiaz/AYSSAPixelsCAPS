@@ -1,7 +1,6 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/MasterInicio.Master" AutoEventWireup="true" CodeBehind="MasterMantenimiento.master.cs" Inherits="MyMainApp.MasterMantenimiento" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterMantenimiento.master" AutoEventWireup="true" CodeBehind="MTTP0001.aspx.cs" Inherits="MyMainApp.MANTENIMIENTOS.MTTP0001" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxtoolkit" %>
-<asp:Content ID="Content1" runat="server" contentplaceholderid="CPHPrincipal">
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content1" runat="server" contentplaceholderid="ContentPlaceHolder1">
      <form id="form1" runat="server">
                     <div align="center">
                         <asp:Label ID="LblTitulo" runat="server" Text="Mantenimiento de Catálogo" Font-Bold="True" Font-Size="20pt"></asp:Label>
@@ -9,16 +8,14 @@
                     </div>
                    <br />
 
-                        <ajaxtoolkit:tabcontainer id="TabContainer1" runat="server" activetabindex="1" bordercolor="#66CCFF" scrollbars="Vertical" height="375px" width="100%">
+                        <ajaxtoolkit:tabcontainer id="TabContainer1" runat="server" activetabindex="0" bordercolor="#66CCFF" scrollbars="Vertical" height="375px" width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                  <asp:UpdatePanel ID="UPDatos" runat="server">
-                                    <Triggers><asp:AsyncPostBackTrigger ControlID="BtnGuardarDatoGeneral" /></Triggers>
                                     <ContentTemplate>
                             <%--inicio contenido tab--%>
-                                <%--inicio tab datos--%>
                                 <br />
-                                        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AutoGenerateColumns="False">
+                                        <asp:GridView ID="GVDetalle" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AutoGenerateColumns="False">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
                                                 <asp:BoundField HeaderText="NOMBRE" />
@@ -37,6 +34,7 @@
                                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                         </asp:GridView>
                                     </ContentTemplate>
+                                    <Triggers><asp:AsyncPostBackTrigger ControlID="BtnGuardarDatoGeneral" /></Triggers>
                                 </asp:UpdatePanel>
                             </ContentTemplate>
                              </ajaxToolkit:TabPanel>
@@ -78,8 +76,6 @@
                                     </div>
                                     <br />
       
-                            <%--fin tab informacion adicional--%>
-     
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
                             </ContentTemplate>
@@ -88,6 +84,5 @@
                             
                     </ajaxtoolkit:tabcontainer>
                         </form>
-        </asp:ContentPlaceHolder>
-                </asp:Content>
+        </asp:Content>
 
