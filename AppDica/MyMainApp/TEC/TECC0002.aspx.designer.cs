@@ -85,6 +85,24 @@ namespace MyMainApp.TEC {
         protected global::System.Web.UI.WebControls.TextBox TxtIdEntregable;
         
         /// <summary>
+        /// Control TxtIdAspirante.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIdAspirante;
+        
+        /// <summary>
+        /// Control TxtCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtCorreo;
+        
+        /// <summary>
         /// Control TxtIdConsultoria.
         /// </summary>
         /// <remarks>
