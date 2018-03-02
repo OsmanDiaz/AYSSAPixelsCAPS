@@ -10,6 +10,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using AjaxControlToolkit;
 using System.IO;
+using System.Globalization;
 
 namespace MyMainApp.TEC
 {
@@ -131,14 +132,21 @@ namespace MyMainApp.TEC
                 LblClausula1.Text = LblClausula1.Text.Replace("{{nombre_empresa}}", dvPasantiaA.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString());
                 LblClausula2.Text = LblClausula2.Text.Replace("{{nombre_empresa}}", dvPasantiaA.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString());
                 LblClausula2.Text = LblClausula2.Text.Replace("{{nombre_pasante}}", dvPasantiaA.Table.Rows[0]["NOMBRE_COMPLETO"].ToString());
-                LblClausula3.Text = LblClausula3.Text.Replace("{{fecha_inicio_pasantia}}", dvPasantiaA.Table.Rows[0]["FECH_INICIO_PASANTIA"].ToString());
-                LblClausula3.Text = LblClausula3.Text.Replace("{{fecha_fin_pasantia}}", dvPasantiaA.Table.Rows[0]["FECHA_FIN_PASANTIA"].ToString());
+                LblClausula3.Text = LblClausula3.Text.Replace("{{dia_inicio}}", dvPasantiaA.Table.Rows[0]["DIA_INI_PAS"].ToString());
+                LblClausula3.Text = LblClausula3.Text.Replace("{{fecha_inicio}}", dvPasantiaA.Table.Rows[0]["FECHA_INI_PAS"].ToString());
+                LblClausula3.Text = LblClausula3.Text.Replace("{{mes_inicio}}", dvPasantiaA.Table.Rows[0]["MES_INI_PAS"].ToString());
+                LblClausula3.Text = LblClausula3.Text.Replace("{{dia_fin}}", dvPasantiaA.Table.Rows[0]["DIA_FIN_PAS"].ToString());
+                LblClausula3.Text = LblClausula3.Text.Replace("{{fecha_fin}}", dvPasantiaA.Table.Rows[0]["FECHA_FIN_PAS"].ToString());
+                LblClausula3.Text = LblClausula3.Text.Replace("{{mes_fin}}", dvPasantiaA.Table.Rows[0]["MES_FIN_PAS"].ToString());
                 LblClausula3.Text = LblClausula3.Text.Replace("{{nombre_pasante}}", dvPasantiaA.Table.Rows[0]["NOMBRE_COMPLETO"].ToString());
                 LblClausula5.Text = LblClausula5.Text.Replace("{{nombre_empresa}}", dvPasantiaA.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString());
                 LblClausula6.Text = LblClausula6.Text.Replace("{{nombre_empresa}}", dvPasantiaA.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString());
                 LblResponsable.Text = LblResponsable.Text.Replace("{{nombre_responsable}}", dvPasantiaA.Table.Rows[0]["DS_NOMBRE_CONTACTO"].ToString());
                 LblEmpresa.Text = LblEmpresa.Text.Replace("{{nombre_empresa}}", dvPasantiaA.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString());
                 LblPasante.Text = LblPasante.Text.Replace("{{nombre_pasante}}", dvPasantiaA.Table.Rows[0]["NOMBRE_COMPLETO"].ToString());
+                //mostrar fecha en letras
+                DateTime FechaDeHoy = new DateTime((DateTime.Now.Year),(DateTime.Now.Month),(DateTime.Now.Day));
+                LblFinal.Text = LblFinal.Text.Replace("{{fecha_actual}}", "A los " + (DateTime.Now.Day) + " dias del mes de " +  CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName((DateTime.Now.Month)) + " del año " + (DateTime.Now.Year)); 
             }
         }
         
