@@ -32,6 +32,8 @@
                                     <ContentTemplate>
                                         <br />
                                         <asp:TextBox ID="TxtIdEntregable" runat="server" Visible="False"></asp:TextBox>
+                                        <asp:TextBox ID="TxtIdAspirante" runat="server" Visible="False"></asp:TextBox>
+                                         <asp:TextBox ID="TxtCorreo" runat="server" Visible="False"></asp:TextBox>
                                         <asp:TextBox ID="TxtIdConsultoria" runat="server" Visible="False"></asp:TextBox>
                                         <asp:TextBox ID="TxtIdEmpresa" runat="server" Visible="False"></asp:TextBox>
                                         <asp:TextBox ID="TxtIdPasantia" runat="server" Visible="False"></asp:TextBox>   
