@@ -128,6 +128,7 @@
     <Content Include="Registro.aspx" />
     <Content Include="TEC\TECC0001.aspx" />
     <Content Include="TEC\TECC0002.aspx" />
+    <Content Include="TEC\TECC0003.aspx" />
     <Content Include="TEC\TECP0001.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -193,6 +194,13 @@
     <Compile Include="MasterInicio.Master.designer.cs">
       <DependentUpon>MasterInicio.Master</DependentUpon>
     </Compile>
+    <Compile Include="MasterMantenimiento.master.cs">
+      <DependentUpon>MasterMantenimiento.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterMantenimiento.master.designer.cs">
+      <DependentUpon>MasterMantenimiento.master</DependentUpon>
+    </Compile>
     <Compile Include="MasterProceso.master.cs">
       <DependentUpon>MasterProceso.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -222,6 +230,13 @@
     <Compile Include="TEC\TECC0002.aspx.designer.cs">
       <DependentUpon>TECC0002.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TEC\TECC0003.aspx.cs">
+      <DependentUpon>TECC0003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TEC\TECC0003.aspx.designer.cs">
+      <DependentUpon>TECC0003.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TEC\TECP0001.aspx.cs">
       <DependentUpon>TECP0001.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -241,6 +256,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="MasterProceso.master" />
+    <Content Include="MasterMantenimiento.master" />
     <None Include="Properties\PublishProfiles\DICA.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
