@@ -92,6 +92,8 @@
     <Compile Include="CHabilidadAspirante.cs" />
     <Compile Include="CHabilidadConocimiento.cs" />
     <Compile Include="CHabilidadPasantia.cs" />
+    <Compile Include="CInformeFinalComparativo.cs" />
+    <Compile Include="CInformeFinalPasantia.cs" />
     <Compile Include="CMenu.cs" />
     <Compile Include="CMunicipio.cs" />
     <Compile Include="CNivelConocimiento.cs" />

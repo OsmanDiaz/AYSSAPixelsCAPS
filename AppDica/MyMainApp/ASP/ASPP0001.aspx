@@ -19,7 +19,7 @@
         <div class="container-fluid">
             <div id="content">
                 <asp:Panel ID="Panel1" runat="server" Width="100%">
-                    <ajaxToolkit:TabContainer ID="TabAspirante" runat="server" ActiveTabIndex="7" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabAspirante" runat="server" ActiveTabIndex="8" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
 
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabDatoGeneral" Width="100%">
                             <ContentTemplate>
@@ -330,11 +330,6 @@
                                                     <asp:BoundField DataField="DS_CATEGORIA_HABILIDAD" HeaderText="CONOCIMIENTO" />
                                                     <asp:BoundField DataField="DS_HABILIDAD_CONOCIMIENTO" HeaderText="TIPO DE CONOCIMIENTO" />
                                                     <asp:BoundField DataField="DS_NIVEL_CONOCIMIENTO" HeaderText="NIVEL" />
-                                                    <asp:TemplateField HeaderText="Eliminar">
-                                                        <ItemTemplate>
-                                                            <asp:Button ID="BtnEliminarConocimiento" runat="server" CommandName="Delete" OnClientClick="return confirm('¿Desea eliminar este archivo?');" Text="Eliminar" />
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
                                                 </Columns>
                                                 <EditRowStyle BackColor="#2461BF" />
                                                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -899,6 +894,7 @@
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPInformeFinal" runat="server">
                                     <ContentTemplate>
+                                        <asp:TextBox ID="TxtIdInformeComparativo" runat="server" Visible="false"></asp:TextBox>
                                             <p style="font-weight: bold">
                                                 <asp:Label ID="Label60" runat="server" Text="1. Descripción del proyecto en el que realizó la pasantia."></asp:Label>
                                             </p>
@@ -908,7 +904,7 @@
 
                                             <div class="form-group">
                                                 <div class="col-sm-10">
-                                                    <asp:TextBox class="form-control" ID="TextBox1" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                                                    <asp:TextBox class="form-control" ID="TxtDescripPasantia" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
                                                 </div>
                                             </div>
                                             <p style="font-weight: bold">
@@ -918,40 +914,23 @@
 
                                             <div class="form-group">
                                                 <div class="col-sm-10">
-                                                    <asp:TextBox class="form-control" ID="TextBox2" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                                                    <asp:TextBox class="form-control" ID="TxtCrono" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
                                                 </div>
                                             </div>
                                             <p style="font-weight: bold">
                                                 <asp:Label ID="Label68" runat="server" Text="3. Descripción de las actividades y tareas realizadas durante las 6 semanas de pasantías(por etapa o semana)"></asp:Label>
                                             </p>
                                             <br />
-                                            <asp:Label ID="Label69" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="ACTIVIDAD:"></asp:Label>
-                                        <div class="col-md-3">
-                                                <asp:TextBox ID="TextBox3" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
-                                            </div><div class="form-group">
-                                                <asp:Label ID="Label70" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DESCRIPCIÓN DE LA ACTIVIDAD:"></asp:Label><div class="col-md-3">
-                                                    <asp:TextBox ID="TextBox4" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
-                                                </div>
-                                            </div>
-                                            <div align="center">
-                                                <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="GUARDAR" />&#160;<asp:Button ID="Button2" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
-                                            </div>
-                                            <br />
-                                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="GVDestreza_RowDeleting" Width="100%">
+                                            <asp:GridView ID="GVListaActividadEncuesta" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="GVDestreza_RowDeleting" Width="100%" DataKeyNames="ID">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
                                                     <asp:TemplateField HeaderText="" Visible="false">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="TxtIDDestreza" runat="server" Text='<%#Eval("ID")%>' Visible="False"></asp:TextBox>
+                                                            <asp:TextBox ID="TxtIdActividad" runat="server" Text='<%#Eval("ID")%>' Visible="False"></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:BoundField DataField="DS_DESTREZA" HeaderText="ACTIVIDAD" />
-                                                    <asp:BoundField HeaderText="DESCRIPCION ACTIVIDAD" />
-                                                    <asp:TemplateField HeaderText="Eliminar">
-                                                        <ItemTemplate>
-                                                            <asp:Button ID="BtnEliminarDestreza" runat="server" CommandName="Delete" OnClientClick="return confirm('¿Desea eliminar este archivo?');" Text="Eliminar" />
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
+                                                    <asp:BoundField HeaderText="ACTIVIDAD" DataField="DS_ACTIVIDAD" />
+                                                    <asp:BoundField HeaderText="DESCRIPCION ACTIVIDAD" DataField="DS_DESCRIPCION_ACT" />
                                                 </Columns>
                                                 <EditRowStyle BackColor="#2461BF" />
                                                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -964,33 +943,37 @@
                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                             </asp:GridView>
-                                             <p style="font-weight: bold">
+                                             <p style="font-weight: bold"><br />
                                                 <asp:Label ID="Label71" runat="server" Text="4. Cuadro comparativo"></asp:Label>
                                             </p>
-                                            <br />
-                                            <asp:Label ID="Label72" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="APRENDIDO EN PIXELS CAPS:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TextBox5" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
+                                            <br /><div class="form-group">
+                                            <asp:Label ID="Label72" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="APRENDIDO EN PIXELS CAPS:"></asp:Label>
+                                        <div class="col-md-9">
+                                                <asp:TextBox class="form-control" ID="TxtAprendidoComparativo" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                                            </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <asp:Label ID="Label73" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DESCRIPCIÓN DE LA ACTIVIDAD:"></asp:Label><div class="col-md-3">
-                                                    <asp:TextBox ID="TextBox6" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
+                                                <asp:Label ID="Label73" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="LO PUESTO EN PRACTICA EN LA EMPRESA:"></asp:Label>
+                                               
+                                                <div class="col-md-9">
+                                                    <asp:TextBox class="form-control" ID="TxtEnPracticaComparativo" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
                                                 </div>
                                             </div>
                                             <div align="center">
-                                                <asp:Button ID="Button3" runat="server" class="btn btn-primary" Text="GUARDAR" />&#160;<asp:Button ID="Button4" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
+                                                <asp:Button ID="BtnGuardarComparativo" runat="server" class="btn btn-primary" Text="GUARDAR CUADRO COMPARATIVO" OnClick="BtnGuardarComparativo_Click" />&#160;<asp:Button ID="Button4" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
                                             </div>
                                             <br />
-                                            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="GVDestreza_RowDeleting" Width="100%">
+                                            <asp:GridView ID="GVCuadroComparativo" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="GVDestreza_RowDeleting" Width="100%" DataKeyNames="ID">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
                                                     <asp:TemplateField HeaderText="" Visible="false">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="TxtIDDestreza" runat="server" Text='<%#Eval("ID")%>' Visible="False"></asp:TextBox>
+                                                            <asp:TextBox ID="TxtIdComparativo" runat="server" Text='<%#Eval("ID")%>' Visible="False"></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:BoundField DataField="DS_DESTREZA" HeaderText="Aprendido en PIXELS CAPS" />
-                                                    <asp:BoundField HeaderText="Lo puesto en práctica en la empresa" />
+                                                    <asp:BoundField HeaderText="Aprendido en PIXELS CAPS" DataField="DS_APRENDIDO_PIXELS" />
+                                                    <asp:BoundField HeaderText="Lo puesto en práctica en la empresa" DataField="DS_PRACTICA_EMPRESA" />
                                                     <asp:TemplateField HeaderText="Eliminar">
                                                         <ItemTemplate>
                                                             <asp:Button ID="BtnEliminarDestreza" runat="server" CommandName="Delete" OnClientClick="return confirm('¿Desea eliminar este archivo?');" Text="Eliminar" />
@@ -1007,14 +990,14 @@
                                                 <SortedAscendingHeaderStyle BackColor="#6D95E1" />
                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                                            </asp:GridView>
+                                            </asp:GridView><br />
                                             <p style="font-weight: bold">
                                                 <asp:Label ID="Label74" runat="server" Text="5. Cómo fue la relación laboral pasante y empresa."></asp:Label>
                                             </p>
 
                                             <div class="form-group">
                                                 <div class="col-sm-10">
-                                                    <asp:TextBox class="form-control" ID="TextBox7" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                                                    <asp:TextBox class="form-control" ID="TxtLaboral" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
                                                 </div>
                                             </div>
                                         
@@ -1024,7 +1007,7 @@
 
                                             <div class="form-group">
                                                 <div class="col-sm-10">
-                                                    <asp:TextBox class="form-control" ID="TextBox8" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                                                    <asp:TextBox class="form-control" ID="TxtPasanBenef" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
                                                 </div>
                                             </div>
                                             <p style="font-weight: bold">
@@ -1033,7 +1016,7 @@
 
                                             <div class="form-group">
                                                 <div class="col-sm-10">
-                                                    <asp:TextBox class="form-control" ID="TextBox9" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                                                    <asp:TextBox class="form-control" ID="TxtLimitaciones" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
                                                 </div>
                                             </div>
                                             <p style="font-weight: bold">
@@ -1042,9 +1025,13 @@
 
                                             <div class="form-group">
                                                 <div class="col-sm-10">
-                                                    <asp:TextBox class="form-control" ID="TextBox10" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                                                    <asp:TextBox class="form-control" ID="TxtConclusion" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
                                                 </div>
                                             </div>
+                                        <div align="center">
+                                        <asp:Button ID="BtnGuardarInfoFinal" runat="server" class="btn btn-primary" Text="GUARDAR" ValidationGroup="Encuesta" OnClientClick="return confirm('¿Desea enviar los resultados?');" OnClick="BtnGuardarInfoFinal_Click" />
+                                            &nbsp;<asp:Button ID="Button5" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
+                                        </div><br />
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
                             </ContentTemplate>
@@ -1055,7 +1042,7 @@
             <%--fin tab ENTREGABLE--%>
         </div>
 
-        <%--fin formulario--%>
+        <%--fin tab ENTREGABLE--%>
         <asp:Panel ID="PanelFicha" runat="server" CssClass="modalPopup" Height="527px">
             <br />
             <center>
@@ -1068,7 +1055,7 @@
         <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="PanelFicha" BackgroundCssClass="modalBackround" TargetControlID="BtnFicha" CancelControlID="BtnCerrarFicha"></ajaxToolkit:ModalPopupExtender>
 
     </form>
-    <%--fin container-fluid--%>
+    <%--fin tab ENTREGABLE--%>
 </asp:Content>
 
 

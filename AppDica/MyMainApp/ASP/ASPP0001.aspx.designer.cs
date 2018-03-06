@@ -1957,6 +1957,15 @@ namespace MyMainApp {
         protected global::System.Web.UI.UpdatePanel UPInformeFinal;
         
         /// <summary>
+        /// Control TxtIdInformeComparativo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIdInformeComparativo;
+        
+        /// <summary>
         /// Control Label60.
         /// </summary>
         /// <remarks>
@@ -1975,13 +1984,13 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.Label Label61;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control TxtDescripPasantia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TxtDescripPasantia;
         
         /// <summary>
         /// Control Label62.
@@ -1993,13 +2002,13 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.Label Label62;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control TxtCrono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox TxtCrono;
         
         /// <summary>
         /// Control Label68.
@@ -2011,67 +2020,13 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.Label Label68;
         
         /// <summary>
-        /// Control Label69.
+        /// Control GVListaActividadEncuesta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label69;
-        
-        /// <summary>
-        /// Control TextBox3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
-        
-        /// <summary>
-        /// Control Label70.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label70;
-        
-        /// <summary>
-        /// Control TextBox4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
-        
-        /// <summary>
-        /// Control Button1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// Control Button2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
-        
-        /// <summary>
-        /// Control GridView1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView GVListaActividadEncuesta;
         
         /// <summary>
         /// Control Label71.
@@ -2092,13 +2047,13 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.Label Label72;
         
         /// <summary>
-        /// Control TextBox5.
+        /// Control TxtAprendidoComparativo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox TxtAprendidoComparativo;
         
         /// <summary>
         /// Control Label73.
@@ -2110,22 +2065,22 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.Label Label73;
         
         /// <summary>
-        /// Control TextBox6.
+        /// Control TxtEnPracticaComparativo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox TxtEnPracticaComparativo;
         
         /// <summary>
-        /// Control Button3.
+        /// Control BtnGuardarComparativo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button BtnGuardarComparativo;
         
         /// <summary>
         /// Control Button4.
@@ -2137,13 +2092,13 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.Button Button4;
         
         /// <summary>
-        /// Control GridView2.
+        /// Control GVCuadroComparativo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
+        protected global::System.Web.UI.WebControls.GridView GVCuadroComparativo;
         
         /// <summary>
         /// Control Label74.
@@ -2155,13 +2110,13 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.Label Label74;
         
         /// <summary>
-        /// Control TextBox7.
+        /// Control TxtLaboral.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.TextBox TxtLaboral;
         
         /// <summary>
         /// Control Label75.
@@ -2173,13 +2128,13 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.Label Label75;
         
         /// <summary>
-        /// Control TextBox8.
+        /// Control TxtPasanBenef.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox8;
+        protected global::System.Web.UI.WebControls.TextBox TxtPasanBenef;
         
         /// <summary>
         /// Control Label76.
@@ -2191,13 +2146,13 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.Label Label76;
         
         /// <summary>
-        /// Control TextBox9.
+        /// Control TxtLimitaciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.TextBox TxtLimitaciones;
         
         /// <summary>
         /// Control Label77.
@@ -2209,13 +2164,31 @@ namespace MyMainApp {
         protected global::System.Web.UI.WebControls.Label Label77;
         
         /// <summary>
-        /// Control TextBox10.
+        /// Control TxtConclusion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox10;
+        protected global::System.Web.UI.WebControls.TextBox TxtConclusion;
+        
+        /// <summary>
+        /// Control BtnGuardarInfoFinal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnGuardarInfoFinal;
+        
+        /// <summary>
+        /// Control Button5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button5;
         
         /// <summary>
         /// Control PanelFicha.

@@ -19,7 +19,7 @@ namespace MyMainApp
         private DataView dvTituloAcademico, dvPais, dvDepartamento, dvMunicipio, dvTipoDocumento, dvDestreza,
             dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvInstitucion,
             dvEscolaridad, dvHabilidad, dvDocumento, dvPantallas, dvEntregables, dvCategoriaEscolaridad, dvListaPasantia,
-            dvListaActividad, dvAceptacionPasantia;
+            dvListaActividad, dvAceptacionPasantia, dvComparativo, dvPasantiaAspirante;
         private DataSet dsEscolaridad, dsPantalla;
         DataQuery objResultado = new DataQuery();
         protected void Page_Load(object sender, EventArgs e)
@@ -103,6 +103,8 @@ namespace MyMainApp
             FillGVEntregables();
             FillGVPasantia();
             CargarReporte();
+            FillGVListaActividadEncuesta();
+            FillGVCuadroComparativo();
         }
 
         
@@ -1030,5 +1032,120 @@ namespace MyMainApp
             }
         }
 
+        protected void BtnGuardarInfoFinal_Click(object sender, EventArgs e)
+        {
+                 CPasantiaAspirante objPasantiaAspirante = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
+                 dvPasantiaAspirante = new DataView(objPasantiaAspirante.Detalle(0, _DataSistema.Cusuario,0,
+                       _DataSistema.Cusuario, DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 1).TB_PASANTIA_ASPIRANTE);
+
+                 CInformeFinalComparativo objComparativo = new CInformeFinalComparativo(_DataSistema.ConexionBaseDato);
+                 dvComparativo = new DataView(objComparativo.Detalle(0, 0,"", "", "", DateTime.Now, "", DateTime.Now, 1).TB_INFORME_FINAL_COMPARATIVO);
+
+            try
+            {
+                                   
+                    if (dvPasantiaAspirante.Count > 0)
+                    {
+                        if (dvComparativo.Count > 0)
+                        {
+                        TxtIdInformeComparativo.Text = dvComparativo.Table.Rows[0]["ID_INFORME_COMPARATIVO"].ToString();
+                        TxtIdPasantia.Text = dvPasantiaAspirante.Table.Rows[0]["ID_PASANTIA"].ToString();
+
+                        CInformeFinalPasantia objInformeFinalPasantia = new CInformeFinalPasantia(_DataSistema.ConexionBaseDato);
+                        objResultado = objInformeFinalPasantia.Actualizacion(0, _DataSistema.Cusuario, Convert.ToInt32(TxtIdPasantia.Text),
+                            TxtDescripPasantia.Text, TxtCrono.Text, TxtLaboral.Text,
+                            TxtPasanBenef.Text, TxtLimitaciones.Text, TxtConclusion.Text,_DataSistema.Cusuario, TipoActualizacion.Adicionar);
+                        }
+                    }
+                    if (objResultado.CodigoError == 0)
+                    {
+                        Consultar();
+                        DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPInformeFinal);
+                        LimpiarEncuesta();//encuesta semanal
+                    }
+                    else
+                    {
+                        DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPInformeFinal);
+                    }
+                }
+            
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPInformeFinal);
+            }
+            
+        }
+
+        protected void LimpiarEncuesta()
+        {
+            TxtIdPasantia.Text = "0";
+            TxtDescripPasantia.Text = "";
+            TxtCrono.Text = "";
+            TxtLaboral.Text = "";
+            TxtPasanBenef.Text = "";
+            TxtLimitaciones.Text = "";
+            TxtConclusion.Text = "";
+
+        }
+
+        protected void FillGVListaActividadEncuesta()
+        {//MUESTRA EL CUADRO DE ACTIVIDADES POR PASANTE EN PESTAÑA INFORME FINAL PREGUNTA 3
+            CActividadAspirante objActividadPasantia = new CActividadAspirante(_DataSistema.ConexionBaseDato);
+            DataView dvActividadPasantia = new DataView(objActividadPasantia.Detalle(0,_DataSistema.Cusuario,Convert.ToInt32(TxtIdActividad.Text)
+                ,"",'A',"","","", DateTime.Now, "", DateTime.Now,2).TB_ACTIVIDAD_ASPIRANTE);
+            GVListaActividadEncuesta.DataSource = dvActividadPasantia;
+            GVListaActividadEncuesta.DataBind();
+        }
+
+        protected void FillGVCuadroComparativo()
+        {
+
+            CPasantiaAspirante objPasantiaAspirante = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
+            dvPasantiaAspirante = new DataView(objPasantiaAspirante.Detalle(0, _DataSistema.Cusuario, 0,
+                  _DataSistema.Cusuario, DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 1).TB_PASANTIA_ASPIRANTE);
+            if (dvPasantiaAspirante.Count > 0) {
+                TxtIdPasantia.Text = dvPasantiaAspirante.Table.Rows[0]["ID_PASANTIA"].ToString();
+            }
+
+            CInformeFinalComparativo objComparativo = new CInformeFinalComparativo(_DataSistema.ConexionBaseDato);
+            if (TxtIdPasantia.Text == null || TxtIdPasantia.Text == "")
+            {
+                dvComparativo = new DataView(objComparativo.Detalle(0, 0, "", "", _DataSistema.Cusuario, DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 2).TB_INFORME_FINAL_COMPARATIVO);
+
+                GVCuadroComparativo.DataSource = dvComparativo;
+                GVCuadroComparativo.DataBind();
+            }
+            else {
+                dvComparativo = new DataView(objComparativo.Detalle(0, Convert.ToInt32(TxtIdPasantia.Text), "", "", _DataSistema.Cusuario, DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 2).TB_INFORME_FINAL_COMPARATIVO);
+
+                GVCuadroComparativo.DataSource = dvComparativo;
+                GVCuadroComparativo.DataBind();
+            }
+            
+        }
+       
+        protected void BtnGuardarComparativo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CInformeFinalComparativo objInformeComparativo = new CInformeFinalComparativo(_DataSistema.ConexionBaseDato);
+                objResultado = objInformeComparativo.Actualizacion(0, Convert.ToInt32(TxtIdPasantia.Text), TxtAprendidoComparativo.Text, TxtEnPracticaComparativo.Text,
+                    _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+
+                if (objResultado.CodigoError == 0)
+                {
+                    FillGVCuadroComparativo();
+                }
+                else 
+                {
+                    DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPInformeFinal);
+                }
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPInformeFinal);
+            }
+        }
+       
     }
 }
