@@ -341,6 +341,14 @@ namespace MyMainApp.TEC
             PanelListadoProyectoEntregable.Visible = false;
             GVlistaEntregab = null;
         }
+
+        protected void GVlistaActividadPasantia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int Id = GVlistaActividadPasantia.SelectedIndex;
+
+            TxtIdAspirante.Text = Convert.ToString(GVlistaActividadPasantia.DataKeys[Id].Values[1]); 
+
+        }
         
     }
 }

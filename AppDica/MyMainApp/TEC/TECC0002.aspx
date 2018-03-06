@@ -252,7 +252,7 @@
                                                 </div>
 
                                                 <br />
-                                            <asp:GridView ID="GVlistaActividadPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID">
+                                            <asp:GridView ID="GVlistaActividadPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID, ID_ASPIRANTE" OnSelectedIndexChanged="GVlistaActividadPasantia_SelectedIndexChanged">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
                                                 <asp:TemplateField HeaderText="" >

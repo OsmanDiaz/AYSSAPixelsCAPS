@@ -346,7 +346,7 @@ namespace MyMainApp.EMP
                 //-------------paneles visibles para actualizar pasantia--------------------
                 PanelPasantia.Visible = true;
                 PanelListadoPasantia.Visible = false;
-
+                FillGVActividades();
                 DespliegaMensajeUpdatePanel("Registro Seleccionado", UPPasantia);
             }
             catch (Exception ex)
