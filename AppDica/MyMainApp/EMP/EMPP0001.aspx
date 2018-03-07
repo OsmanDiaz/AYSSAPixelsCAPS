@@ -457,6 +457,8 @@
                                                     <asp:Button ID="BtnActividades" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="BtnActividades_Click" />
                                                     &nbsp;<asp:Button ID="BtnCancelarActivades" runat="server" Text="CANCELAR" class="btn btn-primary" />
                                                 </div>
+                                                <br />
+                                                <br />
                                                 <asp:GridView ID="GVActividades" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
                                                     <AlternatingRowStyle BackColor="White" />
                                                     <Columns>
@@ -753,6 +755,7 @@
                                         </asp:Panel>
                                         <asp:Panel ID="PanelListaEntregable" runat="server" Visible="false">
                                             <div align="left">
+                                                <asp:TextBox ID="TxtFechInicioPasantia" runat="server" Text="0" Visible="False"></asp:TextBox>
                                                 <asp:TextBox ID="TxtIdProyecto1" runat="server" Text="0" Visible="False"></asp:TextBox>
                                                 <asp:Button ID="BtnNuevoEntregable" runat="server" Text="NUEVO ENTREGABLE" class="btn btn-primary" CausesValidation="False" OnClick="BtnNuevoEntregable_Click" />
                                                 <asp:Button ID="BtnRegresarProyec" runat="server" Text="REGRESAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresarProyec_Click" />
@@ -1001,6 +1004,19 @@
                                         </asp:Panel>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
+                            </ContentTemplate>
+                        </ajaxToolkit:TabPanel>
+                        
+                        
+                        <ajaxToolkit:TabPanel runat="server" HeaderText="ASIGNACION ACTIVIDADES ASPIRANTE" ID="TabPanel4" Width="100%">
+                            <ContentTemplate>
+                                <asp:UpdatePanel ID="UPDatoActividadAspirante" runat="server">
+									<ContentTemplate>
+									
+									
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+
                             </ContentTemplate>
                         </ajaxToolkit:TabPanel>
                     </ajaxToolkit:TabContainer>

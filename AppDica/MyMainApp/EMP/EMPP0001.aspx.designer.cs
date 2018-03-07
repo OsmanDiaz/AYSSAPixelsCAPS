@@ -1984,6 +1984,15 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.Panel PanelListaEntregable;
         
         /// <summary>
+        /// Control TxtFechInicioPasantia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtFechInicioPasantia;
+        
+        /// <summary>
         /// Control TxtIdProyecto1.
         /// </summary>
         /// <remarks>
@@ -2450,6 +2459,24 @@ namespace MyMainApp.EMP {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnGuardarEncuesta;
+        
+        /// <summary>
+        /// Control TabPanel4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.TabPanel TabPanel4;
+        
+        /// <summary>
+        /// Control UPDatoActividadAspirante.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UPDatoActividadAspirante;
         
         /// <summary>
         /// Control PanelFicha.

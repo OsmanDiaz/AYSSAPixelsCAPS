@@ -182,7 +182,10 @@ namespace MyMainApp.EMP
             CPasantia objPasantia = new CPasantia(_DataSistema.ConexionBaseDato);
             dvPasantia = new DataView(objPasantia.Detalle(0, "", "", Convert.ToInt32(TxtIDEmpresa.Text), 0, "", "", DateTime.Now,
             "", "", "", 'A', 0, 0, 0, 0, 0, "", "", "", DateTime.Now, "", DateTime.Now, 3).TB_PASANTIA);
-
+            if (dvPasantia.Count > 0)
+            {
+                TxtFechInicioPasantia.Text = dvPasantia.Table.Rows[0]["FECH_INICIO_PASANTIA"].ToString();
+            }
             GVPasantia.DataSource = dvPasantia;
             GVPasantia.DataBind();
         }
@@ -669,6 +672,10 @@ namespace MyMainApp.EMP
                     if (objResultado.CodigoError == 0)
                     {
                         FillGVActividades();
+                        TxtActividad.Text = null;
+                        TxtDuracionA.Text = null;
+                        TxtFechaEntregaA.Text = null;
+                        TxtDescripActividad.Text = null;
                     }
                     else
                     {
@@ -691,11 +698,20 @@ namespace MyMainApp.EMP
         protected void FillGVActividades()
         {
             CPasantiaActividad objPasantiaActividad = new CPasantiaActividad(_DataSistema.ConexionBaseDato);
-            dvPasantiaActividad = new DataView(objPasantiaActividad.Detalle(0, Convert.ToInt32(TxtIDPasantia.Text), TxtActividad.Text,
-           TxtDescripActividad.Text, Convert.ToDateTime(TxtFechaEntregaA.Text), TxtDuracionA.Text, "", DateTime.Now, "", DateTime.Now, 2).TB_PASANTIA_ACTIVIDAD);
+            if (TxtFechaEntregaA.Text == null || TxtFechaEntregaA.Text == "")
+            {
+                dvPasantiaActividad = new DataView(objPasantiaActividad.Detalle(0, Convert.ToInt32(TxtIDPasantia.Text), TxtActividad.Text,
+                TxtDescripActividad.Text, DateTime.Now, TxtDuracionA.Text, "", DateTime.Now, "", DateTime.Now, 2).TB_PASANTIA_ACTIVIDAD);
 
-            GVActividades.DataSource = dvPasantiaActividad;
-            GVActividades.DataBind();
+                GVActividades.DataSource = dvPasantiaActividad;
+                GVActividades.DataBind();
+            }else {                
+                dvPasantiaActividad = new DataView(objPasantiaActividad.Detalle(0, Convert.ToInt32(TxtIDPasantia.Text), TxtActividad.Text,
+                TxtDescripActividad.Text, Convert.ToDateTime(TxtFechaEntregaA.Text), TxtDuracionA.Text, "", DateTime.Now, "", DateTime.Now, 2).TB_PASANTIA_ACTIVIDAD);
+
+                GVActividades.DataSource = dvPasantiaActividad;
+                GVActividades.DataBind();
+            }            
         }
 
         protected void GVPasantia_SelectedIndexChanged(object sender, EventArgs e)
