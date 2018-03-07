@@ -19,7 +19,7 @@ namespace MyMainApp
         private DataView dvTituloAcademico, dvPais, dvDepartamento, dvMunicipio, dvTipoDocumento, dvDestreza,
             dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvInstitucion,
             dvEscolaridad, dvHabilidad, dvDocumento, dvPantallas, dvEntregables, dvCategoriaEscolaridad, dvListaPasantia,
-            dvListaActividad, dvAceptacionPasantia, dvComparativo, dvPasantiaAspirante;
+            dvListaActividad, dvAceptacionPasantia, dvComparativo, dvPasantiaAspirante, dvActividadPasantia;
         private DataSet dsEscolaridad, dsPantalla;
         DataQuery objResultado = new DataQuery();
         protected void Page_Load(object sender, EventArgs e)
@@ -105,6 +105,7 @@ namespace MyMainApp
             CargarReporte();
             FillGVListaActividadEncuesta();
             FillGVCuadroComparativo();
+            FillCamposPasantia();
         }
 
         
@@ -1038,30 +1039,26 @@ namespace MyMainApp
                  dvPasantiaAspirante = new DataView(objPasantiaAspirante.Detalle(0, _DataSistema.Cusuario,0,
                        _DataSistema.Cusuario, DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 1).TB_PASANTIA_ASPIRANTE);
 
-                 CInformeFinalComparativo objComparativo = new CInformeFinalComparativo(_DataSistema.ConexionBaseDato);
-                 dvComparativo = new DataView(objComparativo.Detalle(0, 0,"", "", "", DateTime.Now, "", DateTime.Now, 1).TB_INFORME_FINAL_COMPARATIVO);
-
             try
             {
                                    
                     if (dvPasantiaAspirante.Count > 0)
                     {
-                        if (dvComparativo.Count > 0)
-                        {
-                        TxtIdInformeComparativo.Text = dvComparativo.Table.Rows[0]["ID_INFORME_COMPARATIVO"].ToString();
+                        
                         TxtIdPasantia.Text = dvPasantiaAspirante.Table.Rows[0]["ID_PASANTIA"].ToString();
 
                         CInformeFinalPasantia objInformeFinalPasantia = new CInformeFinalPasantia(_DataSistema.ConexionBaseDato);
                         objResultado = objInformeFinalPasantia.Actualizacion(0, _DataSistema.Cusuario, Convert.ToInt32(TxtIdPasantia.Text),
                             TxtDescripPasantia.Text, TxtCrono.Text, TxtLaboral.Text,
                             TxtPasanBenef.Text, TxtLimitaciones.Text, TxtConclusion.Text,_DataSistema.Cusuario, TipoActualizacion.Adicionar);
-                        }
+                        
                     }
                     if (objResultado.CodigoError == 0)
                     {
                         Consultar();
                         DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPInformeFinal);
                         LimpiarEncuesta();//encuesta semanal
+                        
                     }
                     else
                     {
@@ -1085,16 +1082,20 @@ namespace MyMainApp
             TxtPasanBenef.Text = "";
             TxtLimitaciones.Text = "";
             TxtConclusion.Text = "";
-
+            TxtIdActividad.Text = "0";
+            FillGVCuadroComparativo();
+            FillGVListaActividadEncuesta();
         }
 
         protected void FillGVListaActividadEncuesta()
         {//MUESTRA EL CUADRO DE ACTIVIDADES POR PASANTE EN PESTAÑA INFORME FINAL PREGUNTA 3
             CActividadAspirante objActividadPasantia = new CActividadAspirante(_DataSistema.ConexionBaseDato);
-            DataView dvActividadPasantia = new DataView(objActividadPasantia.Detalle(0,_DataSistema.Cusuario,Convert.ToInt32(TxtIdActividad.Text)
-                ,"",'A',"","","", DateTime.Now, "", DateTime.Now,2).TB_ACTIVIDAD_ASPIRANTE);
-            GVListaActividadEncuesta.DataSource = dvActividadPasantia;
-            GVListaActividadEncuesta.DataBind();
+            
+                dvActividadPasantia = new DataView(objActividadPasantia.Detalle(0, _DataSistema.Cusuario, Convert.ToInt32(TxtIdActividad.Text)
+                    , "", 'A', "", "", "", DateTime.Now, "", DateTime.Now, 2).TB_ACTIVIDAD_ASPIRANTE);
+                GVListaActividadEncuesta.DataSource = dvActividadPasantia;
+                GVListaActividadEncuesta.DataBind();
+            
         }
 
         protected void FillGVCuadroComparativo()
@@ -1134,11 +1135,14 @@ namespace MyMainApp
 
                 if (objResultado.CodigoError == 0)
                 {
+                    DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPInformeFinal);
                     FillGVCuadroComparativo();
+                    LimpiarCuadroComparativo();
                 }
                 else 
                 {
                     DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPInformeFinal);
+                    
                 }
             }
             catch (Exception ex)
@@ -1146,6 +1150,32 @@ namespace MyMainApp
                 DespliegaMensajeUpdatePanel(ex.Message, UPInformeFinal);
             }
         }
-       
+
+        public void LimpiarCuadroComparativo()
+        {
+            TxtAprendidoComparativo.Text = "";
+            TxtEnPracticaComparativo.Text = "";
+        }
+        
+       //datos de pasantia, empresa y pasante pestaña informe final
+        private void FillCamposPasantia()
+        {
+
+           CPasantiaAspirante objPasantiaA = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
+           DataView dvPasantiaA = new DataView(objPasantiaA.Detalle(0,_DataSistema.Cusuario, 0, _DataSistema.Cusuario
+                ,DateTime.Today,"",DateTime.Today,3).TB_PASANTIA_ASPIRANTE);
+            if (dvPasantiaA.Count > 0)
+            {
+                TxtNombreEmpresa.Text = dvPasantiaA.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString();
+                TxtResponsable.Text = dvPasantiaA.Table.Rows[0]["DS_NOMBRE_CONTACTO"].ToString();
+                TxtDireccionR.Text = dvPasantiaA.Table.Rows[0]["DS_DIRECCION_EMPRESA"].ToString();
+                TxtTelResponsable.Text = dvPasantiaA.Table.Rows[0]["DS_TELEFONO_CONTACTO"].ToString();
+                TxtCorreoR.Text = dvPasantiaA.Table.Rows[0]["DS_EMAIL_CONTACTO"].ToString();
+                TxtNombrePasante.Text = dvPasantiaA.Table.Rows[0]["NOMBRE_COMPLETO"].ToString();
+                TxtDireccionPasante.Text = dvPasantiaA.Table.Rows[0]["DS_DIRECCION"].ToString();
+                TxtTelefonoPasante.Text = dvPasantiaA.Table.Rows[0]["TELEFONO_CONTACTO"].ToString();
+                TxtCorreoPasante.Text = dvPasantiaA.Table.Rows[0]["DS_EMAIL"].ToString();
+            }
+        }
     }
 }

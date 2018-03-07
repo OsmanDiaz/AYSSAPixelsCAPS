@@ -16,7 +16,7 @@
     <Shape ID="DesignTable:TB_ACEPTACION_PASANTIA" ZOrder="4" X="347" Y="441" Height="124" Width="230" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="120" />
     <Shape ID="DesignTable:TB_ENCUESTA_SEMANAL_ASPIRANTE" ZOrder="3" X="862" Y="13" Height="181" Width="285" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="177" />
     <Shape ID="DesignTable:TB_INFORME_FINAL_ASPIRANTE" ZOrder="2" X="923" Y="244" Height="200" Width="255" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
-    <Shape ID="DesignTable:TB_INFORME_FINAL_COMPARATIVO" ZOrder="1" X="965" Y="481" Height="86" Width="278" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
+    <Shape ID="DesignTable:TB_INFORME_FINAL_COMPARATIVO" ZOrder="1" X="965" Y="481" Height="105" Width="278" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
   </Shapes>
   <Connectors />
 </DiagramLayout>
