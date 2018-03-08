@@ -894,8 +894,62 @@
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPInformeFinal" runat="server">
                                     <ContentTemplate>
-                                        <asp:TextBox ID="TxtIdInformeComparativo" runat="server" Visible="false"></asp:TextBox>
-                                            <p style="font-weight: bold">
+                                       
+                                        <p style="font-weight: bold; text-align:center">
+                                            Infome final de la pasantía no remunerada del programa PIXELS CAPS VIDEOJUEGOS</p>
+                                        <p style="text-align:center">La siguiente guía de preguntas debe de ser respondida por los pasantes de manera individual.</p>
+                                         <asp:TextBox ID="TxtIdInformeComparativo" runat="server" Visible="false"></asp:TextBox>
+                                        
+                                    <br />
+                                    <div class="form-group">
+                                                <asp:Label ID="Label69" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE DE LA EMPRESA:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtNombreEmpresa" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                                <asp:Label ID="Label70" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="RESPONSABLE:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtResponsable" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                    <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-3" ID="Label78" runat="server" Font-Bold="True" Text="DIRECCIÓN:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox class="form-control" ID="TxtDireccionR" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                    <div class="form-group">
+                                                <asp:Label ID="Label79" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="TELÉFONO:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtTelResponsable" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                                <asp:Label ID="Label80" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="CORREO ELECTRÓNICO:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtCorreoR" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                            </div><br />
+                                    <div class="form-group">
+                                                <asp:Label ID="Label81" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE DE EL/LA PASANTE:"></asp:Label>
+                                                <div class="col-md-4">
+                                                    <asp:TextBox ID="TxtNombrePasante" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                   </div>
+                                    <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-3" ID="Label82" runat="server" Font-Bold="True" Text="DIRECCIÓN:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox class="form-control" ID="TxtDireccionPasante" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                    <div class="form-group">
+                                                <asp:Label ID="Label83" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="TELÉFONOS DE CONTACTO:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtTelefonoPasante" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                                <asp:Label ID="Label84" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="CORREO ELECTRÓNICO:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtCorreoPasante" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                            </div> <br /> 
+                                        <p style="font-weight: bold">
                                                 <asp:Label ID="Label60" runat="server" Text="1. Descripción del proyecto en el que realizó la pasantia."></asp:Label>
                                             </p>
                                             <br />

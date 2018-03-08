@@ -4205,6 +4205,8 @@ namespace ClsDataSets {
             
             private global::System.Data.DataColumn columnDS_PRACTICA_EMPRESA;
             
+            private global::System.Data.DataColumn columnID_PASANTIA;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TB_INFORME_FINAL_COMPARATIVODataTable() {
@@ -4264,6 +4266,14 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_PASANTIAColumn {
+                get {
+                    return this.columnID_PASANTIA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4299,12 +4309,13 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TB_INFORME_FINAL_COMPARATIVORow AddTB_INFORME_FINAL_COMPARATIVORow(string ID, string DS_APRENDIDO_PIXELS, string DS_PRACTICA_EMPRESA) {
+            public TB_INFORME_FINAL_COMPARATIVORow AddTB_INFORME_FINAL_COMPARATIVORow(string ID, string DS_APRENDIDO_PIXELS, string DS_PRACTICA_EMPRESA, string ID_PASANTIA) {
                 TB_INFORME_FINAL_COMPARATIVORow rowTB_INFORME_FINAL_COMPARATIVORow = ((TB_INFORME_FINAL_COMPARATIVORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         DS_APRENDIDO_PIXELS,
-                        DS_PRACTICA_EMPRESA};
+                        DS_PRACTICA_EMPRESA,
+                        ID_PASANTIA};
                 rowTB_INFORME_FINAL_COMPARATIVORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTB_INFORME_FINAL_COMPARATIVORow);
                 return rowTB_INFORME_FINAL_COMPARATIVORow;
@@ -4330,6 +4341,7 @@ namespace ClsDataSets {
                 this.columnID = base.Columns["ID"];
                 this.columnDS_APRENDIDO_PIXELS = base.Columns["DS_APRENDIDO_PIXELS"];
                 this.columnDS_PRACTICA_EMPRESA = base.Columns["DS_PRACTICA_EMPRESA"];
+                this.columnID_PASANTIA = base.Columns["ID_PASANTIA"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4341,6 +4353,8 @@ namespace ClsDataSets {
                 base.Columns.Add(this.columnDS_APRENDIDO_PIXELS);
                 this.columnDS_PRACTICA_EMPRESA = new global::System.Data.DataColumn("DS_PRACTICA_EMPRESA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDS_PRACTICA_EMPRESA);
+                this.columnID_PASANTIA = new global::System.Data.DataColumn("ID_PASANTIA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_PASANTIA);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("TB_INFORME_FINAL_COMPARATIVOKey1", new global::System.Data.DataColumn[] {
                                 this.columnID}, false));
                 this.columnID.Unique = true;
@@ -7114,6 +7128,23 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ID_PASANTIA {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_INFORME_FINAL_COMPARATIVO.ID_PASANTIAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ID_PASANTIA\' de la tabla \'TB_INFORME_FINAL_COMPARATIVO\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_INFORME_FINAL_COMPARATIVO.ID_PASANTIAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsIDNull() {
                 return this.IsNull(this.tableTB_INFORME_FINAL_COMPARATIVO.IDColumn);
             }
@@ -7146,6 +7177,18 @@ namespace ClsDataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDS_PRACTICA_EMPRESANull() {
                 this[this.tableTB_INFORME_FINAL_COMPARATIVO.DS_PRACTICA_EMPRESAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_PASANTIANull() {
+                return this.IsNull(this.tableTB_INFORME_FINAL_COMPARATIVO.ID_PASANTIAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_PASANTIANull() {
+                this[this.tableTB_INFORME_FINAL_COMPARATIVO.ID_PASANTIAColumn] = global::System.Convert.DBNull;
             }
         }
         
