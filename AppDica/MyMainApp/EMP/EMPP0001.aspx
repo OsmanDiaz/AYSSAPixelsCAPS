@@ -1082,10 +1082,44 @@
                                                 <SortedAscendingHeaderStyle BackColor="#6D95E1" />
                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                                            </asp:GridView>
-									
+                                            </asp:GridView>					
 
 
+                                    </asp:Panel>
+                                    <asp:Panel ID="PanelListaAspirante" runat="server" Visible="false">
+
+                                       <div align="left">
+                                                <asp:Button ID="BtnAtrasListaAspirante" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" OnClick="BtnAtrasListaAspirante_Click" />
+                                            </div>
+                                       <br />
+                                        	<asp:GridView ID="GVListaAspirante" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVListaAspirante_SelectedIndexChanged" DataKeyNames="ID">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:TemplateField HeaderText="" Visible="false">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="TxtIDAspirante" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:BoundField HeaderText="NOMBRE PASANTE" DataField="DS_NOMBRE_ASPIRANTE" />
+                                                    <asp:BoundField HeaderText="ESTADO" DataField="DS_ESTADO" />
+                                                    <asp:TemplateField HeaderText="VER ASPIRANTES">
+                                                        <ItemTemplate>
+                                                            <asp:Button ID="BtnAsignar" runat="server" CommandName="Select"
+                                                                Text="ASIGNAR ACTIVIDAD" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>	
                                     </asp:Panel>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>

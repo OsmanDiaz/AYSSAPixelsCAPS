@@ -2533,6 +2533,33 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.GridView GVPasantiaActividad;
         
         /// <summary>
+        /// Control PanelListaAspirante.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelListaAspirante;
+        
+        /// <summary>
+        /// Control BtnAtrasListaAspirante.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnAtrasListaAspirante;
+        
+        /// <summary>
+        /// Control GVListaAspirante.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVListaAspirante;
+        
+        /// <summary>
         /// Control PanelFicha.
         /// </summary>
         /// <remarks>

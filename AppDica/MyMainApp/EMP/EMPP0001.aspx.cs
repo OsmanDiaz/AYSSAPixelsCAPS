@@ -1074,16 +1074,38 @@ namespace MyMainApp.EMP
         {
             PanelActividadAspiranteEmpresa.Visible = true;
             PanelPasantiaAct.Visible = false;
+            PanelListaAspirante.Visible = false;
         }
 
         protected void GVPasantiaActividad_SelectedIndexChanged(object sender, EventArgs e)
         {
             int Id = GVPasantiaActividad.SelectedIndex;
             TxtIDActividad.Text = GVPasantiaActividad.DataKeys[Id].Value.ToString();
-
-            
+            FillGVListaAspirante();
+            PanelPasantiaAct.Visible = false;
+            PanelListaAspirante.Visible = true;
         }
 
+        protected void FillGVListaAspirante()
+        {
+            CPasantiaActividad objPasantiaActividad = new CPasantiaActividad(_DataSistema.ConexionBaseDato);
+            dvPasantiaActividad = new DataView(objPasantiaActividad.Detalle(Convert.ToInt16(TxtIDActividad.Text),
+            Convert.ToInt32(TxtIDPasantia.Text), "", "", DateTime.Now, "", "", DateTime.Now, "", DateTime.Now, 4).TB_PASANTIA_ACTIVIDAD);
+            GVListaAspirante.DataSource = dvPasantiaActividad;
+            GVListaAspirante.DataBind();
+        }
+
+        protected void BtnAtrasListaAspirante_Click(object sender, EventArgs e)
+        {
+            PanelActividadAspiranteEmpresa.Visible = false;
+            PanelPasantiaAct.Visible = true;
+            PanelListaAspirante.Visible = false;
+        }
+
+        protected void GVListaAspirante_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
 
         }
        
