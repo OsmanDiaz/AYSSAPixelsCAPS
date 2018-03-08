@@ -535,6 +535,15 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.Label Label81;
         
         /// <summary>
+        /// Control TxtIDActividad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIDActividad;
+        
+        /// <summary>
         /// Control TxtIDPasantia.
         /// </summary>
         /// <remarks>
@@ -2477,6 +2486,51 @@ namespace MyMainApp.EMP {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UPDatoActividadAspirante;
+        
+        /// <summary>
+        /// Control PanelActividadAspiranteEmpresa.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelActividadAspiranteEmpresa;
+        
+        /// <summary>
+        /// Control GVPasantiaAsignacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVPasantiaAsignacion;
+        
+        /// <summary>
+        /// Control PanelPasantiaAct.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelPasantiaAct;
+        
+        /// <summary>
+        /// Control BtnAtrasActividadPasantia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnAtrasActividadPasantia;
+        
+        /// <summary>
+        /// Control GVPasantiaActividad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVPasantiaActividad;
         
         /// <summary>
         /// Control PanelFicha.

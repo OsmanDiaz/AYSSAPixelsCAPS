@@ -188,6 +188,9 @@ namespace MyMainApp.EMP
             }
             GVPasantia.DataSource = dvPasantia;
             GVPasantia.DataBind();
+
+            GVPasantiaAsignacion.DataSource = dvPasantia;
+            GVPasantiaAsignacion.DataBind();
         }
 
         protected void BtnGuardarPasantia_Click(object sender, EventArgs e)
@@ -1048,6 +1051,40 @@ namespace MyMainApp.EMP
             TxtPregunta8.Text = "";
             TxtPregunta9.Text = "";
         }
+
+        protected void GVPasantiaAsignacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int Id = GVPasantiaAsignacion.SelectedIndex;
+            TxtIDPasantia.Text = GVPasantiaAsignacion.DataKeys[Id].Value.ToString();
+            FillPasantiaActividad();
+            PanelActividadAspiranteEmpresa.Visible = false;
+            PanelPasantiaAct.Visible = true;
+        }
+
+        protected void FillPasantiaActividad()
+        {
+            CPasantiaActividad objPasantiaActividad = new CPasantiaActividad(_DataSistema.ConexionBaseDato);
+            dvPasantiaActividad = new DataView(objPasantiaActividad.Detalle(0,Convert.ToInt32(TxtIDPasantia.Text),"","",DateTime.Now,"",_DataSistema.Cusuario,DateTime.Now,_DataSistema.Cusuario,DateTime.Now,2).TB_PASANTIA_ACTIVIDAD);
+           
+            GVPasantiaActividad.DataSource = dvPasantiaActividad;
+            GVPasantiaActividad.DataBind();
+        }
+
+        protected void BtnRegresarActividadPasantia_Click(object sender, EventArgs e)
+        {
+            PanelActividadAspiranteEmpresa.Visible = true;
+            PanelPasantiaAct.Visible = false;
+        }
+
+        protected void GVPasantiaActividad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int Id = GVPasantiaActividad.SelectedIndex;
+            TxtIDActividad.Text = GVPasantiaActividad.DataKeys[Id].Value.ToString();
+
+            
+        }
+
+
         }
        
     }
