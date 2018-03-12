@@ -51,6 +51,43 @@ namespace ClsDataApp
 
             return objDataSet;
         }
+
+        public ClsDataSets.DS_TB_EMP Detalle2(int Id, string IdAspirante, int IdPasantia,
+            string UsuaCrea, DateTime FechCrea, string UsuaActu, DateTime FechActu, int OpcionConsulta)
+        {
+            ClsDataSets.DS_TB_EMP objDataSet = new ClsDataSets.DS_TB_EMP();
+
+            try
+            {
+                ObjConnection = new SqlConnection(_ConexionData);
+                ObjAdapter = new SqlDataAdapter("SP_TB_PASANTIA_ASPIRANTE_GetByAll", ObjConnection);
+                ObjParam = new SqlParameter();
+                ObjAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID", Id);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_ASPIRANTE", IdAspirante);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_PASANTIA", IdPasantia);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_CREA", UsuaCrea);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_CREA", FechCrea);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_ACTU", UsuaActu);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_ACTU", FechActu);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@OPCI_CONS", OpcionConsulta);
+
+                ObjAdapter.Fill(objDataSet, "TB_PASANTIA_PASANTE");
+
+                ObjConnection.Close();
+                if (ObjConnection.State != ConnectionState.Closed)
+                {
+                    ObjConnection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return objDataSet;
+        }
         public DataQuery Actualizacion(int Id, string IdAspirante, int IdPasantia, string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
             DataQuery objResultado = new DataQuery();

@@ -106,6 +106,7 @@ namespace MyMainApp
             FillGVListaActividadEncuesta();
             FillGVCuadroComparativo();
             FillCamposPasantia();
+            CargarInformeFinal();
         }
 
         
@@ -1058,6 +1059,9 @@ namespace MyMainApp
                         Consultar();
                         DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPInformeFinal);
                         LimpiarEncuesta();//encuesta semanal
+
+                        PanelInformeFinal.Visible = false;
+                        PanelReporteInfoFinal.Visible = true;
                         
                     }
                     else
@@ -1176,6 +1180,79 @@ namespace MyMainApp
                 TxtTelefonoPasante.Text = dvPasantiaA.Table.Rows[0]["TELEFONO_CONTACTO"].ToString();
                 TxtCorreoPasante.Text = dvPasantiaA.Table.Rows[0]["DS_EMAIL"].ToString();
             }
+        }
+
+        protected void GVCuadroComparativo_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {//eliminar datos de cuadro comparativo
+            try
+            {
+            TextBox Id = GVCuadroComparativo.Rows[e.RowIndex].FindControl("TxtIdComparativo") as TextBox;
+            CInformeFinalComparativo objComparativo = new CInformeFinalComparativo(_DataSistema.ConexionBaseDato);
+            objResultado = objComparativo.Actualizacion(Convert.ToInt32(Id.Text), 0, "","",
+                _DataSistema.Cusuario, TipoActualizacion.Eliminar);
+            if (objResultado.CodigoError == 0)
+                {
+                    FillGVCuadroComparativo();
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPInformeFinal);
+                }
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPInformeFinal);
+            }
+        }
+
+        protected void CargarInformeFinal()
+        {
+            DataTable ifp;
+            //cargar las respuestas del informe final pasantia
+            CInformeFinalPasantia objInformeFinalPasantia = new CInformeFinalPasantia(_DataSistema.ConexionBaseDato);
+            DataView dvInformeFinal = new DataView(objInformeFinalPasantia.Detalle(0,_DataSistema.Cusuario,0,"","","","",
+                "","",_DataSistema.Cusuario,DateTime.Today,_DataSistema.Cusuario,DateTime.Today,2).TB_INFORME_FINAL_ASPIRANTE);
+
+            ifp = dvInformeFinal.ToTable();
+            RVInformeFinal.Visible = true;
+            RVInformeFinal.LocalReport.ReportPath = "ASP/RptInformeFinal.rdlc";
+            RVInformeFinal.LocalReport.DataSources.Clear();
+            RVInformeFinal.LocalReport.DataSources.Add(new ReportDataSource("TB_INFORME_FINAL_ASPIRANTE",ifp));
+
+            DataTable ifp2;
+            //cargar los datos de la empresa y pasante para el informe final pasantia
+            CPasantiaAspirante objPasantiaAspirante = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
+            dvPasantiaAspirante = new DataView(objPasantiaAspirante.Detalle(0, _DataSistema.Cusuario, 0,
+                  _DataSistema.Cusuario, DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 1).TB_PASANTIA_ASPIRANTE);
+
+            if (dvPasantiaAspirante.Count > 0)
+            {
+
+                TxtIdPasantia.Text = dvPasantiaAspirante.Table.Rows[0]["ID_PASANTIA"].ToString();
+                CPasantiaAspirante objPasantiaA = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
+                DataView dvPasantiaA = new DataView(objPasantiaA.Detalle2(0, _DataSistema.Cusuario, Convert.ToInt32(TxtIdPasantia.Text), ""
+                     , DateTime.Today, "", DateTime.Today, 3).TB_PASANTIA_PASANTE);
+                ifp2 = dvPasantiaA.ToTable();
+                RVInformeFinal.LocalReport.DataSources.Add(new ReportDataSource("TB_PASANTIA_PASANTE", ifp2));
+
+            }
+
+            DataTable ifp3;
+            CActividadAspirante objActividadPasantia = new CActividadAspirante(_DataSistema.ConexionBaseDato);
+            //CARGAR CUADRO DE ACTIVIDADES DEL PASANTE
+            dvActividadPasantia = new DataView(objActividadPasantia.Detalle(0, _DataSistema.Cusuario, Convert.ToInt32(TxtIdActividad.Text)
+                , "", 'A', "", "", "", DateTime.Now, "", DateTime.Now, 2).TB_ACTIVIDAD_ASPIRANTE);
+            
+            ifp3 = dvActividadPasantia.ToTable();
+            RVInformeFinal.LocalReport.DataSources.Add(new ReportDataSource("TB_ACTIVIDAD_ASPIRANTE", ifp3));
+
+
+            DataTable ifp4;//cargar cuadro comparativo 
+             CInformeFinalComparativo objComparativo = new CInformeFinalComparativo(_DataSistema.ConexionBaseDato);
+             dvComparativo = new DataView(objComparativo.Detalle(0, Convert.ToInt32(TxtIdPasantia.Text),TxtAprendidoComparativo.Text, TxtEnPracticaComparativo.Text
+             , _DataSistema.Cusuario, DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 2).TB_INFORME_FINAL_COMPARATIVO);
+             ifp4 = dvComparativo.ToTable();
+             RVInformeFinal.LocalReport.DataSources.Add(new ReportDataSource("TB_INFORME_FINAL_COMPARATIVO", ifp4));
         }
     }
 }

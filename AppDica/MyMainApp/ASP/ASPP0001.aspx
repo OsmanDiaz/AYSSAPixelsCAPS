@@ -894,7 +894,7 @@
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPInformeFinal" runat="server">
                                     <ContentTemplate>
-                                       
+                                        <asp:Panel ID="PanelInformeFinal" runat="server" Visible="true">
                                         <p style="font-weight: bold; text-align:center">
                                             Infome final de la pasantía no remunerada del programa PIXELS CAPS VIDEOJUEGOS</p>
                                         <p style="text-align:center">La siguiente guía de preguntas debe de ser respondida por los pasantes de manera individual.</p>
@@ -1018,7 +1018,7 @@
                                                 <asp:Button ID="BtnGuardarComparativo" runat="server" class="btn btn-primary" Text="GUARDAR CUADRO COMPARATIVO" OnClick="BtnGuardarComparativo_Click" />&#160;<asp:Button ID="Button4" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
                                             </div>
                                             <br />
-                                            <asp:GridView ID="GVCuadroComparativo" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="GVDestreza_RowDeleting" Width="100%" DataKeyNames="ID">
+                                            <asp:GridView ID="GVCuadroComparativo" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="GVCuadroComparativo_RowDeleting" Width="100%" DataKeyNames="ID">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
                                                     <asp:TemplateField HeaderText="" Visible="false">
@@ -1085,7 +1085,25 @@
                                         <div align="center">
                                         <asp:Button ID="BtnGuardarInfoFinal" runat="server" class="btn btn-primary" Text="GUARDAR" ValidationGroup="Encuesta" OnClientClick="return confirm('¿Desea enviar los resultados?');" OnClick="BtnGuardarInfoFinal_Click" />
                                             &nbsp;<asp:Button ID="Button5" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
-                                        </div><br />
+                                        </div> <br />
+                                            </asp:Panel>
+                                        <asp:Panel ID="PanelReporteInfoFinal" runat="server" Visible="false">
+                                            <div align="center"><br /><br /><br />
+                                             <asp:Button ID="BtnReporteInfoFinal" runat="server" Text="VER REPORTE DE INFORME FINAL" />
+                                         </div><br />
+                                            <asp:Panel ID="PanelReporteP" runat="server" CssClass="modalPopup" Height="527px">
+            <br />
+            <center>
+        <rsweb:ReportViewer ID="RVInformeFinal" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="75%" style="margin-right: 0px"><LocalReport ReportPath="ASP\RptInformeFinal.rdlc"></LocalReport></rsweb:ReportViewer></center>
+            <div align="center">
+                <br />
+                <asp:Button ID="BtnCerrarInforme" runat="server" Text="Cerrar" />
+            </div>
+        </asp:Panel>
+        <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="PanelReporteP" BackgroundCssClass="modalBackround" TargetControlID="BtnReporteInfoFinal" CancelControlID="BtnCerrarInforme"></ajaxToolkit:ModalPopupExtender>
+
+                                        </asp:Panel>
+                                       <br />
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
                             </ContentTemplate>
