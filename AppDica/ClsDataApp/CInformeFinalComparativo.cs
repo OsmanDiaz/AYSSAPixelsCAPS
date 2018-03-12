@@ -69,7 +69,7 @@ namespace ClsDataApp
                         StrCommand = " ";
                         break;
                     case TipoActualizacion.Eliminar:
-                        StrCommand = "";
+                        StrCommand = "SP_TB_INFORME_FINAL_COMPARATIVO_DELETE";
                         break;
                     case TipoActualizacion.No_Definida:
                         objResultado.CodigoError = -1;

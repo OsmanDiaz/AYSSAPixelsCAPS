@@ -1957,6 +1957,15 @@ namespace MyMainApp {
         protected global::System.Web.UI.UpdatePanel UPInformeFinal;
         
         /// <summary>
+        /// Control PanelInformeFinal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelInformeFinal;
+        
+        /// <summary>
         /// Control TxtIdInformeComparativo.
         /// </summary>
         /// <remarks>
@@ -2351,6 +2360,60 @@ namespace MyMainApp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button5;
+        
+        /// <summary>
+        /// Control PanelReporteInfoFinal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelReporteInfoFinal;
+        
+        /// <summary>
+        /// Control BtnReporteInfoFinal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnReporteInfoFinal;
+        
+        /// <summary>
+        /// Control PanelReporteP.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelReporteP;
+        
+        /// <summary>
+        /// Control RVInformeFinal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Microsoft.Reporting.WebForms.ReportViewer RVInformeFinal;
+        
+        /// <summary>
+        /// Control BtnCerrarInforme.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnCerrarInforme;
+        
+        /// <summary>
+        /// Control ModalPopupExtender2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender ModalPopupExtender2;
         
         /// <summary>
         /// Control PanelFicha.
