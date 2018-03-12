@@ -1102,11 +1102,10 @@
                                                     </asp:TemplateField>
                                                     <asp:BoundField HeaderText="NOMBRE PASANTE" DataField="DS_NOMBRE_ASPIRANTE" />
                                                     <asp:BoundField HeaderText="ESTADO" DataField="DS_ESTADO" />
-                                                    <asp:TemplateField HeaderText="VER ASPIRANTES">
-                                                        <ItemTemplate>
-                                                            <asp:Button ID="BtnAsignar" runat="server" CommandName="Select"
-                                                                Text="ASIGNAR ACTIVIDAD" />
-                                                        </ItemTemplate>
+                                                    <asp:TemplateField HeaderText="VER ASPIRANTES">               
+                                                        <ItemTemplate> <asp:Button ID="BtnAsignar" runat="server" CommandName="Select"
+                                                                Text='<%# Eval("DS_ESTADO_BOTON") %>' />        
+                                                           </ItemTemplate>
                                                     </asp:TemplateField>
                                                 </Columns>
                                                 <EditRowStyle BackColor="#2461BF" />
