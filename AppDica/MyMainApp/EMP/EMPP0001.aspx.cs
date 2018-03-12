@@ -16,7 +16,7 @@ namespace MyMainApp.EMP
     {
         private DataView dvActividadEconomica, dvEmpresa, dvDepartamento, dvMunicipio, dvHabilidad, dvDestreza, dvPasantia,
             dvAreaPasantia, dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvEscolaridadPasantia,
-            dvConsultoria, dvEntregable, dvCategoriaEscolaridad, dvPasantiaActividad, dvPasantiaAspirante, dvActividadAspirante;
+            dvConsultoria, dvEntregable, dvCategoriaEscolaridad, dvPasantiaActividad, dvPasantiaAspirante, dvActividadAspirante, objExiste;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -1089,7 +1089,7 @@ namespace MyMainApp.EMP
         protected void FillGVListaAspirante()
         {
             CPasantiaActividad objPasantiaActividad = new CPasantiaActividad(_DataSistema.ConexionBaseDato);
-            dvPasantiaActividad = new DataView(objPasantiaActividad.Detalle(Convert.ToInt16(TxtIDActividad.Text),
+            dvPasantiaActividad = new DataView(objPasantiaActividad.Detalle(Convert.ToInt32(TxtIDActividad.Text),
             Convert.ToInt32(TxtIDPasantia.Text), "", "", DateTime.Now, "", "", DateTime.Now, "", DateTime.Now, 4).TB_PASANTIA_ACTIVIDAD);
             GVListaAspirante.DataSource = dvPasantiaActividad;
             GVListaAspirante.DataBind();
@@ -1104,6 +1104,39 @@ namespace MyMainApp.EMP
 
         protected void GVListaAspirante_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int Id = GVListaAspirante.SelectedIndex;
+            TxtIdAspirante.Text = Convert.ToString(GVListaAspirante.DataKeys[Id].Values[0]);
+            AddActividadAspirante();
+        }
+
+        protected void AddActividadAspirante()
+        {
+            CActividadAspirante objActividadAspirante = new CActividadAspirante(_DataSistema.ConexionBaseDato);
+             objExiste = new DataView(objActividadAspirante.Detalle(0, TxtIdAspirante.Text, Convert.ToInt32(TxtIDActividad.Text), "", 'x', "", "", _DataSistema.Cusuario, DateTime.Now, _DataSistema.Cusuario, DateTime.Now, 8).TB_ACTIVIDAD_ASPIRANTE);
+            try
+            {
+
+                if (objExiste.Count > 0)
+                {
+                    DespliegaMensaje("Usuario ya se encuentra asignado a esta actividad");
+                }
+                else
+                {
+                    objResultado = objActividadAspirante.Actualizacion(0, TxtIdAspirante.Text, Convert.ToInt32(TxtIDActividad.Text), "", 'x', "", "", DateTime.Now, _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+                    if (objResultado.CodigoError == 0)
+                    {
+                        FillGVListaAspirante();
+                    }
+                    else
+                    {
+                        DespliegaMensaje(objResultado.MensajeError.Replace("'", ""));
+                        //UPDatoActividadAspirante
+                    }
+                }
+            }
+            catch (Exception e) {
+                DespliegaMensaje(e.Message);
+            }
 
         }
 
