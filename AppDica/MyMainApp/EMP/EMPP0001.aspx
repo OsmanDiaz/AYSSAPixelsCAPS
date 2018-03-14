@@ -30,7 +30,7 @@
             <div class="container-fluid">
                 <div id="content">
                     <%--inicio container-fluid--%>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="4" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server">
@@ -536,6 +536,12 @@
                                                         <ItemTemplate>
                                                             <asp:Button ID="BtnActualizarPasantia" runat="server" CommandName="Update"
                                                                 Text="Editar" OnClientClick="return confirm('¿Desea editar este registro?');" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="ACEPTACION DE ASPIRANTES">
+                                                        <ItemTemplate>
+                                                            <asp:Button ID="BtnAceptarAspirante" runat="server" CommandName="Edit"
+                                                                Text=" Ver Listado Aspirantes" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="VER ASPIRANTES">

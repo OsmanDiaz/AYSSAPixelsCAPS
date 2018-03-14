@@ -362,6 +362,7 @@ namespace MyMainApp.EMP
         }
 
 
+
         protected void FillCboDestreza()
         {
             CDestreza objDestreza = new CDestreza(_DataSistema.ConexionBaseDato);
@@ -736,6 +737,8 @@ namespace MyMainApp.EMP
                 DespliegaMensajeUpdatePanel(ex.Message, UPPasantia);
             }
         }
+
+
 
         protected void FillGVAspirantes()
         {
@@ -1122,23 +1125,24 @@ namespace MyMainApp.EMP
                 }
                 else
                 {
-                    objResultado = objActividadAspirante.Actualizacion(0, TxtIdAspirante.Text, Convert.ToInt32(TxtIDActividad.Text), "", 'x', "", "", DateTime.Now, _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+                    objResultado = objActividadAspirante.Actualizacion(0, TxtIdAspirante.Text, Convert.ToInt32(TxtIDActividad.Text), "", 'A', "", "",DateTime.Today,_DataSistema.Cusuario, TipoActualizacion.Adicionar);
                     if (objResultado.CodigoError == 0)
                     {
                         FillGVListaAspirante();
                     }
                     else
                     {
-                        DespliegaMensaje(objResultado.MensajeError.Replace("'", ""));
+                        DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPDatoActividadAspirante);
                         //UPDatoActividadAspirante
                     }
                 }
             }
             catch (Exception e) {
-                DespliegaMensaje(e.Message);
+                DespliegaMensajeUpdatePanel(e.Message, UPDatoActividadAspirante);
             }
 
         }
+
 
         }
        

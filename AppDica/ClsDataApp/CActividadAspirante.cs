@@ -145,10 +145,9 @@ namespace ClsDataApp
                 ObjCommand.Parameters.AddWithValue("@ID_ASPIRANTE", IdAspirante);
                 ObjCommand.Parameters.AddWithValue("@ID_PASANTIA_ACTIVIDAD", IdActividad);
                 ObjCommand.Parameters.AddWithValue("@DS_COMENTARIO", Comentario);
+                ObjCommand.Parameters.AddWithValue("@CD_ESTADO", Estado);
                 ObjCommand.Parameters.AddWithValue("@DS_OBSERVACION", Observacion);
                 ObjCommand.Parameters.AddWithValue("@URL_ACTIVIDAD", UrlActividad);
-                ObjCommand.Parameters.AddWithValue("@CD_ESTADO", Estado);
-                ObjCommand.Parameters.AddWithValue("@FECH_ACTU", FechActu);
                 ObjCommand.Parameters.AddWithValue("@LOGIN_USUARIO", LoginUsuario);
 
                 ObjParam = ObjCommand.Parameters.Add("@FILAS_AFECTADAS", SqlDbType.Int, 0);
