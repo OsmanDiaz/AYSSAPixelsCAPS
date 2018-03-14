@@ -30,7 +30,7 @@
             <div class="container-fluid">
                 <div id="content">
                     <%--inicio container-fluid--%>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="3" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server">
@@ -913,7 +913,7 @@
                                 </asp:UpdatePanel>
                             </ContentTemplate>
                         </ajaxToolkit:TabPanel>
-                        <ajaxToolkit:TabPanel ID="TabPanel5" runat="server" HeaderText="Encuesta Desempeño">
+                        <ajaxToolkit:TabPanel ID="TabPanel5" runat="server" HeaderText="ENCUESTA DESEMPEÑO">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPEncuestaDes" runat="server">
                                     <Triggers>
@@ -1009,6 +1009,21 @@
                                                 <asp:Button ID="BtnGuardarEncuesta" runat="server" class="btn btn-primary" Text="GUARDAR" ValidationGroup="Encuesta" OnClientClick="return confirm('¿Desea enviar los resultados?');" OnClick="BtnGuardarEncuesta_Click" />
                                             </div>
                                         </asp:Panel>
+										<asp:Panel ID="PanelReporte" runat="server" Visible="true">
+                                            <div align="center"><br /><br /><br />
+                                             <asp:Button ID="BtnReporteDesempeno" runat="server" Text="DESCARGAR REPORTE DE ENCUESTA DESEMPEÑO" />
+                                         </div><br />
+                                            <asp:Panel ID="PanelReporteDesempeñoLaboral" runat="server" CssClass="modalPopup" Height="527px">
+                                             <br />
+                                            <center>
+                                          <rsweb:ReportViewer ID="RVDesempeñoLaboral" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="75%" style="margin-right: 0px"><LocalReport ReportPath="EMP\RptDesempeñoLaboralPasante.rdlc"></LocalReport></rsweb:ReportViewer></center>
+                                            <div align="center">
+                                                <br />
+                                                <asp:Button ID="BtnCerrarReporte" runat="server" Text="Cerrar" />
+                                            </div>
+                                        </asp:Panel>
+                                        <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="PanelReporteDesempeñoLaboral" BackgroundCssClass="modalBackround" TargetControlID="BtnReporteDesempeno" CancelControlID="BtnCerrarReporte"></ajaxToolkit:ModalPopupExtender>
+                                        </asp:Panel>							  
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
                             </ContentTemplate>

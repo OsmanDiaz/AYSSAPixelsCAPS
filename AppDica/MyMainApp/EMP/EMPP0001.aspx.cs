@@ -16,7 +16,8 @@ namespace MyMainApp.EMP
     {
         private DataView dvActividadEconomica, dvEmpresa, dvDepartamento, dvMunicipio, dvHabilidad, dvDestreza, dvPasantia,
             dvAreaPasantia, dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvEscolaridadPasantia,
-            dvConsultoria, dvEntregable, dvCategoriaEscolaridad, dvPasantiaActividad, dvPasantiaAspirante, dvActividadAspirante, objExiste;
+            dvConsultoria, dvEntregable, dvCategoriaEscolaridad, dvPasantiaActividad, dvPasantiaAspirante, dvActividadAspirante,dvRendimiento, objExiste,
+            dvEncuestaRendimiento;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -1023,6 +1024,12 @@ namespace MyMainApp.EMP
                     {
                         Consultar();
                         DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPEncuestaDes);
+						dvEncuestaRendimiento = new DataView(objRendimientoAspirante.Detalle(0, Convert.ToInt32(TxtIDEmpresa.Text), "", "",
+                            "", "", "", "", "", "", "", _DataSistema.Cusuario, DateTime.Now, _DataSistema.Cusuario, DateTime.Now, 3).TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE);
+                        if (dvEncuestaRendimiento.Count > 0) {
+                            TxtIdEvaRendimiento.Text = dvEncuestaRendimiento.Table.Rows[0]["ID"].ToString();
+                        }
+                        CargarReporteDesempeñoLaboral();							
                         LimpiarEncuesta();
                     }
                     else
@@ -1142,6 +1149,32 @@ namespace MyMainApp.EMP
             }
 
         }
+		protected void CargarReporteDesempeñoLaboral()
+        {
+            DataTable dl;
+            //cargar los datos de la empresa y pasante para el informe final pasantia
+
+            CEmpresa objEmpresa = new CEmpresa(_DataSistema.ConexionBaseDato);
+            dvEmpresa = new DataView(objEmpresa.Detalle(0,"", "", "", "", _DataSistema.Cusuario,
+                "", "", 0, 0,
+            "", "", "", "", 0, _DataSistema.Cusuario, _DataSistema.Cusuario, DateTime.Now, "", DateTime.Now, 2).TB_EMPRESA);
+
+            dl = dvEmpresa.ToTable();
+            RVDesempeñoLaboral.Visible = true;
+            RVDesempeñoLaboral.LocalReport.ReportPath = "EMP/RptDesempeñoLaboralPasante.rdlc";
+            RVDesempeñoLaboral.LocalReport.DataSources.Clear();
+            RVDesempeñoLaboral.LocalReport.DataSources.Add(new ReportDataSource("TB_EMPRESA", dl));
+
+            DataTable dl2;
+            CEncuestaRendimientoAspirante objRendimiento = new CEncuestaRendimientoAspirante(_DataSistema.ConexionBaseDato);
+
+                dvRendimiento = new DataView(objRendimiento.Detalle(Convert.ToInt32(TxtIdEvaRendimiento.Text), Convert.ToInt32(TxtIDEmpresa.Text), TxtPregunta1.Text, TxtPregunta2.Text, TxtPregunta3.Text,
+                TxtPregunta4.Text, TxtPregunta5.Text, TxtPregunta6.Text, TxtPregunta7.Text, TxtPregunta8.Text, TxtPregunta9.Text, ""
+                 , DateTime.Today, "", DateTime.Today, 2).TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE);
+                dl2 = dvRendimiento.ToTable();
+                RVDesempeñoLaboral.LocalReport.DataSources.Add(new ReportDataSource("TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE", dl2));
+
+        } 
 
 
         }
