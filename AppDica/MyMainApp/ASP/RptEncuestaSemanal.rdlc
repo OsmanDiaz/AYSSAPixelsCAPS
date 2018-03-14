@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Percepción del desempeño y competencias laborales de pasantes del programa PIXELS CAPS VIDEOJUEGOS</Value>
+                <Value>Encuesta Semanal</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Calibri</FontFamily>
@@ -20,50 +20,16 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>0.17639cm</Top>
-        <Left>0.25519cm</Left>
-        <Height>1.1391cm</Height>
+        <Top>0.14111cm</Top>
+        <Left>0.35222cm</Left>
+        <Height>0.63639cm</Height>
         <Width>15.06472cm</Width>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox4">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>La finalidad de esta encuesta es conocer el nivel general el desempeño labloral del o los pasantes que estuvieron dentro de la empresa.</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                  <Color>#000000</Color>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.31549cm</Top>
-        <Left>0.25519cm</Left>
-        <Height>0.95952cm</Height>
-        <Width>15.06472cm</Width>
-        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -78,365 +44,25 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>15.05057cm</Width>
-            </TablixColumn>
-          </TablixColumns>
-          <TablixRows>
-            <TablixRow>
-              <Height>2.26529cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Rectangle Name="Rectangle2">
-                      <ReportItems>
-                        <Textbox Name="Textbox42">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Nombre de la empresa</Value>
-                                  <Style>
-                                    <FontStyle>Normal</FontStyle>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <TextDecoration>None</TextDecoration>
-                                    <Color>#000000</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox42</rd:DefaultName>
-                          <Top>0.38856cm</Top>
-                          <Height>0.44772cm</Height>
-                          <Width>5.99933cm</Width>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox43">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!DS_NOMBRE_EMPRESA.Value</Value>
-                                  <Style>
-                                    <FontStyle>Normal</FontStyle>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <TextDecoration>None</TextDecoration>
-                                    <Color>#000000</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox42</rd:DefaultName>
-                          <Top>0.38856cm</Top>
-                          <Left>7.87768cm</Left>
-                          <Height>0.44772cm</Height>
-                          <Width>6.85764cm</Width>
-                          <ZIndex>1</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox44">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Responsable</Value>
-                                  <Style>
-                                    <FontStyle>Normal</FontStyle>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <TextDecoration>None</TextDecoration>
-                                    <Color>#000000</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox42</rd:DefaultName>
-                          <Top>0.83628cm</Top>
-                          <Height>0.44772cm</Height>
-                          <Width>5.99933cm</Width>
-                          <ZIndex>2</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox45">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!DS_NOMBRE_CONTACTO.Value</Value>
-                                  <Style>
-                                    <FontStyle>Normal</FontStyle>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <TextDecoration>None</TextDecoration>
-                                    <Color>#000000</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox42</rd:DefaultName>
-                          <Top>0.83628cm</Top>
-                          <Left>7.87768cm</Left>
-                          <Height>0.44772cm</Height>
-                          <Width>6.85764cm</Width>
-                          <ZIndex>3</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox46">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Dirección</Value>
-                                  <Style>
-                                    <FontStyle>Normal</FontStyle>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <TextDecoration>None</TextDecoration>
-                                    <Color>#000000</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox42</rd:DefaultName>
-                          <Top>1.31927cm</Top>
-                          <Height>0.44772cm</Height>
-                          <Width>5.99933cm</Width>
-                          <ZIndex>4</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox47">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!DS_DIRECCION_EMPRESA.Value</Value>
-                                  <Style>
-                                    <FontStyle>Normal</FontStyle>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <TextDecoration>None</TextDecoration>
-                                    <Color>#000000</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox42</rd:DefaultName>
-                          <Top>1.31927cm</Top>
-                          <Left>7.87768cm</Left>
-                          <Height>0.44772cm</Height>
-                          <Width>6.85764cm</Width>
-                          <ZIndex>5</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox48">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Teléfono</Value>
-                                  <Style>
-                                    <FontStyle>Normal</FontStyle>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <TextDecoration>None</TextDecoration>
-                                    <Color>#000000</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox42</rd:DefaultName>
-                          <Top>1.80227cm</Top>
-                          <Height>0.44772cm</Height>
-                          <Width>5.99933cm</Width>
-                          <ZIndex>6</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox49">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!DS_TELEFONO_CONTACTO.Value</Value>
-                                  <Style>
-                                    <FontStyle>Normal</FontStyle>
-                                    <FontFamily>Calibri</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <TextDecoration>None</TextDecoration>
-                                    <Color>#000000</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox42</rd:DefaultName>
-                          <Top>1.80227cm</Top>
-                          <Left>7.87768cm</Left>
-                          <Height>0.44772cm</Height>
-                          <Width>6.85764cm</Width>
-                          <ZIndex>7</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </ReportItems>
-                      <KeepTogether>true</KeepTogether>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                      </Style>
-                    </Rectangle>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-          </TablixRows>
-        </TablixBody>
-        <TablixColumnHierarchy>
-          <TablixMembers>
-            <TablixMember />
-          </TablixMembers>
-        </TablixColumnHierarchy>
-        <TablixRowHierarchy>
-          <TablixMembers>
-            <TablixMember>
-              <Group Name="Detalles2" />
-            </TablixMember>
-          </TablixMembers>
-        </TablixRowHierarchy>
-        <DataSetName>TB_EMPRESA</DataSetName>
-        <Top>2.27501cm</Top>
-        <Left>0.26934cm</Left>
-        <Height>2.26529cm</Height>
-        <Width>15.05057cm</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Tablix>
-      <Tablix Name="Tablix1">
-        <TablixBody>
-          <TablixColumns>
-            <TablixColumn>
               <Width>15.06472cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>8.01473cm</Height>
+              <Height>8.26792cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Rectangle Name="Rectangle1">
+                    <Rectangle Name="Rectangle2">
                       <ReportItems>
-                        <Textbox Name="Textbox1">
+                        <Textbox Name="Textbox4">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>1.	¿Cómo fue el desempeño laboral del/ o los pasantes dentro de la empresa?</Value>
+                                  <Value>1.      Califica la atención brindada por la empresa encargada  de haber desarrollado el módulo de PIXELS CAPS recién finalizado</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -446,10 +72,10 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
-                          <Left>0.01415cm</Left>
-                          <Height>0.6cm</Height>
-                          <Width>14.73532cm</Width>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Left>0cm</Left>
+                          <Height>0.86458cm</Height>
+                          <Width>14.54661cm</Width>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -467,7 +93,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>2.	El o la pasante acataban las indicaciones o asignaciones de parte de la persona responsable</Value>
+                                  <Value>2.      Califique las clases impartidas durante el presente módulo</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -477,11 +103,11 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
-                          <Top>1.99804cm</Top>
-                          <Left>0.01415cm</Left>
-                          <Height>0.6cm</Height>
-                          <Width>14.73532cm</Width>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Top>1.57042cm</Top>
+                          <Left>0cm</Left>
+                          <Height>0.52062cm</Height>
+                          <Width>14.54661cm</Width>
                           <ZIndex>1</ZIndex>
                           <Style>
                             <Border>
@@ -500,7 +126,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>3.	Tuvieron algún tipo de inconveniente con el o la pasante a nivel de convivencia</Value>
+                                  <Value>3.      Califique las instalaciones donde recibió las clases</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -510,11 +136,11 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
-                          <Top>3.99608cm</Top>
-                          <Left>0.01415cm</Left>
-                          <Height>0.6cm</Height>
-                          <Width>14.73532cm</Width>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Top>2.79687cm</Top>
+                          <Left>0cm</Left>
+                          <Height>0.52062cm</Height>
+                          <Width>14.54661cm</Width>
                           <ZIndex>2</ZIndex>
                           <Style>
                             <Border>
@@ -526,27 +152,28 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <Textbox Name="DS_RESPUESTA_1">
+                        <Textbox Name="Textbox7">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!DS_RESPUESTA_1.Value</Value>
+                                  <Value>4.      Califique el hardware usado en las clases</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>DS_RESPUESTA_1</rd:DefaultName>
-                          <Top>0.6cm</Top>
-                          <Left>0.01415cm</Left>
-                          <Height>1.36276cm</Height>
-                          <Width>14.73532cm</Width>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Top>4.02332cm</Top>
+                          <Left>0cm</Left>
+                          <Height>0.52062cm</Height>
+                          <Width>14.54661cm</Width>
                           <ZIndex>3</ZIndex>
                           <Style>
                             <Border>
@@ -565,20 +192,21 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!DS_RESPUESTA_2.Value</Value>
+                                  <Value>5.      Brinda tu opinión sobre el desempeño del facilitador del módulo</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox7</rd:DefaultName>
-                          <Top>2.59804cm</Top>
-                          <Left>0.01415cm</Left>
-                          <Height>1.36276cm</Height>
-                          <Width>14.73532cm</Width>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Top>5.24978cm</Top>
+                          <Left>0cm</Left>
+                          <Height>0.52062cm</Height>
+                          <Width>14.54661cm</Width>
                           <ZIndex>4</ZIndex>
                           <Style>
                             <Border>
@@ -597,20 +225,20 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!DS_RESPUESTA_3.Value</Value>
+                                  <Value>6.      Brinda tu opinión sobre el desempeño del instructor del módulo</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox7</rd:DefaultName>
-                          <Top>4.59608cm</Top>
-                          <Left>0.01415cm</Left>
-                          <Height>1.36276cm</Height>
-                          <Width>14.73532cm</Width>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Top>6.47623cm</Top>
+                          <Height>0.52062cm</Height>
+                          <Width>14.54661cm</Width>
                           <ZIndex>5</ZIndex>
                           <Style>
                             <Border>
@@ -622,27 +250,27 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <Textbox Name="Textbox10">
+                        <Textbox Name="DS_RESPUESTA_ATENCION">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>4.	El trabajo que realizó el o la pasante cumplió con la calidad solicitada</Value>
+                                  <Value>=Fields!DS_RESPUESTA_ATENCION.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
-                          <Top>5.99412cm</Top>
+                          <rd:DefaultName>DS_RESPUESTA_ATENCION</rd:DefaultName>
+                          <Top>0.86458cm</Top>
+                          <Left>0.89958cm</Left>
                           <Height>0.6cm</Height>
-                          <Width>14.73532cm</Width>
+                          <Width>13.64703cm</Width>
                           <ZIndex>6</ZIndex>
                           <Style>
                             <Border>
@@ -654,14 +282,14 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <Textbox Name="Textbox11">
+                        <Textbox Name="DS_RESPUESTA_CLASES">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!DS_RESPUESTA_4.Value</Value>
+                                  <Value>=Fields!DS_RESPUESTA_CLASES.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -670,11 +298,140 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox7</rd:DefaultName>
-                          <Top>6.59412cm</Top>
-                          <Height>1.36276cm</Height>
-                          <Width>14.73532cm</Width>
+                          <rd:DefaultName>DS_RESPUESTA_CLASES</rd:DefaultName>
+                          <Top>2.09104cm</Top>
+                          <Left>0.89958cm</Left>
+                          <Height>0.6cm</Height>
+                          <Width>13.64703cm</Width>
                           <ZIndex>7</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="DS_RESPUESTA_CLASES1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!DS_RESPUESTA_CLASES.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>DS_RESPUESTA_CLASES1</rd:DefaultName>
+                          <Top>3.31749cm</Top>
+                          <Left>0.89958cm</Left>
+                          <Height>0.6cm</Height>
+                          <Width>13.64703cm</Width>
+                          <ZIndex>8</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="DS_RESPUESTA_HARDWARE">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!DS_RESPUESTA_HARDWARE.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>DS_RESPUESTA_HARDWARE</rd:DefaultName>
+                          <Top>4.54395cm</Top>
+                          <Left>0.89958cm</Left>
+                          <Height>0.6cm</Height>
+                          <Width>13.64703cm</Width>
+                          <ZIndex>9</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="DS_RESPUESTA_OPINION_F">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!DS_RESPUESTA_OPINION_F.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>DS_RESPUESTA_OPINION_F</rd:DefaultName>
+                          <Top>5.7704cm</Top>
+                          <Left>0.89958cm</Left>
+                          <Height>0.6cm</Height>
+                          <Width>13.64703cm</Width>
+                          <ZIndex>10</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="DS_RESPUESTA_OPINION_I">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!DS_RESPUESTA_OPINION_I.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>DS_RESPUESTA_OPINION_I</rd:DefaultName>
+                          <Top>6.99685cm</Top>
+                          <Left>0.89958cm</Left>
+                          <Height>0.6cm</Height>
+                          <Width>13.64703cm</Width>
+                          <ZIndex>11</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -711,386 +468,12 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE</DataSetName>
-        <Top>4.71669cm</Top>
-        <Left>0.25519cm</Left>
-        <Height>8.01473cm</Height>
+        <DataSetName>TB_ENCUESTA_SEMANAL_ASPIRANTE</DataSetName>
+        <Top>1.47849cm</Top>
+        <Left>0.35222cm</Left>
+        <Height>8.26792cm</Height>
         <Width>15.06472cm</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Tablix>
-      <Tablix Name="Tablix3">
-        <TablixBody>
-          <TablixColumns>
-            <TablixColumn>
-              <Width>15.05057cm</Width>
-            </TablixColumn>
-          </TablixColumns>
-          <TablixRows>
-            <TablixRow>
-              <Height>13.90354cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Rectangle Name="Rectangle3">
-                      <ReportItems>
-                        <Textbox Name="Textbox12">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>5.	El o la estudiante proponía ideas para mejorar el trabajo asignado</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
-                          <Left>0.0283cm</Left>
-                          <Height>0.6cm</Height>
-                          <Width>14.73532cm</Width>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="DS_RESPUESTA_5">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!DS_RESPUESTA_5.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>DS_RESPUESTA_5</rd:DefaultName>
-                          <Top>0.6cm</Top>
-                          <Left>0.0283cm</Left>
-                          <Height>1.79063cm</Height>
-                          <Width>14.72117cm</Width>
-                          <ZIndex>1</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox14">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>6.	Comente las limitaciones a nivel de desempeño y competencia laboral que observó de parte de los pasantes</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
-                          <Top>2.39063cm</Top>
-                          <Left>0.0283cm</Left>
-                          <Height>0.99688cm</Height>
-                          <Width>14.73532cm</Width>
-                          <ZIndex>2</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox15">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!DS_RESPUESTA_6.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox13</rd:DefaultName>
-                          <Top>3.3875cm</Top>
-                          <Left>0.0283cm</Left>
-                          <Height>1.79063cm</Height>
-                          <Width>14.72117cm</Width>
-                          <ZIndex>3</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox16">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!DS_RESPUESTA_7.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox13</rd:DefaultName>
-                          <Top>6.175cm</Top>
-                          <Left>0.01415cm</Left>
-                          <Height>1.79063cm</Height>
-                          <Width>14.72117cm</Width>
-                          <ZIndex>4</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox17">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>7.	A la empresa le benefició en sus actividades laborales contar con el aporte generado por el pasante durante las seis semanas</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
-                          <Top>5.17813cm</Top>
-                          <Left>0.01415cm</Left>
-                          <Height>0.99688cm</Height>
-                          <Width>14.73532cm</Width>
-                          <ZIndex>5</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox18">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!DS_RESPUESTA_8.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox13</rd:DefaultName>
-                          <Top>9.03306cm</Top>
-                          <Height>1.79063cm</Height>
-                          <Width>14.72117cm</Width>
-                          <ZIndex>6</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox19">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>8.	Estaría dispuesto a continuar apoyando a pasantes del programa PIXELS CAPS dentro de la empresa</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
-                          <Top>8.03619cm</Top>
-                          <Height>0.99688cm</Height>
-                          <Width>14.73532cm</Width>
-                          <ZIndex>7</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox20">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!DS_RESPUESTA_9.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox13</rd:DefaultName>
-                          <Top>11.39723cm</Top>
-                          <Left>0.01415cm</Left>
-                          <Height>1.79063cm</Height>
-                          <Width>14.72117cm</Width>
-                          <ZIndex>8</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox21">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>9. Recomendaciones y observaciones sobre las pasantías</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
-                          <Top>10.82369cm</Top>
-                          <Left>0.04245cm</Left>
-                          <Height>0.57355cm</Height>
-                          <Width>14.73532cm</Width>
-                          <ZIndex>9</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </ReportItems>
-                      <KeepTogether>true</KeepTogether>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                      </Style>
-                    </Rectangle>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-          </TablixRows>
-        </TablixBody>
-        <TablixColumnHierarchy>
-          <TablixMembers>
-            <TablixMember />
-          </TablixMembers>
-        </TablixColumnHierarchy>
-        <TablixRowHierarchy>
-          <TablixMembers>
-            <TablixMember>
-              <Group Name="Detalles1" />
-            </TablixMember>
-          </TablixMembers>
-        </TablixRowHierarchy>
-        <DataSetName>TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE</DataSetName>
-        <Top>12.90781cm</Top>
-        <Left>0.26934cm</Left>
-        <Height>13.90354cm</Height>
-        <Width>15.05057cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1098,13 +481,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>11.20683in</Height>
+    <Height>4.32291in</Height>
     <Style />
   </Body>
-  <Width>6.4677in</Width>
+  <Width>6.20833in</Width>
   <Page>
     <PageHeader>
-      <Height>2.76431cm</Height>
+      <Height>2.54cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1112,8 +495,8 @@
           <Source>Embedded</Source>
           <Value>logo_dica</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.63216cm</Top>
-          <Left>10.24727cm</Left>
+          <Top>0.46708cm</Top>
+          <Left>10.14144cm</Left>
           <Height>1.5cm</Height>
           <Width>1.5cm</Width>
           <Style>
@@ -1126,8 +509,8 @@
           <Source>Embedded</Source>
           <Value>logo_oea</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.91438cm</Top>
-          <Left>0.87034cm</Left>
+          <Top>0.7493cm</Top>
+          <Left>0.76451cm</Left>
           <Height>1.10312cm</Height>
           <Width>3.69604cm</Width>
           <ZIndex>1</ZIndex>
@@ -1141,8 +524,8 @@
           <Source>Embedded</Source>
           <Value>logo_1</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.73798cm</Top>
-          <Left>5.06027cm</Left>
+          <Top>0.57291cm</Top>
+          <Left>4.95444cm</Left>
           <Height>1.39417cm</Height>
           <Width>1.28833cm</Width>
           <ZIndex>2</ZIndex>
@@ -1173,8 +556,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.91438cm</Top>
-          <Left>6.56839cm</Left>
+          <Top>0.7493cm</Top>
+          <Left>6.46256cm</Left>
           <Height>0.76799cm</Height>
           <Width>2.92736cm</Width>
           <ZIndex>3</ZIndex>
@@ -1192,8 +575,8 @@
           <Source>Embedded</Source>
           <Value>logo_gobierno1</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.73798cm</Top>
-          <Left>12.52988cm</Left>
+          <Top>0.57291cm</Top>
+          <Left>12.42405cm</Left>
           <Height>1.27951cm</Height>
           <Width>2.47478cm</Width>
           <ZIndex>4</ZIndex>
@@ -1226,11 +609,11 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>4d733a52-c217-4ab0-ac15-b6aa4174f711</rd:DataSourceID>
+      <rd:DataSourceID>82682eda-831c-44c6-aee1-8a383249de1b</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE">
+    <DataSet Name="TB_ENCUESTA_SEMANAL_ASPIRANTE">
       <Query>
         <DataSourceName>ClsDataSets</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -1240,126 +623,40 @@
           <DataField>ID</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ID_EMPRESA">
-          <DataField>ID_EMPRESA</DataField>
+        <Field Name="ID_ASPIRANTE">
+          <DataField>ID_ASPIRANTE</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DS_RESPUESTA_1">
-          <DataField>DS_RESPUESTA_1</DataField>
+        <Field Name="DS_RESPUESTA_ATENCION">
+          <DataField>DS_RESPUESTA_ATENCION</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DS_RESPUESTA_2">
-          <DataField>DS_RESPUESTA_2</DataField>
+        <Field Name="DS_RESPUESTA_CLASES">
+          <DataField>DS_RESPUESTA_CLASES</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DS_RESPUESTA_3">
-          <DataField>DS_RESPUESTA_3</DataField>
+        <Field Name="DS_RESPUESTA_INSTALACIONES">
+          <DataField>DS_RESPUESTA_INSTALACIONES</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DS_RESPUESTA_4">
-          <DataField>DS_RESPUESTA_4</DataField>
+        <Field Name="DS_RESPUESTA_HARDWARE">
+          <DataField>DS_RESPUESTA_HARDWARE</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DS_RESPUESTA_5">
-          <DataField>DS_RESPUESTA_5</DataField>
+        <Field Name="DS_RESPUESTA_OPINION_F">
+          <DataField>DS_RESPUESTA_OPINION_F</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DS_RESPUESTA_6">
-          <DataField>DS_RESPUESTA_6</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_RESPUESTA_7">
-          <DataField>DS_RESPUESTA_7</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_RESPUESTA_8">
-          <DataField>DS_RESPUESTA_8</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_RESPUESTA_9">
-          <DataField>DS_RESPUESTA_9</DataField>
+        <Field Name="DS_RESPUESTA_OPINION_I">
+          <DataField>DS_RESPUESTA_OPINION_I</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>ClsDataSets</rd:DataSetName>
-        <rd:TableName>TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable</rd:TableName>
+        <rd:TableName>TB_ENCUESTA_SEMANAL_ASPIRANTEDataTable</rd:TableName>
         <rd:ObjectDataSourceSelectMethod>Copy</rd:ObjectDataSourceSelectMethod>
-        <rd:ObjectDataSourceType>ClsDataSets.DS_TB_EMP+TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTEDataTable, ClsDataSets, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="TB_EMPRESA">
-      <Query>
-        <DataSourceName>ClsDataSets</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_NOMBRE_EMPRESA">
-          <DataField>DS_NOMBRE_EMPRESA</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_NOMBRE_CONTACTO">
-          <DataField>DS_NOMBRE_CONTACTO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_EMAIL_CONTACTO">
-          <DataField>DS_EMAIL_CONTACTO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_TELEFONO_CONTACTO">
-          <DataField>DS_TELEFONO_CONTACTO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_NIT_EMPRESA">
-          <DataField>DS_NIT_EMPRESA</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_TELEFONO_EMPRESA">
-          <DataField>DS_TELEFONO_EMPRESA</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_DIRECCION_EMPRESA">
-          <DataField>DS_DIRECCION_EMPRESA</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_DEPARTAMENTO">
-          <DataField>DS_DEPARTAMENTO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_MUNICIPIO">
-          <DataField>DS_MUNICIPIO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_NOMBRE_REPRESENTANTE">
-          <DataField>DS_NOMBRE_REPRESENTANTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_EMAIL_REPRESENTATE">
-          <DataField>DS_EMAIL_REPRESENTATE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_NIT_REPRESENTANTE">
-          <DataField>DS_NIT_REPRESENTANTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_DUI_REPRESENTANTE">
-          <DataField>DS_DUI_REPRESENTANTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DS_ACT_ECO">
-          <DataField>DS_ACT_ECO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>ClsDataSets</rd:DataSetName>
-        <rd:TableName>TB_EMPRESADataTable</rd:TableName>
-        <rd:ObjectDataSourceSelectMethod>Copy</rd:ObjectDataSourceSelectMethod>
-        <rd:ObjectDataSourceType>ClsDataSets.DS_TB_EMP+TB_EMPRESADataTable, ClsDataSets, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceType>ClsDataSets.DS_TB_ASP+TB_ENCUESTA_SEMANAL_ASPIRANTEDataTable, ClsDataSets, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -2631,5 +1928,5 @@ AAAAAAAAAAAAAAAAAAAAAAAAwAELDFIAAAAAAAAAAAAAAAAAAAAAAAAAAACAAxYYpAAAAAAAAAAAAAAA
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>8972d8a4-5f50-47c3-be7f-586ea0dc45ce</rd:ReportID>
+  <rd:ReportID>995a5586-e5c3-41e3-a209-736df8f4fa63</rd:ReportID>
 </Report>

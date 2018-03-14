@@ -102,6 +102,7 @@
     <Compile Include="CPais.cs" />
     <Compile Include="CPasantia.cs" />
     <Compile Include="CPasantiaActividad.cs" />
+    <Compile Include="CPasantiaActividadAspirante.cs" />
     <Compile Include="CPasantiaAspirante.cs" />
     <Compile Include="CPeriodo.cs" />
     <Compile Include="CRepresentanteLegal.cs" />

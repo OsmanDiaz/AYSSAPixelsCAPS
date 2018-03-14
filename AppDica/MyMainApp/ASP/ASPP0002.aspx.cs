@@ -8,11 +8,14 @@ using ClsInterface;
 using dica;
 using ClsDataApp;
 using System.Data;
+using Microsoft.Reporting.WebForms;
 
 namespace MyMainApp.ASP
 {
     public partial class ASPP0002 : FormaSISWeb, IAcciones
     {
+        private DataView dvEncuesta;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -58,6 +61,15 @@ namespace MyMainApp.ASP
                 {
                     Consultar();
                     DespliegaMensajeUpdatePanel("Registro Guardado Correctamente",UPPanelEncuestaSemanal);
+                    //MOSTRAR LA ULTIMA REGISTRADA
+                    dvEncuesta = new DataView(objEncuestaAspirante.Detalle(0, TxtIdAspirante.Text, Convert.ToChar(RB1.SelectedValue), Convert.ToChar(RB2.SelectedValue),
+                Convert.ToChar(RB3.SelectedValue), Convert.ToChar(RB4.SelectedValue), Convert.ToChar(RB5.SelectedValue), Convert.ToChar(RB6.SelectedValue), _DataSistema.Cusuario,
+                DateTime.Now, _DataSistema.Cusuario, DateTime.Now, 3).TB_ENCUESTA_SEMANAL_ASPIRANTE);
+                    if (dvEncuesta.Count > 0)
+                    {
+                        TxtIdEncuesta.Text = dvEncuesta.Table.Rows[0]["ID"].ToString();
+                    }
+                    CargarReporteEncuestaSemanal();
                     LimpiarEncuesta();
                 }
                 else
@@ -84,5 +96,18 @@ namespace MyMainApp.ASP
 
         }
 
+        protected void CargarReporteEncuestaSemanal()
+        {
+            DataTable es;
+            CEncuestaAspirante objEncuesta = new CEncuestaAspirante(_DataSistema.ConexionBaseDato);
+            dvEncuesta = new DataView(objEncuesta.Detalle(Convert.ToInt32(TxtIdEncuesta.Text),_DataSistema.Cusuario,Convert.ToChar(RB1.SelectedValue),Convert.ToChar(RB2.SelectedValue),
+                Convert.ToChar(RB3.SelectedValue), Convert.ToChar(RB4.SelectedValue), Convert.ToChar(RB5.SelectedValue), Convert.ToChar(RB6.SelectedValue), _DataSistema.Cusuario,
+                DateTime.Now,_DataSistema.Cusuario,DateTime.Now,2).TB_ENCUESTA_SEMANAL_ASPIRANTE);
+            es=dvEncuesta.ToTable();
+            RVEncuestaSemanal.Visible=true;
+            RVEncuestaSemanal.LocalReport.ReportPath="ASP/RptEncuestaSemanal.rdlc";
+            RVEncuestaSemanal.LocalReport.DataSources.Clear();
+            RVEncuestaSemanal.LocalReport.DataSources.Add(new ReportDataSource("TB_ENCUESTA_SEMANAL_ASPIRANTE",es));
+        }
     }
 }
