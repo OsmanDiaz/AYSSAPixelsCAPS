@@ -295,6 +295,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="ASP\RptInformeFinal.rdlc" />
+    <EmbeddedResource Include="EMP\RptDesempeñoLaboralPasante.rdlc" />
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
