@@ -17,7 +17,7 @@ namespace MyMainApp.EMP
         private DataView dvActividadEconomica, dvEmpresa, dvDepartamento, dvMunicipio, dvHabilidad, dvDestreza, dvPasantia,
             dvAreaPasantia, dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvEscolaridadPasantia,
             dvConsultoria, dvEntregable, dvCategoriaEscolaridad, dvPasantiaActividad, dvPasantiaAspirante, dvActividadAspirante,dvRendimiento, objExiste,
-            dvEncuestaRendimiento;
+            dvEncuestaRendimiento, dvAceptacionAspirante;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -1174,6 +1174,47 @@ namespace MyMainApp.EMP
                 dl2 = dvRendimiento.ToTable();
                 RVDesempeñoLaboral.LocalReport.DataSources.Add(new ReportDataSource("TB_ENCUESTA_EVALUACION_RENDIMIENTO_ASPIRANTE", dl2));
 
+        }
+
+        protected void GVPasantia_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "ListaAspirante") {
+
+                int Id = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = GVPasantia.Rows[Id];
+                TxtIDPasantia.Text = GVPasantia.DataKeys[Id].Value.ToString();
+                FillGVAceptacionAspirante();
+                GVPasantia.Visible = false;
+                GVAceptacionAspirante.Visible = true;
+            }
+        }
+
+        protected void FillGVAceptacionAspirante()
+        {
+            CAceptacionPasantia objAceptacionAspirante = new CAceptacionPasantia(_DataSistema.ConexionBaseDato);
+            dvAceptacionAspirante = new DataView(objAceptacionAspirante.Detalle(0, "", Convert.ToInt32(TxtIDPasantia.Text), "", 'x', 'x', "",
+                _DataSistema.Cusuario, DateTime.Now, _DataSistema.Cusuario, DateTime.Now, 4).TB_ACEPTACION_PASANTIA);
+            GVAceptacionAspirante.DataSource = dvAceptacionAspirante;
+            GVAceptacionAspirante.DataBind();
+
+        }
+
+        protected void GVAceptacionAspirante_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "PerfilAspirante")
+            {
+                int Id = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = GVAceptacionAspirante.Rows[Id];
+                TxtIdAspirante.Text = GVAceptacionAspirante.DataKeys[Id].Value.ToString();
+
+            }
+            else if (e.CommandName == "AsignarAspirante")
+            {
+                int Id = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = GVAceptacionAspirante.Rows[Id];
+                TxtIdAspirante.Text = GVAceptacionAspirante.DataKeys[Id].Value.ToString();
+
+            }
         } 
 
 

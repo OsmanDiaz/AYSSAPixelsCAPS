@@ -30,7 +30,7 @@
             <div class="container-fluid">
                 <div id="content">
                     <%--inicio container-fluid--%>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="3" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server">
@@ -520,7 +520,7 @@
                                                 <asp:Button ID="BtnNuevaPasantia" runat="server" Text="NUEVA PASANTIA" class="btn btn-primary" CausesValidation="False" OnClick="BtnNuevaPasantia_Click" />
                                             </div>
                                             <br />
-                                            <asp:GridView ID="GVPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnRowUpdating="GVPasantia_RowUpdating" OnSelectedIndexChanged="GVPasantia_SelectedIndexChanged" DataKeyNames="ID">
+                                            <asp:GridView ID="GVPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnRowUpdating="GVPasantia_RowUpdating" OnSelectedIndexChanged="GVPasantia_SelectedIndexChanged" DataKeyNames="ID" OnRowCommand="GVPasantia_RowCommand">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
                                                     <asp:TemplateField HeaderText="" Visible="false">
@@ -540,7 +540,7 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="ACEPTACION DE ASPIRANTES">
                                                         <ItemTemplate>
-                                                            <asp:Button ID="BtnAceptarAspirante" runat="server" CommandName="Edit"
+                                                            <asp:Button ID="BtnAceptarAspirante" runat="server" CommandName="ListaAspirante" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" 
                                                                 Text=" Ver Listado Aspirantes" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
@@ -562,6 +562,55 @@
                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                             </asp:GridView>
+
+
+
+                                            <asp:GridView ID="GVAceptacionAspirante" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" Visible="false" OnRowCommand="GVAceptacionAspirante_RowCommand">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:TemplateField HeaderText="" Visible="false">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="TxtIDAspirante" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:BoundField HeaderText="NOMBRE COMPLETO" DataField="DS_NOMBRE_COMPLETO" />
+                                                    <asp:BoundField HeaderText="NOMBRE PASANTIA" DataField="NOMBRE_PASANTIA" />
+													
+                                                    <asp:TemplateField HeaderText="VER PERFIL DE ASPIRANTE">               
+                                                        <ItemTemplate> <asp:Button ID="BtnPerfilAspirante" runat="server" CommandName="PerfilAspirante" 
+														CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" 
+                                                                Text="VER PERFIL" />        
+                                                           </ItemTemplate>
+                                                    </asp:TemplateField>
+													
+													<asp:TemplateField HeaderText="ASIGNAR">               
+                                                        <ItemTemplate> <asp:Button ID="BtnAceptarAspirante" runat="server" CommandName="AsignarAspirante" 
+														CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" 
+                                                                Text="ACEPTAR ASPIRANTE" />        
+                                                           </ItemTemplate>
+                                                    </asp:TemplateField>
+
+                                                    <asp:TemplateField HeaderText="ASIGNAR">               
+                                                        <ItemTemplate> <asp:Button ID="BtnRechazarAspirante" runat="server" CommandName="RechazarAspirante" 
+														CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" 
+                                                                Text="RECHAZAR ASPIRANTE" />        
+                                                           </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>	
+
+
+
                                             <asp:Panel ID="PanelAspirantes" runat="server" Visible="False">
                                                 <asp:GridView ID="GVAspirantes" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVAspirantes_SelectedIndexChanged" EmptyDataText="No existen registros">
                                                     <AlternatingRowStyle BackColor="White" />
