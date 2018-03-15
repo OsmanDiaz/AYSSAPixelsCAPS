@@ -14,7 +14,7 @@ namespace MyMainApp.TEC
     public partial class TECC0002 : FormaSISWeb, IAcciones
     {
         private DataView dvEmpresa, dvPasantia, dvEscolaridad, dvHabilidad, dvConsultoria,
-            dvEntregable, dvAsignacionAspirante, dvPasantiaAspirante, dvGeneral, dvListaGeneral;
+            dvEntregable, dvAsignacionAspirante, dvPasantiaAspirante, dvGeneral, dvListaGeneral, dvEncuesta;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -34,6 +34,7 @@ namespace MyMainApp.TEC
             FillGVListaPasantia();
             FillInfoProyecto();
             FillInfoGeneral();
+            FillGVResultadoPreg1();
         }
 
 
@@ -348,6 +349,16 @@ namespace MyMainApp.TEC
 
             TxtIdAspirante.Text = Convert.ToString(GVlistaActividadPasantia.DataKeys[Id].Values[1]); 
 
+        }
+
+        //resultado encuesta semanal
+        private void FillGVResultadoPreg1()
+        {
+            CEncuestaAspirante objEncuesta = new CEncuestaAspirante(_DataSistema.ConexionBaseDato);
+            dvEncuesta = new DataView(objEncuesta.Detalle(0, "", ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
+                , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 4).TB_ENCUESTA_SEMANAL_ASPIRANTE);
+            GVResultadoPreg1.DataSource = dvEncuesta;
+            GVResultadoPreg1.DataBind();
         }
         
     }
