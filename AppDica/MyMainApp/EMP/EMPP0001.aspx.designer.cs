@@ -535,6 +535,15 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.Label Label81;
         
         /// <summary>
+        /// Control BtnFinalizarPasantia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnFinalizarPasantia;
+        
+        /// <summary>
         /// Control TxtIDActividad.
         /// </summary>
         /// <remarks>

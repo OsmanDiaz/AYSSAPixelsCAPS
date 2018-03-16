@@ -155,8 +155,9 @@
                                             </div>
                                             <div align="center">
                                                 <asp:Label ID="Label81" runat="server" Text="REGISTRO DE PASANTIA" Font-Size="14pt"></asp:Label>
+                                                
                                                 <br />
-                                            </div>
+                                            </div><div align="right"><asp:Button ID="BtnFinalizarPasantia" runat="server" Text="FINALIZAR PASANTIA" class="btn btn-success" Visible="false" CausesValidation="False" OnClick="BtnFinalizarPasantia_Click"/></div>
                                             <br />
                                             <asp:TextBox ID="TxtIDActividad" runat="server" Visible="False"></asp:TextBox>
                                             <asp:TextBox ID="TxtIDPasantia" runat="server" Visible="False">0</asp:TextBox>
@@ -192,6 +193,7 @@
                                                     <asp:DropDownList ID="CboEstadoPasantia" runat="server" class="form-control">
                                                         <asp:ListItem Value="D">Disponible</asp:ListItem>
                                                         <asp:ListItem Value="N">No disponible</asp:ListItem>
+                                                        <asp:ListItem Enabled="False" Value="F">Finalizada</asp:ListItem>
                                                     </asp:DropDownList>
                                                 </div>
                                             </div>
@@ -639,10 +641,10 @@
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label85" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="TELÉFONO (CASA):"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtTelCasa" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox>
+                                                <asp:TextBox ID="TxtTelCasa" runat="server" AutoCompleteType="Disabled" ReadOnly="True" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox>
                                             </div>
                                             <asp:Label ID="Label86" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="TELÉFONO (CELULAR):"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtTelCel" runat="server" AutoCompleteType="Disabled" class="form-control" onkeydown="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator24" runat="server" ControlToValidate="TxtTelCel" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar Telefono Celular</asp:RequiredFieldValidator>
+                                                <asp:TextBox ID="TxtTelCel" runat="server" AutoCompleteType="Disabled" ReadOnly="True" class="form-control" onkeydown="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator24" runat="server" ControlToValidate="TxtTelCel" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar Telefono Celular</asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -652,10 +654,10 @@
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label88" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DUI:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtDui" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);" TargetControlID="TxtDui"></asp:TextBox>
+                                                <asp:TextBox ID="TxtDui" runat="server" AutoCompleteType="Disabled" ReadOnly="True" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);" TargetControlID="TxtDui"></asp:TextBox>
                                             </div>
                                             <asp:Label ID="Label89" runat="server" class="control-label  col-sm-3" Font-Bold="True" readonly="" Text="EMAIL:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtEmail" runat="server" AutoCompleteType="Disabled" class="form-control"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator29" runat="server" ControlToValidate="TxtEmail" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar email</asp:RequiredFieldValidator>
+                                                <asp:TextBox ID="TxtEmail" runat="server" AutoCompleteType="Disabled" ReadOnly="True" class="form-control"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator29" runat="server" ControlToValidate="TxtEmail" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar email</asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -668,20 +670,20 @@
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label93" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DISCAPACIDAD 1:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtDiscapacidad1" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
+                                                <asp:TextBox ID="TxtDiscapacidad1" runat="server" AutoCompleteType="Disabled" ReadOnly="True" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label94" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DISCAPACIDAD 2:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtDiscapacidad2" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
+                                                <asp:TextBox ID="TxtDiscapacidad2" runat="server" AutoCompleteType="Disabled" ReadOnly="True" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
                                             </div>
                                             <asp:Label ID="Label95" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="DISCAPACIDAD 3:"></asp:Label><div class="col-md-3">
-                                                <asp:TextBox ID="TxtDiscapacidad3" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
+                                                <asp:TextBox ID="TxtDiscapacidad3" runat="server" AutoCompleteType="Disabled" ReadOnly="True" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <asp:Label ID="Label99" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DIRECCIÓN:"></asp:Label><div class="col-md-8">
-                                                <asp:TextBox ID="TxtDireccionAsp" runat="server" AutoCompleteType="Disabled" class="form-control" TextMode="MultiLine"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator30" runat="server" ControlToValidate="TxtDireccion" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar Direccion</asp:RequiredFieldValidator>
+                                                <asp:TextBox ID="TxtDireccionAsp" runat="server" AutoCompleteType="Disabled" ReadOnly="True" class="form-control" TextMode="MultiLine"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator30" runat="server" ControlToValidate="TxtDireccion" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar Direccion</asp:RequiredFieldValidator>
                                             </div>
                                         </div><br />
                                            

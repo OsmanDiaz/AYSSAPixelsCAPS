@@ -352,6 +352,7 @@ namespace MyMainApp.EMP
                 Consultar();
                 //-------------paneles visibles para actualizar pasantia--------------------
                 PanelPasantia.Visible = true;
+                BtnFinalizarPasantia.Visible = true;
                 PanelListadoPasantia.Visible = false;
                 FillGVActividades();
                 DespliegaMensajeUpdatePanel("Registro Seleccionado", UPPasantia);
@@ -1299,6 +1300,43 @@ namespace MyMainApp.EMP
                 DateTime.Now, 2).TB_PASANTIA_ASPIRANTE);
             dt5 = dvPasantiaAspirante.ToTable();
             RVFichaAspirante.LocalReport.DataSources.Add(new ReportDataSource("TB_PASANTIA_ASPIRANTE", dt5));
+        }
+
+        protected void BtnFinalizarPasantia_Click(object sender, EventArgs e)
+        {//boton finalizar pasantia
+
+           
+            CPasantia objPasantia = new CPasantia(_DataSistema.ConexionBaseDato);
+            dvPasantia = new DataView(objPasantia.Detalle(Convert.ToInt32(TxtIDPasantia.Text), "", "", 0, 0, "", "", DateTime.Now,
+             "", "", "", 'A', 0, 0, 0, 0, 0, "", "", "", DateTime.Now, "", DateTime.Now, 1).TB_PASANTIA);
+            try
+            {
+               
+                    if (dvPasantia.Count > 0)
+                    {
+                        objResultado = objPasantia.Actualizacion(Convert.ToInt32(TxtIDPasantia.Text), TxtNombEva.Text, TxtEmailEva.Text
+                                , Convert.ToInt32(TxtIDEmpresa.Text), Convert.ToInt32(CboAreaPasantia.SelectedValue), TxtTituloPasantia.Text, TxtDescPasantia.Text, Convert.ToDateTime(TxtFechInicio.Text),
+                  TxtDuracion.Text, TxtDe.Text, TxtA.Text, 'F', Convert.ToInt32(CboDias1.SelectedValue), Convert.ToInt32(CboDias2.SelectedValue), Convert.ToInt32(TxtEdadDe.Text), Convert.ToInt32(TxtEdadA.Text), Convert.ToInt32(TxtCantVacantes.Text),
+                     TxtSucursal.Text, TxtDireccion.Text, _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+
+                    }
+                 if (objResultado.CodigoError == 0)
+                    {
+                        Consultar();
+                        DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPPasantia);
+                        PanelPasantia.Visible = false;
+                        PanelListadoPasantia.Visible = true;
+                    }
+                    else
+                    {
+                        DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPasantia);
+                    }
+                }
+            
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPPasantia);
+            }
         }
 
         }
