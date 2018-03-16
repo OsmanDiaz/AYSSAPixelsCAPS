@@ -17,7 +17,7 @@ namespace MyMainApp.EMP
         private DataView dvActividadEconomica, dvEmpresa, dvDepartamento, dvMunicipio, dvHabilidad, dvDestreza, dvPasantia,
             dvAreaPasantia, dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvEscolaridadPasantia,
             dvConsultoria, dvEntregable, dvCategoriaEscolaridad, dvPasantiaActividad, dvPasantiaAspirante, dvActividadAspirante,dvRendimiento, objExiste,
-            dvEncuestaRendimiento, dvAceptacionAspirante;
+            dvEncuestaRendimiento, dvAceptacionAspirante, dvAspirante;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -1184,8 +1184,8 @@ namespace MyMainApp.EMP
                 GridViewRow row = GVPasantia.Rows[Id];
                 TxtIDPasantia.Text = GVPasantia.DataKeys[Id].Value.ToString();
                 FillGVAceptacionAspirante();
-                GVPasantia.Visible = false;
-                GVAceptacionAspirante.Visible = true;
+                PanelListadoPasantia.Visible = false;
+                PanelAceptacionAspirante.Visible = true;
             }
         }
 
@@ -1194,8 +1194,16 @@ namespace MyMainApp.EMP
             CAceptacionPasantia objAceptacionAspirante = new CAceptacionPasantia(_DataSistema.ConexionBaseDato);
             dvAceptacionAspirante = new DataView(objAceptacionAspirante.Detalle(0, "", Convert.ToInt32(TxtIDPasantia.Text), "", 'x', 'x', "",
                 _DataSistema.Cusuario, DateTime.Now, _DataSistema.Cusuario, DateTime.Now, 4).TB_ACEPTACION_PASANTIA);
-            GVAceptacionAspirante.DataSource = dvAceptacionAspirante;
-            GVAceptacionAspirante.DataBind();
+            if (dvAceptacionAspirante.Count <= 0)
+            {
+                lblAceptacionAspirante.Text = "NO EXISTEN ASPIRANTES PENDIENTES DE ACEPTACION PARA ESTA PASANTIA";
+                lblAceptacionAspirante.Visible = true;
+            }
+            else {
+                lblAceptacionAspirante.Visible = false;
+                GVAceptacionAspirante.DataSource = dvAceptacionAspirante;
+                GVAceptacionAspirante.DataBind();
+            }
 
         }
 
@@ -1206,7 +1214,9 @@ namespace MyMainApp.EMP
                 int Id = Convert.ToInt32(e.CommandArgument);
                 GridViewRow row = GVAceptacionAspirante.Rows[Id];
                 TxtIdAspirante.Text = GVAceptacionAspirante.DataKeys[Id].Value.ToString();
-
+                FillDatosAspirante();
+                PanelAceptacionAspirante.Visible = false;
+                PanelInfoAspirante.Visible = true;
             }
             else if (e.CommandName == "AsignarAspirante")
             {
@@ -1215,8 +1225,85 @@ namespace MyMainApp.EMP
                 TxtIdAspirante.Text = GVAceptacionAspirante.DataKeys[Id].Value.ToString();
 
             }
-        } 
+        }
 
+        protected void FillDatosAspirante()
+        {
+            CAspirante objAspirante = new CAspirante(_DataSistema.ConexionBaseDato);
+            dvAspirante = new DataView(objAspirante.Detalle(TxtIdAspirante.Text, "", "", DateTime.Now, 'x', "", "", "", "", "", "", 'x', 0, "", 0, 0, 0, "", "", "", "", "", DateTime.Now, "", DateTime.Now, 1).TB_ASPIRANTE);
+            if (dvAspirante.Count > 0) {
+                /* CARGA DE DATOS DE EL PRIMER REGISTRO */
+                TxtNombreAsp.Text = dvAspirante.Table.Rows[0]["DS_NOMBRE"].ToString();
+                TxtApellidoAsp.Text = dvAspirante.Table.Rows[0]["DS_APELLIDO"].ToString();
+                TxtFechNac.Text = dvAspirante.Table.Rows[0]["FECH_NACIMIENTO"].ToString();
+                TxtNitAsp.Text = dvAspirante.Table.Rows[0]["DS_NIT"].ToString();
+                TxtTipoAspirante.Text = dvAspirante.Table.Rows[0]["DS_TIPO_ASPIRANTE"].ToString();
+                TxtEmail.Text = dvAspirante.Table.Rows[0]["DS_EMAIL"].ToString();
+
+
+                /* CARGA DE DATOS DE EL POSTERIORES REGISTROS */
+
+                TxtTelCasa.Text = dvAspirante.Table.Rows[0]["DS_TELEFONO_CASA"].ToString();
+                TxtTelCel.Text = dvAspirante.Table.Rows[0]["DS_TELEFONO_CELULAR"].ToString();
+                TxtDui.Text = dvAspirante.Table.Rows[0]["DS_DUI"].ToString();
+                RadioSexo.SelectedValue = dvAspirante.Table.Rows[0]["DS_SEXO"].ToString();
+                TxtDiscapacidad1.Text = dvAspirante.Table.Rows[0]["DS_DISCAPACIDAD1"].ToString();
+                TxtDiscapacidad2.Text = dvAspirante.Table.Rows[0]["DS_DISCAPACIDAD2"].ToString();
+                TxtDiscapacidad3.Text = dvAspirante.Table.Rows[0]["DS_DISCAPACIDAD3"].ToString();
+                TxtDireccionAsp.Text = dvAspirante.Table.Rows[0]["DS_DIRECCION"].ToString();
+
+            }
+            
+        }
+
+        protected void BtnInformeCompleto_Click(object sender, EventArgs e)
+        {
+            Panel2.Visible = true;
+            CargarReporte2();
+        }
+
+        protected void CargarReporte2()
+        {
+            DataTable dt;
+
+            CAspirante objAspirante = new CAspirante(_DataSistema.ConexionBaseDato);
+            DataView dvAspirante = new DataView(objAspirante.Detalle(TxtIdAspirante.Text, "", "", DateTime.Today, 'X',
+         "", "", "", "", "", "", 'X', 0, "", 0, 0, 0, "", "", "", "", "", DateTime.Today, "", DateTime.Today, 4).TB_ASPIRANTE);
+
+            dt = dvAspirante.ToTable();
+            RVFichaAspirante.Visible = true;
+            RVFichaAspirante.LocalReport.ReportPath = "ASP/RptFichaAspirante.rdlc";
+            RVFichaAspirante.LocalReport.DataSources.Clear();
+            RVFichaAspirante.LocalReport.DataSources.Add(new ReportDataSource("TB_ASPIRANTE", dt));
+
+            DataTable dt2;
+            CEscolaridadAspirante objEscolaridad = new CEscolaridadAspirante(_DataSistema.ConexionBaseDato);
+            DataView dvEscolaridad = new DataView(objEscolaridad.Detalle(0, TxtIdAspirante.Text, 0, 0, 0, 0, "", "", 0, 0, "", DateTime.Now,
+                "", DateTime.Now, 3).TB_ESCOLARIDAD_ASPIRANTE);
+            dt2 = dvEscolaridad.ToTable();
+            RVFichaAspirante.LocalReport.DataSources.Add(new ReportDataSource("TB_ESCOLARIDAD_ASPIRANTE", dt2));
+
+            DataTable dt3;
+            CHabilidadAspirante objHabilidad = new CHabilidadAspirante(_DataSistema.ConexionBaseDato);
+            DataView dvHabilidad = new DataView(objHabilidad.Detalle(0, 0, TxtIdAspirante.Text, 0, 0, "",
+                DateTime.Now, "", DateTime.Now, 2).TB_HABILIDAD_ASPIRANTE);
+            dt3 = dvHabilidad.ToTable();
+            RVFichaAspirante.LocalReport.DataSources.Add(new ReportDataSource("TB_HABILIDAD_ASPIRANTE", dt3));
+
+            DataTable dt4;
+            CDestrezaAspirante objDestreza = new CDestrezaAspirante(_DataSistema.ConexionBaseDato);
+            DataView dvDestreza = new DataView(objDestreza.Detalle(0, 0, TxtIdAspirante.Text, "",
+                DateTime.Now, "", DateTime.Now, 2).TB_DESTREZA_ASPIRANTE);
+            dt4 = dvDestreza.ToTable();
+            RVFichaAspirante.LocalReport.DataSources.Add(new ReportDataSource("TB_DESTREZA_ASPIRANTE", dt4));
+
+            DataTable dt5;
+            CPasantiaAspirante objPasantiaAspirante = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
+            DataView dvPasantiaAspirante = new DataView(objPasantiaAspirante.Detalle(0, "", 0, "", DateTime.Now, "",
+                DateTime.Now, 2).TB_PASANTIA_ASPIRANTE);
+            dt5 = dvPasantiaAspirante.ToTable();
+            RVFichaAspirante.LocalReport.DataSources.Add(new ReportDataSource("TB_PASANTIA_ASPIRANTE", dt5));
+        }
 
         }
        
