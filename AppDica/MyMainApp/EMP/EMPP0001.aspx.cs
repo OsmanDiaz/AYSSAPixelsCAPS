@@ -1216,6 +1216,7 @@ namespace MyMainApp.EMP
                 TxtIdAspirante.Text = GVAceptacionAspirante.DataKeys[Id].Value.ToString();
                 FillDatosAspirante();
                 PanelAceptacionAspirante.Visible = false;
+                CargarReporte2();
                 PanelInfoAspirante.Visible = true;
             }
             else if (e.CommandName == "AsignarAspirante")
@@ -1256,14 +1257,9 @@ namespace MyMainApp.EMP
             
         }
 
-        protected void BtnInformeCompleto_Click(object sender, EventArgs e)
-        {
-            Panel2.Visible = true;
-            CargarReporte2();
-        }
-
+        
         protected void CargarReporte2()
-        {
+        {//reporte de aspirante boton informe completo
             DataTable dt;
 
             CAspirante objAspirante = new CAspirante(_DataSistema.ConexionBaseDato);

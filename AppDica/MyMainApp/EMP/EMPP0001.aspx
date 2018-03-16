@@ -620,7 +620,7 @@
                                        <asp:Panel ID="PanelInfoAspirante" runat="server" Visible="False">
     
                                         <div align="left">
-                                                <asp:Button ID="BtnInformeCompleto" runat="server" Text="Informe Completo de Aspirante" class="btn btn-primary" CausesValidation="False" OnClick="BtnInformeCompleto_Click" />
+                                                <asp:Button ID="BtnInformeCompleto" runat="server" Text="Informe Completo de Aspirante" class="btn btn-primary" CausesValidation="False" />
                                         </div>
                                         <br />
 
@@ -684,7 +684,7 @@
                                                 <asp:TextBox ID="TxtDireccionAsp" runat="server" AutoCompleteType="Disabled" class="form-control" TextMode="MultiLine"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator30" runat="server" ControlToValidate="TxtDireccion" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar Direccion</asp:RequiredFieldValidator>
                                             </div>
                                         </div><br />
-                                           <asp:Panel ID="Panel2" runat="server" Visible="true">
+                                           
                                            <asp:Panel ID="PanelFichaAspirante" runat="server" CssClass="modalPopup" Height="527px">
             <br />
             <center>
@@ -695,7 +695,7 @@
             </div>
         </asp:Panel>
         <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender3" runat="server" PopupControlID="PanelFichaAspirante" BackgroundCssClass="modalBackround" TargetControlID="BtnInformeCompleto" CancelControlID="BtnCerrarFicha2"></ajaxToolkit:ModalPopupExtender>
-</asp:Panel>
+
 			                    </asp:Panel>
 
 
