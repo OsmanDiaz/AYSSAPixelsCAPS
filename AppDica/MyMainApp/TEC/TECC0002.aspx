@@ -623,6 +623,7 @@
                                  <asp:UpdatePanel ID="UPResultadoEncuesta" runat="server">
                                      <ContentTemplate>
                                          <asp:Panel ID="PanelResultado" runat="server"><br />
+                                              <center><h3>Resultados de Encuesta</h3></center><br />
                                              <asp:GridView ID="GVResultadoPreg1" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
                                                  <AlternatingRowStyle BackColor="White" />
                                                  <Columns>
@@ -655,6 +656,153 @@
                                              </asp:GridView>
                                              <br />
 
+                                             
+                                             <asp:GridView ID="GVResultadoPreg2" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                                                 <AlternatingRowStyle BackColor="White" />
+                                                 <Columns>
+                                                     <asp:BoundField HeaderText="PREGUNTA" DataField="PREGUNTA_2">
+                                                     <ItemStyle Font-Size="Small" Width="450px" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField HeaderText="MUY BUENA" DataField="R2_M" >
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField HeaderText="BUENA" DataField="R2_B" >
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField HeaderText="REGULAR" DataField="R2_R" >
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField HeaderText="MALA" DataField="R2_L" >
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                 </Columns>
+                                                 <EditRowStyle BackColor="#2461BF" />
+                                                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                 <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                 <RowStyle BackColor="#EFF3FB" />
+                                                 <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                 <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                 <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                             </asp:GridView>
+                                             <br />
+                                             <asp:GridView ID="GVResultadoPreg3" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AutoGenerateColumns="False">
+                                                 <AlternatingRowStyle BackColor="White" />
+                                                 <Columns>
+                                                     <asp:BoundField DataField="PREGUNTA_3" HeaderText="PREGUNTA">
+                                                     <ItemStyle Font-Bold="False" Font-Size="Small" Width="450px" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField DataField="R3_M" HeaderText="MUY BUENA">
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField DataField="R3_B" HeaderText="BUENA">
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField DataField="R3_R" HeaderText="REGULAR">
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField DataField="R3_L" HeaderText="MALA">
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                 </Columns>
+                                                 <EditRowStyle BackColor="#2461BF" />
+                                                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                 <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                 <RowStyle BackColor="#EFF3FB" />
+                                                 <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                 <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                 <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                             </asp:GridView><br />
+                                             <asp:GridView ID="GVResultadoPreg4" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                                                 <AlternatingRowStyle BackColor="White" />
+                                                 <Columns>
+                                                     <asp:BoundField DataField="PREGUNTA_4" HeaderText="PREGUNTA">
+                                                     <ItemStyle Font-Size="Small" Width="450px" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField DataField="R4_A" HeaderText="ADECUADO">
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField DataField="R4_O" HeaderText="OBSOLETO">
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                 </Columns>
+                                                 <EditRowStyle BackColor="#2461BF" />
+                                                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                 <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                 <RowStyle BackColor="#EFF3FB" />
+                                                 <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                 <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                 <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                             </asp:GridView><br />
+                                             <asp:GridView ID="GVResultadoPreg5" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                                                 <AlternatingRowStyle BackColor="White" />
+                                                 <Columns>
+                                                     <asp:BoundField DataField="PREGUNTA_5" HeaderText="PREGUNTA">
+                                                     <ItemStyle Width="450px" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField DataField="R5_M" HeaderText="MUY BUENA">
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField DataField="R5_B" HeaderText="BUENA">
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField DataField="R5_R" HeaderText="REGULAR">
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField DataField="R5_L" HeaderText="MALA">
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                 </Columns>
+                                                 <EditRowStyle BackColor="#2461BF" />
+                                                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                 <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                 <RowStyle BackColor="#EFF3FB" />
+                                                 <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                 <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                 <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                             </asp:GridView><br />
+                                             <asp:GridView ID="GVResultadoPreg6" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                                                 <AlternatingRowStyle BackColor="White" />
+                                                 <Columns>
+                                                     <asp:BoundField DataField="PREGUNTA_6" HeaderText="PREGUNTA">
+                                                     <ItemStyle Font-Size="Small" Width="450px" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField DataField="R6_M" HeaderText="MUY BUENA">
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField DataField="R6_B" HeaderText="BUENA">
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField DataField="R6_R" HeaderText="REGULAR">
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                     <asp:BoundField DataField="R6_L" HeaderText="MALA">
+                                                     <ItemStyle Font-Bold="True" />
+                                                     </asp:BoundField>
+                                                 </Columns>
+                                                 <EditRowStyle BackColor="#2461BF" />
+                                                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                 <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                 <RowStyle BackColor="#EFF3FB" />
+                                                 <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                 <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                 <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                             </asp:GridView><br /><br />
+                                             
                                          </asp:Panel>
                                      </ContentTemplate>
                                  </asp:UpdatePanel>

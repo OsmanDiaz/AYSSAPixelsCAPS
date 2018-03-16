@@ -35,6 +35,11 @@ namespace MyMainApp.TEC
             FillInfoProyecto();
             FillInfoGeneral();
             FillGVResultadoPreg1();
+            FillGVResultadoPreg2();
+            FillGVResultadoPreg3();
+            FillGVResultadoPreg4();
+            FillGVResultadoPreg5();
+            FillGVResultadoPreg6();
         }
 
 
@@ -360,6 +365,45 @@ namespace MyMainApp.TEC
             GVResultadoPreg1.DataSource = dvEncuesta;
             GVResultadoPreg1.DataBind();
         }
-        
+        private void FillGVResultadoPreg2()
+        {
+            CEncuestaAspirante objEncuesta = new CEncuestaAspirante(_DataSistema.ConexionBaseDato);
+            dvEncuesta = new DataView(objEncuesta.Detalle(0, "", ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
+                , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 5).TB_ENCUESTA_SEMANAL_ASPIRANTE);
+            GVResultadoPreg2.DataSource = dvEncuesta;
+            GVResultadoPreg2.DataBind();
+        }
+        private void FillGVResultadoPreg3()
+        {
+            CEncuestaAspirante objEncuesta = new CEncuestaAspirante(_DataSistema.ConexionBaseDato);
+            dvEncuesta = new DataView(objEncuesta.Detalle(0, "", ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
+                , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 6).TB_ENCUESTA_SEMANAL_ASPIRANTE);
+            GVResultadoPreg3.DataSource = dvEncuesta;
+            GVResultadoPreg3.DataBind();
+        }
+        private void FillGVResultadoPreg4()
+        {
+            CEncuestaAspirante objEncuesta = new CEncuestaAspirante(_DataSistema.ConexionBaseDato);
+            dvEncuesta = new DataView(objEncuesta.Detalle(0, "", ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
+                , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 7).TB_ENCUESTA_SEMANAL_ASPIRANTE);
+            GVResultadoPreg4.DataSource = dvEncuesta;
+            GVResultadoPreg4.DataBind();
+        }
+        private void FillGVResultadoPreg5()
+        {
+            CEncuestaAspirante objEncuesta = new CEncuestaAspirante(_DataSistema.ConexionBaseDato);
+            dvEncuesta = new DataView(objEncuesta.Detalle(0, "", ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
+                , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 8).TB_ENCUESTA_SEMANAL_ASPIRANTE);
+            GVResultadoPreg5.DataSource = dvEncuesta;
+            GVResultadoPreg5.DataBind();
+        }
+        private void FillGVResultadoPreg6()
+        {
+            CEncuestaAspirante objEncuesta = new CEncuestaAspirante(_DataSistema.ConexionBaseDato);
+            dvEncuesta = new DataView(objEncuesta.Detalle(0, "", ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
+                , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 9).TB_ENCUESTA_SEMANAL_ASPIRANTE);
+            GVResultadoPreg6.DataSource = dvEncuesta;
+            GVResultadoPreg6.DataBind();
+        }
     }
 }
