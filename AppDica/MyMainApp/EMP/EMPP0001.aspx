@@ -30,7 +30,7 @@
             <div class="container-fluid">
                 <div id="content">
                     <%--inicio container-fluid--%>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="3" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server">
@@ -520,7 +520,7 @@
                                                 <asp:Button ID="BtnNuevaPasantia" runat="server" Text="NUEVA PASANTIA" class="btn btn-primary" CausesValidation="False" OnClick="BtnNuevaPasantia_Click" />
                                             </div>
                                             <br />
-                                            <asp:GridView ID="GVPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnRowUpdating="GVPasantia_RowUpdating" OnSelectedIndexChanged="GVPasantia_SelectedIndexChanged" DataKeyNames="ID">
+                                            <asp:GridView ID="GVPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnRowUpdating="GVPasantia_RowUpdating" OnSelectedIndexChanged="GVPasantia_SelectedIndexChanged" DataKeyNames="ID" OnRowCommand="GVPasantia_RowCommand">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
                                                     <asp:TemplateField HeaderText="" Visible="false">
@@ -540,7 +540,7 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="ACEPTACION DE ASPIRANTES">
                                                         <ItemTemplate>
-                                                            <asp:Button ID="BtnAceptarAspirante" runat="server" CommandName="Edit"
+                                                            <asp:Button ID="BtnAceptarAspirante" runat="server" CommandName="ListaAspirante" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" 
                                                                 Text=" Ver Listado Aspirantes" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
@@ -562,6 +562,143 @@
                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                             </asp:GridView>
+                                            </asp:Panel>
+                                           
+
+                                          <asp:Panel ID="PanelAceptacionAspirante" runat="server" Visible="false"> 
+
+                                          <asp:Label ID="lblAceptacionAspirante" runat="server" Visible="false"></asp:Label>
+                                          <asp:GridView ID="GVAceptacionAspirante" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnRowCommand="GVAceptacionAspirante_RowCommand">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:TemplateField HeaderText="" Visible="false">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="TxtIDAspirante" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:BoundField HeaderText="NOMBRE COMPLETO" DataField="DS_NOMBRE_COMPLETO" />
+                                                    <asp:BoundField HeaderText="NOMBRE PASANTIA" DataField="NOMBRE_PASANTIA" />
+													
+                                                    <asp:TemplateField HeaderText="PERFIL DE ASPIRANTE">               
+                                                        <ItemTemplate> <asp:Button ID="BtnPerfilAspirante" runat="server" CommandName="PerfilAspirante" 
+														CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" 
+                                                                Text="VER PERFIL" />        
+                                                           </ItemTemplate>
+                                                    </asp:TemplateField>
+													
+													<asp:TemplateField>               
+                                                        <ItemTemplate> <asp:Button ID="BtnAceptarAspirante" runat="server" CommandName="AsignarAspirante" 
+														CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" 
+                                                                Text="ACEPTAR ASPIRANTE" />        
+                                                           </ItemTemplate>
+                                                    </asp:TemplateField>
+
+                                                    <asp:TemplateField>               
+                                                        <ItemTemplate> <asp:Button ID="BtnRechazarAspirante" runat="server" CommandName="RechazarAspirante" 
+														CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" 
+                                                                Text="RECHAZAR ASPIRANTE" />        
+                                                           </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>
+
+                                             
+        
+                                            </asp:Panel>
+
+
+                                       <asp:Panel ID="PanelInfoAspirante" runat="server" Visible="False">
+    
+                                        <div align="left">
+                                                <asp:Button ID="BtnInformeCompleto" runat="server" Text="Informe Completo de Aspirante" class="btn btn-primary" CausesValidation="False" OnClick="BtnInformeCompleto_Click" />
+                                        </div>
+                                        <br />
+
+                                        <div class="form-group">
+                                            <asp:Label ID="Label79" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOMBRES:"></asp:Label><div class="col-md-3">
+                                                <asp:TextBox ID="TxtNombreAsp" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                            </div>
+                                            <asp:Label ID="Label82" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="APELLIDOS:"></asp:Label><div class="col-md-3">
+                                                <asp:TextBox ID="TxtApellidoAsp" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="Label83" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="FECHA NACIMIENTO:"></asp:Label><div class="col-md-3">
+                                                <asp:TextBox ID="TxtFechNac" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="Label85" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="TELÉFONO (CASA):"></asp:Label><div class="col-md-3">
+                                                <asp:TextBox ID="TxtTelCasa" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox>
+                                            </div>
+                                            <asp:Label ID="Label86" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="TELÉFONO (CELULAR):"></asp:Label><div class="col-md-3">
+                                                <asp:TextBox ID="TxtTelCel" runat="server" AutoCompleteType="Disabled" class="form-control" onkeydown="return Documentos(event);" onPaste="return Documentos(event);"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator24" runat="server" ControlToValidate="TxtTelCel" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar Telefono Celular</asp:RequiredFieldValidator>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="Label87" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NIT:"></asp:Label><div class="col-md-3">
+                                                <asp:TextBox ID="TxtNitAsp" runat="server" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);" ReadOnly="True"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="Label88" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DUI:"></asp:Label><div class="col-md-3">
+                                                <asp:TextBox ID="TxtDui" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return Documentos(event);" onPaste="return Documentos(event);" TargetControlID="TxtDui"></asp:TextBox>
+                                            </div>
+                                            <asp:Label ID="Label89" runat="server" class="control-label  col-sm-3" Font-Bold="True" readonly="" Text="EMAIL:"></asp:Label><div class="col-md-3">
+                                                <asp:TextBox ID="TxtEmail" runat="server" AutoCompleteType="Disabled" class="form-control"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator29" runat="server" ControlToValidate="TxtEmail" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar email</asp:RequiredFieldValidator>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="Label90" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="SEXO:"></asp:Label><div class="col-md-3">
+                                                <asp:RadioButtonList ID="RadioSexo" runat="server" RepeatDirection="Horizontal">
+                                                    <asp:ListItem Selected="True" Value="F">&#160;FEMENINO&#160;&#160;&#160;</asp:ListItem>
+                                                    <asp:ListItem Value="M">&#160;MASCULINO</asp:ListItem>
+                                                </asp:RadioButtonList>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="Label93" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DISCAPACIDAD 1:"></asp:Label><div class="col-md-3">
+                                                <asp:TextBox ID="TxtDiscapacidad1" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="Label94" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DISCAPACIDAD 2:"></asp:Label><div class="col-md-3">
+                                                <asp:TextBox ID="TxtDiscapacidad2" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
+                                            </div>
+                                            <asp:Label ID="Label95" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="DISCAPACIDAD 3:"></asp:Label><div class="col-md-3">
+                                                <asp:TextBox ID="TxtDiscapacidad3" runat="server" AutoCompleteType="Disabled" class="form-control" onkeypress="return soloLetras(event);" onPaste="return soloLetras(event);"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label ID="Label99" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="DIRECCIÓN:"></asp:Label><div class="col-md-8">
+                                                <asp:TextBox ID="TxtDireccionAsp" runat="server" AutoCompleteType="Disabled" class="form-control" TextMode="MultiLine"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator30" runat="server" ControlToValidate="TxtDireccion" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar Direccion</asp:RequiredFieldValidator>
+                                            </div>
+                                        </div><br />
+                                           <asp:Panel ID="Panel2" runat="server" Visible="true">
+                                           <asp:Panel ID="PanelFichaAspirante" runat="server" CssClass="modalPopup" Height="527px">
+            <br />
+            <center>
+        <rsweb:ReportViewer ID="RVFichaAspirante" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="75%" style="margin-right: 0px"><LocalReport ReportPath="ASP\RptFichaAspirante.rdlc"></LocalReport></rsweb:ReportViewer></center>
+            <div align="center">
+                <br />
+                <asp:Button ID="BtnCerrarFicha2" runat="server" Text="Cerrar" />
+            </div>
+        </asp:Panel>
+        <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender3" runat="server" PopupControlID="PanelFichaAspirante" BackgroundCssClass="modalBackround" TargetControlID="BtnInformeCompleto" CancelControlID="BtnCerrarFicha2"></ajaxToolkit:ModalPopupExtender>
+</asp:Panel>
+			                    </asp:Panel>
+
+
                                             <asp:Panel ID="PanelAspirantes" runat="server" Visible="False">
                                                 <asp:GridView ID="GVAspirantes" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVAspirantes_SelectedIndexChanged" EmptyDataText="No existen registros">
                                                     <AlternatingRowStyle BackColor="White" />
@@ -589,6 +726,7 @@
                                                 <center> <asp:Button ID="BtnRegresarPasantias" runat="server" class="btn btn-primary" OnClick="BtnRegresarPasantias_Click" Text="Regresar a Listado Pasantias" /></center>
                                             </asp:Panel>
                                             <br />
+
                                             <asp:Panel ID="PanelActividadAspirante" runat="server" Visible="False">
                                                 <asp:GridView ID="GVActividadAspirante" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Visible="False" Width="100%" EmptyDataText="No existen registros">
                                                     <AlternatingRowStyle BackColor="White" />
@@ -611,7 +749,10 @@
                                                 </asp:GridView>
                                                 <center> <asp:Button ID="Button1" runat="server" class="btn btn-primary" OnClick="BtnRegresarAspirantes_Click" Text="Regresar a Listado Aspirantes" /></center>
                                             </asp:Panel>
-                                        </asp:Panel>
+
+
+
+
                                         <br />
 
                                     </ContentTemplate>
@@ -1163,6 +1304,10 @@
                 </div>
             </asp:Panel>
             <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="PanelFicha" BackgroundCssClass="modalBackround" TargetControlID="BtnFicha" CancelControlID="BtnCerrarFicha"></ajaxToolkit:ModalPopupExtender>
+
+
+
+
 
         </form>
         <%--fin formulario--%>
