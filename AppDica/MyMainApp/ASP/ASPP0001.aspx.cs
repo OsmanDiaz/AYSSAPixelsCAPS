@@ -106,7 +106,7 @@ namespace MyMainApp
             FillGVListaActividadEncuesta();
             FillGVCuadroComparativo();
             FillCamposPasantia();
-            CargarInformeFinal();
+            
         }
 
         
@@ -1056,13 +1056,20 @@ namespace MyMainApp
                     }
                     if (objResultado.CodigoError == 0)
                     {
-                        Consultar();
-                        DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPInformeFinal);
-                        LimpiarEncuesta();//encuesta semanal
-
-                        PanelInformeFinal.Visible = false;
-                        PanelReporteInfoFinal.Visible = true;
                         
+                        Consultar();
+                        CInformeFinalPasantia objInformeFinalPasantia = new CInformeFinalPasantia(_DataSistema.ConexionBaseDato);
+                        DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPInformeFinal);
+                        DataView dvInformeFinal = new DataView(objInformeFinalPasantia.Detalle(0, _DataSistema.Cusuario, Convert.ToInt32(TxtIdPasantia.Text),
+                            TxtDescripPasantia.Text, TxtCrono.Text, TxtLaboral.Text,TxtPasanBenef.Text, TxtLimitaciones.Text, TxtConclusion.Text, 
+                            _DataSistema.Cusuario, DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 3).TB_INFORME_FINAL_ASPIRANTE);
+                        if (dvInformeFinal.Count > 0)
+                        {
+                            TxtIdInformeFinal.Text = dvInformeFinal.Table.Rows[0]["ID"].ToString();
+                        }
+                        CargarInformeFinal(); 
+                        LimpiarEncuesta();//encuesta semanal
+                         
                     }
                     else
                     {
@@ -1210,7 +1217,7 @@ namespace MyMainApp
             DataTable ifp;
             //cargar las respuestas del informe final pasantia
             CInformeFinalPasantia objInformeFinalPasantia = new CInformeFinalPasantia(_DataSistema.ConexionBaseDato);
-            DataView dvInformeFinal = new DataView(objInformeFinalPasantia.Detalle(0,_DataSistema.Cusuario,0,"","","","",
+            DataView dvInformeFinal = new DataView(objInformeFinalPasantia.Detalle(Convert.ToInt32(TxtIdInformeFinal.Text),_DataSistema.Cusuario,0,"","","","",
                 "","",_DataSistema.Cusuario,DateTime.Today,_DataSistema.Cusuario,DateTime.Today,2).TB_INFORME_FINAL_ASPIRANTE);
 
             ifp = dvInformeFinal.ToTable();
