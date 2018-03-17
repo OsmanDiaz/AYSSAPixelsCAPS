@@ -899,7 +899,7 @@
                                             Infome final de la pasantía no remunerada del programa PIXELS CAPS VIDEOJUEGOS</p>
                                         <p style="text-align:center">La siguiente guía de preguntas debe de ser respondida por los pasantes de manera individual.</p>
                                          <asp:TextBox ID="TxtIdInformeComparativo" runat="server" Visible="false"></asp:TextBox>
-                                        
+                                        <asp:TextBox ID="TxtIdInformeFinal" runat="server" Visible="false"></asp:TextBox>
                                     <br />
                                     <div class="form-group">
                                                 <asp:Label ID="Label69" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE DE LA EMPRESA:"></asp:Label>
@@ -1087,7 +1087,7 @@
                                             &nbsp;<asp:Button ID="Button5" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
                                         </div> <br />
                                             </asp:Panel>
-                                        <asp:Panel ID="PanelReporteInfoFinal" runat="server" Visible="false">
+                                        <asp:Panel ID="PanelReporteInfoFinal" runat="server" Visible="true">
                                             <div align="center"><br /><br /><br />
                                              <asp:Button ID="BtnReporteInfoFinal" runat="server" Text="VER REPORTE DE INFORME FINAL" />
                                          </div><br />
