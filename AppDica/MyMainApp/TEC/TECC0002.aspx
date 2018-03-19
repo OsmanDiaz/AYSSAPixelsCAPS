@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterProceso.master" AutoEventWireup="true" CodeBehind="TECC0002.aspx.cs" Inherits="MyMainApp.TEC.TECC0002" %>
-
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxtoolkit" %>
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 
@@ -23,7 +23,7 @@
                             </asp:DropDownList>
                         </div>
                     </div>--%>
-                    <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="2" BorderColor="#66CCFF" Height="375px" ScrollBars="Vertical" Width="100%">
+                    <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" Height="375px" ScrollBars="Vertical" Width="100%">
                         
                          <ajaxtoolkit:TabPanel ID="TabPanelGeneral" runat="server" HeaderText="MONITOREO">
                             <ContentTemplate>
@@ -416,15 +416,9 @@
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPPasantias" runat="server">
                                     <ContentTemplate>
-                                        <br />
-                                        <asp:Panel ID="PanelListadoPasantia" runat="server">
-                                            <div class="form-group">
-                                                <asp:Label ID="Label1" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE DE EMPRESA:"></asp:Label>
-                                                <div class="col-md-9">
-                                                    <asp:TextBox ID="TxtNombreEmpresa" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
-                                                </div>
-                                            </div>
+                                        <br /><center><h3>Listado de Pasantias</h3></center>
                                             <br />
+                                        <asp:Panel ID="PanelListadoPasantia" runat="server">
                                             <asp:GridView ID="GVListaPasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ID" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GVListaPasantia_SelectedIndexChaged" Width="100%">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
@@ -433,7 +427,7 @@
                                                             <asp:TextBox ID="TxtIdPasantiaGV" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:BoundField DataField="DS_PASANTIA" HeaderText="NOMBRE PASANTIA" />
+                                                    <asp:BoundField DataField="NOMBRE_PASANTIA" HeaderText="NOMBRE PASANTIA" />
                                                     <asp:BoundField DataField="DS_AREA" HeaderText="AREA PASANTIA" />
                                                     <asp:BoundField DataField="DS_NOMBRE_EMPRESA" HeaderText="NOMBRE EMPRESA" />
                                                     <asp:BoundField DataField="DS_SUCURSAL" HeaderText="SUCURSAL" />
@@ -559,7 +553,7 @@
                                                                 <asp:Button ID="BtnAsignarPasantia" runat="server" CommandName="Select" Text="Asignar" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
-                                                        <asp:TemplateField HeaderText="Ver Aspirante">
+                                                        <asp:TemplateField HeaderText="Ver Aspirante" Visible="False">
                                                             <ItemTemplate>
                                                                 <asp:Button ID="BtnVerAspirante" runat="server" CommandName="Select" Text="Ver Aspirante" />
                                                             </ItemTemplate>
@@ -602,6 +596,7 @@
                                                 </asp:GridView>
                                                 <br />
                                             </asp:Panel>
+                                                
                                             <div align="center">
                                                 <asp:Button ID="BtnAtras" runat="server" CausesValidation="False" class="btn btn-primary" OnClick="BtnRegresarPasantia_Click" Text="ATRAS" />
                                             </div>

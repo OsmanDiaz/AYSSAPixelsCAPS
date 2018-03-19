@@ -177,10 +177,23 @@ namespace MyMainApp.TEC
 
                 CAceptacionPasantia objAceptacionPasantia = new CAceptacionPasantia(_DataSistema.ConexionBaseDato);
                 objResultado = objAceptacionPasantia.Actualizacion(0, IdAspirante, Convert.ToInt32(TxtIdPasantia.Text),
-                  "",  'X','P',"",
+                  "", 'X', 'P', "",
                  _DataSistema.Cusuario, TipoActualizacion.Adicionar);
-
-                FillGVAspirantes();
+                if (objResultado.CodigoError == 0)
+                {
+                    FillGVAspirantes();
+                }
+                if (objResultado.CodigoError == 0)
+                {
+                    Consultar();
+                    DespliegaMensajeUpdatePanel("Asignación de Aspirante Correctamente", UPGeneral);
+                    PanelListadoPasantia.Visible = true;
+                    PanelListadoAspPas.Visible = false;
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPGeneral);
+                }
             }
             catch (Exception ex)
             {

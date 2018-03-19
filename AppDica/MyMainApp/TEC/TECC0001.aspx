@@ -22,7 +22,7 @@
                                 </asp:DropDownList>
                             </div>
                         </div>
-                        <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" activetabindex="1" bordercolor="#66CCFF" height="375px" scrollbars="Vertical" width="100%">
+                        <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" activetabindex="0" bordercolor="#66CCFF" height="375px" scrollbars="Vertical" width="100%">
                             <ajaxtoolkit:TabPanel ID="TabPanel1" runat="server" HeaderText="REGISTROS DE ASPIRANTES" Width="100%">
                                 <ContentTemplate>
                                     <asp:UpdatePanel ID="UPRegistroAspirante" runat="server">
