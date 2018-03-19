@@ -1227,8 +1227,14 @@ namespace MyMainApp.EMP
                 int Id = Convert.ToInt32(e.CommandArgument);
                 GridViewRow row = GVAceptacionAspirante.Rows[Id];
                 TxtIdAspirante.Text = GVAceptacionAspirante.DataKeys[Id].Value.ToString();
-
+                FillAsignarAspirante();
             }
+        }
+
+        protected void FillAsignarAspirante()
+        {
+            CAceptacionPasantia objPasantia = new CAceptacionPasantia(_DataSistema.Cusuario);
+            dvAceptacionAspirante = new DataView(objPasantia.)
         }
 
         protected void FillDatosAspirante()

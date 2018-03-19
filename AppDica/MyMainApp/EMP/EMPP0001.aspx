@@ -596,7 +596,7 @@
 													
 													<asp:TemplateField>               
                                                         <ItemTemplate> <asp:Button ID="BtnAceptarAspirante" runat="server" CommandName="AsignarAspirante" 
-														CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" 
+														CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" OnClientClick="return confirm('¿Desea asignar este aspirante a la pasantia?');" 
                                                                 Text="ACEPTAR ASPIRANTE" />        
                                                            </ItemTemplate>
                                                     </asp:TemplateField>
