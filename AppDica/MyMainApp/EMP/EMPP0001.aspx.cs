@@ -1199,9 +1199,11 @@ namespace MyMainApp.EMP
             {
                 lblAceptacionAspirante.Text = "NO EXISTEN ASPIRANTES PENDIENTES DE ACEPTACION PARA ESTA PASANTIA";
                 lblAceptacionAspirante.Visible = true;
+                GVAceptacionAspirante.Visible = false;
             }
             else {
                 lblAceptacionAspirante.Visible = false;
+                GVAceptacionAspirante.Visible = true;
                 GVAceptacionAspirante.DataSource = dvAceptacionAspirante;
                 GVAceptacionAspirante.DataBind();
             }
@@ -1338,6 +1340,15 @@ namespace MyMainApp.EMP
                 DespliegaMensajeUpdatePanel(ex.Message, UPPasantia);
             }
         }
+
+
+        protected void BtnAcepAsp_Click(object sender, EventArgs e)
+        {
+            PanelListadoPasantia.Visible = true;
+            PanelAceptacionAspirante.Visible = false;
+            PanelInfoAspirante.Visible = false;
+        }
+
 
         }
        

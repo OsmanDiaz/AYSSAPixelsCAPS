@@ -568,8 +568,14 @@
                                            
 
                                           <asp:Panel ID="PanelAceptacionAspirante" runat="server" Visible="false"> 
-
+                                           
+                                              
+                                         <div align="left">
+                                            <asp:Button ID="BtnAcepAsp" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" OnClick="BtnAcepAsp_Click" />
+                                         </div>     
                                           <asp:Label ID="lblAceptacionAspirante" runat="server" Visible="false"></asp:Label>
+
+
                                           <asp:GridView ID="GVAceptacionAspirante" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnRowCommand="GVAceptacionAspirante_RowCommand">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
@@ -613,9 +619,6 @@
                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                             </asp:GridView>
-
-                                             
-        
                                             </asp:Panel>
 
 
