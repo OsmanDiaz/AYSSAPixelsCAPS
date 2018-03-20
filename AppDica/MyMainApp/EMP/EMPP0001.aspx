@@ -603,7 +603,7 @@
 
                                                     <asp:TemplateField>               
                                                         <ItemTemplate> <asp:Button ID="BtnRechazarAspirante" runat="server" CommandName="RechazarAspirante" 
-														CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" 
+														CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" OnClientClick="return confirm('¿Desea rechazar a este aspirante?');"
                                                                 Text="RECHAZAR ASPIRANTE" />        
                                                            </ItemTemplate>
                                                     </asp:TemplateField>
@@ -628,7 +628,12 @@
                                                 <asp:Button ID="BtnInformeCompleto" runat="server" Text="Informe Completo de Aspirante" class="btn btn-primary" CausesValidation="False" />
                                         </div>
                                         <br />
-
+                                            <asp:TextBox ID="TxtPaisAsp" runat="server" class="form-control" visible="false"></asp:TextBox>
+                                            <asp:TextBox ID="TxtDepAsp" runat="server" class="form-control" visible="false"></asp:TextBox>
+                                           <asp:TextBox ID="TxtMunAsp" runat="server" class="form-control" visible="false"></asp:TextBox>
+                                           <asp:TextBox ID="TxtTipoAsp" runat="server" class="form-control" visible="false"></asp:TextBox>
+                                           <asp:TextBox ID="TxtTituloAsp" runat="server" class="form-control" visible="false"></asp:TextBox>
+                                           <asp:TextBox ID="TxtEstadoAsp" runat="server" class="form-control" visible="false"></asp:TextBox>
                                         <div class="form-group">
                                             <asp:Label ID="Label79" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOMBRES:"></asp:Label><div class="col-md-3">
                                                 <asp:TextBox ID="TxtNombreAsp" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>

@@ -1229,12 +1229,129 @@ namespace MyMainApp.EMP
                 TxtIdAspirante.Text = GVAceptacionAspirante.DataKeys[Id].Value.ToString();
                 FillAsignarAspirante();
             }
+            else if (e.CommandName == "RechazarAspirante")
+            {
+                int Id = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = GVAceptacionAspirante.Rows[Id];
+                TxtIdAspirante.Text = GVAceptacionAspirante.DataKeys[Id].Value.ToString();
+                FillRechazarAspirante();
+            }
+        }
+
+        protected void FillRechazarAspirante()
+        {
+            CAspirante objAspirante = new CAspirante(_DataSistema.ConexionBaseDato);
+            dvAspirante = new DataView(objAspirante.Detalle(TxtIdAspirante.Text, "", "", DateTime.Now, 'x', "", "", "", "", "", "", 'x', 0, "", 0, 0, 0, "", "", "", "", "", DateTime.Now, "", DateTime.Now, 1).TB_ASPIRANTE);
+            if (dvAspirante.Count > 0)
+            {
+                /* CARGA DE DATOS DE EL PRIMER REGISTRO */
+                TxtNombreAsp.Text = dvAspirante.Table.Rows[0]["DS_NOMBRE"].ToString();
+                TxtApellidoAsp.Text = dvAspirante.Table.Rows[0]["DS_APELLIDO"].ToString();
+                TxtFechNac.Text = dvAspirante.Table.Rows[0]["FECH_NACIMIENTO"].ToString();
+                TxtNitAsp.Text = dvAspirante.Table.Rows[0]["DS_NIT"].ToString();
+                TxtTipoAspirante.Text = dvAspirante.Table.Rows[0]["DS_TIPO_ASPIRANTE"].ToString();
+                TxtEmail.Text = dvAspirante.Table.Rows[0]["DS_EMAIL"].ToString();
+                TxtPaisAsp.Text = dvAspirante.Table.Rows[0]["ID_PAIS"].ToString();
+                TxtDepAsp.Text = dvAspirante.Table.Rows[0]["ID_DEPARTAMENTO"].ToString();
+                TxtMunAsp.Text = dvAspirante.Table.Rows[0]["ID_MUNICIPIO"].ToString();
+                TxtTipoAsp.Text = dvAspirante.Table.Rows[0]["ID_TIPO_ASPIRANTE"].ToString();
+                TxtTituloAsp.Text = dvAspirante.Table.Rows[0]["ID_TITULO_ACADEMICO"].ToString();
+                TxtEstadoAsp.Text = dvAspirante.Table.Rows[0]["CD_ESTADO_ASPIRANTE"].ToString();
+
+                /* CARGA DE DATOS DE EL POSTERIORES REGISTROS */
+
+                TxtTelCasa.Text = dvAspirante.Table.Rows[0]["DS_TELEFONO_CASA"].ToString();
+                TxtTelCel.Text = dvAspirante.Table.Rows[0]["DS_TELEFONO_CELULAR"].ToString();
+                TxtDui.Text = dvAspirante.Table.Rows[0]["DS_DUI"].ToString();
+                RadioSexo.SelectedValue = dvAspirante.Table.Rows[0]["DS_SEXO"].ToString();
+                TxtDiscapacidad1.Text = dvAspirante.Table.Rows[0]["DS_DISCAPACIDAD1"].ToString();
+                TxtDiscapacidad2.Text = dvAspirante.Table.Rows[0]["DS_DISCAPACIDAD2"].ToString();
+                TxtDiscapacidad3.Text = dvAspirante.Table.Rows[0]["DS_DISCAPACIDAD3"].ToString();
+                TxtDireccionAsp.Text = dvAspirante.Table.Rows[0]["DS_DIRECCION"].ToString();
+
+            }
+            try
+            {
+                objResultado = objAspirante.Actualizacion(TxtIdAspirante.Text, TxtNombreAsp.Text, TxtApellidoAsp.Text, Convert.ToDateTime(TxtFechNac.Text),
+                    Convert.ToChar(RadioSexo.SelectedValue), TxtTelCasa.Text, TxtTelCel.Text, TxtDireccionAsp.Text, TxtEmail.Text, TxtDui.Text, TxtNitAsp.Text, 'I', Convert.ToInt32(TxtTipoAsp.Text), TxtPaisAsp.Text, Convert.ToInt32(TxtDepAsp.Text),
+                    Convert.ToInt32(TxtMunAsp.Text), Convert.ToInt32(TxtTituloAsp.Text), TxtIdAspirante.Text, TxtDiscapacidad1.Text, TxtDiscapacidad2.Text, TxtDiscapacidad3.Text, _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+
+                if (objResultado.CodigoError == 0)
+                {
+                    FillGVAceptacionAspirante();
+                    DespliegaMensajeUpdatePanel("Se rechazo la solicitud del aspirante", UPPasantia);
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel("No se guardaron los Datos", UPPasantia);
+                }
+
+            }
+            catch (Exception e)
+            {
+                DespliegaMensajeUpdatePanel("Error al rechazar usuario: " + e.Message, UPPasantia);
+            }
         }
 
         protected void FillAsignarAspirante()
         {
-            CAceptacionPasantia objPasantia = new CAceptacionPasantia(_DataSistema.Cusuario);
-            dvAceptacionAspirante = new DataView(objPasantia.)
+            CAspirante objAspirante = new CAspirante(_DataSistema.ConexionBaseDato);
+            dvAspirante = new DataView(objAspirante.Detalle(TxtIdAspirante.Text, "", "", DateTime.Now, 'x', "", "", "", "", "", "", 'x', 0, "", 0, 0, 0, "", "", "", "", "", DateTime.Now, "", DateTime.Now, 1).TB_ASPIRANTE);
+            if (dvAspirante.Count > 0)
+            {
+                /* CARGA DE DATOS DE EL PRIMER REGISTRO */
+                TxtNombreAsp.Text = dvAspirante.Table.Rows[0]["DS_NOMBRE"].ToString();
+                TxtApellidoAsp.Text = dvAspirante.Table.Rows[0]["DS_APELLIDO"].ToString();
+                TxtFechNac.Text = dvAspirante.Table.Rows[0]["FECH_NACIMIENTO"].ToString();
+                TxtNitAsp.Text = dvAspirante.Table.Rows[0]["DS_NIT"].ToString();
+                TxtTipoAspirante.Text = dvAspirante.Table.Rows[0]["DS_TIPO_ASPIRANTE"].ToString();
+                TxtEmail.Text = dvAspirante.Table.Rows[0]["DS_EMAIL"].ToString();
+                TxtPaisAsp.Text = dvAspirante.Table.Rows[0]["ID_PAIS"].ToString();
+                TxtDepAsp.Text = dvAspirante.Table.Rows[0]["ID_DEPARTAMENTO"].ToString();
+                TxtMunAsp.Text = dvAspirante.Table.Rows[0]["ID_MUNICIPIO"].ToString();
+                TxtTipoAsp.Text = dvAspirante.Table.Rows[0]["ID_TIPO_ASPIRANTE"].ToString();
+                TxtTituloAsp.Text = dvAspirante.Table.Rows[0]["ID_TITULO_ACADEMICO"].ToString();
+                TxtEstadoAsp.Text = dvAspirante.Table.Rows[0]["CD_ESTADO_ASPIRANTE"].ToString();
+
+                /* CARGA DE DATOS DE EL POSTERIORES REGISTROS */
+
+                TxtTelCasa.Text = dvAspirante.Table.Rows[0]["DS_TELEFONO_CASA"].ToString();
+                TxtTelCel.Text = dvAspirante.Table.Rows[0]["DS_TELEFONO_CELULAR"].ToString();
+                TxtDui.Text = dvAspirante.Table.Rows[0]["DS_DUI"].ToString();
+                RadioSexo.SelectedValue = dvAspirante.Table.Rows[0]["DS_SEXO"].ToString();
+                TxtDiscapacidad1.Text = dvAspirante.Table.Rows[0]["DS_DISCAPACIDAD1"].ToString();
+                TxtDiscapacidad2.Text = dvAspirante.Table.Rows[0]["DS_DISCAPACIDAD2"].ToString();
+                TxtDiscapacidad3.Text = dvAspirante.Table.Rows[0]["DS_DISCAPACIDAD3"].ToString();
+                TxtDireccionAsp.Text = dvAspirante.Table.Rows[0]["DS_DIRECCION"].ToString();
+
+            }
+            try
+            {
+                objResultado = objAspirante.Actualizacion(TxtIdAspirante.Text, TxtNombreAsp.Text, TxtApellidoAsp.Text, Convert.ToDateTime(TxtFechNac.Text),
+                    Convert.ToChar(RadioSexo.SelectedValue), TxtTelCasa.Text, TxtTelCel.Text, TxtDireccionAsp.Text, TxtEmail.Text, TxtDui.Text, TxtNitAsp.Text, 'O', Convert.ToInt32(TxtTipoAsp.Text), TxtPaisAsp.Text, Convert.ToInt32(TxtDepAsp.Text),
+                    Convert.ToInt32(TxtMunAsp.Text), Convert.ToInt32(TxtTituloAsp.Text),  TxtIdAspirante.Text, TxtDiscapacidad1.Text, TxtDiscapacidad2.Text, TxtDiscapacidad3.Text, _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+
+                if (objResultado.CodigoError == 0)
+                {
+                    CPasantiaAspirante objPasantiaAspirante = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
+                    objResultado = objPasantiaAspirante.Actualizacion(0, TxtIdAspirante.Text, Convert.ToInt32(TxtIDPasantia.Text), _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+                    if (objResultado.CodigoError == 0)
+                    {
+                        FillGVAceptacionAspirante();
+                        DespliegaMensajeUpdatePanel("Sea Agregado al aspirante en la pasantia", UPPasantia);
+                    }
+                    else {
+                        DespliegaMensajeUpdatePanel("No se guardaron los Datos", UPPasantia);
+                    } 
+                }else{
+                    DespliegaMensajeUpdatePanel("No se guardaron los Datos", UPPasantia);
+                }
+            
+            }
+            catch (Exception e)
+            {
+                DespliegaMensajeUpdatePanel("Error al insertar usuario: "+e.Message, UPPasantia);
+            }
         }
 
         protected void FillDatosAspirante()
