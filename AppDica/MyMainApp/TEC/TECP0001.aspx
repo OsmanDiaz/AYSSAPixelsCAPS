@@ -29,7 +29,8 @@
                                         <%--inicio contenido tab--%>
                                         <div align="center">
                                             <asp:Label ID="Label47" runat="server" Text="Personal que se requiere segun habilidades" Font-Size="14pt"></asp:Label>
-                                        </div>
+                                            
+                                        </div><br />
                                         <asp:GridView ID="GVBrecha" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id_habilidad_conocimiento,id_nivel_conocimiento" EmptyDataText="No existen registros" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GVBrecha_SelectedIndexChanged" Width="100%">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
@@ -52,7 +53,7 @@
                                                 </asp:BoundField>
 
 
-                                                <asp:TemplateField HeaderText="Ver Aspirantes">
+                                                <asp:TemplateField HeaderText="Ver Aspirantes" Visible="False">
                                                     <ItemTemplate>
                                                         <asp:Button ID="BtnVerAspirante" runat="server" CommandName="Select" Text="Ver Aspirantes" />
                                                     </ItemTemplate>
