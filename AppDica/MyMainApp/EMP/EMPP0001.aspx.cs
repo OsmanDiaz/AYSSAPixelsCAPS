@@ -1538,7 +1538,8 @@ namespace MyMainApp.EMP
                     DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPasantia);
                 }
             }
-            else if (TxtEstadoPasActAsp.Text == TxtIdActividadPasantiaAspirante.Text)
+
+            if (TxtEstadoPasActAsp.Text == TxtIdActividadPasantiaAspirante.Text)
             {
                 DespliegaMensajeUpdatePanel("Aspirante ya se encuentra asignado a esta pasantia", UPPasantia);
             }
