@@ -34,12 +34,12 @@ namespace MyMainApp.TEC
             FillGVListaPasantia();
             FillInfoProyecto();
             FillInfoGeneral();
-            FillGVResultadoPreg1();
-            FillGVResultadoPreg2();
-            FillGVResultadoPreg3();
-            FillGVResultadoPreg4();
-            FillGVResultadoPreg5();
-            FillGVResultadoPreg6();
+            FillGVEmpresaEncuesta();
+            //FillGVResultadoPreg2();
+            //FillGVResultadoPreg3();
+            //FillGVResultadoPreg4();
+            //FillGVResultadoPreg5();
+            //FillGVResultadoPreg6();
         }
 
 
@@ -372,51 +372,122 @@ namespace MyMainApp.TEC
         //resultado encuesta semanal
         private void FillGVResultadoPreg1()
         {
-            CEncuestaAspirante objEncuesta = new CEncuestaAspirante(_DataSistema.ConexionBaseDato);
-            dvEncuesta = new DataView(objEncuesta.Detalle(0, "", ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
-                , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 4).TB_ENCUESTA_SEMANAL_ASPIRANTE);
-            GVResultadoPreg1.DataSource = dvEncuesta;
-            GVResultadoPreg1.DataBind();
+                CEncuestaAspirante objEncuesta = new CEncuestaAspirante(_DataSistema.ConexionBaseDato);
+                dvEncuesta = new DataView(objEncuesta.Detalle(0, "", Convert.ToInt32(TxtIdPasantiaE.Text), 
+                    Convert.ToInt32(TxtIdEmpresaE.Text), ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
+                    , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 4).TB_ENCUESTA_SEMANAL_ASPIRANTE);
+                if (dvEncuesta.Count <= 0)
+                {
+                    lblResultadoEncuesta.Text = "NO POSEE ENCUESTA";
+                    lblResultadoEncuesta.Visible = true;
+                }
+                else {
+                    GVResultadoPreg1.DataSource = dvEncuesta;
+                    GVResultadoPreg1.DataBind();
+                
+
+                    dvEncuesta = new DataView(objEncuesta.Detalle(0, "", Convert.ToInt32(TxtIdPasantiaE.Text),
+                    Convert.ToInt32(TxtIdEmpresaE.Text), ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
+                    , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 5).TB_ENCUESTA_SEMANAL_ASPIRANTE);
+                    GVResultadoPreg2.DataSource = dvEncuesta;
+                    GVResultadoPreg2.DataBind();
+
+                    dvEncuesta = new DataView(objEncuesta.Detalle(0, "", Convert.ToInt32(TxtIdPasantiaE.Text),
+                        Convert.ToInt32(TxtIdEmpresaE.Text), ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
+                        , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 6).TB_ENCUESTA_SEMANAL_ASPIRANTE);
+                    GVResultadoPreg3.DataSource = dvEncuesta;
+                    GVResultadoPreg3.DataBind();
+
+
+                    dvEncuesta = new DataView(objEncuesta.Detalle(0, "", Convert.ToInt32(TxtIdPasantiaE.Text),
+                        Convert.ToInt32(TxtIdEmpresaE.Text), ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
+                        , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 7).TB_ENCUESTA_SEMANAL_ASPIRANTE);
+                    GVResultadoPreg4.DataSource = dvEncuesta;
+                    GVResultadoPreg4.DataBind();
+
+                    dvEncuesta = new DataView(objEncuesta.Detalle(0, "", Convert.ToInt32(TxtIdPasantiaE.Text),
+                        Convert.ToInt32(TxtIdEmpresaE.Text), ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
+                        , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 8).TB_ENCUESTA_SEMANAL_ASPIRANTE);
+                    GVResultadoPreg5.DataSource = dvEncuesta;
+                    GVResultadoPreg5.DataBind();
+
+                    dvEncuesta = new DataView(objEncuesta.Detalle(0, "", Convert.ToInt32(TxtIdPasantiaE.Text),
+                        Convert.ToInt32(TxtIdEmpresaE.Text), ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
+                        , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 9).TB_ENCUESTA_SEMANAL_ASPIRANTE);
+                    GVResultadoPreg6.DataSource = dvEncuesta;
+                    GVResultadoPreg6.DataBind();
+
+
+                }
+               
         }
-        private void FillGVResultadoPreg2()
+
+       
+        private void FillGVEmpresaEncuesta()
         {
-            CEncuestaAspirante objEncuesta = new CEncuestaAspirante(_DataSistema.ConexionBaseDato);
-            dvEncuesta = new DataView(objEncuesta.Detalle(0, "", ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
-                , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 5).TB_ENCUESTA_SEMANAL_ASPIRANTE);
-            GVResultadoPreg2.DataSource = dvEncuesta;
-            GVResultadoPreg2.DataBind();
+            CEmpresa objEmpresa = new CEmpresa(_DataSistema.ConexionBaseDato);
+            dvEmpresa = new DataView(objEmpresa.Detalle(0,"" ,
+            "", "", "", "", "", "", 0, 0, "", "", "", "", 0, _DataSistema.Cusuario, _DataSistema.Cusuario,
+            DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 5).TB_EMPRESA);
+            GVListaEmpresaEncuesta.DataSource = dvEmpresa;
+            GVListaEmpresaEncuesta.DataBind();
         }
-        private void FillGVResultadoPreg3()
+
+        protected void GVListaEmpresaEncuesta_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CEncuestaAspirante objEncuesta = new CEncuestaAspirante(_DataSistema.ConexionBaseDato);
-            dvEncuesta = new DataView(objEncuesta.Detalle(0, "", ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
-                , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 6).TB_ENCUESTA_SEMANAL_ASPIRANTE);
-            GVResultadoPreg3.DataSource = dvEncuesta;
-            GVResultadoPreg3.DataBind();
+            try
+            {
+                int Id = GVListaEmpresaEncuesta.SelectedIndex;
+                TxtIdEmpresaE.Text = GVListaEmpresaEncuesta.DataKeys[Id].Value.ToString();
+                FillGVListaPasantiasE();
+                PanelListaEmpresa.Visible = false;
+                PanelListaPasantiaE.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPGeneral);
+            }
         }
-        private void FillGVResultadoPreg4()
+        private void FillGVListaPasantiasE()
         {
-            CEncuestaAspirante objEncuesta = new CEncuestaAspirante(_DataSistema.ConexionBaseDato);
-            dvEncuesta = new DataView(objEncuesta.Detalle(0, "", ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
-                , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 7).TB_ENCUESTA_SEMANAL_ASPIRANTE);
-            GVResultadoPreg4.DataSource = dvEncuesta;
-            GVResultadoPreg4.DataBind();
+            CPasantia objPasantia = new CPasantia(_DataSistema.ConexionBaseDato);
+            dvPasantia = new DataView(objPasantia.Detalle(0, "", "",Convert.ToInt32(TxtIdEmpresaE.Text), 0, "", "", DateTime.Now,
+             "", "", "", 'A', 0, 0, 0, 0, 0, "", "", "", DateTime.Now, "", DateTime.Now, 8).TB_PASANTIA);
+            GVListaPasantiasE.DataSource = dvPasantia;
+            GVListaPasantiasE.DataBind();
         }
-        private void FillGVResultadoPreg5()
+
+
+        protected void GVListaPasantiasE_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CEncuestaAspirante objEncuesta = new CEncuestaAspirante(_DataSistema.ConexionBaseDato);
-            dvEncuesta = new DataView(objEncuesta.Detalle(0, "", ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
-                , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 8).TB_ENCUESTA_SEMANAL_ASPIRANTE);
-            GVResultadoPreg5.DataSource = dvEncuesta;
-            GVResultadoPreg5.DataBind();
+            try
+            {
+                int Id = GVListaPasantiasE.SelectedIndex;
+                TxtIdPasantiaE.Text = GVListaPasantiasE.DataKeys[Id].Value.ToString();
+                FillGVResultadoPreg1();
+                PanelListaPasantiaE.Visible = false;
+                PanelResultado.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPGeneral);
+            }
         }
-        private void FillGVResultadoPreg6()
+       
+
+        protected void BtnRegresarPasantia_Click1(object sender, EventArgs e)
         {
-            CEncuestaAspirante objEncuesta = new CEncuestaAspirante(_DataSistema.ConexionBaseDato);
-            dvEncuesta = new DataView(objEncuesta.Detalle(0, "", ' ', ' ', ' ', ' ', ' ', ' ', _DataSistema.Cusuario
-                , DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 9).TB_ENCUESTA_SEMANAL_ASPIRANTE);
-            GVResultadoPreg6.DataSource = dvEncuesta;
-            GVResultadoPreg6.DataBind();
+            //regresar a pasantia pestaña resultado de encuesta
+            PanelResultado.Visible = false;
+            PanelListaPasantiaE.Visible = true;
         }
+
+        protected void BtnRegresarEmpresa_Click(object sender, EventArgs e)
+        {
+            //regresar a lista de empresa pestaña resultado encuesta
+            PanelListaPasantiaE.Visible = false;
+            PanelListaEmpresa.Visible = true;
+        }
+        
     }
 }

@@ -14,7 +14,7 @@ namespace ClsDataApp
         {
             _ConexionData = ConexionData;
         }
-        public ClsDataSets.DS_TB_ASP Detalle(int Id, string IdAspirante, char RespuestaAtencion, char RespuestaClases,
+        public ClsDataSets.DS_TB_ASP Detalle(int Id, string IdAspirante,int IdPasantia, int IdEmpresa, char RespuestaAtencion, char RespuestaClases,
             char RespuestaInstalaciones, char RespuestaHardware, char RespuestaOpinionF, char RespuestaOpinionI, 
            string UsuaCrea, DateTime FechCrea, string UsuaActu, DateTime FechActu, int OpcionConsulta)
         {
@@ -29,6 +29,8 @@ namespace ClsDataApp
 
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID", Id);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_ASPIRANTE", IdAspirante);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_PASANTIA", IdPasantia);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_EMPRESA", IdEmpresa);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_RESPUESTA_ATENCION", RespuestaAtencion);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_RESPUESTA_CLASES", RespuestaClases);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_RESPUESTA_INSTALACIONES", RespuestaInstalaciones);
@@ -56,7 +58,7 @@ namespace ClsDataApp
 
             return objDataSet;
         }
-        public DataQuery Actualizacion(int Id, string IdAspirante, char RespuestaAtencion, char RespuestaClases,
+        public DataQuery Actualizacion(int Id, string IdAspirante, int IdPasantia, int IdEmpresa, char RespuestaAtencion, char RespuestaClases,
             char RespuestaInstalaciones, char RespuestaHardware, char RespuestaOpinionF, char RespuestaOpinionI,
            string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
@@ -99,6 +101,8 @@ namespace ClsDataApp
                     ObjCommand.Parameters.AddWithValue("@ID", Id);
                 }
                 ObjCommand.Parameters.AddWithValue("@ID_ASPIRANTE", IdAspirante);
+                ObjCommand.Parameters.AddWithValue("@ID_PASANTIA", IdPasantia);
+                ObjCommand.Parameters.AddWithValue("@ID_EMPRESA", IdEmpresa);
                 ObjCommand.Parameters.AddWithValue("@CD_RESPUESTA_ATENCION", RespuestaAtencion);
                 ObjCommand.Parameters.AddWithValue("@CD_RESPUESTA_CLASES", RespuestaClases);
                 ObjCommand.Parameters.AddWithValue("@CD_RESPUESTA_INSTALACIONES", RespuestaInstalaciones);

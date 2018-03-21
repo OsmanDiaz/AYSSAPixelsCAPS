@@ -16,6 +16,8 @@
                     <div align="center"><b>ENCUESTA SEMANAL</b></div>
                     <asp:TextBox ID="TxtIdAspirante" runat="server" Visible="False">0</asp:TextBox>
                     <asp:TextBox ID="TxtIdEncuesta" runat="server" Visible="False"></asp:TextBox>
+                    <asp:TextBox ID="TxtIdEmpresaE" runat="server" Visible="False"></asp:TextBox>
+                    <asp:TextBox ID="TxtIdPasantiaE" runat="server" Visible="False"></asp:TextBox>
                     <br />
                     <ol>
                     <li>Califica la atención brindada por la empresa encargada de haber desarrollado el módulo de PIXELS CAPS recién finalizado.</li>

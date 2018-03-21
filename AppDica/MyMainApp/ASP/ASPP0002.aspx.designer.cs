@@ -67,6 +67,24 @@ namespace MyMainApp.ASP {
         protected global::System.Web.UI.WebControls.TextBox TxtIdEncuesta;
         
         /// <summary>
+        /// Control TxtIdEmpresaE.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIdEmpresaE;
+        
+        /// <summary>
+        /// Control TxtIdPasantiaE.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIdPasantiaE;
+        
+        /// <summary>
         /// Control RB1.
         /// </summary>
         /// <remarks>

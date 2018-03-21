@@ -265,6 +265,7 @@ namespace MyMainApp
                     */
                     if (objResultado.CodigoError == 0){ // if resultado de consulta actualizar                    
                         FillCamposDatosGenerales();
+                        DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPDatoGeneral);
                         /*
                             Observa si el estudiante es mayor a 18 años si este lo es despliega la informacion del representante legal.|                         
                         */
