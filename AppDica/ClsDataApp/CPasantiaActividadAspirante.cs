@@ -9,6 +9,12 @@ namespace ClsDataApp
 {
     public class CPasantiaActividadAspirante :CSqlvars
     {
+
+        public CPasantiaActividadAspirante(string ConexionData)
+        {
+            _ConexionData = ConexionData;
+        }
+
         public ClsDataSets.DS_TB_EMP Detalle(int Id, string IdAspirante, int IdPasantia,int IdPasantiaAct, char Estado,
              string UsuaCrea, DateTime FechCrea, string UsuaActu, DateTime FechActu, int OpcionConsulta)
         {
@@ -47,7 +53,7 @@ namespace ClsDataApp
             return objDataSet;
             }
         public DataQuery Actualizacion(int Id, string IdAspirante, int IdPasantia,int IdPasantiaAct, char Estado,
-            int OpcionConsulta, string LoginUsuario, TipoActualizacion OpcionActualizacion)
+            string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
             DataQuery objResultado = new DataQuery();
             try
@@ -60,7 +66,7 @@ namespace ClsDataApp
                         StrCommand = "SP_TB_PASANTIA_ACTIVIDAD_ASPIRANTE_INSERT";
                         break;
                     case TipoActualizacion.Actualizar:
-                        StrCommand = " ";
+                        StrCommand = "SP_TB_PASANTIA_ACTIVIDAD_ASPIRANTE_UPDATE";
                         break;
                     case TipoActualizacion.Eliminar:
                         StrCommand = " ";

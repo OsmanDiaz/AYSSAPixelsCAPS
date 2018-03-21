@@ -17,7 +17,7 @@ namespace MyMainApp.EMP
         private DataView dvActividadEconomica, dvEmpresa, dvDepartamento, dvMunicipio, dvHabilidad, dvDestreza, dvPasantia,
             dvAreaPasantia, dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvEscolaridadPasantia,
             dvConsultoria, dvEntregable, dvCategoriaEscolaridad, dvPasantiaActividad, dvPasantiaAspirante, dvActividadAspirante,dvRendimiento, objExiste,
-            dvEncuestaRendimiento, dvAceptacionAspirante, dvAspirante;
+            dvEncuestaRendimiento, dvAceptacionAspirante, dvAspirante, dvPasantiaActividadAspirante;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -1338,10 +1338,19 @@ namespace MyMainApp.EMP
                     if (objResultado.CodigoError == 0)
                     {
                         FillGVAceptacionAspirante();
-                        DespliegaMensajeUpdatePanel("Sea Agregado al aspirante en la pasantia", UPPasantia);
+                        //DespliegaMensajeUpdatePanel("Sea Agregado al aspirante en la pasantia", UPPasantia);
+                        CPasantiaActividadAspirante objPasantiaActividadAsp = new CPasantiaActividadAspirante(_DataSistema.ConexionBaseDato);
+                        objResultado = objPasantiaActividadAsp.Actualizacion(0, TxtIdAspirante.Text, Convert.ToInt32(TxtIDPasantia.Text), 0, 'I', _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+                        if (objResultado.CodigoError == 0)
+                        {
+                            DespliegaMensajeUpdatePanel("Sea Agregado al aspirante en la pasantia", UPPasantia);
+                        }
+                        else {
+                            DespliegaMensajeUpdatePanel("No se guardaron los Datos en actividad de pasantia", UPPasantia);
+                        }
                     }
                     else {
-                        DespliegaMensajeUpdatePanel("No se guardaron los Datos", UPPasantia);
+                        DespliegaMensajeUpdatePanel("No se guardaron los Datos ", UPPasantia);
                     } 
                 }else{
                     DespliegaMensajeUpdatePanel("No se guardaron los Datos", UPPasantia);
@@ -1472,7 +1481,50 @@ namespace MyMainApp.EMP
             PanelInfoAspirante.Visible = false;
         }
 
+        protected void GVAspirantes_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Asignar")
+            {
+                int Id = Convert.ToInt32(e.CommandArgument);
+                TxtIdAspirante.Text = GVAspirantes.DataKeys[Id].Value.ToString();
+                FillAsignarActividad();                
+                PanelAsignacionActividad.Visible = true;
+                PanelAspirantes.Visible = false;
+                LblNombreAspirante.Visible = true;
+                LblNombreAspirante.Text = TxtNombreAsp.Text;
+            }
+        }
 
+        protected void FillAsignarActividad()
+        {
+            CPasantiaActividadAspirante objPasantiaActividadAspirante = new CPasantiaActividadAspirante(_DataSistema.ConexionBaseDato);
+            dvPasantiaActividadAspirante = new DataView(objPasantiaActividadAspirante.Detalle(0,TxtIdAspirante.Text,Convert.ToInt32(TxtIDPasantia.Text),0,'x',_DataSistema.Cusuario,DateTime.Now, _DataSistema.Cusuario, DateTime.Now,2).TB_PASANTIA_ACTIVIDAD_ASPIRANTE);
+            GVAsignacionActividadPas.DataSource = dvPasantiaActividadAspirante;
+            GVAsignacionActividadPas.DataBind();
+        }
+
+        protected void BtnAtrasAsignacion_Click(object sender, EventArgs e)
+        {
+            LblNombreAspirante.Visible = false;
+            PanelAsignacionActividad.Visible = false;
+            PanelAspirantes.Visible = true;
+        }
+
+        protected void GVAsignacionActividadPas_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "AsignarAct")
+            {
+                int Id = Convert.ToInt32(e.CommandArgument);
+                TxtIDActividad.Text = GVAsignacionActividadPas.DataKeys[Id].Value.ToString();
+                FillActividadASignada();
+            }
+        }
+
+        protected void FillActividadASignada()
+        {
+            throw new NotImplementedException();
+        }
+        
         }
        
     }
