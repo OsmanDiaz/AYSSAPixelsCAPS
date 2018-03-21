@@ -5,6 +5,8 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
 
+    <br />
+
     <asp:Panel ID="Panel1" runat="server" Width="100%">
         <form id="form1" runat="server" class="form-horizontal">
 
@@ -710,7 +712,7 @@
 
 
                                             <asp:Panel ID="PanelAspirantes" runat="server" Visible="False">
-                                                <asp:GridView ID="GVAspirantes" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVAspirantes_SelectedIndexChanged" EmptyDataText="No existen registros">
+                                                <asp:GridView ID="GVAspirantes" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVAspirantes_SelectedIndexChanged" EmptyDataText="No existen registros" OnRowCommand="GVAspirantes_RowCommand">
                                                     <AlternatingRowStyle BackColor="White" />
                                                     <Columns>
                                                         <asp:BoundField HeaderText="NOMBRE ASPIRANTE" DataField="NOMBRE" />
@@ -719,6 +721,12 @@
                                                             <ItemTemplate>
                                                                 <asp:Button ID="BtnVerActividades" runat="server" CommandName="Select"
                                                                     Text="Ver Actividades" />
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                        <asp:TemplateField>
+                                                            <ItemTemplate>
+                                                                <asp:Button ID="BtnAsignarActividades" runat="server" CommandName="Asignar"
+                                                                    CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" Text="Asignar Actividades a Aspirante" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                                     </Columns>
@@ -733,6 +741,8 @@
                                                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                                 </asp:GridView>
+                                                <br />
+                                                <br />
                                                 <center> <asp:Button ID="BtnRegresarPasantias" runat="server" class="btn btn-primary" OnClick="BtnRegresarPasantias_Click" Text="Regresar a Listado Pasantias" /></center>
                                             </asp:Panel>
                                             <br />
@@ -757,10 +767,53 @@
                                                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                                 </asp:GridView>
+                                                <br />
+                                                <br />
                                                 <center> <asp:Button ID="Button1" runat="server" class="btn btn-primary" OnClick="BtnRegresarAspirantes_Click" Text="Regresar a Listado Aspirantes" /></center>
                                             </asp:Panel>
 
 
+                                        <br />
+                                        <asp:Panel ID="PanelAsignacionActividad" runat="server" Visible="false">
+                                            <div align="left">
+                                                <asp:Button ID="BtnAtrasAsignacion" runat="server" Text="Atras" class="btn btn-primary" CausesValidation="False" OnClick="BtnAtrasAsignacion_Click" />
+                                            </div>
+                                            <br />
+											
+											<div align="left">
+                                                <asp:Label ID="Label84" runat="server" Font-Size="14pt" Text="Nombre del Aspirante"></asp:Label>
+                                                <asp:Label ID="LblNombreAspirante" runat="server" Font-Size="14pt" Visible="False"></asp:Label>
+                                            </div>
+                                            <br />
+											
+                                            <asp:GridView ID="GVAsignacionActividadPas" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID, DS_ESTADO" OnRowCommand="GVAsignacionActividadPas_RowCommand">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:TemplateField HeaderText="" Visible="false">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="TxtIDActividadPasantiaGV" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:BoundField HeaderText="ACTIVIDAD" DataField="DS_ACTIVIDAD" />
+                                                    <asp:TemplateField>
+                                                        <ItemTemplate>
+                                                            <asp:Button ID="BtnAsignarActividadAs" runat="server" CommandName="AsignarAct" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" 
+                                                                Text='<%#Eval("DS_ESTADO")%>' />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>
+                                        </asp:Panel>
 
 
                                         <br />

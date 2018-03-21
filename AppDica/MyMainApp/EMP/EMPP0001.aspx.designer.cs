@@ -2029,6 +2029,51 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
+        /// Control PanelAsignacionActividad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelAsignacionActividad;
+        
+        /// <summary>
+        /// Control BtnAtrasAsignacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnAtrasAsignacion;
+        
+        /// <summary>
+        /// Control Label84.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label84;
+        
+        /// <summary>
+        /// Control LblNombreAspirante.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblNombreAspirante;
+        
+        /// <summary>
+        /// Control GVAsignacionActividadPas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVAsignacionActividadPas;
+        
+        /// <summary>
         /// Control TabPanel3.
         /// </summary>
         /// <remarks>
