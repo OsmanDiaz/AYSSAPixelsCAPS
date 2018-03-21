@@ -1490,8 +1490,6 @@ namespace MyMainApp.EMP
                 FillAsignarActividad();                
                 PanelAsignacionActividad.Visible = true;
                 PanelAspirantes.Visible = false;
-                LblNombreAspirante.Visible = true;
-                LblNombreAspirante.Text = TxtNombreAsp.Text;
             }
         }
 
@@ -1505,7 +1503,6 @@ namespace MyMainApp.EMP
 
         protected void BtnAtrasAsignacion_Click(object sender, EventArgs e)
         {
-            LblNombreAspirante.Visible = false;
             PanelAsignacionActividad.Visible = false;
             PanelAspirantes.Visible = true;
         }
@@ -1515,14 +1512,50 @@ namespace MyMainApp.EMP
             if (e.CommandName == "AsignarAct")
             {
                 int Id = Convert.ToInt32(e.CommandArgument);
-                TxtIDActividad.Text = GVAsignacionActividadPas.DataKeys[Id].Value.ToString();
+                TxtIdActividadPasantiaAspirante.Text = GVAsignacionActividadPas.DataKeys[Id].Value.ToString();
                 FillActividadASignada();
+                
             }
         }
 
         protected void FillActividadASignada()
         {
-            throw new NotImplementedException();
+            CPasantiaActividadAspirante objPasantiaActividadAspirante = new CPasantiaActividadAspirante(_DataSistema.ConexionBaseDato);
+            dvPasantiaActividadAspirante = new DataView(objPasantiaActividadAspirante.Detalle(0, TxtIdAspirante.Text, Convert.ToInt32(TxtIDPasantia.Text), Convert.ToInt32(TxtIdActividadPasantiaAspirante.Text), 'x', _DataSistema.Cusuario, DateTime.Now, _DataSistema.Cusuario, DateTime.Now,3).TB_PASANTIA_ACTIVIDAD_ASPIRANTE);
+            if (dvPasantiaActividadAspirante.Count > 0) {
+                TxtEstadoPasActAsp.Text = dvPasantiaActividadAspirante.Table.Rows[0]["ID_PASANTIA_ACTIVIDAD"].ToString();
+            }
+            if (TxtEstadoPasActAsp.Text == "0" || TxtEstadoPasActAsp.Text == null || TxtEstadoPasActAsp.Text == "")
+            {
+                objResultado = objPasantiaActividadAspirante.Actualizacion(0, TxtIdAspirante.Text, Convert.ToInt32(TxtIDPasantia.Text), Convert.ToInt32(TxtIdActividadPasantiaAspirante.Text), 'I', _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+                if (objResultado.CodigoError == 0)
+                {
+                    DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPPasantia);
+                    FillAsignarActividad();
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPasantia);
+                }
+            }
+            else if (TxtEstadoPasActAsp.Text == TxtIdActividadPasantiaAspirante.Text)
+            {
+                DespliegaMensajeUpdatePanel("Aspirante ya se encuentra asignado a esta pasantia", UPPasantia);
+            }
+            else
+            {
+                objResultado = objPasantiaActividadAspirante.Actualizacion(0, TxtIdAspirante.Text, Convert.ToInt32(TxtIDPasantia.Text), Convert.ToInt32(TxtIdActividadPasantiaAspirante.Text), 'I', _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+
+                if (objResultado.CodigoError == 0)
+                {
+                    DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPPasantia);
+                    FillAsignarActividad();
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPasantia);
+                }
+            }
         }
         
         }

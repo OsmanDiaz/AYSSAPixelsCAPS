@@ -2047,24 +2047,6 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.Button BtnAtrasAsignacion;
         
         /// <summary>
-        /// Control Label84.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label84;
-        
-        /// <summary>
-        /// Control LblNombreAspirante.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblNombreAspirante;
-        
-        /// <summary>
         /// Control GVAsignacionActividadPas.
         /// </summary>
         /// <remarks>
@@ -3062,6 +3044,24 @@ namespace MyMainApp.EMP {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnAtrasListaAspirante;
+        
+        /// <summary>
+        /// Control TxtEstadoPasActAsp.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtEstadoPasActAsp;
+        
+        /// <summary>
+        /// Control TxtIdActividadPasantiaAspirante.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIdActividadPasantiaAspirante;
         
         /// <summary>
         /// Control GVListaAspirante.

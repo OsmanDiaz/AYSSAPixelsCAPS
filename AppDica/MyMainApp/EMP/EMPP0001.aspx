@@ -32,7 +32,7 @@
             <div class="container-fluid">
                 <div id="content">
                     <%--inicio container-fluid--%>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="2" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server">
@@ -780,12 +780,6 @@
                                             </div>
                                             <br />
 											
-											<div align="left">
-                                                <asp:Label ID="Label84" runat="server" Font-Size="14pt" Text="Nombre del Aspirante"></asp:Label>
-                                                <asp:Label ID="LblNombreAspirante" runat="server" Font-Size="14pt" Visible="False"></asp:Label>
-                                            </div>
-                                            <br />
-											
                                             <asp:GridView ID="GVAsignacionActividadPas" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID, DS_ESTADO" OnRowCommand="GVAsignacionActividadPas_RowCommand">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
@@ -1079,7 +1073,7 @@
                                             <div class="form-group">
                                                 <asp:Label ID="Label71" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="DURACION EN DIAS:"></asp:Label>
                                                 <div class="col-md-3">
-                                                    <asp:TextBox ID="TxtDuracionEntregable" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                    <asp:TextBox ID="TxtDuracionEntregable" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="True" Width="100%"></asp:TextBox>
                                                 </div>
                                                 <asp:Label ID="Label72" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="FECHA DE ENTREGA:"></asp:Label>
                                                 <div class="col-md-3">
@@ -1317,6 +1311,9 @@
                                                 <asp:Button ID="BtnAtrasListaAspirante" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" OnClick="BtnAtrasListaAspirante_Click" />
                                             </div>
                                        <br />
+
+                                            <asp:TextBox ID="TxtEstadoPasActAsp" runat="server" ReadOnly="True" class="form-control" Visible="false"></asp:TextBox>
+                                            <asp:TextBox ID="TxtIdActividadPasantiaAspirante" runat="server" ReadOnly="True" class="form-control" Visible="false"></asp:TextBox>
                                         	<asp:GridView ID="GVListaAspirante" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVListaAspirante_SelectedIndexChanged" DataKeyNames="ID">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
