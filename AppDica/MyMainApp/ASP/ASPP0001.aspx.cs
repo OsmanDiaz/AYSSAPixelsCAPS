@@ -68,6 +68,8 @@ namespace MyMainApp
                 LblLaptop.Text = LblLaptop.Text.Replace("{{duracion_pasantia}}", dvAceptacionPasantia.Table.Rows[0]["DS_DURACION"].ToString());
                 LblNombreEstudiante.Text = LblNombreEstudiante.Text.Replace("{{nombre_aspirante}}", _DataSistema.NombreUsuario);
                 LblAceptacion.Text = LblAceptacion.Text.Replace("{{duracion_pasantia}}", dvAceptacionPasantia.Table.Rows[0]["DS_DURACION"].ToString());
+                TxtNombPasantia.Text = dvAceptacionPasantia.Table.Rows[0]["NOMBRE_PASANTIA"].ToString();
+                TxtDescripPas.Text = dvAceptacionPasantia.Table.Rows[0]["DS_PASANTIA"].ToString();
             }
             else
             {
@@ -76,6 +78,7 @@ namespace MyMainApp
             if (!IsPostBack)
             {
                 Consultar();
+                FillGVHistorialAceptacion();
             }
         }
 
@@ -1261,6 +1264,15 @@ namespace MyMainApp
              , _DataSistema.Cusuario, DateTime.Today, _DataSistema.Cusuario, DateTime.Today, 2).TB_INFORME_FINAL_COMPARATIVO);
              ifp4 = dvComparativo.ToTable();
              RVInformeFinal.LocalReport.DataSources.Add(new ReportDataSource("TB_INFORME_FINAL_COMPARATIVO", ifp4));
+        }
+
+        private void FillGVHistorialAceptacion()
+        {
+            CAceptacionPasantia objAceptacionP = new CAceptacionPasantia(_DataSistema.ConexionBaseDato);
+            dvAceptacionPasantia = new DataView(objAceptacionP.Detalle(0, _DataSistema.Cusuario, 0,
+              "", 'X', 'P', "", "", DateTime.Now, "", DateTime.Now, 5).TB_ACEPTACION_PASANTIA);
+            GVHistorialAceptacion.DataSource = dvAceptacionPasantia;
+            GVHistorialAceptacion.DataBind();
         }
     }
 }
