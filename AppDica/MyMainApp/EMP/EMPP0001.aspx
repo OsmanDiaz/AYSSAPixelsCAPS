@@ -716,13 +716,6 @@
                                                     <AlternatingRowStyle BackColor="White" />
                                                     <Columns>
                                                         <asp:BoundField HeaderText="NOMBRE ASPIRANTE" DataField="NOMBRE" />
-                                                        <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" />
-                                                        <asp:TemplateField HeaderText="ACTIVIDADES">
-                                                            <ItemTemplate>
-                                                                <asp:Button ID="BtnVerActividades" runat="server" CommandName="Select"
-                                                                    Text="Ver Actividades" />
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
                                                         <asp:TemplateField>
                                                             <ItemTemplate>
                                                                 <asp:Button ID="BtnAsignarActividades" runat="server" CommandName="Asignar"

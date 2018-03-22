@@ -1520,6 +1520,7 @@ namespace MyMainApp.EMP
 
         protected void FillActividadASignada()
         {
+            string estadoGuardado = null;
             CPasantiaActividadAspirante objPasantiaActividadAspirante = new CPasantiaActividadAspirante(_DataSistema.ConexionBaseDato);
             dvPasantiaActividadAspirante = new DataView(objPasantiaActividadAspirante.Detalle(0, TxtIdAspirante.Text, Convert.ToInt32(TxtIDPasantia.Text), Convert.ToInt32(TxtIdActividadPasantiaAspirante.Text), 'x', _DataSistema.Cusuario, DateTime.Now, _DataSistema.Cusuario, DateTime.Now,3).TB_PASANTIA_ACTIVIDAD_ASPIRANTE);
             if (dvPasantiaActividadAspirante.Count > 0) {
@@ -1530,8 +1531,17 @@ namespace MyMainApp.EMP
                 objResultado = objPasantiaActividadAspirante.Actualizacion(0, TxtIdAspirante.Text, Convert.ToInt32(TxtIDPasantia.Text), Convert.ToInt32(TxtIdActividadPasantiaAspirante.Text), 'I', _DataSistema.Cusuario, TipoActualizacion.Actualizar);
                 if (objResultado.CodigoError == 0)
                 {
-                    DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPPasantia);
-                    FillAsignarActividad();
+                    CActividadAspirante objActiviAsp = new CActividadAspirante(_DataSistema.ConexionBaseDato);
+                    objResultado = objActiviAsp.Actualizacion(0, TxtIdAspirante.Text, Convert.ToInt32(TxtIdActividadPasantiaAspirante.Text), "", 'A', "", "", DateTime.Now, _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+                    if (objResultado.CodigoError == 0) {
+                        DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPPasantia);
+                        FillAsignarActividad();
+                        estadoGuardado = "OK";
+                    }
+                    else
+                    {
+                        DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPasantia);
+                    }                   
                 }
                 else
                 {
@@ -1549,8 +1559,25 @@ namespace MyMainApp.EMP
 
                 if (objResultado.CodigoError == 0)
                 {
-                    DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPPasantia);
-                    FillAsignarActividad();
+                    if (estadoGuardado == null)
+                    {
+                        CActividadAspirante objActiviAsp = new CActividadAspirante(_DataSistema.ConexionBaseDato);
+                        objResultado = objActiviAsp.Actualizacion(0, TxtIdAspirante.Text, Convert.ToInt32(TxtIdActividadPasantiaAspirante.Text), "", 'A', "", "", DateTime.Now, _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+                        if (objResultado.CodigoError == 0)
+                        {
+                            DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPPasantia);
+                            FillAsignarActividad();
+                        }
+                        else
+                        {
+                            DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPasantia);
+                        }
+                    }
+                    else {
+                        DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPPasantia);
+                        FillAsignarActividad();
+                    }
+                    
                 }
                 else
                 {
