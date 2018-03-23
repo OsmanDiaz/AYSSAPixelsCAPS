@@ -827,7 +827,7 @@ namespace MyMainApp
                 string nombreArchivo = _DataSistema.Cusuario + "_" + Convert.ToString(TxtIdConsultoria.Text) + "_" + Convert.ToString(TxtIdEntregable.Text) + "_" + FileEntregable.FileName;
                 CConsultoriaEntregable objConsultoriaEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
                 objResultado = objConsultoriaEntregable.Actualizacion(Convert.ToInt32(TxtIdEntregable.Text), Convert.ToInt32(TxtIdConsultoria.Text), TxtNombreEntregable.Text, TxtDescripcion.Text,
-                Convert.ToDateTime(TxtFechaEntregaEntregable.Text), TxtDuracionEntregable.Text, Convert.ToChar(TxtEstadoEntregable.Text), Convert.ToString(nombreArchivo), "", _DataSistema.Cusuario, _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+                Convert.ToDateTime(TxtFechaEntregaEntregable.Text), TxtDuracionEntregable.Text, 'P', Convert.ToString(nombreArchivo), "", _DataSistema.Cusuario, _DataSistema.Cusuario, TipoActualizacion.Actualizar);
 
                 if (objResultado.CodigoError == 0)
                 {
