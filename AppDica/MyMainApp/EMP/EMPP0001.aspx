@@ -636,6 +636,7 @@
                                            <asp:TextBox ID="TxtTipoAsp" runat="server" class="form-control" visible="false"></asp:TextBox>
                                            <asp:TextBox ID="TxtTituloAsp" runat="server" class="form-control" visible="false"></asp:TextBox>
                                            <asp:TextBox ID="TxtEstadoAsp" runat="server" class="form-control" visible="false"></asp:TextBox>
+                                           <asp:TextBox ID="TxtPuestosDisponibles" runat="server" class="form-control" visible="false"></asp:TextBox>
                                         <div class="form-group">
                                             <asp:Label ID="Label79" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOMBRES:"></asp:Label><div class="col-md-3">
                                                 <asp:TextBox ID="TxtNombreAsp" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
