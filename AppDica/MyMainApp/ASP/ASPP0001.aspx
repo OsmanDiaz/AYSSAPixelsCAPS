@@ -19,7 +19,7 @@
         <div class="container-fluid">
             <div id="content">
                 <asp:Panel ID="Panel1" runat="server" Width="100%">
-                    <ajaxToolkit:TabContainer ID="TabAspirante" runat="server" ActiveTabIndex="5" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabAspirante" runat="server" ActiveTabIndex="0" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
 
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabDatoGeneral" Width="100%">
                             <ContentTemplate>
@@ -193,10 +193,6 @@
                             </ContentTemplate>
 
                         </ajaxToolkit:TabPanel>
-                        <%--  </div>
-                        <%--fin tab datos--%>
-                        <%--<div class="tab-pane " id="Escol">--%>
-                        <%--inicio tab informacion adicional--%>
                         <ajaxToolkit:TabPanel runat="server" HeaderText="ESCOLARIDAD" ID="TabPanel2">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPEscolaridad" runat="server">
@@ -289,7 +285,6 @@
                             </ContentTemplate>
 
                         </ajaxToolkit:TabPanel>
-                        <%-- </div>--%>
                         <ajaxToolkit:TabPanel runat="server" HeaderText="HABILIDADES" ID="TabPanel3">
                             <ContentTemplate>
                                 <div id="Habilidad" class="tab-pane">
@@ -349,9 +344,6 @@
                             </ContentTemplate>
 
                         </ajaxToolkit:TabPanel>
-                        <%--fin tab habilidades--%>
-                        <%--<div class="tab-pane" id="Destre">--%>
-                        <%--inicio tab destrezas--%>
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DESTREZAS" ID="TabPanel4">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDestreza" runat="server">
@@ -403,10 +395,6 @@
                             </ContentTemplate>
 
                         </ajaxToolkit:TabPanel>
-                        <%--fin tab habilidades--%>
-                        <%--<div class="tab-pane" id="Destre">--%>
-                        <%--<div class="tab-pane" id="Doc">
-                            <%--inicio tab DOCUMENTOS--%>
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DOCUMENTOS" ID="TabPanel5">
                             <ContentTemplate>
                                 <asp:Panel ID="Panel5" runat="server">
@@ -478,7 +466,6 @@
                             </ContentTemplate>
 
                         </ajaxToolkit:TabPanel>
-                        <%--inicio tab ENTREGABLE--%>
 
                         <ajaxToolkit:TabPanel runat="server" HeaderText="ENTREGABLE" ID="TabPanel7">
                             <ContentTemplate>
@@ -498,10 +485,21 @@
                                                             <asp:TextBox ID="TxtIdEntregableGV" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:BoundField HeaderText="NOMBRE CONSULTORIA" DataField="DS_NOMBRE_CONSULTORIA" />
-                                                    <asp:BoundField HeaderText="NOMBRE DE PROYECTO" DataField="DS_ENTREGABLE" />
-                                                    <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ENT" />
-                                                    <asp:BoundField HeaderText="TIEMPO DE DESARROLLO " DataField="DS_DURACION_ENT" />
+                                                    <asp:BoundField HeaderText="NOMBRE DE PROYECTO" DataField="DS_NOMBRE_CONSULTORIA" >
+                                                    <ItemStyle Font-Size="Small" />
+                                                    </asp:BoundField>
+                                                    <asp:BoundField HeaderText="NOMBRE DE ENTREGABLE" DataField="DS_ENTREGABLE" >
+                                                    <ItemStyle Font-Size="Small" />
+                                                    </asp:BoundField>
+                                                    <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ENT" >
+                                                    <ItemStyle Font-Size="Small" />
+                                                    </asp:BoundField>
+                                                    <asp:BoundField HeaderText="TIEMPO DE DESARROLLO " DataField="DS_DURACION_ENT" >
+                                                    <ItemStyle Font-Size="Small" />
+                                                    </asp:BoundField>
+                                                    <asp:BoundField DataField="CD_ESTADO_ENTREGABLE" HeaderText="ESTADO ACTUAL">
+                                                    <ItemStyle Font-Size="Small" />
+                                                    </asp:BoundField>
                                                     <asp:TemplateField HeaderText="ENTREGABLES">
                                                         <ItemTemplate>
                                                             <asp:Button ID="BtnVerEntregable" runat="server" CommandName="Select"
@@ -599,11 +597,6 @@
                             </ContentTemplate>
 
                         </ajaxToolkit:TabPanel>
-                        <%--</div>--%>
-                        <%--fin tab ENTREGABLE--%>
-
-
-                        <%--inicio tab PASANTIA  --%>
                         <ajaxToolkit:TabPanel runat="server" HeaderText="ACTIVIDAD PASANTIA" ID="TabPanel6">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPACTPAS" runat="server">
@@ -748,8 +741,6 @@
                                 </asp:UpdatePanel>
                             </ContentTemplate>
                         </ajaxToolkit:TabPanel>
-                        <%--</div>--%>
-                        <%--fin tab ENTREGABLE--%>
                         <ajaxToolkit:TabPanel ID="TabAceptacionPasantia" runat="server" HeaderText="ACEPTACION PASANTIA" Visible="False">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPEncuesta" runat="server">
@@ -769,6 +760,19 @@
                                             </asp:Label>
                                         </p>
                                         <br />
+                                        <div class="form-group">
+                                                <asp:Label ID="Label85" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE DE LA PASANTIA:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox ID="TxtNombPasantia" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                                
+                                            </div>
+                                    <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-3" ID="Label87" runat="server" Font-Bold="True" Text="DESCRIPCION:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox class="form-control" ID="TxtDescripPas" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
                                         <ol>
                                             <li style="font-weight: bold">Está interesado en participar en una pasantía no remunerada con una empresa salvadoreña que se dedica a elaborar videojuegos. </li>
                                             <br />
@@ -1104,6 +1108,41 @@
 
                                         </asp:Panel>
                                        <br />
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </ContentTemplate>
+                        </ajaxToolkit:TabPanel>
+                        <ajaxToolkit:TabPanel ID="TabPanel1" runat="server" HeaderText="OPORTUNIDADES">
+                            <ContentTemplate>
+                                <asp:UpdatePanel ID="UPPanelOportunidad" runat="server">
+                                    <ContentTemplate>
+                                        <asp:Panel ID="PanelHistorialOportunidad" runat="server">
+                                            <br />
+                                            <asp:GridView ID="GVHistorialAceptacion" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:BoundField DataField="NOMBRE_PASANTIA" HeaderText="PASANTIA" />
+                                                    <asp:BoundField DataField="CD_ESTADO" HeaderText="ESTADO ACTUAL" />
+                                                    <asp:TemplateField HeaderText="VER DETALLE">
+                                                        <ItemTemplate>
+                                                            <asp:Button ID="BtnVerDetalle" runat="server" CommandName="Select"
+                                                                Text="Ver Detalle" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>
+
+                                        </asp:Panel>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
                             </ContentTemplate>
