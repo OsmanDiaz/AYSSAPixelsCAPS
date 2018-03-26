@@ -17,7 +17,7 @@
                         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                         <br />
                         
-                        <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" activetabindex="0" bordercolor="#66CCFF" height="375px" scrollbars="Vertical" width="100%">
+                        <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" activetabindex="2" bordercolor="#66CCFF" height="375px" scrollbars="Vertical" width="100%">
                             <ajaxtoolkit:TabPanel ID="TabPanel1" runat="server" HeaderText="REGISTROS DE IQ" Width="100%">
                                 <ContentTemplate>
                                     
@@ -192,6 +192,10 @@
                                                 <div align="left">
                                                 <asp:Button ID="BtnRegresarLista" runat="server" Text="REGRESAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresarLista_Click"/></div>
                                         <div class="form-group">
+                                            <div align="center">
+                                                <asp:Label ID="Label16" runat="server" Text="PERFIL DEL ASPIRANTE" Font-Size="14pt"></asp:Label>
+                                                
+                                            </div><br /><br />
                                             <asp:Label ID="Label4" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOMBRES:"></asp:Label><div class="col-md-3">
                                                 <asp:TextBox ID="TxtNombreA" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
                                             </div>
@@ -273,12 +277,15 @@
                                                 <asp:TextBox ID="TxtDireccion" runat="server" AutoCompleteType="Disabled" ReadOnly="true" class="form-control" TextMode="MultiLine"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TxtDireccion" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="DatoGeneral">Llenar Direccion</asp:RequiredFieldValidator>
                                             </div>
                                         </div>
-                                       <br />
-                                                <asp:GridView ID="GVNotaIq" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                                      <div align="center">
+                                                <asp:Label ID="Label13" runat="server" Text="REGISTRO DE PRUEBA IQ" Font-Size="14pt"></asp:Label>
+                                                <br />
+                                            </div><asp:Label ID="lblPruebaIq" runat="server" Visible="false"></asp:Label>
+                                                <asp:GridView ID="GVNotaIq" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID">
                                                     <AlternatingRowStyle BackColor="White" />
                                                     <Columns>
-                                                        <asp:BoundField HeaderText="NOTA" />
-                                                        <asp:BoundField HeaderText="OBSERVACION" />
+                                                        <asp:BoundField HeaderText="NOTA OBTENIDA" DataField="NM_NOTA_IQ" />
+                                                        <asp:BoundField HeaderText="OBSERVACION" DataField="DS_OBSERVACION_IQ" />
                                                     </Columns>
                                                     <EditRowStyle BackColor="#2461BF" />
                                                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -291,6 +298,80 @@
                                                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                                 </asp:GridView>
+                                                <div align="center">
+                                                <asp:Label ID="Label8" runat="server" Text="ESCOLARIDAD DEL ASPIRANTE" Font-Size="14pt"></asp:Label>
+                                                <br />
+                                            </div><asp:Label ID="lblEscolaridad" runat="server" Visible="false"></asp:Label>
+                                                <asp:GridView ID="GVEscolaridadA" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                                            <AlternatingRowStyle BackColor="White" />
+                                            <Columns>
+                                                
+                                                <asp:BoundField DataField="DS_ESCOLARIDAD" HeaderText="ESCOLARIDAD" />
+                                                <asp:BoundField DataField="DS_ANIO" HeaderText="NIVEL" />
+                                                <asp:BoundField DataField="DS_CARRERA" HeaderText="OPCIÓN ACADÉMICA" />
+                                                <asp:BoundField DataField="DS_CENTRO_ESCOLAR" HeaderText="INSTITUCIÓN EDUCATIVA" />
+                                                <asp:BoundField DataField="DS_OTRA" HeaderText="OTRA INSTITUCIÓN" />
+                                                <asp:BoundField DataField="DS_PAIS" HeaderText="PAÍS" />
+                                                <asp:BoundField DataField="NM_ANIO_FIN" HeaderText="AÑO FIN" />
+                                                <asp:BoundField DataField="NM_PROMEDIO_NOTA" HeaderText="PROMEDIO" />
+                                            </Columns>
+                                            <EditRowStyle BackColor="#2461BF" />
+                                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                            <RowStyle BackColor="#EFF3FB" />
+                                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                        </asp:GridView>
+                                                <div align="center">
+                                                <asp:Label ID="Label14" runat="server" Text="HABILIDADES DEL ASPIRANTE" Font-Size="14pt"></asp:Label>
+                                                <br /><asp:Label ID="lblHabilidadA" runat="server" Visible="false"></asp:Label>
+                                                </div>
+                                                <asp:GridView ID="GVHabilidadA" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"  Width="100%">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:TemplateField HeaderText="" Visible="false">
+                                                        
+                                                    </asp:TemplateField>
+                                                    <asp:BoundField DataField="DS_CATEGORIA_HABILIDAD" HeaderText="CONOCIMIENTO" />
+                                                    <asp:BoundField DataField="DS_HABILIDAD_CONOCIMIENTO" HeaderText="TIPO DE CONOCIMIENTO" />
+                                                    <asp:BoundField DataField="DS_NIVEL_CONOCIMIENTO" HeaderText="NIVEL" />
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>
+                                                    <div align="center">
+                                                <asp:Label ID="Label15" runat="server" Text="DESTREZAS DEL ASPIRANTE" Font-Size="14pt"></asp:Label>
+                                                <br /> <asp:Label ID="lblDestrezaA" runat="server" Visible="false"></asp:Label>
+                                            </div>
+                                            <asp:GridView ID="GVDestrezaA" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None"  Width="100%">
+                                            <AlternatingRowStyle BackColor="White" />
+                                            <Columns>
+                                                
+                                                <asp:BoundField DataField="DS_DESTREZA" HeaderText="DESTREZA" />
+                                            </Columns>
+                                            <EditRowStyle BackColor="#2461BF" />
+                                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                            <RowStyle BackColor="#EFF3FB" />
+                                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                        </asp:GridView>
                                             </asp:Panel>
                                         </ContentTemplate>
                                     </asp:UpdatePanel>

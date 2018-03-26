@@ -13,8 +13,11 @@ using System.IO;
 
 namespace MyMainApp.TEC
 {
-    public partial class TEC0001 : FormaSISWeb, IAcciones
+    public partial class TEC0001 : FormaSISWeb, IAcciones 
     {
+        private DataView dvRegistroAspirante, dvAspiranteAsignado, dvTipoDocumento, dvAspirante, dvListaAspirante,dvPrueba,
+            dvEscolaridad, dvHabilidad, dvDestreza;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -48,7 +51,7 @@ namespace MyMainApp.TEC
         protected void FillGVRegistroAspirante()
         {
             CAspirante objRegistroAspirante = new CAspirante(_DataSistema.ConexionBaseDato);
-            DataView dvRegistroAspirante = new DataView(objRegistroAspirante.Detalle("", "", "", DateTime.Now, 'X',
+             dvRegistroAspirante = new DataView(objRegistroAspirante.Detalle("", "", "", DateTime.Now, 'X',
            "", "", "", "", "", "", 'X', 0, "", 0, 0, 0, "", "", "", "", "", DateTime.Now, "", DateTime.Now, 5).TB_ASPIRANTE);
             
             GVRegistroAspirante.DataSource = dvRegistroAspirante;
@@ -59,7 +62,7 @@ namespace MyMainApp.TEC
         protected void FillGVAspiranteAsignado()
         {
             CAspirante objAspiranteAsignado = new CAspirante(_DataSistema.ConexionBaseDato);
-            DataView dvAspiranteAsignado = new DataView(objAspiranteAsignado.Detalle("", "", "", DateTime.Now, 'X',
+             dvAspiranteAsignado = new DataView(objAspiranteAsignado.Detalle("", "", "", DateTime.Now, 'X',
            "", "", "", "", "", "", 'X', 0, "", 0, 0, 0, "", "", "", "", "", DateTime.Now, "", DateTime.Now, 6).TB_ASPIRANTE);
 
             GVAspiranteAsignado.DataSource = dvAspiranteAsignado;
@@ -91,24 +94,29 @@ namespace MyMainApp.TEC
         protected void FillCboTipoDocumento()
         {
             CDocumento objTipoDocumento = new CDocumento(_DataSistema.ConexionBaseDato);
-            DataView dvTipoDocumento = new DataView(objTipoDocumento.Detalle(0, "", "", 'A', _DataSistema.CPerfilusuario, "", DateTime.Now, "", DateTime.Now, 2).TBC_DOCUMENTO);
+             dvTipoDocumento = new DataView(objTipoDocumento.Detalle(0, "", "", 'A', _DataSistema.CPerfilusuario, "", DateTime.Now, "", DateTime.Now, 2).TBC_DOCUMENTO);
 
             CboTipoDocumento.DataSource = dvTipoDocumento;
             CboTipoDocumento.DataBind();  
         }
+        protected void ArchivoIq_UploadedComplete(object sender, AsyncFileUploadEventArgs e)
+        {
+       string ruta = Server.MapPath("~/ASP/Documentos/");
+            string savePath = MapPath("~/ASP/Documentos/" + _DataSistema.Cusuario + "_" + CboTipoDocumento.SelectedValue + Path.GetFileName(e.FileName));
+            ((AsyncFileUpload)sender).SaveAs(savePath);
+        }
 
-       //string ruta = Server.MapPath("~/ASP/Documentos/");
-       //     string savePath = MapPath("~/ASP/Documentos/" + _DataSistema.Cusuario + "_" + CboTipoDocumento.SelectedValue + Path.GetFileName(e.FileName));
-       //     ((AsyncFileUpload)sender).SaveAs(savePath);
 
         protected void BtnGuardarNotaIq_Click(object sender, EventArgs e)
         {
             try
             {
-                
-                    //CDocumentoAspirante objDocumentoAspirante = new CDocumentoAspirante(_DataSistema.ConexionBaseDato);
-                    //objResultado = objDocumentoAspirante.Actualizacion(0, "", nombreArchivo, Convert.ToInt32(CboTipoDocumento.SelectedValue), TxtIdAspirante.Text
-                    //, _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+                string nombreArchivo = _DataSistema.Cusuario + "_" + CboTipoDocumento.SelectedValue + ArchivoIq.FileName;
+                ArchivoIq.PersistFile = false; ArchivoIq.PersistFile = true;
+
+                CDocumentoAspirante objDocumentoAspirante = new CDocumentoAspirante(_DataSistema.ConexionBaseDato);
+                objResultado = objDocumentoAspirante.Actualizacion(0, "", nombreArchivo, Convert.ToInt32(CboTipoDocumento.SelectedValue), TxtIdAspirante.Text
+                , _DataSistema.Cusuario, TipoActualizacion.Adicionar);
 
 
                     CNotaIq objNotasIqAspirante = new CNotaIq(_DataSistema.ConexionBaseDato);
@@ -138,7 +146,7 @@ namespace MyMainApp.TEC
         protected void FillCamposDatosGenerales()
         {
             CAspirante objAspirante = new CAspirante(_DataSistema.ConexionBaseDato);
-            DataView dvAspirante = new DataView(objAspirante.Detalle(TxtIdAspirante.Text, "", "", DateTime.Today, 'X',
+          dvAspirante = new DataView(objAspirante.Detalle(TxtIdAspirante.Text, "", "", DateTime.Today, 'X',
          "", "", "", "", "", "", 'X', 0, "", 0, 0, 0, "", "", "", "", "", DateTime.Today, "", DateTime.Today, 3).TB_ASPIRANTE);
             if (dvAspirante.Count > 0)
             {   /* CARGA DE DATOS DE EL PRIMER REGISTRO */
@@ -163,7 +171,7 @@ namespace MyMainApp.TEC
         protected void FillGVListaRegistroAspirantes()
         {
             CAspirante objListaAspirante = new CAspirante(_DataSistema.ConexionBaseDato);
-            DataView dvListaAspirante = new DataView(objListaAspirante.Detalle("", "", "", DateTime.Now, 'X',
+             dvListaAspirante = new DataView(objListaAspirante.Detalle("", "", "", DateTime.Now, 'X',
            "", "", "", "", "", "", 'X', 0, "", 0, 0, 0, "", "", "", "", "", DateTime.Now, "", DateTime.Now,7).TB_ASPIRANTE);
 
             GVListaRegistroAspirantes.DataSource = dvListaAspirante;
@@ -172,9 +180,9 @@ namespace MyMainApp.TEC
         }
 
         protected void FillDatosAspirante()
-        {
+        {//datos para perfil aspirante
             CAspirante objAspirante = new CAspirante(_DataSistema.ConexionBaseDato);
-            DataView dvAspirante = new DataView(objAspirante.Detalle(TxtIdPasante.Text, "", "", DateTime.Now,
+            dvAspirante = new DataView(objAspirante.Detalle(TxtIdPasante.Text, "", "", DateTime.Now,
                 'x', "", "", "", "", "", "", 'x', 0, "", 0, 0, 0, "", "", "", "", "", DateTime.Now, "", DateTime.Now, 4).TB_ASPIRANTE);
             if (dvAspirante.Count > 0)
             {
@@ -206,7 +214,11 @@ namespace MyMainApp.TEC
             int Id = GVListaRegistroAspirantes.SelectedIndex;
 
             TxtIdPasante.Text=GVListaRegistroAspirantes.DataKeys[Id].Value.ToString();
-            FillDatosAspirante(); 
+            FillDatosAspirante();
+            FillGVNotaIq();
+            FillGVEscolaridadA();
+            FillGVHabilidadA();
+            FillGVDestrezaA();
             PanelListaRegistros.Visible = false;
             PanelPerfil.Visible = true;
             
@@ -219,13 +231,84 @@ namespace MyMainApp.TEC
         }
 
         protected void FillGVNotaIq()
-        {
- 
+        {//datos para perfil aspirante
+            CNotaIq objPruebaIq = new CNotaIq(_DataSistema.ConexionBaseDato);
+            dvPrueba = new DataView(objPruebaIq.Detalle(0, ' ', "", TxtIdPasante.Text, "", DateTime.Today
+                ,"", DateTime.Today, 3).TB_NOTA_IQ);
+            if (dvPrueba.Count <= 0)
+            {
+                lblPruebaIq.Text = "NO HAY REGISTRO DE LA PRUEBA DE COEFICIENTE";
+                lblPruebaIq.Visible = true;
+                GVNotaIq.Visible = false;
+            }
+            else {
+                lblPruebaIq.Visible = false;
+                GVNotaIq.Visible = true;
+                GVNotaIq.DataSource = dvPrueba;
+                GVNotaIq.DataBind();
+            }
+            
         }
 
-        
-        
+        protected void FillGVEscolaridadA()
+        {//datos para perfil aspirante
+            CEscolaridadAspirante objEscolaridad = new CEscolaridadAspirante(_DataSistema.ConexionBaseDato);
+            dvEscolaridad = new DataView(objEscolaridad.Detalle(0, TxtIdPasante.Text, 0, 0, 0, 0, "", "", 0
+                , 0, "", DateTime.Now, "", DateTime.Now, 3).TB_ESCOLARIDAD_ASPIRANTE);
+            if (dvEscolaridad.Count <= 0)
+            {
+                lblEscolaridad.Text = "DATOS INCOMPLETOS POR EL ASPIRANTE";
+                lblEscolaridad.Visible = true;
+                GVEscolaridadA.Visible = false;
+            }
+            else
+            {
+                lblEscolaridad.Visible = false;
+                GVEscolaridadA.Visible = true;
+                GVEscolaridadA.DataSource = dvEscolaridad;
+                GVEscolaridadA.DataBind();
+            }
+        }
 
+        protected void FillGVHabilidadA()
+        {//datos para perfil aspirante
+            CHabilidadAspirante objHabilidad = new CHabilidadAspirante(_DataSistema.ConexionBaseDato);
+            dvHabilidad = new DataView(objHabilidad.Detalle(0, 0, TxtIdPasante.Text, 0, 0, "",
+                DateTime.Now, "", DateTime.Now, 2).TB_HABILIDAD_ASPIRANTE);
+            if (dvHabilidad.Count <= 0)
+            {
+                lblHabilidadA.Text = "DATOS INCOMPLETOS POR EL ASPIRANTE";
+                lblHabilidadA.Visible = true;
+                GVHabilidadA.Visible = false;
+            }
+            else
+            {
+                lblHabilidadA.Visible = false;
+                GVHabilidadA.Visible = true;
+                GVHabilidadA.DataSource = dvHabilidad;
+                GVHabilidadA.DataBind();
+            }
+        }
+
+        protected void FillGVDestrezaA()
+        {//datos para perfil aspirante
+            CDestrezaAspirante objDestreza = new CDestrezaAspirante(_DataSistema.ConexionBaseDato);
+            dvDestreza = new DataView(objDestreza.Detalle(0, 0, TxtIdPasante.Text, "", DateTime.Now,
+                "", DateTime.Now, 2).TB_DESTREZA_ASPIRANTE);
+            if (dvDestreza.Count <= 0)
+            {
+                lblDestrezaA.Text = "DATOS INCOMPLETOS POR EL ASPIRANTE";
+                lblDestrezaA.Visible = true;
+                GVDestrezaA.Visible = false;
+            }
+            else
+            {
+                lblDestrezaA.Visible = false;
+                GVDestrezaA.Visible = true;
+                GVDestrezaA.DataSource = dvDestreza;
+                GVDestrezaA.DataBind();
+            }
+        }
         
     }
 }
