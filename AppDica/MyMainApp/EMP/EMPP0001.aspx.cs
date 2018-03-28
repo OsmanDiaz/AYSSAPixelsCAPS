@@ -17,11 +17,11 @@ namespace MyMainApp.EMP
         private DataView dvActividadEconomica, dvEmpresa, dvDepartamento, dvMunicipio, dvHabilidad, dvDestreza, dvPasantia,
             dvAreaPasantia, dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvEscolaridadPasantia,
             dvConsultoria, dvEntregable, dvCategoriaEscolaridad, dvPasantiaActividad, dvPasantiaAspirante, dvActividadAspirante,dvRendimiento, objExiste,
-            dvEncuestaRendimiento, dvAceptacionAspirante, dvAspirante, dvPasantiaActividadAspirante;
+            dvEncuestaRendimiento, dvAceptacionAspirante, dvAspirante, dvPasantiaActividadAspirante, dvAceptacionPasantia;
 
         String tituloPasantia, nombreEvaluador, emailEva, idEmpresa, areaPasantia, descPasantia,
             fechaInicio, duracion, horarioDe, horarioA, estadoPasantia, diasDe, diasA, edadD, EdadA,
-            sucursalEmp, direccion;
+            sucursalEmp, direccion, idAspirante;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -1206,10 +1206,80 @@ namespace MyMainApp.EMP
                 GVAceptacionAspirante.Visible = false;
             }
             else {
-                lblAceptacionAspirante.Visible = false;
-                GVAceptacionAspirante.Visible = true;
-                GVAceptacionAspirante.DataSource = dvAceptacionAspirante;
-                GVAceptacionAspirante.DataBind();
+
+                //Codigo para evitar que entre aspirantes si esta pasantia no posee vacantes disponibles
+                //Primero examinamos si posee vacantes disponibles
+                 CPasantia objDatosPasantia = new CPasantia(_DataSistema.ConexionBaseDato);
+                            dvPasantia = new DataView(objDatosPasantia.Detalle(Convert.ToInt32(TxtIDPasantia.Text),"","",0,0,"","",DateTime.Now,"","","",'x',0,0,0,0,0,"","",_DataSistema.Cusuario,DateTime.Now,_DataSistema.Cusuario,DateTime.Now,0).TB_PASANTIA);
+                            if (dvPasantia.Count > 0) {
+                                fechaInicio = dvPasantia.Table.Rows[0]["FECH_INICIO_PASANTIA"].ToString();
+                                tituloPasantia = dvPasantia.Table.Rows[0]["NOMBRE_PASANTIA"].ToString();
+                                nombreEvaluador = dvPasantia.Table.Rows[0]["DS_NOMBRE_EVAL"].ToString();
+                                emailEva = dvPasantia.Table.Rows[0]["DS_EMAIL_CONTACTO"].ToString();
+                                idEmpresa = dvPasantia.Table.Rows[0]["ID_EMPRESA"].ToString();
+                                areaPasantia = dvPasantia.Table.Rows[0]["ID_AREA"].ToString();
+                                descPasantia = dvPasantia.Table.Rows[0]["DS_PASANTIA"].ToString();
+                                duracion = dvPasantia.Table.Rows[0]["DS_DURACION"].ToString();
+                                horarioDe = dvPasantia.Table.Rows[0]["DS_HORARIO_DE"].ToString();
+                                horarioA = dvPasantia.Table.Rows[0]["DS_HORARIO_A"].ToString();
+                                estadoPasantia = dvPasantia.Table.Rows[0]["CD_ESTADO_PASANTIA"].ToString();
+                                diasDe = dvPasantia.Table.Rows[0]["NM_DIAS_DE"].ToString();
+                                diasA = dvPasantia.Table.Rows[0]["NM_DIAS_A"].ToString();
+                                sucursalEmp = dvPasantia.Table.Rows[0]["DS_SUCURSAL"].ToString();
+                                direccion = dvPasantia.Table.Rows[0]["DS_DIRECCION_SUCURSAL"].ToString();
+                                edadD = dvPasantia.Table.Rows[0]["NM_EDAD_DE"].ToString();
+                                EdadA = dvPasantia.Table.Rows[0]["NM_EDAD_A"].ToString();
+                                TxtPuestosDisponibles.Text = dvPasantia.Table.Rows[0]["NM_VACANTES"].ToString();
+
+                                //Puestos requeridos ya fueron asignados.
+                            }
+                            int vacantes = Convert.ToInt32(TxtPuestosDisponibles.Text);
+                            if (vacantes > 0)
+                            {
+                                lblAceptacionAspirante.Visible = false;
+                                GVAceptacionAspirante.Visible = true;
+                                GVAceptacionAspirante.DataSource = dvAceptacionAspirante;
+                                GVAceptacionAspirante.DataBind();
+                            }
+                            else {
+                                //  AQUI DEBE DE IR EL CODIGO QUE TE QUITE TODOS LOS ASPIRANTES QUE QUEDARON PARA SER SELECCIONADOS POR LA EMPRESA PERO 
+                                //  LA PASANTIA YA NO POSEE VACANTES DISPONIBLES POR LO QUE LOS ASPIRANTES PASARAN A I = INSCRITO
+                                CAceptacionPasantia objAceptacionPasantia = new CAceptacionPasantia(_DataSistema.ConexionBaseDato);
+                                dvAceptacionPasantia = new DataView(objAceptacionPasantia.Detalle(0, "", Convert.ToInt32(TxtIDPasantia.Text), "", 'x', 'x', "", _DataSistema.Cusuario, DateTime.Now, _DataSistema.Cusuario, DateTime.Now, 2).TB_ACEPTACION_PASANTIA);
+                                int registros = (dvAceptacionPasantia.Count) - 1;
+                                if (dvAceptacionPasantia.Count > 0)
+                                {
+                                    int numeroRegistros = registros;
+                                    do
+                                    {
+                                        idAspirante = dvAceptacionPasantia.Table.Rows[numeroRegistros]["ID_ASPIRANTE"].ToString();
+                                        CAspiranteEstado objEstadoAspirante = new CAspiranteEstado(_DataSistema.ConexionBaseDato);
+                                        objResultado = objEstadoAspirante.Actualizacion(idAspirante, "", "", DateTime.Now, 'x', "", "", "", "", "", "", 'I', 0, "", 0, 0, 0, idAspirante, "", "", "", _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+                                        if (objResultado.CodigoError == 0)
+                                        {
+                                            CAceptacionPasantiaEstado objEncuestaEstado = new CAceptacionPasantiaEstado(_DataSistema.ConexionBaseDato);
+                                            objResultado = objEncuestaEstado.Actualizacion(0, idAspirante, Convert.ToInt32(TxtIDPasantia.Text), "", 'x', 'R', "", _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+                                            if (objResultado.CodigoError == 0)
+                                            {
+                                                //DespliegaMensajeUpdatePanel("Se cambio estado de Encuesta ", UPPasantia);
+                                                lblAceptacionAspirante.Text = "PUESTOS REQUERIDOS YA FUERON CUBIERTOS";
+                                            }
+                                            else
+                                            {
+                                                DespliegaMensajeUpdatePanel("No se descontaron los datos de vacantes en la pasantia", UPPasantia);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            DespliegaMensajeUpdatePanel("No se descontaron los datos de vacantes en la pasantia", UPPasantia);
+                                        }
+                                        numeroRegistros--;
+                                    } while (numeroRegistros > 0);
+                                }
+                                //lblAceptacionAspirante.Text = "PUESTOS REQUERIDOS YA FUERON CUBIERTOS";
+                                lblAceptacionAspirante.Visible = true;
+                                GVAceptacionAspirante.Visible = false;
+                            }                
             }
 
         }
@@ -1282,8 +1352,17 @@ namespace MyMainApp.EMP
 
                 if (objResultado.CodigoError == 0)
                 {
-                    FillGVAceptacionAspirante();
-                    DespliegaMensajeUpdatePanel("Se rechazo la solicitud del aspirante", UPPasantia);
+                    CAceptacionPasantiaEstado objEncuestaEstado = new CAceptacionPasantiaEstado(_DataSistema.ConexionBaseDato);
+                    objResultado = objEncuestaEstado.Actualizacion(0, idAspirante, Convert.ToInt32(TxtIDPasantia.Text), "", 'x', 'R', "", _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+                    if (objResultado.CodigoError == 0)
+                    {
+                        FillGVAceptacionAspirante();
+                        DespliegaMensajeUpdatePanel("Se rechazo la solicitud del aspirante", UPPasantia);
+                    }
+                    else
+                    {
+                        DespliegaMensajeUpdatePanel("No se descontaron los datos de vacantes en la pasantia", UPPasantia);
+                    }                    
                 }
                 else
                 {
@@ -1368,6 +1447,8 @@ namespace MyMainApp.EMP
                                 edadD = dvPasantia.Table.Rows[0]["NM_EDAD_DE"].ToString();
                                 EdadA = dvPasantia.Table.Rows[0]["NM_EDAD_A"].ToString();
                                 TxtPuestosDisponibles.Text = dvPasantia.Table.Rows[0]["NM_VACANTES"].ToString();
+
+                                //Puestos requeridos ya fueron asignados.
                             }
                             int vacantes = Convert.ToInt32(TxtPuestosDisponibles.Text);
                             if (vacantes > 0)
@@ -1385,6 +1466,37 @@ namespace MyMainApp.EMP
                             }else { 
                                 //  AQUI DEBE DE IR EL CODIGO QUE TE QUITE TODOS LOS ASPIRANTES QUE QUEDARON PARA SER SELECCIONADOS POR LA EMPRESA PERO 
                                 //  LA PASANTIA YA NO POSEE VACANTES DISPONIBLES POR LO QUE LOS ASPIRANTES PASARAN A I = INSCRITO
+                                CAceptacionPasantia objAceptacionPasantia = new CAceptacionPasantia(_DataSistema.ConexionBaseDato);
+                                dvAceptacionPasantia = new DataView(objAceptacionPasantia.Detalle(0,"",Convert.ToInt32(TxtIDPasantia.Text),"",'x','x',"",_DataSistema.Cusuario, DateTime.Now, _DataSistema.Cusuario,DateTime.Now,2).TB_ACEPTACION_PASANTIA);
+                                int registros = (dvAceptacionPasantia.Count) - 1;
+                                if(dvAceptacionPasantia.Count > 0) {
+                                    int numeroRegistros = registros;
+                                    do
+                                    {
+                                        idAspirante = dvAceptacionPasantia.Table.Rows[numeroRegistros]["ID_ASPIRANTE"].ToString();
+                                        CAspiranteEstado objEstadoAspirante = new CAspiranteEstado(_DataSistema.ConexionBaseDato);
+                                        objResultado = objEstadoAspirante.Actualizacion(idAspirante, "", "", DateTime.Now, 'x', "", "", "", "", "", "", 'I', 0, "", 0, 0, 0, idAspirante, "", "", "", _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+                                        if (objResultado.CodigoError == 0)
+                                        {
+                                            CAceptacionPasantiaEstado objEncuestaEstado = new CAceptacionPasantiaEstado(_DataSistema.ConexionBaseDato);
+                                            objResultado = objEncuestaEstado.Actualizacion(0, idAspirante, Convert.ToInt32(TxtIDPasantia.Text), "", 'x', 'R', "", _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+                                            if (objResultado.CodigoError == 0)
+                                            {
+                                                DespliegaMensajeUpdatePanel("Se cambio estado de Encuesta ", UPPasantia);
+                                            }
+                                            else
+                                            {
+                                                DespliegaMensajeUpdatePanel("No se descontaron los datos de vacantes en la pasantia", UPPasantia);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            DespliegaMensajeUpdatePanel("No se descontaron los datos de vacantes en la pasantia", UPPasantia);
+                                        }
+                                        numeroRegistros--;
+                                    } while (numeroRegistros > 0);
+                                    
+                                }
                             }
                             
                         }

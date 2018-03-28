@@ -62,11 +62,13 @@
   <ItemGroup>
     <Compile Include="CAceptacionHorario.cs" />
     <Compile Include="CAceptacionPasantia.cs" />
+    <Compile Include="CAceptacionPasantiaEstado.cs" />
     <Compile Include="CActividadAspirante.cs" />
     <Compile Include="CActividadEconomica.cs" />
     <Compile Include="CAreaPasantia.cs" />
     <Compile Include="CAsignacionAspirante.cs" />
     <Compile Include="CAspirante.cs" />
+    <Compile Include="CAspiranteEstado.cs" />
     <Compile Include="CBrecha.cs" />
     <Compile Include="CCategoriaEscolaridad.cs" />
     <Compile Include="CCategoriaHabilidad.cs" />
