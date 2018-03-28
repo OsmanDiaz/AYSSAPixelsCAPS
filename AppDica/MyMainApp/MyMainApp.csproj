@@ -294,6 +294,7 @@
     <Content Include="EMP\RptEmpresa.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="ASP\RptAceptacionPasantiaHistorico.rdlc" />
     <EmbeddedResource Include="ASP\RptEncuestaSemanal.rdlc" />
     <EmbeddedResource Include="ASP\RptInformeFinal.rdlc" />
     <EmbeddedResource Include="EMP\RptDesempeñoLaboralPasante.rdlc" />

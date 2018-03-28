@@ -2830,6 +2830,20 @@ namespace ClsDataSets {
             
             private global::System.Data.DataColumn columnHORARIO;
             
+            private global::System.Data.DataColumn columnLUNES_P;
+            
+            private global::System.Data.DataColumn columnMARTES_P;
+            
+            private global::System.Data.DataColumn columnMIERCOLES_P;
+            
+            private global::System.Data.DataColumn columnJUEVES_P;
+            
+            private global::System.Data.DataColumn columnVIERNES_P;
+            
+            private global::System.Data.DataColumn columnSABADO_P;
+            
+            private global::System.Data.DataColumn columnDOMINGO_P;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TB_ACEPTACION_HORARIODataTable() {
@@ -2945,6 +2959,62 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LUNES_PColumn {
+                get {
+                    return this.columnLUNES_P;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MARTES_PColumn {
+                get {
+                    return this.columnMARTES_P;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MIERCOLES_PColumn {
+                get {
+                    return this.columnMIERCOLES_P;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn JUEVES_PColumn {
+                get {
+                    return this.columnJUEVES_P;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VIERNES_PColumn {
+                get {
+                    return this.columnVIERNES_P;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SABADO_PColumn {
+                get {
+                    return this.columnSABADO_P;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DOMINGO_PColumn {
+                get {
+                    return this.columnDOMINGO_P;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2980,7 +3050,24 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TB_ACEPTACION_HORARIORow AddTB_ACEPTACION_HORARIORow(string ID, string ID_ACEPTACION_PASANTIA, string LUNES, string MARTES, string MIERCOLES, string JUEVES, string VIERNES, string SABADO, string DOMINGO, string HORARIO) {
+            public TB_ACEPTACION_HORARIORow AddTB_ACEPTACION_HORARIORow(
+                        string ID, 
+                        string ID_ACEPTACION_PASANTIA, 
+                        string LUNES, 
+                        string MARTES, 
+                        string MIERCOLES, 
+                        string JUEVES, 
+                        string VIERNES, 
+                        string SABADO, 
+                        string DOMINGO, 
+                        string HORARIO, 
+                        string LUNES_P, 
+                        string MARTES_P, 
+                        string MIERCOLES_P, 
+                        string JUEVES_P, 
+                        string VIERNES_P, 
+                        string SABADO_P, 
+                        string DOMINGO_P) {
                 TB_ACEPTACION_HORARIORow rowTB_ACEPTACION_HORARIORow = ((TB_ACEPTACION_HORARIORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -2992,7 +3079,14 @@ namespace ClsDataSets {
                         VIERNES,
                         SABADO,
                         DOMINGO,
-                        HORARIO};
+                        HORARIO,
+                        LUNES_P,
+                        MARTES_P,
+                        MIERCOLES_P,
+                        JUEVES_P,
+                        VIERNES_P,
+                        SABADO_P,
+                        DOMINGO_P};
                 rowTB_ACEPTACION_HORARIORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTB_ACEPTACION_HORARIORow);
                 return rowTB_ACEPTACION_HORARIORow;
@@ -3025,6 +3119,13 @@ namespace ClsDataSets {
                 this.columnSABADO = base.Columns["SABADO"];
                 this.columnDOMINGO = base.Columns["DOMINGO"];
                 this.columnHORARIO = base.Columns["HORARIO"];
+                this.columnLUNES_P = base.Columns["LUNES_P"];
+                this.columnMARTES_P = base.Columns["MARTES_P"];
+                this.columnMIERCOLES_P = base.Columns["MIERCOLES_P"];
+                this.columnJUEVES_P = base.Columns["JUEVES_P"];
+                this.columnVIERNES_P = base.Columns["VIERNES_P"];
+                this.columnSABADO_P = base.Columns["SABADO_P"];
+                this.columnDOMINGO_P = base.Columns["DOMINGO_P"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3050,6 +3151,20 @@ namespace ClsDataSets {
                 base.Columns.Add(this.columnDOMINGO);
                 this.columnHORARIO = new global::System.Data.DataColumn("HORARIO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHORARIO);
+                this.columnLUNES_P = new global::System.Data.DataColumn("LUNES_P", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLUNES_P);
+                this.columnMARTES_P = new global::System.Data.DataColumn("MARTES_P", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMARTES_P);
+                this.columnMIERCOLES_P = new global::System.Data.DataColumn("MIERCOLES_P", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMIERCOLES_P);
+                this.columnJUEVES_P = new global::System.Data.DataColumn("JUEVES_P", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJUEVES_P);
+                this.columnVIERNES_P = new global::System.Data.DataColumn("VIERNES_P", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVIERNES_P);
+                this.columnSABADO_P = new global::System.Data.DataColumn("SABADO_P", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSABADO_P);
+                this.columnDOMINGO_P = new global::System.Data.DataColumn("DOMINGO_P", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDOMINGO_P);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("TB_ACEPTACION_HORARIOKey1", new global::System.Data.DataColumn[] {
                                 this.columnID}, false));
                 this.columnID.Unique = true;
@@ -3196,6 +3311,18 @@ namespace ClsDataSets {
             
             private global::System.Data.DataColumn columnCD_RESPUESTA;
             
+            private global::System.Data.DataColumn columnNOMBRE_PASANTIA;
+            
+            private global::System.Data.DataColumn columnFECH_INICIO_PASANTIA;
+            
+            private global::System.Data.DataColumn columnDS_DURACION;
+            
+            private global::System.Data.DataColumn columnDS_PASANTIA;
+            
+            private global::System.Data.DataColumn columnDS_RESPUESTA_LAPTOP;
+            
+            private global::System.Data.DataColumn columnDS_NOMBRE_COMPLETO;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TB_ACEPTACION_PASANTIADataTable() {
@@ -3271,6 +3398,54 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NOMBRE_PASANTIAColumn {
+                get {
+                    return this.columnNOMBRE_PASANTIA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FECH_INICIO_PASANTIAColumn {
+                get {
+                    return this.columnFECH_INICIO_PASANTIA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_DURACIONColumn {
+                get {
+                    return this.columnDS_DURACION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_PASANTIAColumn {
+                get {
+                    return this.columnDS_PASANTIA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_RESPUESTA_LAPTOPColumn {
+                get {
+                    return this.columnDS_RESPUESTA_LAPTOP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_NOMBRE_COMPLETOColumn {
+                get {
+                    return this.columnDS_NOMBRE_COMPLETO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3306,14 +3481,20 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TB_ACEPTACION_PASANTIARow AddTB_ACEPTACION_PASANTIARow(string ID, string ID_ASPIRANTE, string ID_PASANTIA, string DS_RESPUESTA, string CD_RESPUESTA) {
+            public TB_ACEPTACION_PASANTIARow AddTB_ACEPTACION_PASANTIARow(string ID, string ID_ASPIRANTE, string ID_PASANTIA, string DS_RESPUESTA, string CD_RESPUESTA, string NOMBRE_PASANTIA, string FECH_INICIO_PASANTIA, string DS_DURACION, string DS_PASANTIA, string DS_RESPUESTA_LAPTOP, string DS_NOMBRE_COMPLETO) {
                 TB_ACEPTACION_PASANTIARow rowTB_ACEPTACION_PASANTIARow = ((TB_ACEPTACION_PASANTIARow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         ID_ASPIRANTE,
                         ID_PASANTIA,
                         DS_RESPUESTA,
-                        CD_RESPUESTA};
+                        CD_RESPUESTA,
+                        NOMBRE_PASANTIA,
+                        FECH_INICIO_PASANTIA,
+                        DS_DURACION,
+                        DS_PASANTIA,
+                        DS_RESPUESTA_LAPTOP,
+                        DS_NOMBRE_COMPLETO};
                 rowTB_ACEPTACION_PASANTIARow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTB_ACEPTACION_PASANTIARow);
                 return rowTB_ACEPTACION_PASANTIARow;
@@ -3341,6 +3522,12 @@ namespace ClsDataSets {
                 this.columnID_PASANTIA = base.Columns["ID_PASANTIA"];
                 this.columnDS_RESPUESTA = base.Columns["DS_RESPUESTA"];
                 this.columnCD_RESPUESTA = base.Columns["CD_RESPUESTA"];
+                this.columnNOMBRE_PASANTIA = base.Columns["NOMBRE_PASANTIA"];
+                this.columnFECH_INICIO_PASANTIA = base.Columns["FECH_INICIO_PASANTIA"];
+                this.columnDS_DURACION = base.Columns["DS_DURACION"];
+                this.columnDS_PASANTIA = base.Columns["DS_PASANTIA"];
+                this.columnDS_RESPUESTA_LAPTOP = base.Columns["DS_RESPUESTA_LAPTOP"];
+                this.columnDS_NOMBRE_COMPLETO = base.Columns["DS_NOMBRE_COMPLETO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3356,6 +3543,18 @@ namespace ClsDataSets {
                 base.Columns.Add(this.columnDS_RESPUESTA);
                 this.columnCD_RESPUESTA = new global::System.Data.DataColumn("CD_RESPUESTA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCD_RESPUESTA);
+                this.columnNOMBRE_PASANTIA = new global::System.Data.DataColumn("NOMBRE_PASANTIA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOMBRE_PASANTIA);
+                this.columnFECH_INICIO_PASANTIA = new global::System.Data.DataColumn("FECH_INICIO_PASANTIA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFECH_INICIO_PASANTIA);
+                this.columnDS_DURACION = new global::System.Data.DataColumn("DS_DURACION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_DURACION);
+                this.columnDS_PASANTIA = new global::System.Data.DataColumn("DS_PASANTIA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_PASANTIA);
+                this.columnDS_RESPUESTA_LAPTOP = new global::System.Data.DataColumn("DS_RESPUESTA_LAPTOP", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_RESPUESTA_LAPTOP);
+                this.columnDS_NOMBRE_COMPLETO = new global::System.Data.DataColumn("DS_NOMBRE_COMPLETO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_NOMBRE_COMPLETO);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6289,6 +6488,121 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string LUNES_P {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ACEPTACION_HORARIO.LUNES_PColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'LUNES_P\' de la tabla \'TB_ACEPTACION_HORARIO\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ACEPTACION_HORARIO.LUNES_PColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MARTES_P {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ACEPTACION_HORARIO.MARTES_PColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MARTES_P\' de la tabla \'TB_ACEPTACION_HORARIO\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ACEPTACION_HORARIO.MARTES_PColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MIERCOLES_P {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ACEPTACION_HORARIO.MIERCOLES_PColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MIERCOLES_P\' de la tabla \'TB_ACEPTACION_HORARIO\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ACEPTACION_HORARIO.MIERCOLES_PColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string JUEVES_P {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ACEPTACION_HORARIO.JUEVES_PColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'JUEVES_P\' de la tabla \'TB_ACEPTACION_HORARIO\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ACEPTACION_HORARIO.JUEVES_PColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string VIERNES_P {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ACEPTACION_HORARIO.VIERNES_PColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'VIERNES_P\' de la tabla \'TB_ACEPTACION_HORARIO\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ACEPTACION_HORARIO.VIERNES_PColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SABADO_P {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ACEPTACION_HORARIO.SABADO_PColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SABADO_P\' de la tabla \'TB_ACEPTACION_HORARIO\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ACEPTACION_HORARIO.SABADO_PColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DOMINGO_P {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ACEPTACION_HORARIO.DOMINGO_PColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DOMINGO_P\' de la tabla \'TB_ACEPTACION_HORARIO\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ACEPTACION_HORARIO.DOMINGO_PColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsIDNull() {
                 return this.IsNull(this.tableTB_ACEPTACION_HORARIO.IDColumn);
             }
@@ -6406,6 +6720,90 @@ namespace ClsDataSets {
             public void SetHORARIONull() {
                 this[this.tableTB_ACEPTACION_HORARIO.HORARIOColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLUNES_PNull() {
+                return this.IsNull(this.tableTB_ACEPTACION_HORARIO.LUNES_PColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLUNES_PNull() {
+                this[this.tableTB_ACEPTACION_HORARIO.LUNES_PColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMARTES_PNull() {
+                return this.IsNull(this.tableTB_ACEPTACION_HORARIO.MARTES_PColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMARTES_PNull() {
+                this[this.tableTB_ACEPTACION_HORARIO.MARTES_PColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMIERCOLES_PNull() {
+                return this.IsNull(this.tableTB_ACEPTACION_HORARIO.MIERCOLES_PColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMIERCOLES_PNull() {
+                this[this.tableTB_ACEPTACION_HORARIO.MIERCOLES_PColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsJUEVES_PNull() {
+                return this.IsNull(this.tableTB_ACEPTACION_HORARIO.JUEVES_PColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetJUEVES_PNull() {
+                this[this.tableTB_ACEPTACION_HORARIO.JUEVES_PColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVIERNES_PNull() {
+                return this.IsNull(this.tableTB_ACEPTACION_HORARIO.VIERNES_PColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVIERNES_PNull() {
+                this[this.tableTB_ACEPTACION_HORARIO.VIERNES_PColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSABADO_PNull() {
+                return this.IsNull(this.tableTB_ACEPTACION_HORARIO.SABADO_PColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSABADO_PNull() {
+                this[this.tableTB_ACEPTACION_HORARIO.SABADO_PColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDOMINGO_PNull() {
+                return this.IsNull(this.tableTB_ACEPTACION_HORARIO.DOMINGO_PColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDOMINGO_PNull() {
+                this[this.tableTB_ACEPTACION_HORARIO.DOMINGO_PColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -6508,6 +6906,108 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NOMBRE_PASANTIA {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ACEPTACION_PASANTIA.NOMBRE_PASANTIAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NOMBRE_PASANTIA\' de la tabla \'TB_ACEPTACION_PASANTIA\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ACEPTACION_PASANTIA.NOMBRE_PASANTIAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FECH_INICIO_PASANTIA {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ACEPTACION_PASANTIA.FECH_INICIO_PASANTIAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FECH_INICIO_PASANTIA\' de la tabla \'TB_ACEPTACION_PASANTIA" +
+                                "\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ACEPTACION_PASANTIA.FECH_INICIO_PASANTIAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_DURACION {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ACEPTACION_PASANTIA.DS_DURACIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_DURACION\' de la tabla \'TB_ACEPTACION_PASANTIA\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ACEPTACION_PASANTIA.DS_DURACIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_PASANTIA {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ACEPTACION_PASANTIA.DS_PASANTIAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_PASANTIA\' de la tabla \'TB_ACEPTACION_PASANTIA\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ACEPTACION_PASANTIA.DS_PASANTIAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_RESPUESTA_LAPTOP {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ACEPTACION_PASANTIA.DS_RESPUESTA_LAPTOPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_RESPUESTA_LAPTOP\' de la tabla \'TB_ACEPTACION_PASANTIA\'" +
+                                " es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ACEPTACION_PASANTIA.DS_RESPUESTA_LAPTOPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_NOMBRE_COMPLETO {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_ACEPTACION_PASANTIA.DS_NOMBRE_COMPLETOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_NOMBRE_COMPLETO\' de la tabla \'TB_ACEPTACION_PASANTIA\' " +
+                                "es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_ACEPTACION_PASANTIA.DS_NOMBRE_COMPLETOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsIDNull() {
                 return this.IsNull(this.tableTB_ACEPTACION_PASANTIA.IDColumn);
             }
@@ -6564,6 +7064,78 @@ namespace ClsDataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCD_RESPUESTANull() {
                 this[this.tableTB_ACEPTACION_PASANTIA.CD_RESPUESTAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNOMBRE_PASANTIANull() {
+                return this.IsNull(this.tableTB_ACEPTACION_PASANTIA.NOMBRE_PASANTIAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNOMBRE_PASANTIANull() {
+                this[this.tableTB_ACEPTACION_PASANTIA.NOMBRE_PASANTIAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFECH_INICIO_PASANTIANull() {
+                return this.IsNull(this.tableTB_ACEPTACION_PASANTIA.FECH_INICIO_PASANTIAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFECH_INICIO_PASANTIANull() {
+                this[this.tableTB_ACEPTACION_PASANTIA.FECH_INICIO_PASANTIAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_DURACIONNull() {
+                return this.IsNull(this.tableTB_ACEPTACION_PASANTIA.DS_DURACIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_DURACIONNull() {
+                this[this.tableTB_ACEPTACION_PASANTIA.DS_DURACIONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_PASANTIANull() {
+                return this.IsNull(this.tableTB_ACEPTACION_PASANTIA.DS_PASANTIAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_PASANTIANull() {
+                this[this.tableTB_ACEPTACION_PASANTIA.DS_PASANTIAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_RESPUESTA_LAPTOPNull() {
+                return this.IsNull(this.tableTB_ACEPTACION_PASANTIA.DS_RESPUESTA_LAPTOPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_RESPUESTA_LAPTOPNull() {
+                this[this.tableTB_ACEPTACION_PASANTIA.DS_RESPUESTA_LAPTOPColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_NOMBRE_COMPLETONull() {
+                return this.IsNull(this.tableTB_ACEPTACION_PASANTIA.DS_NOMBRE_COMPLETOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_NOMBRE_COMPLETONull() {
+                this[this.tableTB_ACEPTACION_PASANTIA.DS_NOMBRE_COMPLETOColumn] = global::System.Convert.DBNull;
             }
         }
         
