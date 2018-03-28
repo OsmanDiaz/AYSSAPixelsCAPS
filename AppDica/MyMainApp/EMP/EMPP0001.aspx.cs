@@ -1274,7 +1274,7 @@ namespace MyMainApp.EMP
                                             DespliegaMensajeUpdatePanel("No se descontaron los datos de vacantes en la pasantia", UPPasantia);
                                         }
                                         numeroRegistros--;
-                                    } while (numeroRegistros > 0);
+                                    } while (numeroRegistros >= 0);
                                 }
                                 //lblAceptacionAspirante.Text = "PUESTOS REQUERIDOS YA FUERON CUBIERTOS";
                                 lblAceptacionAspirante.Visible = true;
