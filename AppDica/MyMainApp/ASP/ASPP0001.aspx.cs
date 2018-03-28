@@ -19,7 +19,7 @@ namespace MyMainApp
         private DataView dvTituloAcademico, dvPais, dvDepartamento, dvMunicipio, dvTipoDocumento, dvDestreza,
             dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvInstitucion,
             dvEscolaridad, dvHabilidad, dvDocumento, dvPantallas, dvEntregables, dvCategoriaEscolaridad, dvListaPasantia,
-            dvListaActividad, dvAceptacionPasantia, dvComparativo, dvPasantiaAspirante, dvActividadPasantia;
+            dvListaActividad, dvAceptacionPasantia, dvComparativo, dvPasantiaAspirante, dvActividadPasantia, dvHorarioAceptacion;
         private DataSet dsEscolaridad, dsPantalla;
         DataQuery objResultado = new DataQuery();
         protected void Page_Load(object sender, EventArgs e)
@@ -1267,12 +1267,68 @@ namespace MyMainApp
         }
 
         private void FillGVHistorialAceptacion()
-        {
+        {//gridview inicial, aceptacion o rechazo pasantia
             CAceptacionPasantia objAceptacionP = new CAceptacionPasantia(_DataSistema.ConexionBaseDato);
             dvAceptacionPasantia = new DataView(objAceptacionP.Detalle(0, _DataSistema.Cusuario, 0,
               "", 'X', 'P', "", "", DateTime.Now, "", DateTime.Now, 5).TB_ACEPTACION_PASANTIA);
             GVHistorialAceptacion.DataSource = dvAceptacionPasantia;
             GVHistorialAceptacion.DataBind();
+            
         }
+
+        protected void GVHistorialAceptacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int Id = GVHistorialAceptacion.SelectedIndex;
+                TxtIdPas1.Text = GVHistorialAceptacion.DataKeys[Id].Value.ToString();
+                ReporteAceptacionPasantia();
+                PanelHistorialAceptacionP.Visible = true;
+                PanelHistorialOportunidad.Visible = false;
+                
+            
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPPanelOportunidad);
+            }
+        }
+
+        protected void ReporteAceptacionPasantia()
+        {
+            DataTable hp;
+            //cargar las respuestas del informe final pasantia
+            CAceptacionPasantia objAceptacionPasantia = new CAceptacionPasantia(_DataSistema.ConexionBaseDato);
+            dvAceptacionPasantia = new DataView(objAceptacionPasantia.Detalle(0, _DataSistema.Cusuario, 0,
+              "", 'X', ' ', "", "", DateTime.Now, "", DateTime.Now, 6).TB_ACEPTACION_PASANTIA);
+            if (dvAceptacionPasantia.Count > 0) {
+                TxtIdAcepPas.Text = dvAceptacionPasantia.Table.Rows[0]["ID"].ToString();
+            }
+            hp = dvAceptacionPasantia.ToTable();
+            RVHistoricoP.Visible = true;
+            RVHistoricoP.LocalReport.ReportPath = "ASP/RptAceptacionPasantiaHistorico.rdlc";
+            RVHistoricoP.LocalReport.DataSources.Clear();
+            RVHistoricoP.LocalReport.DataSources.Add(new ReportDataSource("TB_ACEPTACION_PASANTIA", hp));
+
+            DataTable hp1;
+           
+                CAceptacionHorario objAceptacionHorario = new CAceptacionHorario(_DataSistema.ConexionBaseDato);
+                dvHorarioAceptacion = new DataView(objAceptacionHorario.Detalle(0, Convert.ToInt32(TxtIdAcepPas.Text), true, true,
+                   true, true, true, true, true, true, true, true, true, true
+                , true, true, "", DateTime.Now, "", DateTime.Now, 2).TB_ACEPTACION_HORARIO);
+            
+            hp1 = dvHorarioAceptacion.ToTable();
+            RVHistoricoP.LocalReport.DataSources.Add(new ReportDataSource("TB_ACEPTACION_HORARIO", hp1));
+
+          
+        }
+
+        protected void BtnVerReporteH_Click(object sender, EventArgs e)
+        {
+            PanelHistorialAceptacionP.Visible = false;
+            PanelHistorialOportunidad.Visible = true;
+        }
+
+        
     }
 }

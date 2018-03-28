@@ -19,7 +19,7 @@
         <div class="container-fluid">
             <div id="content">
                 <asp:Panel ID="Panel1" runat="server" Width="100%">
-                    <ajaxToolkit:TabContainer ID="TabAspirante" runat="server" ActiveTabIndex="0" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabAspirante" runat="server" ActiveTabIndex="9" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
 
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabDatoGeneral" Width="100%">
                             <ContentTemplate>
@@ -485,20 +485,20 @@
                                                             <asp:TextBox ID="TxtIdEntregableGV" runat="server" Text='<%#Eval("ID")%>' Visible="false"></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:BoundField HeaderText="NOMBRE DE PROYECTO" DataField="DS_NOMBRE_CONSULTORIA" >
-                                                    <ItemStyle Font-Size="Small" />
+                                                    <asp:BoundField HeaderText="NOMBRE DE PROYECTO" DataField="DS_NOMBRE_CONSULTORIA">
+                                                        <ItemStyle Font-Size="Small" />
                                                     </asp:BoundField>
-                                                    <asp:BoundField HeaderText="NOMBRE DE ENTREGABLE" DataField="DS_ENTREGABLE" >
-                                                    <ItemStyle Font-Size="Small" />
+                                                    <asp:BoundField HeaderText="NOMBRE DE ENTREGABLE" DataField="DS_ENTREGABLE">
+                                                        <ItemStyle Font-Size="Small" />
                                                     </asp:BoundField>
-                                                    <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ENT" >
-                                                    <ItemStyle Font-Size="Small" />
+                                                    <asp:BoundField HeaderText="FECHA DE ENTREGA" DataField="FECH_ENTREGA_ENT">
+                                                        <ItemStyle Font-Size="Small" />
                                                     </asp:BoundField>
-                                                    <asp:BoundField HeaderText="TIEMPO DE DESARROLLO " DataField="DS_DURACION_ENT" >
-                                                    <ItemStyle Font-Size="Small" />
+                                                    <asp:BoundField HeaderText="TIEMPO DE DESARROLLO " DataField="DS_DURACION_ENT">
+                                                        <ItemStyle Font-Size="Small" />
                                                     </asp:BoundField>
                                                     <asp:BoundField DataField="CD_ESTADO_ENTREGABLE" HeaderText="ESTADO ACTUAL">
-                                                    <ItemStyle Font-Size="Small" />
+                                                        <ItemStyle Font-Size="Small" />
                                                     </asp:BoundField>
                                                     <asp:TemplateField HeaderText="ENTREGABLES">
                                                         <ItemTemplate>
@@ -753,7 +753,7 @@
                                         <p class="text-justify">
                                             <asp:Label ID="LblParrafo1" runat="server" Text="Label" class="text-justify">
                 Estimados estudiantes, esta encuesta tiene como objetivo conocer su interés para ser parte de los jóvenes
-                         que haran una PASANTIA NO REMUNERADA, la cual se desarrollará en {{fecha_inicio_pasantia}}, donde pondrán 
+                         que haran una PASANTIA NO REMUNERADA, la cual se desarrollará el {{fecha_inicio_pasantia}}, donde pondrán 
                         en práctica sus conocimientos y habilidades adquiridas en los módulos de formación con empresas ya constituidas 
                         dentro del programa PIXELS PRO y dentro del sector que elaboran videojuegos y los comercializan. Por tal motivo 
                         agradecemos que responda a cada uno de los siguientes ítems:
@@ -761,18 +761,18 @@
                                         </p>
                                         <br />
                                         <div class="form-group">
-                                                <asp:Label ID="Label85" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE DE LA PASANTIA:"></asp:Label>
-                                                <div class="col-md-3">
-                                                    <asp:TextBox ID="TxtNombPasantia" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
-                                                </div>
-                                                
+                                            <asp:Label ID="Label85" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE DE LA PASANTIA:"></asp:Label>
+                                            <div class="col-md-3">
+                                                <asp:TextBox ID="TxtNombPasantia" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
                                             </div>
-                                    <div class="form-group">
-                                                <asp:Label class="control-label  col-sm-3" ID="Label87" runat="server" Font-Bold="True" Text="DESCRIPCION:"></asp:Label>
-                                                <div class="col-md-9">
-                                                    <asp:TextBox class="form-control" ID="TxtDescripPas" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
-                                                </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label class="control-label  col-sm-3" ID="Label87" runat="server" Font-Bold="True" Text="DESCRIPCION:"></asp:Label>
+                                            <div class="col-md-9">
+                                                <asp:TextBox class="form-control" ID="TxtDescripPas" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
                                             </div>
+                                        </div>
                                         <ol>
                                             <li style="font-weight: bold">Está interesado en participar en una pasantía no remunerada con una empresa salvadoreña que se dedica a elaborar videojuegos. </li>
                                             <br />
@@ -806,7 +806,7 @@
                                             <br />
                                             <br />
                                             <li style="font-weight: bold">
-                                                <asp:Label ID="LblLaptop" runat="server" Text="Indicar si tiene laptop personal y estaría dispuesto a utilizarla durante {{duracion_pasantia}} que durará
+                                                <asp:Label ID="LblLaptop" runat="server" Text="Indicar si tiene laptop personal y estaría dispuesto a utilizarla durante {{duracion_pasantia}} días que durará
                             la pasantía, en caso que quiera formar parte de ella."></asp:Label>
                                             </li>
                                             <div class="form-group">
@@ -882,7 +882,7 @@
                                         <br />
                                         <asp:Label ID="LblNombreEstudiante" runat="server" Text="Nombre del Estudiante: {{nombre_aspirante}}"></asp:Label><br />
                                         <br />
-                                        <asp:Label ID="LblAceptacion" runat="server" Text="  Durante {{duracion_pasantia}} que durará la pasantía no remunerada, el estudiante debe
+                                        <asp:Label ID="LblAceptacion" runat="server" Text="  Durante {{duracion_pasantia}} días que durará la pasantía no remunerada, el estudiante debe
                         costear su transporte, no recibirá ningún pago de parte de la empresa donde realizará la pasantía y por su
                         cuenta debe correr el pago de su alimentación u otro tipo de gasto."
                                             class="text-justify"></asp:Label>
@@ -894,18 +894,66 @@
                                 </asp:UpdatePanel>
                             </ContentTemplate>
                         </ajaxToolkit:TabPanel>
+                        <ajaxToolkit:TabPanel ID="TabPanel1" runat="server" HeaderText="OPORTUNIDADES">
+                            <ContentTemplate>
+                                <asp:UpdatePanel ID="UPPanelOportunidad" runat="server">
+                                    <ContentTemplate>
+                                        <asp:Panel ID="PanelHistorialOportunidad" runat="server">
+                                            <br /><asp:TextBox ID="TxtIdPas1" runat="server" Visible="false"></asp:TextBox>
+                                           
+                                            <asp:GridView ID="GVHistorialAceptacion" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVHistorialAceptacion_SelectedIndexChanged">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:BoundField DataField="NOMBRE_PASANTIA" HeaderText="PASANTIA" />
+                                                    <asp:BoundField DataField="CD_ESTADO" HeaderText="ESTADO ACTUAL" />
+                                                    <asp:TemplateField HeaderText="VER DETALLE">
+                                                        <ItemTemplate>
+                                                            <asp:Button ID="BtnVerReporteH" runat="server" CommandName="Select"
+                                                                Text="Ver Reporte" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>
+                                            </asp:Panel>
+                                        
+                                        <asp:Panel ID="PanelHistorialAceptacionP" runat="server" Visible="false">
+                                            <br /> <asp:TextBox ID="TxtIdAcepPas" runat="server" Visible="False"></asp:TextBox>
+                                            <center>
+                                            <rsweb:ReportViewer ID="RVHistoricoP" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="75%" style="margin-right: 0px"><LocalReport ReportPath="ASP\RptAceptacionPasantiaHistorico.rdlc"></LocalReport></rsweb:ReportViewer></center>
+                                            <div align="center">
+                                                <br />
+                                                <asp:Button ID="BtnVerReporteH" runat="server" Text="Cerrar Reporte" OnClick="BtnVerReporteH_Click" />
+                                            </div>
+                                        </asp:Panel>
+                                        
+                                       
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </ContentTemplate>
+                        </ajaxToolkit:TabPanel>
                         <ajaxToolkit:TabPanel ID="TabInformeFinal" runat="server" HeaderText="INFORME FINAL">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPInformeFinal" runat="server">
                                     <ContentTemplate>
                                         <asp:Panel ID="PanelInformeFinal" runat="server" Visible="true">
-                                        <p style="font-weight: bold; text-align:center">
-                                            Infome final de la pasantía no remunerada del programa PIXELS CAPS VIDEOJUEGOS</p>
-                                        <p style="text-align:center">La siguiente guía de preguntas debe de ser respondida por los pasantes de manera individual.</p>
-                                         <asp:TextBox ID="TxtIdInformeComparativo" runat="server" Visible="false"></asp:TextBox>
-                                        <asp:TextBox ID="TxtIdInformeFinal" runat="server" Visible="false"></asp:TextBox>
-                                    <br />
-                                    <div class="form-group">
+                                            <br /><p style="font-weight: bold; text-align: center">
+                                                Infome final de la pasantía no remunerada del programa PIXELS CAPS VIDEOJUEGOS
+                                            </p>
+                                            <p style="text-align: center">La siguiente guía de preguntas debe de ser respondida por los pasantes de manera individual.</p>
+                                            <asp:TextBox ID="TxtIdInformeComparativo" runat="server" Visible="false"></asp:TextBox>
+                                            <asp:TextBox ID="TxtIdInformeFinal" runat="server" Visible="false"></asp:TextBox>
+                                            <br />
+                                            <div class="form-group">
                                                 <asp:Label ID="Label69" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE DE LA EMPRESA:"></asp:Label>
                                                 <div class="col-md-3">
                                                     <asp:TextBox ID="TxtNombreEmpresa" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
@@ -915,13 +963,13 @@
                                                     <asp:TextBox ID="TxtResponsable" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
                                                 </div>
                                             </div>
-                                    <div class="form-group">
+                                            <div class="form-group">
                                                 <asp:Label class="control-label  col-sm-3" ID="Label78" runat="server" Font-Bold="True" Text="DIRECCIÓN:"></asp:Label>
                                                 <div class="col-md-9">
                                                     <asp:TextBox class="form-control" ID="TxtDireccionR" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
                                                 </div>
                                             </div>
-                                    <div class="form-group">
+                                            <div class="form-group">
                                                 <asp:Label ID="Label79" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="TELÉFONO:"></asp:Label>
                                                 <div class="col-md-3">
                                                     <asp:TextBox ID="TxtTelResponsable" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
@@ -930,20 +978,21 @@
                                                 <div class="col-md-3">
                                                     <asp:TextBox ID="TxtCorreoR" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
                                                 </div>
-                                            </div><br />
-                                    <div class="form-group">
+                                            </div>
+                                            <br />
+                                            <div class="form-group">
                                                 <asp:Label ID="Label81" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE DE EL/LA PASANTE:"></asp:Label>
                                                 <div class="col-md-4">
                                                     <asp:TextBox ID="TxtNombrePasante" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
                                                 </div>
-                                   </div>
-                                    <div class="form-group">
+                                            </div>
+                                            <div class="form-group">
                                                 <asp:Label class="control-label  col-sm-3" ID="Label82" runat="server" Font-Bold="True" Text="DIRECCIÓN:"></asp:Label>
                                                 <div class="col-md-9">
                                                     <asp:TextBox class="form-control" ID="TxtDireccionPasante" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
                                                 </div>
                                             </div>
-                                    <div class="form-group">
+                                            <div class="form-group">
                                                 <asp:Label ID="Label83" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="TELÉFONOS DE CONTACTO:"></asp:Label>
                                                 <div class="col-md-3">
                                                     <asp:TextBox ID="TxtTelefonoPasante" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
@@ -952,8 +1001,9 @@
                                                 <div class="col-md-3">
                                                     <asp:TextBox ID="TxtCorreoPasante" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
                                                 </div>
-                                            </div> <br /> 
-                                        <p style="font-weight: bold">
+                                            </div>
+                                            <br />
+                                            <p style="font-weight: bold">
                                                 <asp:Label ID="Label60" runat="server" Text="1. Descripción del proyecto en el que realizó la pasantia."></asp:Label>
                                             </p>
                                             <br />
@@ -1001,19 +1051,21 @@
                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                             </asp:GridView>
-                                             <p style="font-weight: bold"><br />
+                                            <p style="font-weight: bold">
+                                                <br />
                                                 <asp:Label ID="Label71" runat="server" Text="4. Cuadro comparativo"></asp:Label>
                                             </p>
-                                            <br /><div class="form-group">
-                                            <asp:Label ID="Label72" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="APRENDIDO EN PIXELS CAPS:"></asp:Label>
-                                        <div class="col-md-9">
-                                                <asp:TextBox class="form-control" ID="TxtAprendidoComparativo" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
-                                            </div>
+                                            <br />
+                                            <div class="form-group">
+                                                <asp:Label ID="Label72" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="APRENDIDO EN PIXELS CAPS:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox class="form-control" ID="TxtAprendidoComparativo" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
+                                                </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <asp:Label ID="Label73" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="LO PUESTO EN PRACTICA EN LA EMPRESA:"></asp:Label>
-                                               
+
                                                 <div class="col-md-9">
                                                     <asp:TextBox class="form-control" ID="TxtEnPracticaComparativo" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
                                                 </div>
@@ -1048,7 +1100,8 @@
                                                 <SortedAscendingHeaderStyle BackColor="#6D95E1" />
                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                                            </asp:GridView><br />
+                                            </asp:GridView>
+                                            <br />
                                             <p style="font-weight: bold">
                                                 <asp:Label ID="Label74" runat="server" Text="5. Cómo fue la relación laboral pasante y empresa."></asp:Label>
                                             </p>
@@ -1058,7 +1111,7 @@
                                                     <asp:TextBox class="form-control" ID="TxtLaboral" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
                                                 </div>
                                             </div>
-                                        
+
                                             <p style="font-weight: bold">
                                                 <asp:Label ID="Label75" runat="server" Text="6. Considera que realizar las pasantías ha generado algún tipo de resultado/beneficio en su vida profesional."></asp:Label>
                                             </p>
@@ -1086,67 +1139,38 @@
                                                     <asp:TextBox class="form-control" ID="TxtConclusion" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
                                                 </div>
                                             </div>
-                                        <div align="center">
-                                        <asp:Button ID="BtnGuardarInfoFinal" runat="server" class="btn btn-primary" Text="GUARDAR" ValidationGroup="Encuesta" OnClientClick="return confirm('¿Desea enviar los resultados?');" OnClick="BtnGuardarInfoFinal_Click" />
-                                            &nbsp;<asp:Button ID="Button5" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
-                                        </div> <br />
-                                            </asp:Panel>
-                                        <asp:Panel ID="PanelReporteInfoFinal" runat="server" Visible="true">
-                                            <div align="center"><br /><br /><br />
-                                             <asp:Button ID="BtnReporteInfoFinal" runat="server" Text="VER REPORTE DE INFORME FINAL" />
-                                         </div><br />
-                                            <asp:Panel ID="PanelReporteP" runat="server" CssClass="modalPopup" Height="527px">
-            <br />
-            <center>
-        <rsweb:ReportViewer ID="RVInformeFinal" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="75%" style="margin-right: 0px"><LocalReport ReportPath="ASP\RptInformeFinal.rdlc"></LocalReport></rsweb:ReportViewer></center>
-            <div align="center">
-                <br />
-                <asp:Button ID="BtnCerrarInforme" runat="server" Text="Cerrar" />
-            </div>
-        </asp:Panel>
-        <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="PanelReporteP" BackgroundCssClass="modalBackround" TargetControlID="BtnReporteInfoFinal" CancelControlID="BtnCerrarInforme"></ajaxToolkit:ModalPopupExtender>
-
-                                        </asp:Panel>
-                                       <br />
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
-                            </ContentTemplate>
-                        </ajaxToolkit:TabPanel>
-                        <ajaxToolkit:TabPanel ID="TabPanel1" runat="server" HeaderText="OPORTUNIDADES">
-                            <ContentTemplate>
-                                <asp:UpdatePanel ID="UPPanelOportunidad" runat="server">
-                                    <ContentTemplate>
-                                        <asp:Panel ID="PanelHistorialOportunidad" runat="server">
+                                            <div align="center">
+                                                <asp:Button ID="BtnGuardarInfoFinal" runat="server" class="btn btn-primary" Text="GUARDAR" ValidationGroup="Encuesta" OnClientClick="return confirm('¿Desea enviar los resultados?');" OnClick="BtnGuardarInfoFinal_Click" />
+                                                &nbsp;<asp:Button ID="Button5" runat="server" CausesValidation="False" class="btn btn-primary" Text="CANCELAR" />
+                                            </div>
                                             <br />
-                                            <asp:GridView ID="GVHistorialAceptacion" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
-                                                <AlternatingRowStyle BackColor="White" />
-                                                <Columns>
-                                                    <asp:BoundField DataField="NOMBRE_PASANTIA" HeaderText="PASANTIA" />
-                                                    <asp:BoundField DataField="CD_ESTADO" HeaderText="ESTADO ACTUAL" />
-                                                    <asp:TemplateField HeaderText="VER DETALLE">
-                                                        <ItemTemplate>
-                                                            <asp:Button ID="BtnVerDetalle" runat="server" CommandName="Select"
-                                                                Text="Ver Detalle" />
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                </Columns>
-                                                <EditRowStyle BackColor="#2461BF" />
-                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                                                <RowStyle BackColor="#EFF3FB" />
-                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                                            </asp:GridView>
+                                        </asp:Panel>
+                                        <asp:Panel ID="PanelReporteInfoFinal" runat="server" Visible="true">
+                                            <div align="center">
+                                                <br />
+                                                <br />
+                                                <br />
+                                                <asp:Button ID="BtnReporteInfoFinal" runat="server" Text="VER REPORTE DE INFORME FINAL" />
+                                            </div>
+                                            <br />
+                                            <asp:Panel ID="PanelReporteP" runat="server" CssClass="modalPopup" Height="527px">
+                                                <br />
+                                                <center>
+        <rsweb:ReportViewer ID="RVInformeFinal" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="75%" style="margin-right: 0px"><LocalReport ReportPath="ASP\RptInformeFinal.rdlc"></LocalReport></rsweb:ReportViewer></center>
+                                                <div align="center">
+                                                    <br />
+                                                    <asp:Button ID="BtnCerrarInforme" runat="server" Text="Cerrar" />
+                                                </div>
+                                            </asp:Panel>
+                                            <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="PanelReporteP" BackgroundCssClass="modalBackround" TargetControlID="BtnReporteInfoFinal" CancelControlID="BtnCerrarInforme"></ajaxToolkit:ModalPopupExtender>
 
                                         </asp:Panel>
+                                        <br />
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
                             </ContentTemplate>
                         </ajaxToolkit:TabPanel>
+                        
                     </ajaxToolkit:TabContainer>
                 </asp:Panel>
             </div>

@@ -297,7 +297,7 @@
                                                     <SortedAscendingHeaderStyle BackColor="#6D95E1" />
                                                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                                                </asp:GridView>
+                                                </asp:GridView><hr />
                                                 <div align="center">
                                                 <asp:Label ID="Label8" runat="server" Text="ESCOLARIDAD DEL ASPIRANTE" Font-Size="14pt"></asp:Label>
                                                 <br />
@@ -325,7 +325,7 @@
                                             <SortedAscendingHeaderStyle BackColor="#6D95E1" />
                                             <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                                        </asp:GridView>
+                                        </asp:GridView><hr />
                                                 <div align="center">
                                                 <asp:Label ID="Label14" runat="server" Text="HABILIDADES DEL ASPIRANTE" Font-Size="14pt"></asp:Label>
                                                 <br /><asp:Label ID="lblHabilidadA" runat="server" Visible="false"></asp:Label>
@@ -350,7 +350,7 @@
                                                 <SortedAscendingHeaderStyle BackColor="#6D95E1" />
                                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                                            </asp:GridView>
+                                            </asp:GridView><hr />
                                                     <div align="center">
                                                 <asp:Label ID="Label15" runat="server" Text="DESTREZAS DEL ASPIRANTE" Font-Size="14pt"></asp:Label>
                                                 <br /> <asp:Label ID="lblDestrezaA" runat="server" Visible="false"></asp:Label>
@@ -371,7 +371,7 @@
                                             <SortedAscendingHeaderStyle BackColor="#6D95E1" />
                                             <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                                        </asp:GridView>
+                                        </asp:GridView><hr />
                                             </asp:Panel>
                                         </ContentTemplate>
                                     </asp:UpdatePanel>
