@@ -11,6 +11,7 @@ using System.Web.UI.WebControls;
 using AjaxControlToolkit;
 using System.IO;
 using System.Globalization;
+using Microsoft.Reporting.WebForms;
 
 namespace MyMainApp.TEC
 {
@@ -33,7 +34,7 @@ namespace MyMainApp.TEC
         public void Consultar()
         {
             FillGVListaPasantia();
-            FillGVListaAspirtantePasantia();
+            
         }
         public void Adicionar() { }
         public void Modificar() { }
@@ -47,9 +48,10 @@ namespace MyMainApp.TEC
         protected void FillGVListaPasantia()
         {
             CPasantia objPasantia = new CPasantia(_DataSistema.ConexionBaseDato);
+           
             DataView dvPasantia = new DataView(objPasantia.Detalle(0, "", "", 0, 0, "", "", DateTime.Today,
             "", "", "", 'A', 0, 0, 0, 0, 0, "", "", "", DateTime.Today, "", DateTime.Today, 6).TB_PASANTIA);
-
+            
             GVListaPasantia.DataSource = dvPasantia;
             GVListaPasantia.DataBind();
 
@@ -61,8 +63,8 @@ namespace MyMainApp.TEC
             {
                 int Id = GVListaPasantia.SelectedIndex;
 
-                TxtIdPasantia.Text = Convert.ToString(GVListaPasantia.DataKeys[Id].Values[0]);
-                FillGVListaPasantia();
+                TxtIdPasantia.Text = GVListaPasantia.DataKeys[Id].Value.ToString();
+                FillGVListaAspirtantePasantia();
                 PanelListaAspirantePasantia.Visible = true;
                 PanelListaContratos.Visible = false;
 
@@ -76,8 +78,8 @@ namespace MyMainApp.TEC
         protected void FillGVListaAspirtantePasantia()
         {
             CPasantia objListaPasantia = new CPasantia(_DataSistema.ConexionBaseDato);
-            DataView dvListaPasantia = new DataView(objListaPasantia.Detalle(0, "", "", 0, 0, "", "", DateTime.Today,
-            "", "", "", 'A', 0, 0, 0, 0, 0, "", "", "", DateTime.Today, "", DateTime.Today, 7).TB_PASANTIA);
+            DataView dvListaPasantia = new DataView(objListaPasantia.Detalle(Convert.ToInt32(TxtIdPasantia.Text), "", "", 0, 0, "", "", DateTime.Today,
+            "", "", "", 'A', 0, 0, 0, 0, 0, "", "", "", DateTime.Today, "", DateTime.Today, 9).TB_PASANTIA);
 
             GVListaAspirantePasantia.DataSource = dvListaPasantia;
             GVListaAspirantePasantia.DataBind();
@@ -96,9 +98,8 @@ namespace MyMainApp.TEC
             {
                 int Id = GVListaAspirantePasantia.SelectedIndex;
 
-                TxtIdPasante.Text = Convert.ToString(GVListaAspirantePasantia.DataKeys[Id].Values[0]);
-                FillCamposPasantia(TxtIdPasante.Text);
-                //TxtIdConsulEntrega.Text = Convert.ToString(GVAspirantesEntregables.DataKeys[Id].Values[1]);
+                 TxtIdAspirante.Text = Convert.ToString(GVListaAspirantePasantia.DataKeys[Id].Values[0]);
+                 CargarReporte();
                 PanelContratoPasante.Visible = true;
                 PanelListaAspirantePasantia.Visible = false;
 
@@ -109,45 +110,18 @@ namespace MyMainApp.TEC
             }
         }
 
-        private void FillCamposPasantia(string IdPasante)
+        protected void CargarReporte()
         {
+            DataTable rp;
             CPasantiaAspirante objPasantiaA = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
-            DataView dvPasantiaA = new DataView(objPasantiaA.Detalle(0, IdPasante, 0, _DataSistema.Cusuario
-                ,DateTime.Today,"",DateTime.Today,3).TB_PASANTIA_ASPIRANTE);
-            if (dvPasantiaA.Count > 0)
-            {//INFORMACION PARA MOSTRAR EN EL FORMULARIO
-                TxtNombreEmpresa.Text = dvPasantiaA.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString();
-                TxtResponsable.Text = dvPasantiaA.Table.Rows[0]["DS_NOMBRE_CONTACTO"].ToString();
-                TxtDireccionR.Text = dvPasantiaA.Table.Rows[0]["DS_DIRECCION_EMPRESA"].ToString();
-                TxtTelResponsable.Text = dvPasantiaA.Table.Rows[0]["DS_TELEFONO_CONTACTO"].ToString();
-                TxtCorreoR.Text = dvPasantiaA.Table.Rows[0]["DS_EMAIL_CONTACTO"].ToString();
-                TxtNombrePasante.Text = dvPasantiaA.Table.Rows[0]["NOMBRE_COMPLETO"].ToString();
-                TxtDireccionPasante.Text = dvPasantiaA.Table.Rows[0]["DS_DIRECCION"].ToString();
-                TxtTelefonoPasante.Text = dvPasantiaA.Table.Rows[0]["TELEFONO_CONTACTO"].ToString();
-                TxtCorreoPasante.Text = dvPasantiaA.Table.Rows[0]["DS_EMAIL"].ToString();
-                //INFORMACION PARA MOSTRAR EN LAS CLAUSULAS
-                LblAcuerdo.Text = LblAcuerdo.Text.Replace("{{nombre_empresa}}", dvPasantiaA.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString());
-                LblAcuerdo.Text = LblAcuerdo.Text.Replace("{{nombre_pasante}}", dvPasantiaA.Table.Rows[0]["NOMBRE_COMPLETO"].ToString());
-                LblClausula1.Text = LblClausula1.Text.Replace("{{nombre_pasante}}", dvPasantiaA.Table.Rows[0]["NOMBRE_COMPLETO"].ToString());
-                LblClausula1.Text = LblClausula1.Text.Replace("{{nombre_empresa}}", dvPasantiaA.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString());
-                LblClausula2.Text = LblClausula2.Text.Replace("{{nombre_empresa}}", dvPasantiaA.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString());
-                LblClausula2.Text = LblClausula2.Text.Replace("{{nombre_pasante}}", dvPasantiaA.Table.Rows[0]["NOMBRE_COMPLETO"].ToString());
-                LblClausula3.Text = LblClausula3.Text.Replace("{{dia_inicio}}", dvPasantiaA.Table.Rows[0]["DIA_INI_PAS"].ToString());
-                LblClausula3.Text = LblClausula3.Text.Replace("{{fecha_inicio}}", dvPasantiaA.Table.Rows[0]["FECHA_INI_PAS"].ToString());
-                LblClausula3.Text = LblClausula3.Text.Replace("{{mes_inicio}}", dvPasantiaA.Table.Rows[0]["MES_INI_PAS"].ToString());
-                LblClausula3.Text = LblClausula3.Text.Replace("{{dia_fin}}", dvPasantiaA.Table.Rows[0]["DIA_FIN_PAS"].ToString());
-                LblClausula3.Text = LblClausula3.Text.Replace("{{fecha_fin}}", dvPasantiaA.Table.Rows[0]["FECHA_FIN_PAS"].ToString());
-                LblClausula3.Text = LblClausula3.Text.Replace("{{mes_fin}}", dvPasantiaA.Table.Rows[0]["MES_FIN_PAS"].ToString());
-                LblClausula3.Text = LblClausula3.Text.Replace("{{nombre_pasante}}", dvPasantiaA.Table.Rows[0]["NOMBRE_COMPLETO"].ToString());
-                LblClausula5.Text = LblClausula5.Text.Replace("{{nombre_empresa}}", dvPasantiaA.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString());
-                LblClausula6.Text = LblClausula6.Text.Replace("{{nombre_empresa}}", dvPasantiaA.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString());
-                LblResponsable.Text = LblResponsable.Text.Replace("{{nombre_responsable}}", dvPasantiaA.Table.Rows[0]["DS_NOMBRE_CONTACTO"].ToString());
-                LblEmpresa.Text = LblEmpresa.Text.Replace("{{nombre_empresa}}", dvPasantiaA.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString());
-                LblPasante.Text = LblPasante.Text.Replace("{{nombre_pasante}}", dvPasantiaA.Table.Rows[0]["NOMBRE_COMPLETO"].ToString());
-                //mostrar fecha en letras
-                DateTime FechaDeHoy = new DateTime((DateTime.Now.Year),(DateTime.Now.Month),(DateTime.Now.Day));
-                LblFinal.Text = LblFinal.Text.Replace("{{fecha_actual}}", "A los " + (DateTime.Now.Day) + " dias del mes de " +  CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName((DateTime.Now.Month)) + " del año " + (DateTime.Now.Year)); 
-            }
+            DataView dvPasantiaA = new DataView(objPasantiaA.Detalle(0, TxtIdAspirante.Text, 0, _DataSistema.Cusuario
+                , DateTime.Today, "", DateTime.Today, 3).TB_PASANTIA_ASPIRANTE);
+
+            rp = dvPasantiaA.ToTable();
+            RVContrato.Visible = true;
+            RVContrato.LocalReport.ReportPath = "TEC/RptContratoPasante.rdlc";
+            RVContrato.LocalReport.DataSources.Clear();
+            RVContrato.LocalReport.DataSources.Add(new ReportDataSource("TB_PASANTIA_PASANTE", rp));
         }
         
     }
