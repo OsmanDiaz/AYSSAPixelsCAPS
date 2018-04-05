@@ -20,8 +20,7 @@
                             <ContentTemplate>
                             <asp:UpdatePanel ID="UPListaContrato" runat="server">
                             <ContentTemplate><%--inicio contenido tab--%>
-                                <asp:Panel ID="PanelListaContratos" runat="server"><br />
-                             <asp:TextBox ID="TxtIdPasantia" runat="server" Visible="false"></asp:TextBox>
+                                <%--<asp:Panel ID="PanelListaContratos" runat="server"><br />
                                     <div align="center">
                                         <asp:Label ID="Label59" runat="server" Font-Size="14pt" Text="LISTADO DE EMPRESA/PASANTIA"></asp:Label>
                                     </div>
@@ -48,23 +47,27 @@
                                 <sortedascendingheaderstyle backcolor="#6D95E1" />
                                 <sorteddescendingcellstyle backcolor="#E9EBEF" />
                                 <sorteddescendingheaderstyle backcolor="#4870BE" /></asp:GridView><br />
-                    </asp:Panel><%--fin PanelListaContratos--%>
-                                <asp:Panel ID="PanelListaAspirantePasantia" runat="server" Visible="false">
+                    </asp:Panel><--%><%--fin PanelListaContratos--%>
+                                <asp:Panel ID="PanelListaAspirantePasantia" runat="server">
                                     <asp:TextBox ID="TxtIdAspirante" runat="server" Visible="false"></asp:TextBox>
+                             <asp:TextBox ID="TxtIdPasantia" runat="server" Visible="false"></asp:TextBox>
+                                    <br />
                                     <div align="center">
                                         <asp:Label ID="Label60" runat="server" Font-Size="14pt" Text="LISTA DE ASPIRANTES EN PASANTIA"></asp:Label>
-                                     </div>
-                                    <div align="left">
+                                     </div><br />
+                                    <%--<div align="left">
                                         <asp:Button ID="BtnRegresarEmpresa" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresarEmpresa_Click" />
-                                    </div>
-                                    <br />
-                                    <asp:GridView ID="GVListaAspirantePasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaAspirantePasantia_SelectedIndexChanged">
+                                    </div>--%>
+                                    
+                                    <asp:GridView ID="GVListaAspirantePasantia" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID,ID_PASANTIA" OnSelectedIndexChanged="GVListaAspirantePasantia_SelectedIndexChanged">
                                         <AlternatingRowStyle BackColor="White" />
                                         <Columns>
                                             <asp:BoundField DataField="NOMBRE_COMPLETO" HeaderText="NOMBRE COMPLETO" />
+                                            <asp:BoundField DataField="DS_NOMBRE_EMPRESA" HeaderText="EMPRESA" />
+                                            <asp:BoundField DataField="NOMBRE_PASANTIA" HeaderText="PASANTIA" />
                                             <asp:TemplateField HeaderText="VER CONTRATO">
                                                 <ItemTemplate>
-                                           <asp:Button ID="BtnVerContrato" runat="server" CommandName="Select" Text="Ver Contrato"  />
+                                           <asp:Button ID="BtnContrato" runat="server" CommandName="Select" Text="Ver Contrato"  />
                                         </ItemTemplate>
                                             </asp:TemplateField>
                                           </Columns>
@@ -82,10 +85,64 @@
 
                                 </asp:Panel>
                                 <asp:Panel ID="PanelContratoPasante" runat="server" Visible="true">
-                                   <div align="left">
+                                   <p align="center"><br />
+                                                <asp:Label ID="LblAcuerdo" runat="server" Text="Label" Font-Bold="True" Font-Size="Medium">
+                                        Acuerdo de pasantía no remunerada del proyecto PIXELS CAPS VIDEOJUEGOS
+                                                </asp:Label>
+                                            </p><br />
+                                            <div align="left">
                                         <asp:Button ID="BtnReporteContrato" runat="server" Text="Descargar Contrato" class="btn btn-primary" CausesValidation="False"  />
                                        <asp:Button ID="BtnAtras" runat="server" Text="Regresar" class="btn btn-primary" CausesValidation="False" OnClick="BtnAtras_Click"  />
-                                    </div>
+                                    </div><br />    
+                                            <div class="form-group">
+                                                <asp:Label ID="Label76" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOMBRE DE LA EMPRESA:"></asp:Label>
+                                                <div class="col-md-4">
+                                                    <asp:TextBox ID="TxtNombreEmpresa" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                                <asp:Label ID="Label77" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="RESPONSABLE:"></asp:Label>
+                                                <div class="col-md-4">
+                                                    <asp:TextBox ID="TxtResponsable" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-2" ID="Label73" runat="server" Font-Bold="True" Text="DIRECCIÓN:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox class="form-control" ID="TxtDireccionR" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label ID="Label1" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="TELÉFONO:"></asp:Label>
+                                                <div class="col-md-4">
+                                                    <asp:TextBox ID="TxtTelResponsable" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                                <asp:Label ID="Label2" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CORREO ELECTRÓNICO:"></asp:Label>
+                                                <div class="col-md-4">
+                                                    <asp:TextBox ID="TxtCorreoR" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                    <br />
+                                            <div class="form-group">
+                                                <asp:Label ID="Label3" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOMBRE DE EL/LA PASANTE:"></asp:Label>
+                                                <div class="col-md-4">
+                                                    <asp:TextBox ID="TxtNombrePasante" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-2" ID="Label4" runat="server" Font-Bold="True" Text="DIRECCIÓN:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox class="form-control" ID="TxtDireccionPasante" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Enabled="False" Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label ID="Label5" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="TELÉFONOS DE CONTACTO:"></asp:Label>
+                                                <div class="col-md-4">
+                                                    <asp:TextBox ID="TxtTelefonoPasante" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                                <asp:Label ID="Label6" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CORREO ELECTRÓNICO:"></asp:Label>
+                                                <div class="col-md-4">
+                                                    <asp:TextBox ID="TxtCorreoPasante" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                                </div>
+                                            </div>
                                     <asp:Panel ID="PanelReporteC" runat="server" CssClass="modalPopup" Height="527px">
                                                 <br />
                                                 <center>
@@ -94,7 +151,7 @@
                                                     </rsweb:ReportViewer></center>
                                             <div align="center">
                                                     <br />
-                                                    <asp:Button ID="BtnCerrarInforme" runat="server" Text="Cerrar" />
+                                                    <asp:Button ID="BtnCerrarInforme" runat="server" Text="Cerrar"  />
                                                 </div>
                                             </asp:Panel>
                                             <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="PanelReporteC" BackgroundCssClass="modalBackround" TargetControlID="BtnReporteContrato" CancelControlID="BtnCerrarInforme"></ajaxToolkit:ModalPopupExtender>
