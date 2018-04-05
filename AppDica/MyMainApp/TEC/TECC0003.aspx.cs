@@ -34,9 +34,6 @@ namespace MyMainApp.TEC
         public void Consultar()
         {
             FillGVListaPasantia();
-
-            
-            
         }
         public void Adicionar() { }
         public void Modificar() { }

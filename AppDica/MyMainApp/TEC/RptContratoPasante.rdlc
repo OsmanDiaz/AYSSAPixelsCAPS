@@ -16,34 +16,6 @@
                 <TablixCell>
                   <CellContents>
                     <Rectangle Name="Rectangle1">
-                      <ReportItems>
-                        <Textbox Name="Textbox7">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>y el pasante</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>0.47694cm</Top>
-                          <Left>6.96899cm</Left>
-                          <Height>0.47694cm</Height>
-                          <Width>2.04629cm</Width>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingTop>2pt</PaddingTop>
-                          </Style>
-                        </Textbox>
-                      </ReportItems>
                       <KeepTogether>true</KeepTogether>
                       <Style>
                         <Border>
@@ -87,8 +59,11 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value> Acuerdo de pasantía no remunerada del proyecto PIXELS CAPS VIDEOJUEGOS</Value>
-                <Style />
+                <Value> Acuerdo de pasantía no remunerada del proyecto PIXELS CAPS VIDEOJUEGOS con la</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -116,8 +91,11 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>con la empresa </Value>
-                <Style />
+                <Value> empresa </Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -127,41 +105,13 @@
         <Top>0.79126cm</Top>
         <Left>0.31472cm</Left>
         <Height>0.47694cm</Height>
-        <Width>2.43847cm</Width>
+        <Width>1.62043cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
           <PaddingLeft>2pt</PaddingLeft>
-          <PaddingTop>2pt</PaddingTop>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox6">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Fields!DS_NOMBRE_EMPRESA.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>0.79126cm</Top>
-        <Left>2.75318cm</Left>
-        <Height>0.47694cm</Height>
-        <Width>4.53052cm</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
         </Style>
       </Textbox>
@@ -173,7 +123,10 @@
             <TextRuns>
               <TextRun>
                 <Value>=Fields!NOMBRE_COMPLETO.Value</Value>
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -181,10 +134,10 @@
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
         <Top>0.79126cm</Top>
-        <Left>9.33cm</Left>
+        <Left>8.49318cm</Left>
         <Height>0.47694cm</Height>
         <Width>4.49876cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -242,7 +195,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!DS_NOMBRE_EMPRESA.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -251,7 +206,7 @@
                           <rd:DefaultName>Textbox3</rd:DefaultName>
                           <Left>6.0509cm</Left>
                           <Height>0.47694cm</Height>
-                          <Width>5.47826cm</Width>
+                          <Width>6.62633cm</Width>
                           <ZIndex>1</ZIndex>
                           <Style>
                             <Border>
@@ -298,7 +253,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!DS_NOMBRE_CONTACTO.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -308,7 +265,7 @@
                           <Top>0.51222cm</Top>
                           <Left>6.0509cm</Left>
                           <Height>0.47694cm</Height>
-                          <Width>5.47826cm</Width>
+                          <Width>6.62633cm</Width>
                           <ZIndex>3</ZIndex>
                           <Style>
                             <Border>
@@ -355,7 +312,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!DS_DIRECCION_EMPRESA.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -365,7 +324,7 @@
                           <Top>1.02444cm</Top>
                           <Left>6.0509cm</Left>
                           <Height>0.47694cm</Height>
-                          <Width>5.47826cm</Width>
+                          <Width>6.62633cm</Width>
                           <ZIndex>5</ZIndex>
                           <Style>
                             <Border>
@@ -413,7 +372,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!DS_TELEFONO_CONTACTO.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -423,7 +384,7 @@
                           <Top>1.53665cm</Top>
                           <Left>6.0509cm</Left>
                           <Height>0.47694cm</Height>
-                          <Width>5.47826cm</Width>
+                          <Width>6.62633cm</Width>
                           <ZIndex>7</ZIndex>
                           <Style>
                             <Border>
@@ -471,7 +432,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!DS_EMAIL_CONTACTO.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -481,7 +444,7 @@
                           <Top>2.04887cm</Top>
                           <Left>6.0509cm</Left>
                           <Height>0.47694cm</Height>
-                          <Width>5.47826cm</Width>
+                          <Width>6.62633cm</Width>
                           <ZIndex>9</ZIndex>
                           <Style>
                             <Border>
@@ -529,7 +492,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!NOMBRE_COMPLETO.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -539,7 +504,7 @@
                           <Top>2.7022cm</Top>
                           <Left>6.0509cm</Left>
                           <Height>0.47694cm</Height>
-                          <Width>5.47826cm</Width>
+                          <Width>6.62633cm</Width>
                           <ZIndex>11</ZIndex>
                           <Style>
                             <Border>
@@ -587,7 +552,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!DS_DIRECCION.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -597,7 +564,7 @@
                           <Top>3.21442cm</Top>
                           <Left>6.0509cm</Left>
                           <Height>0.47694cm</Height>
-                          <Width>5.47826cm</Width>
+                          <Width>6.62633cm</Width>
                           <ZIndex>13</ZIndex>
                           <Style>
                             <Border>
@@ -645,7 +612,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!TELEFONO_CONTACTO.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -655,7 +624,7 @@
                           <Top>3.72664cm</Top>
                           <Left>6.0509cm</Left>
                           <Height>0.47694cm</Height>
-                          <Width>5.47826cm</Width>
+                          <Width>6.62633cm</Width>
                           <ZIndex>15</ZIndex>
                           <Style>
                             <Border>
@@ -703,7 +672,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!DS_EMAIL.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -713,7 +684,7 @@
                           <Top>4.23885cm</Top>
                           <Left>6.0509cm</Left>
                           <Height>0.47694cm</Height>
-                          <Width>5.47826cm</Width>
+                          <Width>6.62633cm</Width>
                           <ZIndex>17</ZIndex>
                           <Style>
                             <Border>
@@ -755,7 +726,7 @@
         <Left>0.31471cm</Left>
         <Height>4.88153cm</Height>
         <Width>14.13432cm</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -766,7 +737,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>14.13432cm</Width>
+              <Width>14.28576cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -832,62 +803,6 @@
                             <PaddingTop>2pt</PaddingTop>
                           </Style>
                         </Textbox>
-                        <Textbox Name="Textbox29">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!NOMBRE_COMPLETO.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>0.88194cm</Top>
-                          <Left>2.94118cm</Left>
-                          <Height>0.47694cm</Height>
-                          <Width>4.49876cm</Width>
-                          <ZIndex>2</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingTop>2pt</PaddingTop>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox30">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>del programa de formación PIXELS </Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>0.88194cm</Top>
-                          <Left>7.43994cm</Left>
-                          <Height>0.47694cm</Height>
-                          <Width>6.07411cm</Width>
-                          <ZIndex>3</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                          </Style>
-                        </Textbox>
                         <Textbox Name="Textbox31">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -895,7 +810,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>CAPS VIDEOJUEGOS con la empresa </Value>
+                                  <Value>PIXELS CAPS VIDEOJUEGOS con la empresa </Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -906,65 +821,8 @@
                           <Top>1.35888cm</Top>
                           <Left>0cm</Left>
                           <Height>0.47694cm</Height>
-                          <Width>6.13218cm</Width>
-                          <ZIndex>4</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox32">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!DS_NOMBRE_EMPRESA.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>1.35888cm</Top>
-                          <Left>6.13218cm</Left>
-                          <Height>0.47694cm</Height>
-                          <Width>4.53052cm</Width>
-                          <ZIndex>5</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox33">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>y los principales</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>1.35888cm</Top>
-                          <Left>10.6627cm</Left>
-                          <Height>0.47694cm</Height>
-                          <Width>2.85135cm</Width>
-                          <ZIndex>6</ZIndex>
+                          <Width>7.58105cm</Width>
+                          <ZIndex>2</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -981,7 +839,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>objetivos de la pasantía son los siguientes: </Value>
+                                  <Value>y los principales objetivos de la pasantía son los siguientes: </Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -993,7 +851,7 @@
                           <Left>0cm</Left>
                           <Height>0.47694cm</Height>
                           <Width>13.51405cm</Width>
-                          <ZIndex>7</ZIndex>
+                          <ZIndex>3</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1067,7 +925,93 @@
                           <Left>0cm</Left>
                           <Height>2.74193cm</Height>
                           <Width>13.51405cm</Width>
-                          <ZIndex>8</ZIndex>
+                          <ZIndex>4</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox29">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!NOMBRE_COMPLETO.Value</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <Top>0.88194cm</Top>
+                          <Left>2.97645cm</Left>
+                          <Height>0.47694cm</Height>
+                          <Width>5.25832cm</Width>
+                          <ZIndex>5</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox32">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!DS_NOMBRE_EMPRESA.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <Top>1.35888cm</Top>
+                          <Left>7.58105cm</Left>
+                          <Height>0.47694cm</Height>
+                          <Width>5.25832cm</Width>
+                          <ZIndex>6</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox30">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>del programa de formación</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <Top>0.88194cm</Top>
+                          <Left>8.27005cm</Left>
+                          <Height>0.47694cm</Height>
+                          <Width>5.27576cm</Width>
+                          <ZIndex>7</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1085,6 +1029,7 @@
                         </Border>
                       </Style>
                     </Rectangle>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -1106,8 +1051,8 @@
         <Top>6.76914cm</Top>
         <Left>0.31472cm</Left>
         <Height>5.48434cm</Height>
-        <Width>14.13432cm</Width>
-        <ZIndex>6</ZIndex>
+        <Width>14.28576cm</Width>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1155,34 +1100,6 @@
                             <PaddingTop>2pt</PaddingTop>
                           </Style>
                         </Textbox>
-                        <Textbox Name="Textbox37">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!DS_NOMBRE_EMPRESA.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>0.47694cm</Top>
-                          <Left>0cm</Left>
-                          <Height>0.47694cm</Height>
-                          <Width>4.53052cm</Width>
-                          <ZIndex>1</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                          </Style>
-                        </Textbox>
                         <Textbox Name="Textbox38">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -1190,7 +1107,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>a) Realizar un seguimiento del pasante durante la pasantía, </Value>
+                                  <Value>a) Realizar un seguimiento del pasante durante la  </Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1199,10 +1116,10 @@
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
                           <Top>0.47694cm</Top>
-                          <Left>4.53052cm</Left>
+                          <Left>5.29008cm</Left>
                           <Height>0.47694cm</Height>
-                          <Width>9.26415cm</Width>
-                          <ZIndex>2</ZIndex>
+                          <Width>8.50459cm</Width>
+                          <ZIndex>1</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1219,7 +1136,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>orientar y evaluar su desempeño;  b) Hacer que el pasante cumpla con el reglamento</Value>
+                                  <Value>pasantía, orientar y evaluar su desempeño;  b) Hacer que el pasante cumpla con el </Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1230,7 +1147,7 @@
                           <Top>0.95388cm</Top>
                           <Height>0.47694cm</Height>
                           <Width>13.51405cm</Width>
-                          <ZIndex>3</ZIndex>
+                          <ZIndex>2</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1247,7 +1164,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>establecido por </Value>
+                                  <Value>reglamento establecido por </Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1259,7 +1176,7 @@
                           <Left>0cm</Left>
                           <Height>0.47694cm</Height>
                           <Width>2.56675cm</Width>
-                          <ZIndex>4</ZIndex>
+                          <ZIndex>3</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1288,7 +1205,7 @@
                           <Left>2.56675cm</Left>
                           <Height>0.47694cm</Height>
                           <Width>4.53052cm</Width>
-                          <ZIndex>5</ZIndex>
+                          <ZIndex>4</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1316,7 +1233,7 @@
                           <Left>7.09727cm</Left>
                           <Height>0.47694cm</Height>
                           <Width>6.41678cm</Width>
-                          <ZIndex>6</ZIndex>
+                          <ZIndex>5</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1344,7 +1261,7 @@
                           <Top>1.90776cm</Top>
                           <Height>0.47694cm</Height>
                           <Width>13.51405cm</Width>
-                          <ZIndex>7</ZIndex>
+                          <ZIndex>6</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1373,7 +1290,7 @@
                           <Left>0cm</Left>
                           <Height>0.47694cm</Height>
                           <Width>13.79467cm</Width>
-                          <ZIndex>8</ZIndex>
+                          <ZIndex>7</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1402,7 +1319,7 @@
                           <Left>0cm</Left>
                           <Height>0.47694cm</Height>
                           <Width>13.51405cm</Width>
-                          <ZIndex>9</ZIndex>
+                          <ZIndex>8</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1431,7 +1348,7 @@
                           <Left>0cm</Left>
                           <Height>0.47694cm</Height>
                           <Width>4.49876cm</Width>
-                          <ZIndex>10</ZIndex>
+                          <ZIndex>9</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1458,7 +1375,7 @@
                           <Left>4.53052cm</Left>
                           <Height>0.47694cm</Height>
                           <Width>9.01529cm</Width>
-                          <ZIndex>11</ZIndex>
+                          <ZIndex>10</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1487,7 +1404,7 @@
                           <Left>0cm</Left>
                           <Height>0.47694cm</Height>
                           <Width>14.10256cm</Width>
-                          <ZIndex>12</ZIndex>
+                          <ZIndex>11</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1515,7 +1432,7 @@
                           <Top>4.29246cm</Top>
                           <Height>0.47694cm</Height>
                           <Width>13.54581cm</Width>
-                          <ZIndex>13</ZIndex>
+                          <ZIndex>12</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1543,7 +1460,7 @@
                           <Top>4.7694cm</Top>
                           <Height>0.47694cm</Height>
                           <Width>13.79467cm</Width>
-                          <ZIndex>14</ZIndex>
+                          <ZIndex>13</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1571,7 +1488,7 @@
                           <Top>5.24634cm</Top>
                           <Height>0.47694cm</Height>
                           <Width>14.10256cm</Width>
-                          <ZIndex>15</ZIndex>
+                          <ZIndex>14</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1600,7 +1517,7 @@
                           <Left>0cm</Left>
                           <Height>0.47694cm</Height>
                           <Width>13.51405cm</Width>
-                          <ZIndex>16</ZIndex>
+                          <ZIndex>15</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1629,7 +1546,7 @@
                           <Left>0.03176cm</Left>
                           <Height>0.47694cm</Height>
                           <Width>14.0708cm</Width>
-                          <ZIndex>17</ZIndex>
+                          <ZIndex>16</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1657,7 +1574,7 @@
                           <Top>6.67716cm</Top>
                           <Height>0.47694cm</Height>
                           <Width>13.51405cm</Width>
-                          <ZIndex>18</ZIndex>
+                          <ZIndex>17</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1686,6 +1603,34 @@
                           <Left>0cm</Left>
                           <Height>0.47694cm</Height>
                           <Width>4.53052cm</Width>
+                          <ZIndex>18</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox33">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!DS_NOMBRE_EMPRESA.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <Top>0.47694cm</Top>
+                          <Left>0.03176cm</Left>
+                          <Height>0.47694cm</Height>
+                          <Width>5.25832cm</Width>
                           <ZIndex>19</ZIndex>
                           <Style>
                             <Border>
@@ -1725,7 +1670,7 @@
         <Left>0.31471cm</Left>
         <Height>7.86808cm</Height>
         <Width>14.13432cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2174,7 +2119,7 @@
         <Left>0.31471cm</Left>
         <Height>1.55886cm</Height>
         <Width>14.10256cm</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2200,7 +2145,7 @@
         <Left>0.31471cm</Left>
         <Height>0.47694cm</Height>
         <Width>13.51405cm</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2229,7 +2174,7 @@
         <Left>0.31471cm</Left>
         <Height>0.47694cm</Height>
         <Width>13.51405cm</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2258,7 +2203,7 @@
         <Left>0.31471cm</Left>
         <Height>0.47694cm</Height>
         <Width>13.79467cm</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2287,7 +2232,7 @@
         <Left>0.31471cm</Left>
         <Height>0.47694cm</Height>
         <Width>13.51405cm</Width>
-        <ZIndex>12</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2316,7 +2261,7 @@
         <Left>0.31471cm</Left>
         <Height>0.47694cm</Height>
         <Width>13.79467cm</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2482,7 +2427,7 @@
         <Left>0.34648cm</Left>
         <Height>1.62989cm</Height>
         <Width>14.10256cm</Width>
-        <ZIndex>14</ZIndex>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2508,7 +2453,7 @@
         <Left>3.7165cm</Left>
         <Height>0.47694cm</Height>
         <Width>4.53052cm</Width>
-        <ZIndex>15</ZIndex>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2701,7 +2646,7 @@
         <Left>0.34648cm</Left>
         <Height>1.64765cm</Height>
         <Width>14.0708cm</Width>
-        <ZIndex>16</ZIndex>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2727,7 +2672,7 @@
         <Left>0.34648cm</Left>
         <Height>0.47694cm</Height>
         <Width>13.51405cm</Width>
-        <ZIndex>17</ZIndex>
+        <ZIndex>16</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2756,7 +2701,7 @@
         <Left>0.34648cm</Left>
         <Height>0.47694cm</Height>
         <Width>4.79523cm</Width>
-        <ZIndex>18</ZIndex>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2931,18 +2876,79 @@
         <Left>0.34648cm</Left>
         <Height>2.5cm</Height>
         <Width>14.0708cm</Width>
-        <ZIndex>19</ZIndex>
+        <ZIndex>18</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>y el pasante</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>0.79126cm</Top>
+        <Left>6.44689cm</Left>
+        <Height>0.47694cm</Height>
+        <Width>2.04629cm</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!DS_NOMBRE_EMPRESA.Value</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>0.79126cm</Top>
+        <Left>1.93514cm</Left>
+        <Height>0.47694cm</Height>
+        <Width>4.51175cm</Width>
+        <ZIndex>20</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>12.92595in</Height>
     <Style />
   </Body>
-  <Width>6.06773in</Width>
+  <Width>5.8794in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
