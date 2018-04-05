@@ -34,6 +34,8 @@ namespace MyMainApp.TEC
         public void Consultar()
         {
             FillGVListaPasantia();
+
+            
             
         }
         public void Adicionar() { }
@@ -47,6 +49,7 @@ namespace MyMainApp.TEC
 
         protected void FillGVListaPasantia()
         {
+            
             CPasantia objPasantia = new CPasantia(_DataSistema.ConexionBaseDato);
            
             DataView dvPasantia = new DataView(objPasantia.Detalle(0, "", "", 0, 0, "", "", DateTime.Today,
@@ -67,6 +70,7 @@ namespace MyMainApp.TEC
                 FillGVListaAspirtantePasantia();
                 PanelListaAspirantePasantia.Visible = true;
                 PanelListaContratos.Visible = false;
+                PanelContratoPasante.Visible = false;
 
             }
             catch (Exception ex)
@@ -98,10 +102,10 @@ namespace MyMainApp.TEC
             {
                 int Id = GVListaAspirantePasantia.SelectedIndex;
 
-                 TxtIdAspirante.Text = Convert.ToString(GVListaAspirantePasantia.DataKeys[Id].Values[0]);
+                TxtIdAspirante.Text = Convert.ToString(GVListaAspirantePasantia.DataKeys[Id].Values[0]);
+                PanelListaAspirantePasantia.Visible = false;
                  CargarReporte();
                 PanelContratoPasante.Visible = true;
-                PanelListaAspirantePasantia.Visible = false;
 
             }
             catch (Exception ex)
@@ -122,6 +126,12 @@ namespace MyMainApp.TEC
             RVContrato.LocalReport.ReportPath = "TEC/RptContratoPasante.rdlc";
             RVContrato.LocalReport.DataSources.Clear();
             RVContrato.LocalReport.DataSources.Add(new ReportDataSource("TB_PASANTIA_PASANTE", rp));
+        }
+
+        protected void BtnAtras_Click(object sender, EventArgs e)
+        {
+            PanelContratoPasante.Visible = false;
+            PanelListaAspirantePasantia.Visible = true;
         }
         
     }

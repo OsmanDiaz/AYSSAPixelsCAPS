@@ -83,12 +83,13 @@
                                 </asp:Panel>
                                 <asp:Panel ID="PanelContratoPasante" runat="server" Visible="true">
                                    <div align="left">
-                                        <asp:Button ID="BtnReporteContrato" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False"  />
+                                        <asp:Button ID="BtnReporteContrato" runat="server" Text="Descargar Contrato" class="btn btn-primary" CausesValidation="False"  />
+                                       <asp:Button ID="BtnAtras" runat="server" Text="Regresar" class="btn btn-primary" CausesValidation="False" OnClick="BtnAtras_Click"  />
                                     </div>
                                     <asp:Panel ID="PanelReporteC" runat="server" CssClass="modalPopup" Height="527px">
                                                 <br />
                                                 <center>
-                                                    <rsweb:ReportViewer ID="RVContrato" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="75%" style="margin-right: 0px">
+                                                    <rsweb:ReportViewer ID="RVContrato" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="427px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="75%" style="margin-right: 0px" >
                                                         <LocalReport ReportPath="TEC\RptContratoPasante.rdlc"></LocalReport>
                                                     </rsweb:ReportViewer></center>
                                             <div align="center">
