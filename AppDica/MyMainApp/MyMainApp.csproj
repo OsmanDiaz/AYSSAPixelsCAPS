@@ -299,6 +299,7 @@
     <EmbeddedResource Include="ASP\RptInformeFinal.rdlc" />
     <EmbeddedResource Include="EMP\RptDesempeñoLaboralPasante.rdlc" />
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="TEC\RptContratoPasante.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ASP\Actividades\" />

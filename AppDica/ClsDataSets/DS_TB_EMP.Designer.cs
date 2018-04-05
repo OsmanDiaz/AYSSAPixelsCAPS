@@ -5110,6 +5110,18 @@ namespace ClsDataSets {
             
             private global::System.Data.DataColumn columnNOMBRE_PASANTIA;
             
+            private global::System.Data.DataColumn columnDIA_INI_PAS;
+            
+            private global::System.Data.DataColumn columnFECHA_INI_PAS;
+            
+            private global::System.Data.DataColumn columnMES_INI_PAS;
+            
+            private global::System.Data.DataColumn columnDIA_FIN_PAS;
+            
+            private global::System.Data.DataColumn columnFECHA_FIN_PAS;
+            
+            private global::System.Data.DataColumn columnMES_FIN_PAS;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TB_PASANTIA_PASANTEDataTable() {
@@ -5249,6 +5261,54 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DIA_INI_PASColumn {
+                get {
+                    return this.columnDIA_INI_PAS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FECHA_INI_PASColumn {
+                get {
+                    return this.columnFECHA_INI_PAS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MES_INI_PASColumn {
+                get {
+                    return this.columnMES_INI_PAS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DIA_FIN_PASColumn {
+                get {
+                    return this.columnDIA_FIN_PAS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FECHA_FIN_PASColumn {
+                get {
+                    return this.columnFECHA_FIN_PAS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MES_FIN_PASColumn {
+                get {
+                    return this.columnMES_FIN_PAS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5284,7 +5344,26 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TB_PASANTIA_PASANTERow AddTB_PASANTIA_PASANTERow(string ID_ASPIRANTE, string ID_PASANTIA_ASPIRANTE, string NOMBRE_COMPLETO, string DS_DIRECCION, string TELEFONO_CONTACTO, string DS_EMAIL, string ID_PASANTIA, string DS_NOMBRE_EMPRESA, string DS_NOMBRE_CONTACTO, string DS_DIRECCION_EMPRESA, string DS_TELEFONO_CONTACTO, string DS_EMAIL_CONTACTO, string NOMBRE_PASANTIA) {
+            public TB_PASANTIA_PASANTERow AddTB_PASANTIA_PASANTERow(
+                        string ID_ASPIRANTE, 
+                        string ID_PASANTIA_ASPIRANTE, 
+                        string NOMBRE_COMPLETO, 
+                        string DS_DIRECCION, 
+                        string TELEFONO_CONTACTO, 
+                        string DS_EMAIL, 
+                        string ID_PASANTIA, 
+                        string DS_NOMBRE_EMPRESA, 
+                        string DS_NOMBRE_CONTACTO, 
+                        string DS_DIRECCION_EMPRESA, 
+                        string DS_TELEFONO_CONTACTO, 
+                        string DS_EMAIL_CONTACTO, 
+                        string NOMBRE_PASANTIA, 
+                        string DIA_INI_PAS, 
+                        string FECHA_INI_PAS, 
+                        string MES_INI_PAS, 
+                        string DIA_FIN_PAS, 
+                        string FECHA_FIN_PAS, 
+                        string MES_FIN_PAS) {
                 TB_PASANTIA_PASANTERow rowTB_PASANTIA_PASANTERow = ((TB_PASANTIA_PASANTERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_ASPIRANTE,
@@ -5299,7 +5378,13 @@ namespace ClsDataSets {
                         DS_DIRECCION_EMPRESA,
                         DS_TELEFONO_CONTACTO,
                         DS_EMAIL_CONTACTO,
-                        NOMBRE_PASANTIA};
+                        NOMBRE_PASANTIA,
+                        DIA_INI_PAS,
+                        FECHA_INI_PAS,
+                        MES_INI_PAS,
+                        DIA_FIN_PAS,
+                        FECHA_FIN_PAS,
+                        MES_FIN_PAS};
                 rowTB_PASANTIA_PASANTERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTB_PASANTIA_PASANTERow);
                 return rowTB_PASANTIA_PASANTERow;
@@ -5335,6 +5420,12 @@ namespace ClsDataSets {
                 this.columnDS_TELEFONO_CONTACTO = base.Columns["DS_TELEFONO_CONTACTO"];
                 this.columnDS_EMAIL_CONTACTO = base.Columns["DS_EMAIL_CONTACTO"];
                 this.columnNOMBRE_PASANTIA = base.Columns["NOMBRE_PASANTIA"];
+                this.columnDIA_INI_PAS = base.Columns["DIA_INI_PAS"];
+                this.columnFECHA_INI_PAS = base.Columns["FECHA_INI_PAS"];
+                this.columnMES_INI_PAS = base.Columns["MES_INI_PAS"];
+                this.columnDIA_FIN_PAS = base.Columns["DIA_FIN_PAS"];
+                this.columnFECHA_FIN_PAS = base.Columns["FECHA_FIN_PAS"];
+                this.columnMES_FIN_PAS = base.Columns["MES_FIN_PAS"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5366,6 +5457,18 @@ namespace ClsDataSets {
                 base.Columns.Add(this.columnDS_EMAIL_CONTACTO);
                 this.columnNOMBRE_PASANTIA = new global::System.Data.DataColumn("NOMBRE_PASANTIA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNOMBRE_PASANTIA);
+                this.columnDIA_INI_PAS = new global::System.Data.DataColumn("DIA_INI_PAS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDIA_INI_PAS);
+                this.columnFECHA_INI_PAS = new global::System.Data.DataColumn("FECHA_INI_PAS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFECHA_INI_PAS);
+                this.columnMES_INI_PAS = new global::System.Data.DataColumn("MES_INI_PAS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMES_INI_PAS);
+                this.columnDIA_FIN_PAS = new global::System.Data.DataColumn("DIA_FIN_PAS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDIA_FIN_PAS);
+                this.columnFECHA_FIN_PAS = new global::System.Data.DataColumn("FECHA_FIN_PAS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFECHA_FIN_PAS);
+                this.columnMES_FIN_PAS = new global::System.Data.DataColumn("MES_FIN_PAS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMES_FIN_PAS);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8728,6 +8831,108 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DIA_INI_PAS {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_PASANTIA_PASANTE.DIA_INI_PASColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DIA_INI_PAS\' de la tabla \'TB_PASANTIA_PASANTE\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_PASANTIA_PASANTE.DIA_INI_PASColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FECHA_INI_PAS {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_PASANTIA_PASANTE.FECHA_INI_PASColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FECHA_INI_PAS\' de la tabla \'TB_PASANTIA_PASANTE\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_PASANTIA_PASANTE.FECHA_INI_PASColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MES_INI_PAS {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_PASANTIA_PASANTE.MES_INI_PASColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MES_INI_PAS\' de la tabla \'TB_PASANTIA_PASANTE\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_PASANTIA_PASANTE.MES_INI_PASColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DIA_FIN_PAS {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_PASANTIA_PASANTE.DIA_FIN_PASColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DIA_FIN_PAS\' de la tabla \'TB_PASANTIA_PASANTE\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_PASANTIA_PASANTE.DIA_FIN_PASColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FECHA_FIN_PAS {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_PASANTIA_PASANTE.FECHA_FIN_PASColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FECHA_FIN_PAS\' de la tabla \'TB_PASANTIA_PASANTE\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_PASANTIA_PASANTE.FECHA_FIN_PASColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MES_FIN_PAS {
+                get {
+                    try {
+                        return ((string)(this[this.tableTB_PASANTIA_PASANTE.MES_FIN_PASColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MES_FIN_PAS\' de la tabla \'TB_PASANTIA_PASANTE\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableTB_PASANTIA_PASANTE.MES_FIN_PASColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsID_ASPIRANTENull() {
                 return this.IsNull(this.tableTB_PASANTIA_PASANTE.ID_ASPIRANTEColumn);
             }
@@ -8880,6 +9085,78 @@ namespace ClsDataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNOMBRE_PASANTIANull() {
                 this[this.tableTB_PASANTIA_PASANTE.NOMBRE_PASANTIAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDIA_INI_PASNull() {
+                return this.IsNull(this.tableTB_PASANTIA_PASANTE.DIA_INI_PASColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDIA_INI_PASNull() {
+                this[this.tableTB_PASANTIA_PASANTE.DIA_INI_PASColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFECHA_INI_PASNull() {
+                return this.IsNull(this.tableTB_PASANTIA_PASANTE.FECHA_INI_PASColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFECHA_INI_PASNull() {
+                this[this.tableTB_PASANTIA_PASANTE.FECHA_INI_PASColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMES_INI_PASNull() {
+                return this.IsNull(this.tableTB_PASANTIA_PASANTE.MES_INI_PASColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMES_INI_PASNull() {
+                this[this.tableTB_PASANTIA_PASANTE.MES_INI_PASColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDIA_FIN_PASNull() {
+                return this.IsNull(this.tableTB_PASANTIA_PASANTE.DIA_FIN_PASColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDIA_FIN_PASNull() {
+                this[this.tableTB_PASANTIA_PASANTE.DIA_FIN_PASColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFECHA_FIN_PASNull() {
+                return this.IsNull(this.tableTB_PASANTIA_PASANTE.FECHA_FIN_PASColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFECHA_FIN_PASNull() {
+                this[this.tableTB_PASANTIA_PASANTE.FECHA_FIN_PASColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMES_FIN_PASNull() {
+                return this.IsNull(this.tableTB_PASANTIA_PASANTE.MES_FIN_PASColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMES_FIN_PASNull() {
+                this[this.tableTB_PASANTIA_PASANTE.MES_FIN_PASColumn] = global::System.Convert.DBNull;
             }
         }
         
