@@ -75,6 +75,7 @@
     <Compile Include="CCentroEscolar.cs" />
     <Compile Include="CConfMail.cs" />
     <Compile Include="CConsultoria.cs" />
+    <Compile Include="CConsultoriaDias.cs" />
     <Compile Include="CConsultoriaEntregable.cs" />
     <Compile Include="CConsultoriaEntregableAp.cs" />
     <Compile Include="CCProyectoPasantia.cs" />

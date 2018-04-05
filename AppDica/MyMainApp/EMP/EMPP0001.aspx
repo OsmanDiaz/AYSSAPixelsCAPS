@@ -882,13 +882,73 @@
                                             </div>
                                         </asp:Panel>
 
+
+                                        <!-- PANEL PARA MOSTRAR DETALLES DEL PROYECTO -->
+
+                                        <asp:Panel ID="PanelLeer" runat="server" Visible="false">
+                                            <div align="center">
+                                                <asp:Label ID="Label56" runat="server" Text="DATOS DE PROYECTO" Font-Size="14pt"></asp:Label>
+                                                <br />
+                                            </div>
+                                            <br />
+                                            <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-3" ID="Label84" runat="server" Font-Bold="True" Text="TITULO PROYECTO:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox class="form-control" ID="TxtTituloProyecto1" runat="server" AutoCompleteType="Disabled" ReadOnly="true"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-3" ID="Label91" runat="server" Font-Bold="True" Text="No CONTRATO:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox class="form-control" ID="TxtContrato1" runat="server" AutoCompleteType="Disabled" ReadOnly="true"></asp:TextBox>
+                                                </div>
+                                                <asp:Label class="control-label  col-sm-3" ID="Label92" runat="server" Font-Bold="True" Text="DURACIÓN DE CONTRATO (DÍAS):"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox class="form-control" ID="TxtDuracionC1" runat="server" AutoCompleteType="Disabled" TextMode="Number" ReadOnly="true"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-3" ID="Label96" runat="server" Font-Bold="True" Text="DESCRIPCIÓN DE PROYECTO:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox class="form-control" ID="TxtDescProyecto1" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" ReadOnly="true"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-3" ID="Label97" runat="server" Font-Bold="True" Text="FECHA DE INICIO DE CONTRATO:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox class="form-control" ID="TxtFechIniCont1" runat="server" AutoCompleteType="Disabled" ReadOnly="true"></asp:TextBox>
+                                                </div>
+                                                <asp:Label class="control-label  col-sm-3" ID="Label98" runat="server" Font-Bold="True" Text="ESTADO"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:DropDownList ID="CboEstadoPro1" runat="server" class="form-control" ReadOnly="true">
+                                                        <asp:ListItem Value="1">Disponible</asp:ListItem>
+                                                        <asp:ListItem Value="2">No disponible</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-3" ID="Label100" runat="server" Font-Bold="True" Text="MONTO DE PROYECTO:"></asp:Label>
+                                                <div class="col-md-3">
+                                                    <asp:TextBox class="form-control" ID="TxtMontoPro1" runat="server" AutoCompleteType="Disabled" ReadOnly="true"></asp:TextBox>
+                                                </div>
+                                            </div>
+
+                                            <div align="center">
+                                             
+                                                &nbsp;<asp:Button ID="BtnRegresarPro1" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresarPro1_Click"/>
+                                            </div>
+                                        </asp:Panel>
+
+
+                                        <!-- FIN PANEL PARA MOSTRAR DETALLES DEL PROYECTO -->
+
                                         <asp:Panel ID="PanelProyecto" runat="server">
                                             <div align="left">
                                                 <asp:Button ID="BtnNuevoProyecto" runat="server" Text="NUEVO PROYECTO" class="btn btn-primary" CausesValidation="False" OnClick="BtnNuevoProyecto_Click" />
                                             </div>
                                             <br />
 
-                                            <asp:GridView ID="GVContrato" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVContrato_SelectedIndexChanged" DataKeyNames="ID">
+                                            <asp:GridView ID="GVContrato" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GVContrato_SelectedIndexChanged" DataKeyNames="ID" OnRowCommand="GVContrato_RowCommand">
                                                 <AlternatingRowStyle BackColor="White" />
                                                 <Columns>
                                                     <asp:TemplateField HeaderText="" Visible="false">
@@ -899,6 +959,12 @@
                                                     <asp:BoundField HeaderText="NOMBRE DE PROYECTO" DataField="DS_NOMBRE_CONSULTORIA" />
                                                     <asp:BoundField HeaderText="FECHA DE CONTRATO" DataField="FECH_INICIO_CONTRATO" />
                                                     <asp:BoundField HeaderText="DURACIÓN DE CONTRATO" DataField="DS_CONTRATO_DURACION" />
+                                                    <asp:TemplateField HeaderText="ENTREGABLES">
+                                                        <ItemTemplate>
+                                                            <asp:Button ID="BtnVerInfoProyecto" runat="server" CommandName="InfoProyecto" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" 
+                                                                Text="Ver Información Proyecto" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="ENTREGABLES">
                                                         <ItemTemplate>
                                                             <asp:Button ID="BtnVerEntregable" runat="server" CommandName="Select"
@@ -931,10 +997,6 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <asp:Label ID="Label56" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="DURACION EN DIAS:"></asp:Label>
-                                                <div class="col-md-3">
-                                                    <asp:TextBox ID="TxtDuracionE" runat="server" class="form-control" AutoCompleteType="Disabled" ReadOnly="true" TextMode="Number"></asp:TextBox>
-                                                </div>
                                                 <asp:Label ID="Label57" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="FECHA DE ENTREGA:"></asp:Label>
                                                 <div class="col-md-3">
                                                     <asp:TextBox ID="TxtFechaEntrega" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
