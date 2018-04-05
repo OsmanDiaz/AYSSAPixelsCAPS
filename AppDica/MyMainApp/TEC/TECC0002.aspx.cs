@@ -15,6 +15,8 @@ namespace MyMainApp.TEC
     {
         private DataView dvEmpresa, dvPasantia, dvEscolaridad, dvHabilidad, dvConsultoria,
             dvEntregable, dvAsignacionAspirante, dvPasantiaAspirante, dvGeneral, dvListaGeneral, dvEncuesta;
+
+        String Advertencia, email;
         protected void Page_Load(object sender, EventArgs e)
         {
             _DataSistema = (ClsSistema)Session["MyDataSistema"];
@@ -253,6 +255,7 @@ namespace MyMainApp.TEC
             {
                 TxtIdEntregable.Text = dvEntregable.Table.Rows[0]["ID_CONSULTORIA"].ToString();
                 TxtIdActividadAspirante.Text = dvEntregable.Table.Rows[0]["ID_CONSULTORIA_ENTREGABLE"].ToString();
+                TxtAdvertencia.Text = dvEntregable.Table.Rows[0]["MSJ"].ToString();
             }
             GVlistaEntregab.DataSource = dvEntregable;
             GVlistaEntregab.DataBind();
@@ -326,6 +329,7 @@ namespace MyMainApp.TEC
                     TxtNombreEmpresa1.Text = dvEntregable.Table.Rows[0]["DS_NOMBRE_EMPRESA"].ToString();
                     TxtContacto.Text = dvEntregable.Table.Rows[0]["DS_NOMBRE_CONTACTO"].ToString();
                     TxtEmailCon.Text = dvEntregable.Table.Rows[0]["DS_EMAIL_CONTACTO"].ToString();
+                    email = dvEntregable.Table.Rows[0]["DS_EMAIL_CONTACTO"].ToString();
                     TxtConsultoria.Text = dvEntregable.Table.Rows[0]["DS_NOMBRE_CONSULTORIA"].ToString();
                     TxtEntregable.Text = dvEntregable.Table.Rows[0]["DS_ENTREGABLE"].ToString();
                 }
@@ -487,6 +491,24 @@ namespace MyMainApp.TEC
             //regresar a lista de empresa pestaña resultado encuesta
             PanelListaPasantiaE.Visible = false;
             PanelListaEmpresa.Visible = true;
+        }
+
+        protected void BtnEnviarCorreo_Click(object sender, EventArgs e)
+        {
+            CConfMail objConfMail = new CConfMail(_DataSistema.ConexionBaseDato);
+            DataView dvConfMail = new DataView(objConfMail.Detalle(1, "", "", "", 0, "", "", "", DateTime.Now, "", DateTime.Now, 1).TBC_CONF_MAIL);
+            string asunto, body, correo;
+            asunto = "NOTIFICACION DE PROYECTO DICA";
+            body = "<H3 align='center'>NOTIFICACION DE PROYECTO DICA</H3>" + "<p>Estimado usuario <b>" + TxtContacto.Text + "</b> de la Empresa <b>" + TxtNombreEmpresa1.Text +
+                "</b> se le informa que presenta un atraso en: </p>" + "<p>Nombre Proyecto: <b>" + TxtConsultoria.Text + "</b></p>" +
+                "<p>Nombre de Entregable: <b>" + TxtEntregable.Text + "</b></p>" + "<p>Estado de Entregable: <b>"+TxtAdvertencia.Text+"</b></p>"+
+                "<p>Por lo cual, comuníquese con el responsable de su consultoria, para que esta situación sea solventada a la brevedad posible.</p><br>"+
+                "<p>IMPORTANTE:<p><p>Este correo es informativo, favor no responder a esta dirección de correo, ya que no se encuentra habilitada para recibir mensajes.</p> ";
+            correo = TxtEmailCon.Text;
+            objConfMail.SendMail(dvConfMail.Table.Rows[0]["DS_MAIL_FROM"].ToString(), dvConfMail.Table.Rows[0]["DS_MAIL_HEAD"].ToString(), dvConfMail.Table.Rows[0]["DS_SMTP"].ToString(),
+               Convert.ToInt32(dvConfMail.Table.Rows[0]["DS_PORT"].ToString()), dvConfMail.Table.Rows[0]["DS_MAIL"].ToString(), dvConfMail.Table.Rows[0]["DS_PASSWORD"].ToString(),
+               asunto, body, correo);
+            DespliegaMensaje("Se ha enviado correo satisfactoriamente");
         }
         
     }
