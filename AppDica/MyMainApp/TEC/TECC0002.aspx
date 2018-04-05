@@ -24,13 +24,14 @@
                             </asp:DropDownList>
                         </div>
                     </div>--%>
-                    <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="2" BorderColor="#66CCFF" Height="375px" ScrollBars="Vertical" Width="100%">
+                    <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" BorderColor="#66CCFF" Height="375px" ScrollBars="Vertical" Width="100%">
 
                         <ajaxtoolkit:TabPanel ID="TabPanelGeneral" runat="server" HeaderText="MONITOREO">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPGeneral" runat="server">
                                     <ContentTemplate>
                                         <br />
+                                        <asp:TextBox ID="TxtAdvertencia" runat="server" Visible="False"></asp:TextBox>
                                         <asp:TextBox ID="TxtIdEntregable" runat="server" Visible="False"></asp:TextBox><asp:TextBox ID="TxtIdAspirante" runat="server" Visible="False"></asp:TextBox><asp:TextBox ID="TxtCorreo" runat="server" Visible="False"></asp:TextBox><asp:TextBox ID="TxtIdConsultoria" runat="server" Visible="False"></asp:TextBox><asp:TextBox ID="TxtIdEmpresa" runat="server" Visible="False"></asp:TextBox><asp:TextBox ID="TxtIdPasantia" runat="server" Visible="False"></asp:TextBox><asp:TextBox ID="TxtTipoEntregable" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%" Visible="false"></asp:TextBox><asp:TextBox ID="TxtIdActividadAspirante" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="False" Width="100%" Visible="false"></asp:TextBox><asp:Panel ID="PanelGeneral" runat="server">
                                             <center><h3>Informacion Proyectos</h3></center>
                                             <asp:GridView ID="GVListaGeneral" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID" OnSelectedIndexChanged="GVListaGeneral_SelectedIndexChaged">
@@ -150,6 +151,8 @@
                                                 <asp:Button ID="Button1" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" OnClick="BtnAtrasInfoEmpre_Click" /></div>
                                             <br />
                                         </asp:Panel>
+
+                                        <!-- INICIO PANEL DE INFORMACION DEL ENTREGABLE -->
                                         <asp:Panel ID="PanelInfoEntregable" runat="server" Visible="False">
                                             <br />
                                             <div align="center">
@@ -173,8 +176,11 @@
                                                 </div>
                                                 <div align="center">
                                                     <asp:Button ID="BtnAtrasConsultoriaEntregable" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" OnClick="BtnAtrasConEnt_Click" /></div>
+                                                    <asp:Button ID="BtnEnviarCorreo" runat="server" Text="ENVIAR CORREO" class="btn btn-primary" CausesValidation="False" OnClick="BtnEnviarCorreo_Click" /></div>
                                                 <br />
                                             </asp:Panel>
+                                            <!-- FIN  PANEL DE INFORMACION DEL ENTREGABLE -->
+
                                             <asp:Panel ID="PanelPasantiaActivity" runat="server" Visible="False">
                                                 <div class="form-group">
                                                     <asp:Label ID="Label55" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE EVALUADOR:"></asp:Label><div class="col-md-3">
