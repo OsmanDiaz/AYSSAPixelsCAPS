@@ -66,6 +66,7 @@ namespace MyMainApp
                        Convert.ToInt32(dvConfMail.Table.Rows[0]["DS_PORT"].ToString()), dvConfMail.Table.Rows[0]["DS_MAIL"].ToString(), dvConfMail.Table.Rows[0]["DS_PASSWORD"].ToString(),
                        asunto, body, correo);
                         DespliegaMensaje("Usuario y Contraseña enviado al correo");
+                        LimpiarFormulario();
                     }
                     else
                     {
@@ -81,7 +82,14 @@ namespace MyMainApp
             DespliegaMensaje("Usuario ya existe o no cumple rango de edades");
             }
         }
-        
+        protected void LimpiarFormulario()
+        {
+            TxtNIT.Text = "";
+            TxtFechaNacimiento.Text = "";
+            TxtNombres.Text = "";
+            TxtApellidos.Text = "";
+            TxtEmail.Text = "";
+        }
 
         protected bool VerificarUsuario(string Nit, string FechaNacimiento,int IdTipoAspirante)
         {   // Si retorna Falso no se procedera a el registro
