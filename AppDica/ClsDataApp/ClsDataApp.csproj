@@ -78,6 +78,7 @@
     <Compile Include="CConsultoriaDias.cs" />
     <Compile Include="CConsultoriaEntregable.cs" />
     <Compile Include="CConsultoriaEntregableAp.cs" />
+    <Compile Include="CConsultoriaTdr.cs" />
     <Compile Include="CCProyectoPasantia.cs" />
     <Compile Include="CCurso.cs" />
     <Compile Include="CDepartamento.cs" />
