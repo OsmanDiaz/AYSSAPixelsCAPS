@@ -9,6 +9,8 @@ using ClsDataApp;
 using ClsInterface;
 using dica;
 using Microsoft.Reporting.WebForms;
+using AjaxControlToolkit;
+using System.IO;
 
 namespace MyMainApp.EMP
 {
@@ -1834,10 +1836,19 @@ namespace MyMainApp.EMP
 
                 int Id = Convert.ToInt32(e.CommandArgument);
                 GridViewRow row = GVContrato.Rows[Id];
-                idProyecto = GVContrato.DataKeys[Id].Value.ToString();
+                TxtIdProyecto.Text = GVContrato.DataKeys[Id].Value.ToString();
                 FillInfoProyectoContrato();
                 PanelProyecto.Visible = false;
                 PanelLeer.Visible = true;
+            }
+
+            if (e.CommandName == "AgregarTDR") {
+                int Id = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = GVContrato.Rows[Id];
+                TxtIdProyecto.Text = GVContrato.DataKeys[Id].Value.ToString();
+                FillInfoProyectoContrato();
+                PanelProyecto.Visible = false;
+                PanelTDR.Style["visibility"] = "show";
             }
         }
 
@@ -1862,9 +1873,28 @@ namespace MyMainApp.EMP
         protected void BtnRegresarPro1_Click(object sender, EventArgs e)
         {
             PanelProyecto.Visible = true;
-            PanelLeer.Visible = false;
+            PanelTDR.Style["visibility"] = "hidden";
         }
-        
+
+        protected void FileTDR_UploadedComplete(object sender, AjaxControlToolkit.AsyncFileUploadEventArgs e)
+        {
+            bool exists = System.IO.Directory.Exists(Server.MapPath("~/EMP/TDR/" + Convert.ToString(TxtIdProyecto.Text) + "/"));
+            if (!exists)
+            {
+                System.IO.Directory.CreateDirectory(Server.MapPath("~/EMP/TDR/" + Convert.ToString(TxtIdProyecto.Text) + "/"));
+            }
+            string savePath = MapPath("~/EMP/TDR/" + Convert.ToString(idProyecto) + "/" + Path.GetFileName(e.FileName));
+            ((AsyncFileUpload)sender).SaveAs(savePath);
+        }
+
+        protected void btnGuardarTDR_Click(object sender, EventArgs e)
+        {
+            string fullPath;
+            string nombreArchivo = FileTDR.FileName;
+            fullPath = Path.GetFullPath(nombreArchivo);
+            CConsultoriaTdr objTDR = new CConsultoriaTdr(_DataSistema.ConexionBaseDato);
+//            objResultado = objTDR.Actualizacion(0, Convert.ToInt32(TxtIdProyecto.Text), TxtNombreTDR.Text, "",_DataSistema.Cusuario,TipoActualizacion.Adicionar);
+        }
         }
        
     }

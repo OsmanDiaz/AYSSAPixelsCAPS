@@ -305,6 +305,7 @@
     <Folder Include="ASP\Actividades\" />
     <Folder Include="ASP\Documentos\" />
     <Folder Include="ASP\Entregables\" />
+    <Folder Include="EMP\TDR\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

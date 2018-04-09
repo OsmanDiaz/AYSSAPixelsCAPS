@@ -940,7 +940,8 @@
                                         </asp:Panel>
 
 
-                                        <!-- FIN PANEL PARA MOSTRAR DETALLES DEL PROYECTO -->
+
+                                        
 
                                         <asp:Panel ID="PanelProyecto" runat="server">
                                             <div align="left">
@@ -959,7 +960,13 @@
                                                     <asp:BoundField HeaderText="NOMBRE DE PROYECTO" DataField="DS_NOMBRE_CONSULTORIA" />
                                                     <asp:BoundField HeaderText="FECHA DE CONTRATO" DataField="FECH_INICIO_CONTRATO" />
                                                     <asp:BoundField HeaderText="DURACIÓN DE CONTRATO" DataField="DS_CONTRATO_DURACION" />
-                                                    <asp:TemplateField HeaderText="ENTREGABLES">
+                                                    <asp:TemplateField>
+                                                        <ItemTemplate>
+                                                            <asp:Button ID="BtnAgregarTDR" runat="server" CommandName="AgregarTDR" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" 
+                                                                Text="Agregar TDR" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField>
                                                         <ItemTemplate>
                                                             <asp:Button ID="BtnVerInfoProyecto" runat="server" CommandName="InfoProyecto" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" 
                                                                 Text="Ver Información Proyecto" />
@@ -1163,6 +1170,34 @@
                                                 &nbsp;<asp:Button ID="BtnCancelarObservacion" runat="server" Text="REGRESAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnCancelarObservacion_Click" />
                                             </div>
                                         </asp:Panel>
+
+                                        <asp:Panel ID="PanelTDR" runat="server" style="visibility:hidden">
+                                            <br />
+                                            <div align="center">
+                                                <asp:Label ID="Label101" runat="server" Text="TDR" Font-Size="14pt"></asp:Label>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:Label ID="Label102" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="NOMBRE DE TDR:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox ID="TxtNombreTDR" runat="server" class="form-control" AutoCompleteType="Disabled"  Width="100%"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                          
+                                            <div class="form-group">
+                                                <asp:Label ID="Label103" runat="server" class="control-label col-sm-3" Font-Bold="True" Text="ADJUNTAR TDR:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <ajaxToolkit:AsyncFileUpload ID="FileTDR" runat="server" FailedValidation="False" OnUploadedComplete="FileTDR_UploadedComplete" PersistFile="True" />
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div align="center">
+                                                <asp:Button ID="btnGuardarTDR" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="btnGuardarTDR_Click"/>
+                                                &nbsp;<asp:Button ID="btnAtrasTDR" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" />
+                                            </div>
+                                            <br />
+                                            <br />
+                                        </asp:Panel>
+                                        <!-- FIN PANEL PARA MOSTRAR DETALLES DEL PROYECTO -->
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
                             </ContentTemplate>
