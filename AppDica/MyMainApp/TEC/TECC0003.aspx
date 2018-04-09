@@ -84,7 +84,7 @@
                                     </asp:GridView>
 
                                 </asp:Panel>
-                                <asp:Panel ID="PanelContratoPasante" runat="server" Visible="true">
+                                <asp:Panel ID="PanelContratoPasante" runat="server" style="visibility:hidden">
                                    <p align="center"><br />
                                                 <asp:Label ID="LblAcuerdo" runat="server" Text="Label" Font-Bold="True" Font-Size="Medium">
                                         Acuerdo de pasantía no remunerada del proyecto PIXELS CAPS VIDEOJUEGOS
