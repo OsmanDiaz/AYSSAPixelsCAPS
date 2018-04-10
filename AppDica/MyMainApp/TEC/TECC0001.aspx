@@ -286,6 +286,11 @@
                                                     <Columns>
                                                         <asp:BoundField HeaderText="NOTA OBTENIDA" DataField="NM_NOTA_IQ" />
                                                         <asp:BoundField HeaderText="OBSERVACION" DataField="DS_OBSERVACION_IQ" />
+                                                        <asp:TemplateField HeaderText="DESCARGAR">
+                                                            <ItemTemplate>
+                                                            <a href='<%# "http://"+Request.Url.Authority +"/ASP/Documentos/"+Eval("URL_DOCUMENTO") %>' target="_blank">Descargar</a>
+                                                        </ItemTemplate>
+                                                        </asp:TemplateField>
                                                     </Columns>
                                                     <EditRowStyle BackColor="#2461BF" />
                                                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

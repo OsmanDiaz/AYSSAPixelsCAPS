@@ -36,25 +36,7 @@ namespace MyMainApp.TEC
         {
             //FillGVListaPasantia();
             FillGVListaAspirtantePasantia();
-            TxtNombreEmpresa.Visible = false;
-            LblAcuerdo.Visible = false;
-            Label76.Visible = false;
-            Label77.Visible = false;
-            TxtResponsable.Visible = false;
-            Label73.Visible = false;
-            TxtDireccionR.Visible = false;
-            Label1.Visible = false;
-            TxtTelResponsable.Visible = false;
-            Label2.Visible = false;
-            TxtCorreoR.Visible = false;
-            Label3.Visible = false;
-            TxtNombrePasante.Visible = false;
-            Label4.Visible = false;
-            TxtDireccionPasante.Visible = false;
-            Label5.Visible = false;
-            TxtTelefonoPasante.Visible = false;
-            Label6.Visible = false;
-            TxtCorreoPasante.Visible = false;
+           
         }
         public void Adicionar() { }
         public void Modificar() { }
@@ -127,27 +109,9 @@ namespace MyMainApp.TEC
                 //PanelListaAspirantePasantia.Visible = false;
                  CargarReporte();
                  FillCamposPasantia();
-                PanelContratoPasante.Visible = true;
+                PanelContratoPasante.Style["visibility"] = "show";
                 PanelListaAspirantePasantia.Visible = false;
-                TxtNombreEmpresa.Visible = true;
-                LblAcuerdo.Visible = true;
-                Label76.Visible = true;
-                Label77.Visible = true;
-                TxtResponsable.Visible = true;
-                Label73.Visible = true;
-                TxtDireccionR.Visible = true;
-                Label1.Visible = true;
-                TxtTelResponsable.Visible = true;
-                Label2.Visible = true;
-                TxtCorreoR.Visible = true;
-                Label3.Visible = true;
-                TxtNombrePasante.Visible = true;
-                Label4.Visible = true;
-                TxtDireccionPasante.Visible = true;
-                Label5.Visible = true;
-                TxtTelefonoPasante.Visible = true;
-                Label6.Visible = true;
-                TxtCorreoPasante.Visible = true;
+                
 
             }
             catch (Exception ex)
@@ -173,13 +137,13 @@ namespace MyMainApp.TEC
 
         protected void BtnAtras_Click(object sender, EventArgs e)
         {
-            PanelContratoPasante.Visible = false;
+            PanelContratoPasante.Style["visibility"] = "hidden";
             PanelListaAspirantePasantia.Visible = true;
         }
 
         protected void BtnReporteContrato_Click(object sender, EventArgs e)
         {
-            PanelContratoPasante.Visible = false;
+            PanelContratoPasante.Style["visibility"] = "hidden";
             PanelListaAspirantePasantia.Visible = true;
         }
         protected void FillCamposPasantia()
