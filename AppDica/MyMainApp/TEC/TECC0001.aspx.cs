@@ -79,7 +79,7 @@ namespace MyMainApp.TEC
                 FillCamposDatosGenerales();
                 LimpiarIq();
                 PanelRegistroAspirante.Visible = false;
-                PanelRegistroIq.Visible = true;
+                PanelRegistroIq.Style["visibility"] = "show";
 
             }
 
@@ -125,14 +125,15 @@ namespace MyMainApp.TEC
                     if (objResultado.CodigoError == 0)
                     {
                         DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPRegistroAspirante);
-                        string Id = GVRegistroAspirante.SelectedRow.Cells[1].Text;
-                        TxtIdAspirante.Text = Id;
-                        PanelRegistroAspirante.Visible = true;
-                        PanelRegistroIq.Visible = false;
+                        //string Id = GVRegistroAspirante.SelectedRow.Cells[1].Text;
+                        //TxtIdAspirante.Text = Id;
+                        FillGVRegistroIq();                   
+                        //PanelRegistroAspirante.Visible = true;
+                        //PanelRegistroIq.Visible = false;
                     }
                     else
                     {
-                        DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPRegistroAspirante);
+                        DespliegaMensajeUpdatePanel(objResultado.MensajeError, UUPEntregable);
                     }
                 
             }
@@ -142,6 +143,23 @@ namespace MyMainApp.TEC
             }
         }
 
+        protected void FillGVRegistroIq()
+        {
+            
+            CAspirante objAspirante = new CAspirante(_DataSistema.ConexionBaseDato);
+            dvAspirante = new DataView(objAspirante.Detalle("", "", "", DateTime.Today, 'X',
+           "", "", "", "", "", "", 'X', 0, "", 0, 0, 0, "", "", "", "", "", DateTime.Today, "", DateTime.Today, 1).TB_ASPIRANTE);
+            
+            if (dvAspirante.Count > 0)
+            {
+                TxtIdAspirante.Text = dvAspirante.Table.Rows[0]["ID"].ToString();
+
+            } CNotaIq objPruebaIq = new CNotaIq(_DataSistema.ConexionBaseDato);
+            dvPrueba = new DataView(objPruebaIq.Detalle(0, ' ', "", TxtIdAspirante.Text, "", DateTime.Today
+                , "", DateTime.Today, 3).TB_NOTA_IQ);
+            GVRegistroIq.DataSource = dvPrueba;
+            GVRegistroIq.DataBind();
+        }
 
         protected void FillCamposDatosGenerales()
         {
@@ -158,7 +176,7 @@ namespace MyMainApp.TEC
 
         protected void BtnRegresar_Click(object sender, EventArgs e)
         {
-            PanelRegistroIq.Visible = false;
+            PanelRegistroIq.Style["visibility"] = "hidden";
             PanelRegistroAspirante.Visible = true;
         }
         protected void LimpiarIq()
