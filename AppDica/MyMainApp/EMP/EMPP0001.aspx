@@ -32,7 +32,7 @@
             <div class="container-fluid">
                 <div id="content">
                     <%--inicio container-fluid--%>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="2" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server">
@@ -625,9 +625,12 @@
 
 
                                        <asp:Panel ID="PanelInfoAspirante" runat="server" Visible="False">
-    
-                                        <div align="left">
-                                                <asp:Button ID="BtnInformeCompleto" runat="server" Text="Informe Completo de Aspirante" class="btn btn-primary" CausesValidation="False" />
+                                        <div>
+                                            <div align="left">
+                                                    <asp:Button ID="BtnInformeCompleto" runat="server" Text="INFORME COMPLETO DE ASPIRANTE" class="btn btn-primary" CausesValidation="False" />
+                                            
+                                                    <asp:Button ID="BtnAtrasInforme" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" OnClick="BtnAtrasInforme_Click" />
+                                            </div>
                                         </div>
                                         <br />
                                             <asp:TextBox ID="TxtPaisAsp" runat="server" class="form-control" visible="false"></asp:TextBox>
@@ -1192,10 +1195,38 @@
                                             <br />
                                             <div align="center">
                                                 <asp:Button ID="btnGuardarTDR" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="btnGuardarTDR_Click"/>
-                                                &nbsp;<asp:Button ID="btnAtrasTDR" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" />
+                                                &nbsp;<asp:Button ID="btnAtrasTDR" runat="server" Text="ATRAS" class="btn btn-primary" CausesValidation="False" OnClick="btnAtrasTDR_Click" />
                                             </div>
                                             <br />
                                             <br />
+
+                                            <asp:GridView ID="GVTDR" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+                                                <AlternatingRowStyle BackColor="White" />
+                                                <Columns>
+                                                    <asp:TemplateField HeaderText="" Visible="false">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="TxtIDTDR" runat="server" Text='<%#Eval("ID")%>' Visible="False"></asp:TextBox>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:BoundField DataField="NOMBRE_TDR" HeaderText="TDR" />
+                                                    <asp:BoundField DataField="FECH_CREA" HeaderText="FECHA" />
+                                                    <asp:TemplateField HeaderText="Descargar">
+                                                        <ItemTemplate>
+                                                           <a href='<%# "http://"+Request.Url.Authority +"/EMP/TDR/"+Eval("URL_TDR") %>' target="_blank">Descargar</a>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <EditRowStyle BackColor="#2461BF" />
+                                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#EFF3FB" />
+                                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                            </asp:GridView>
                                         </asp:Panel>
                                         <!-- FIN PANEL PARA MOSTRAR DETALLES DEL PROYECTO -->
                                     </ContentTemplate>

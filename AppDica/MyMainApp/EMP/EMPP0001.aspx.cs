@@ -20,7 +20,7 @@ namespace MyMainApp.EMP
             dvAreaPasantia, dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvEscolaridadPasantia,
             dvConsultoria, dvEntregable, dvCategoriaEscolaridad, dvPasantiaActividad, dvPasantiaAspirante, dvActividadAspirante,dvRendimiento, objExiste,
             dvEncuestaRendimiento, dvAceptacionAspirante, dvAspirante, dvPasantiaActividadAspirante, dvAceptacionPasantia, dvConsultoriaEntregable,
-            dvInfoProyecto;
+            dvInfoProyecto, dvTdr;
 
         String tituloPasantia, nombreEvaluador, emailEva, idEmpresa, areaPasantia, descPasantia,
             fechaInicio, duracion, horarioDe, horarioA, estadoPasantia, diasDe, diasA, edadD, EdadA,
@@ -1849,6 +1849,7 @@ namespace MyMainApp.EMP
                 FillInfoProyectoContrato();
                 PanelProyecto.Visible = false;
                 PanelTDR.Style["visibility"] = "show";
+                FillTDRInfo();
             }
         }
 
@@ -1873,7 +1874,7 @@ namespace MyMainApp.EMP
         protected void BtnRegresarPro1_Click(object sender, EventArgs e)
         {
             PanelProyecto.Visible = true;
-            PanelTDR.Style["visibility"] = "hidden";
+            PanelLeer.Visible = false;
         }
 
         protected void FileTDR_UploadedComplete(object sender, AjaxControlToolkit.AsyncFileUploadEventArgs e)
@@ -1887,13 +1888,43 @@ namespace MyMainApp.EMP
             ((AsyncFileUpload)sender).SaveAs(savePath);
         }
 
+
         protected void btnGuardarTDR_Click(object sender, EventArgs e)
         {
             string fullPath;
             string nombreArchivo = FileTDR.FileName;
             fullPath = Path.GetFullPath(nombreArchivo);
             CConsultoriaTdr objTDR = new CConsultoriaTdr(_DataSistema.ConexionBaseDato);
-//            objResultado = objTDR.Actualizacion(0, Convert.ToInt32(TxtIdProyecto.Text), TxtNombreTDR.Text, "",_DataSistema.Cusuario,TipoActualizacion.Adicionar);
+            FillTDRInfo();
+            objResultado = objTDR.Actualizacion(0, Convert.ToInt32(TxtIdProyecto.Text), TxtNombreTDR.Text, nombreArchivo ,_DataSistema.Cusuario,TipoActualizacion.Adicionar);
+            if (objResultado.CodigoError == 0)
+            {
+                DespliegaMensajeUpdatePanel("TDR Guardado Correctamente", UPProyecto);
+                FillTDRInfo();
+            }
+            else {
+                DespliegaMensajeUpdatePanel("No se cargo el TDR", UPProyecto);
+            }
+        }
+
+        protected void FillTDRInfo()
+        {
+            CConsultoriaTdr objTDR = new CConsultoriaTdr(_DataSistema.ConexionBaseDato);
+            dvTdr = new DataView(objTDR.Detalle(0,Convert.ToInt32(TxtIdProyecto.Text),"","",_DataSistema.Cusuario,DateTime.Now,_DataSistema.Cusuario, DateTime.Now,1).TB_CONSULTORIA_TDR);
+            GVTDR.DataSource = dvTdr;
+            GVTDR.DataBind();
+        }
+
+        protected void btnAtrasTDR_Click(object sender, EventArgs e)
+        {
+            PanelProyecto.Visible = true;
+            PanelTDR.Style["visibility"] = "hidden";
+        }
+
+        protected void BtnAtrasInforme_Click(object sender, EventArgs e)
+        {
+            PanelAceptacionAspirante.Visible = true;
+            PanelInfoAspirante.Visible = false;
         }
         }
        
