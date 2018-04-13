@@ -52,7 +52,7 @@ namespace ClsDataApp
             return objDataSet;
         }
         public DataQuery Actualizacion(string Id, string CodiOpciSist, string NombreForma, string RutaForma, string Descripcion,
-             int OpcionConsulta, string LoginUsuario, TipoActualizacion OpcionActualizacion)
+             string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
             DataQuery objResultado = new DataQuery();
             try

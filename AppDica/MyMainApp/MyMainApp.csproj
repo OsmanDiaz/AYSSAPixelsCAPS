@@ -125,7 +125,8 @@
     <Content Include="js\validaciones.js" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
-    <Content Include="MANTENIMIENTOS\MTTP0001.aspx" />
+    <Content Include="MTT\MTTP0001.aspx" />
+    <Content Include="MTT\MTTP0002.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="TEC\TECC0001.aspx" />
     <Content Include="TEC\TECC0002.aspx" />
@@ -188,11 +189,11 @@
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MANTENIMIENTOS\MTTP0001.aspx.cs">
+    <Compile Include="MTT\MTTP0001.aspx.cs">
       <DependentUpon>MTTP0001.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MANTENIMIENTOS\MTTP0001.aspx.designer.cs">
+    <Compile Include="MTT\MTTP0001.aspx.designer.cs">
       <DependentUpon>MTTP0001.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterInicio.Master.cs">
@@ -215,6 +216,13 @@
     </Compile>
     <Compile Include="MasterProceso.master.designer.cs">
       <DependentUpon>MasterProceso.master</DependentUpon>
+    </Compile>
+    <Compile Include="MTT\MTTP0002.aspx.cs">
+      <DependentUpon>MTTP0002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MTT\MTTP0002.aspx.designer.cs">
+      <DependentUpon>MTTP0002.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro.aspx.cs">

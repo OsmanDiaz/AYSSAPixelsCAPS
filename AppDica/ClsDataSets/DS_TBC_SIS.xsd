@@ -12,16 +12,18 @@
   <xs:element name="DS_TBC_SIS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_TBC_SIS" msprop:Generator_UserDSName="DS_TBC_SIS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="_x0020_TBC_OPCION_SISTEMA" msprop:Generator_TableClassName="_TBC_OPCION_SISTEMADataTable" msprop:Generator_TableVarName="table_TBC_OPCION_SISTEMA" msprop:Generator_RowChangedName="_TBC_OPCION_SISTEMARowChanged" msprop:Generator_TablePropName="_TBC_OPCION_SISTEMA" msprop:Generator_RowDeletingName="_TBC_OPCION_SISTEMARowDeleting" msprop:Generator_RowChangingName="_TBC_OPCION_SISTEMARowChanging" msprop:Generator_RowEvHandlerName="_TBC_OPCION_SISTEMARowChangeEventHandler" msprop:Generator_RowDeletedName="_TBC_OPCION_SISTEMARowDeleted" msprop:Generator_RowClassName="_TBC_OPCION_SISTEMARow" msprop:Generator_UserTableName=" TBC_OPCION_SISTEMA" msprop:Generator_RowEvArgName="_TBC_OPCION_SISTEMARowChangeEvent">
+        <xs:element name="TBC_OPCION_SISTEMA" msprop:Generator_TableClassName="TBC_OPCION_SISTEMADataTable" msprop:Generator_TableVarName="tableTBC_OPCION_SISTEMA" msprop:Generator_TablePropName="TBC_OPCION_SISTEMA" msprop:Generator_RowDeletingName="TBC_OPCION_SISTEMARowDeleting" msprop:Generator_RowChangingName="TBC_OPCION_SISTEMARowChanging" msprop:Generator_RowEvHandlerName="TBC_OPCION_SISTEMARowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_OPCION_SISTEMARowDeleted" msprop:Generator_UserTableName="TBC_OPCION_SISTEMA" msprop:Generator_RowChangedName="TBC_OPCION_SISTEMARowChanged" msprop:Generator_RowEvArgName="TBC_OPCION_SISTEMARowChangeEvent" msprop:Generator_RowClassName="TBC_OPCION_SISTEMARow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" />
               <xs:element name="DS_CODI_OPCI_SIST" msprop:Generator_ColumnVarNameInTable="columnDS_CODI_OPCI_SIST" msprop:Generator_ColumnPropNameInRow="DS_CODI_OPCI_SIST" msprop:Generator_ColumnPropNameInTable="DS_CODI_OPCI_SISTColumn" msprop:Generator_UserColumnName="DS_CODI_OPCI_SIST" type="xs:string" minOccurs="0" />
               <xs:element name="DS_NOMBRE_FORMA" msprop:Generator_ColumnVarNameInTable="columnDS_NOMBRE_FORMA" msprop:Generator_ColumnPropNameInRow="DS_NOMBRE_FORMA" msprop:Generator_ColumnPropNameInTable="DS_NOMBRE_FORMAColumn" msprop:Generator_UserColumnName="DS_NOMBRE_FORMA" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_RUTA_FORMA" msprop:Generator_ColumnVarNameInTable="columnDS_RUTA_FORMA" msprop:Generator_ColumnPropNameInRow="DS_RUTA_FORMA" msprop:Generator_ColumnPropNameInTable="DS_RUTA_FORMAColumn" msprop:Generator_UserColumnName="DS_RUTA_FORMA" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_DESCRIPCION" msprop:Generator_ColumnVarNameInTable="columnDS_DESCRIPCION" msprop:Generator_ColumnPropNameInRow="DS_DESCRIPCION" msprop:Generator_ColumnPropNameInTable="DS_DESCRIPCIONColumn" msprop:Generator_UserColumnName="DS_DESCRIPCION" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TBC_USUARIO" msprop:Generator_TableClassName="TBC_USUARIODataTable" msprop:Generator_TableVarName="tableTBC_USUARIO" msprop:Generator_RowChangedName="TBC_USUARIORowChanged" msprop:Generator_TablePropName="TBC_USUARIO" msprop:Generator_RowDeletingName="TBC_USUARIORowDeleting" msprop:Generator_RowChangingName="TBC_USUARIORowChanging" msprop:Generator_RowEvHandlerName="TBC_USUARIORowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_USUARIORowDeleted" msprop:Generator_RowClassName="TBC_USUARIORow" msprop:Generator_UserTableName="TBC_USUARIO" msprop:Generator_RowEvArgName="TBC_USUARIORowChangeEvent">
+        <xs:element name="TBC_USUARIO" msprop:Generator_TableClassName="TBC_USUARIODataTable" msprop:Generator_TableVarName="tableTBC_USUARIO" msprop:Generator_TablePropName="TBC_USUARIO" msprop:Generator_RowDeletingName="TBC_USUARIORowDeleting" msprop:Generator_RowChangingName="TBC_USUARIORowChanging" msprop:Generator_RowEvHandlerName="TBC_USUARIORowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_USUARIORowDeleted" msprop:Generator_UserTableName="TBC_USUARIO" msprop:Generator_RowChangedName="TBC_USUARIORowChanged" msprop:Generator_RowEvArgName="TBC_USUARIORowChangeEvent" msprop:Generator_RowClassName="TBC_USUARIORow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" />
@@ -34,7 +36,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TBC_PARAMETRO_INTERFAZ" msprop:Generator_TableClassName="TBC_PARAMETRO_INTERFAZDataTable" msprop:Generator_TableVarName="tableTBC_PARAMETRO_INTERFAZ" msprop:Generator_RowChangedName="TBC_PARAMETRO_INTERFAZRowChanged" msprop:Generator_TablePropName="TBC_PARAMETRO_INTERFAZ" msprop:Generator_RowDeletingName="TBC_PARAMETRO_INTERFAZRowDeleting" msprop:Generator_RowChangingName="TBC_PARAMETRO_INTERFAZRowChanging" msprop:Generator_RowEvHandlerName="TBC_PARAMETRO_INTERFAZRowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_PARAMETRO_INTERFAZRowDeleted" msprop:Generator_RowClassName="TBC_PARAMETRO_INTERFAZRow" msprop:Generator_UserTableName="TBC_PARAMETRO_INTERFAZ" msprop:Generator_RowEvArgName="TBC_PARAMETRO_INTERFAZRowChangeEvent">
+        <xs:element name="TBC_PARAMETRO_INTERFAZ" msprop:Generator_TableClassName="TBC_PARAMETRO_INTERFAZDataTable" msprop:Generator_TableVarName="tableTBC_PARAMETRO_INTERFAZ" msprop:Generator_TablePropName="TBC_PARAMETRO_INTERFAZ" msprop:Generator_RowDeletingName="TBC_PARAMETRO_INTERFAZRowDeleting" msprop:Generator_RowChangingName="TBC_PARAMETRO_INTERFAZRowChanging" msprop:Generator_RowEvHandlerName="TBC_PARAMETRO_INTERFAZRowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_PARAMETRO_INTERFAZRowDeleted" msprop:Generator_UserTableName="TBC_PARAMETRO_INTERFAZ" msprop:Generator_RowChangedName="TBC_PARAMETRO_INTERFAZRowChanged" msprop:Generator_RowEvArgName="TBC_PARAMETRO_INTERFAZRowChangeEvent" msprop:Generator_RowClassName="TBC_PARAMETRO_INTERFAZRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:unsignedInt" />
@@ -49,7 +51,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TBC_PERFIL_USUARIO" msprop:Generator_TableClassName="TBC_PERFIL_USUARIODataTable" msprop:Generator_TableVarName="tableTBC_PERFIL_USUARIO" msprop:Generator_RowChangedName="TBC_PERFIL_USUARIORowChanged" msprop:Generator_TablePropName="TBC_PERFIL_USUARIO" msprop:Generator_RowDeletingName="TBC_PERFIL_USUARIORowDeleting" msprop:Generator_RowChangingName="TBC_PERFIL_USUARIORowChanging" msprop:Generator_RowEvHandlerName="TBC_PERFIL_USUARIORowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_PERFIL_USUARIORowDeleted" msprop:Generator_RowClassName="TBC_PERFIL_USUARIORow" msprop:Generator_UserTableName="TBC_PERFIL_USUARIO" msprop:Generator_RowEvArgName="TBC_PERFIL_USUARIORowChangeEvent">
+        <xs:element name="TBC_PERFIL_USUARIO" msprop:Generator_TableClassName="TBC_PERFIL_USUARIODataTable" msprop:Generator_TableVarName="tableTBC_PERFIL_USUARIO" msprop:Generator_TablePropName="TBC_PERFIL_USUARIO" msprop:Generator_RowDeletingName="TBC_PERFIL_USUARIORowDeleting" msprop:Generator_RowChangingName="TBC_PERFIL_USUARIORowChanging" msprop:Generator_RowEvHandlerName="TBC_PERFIL_USUARIORowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_PERFIL_USUARIORowDeleted" msprop:Generator_UserTableName="TBC_PERFIL_USUARIO" msprop:Generator_RowChangedName="TBC_PERFIL_USUARIORowChanged" msprop:Generator_RowEvArgName="TBC_PERFIL_USUARIORowChangeEvent" msprop:Generator_RowClassName="TBC_PERFIL_USUARIORow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" />
@@ -58,7 +60,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TBC_MENU_SISTEMA" msprop:Generator_TableClassName="TBC_MENU_SISTEMADataTable" msprop:Generator_TableVarName="tableTBC_MENU_SISTEMA" msprop:Generator_RowChangedName="TBC_MENU_SISTEMARowChanged" msprop:Generator_TablePropName="TBC_MENU_SISTEMA" msprop:Generator_RowDeletingName="TBC_MENU_SISTEMARowDeleting" msprop:Generator_RowChangingName="TBC_MENU_SISTEMARowChanging" msprop:Generator_RowEvHandlerName="TBC_MENU_SISTEMARowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_MENU_SISTEMARowDeleted" msprop:Generator_RowClassName="TBC_MENU_SISTEMARow" msprop:Generator_UserTableName="TBC_MENU_SISTEMA" msprop:Generator_RowEvArgName="TBC_MENU_SISTEMARowChangeEvent">
+        <xs:element name="TBC_MENU_SISTEMA" msprop:Generator_TableClassName="TBC_MENU_SISTEMADataTable" msprop:Generator_TableVarName="tableTBC_MENU_SISTEMA" msprop:Generator_TablePropName="TBC_MENU_SISTEMA" msprop:Generator_RowDeletingName="TBC_MENU_SISTEMARowDeleting" msprop:Generator_RowChangingName="TBC_MENU_SISTEMARowChanging" msprop:Generator_RowEvHandlerName="TBC_MENU_SISTEMARowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_MENU_SISTEMARowDeleted" msprop:Generator_UserTableName="TBC_MENU_SISTEMA" msprop:Generator_RowChangedName="TBC_MENU_SISTEMARowChanged" msprop:Generator_RowEvArgName="TBC_MENU_SISTEMARowChangeEvent" msprop:Generator_RowClassName="TBC_MENU_SISTEMARow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
@@ -67,7 +69,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TBC_SISTEMA" msprop:Generator_TableClassName="TBC_SISTEMADataTable" msprop:Generator_TableVarName="tableTBC_SISTEMA" msprop:Generator_RowChangedName="TBC_SISTEMARowChanged" msprop:Generator_TablePropName="TBC_SISTEMA" msprop:Generator_RowDeletingName="TBC_SISTEMARowDeleting" msprop:Generator_RowChangingName="TBC_SISTEMARowChanging" msprop:Generator_RowEvHandlerName="TBC_SISTEMARowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_SISTEMARowDeleted" msprop:Generator_RowClassName="TBC_SISTEMARow" msprop:Generator_UserTableName="TBC_SISTEMA" msprop:Generator_RowEvArgName="TBC_SISTEMARowChangeEvent">
+        <xs:element name="TBC_SISTEMA" msprop:Generator_TableClassName="TBC_SISTEMADataTable" msprop:Generator_TableVarName="tableTBC_SISTEMA" msprop:Generator_TablePropName="TBC_SISTEMA" msprop:Generator_RowDeletingName="TBC_SISTEMARowDeleting" msprop:Generator_RowChangingName="TBC_SISTEMARowChanging" msprop:Generator_RowEvHandlerName="TBC_SISTEMARowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_SISTEMARowDeleted" msprop:Generator_UserTableName="TBC_SISTEMA" msprop:Generator_RowChangedName="TBC_SISTEMARowChanged" msprop:Generator_RowEvArgName="TBC_SISTEMARowChangeEvent" msprop:Generator_RowClassName="TBC_SISTEMARow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
@@ -76,7 +78,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TBC_CONF_OPCI_SIST" msprop:Generator_TableClassName="TBC_CONF_OPCI_SISTDataTable" msprop:Generator_TableVarName="tableTBC_CONF_OPCI_SIST" msprop:Generator_RowChangedName="TBC_CONF_OPCI_SISTRowChanged" msprop:Generator_TablePropName="TBC_CONF_OPCI_SIST" msprop:Generator_RowDeletingName="TBC_CONF_OPCI_SISTRowDeleting" msprop:Generator_RowChangingName="TBC_CONF_OPCI_SISTRowChanging" msprop:Generator_RowEvHandlerName="TBC_CONF_OPCI_SISTRowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_CONF_OPCI_SISTRowDeleted" msprop:Generator_RowClassName="TBC_CONF_OPCI_SISTRow" msprop:Generator_UserTableName="TBC_CONF_OPCI_SIST" msprop:Generator_RowEvArgName="TBC_CONF_OPCI_SISTRowChangeEvent">
+        <xs:element name="TBC_CONF_OPCI_SIST" msprop:Generator_TableClassName="TBC_CONF_OPCI_SISTDataTable" msprop:Generator_TableVarName="tableTBC_CONF_OPCI_SIST" msprop:Generator_TablePropName="TBC_CONF_OPCI_SIST" msprop:Generator_RowDeletingName="TBC_CONF_OPCI_SISTRowDeleting" msprop:Generator_RowChangingName="TBC_CONF_OPCI_SISTRowChanging" msprop:Generator_RowEvHandlerName="TBC_CONF_OPCI_SISTRowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_CONF_OPCI_SISTRowDeleted" msprop:Generator_UserTableName="TBC_CONF_OPCI_SIST" msprop:Generator_RowChangedName="TBC_CONF_OPCI_SISTRowChanged" msprop:Generator_RowEvArgName="TBC_CONF_OPCI_SISTRowChangeEvent" msprop:Generator_RowClassName="TBC_CONF_OPCI_SISTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_SISTEMA" msprop:Generator_ColumnVarNameInTable="columnID_SISTEMA" msprop:Generator_ColumnPropNameInRow="ID_SISTEMA" msprop:Generator_ColumnPropNameInTable="ID_SISTEMAColumn" msprop:Generator_UserColumnName="ID_SISTEMA" type="xs:string" minOccurs="0" />
@@ -87,7 +89,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TBC_OPCI_SIST_PERFIL" msprop:Generator_TableClassName="TBC_OPCI_SIST_PERFILDataTable" msprop:Generator_TableVarName="tableTBC_OPCI_SIST_PERFIL" msprop:Generator_RowChangedName="TBC_OPCI_SIST_PERFILRowChanged" msprop:Generator_TablePropName="TBC_OPCI_SIST_PERFIL" msprop:Generator_RowDeletingName="TBC_OPCI_SIST_PERFILRowDeleting" msprop:Generator_RowChangingName="TBC_OPCI_SIST_PERFILRowChanging" msprop:Generator_RowEvHandlerName="TBC_OPCI_SIST_PERFILRowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_OPCI_SIST_PERFILRowDeleted" msprop:Generator_RowClassName="TBC_OPCI_SIST_PERFILRow" msprop:Generator_UserTableName="TBC_OPCI_SIST_PERFIL" msprop:Generator_RowEvArgName="TBC_OPCI_SIST_PERFILRowChangeEvent">
+        <xs:element name="TBC_OPCI_SIST_PERFIL" msprop:Generator_TableClassName="TBC_OPCI_SIST_PERFILDataTable" msprop:Generator_TableVarName="tableTBC_OPCI_SIST_PERFIL" msprop:Generator_TablePropName="TBC_OPCI_SIST_PERFIL" msprop:Generator_RowDeletingName="TBC_OPCI_SIST_PERFILRowDeleting" msprop:Generator_RowChangingName="TBC_OPCI_SIST_PERFILRowChanging" msprop:Generator_RowEvHandlerName="TBC_OPCI_SIST_PERFILRowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_OPCI_SIST_PERFILRowDeleted" msprop:Generator_UserTableName="TBC_OPCI_SIST_PERFIL" msprop:Generator_RowChangedName="TBC_OPCI_SIST_PERFILRowChanged" msprop:Generator_RowEvArgName="TBC_OPCI_SIST_PERFILRowChangeEvent" msprop:Generator_RowClassName="TBC_OPCI_SIST_PERFILRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_CODI_SIST" msprop:Generator_ColumnVarNameInTable="columnID_CODI_SIST" msprop:Generator_ColumnPropNameInRow="ID_CODI_SIST" msprop:Generator_ColumnPropNameInTable="ID_CODI_SISTColumn" msprop:Generator_UserColumnName="ID_CODI_SIST" type="xs:string" minOccurs="0" />
@@ -99,7 +101,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TBC_CONF_MAIL" msprop:Generator_TableClassName="TBC_CONF_MAILDataTable" msprop:Generator_TableVarName="tableTBC_CONF_MAIL" msprop:Generator_TablePropName="TBC_CONF_MAIL" msprop:Generator_RowDeletingName="TBC_CONF_MAILRowDeleting" msprop:Generator_RowChangingName="TBC_CONF_MAILRowChanging" msprop:Generator_RowEvHandlerName="TBC_CONF_MAILRowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_CONF_MAILRowDeleted" msprop:Generator_UserTableName="TBC_CONF_MAIL" msprop:Generator_RowChangedName="TBC_CONF_MAILRowChanged" msprop:Generator_RowEvArgName="TBC_CONF_MAILRowChangeEvent" msprop:Generator_RowClassName="TBC_CONF_MAILRow">
+        <xs:element name="TBC_CONF_MAIL" msprop:Generator_TableClassName="TBC_CONF_MAILDataTable" msprop:Generator_TableVarName="tableTBC_CONF_MAIL" msprop:Generator_RowChangedName="TBC_CONF_MAILRowChanged" msprop:Generator_TablePropName="TBC_CONF_MAIL" msprop:Generator_RowDeletingName="TBC_CONF_MAILRowDeleting" msprop:Generator_RowChangingName="TBC_CONF_MAILRowChanging" msprop:Generator_RowEvHandlerName="TBC_CONF_MAILRowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_CONF_MAILRowDeleted" msprop:Generator_RowClassName="TBC_CONF_MAILRow" msprop:Generator_UserTableName="TBC_CONF_MAIL" msprop:Generator_RowEvArgName="TBC_CONF_MAILRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
@@ -115,7 +117,7 @@
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:_x0020_TBC_OPCION_SISTEMA" />
+      <xs:selector xpath=".//mstns:TBC_OPCION_SISTEMA" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
     <xs:unique name="TBC_USUARIO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">

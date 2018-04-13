@@ -53,7 +53,7 @@ namespace ClsDataApp
         }
 
         public DataQuery Actualizacion(string Id, string NombrePerfil, string Descripcion, char EstadoPerfil,
-            int OpcionConsulta, string LoginUsuario, TipoActualizacion OpcionActualizacion)
+             string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
             DataQuery objResultado = new DataQuery();
             try
@@ -83,15 +83,16 @@ namespace ClsDataApp
                 ObjParam = new SqlParameter();
                 ObjCommand.CommandType = CommandType.StoredProcedure;
 
-                if (OpcionActualizacion == TipoActualizacion.Adicionar)
-                {
-                    ObjParam = ObjCommand.Parameters.Add("@ID", SqlDbType.Int, 0);
-                    ObjParam.Direction = ParameterDirection.Output;
-                }
-                else
-                {
-                    ObjCommand.Parameters.AddWithValue("@ID", Id);
-                }
+                //if (OpcionActualizacion == TipoActualizacion.Adicionar)
+                //{
+                //    //ObjParam = ObjCommand.Parameters.Add("@ID", SqlDbType.Int, 0);
+                //    //ObjParam.Direction = ParameterDirection.Output;
+                //}
+                //else
+                //{
+                    
+                //}
+                ObjCommand.Parameters.AddWithValue("@ID", Id);
                 ObjCommand.Parameters.AddWithValue("@DS_NOMBRE_PERFIL", NombrePerfil);
                 ObjCommand.Parameters.AddWithValue("@DS_DESCRIPCION", Descripcion);
                 ObjCommand.Parameters.AddWithValue("@CD_ESTADO_PERFIL", EstadoPerfil);

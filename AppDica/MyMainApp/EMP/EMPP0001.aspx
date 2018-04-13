@@ -32,7 +32,7 @@
             <div class="container-fluid">
                 <div id="content">
                     <%--inicio container-fluid--%>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="2" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server">
@@ -1137,10 +1137,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <asp:Label ID="Label71" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="DURACION EN DIAS:"></asp:Label>
-                                                <div class="col-md-3">
-                                                    <asp:TextBox ID="TxtDuracionEntregable" runat="server" class="form-control" AutoCompleteType="Disabled" Enabled="True" Width="100%"></asp:TextBox>
-                                                </div>
+                                                
                                                 <asp:Label ID="Label72" runat="server" class="control-label  col-sm-3" Font-Bold="True" Text="FECHA DE ENTREGA:"></asp:Label>
                                                 <div class="col-md-3">
                                                     <asp:TextBox ID="TxtFechaEntregaEntregable" runat="server" class="form-control" Enabled="False" Width="100%"></asp:TextBox>
