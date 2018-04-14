@@ -60,7 +60,7 @@ namespace MyMainApp.MANTENIMIENTOS
 
             if (TxtCodigo.Text == null || TxtCodigo.Text == "" || TxtNombre.Text == null || TxtNombre.Text == "")
             {
-                DespliegaMensajeUpdatePanel("Por favor, LLenar los Campos", UPDetalle);
+                DespliegaMensajeUpdatePanel("Por favor, LLenar los Campos Obligatorios", UPDetalle);
             }
             else {
                 CPerfilUsuario objNuevoPerfil = new CPerfilUsuario(_DataSistema.ConexionBaseDato);

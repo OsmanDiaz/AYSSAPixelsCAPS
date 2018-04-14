@@ -127,6 +127,7 @@
     <Content Include="Logout.aspx" />
     <Content Include="MTT\MTTP0001.aspx" />
     <Content Include="MTT\MTTP0002.aspx" />
+    <Content Include="MTT\MTTP0003.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="TEC\TECC0001.aspx" />
     <Content Include="TEC\TECC0002.aspx" />
@@ -223,6 +224,13 @@
     </Compile>
     <Compile Include="MTT\MTTP0002.aspx.designer.cs">
       <DependentUpon>MTTP0002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MTT\MTTP0003.aspx.cs">
+      <DependentUpon>MTTP0003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MTT\MTTP0003.aspx.designer.cs">
+      <DependentUpon>MTTP0003.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro.aspx.cs">

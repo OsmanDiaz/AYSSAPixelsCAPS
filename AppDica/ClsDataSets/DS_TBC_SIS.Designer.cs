@@ -1877,6 +1877,8 @@ namespace ClsDataSets {
             
             private global::System.Data.DataColumn columnNM_ORDEN_MENU;
             
+            private global::System.Data.DataColumn columnDS_DESCRIPCION;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TBC_MENU_SISTEMADataTable() {
@@ -1936,6 +1938,14 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_DESCRIPCIONColumn {
+                get {
+                    return this.columnDS_DESCRIPCION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1971,12 +1981,13 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TBC_MENU_SISTEMARow AddTBC_MENU_SISTEMARow(string ID, string DS_DESC_MENU, int NM_ORDEN_MENU) {
+            public TBC_MENU_SISTEMARow AddTBC_MENU_SISTEMARow(string ID, string DS_DESC_MENU, int NM_ORDEN_MENU, string DS_DESCRIPCION) {
                 TBC_MENU_SISTEMARow rowTBC_MENU_SISTEMARow = ((TBC_MENU_SISTEMARow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         DS_DESC_MENU,
-                        NM_ORDEN_MENU};
+                        NM_ORDEN_MENU,
+                        DS_DESCRIPCION};
                 rowTBC_MENU_SISTEMARow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTBC_MENU_SISTEMARow);
                 return rowTBC_MENU_SISTEMARow;
@@ -2002,6 +2013,7 @@ namespace ClsDataSets {
                 this.columnID = base.Columns["ID"];
                 this.columnDS_DESC_MENU = base.Columns["DS_DESC_MENU"];
                 this.columnNM_ORDEN_MENU = base.Columns["NM_ORDEN_MENU"];
+                this.columnDS_DESCRIPCION = base.Columns["DS_DESCRIPCION"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2013,6 +2025,8 @@ namespace ClsDataSets {
                 base.Columns.Add(this.columnDS_DESC_MENU);
                 this.columnNM_ORDEN_MENU = new global::System.Data.DataColumn("NM_ORDEN_MENU", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNM_ORDEN_MENU);
+                this.columnDS_DESCRIPCION = new global::System.Data.DataColumn("DS_DESCRIPCION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_DESCRIPCION);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("GLB_MENUS_SISTEMASKey1", new global::System.Data.DataColumn[] {
                                 this.columnID}, false));
                 this.columnID.Unique = true;
@@ -4124,6 +4138,23 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_DESCRIPCION {
+                get {
+                    try {
+                        return ((string)(this[this.tableTBC_MENU_SISTEMA.DS_DESCRIPCIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_DESCRIPCION\' de la tabla \'TBC_MENU_SISTEMA\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableTBC_MENU_SISTEMA.DS_DESCRIPCIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsIDNull() {
                 return this.IsNull(this.tableTBC_MENU_SISTEMA.IDColumn);
             }
@@ -4156,6 +4187,18 @@ namespace ClsDataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNM_ORDEN_MENUNull() {
                 this[this.tableTBC_MENU_SISTEMA.NM_ORDEN_MENUColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_DESCRIPCIONNull() {
+                return this.IsNull(this.tableTBC_MENU_SISTEMA.DS_DESCRIPCIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_DESCRIPCIONNull() {
+                this[this.tableTBC_MENU_SISTEMA.DS_DESCRIPCIONColumn] = global::System.Convert.DBNull;
             }
         }
         

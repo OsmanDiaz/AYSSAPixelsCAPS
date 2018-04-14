@@ -50,7 +50,7 @@ namespace ClsDataApp
             return objDataSet;
         }
          public DataQuery Actualizacion(string Id, string DescMenu, string Descripcion, int OrdenMenu,
-             int OpcionConsulta, string LoginUsuario, TipoActualizacion OpcionActualizacion)
+              string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
              DataQuery objResultado = new DataQuery();
             try
@@ -80,15 +80,16 @@ namespace ClsDataApp
                 ObjParam = new SqlParameter();
                 ObjCommand.CommandType = CommandType.StoredProcedure;
 
-                if (OpcionActualizacion == TipoActualizacion.Adicionar)
-                {
-                    ObjParam = ObjCommand.Parameters.Add("@ID", SqlDbType.Int, 0);
-                    ObjParam.Direction = ParameterDirection.Output;
-                }
-                else
-                {
-                    ObjCommand.Parameters.AddWithValue("@ID", Id);
-                }
+                //if (OpcionActualizacion == TipoActualizacion.Adicionar)
+                //{
+                //    ObjParam = ObjCommand.Parameters.Add("@ID", SqlDbType.Int, 0);
+                //    ObjParam.Direction = ParameterDirection.Output;
+                //}
+                //else
+                //{
+                //    ObjCommand.Parameters.AddWithValue("@ID", Id);
+                //}
+                ObjCommand.Parameters.AddWithValue("@ID", Id);
                 ObjCommand.Parameters.AddWithValue("@DS_DESC_MENU", DescMenu);
                 ObjCommand.Parameters.AddWithValue("@DS_DESCRIPCION", Descripcion);
                 ObjCommand.Parameters.AddWithValue("@NM_ORDEN_MENU", OrdenMenu);
