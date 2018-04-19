@@ -12,12 +12,14 @@
   <xs:element name="DS_TBC_SIS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_TBC_SIS" msprop:Generator_UserDSName="DS_TBC_SIS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="_x0020_TBC_OPCION_SISTEMA" msprop:Generator_TableClassName="_TBC_OPCION_SISTEMADataTable" msprop:Generator_TableVarName="table_TBC_OPCION_SISTEMA" msprop:Generator_RowChangedName="_TBC_OPCION_SISTEMARowChanged" msprop:Generator_TablePropName="_TBC_OPCION_SISTEMA" msprop:Generator_RowDeletingName="_TBC_OPCION_SISTEMARowDeleting" msprop:Generator_RowChangingName="_TBC_OPCION_SISTEMARowChanging" msprop:Generator_RowEvHandlerName="_TBC_OPCION_SISTEMARowChangeEventHandler" msprop:Generator_RowDeletedName="_TBC_OPCION_SISTEMARowDeleted" msprop:Generator_RowClassName="_TBC_OPCION_SISTEMARow" msprop:Generator_UserTableName=" TBC_OPCION_SISTEMA" msprop:Generator_RowEvArgName="_TBC_OPCION_SISTEMARowChangeEvent">
+        <xs:element name="TBC_OPCION_SISTEMA" msprop:Generator_TableClassName="TBC_OPCION_SISTEMADataTable" msprop:Generator_TableVarName="tableTBC_OPCION_SISTEMA" msprop:Generator_RowChangedName="TBC_OPCION_SISTEMARowChanged" msprop:Generator_TablePropName="TBC_OPCION_SISTEMA" msprop:Generator_RowDeletingName="TBC_OPCION_SISTEMARowDeleting" msprop:Generator_RowChangingName="TBC_OPCION_SISTEMARowChanging" msprop:Generator_RowEvHandlerName="TBC_OPCION_SISTEMARowChangeEventHandler" msprop:Generator_RowDeletedName="TBC_OPCION_SISTEMARowDeleted" msprop:Generator_RowClassName="TBC_OPCION_SISTEMARow" msprop:Generator_UserTableName="TBC_OPCION_SISTEMA" msprop:Generator_RowEvArgName="TBC_OPCION_SISTEMARowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" />
               <xs:element name="DS_CODI_OPCI_SIST" msprop:Generator_ColumnVarNameInTable="columnDS_CODI_OPCI_SIST" msprop:Generator_ColumnPropNameInRow="DS_CODI_OPCI_SIST" msprop:Generator_ColumnPropNameInTable="DS_CODI_OPCI_SISTColumn" msprop:Generator_UserColumnName="DS_CODI_OPCI_SIST" type="xs:string" minOccurs="0" />
               <xs:element name="DS_NOMBRE_FORMA" msprop:Generator_ColumnVarNameInTable="columnDS_NOMBRE_FORMA" msprop:Generator_ColumnPropNameInRow="DS_NOMBRE_FORMA" msprop:Generator_ColumnPropNameInTable="DS_NOMBRE_FORMAColumn" msprop:Generator_UserColumnName="DS_NOMBRE_FORMA" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_RUTA_FORMA" msprop:Generator_ColumnVarNameInTable="columnDS_RUTA_FORMA" msprop:Generator_ColumnPropNameInRow="DS_RUTA_FORMA" msprop:Generator_ColumnPropNameInTable="DS_RUTA_FORMAColumn" msprop:Generator_UserColumnName="DS_RUTA_FORMA" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_DESCRIPCION" msprop:Generator_ColumnVarNameInTable="columnDS_DESCRIPCION" msprop:Generator_ColumnPropNameInRow="DS_DESCRIPCION" msprop:Generator_ColumnPropNameInTable="DS_DESCRIPCIONColumn" msprop:Generator_UserColumnName="DS_DESCRIPCION" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -64,6 +66,7 @@
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
               <xs:element name="DS_DESC_MENU" msprop:Generator_ColumnVarNameInTable="columnDS_DESC_MENU" msprop:Generator_ColumnPropNameInRow="DS_DESC_MENU" msprop:Generator_ColumnPropNameInTable="DS_DESC_MENUColumn" msprop:Generator_UserColumnName="DS_DESC_MENU" type="xs:string" minOccurs="0" />
               <xs:element name="NM_ORDEN_MENU" msprop:Generator_ColumnVarNameInTable="columnNM_ORDEN_MENU" msprop:Generator_ColumnPropNameInRow="NM_ORDEN_MENU" msprop:Generator_ColumnPropNameInTable="NM_ORDEN_MENUColumn" msprop:Generator_UserColumnName="NM_ORDEN_MENU" type="xs:int" minOccurs="0" />
+              <xs:element name="DS_DESCRIPCION" msprop:Generator_ColumnVarNameInTable="columnDS_DESCRIPCION" msprop:Generator_ColumnPropNameInRow="DS_DESCRIPCION" msprop:Generator_ColumnPropNameInTable="DS_DESCRIPCIONColumn" msprop:Generator_UserColumnName="DS_DESCRIPCION" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -115,7 +118,7 @@
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:_x0020_TBC_OPCION_SISTEMA" />
+      <xs:selector xpath=".//mstns:TBC_OPCION_SISTEMA" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
     <xs:unique name="TBC_USUARIO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">

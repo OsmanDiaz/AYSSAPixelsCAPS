@@ -8,14 +8,14 @@ using ClsInterface;
 
 namespace ClsDataApp
 {
-    public class CPerfilUsuario : CSqlvars
+    public class CSistema : CSqlvars
     {
-        public CPerfilUsuario(string ConexionData)
+        public CSistema(string ConexionData)
         {
             _ConexionData = ConexionData;
         }
 
-        public ClsDataSets.DS_TBC_SIS Detalle(string Id, string NombrePerfil, string Descripcion, char EstadoPerfil,
+        public ClsDataSets.DS_TBC_SIS Detalle(string Id, string NombreSis, int NumerOrden, string Descripcion,
             string UsuaCrea, DateTime FechCrea, string UsuaActu, DateTime FechActu, int OpcionConsulta)
         {
             ClsDataSets.DS_TBC_SIS objDataSet = new ClsDataSets.DS_TBC_SIS();
@@ -23,21 +23,22 @@ namespace ClsDataApp
             try
             {
                 ObjConnection = new SqlConnection(_ConexionData);
-                ObjAdapter = new SqlDataAdapter("SP_TBC_PERFIL_USUARIO_GetByAll", ObjConnection);
+                ObjAdapter = new SqlDataAdapter("SP_TBC_SISTEMA_GetByAll", ObjConnection);
                 ObjParam = new SqlParameter();
                 ObjAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
 
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID", Id);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_NOMBRE_PERFIL", NombrePerfil);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_NOMB_SIST", NombreSis);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@NM_ORDEN_SIST", NumerOrden);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_DESCRIPCION", Descripcion);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_ESTADO_PERFIL", EstadoPerfil);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_CREA", UsuaCrea);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_CREA", FechCrea);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_ACTU", UsuaActu);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_ACTU", FechActu);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@OPCI_CONS", OpcionConsulta);
 
-                ObjAdapter.Fill(objDataSet, "TBC_PERFIL_USUARIO");
+                ObjAdapter.Fill(objDataSet, "TBC_SISTEMA");
+
                 ObjConnection.Close();
                 if (ObjConnection.State != ConnectionState.Closed)
                 {
@@ -50,11 +51,10 @@ namespace ClsDataApp
             }
 
             return objDataSet;
-        }
-
-        public DataQuery Actualizacion(string Id, string NombrePerfil, string Descripcion, char EstadoPerfil,
-             string LoginUsuario, TipoActualizacion OpcionActualizacion)
-        {
+            }
+        public DataQuery Actualizacion(string Id, string NombreSis, int NumerOrden, string Descripcion,
+            string LoginUsuario, TipoActualizacion OpcionActualizacion)
+            {
             DataQuery objResultado = new DataQuery();
             try
             {
@@ -63,13 +63,13 @@ namespace ClsDataApp
                 switch (OpcionActualizacion)
                 {
                     case TipoActualizacion.Adicionar:
-                        StrCommand = "SP_TBC_PERFIL_USUARIO_INSERT";
+                        StrCommand = "SP_TBC_SISTEMA_INSERT";
                         break;
                     case TipoActualizacion.Actualizar:
-                        StrCommand = "SP_TBC_PERFIL_USUARIO_UPDATE";
+                        StrCommand = "SP_TBC_SISTEMA_UPDATE";
                         break;
                     case TipoActualizacion.Eliminar:
-                        StrCommand = "SP_TBC_PERFIL_USUARIO_DELETE";
+                        StrCommand = "SP_TBC_SISTEMA_DELETE";
                         break;
                     case TipoActualizacion.No_Definida:
                         objResultado.CodigoError = -1;
@@ -77,6 +77,7 @@ namespace ClsDataApp
                         //return objResultado;
                         break;
                 }
+
                 ObjConnection = new SqlConnection(_ConexionData);
 
                 ObjCommand = new SqlCommand(StrCommand, ObjConnection);
@@ -85,17 +86,17 @@ namespace ClsDataApp
 
                 //if (OpcionActualizacion == TipoActualizacion.Adicionar)
                 //{
-                //    //ObjParam = ObjCommand.Parameters.Add("@ID", SqlDbType.Int, 0);
-                //    //ObjParam.Direction = ParameterDirection.Output;
+                //    ObjParam = ObjCommand.Parameters.Add("@ID", SqlDbType.Int, 0);
+                //    ObjParam.Direction = ParameterDirection.Output;
                 //}
                 //else
                 //{
                     
                 //}
                 ObjCommand.Parameters.AddWithValue("@ID", Id);
-                ObjCommand.Parameters.AddWithValue("@DS_NOMBRE_PERFIL", NombrePerfil);
+                ObjCommand.Parameters.AddWithValue("@DS_NOMB_SIST", NombreSis);
+                ObjCommand.Parameters.AddWithValue("@NM_ORDEN_SIST", NumerOrden); 
                 ObjCommand.Parameters.AddWithValue("@DS_DESCRIPCION", Descripcion);
-                ObjCommand.Parameters.AddWithValue("@CD_ESTADO_PERFIL", EstadoPerfil);
                 ObjCommand.Parameters.AddWithValue("@LOGIN_USUARIO", LoginUsuario);
 
                 ObjParam = ObjCommand.Parameters.Add("@FILAS_AFECTADAS", SqlDbType.Int, 0);
@@ -132,5 +133,6 @@ namespace ClsDataApp
 
             return objResultado;
         }
+        
     }
 }

@@ -17,7 +17,7 @@
                         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                         <br />
                         
-                        <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" activetabindex="2" bordercolor="#66CCFF" height="375px" scrollbars="Vertical" width="100%">
+                        <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" activetabindex="0" bordercolor="#66CCFF" height="375px" scrollbars="Vertical" width="100%">
                             <ajaxtoolkit:TabPanel ID="TabPanel1" runat="server" HeaderText="REGISTROS DE IQ" Width="100%">
                                 <ContentTemplate>
                                     
@@ -61,7 +61,7 @@
                                            </asp:Panel>
                                             <asp:UpdatePanel ID="UUPEntregable" runat="server">
                                     <ContentTemplate>   
-                                            <asp:Panel ID="PanelRegistroIq" runat="server" Visible="false">
+                                            <asp:Panel ID="PanelRegistroIq" runat="server" style="visibility:hidden">
                                                 <div align="center">
                                                 <asp:Label ID="Label63" runat="server" Text="Registro de Prueba Psicológica" Font-Size="14pt"></asp:Label>
                                                 </div><br />
@@ -101,6 +101,29 @@
                                                 <div align="center">
                                                 <asp:Button ID="BtnGuardarNotaIq" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="BtnGuardarNotaIq_Click" />
                                                 &nbsp;<asp:Button ID="BtnRegresar" runat="server" Text="REGRESAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresar_Click"/></div>
+                                                <br />
+                                                <asp:GridView ID="GVRegistroIq" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" DataKeyNames="ID">
+                                                    <AlternatingRowStyle BackColor="White" />
+                                                    <Columns>
+                                                        <asp:BoundField HeaderText="NOTA OBTENIDA" DataField="NM_NOTA_IQ" />
+                                                        <asp:BoundField HeaderText="OBSERVACION" DataField="DS_OBSERVACION_IQ" />
+                                                        <asp:TemplateField HeaderText="DESCARGAR">
+                                                            <ItemTemplate>
+                                                            <a href='<%# "http://"+Request.Url.Authority +"/ASP/Documentos/"+Eval("URL_DOCUMENTO") %>' target="_blank">Descargar</a>
+                                                        </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                    </Columns>
+                                                    <EditRowStyle BackColor="#2461BF" />
+                                                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                                    <RowStyle BackColor="#EFF3FB" />
+                                                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                                </asp:GridView>
                                                 <br />
 
                                             </asp:Panel>

@@ -24,7 +24,7 @@ namespace ClsDataSets {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DS_TBC_SIS : global::System.Data.DataSet {
         
-        private _TBC_OPCION_SISTEMADataTable table_TBC_OPCION_SISTEMA;
+        private TBC_OPCION_SISTEMADataTable tableTBC_OPCION_SISTEMA;
         
         private TBC_USUARIODataTable tableTBC_USUARIO;
         
@@ -70,8 +70,8 @@ namespace ClsDataSets {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables[" TBC_OPCION_SISTEMA"] != null)) {
-                    base.Tables.Add(new _TBC_OPCION_SISTEMADataTable(ds.Tables[" TBC_OPCION_SISTEMA"]));
+                if ((ds.Tables["TBC_OPCION_SISTEMA"] != null)) {
+                    base.Tables.Add(new TBC_OPCION_SISTEMADataTable(ds.Tables["TBC_OPCION_SISTEMA"]));
                 }
                 if ((ds.Tables["TBC_USUARIO"] != null)) {
                     base.Tables.Add(new TBC_USUARIODataTable(ds.Tables["TBC_USUARIO"]));
@@ -119,9 +119,9 @@ namespace ClsDataSets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public _TBC_OPCION_SISTEMADataTable _TBC_OPCION_SISTEMA {
+        public TBC_OPCION_SISTEMADataTable TBC_OPCION_SISTEMA {
             get {
-                return this.table_TBC_OPCION_SISTEMA;
+                return this.tableTBC_OPCION_SISTEMA;
             }
         }
         
@@ -272,8 +272,8 @@ namespace ClsDataSets {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables[" TBC_OPCION_SISTEMA"] != null)) {
-                    base.Tables.Add(new _TBC_OPCION_SISTEMADataTable(ds.Tables[" TBC_OPCION_SISTEMA"]));
+                if ((ds.Tables["TBC_OPCION_SISTEMA"] != null)) {
+                    base.Tables.Add(new TBC_OPCION_SISTEMADataTable(ds.Tables["TBC_OPCION_SISTEMA"]));
                 }
                 if ((ds.Tables["TBC_USUARIO"] != null)) {
                     base.Tables.Add(new TBC_USUARIODataTable(ds.Tables["TBC_USUARIO"]));
@@ -332,10 +332,10 @@ namespace ClsDataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.table_TBC_OPCION_SISTEMA = ((_TBC_OPCION_SISTEMADataTable)(base.Tables[" TBC_OPCION_SISTEMA"]));
+            this.tableTBC_OPCION_SISTEMA = ((TBC_OPCION_SISTEMADataTable)(base.Tables["TBC_OPCION_SISTEMA"]));
             if ((initTable == true)) {
-                if ((this.table_TBC_OPCION_SISTEMA != null)) {
-                    this.table_TBC_OPCION_SISTEMA.InitVars();
+                if ((this.tableTBC_OPCION_SISTEMA != null)) {
+                    this.tableTBC_OPCION_SISTEMA.InitVars();
                 }
             }
             this.tableTBC_USUARIO = ((TBC_USUARIODataTable)(base.Tables["TBC_USUARIO"]));
@@ -396,8 +396,8 @@ namespace ClsDataSets {
             this.Namespace = "http://tempuri.org/DS_TBC_SIS.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.table_TBC_OPCION_SISTEMA = new _TBC_OPCION_SISTEMADataTable();
-            base.Tables.Add(this.table_TBC_OPCION_SISTEMA);
+            this.tableTBC_OPCION_SISTEMA = new TBC_OPCION_SISTEMADataTable();
+            base.Tables.Add(this.tableTBC_OPCION_SISTEMA);
             this.tableTBC_USUARIO = new TBC_USUARIODataTable();
             base.Tables.Add(this.tableTBC_USUARIO);
             this.tableTBC_PARAMETRO_INTERFAZ = new TBC_PARAMETRO_INTERFAZDataTable();
@@ -418,7 +418,7 @@ namespace ClsDataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerialize_TBC_OPCION_SISTEMA() {
+        private bool ShouldSerializeTBC_OPCION_SISTEMA() {
             return false;
         }
         
@@ -526,7 +526,7 @@ namespace ClsDataSets {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void _TBC_OPCION_SISTEMARowChangeEventHandler(object sender, _TBC_OPCION_SISTEMARowChangeEvent e);
+        public delegate void TBC_OPCION_SISTEMARowChangeEventHandler(object sender, TBC_OPCION_SISTEMARowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void TBC_USUARIORowChangeEventHandler(object sender, TBC_USUARIORowChangeEvent e);
@@ -557,7 +557,7 @@ namespace ClsDataSets {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class _TBC_OPCION_SISTEMADataTable : global::System.Data.TypedTableBase<_TBC_OPCION_SISTEMARow> {
+        public partial class TBC_OPCION_SISTEMADataTable : global::System.Data.TypedTableBase<TBC_OPCION_SISTEMARow> {
             
             private global::System.Data.DataColumn columnID;
             
@@ -565,10 +565,14 @@ namespace ClsDataSets {
             
             private global::System.Data.DataColumn columnDS_NOMBRE_FORMA;
             
+            private global::System.Data.DataColumn columnDS_RUTA_FORMA;
+            
+            private global::System.Data.DataColumn columnDS_DESCRIPCION;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _TBC_OPCION_SISTEMADataTable() {
-                this.TableName = " TBC_OPCION_SISTEMA";
+            public TBC_OPCION_SISTEMADataTable() {
+                this.TableName = "TBC_OPCION_SISTEMA";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -576,7 +580,7 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal _TBC_OPCION_SISTEMADataTable(global::System.Data.DataTable table) {
+            internal TBC_OPCION_SISTEMADataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -593,7 +597,7 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected _TBC_OPCION_SISTEMADataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected TBC_OPCION_SISTEMADataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -624,6 +628,22 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_RUTA_FORMAColumn {
+                get {
+                    return this.columnDS_RUTA_FORMA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_DESCRIPCIONColumn {
+                get {
+                    return this.columnDS_DESCRIPCION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -633,54 +653,56 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _TBC_OPCION_SISTEMARow this[int index] {
+            public TBC_OPCION_SISTEMARow this[int index] {
                 get {
-                    return ((_TBC_OPCION_SISTEMARow)(this.Rows[index]));
+                    return ((TBC_OPCION_SISTEMARow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event _TBC_OPCION_SISTEMARowChangeEventHandler _TBC_OPCION_SISTEMARowChanging;
+            public event TBC_OPCION_SISTEMARowChangeEventHandler TBC_OPCION_SISTEMARowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event _TBC_OPCION_SISTEMARowChangeEventHandler _TBC_OPCION_SISTEMARowChanged;
+            public event TBC_OPCION_SISTEMARowChangeEventHandler TBC_OPCION_SISTEMARowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event _TBC_OPCION_SISTEMARowChangeEventHandler _TBC_OPCION_SISTEMARowDeleting;
+            public event TBC_OPCION_SISTEMARowChangeEventHandler TBC_OPCION_SISTEMARowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event _TBC_OPCION_SISTEMARowChangeEventHandler _TBC_OPCION_SISTEMARowDeleted;
+            public event TBC_OPCION_SISTEMARowChangeEventHandler TBC_OPCION_SISTEMARowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Add_TBC_OPCION_SISTEMARow(_TBC_OPCION_SISTEMARow row) {
+            public void AddTBC_OPCION_SISTEMARow(TBC_OPCION_SISTEMARow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _TBC_OPCION_SISTEMARow Add_TBC_OPCION_SISTEMARow(string ID, string DS_CODI_OPCI_SIST, string DS_NOMBRE_FORMA) {
-                _TBC_OPCION_SISTEMARow row_TBC_OPCION_SISTEMARow = ((_TBC_OPCION_SISTEMARow)(this.NewRow()));
+            public TBC_OPCION_SISTEMARow AddTBC_OPCION_SISTEMARow(string ID, string DS_CODI_OPCI_SIST, string DS_NOMBRE_FORMA, string DS_RUTA_FORMA, string DS_DESCRIPCION) {
+                TBC_OPCION_SISTEMARow rowTBC_OPCION_SISTEMARow = ((TBC_OPCION_SISTEMARow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         DS_CODI_OPCI_SIST,
-                        DS_NOMBRE_FORMA};
-                row_TBC_OPCION_SISTEMARow.ItemArray = columnValuesArray;
-                this.Rows.Add(row_TBC_OPCION_SISTEMARow);
-                return row_TBC_OPCION_SISTEMARow;
+                        DS_NOMBRE_FORMA,
+                        DS_RUTA_FORMA,
+                        DS_DESCRIPCION};
+                rowTBC_OPCION_SISTEMARow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTBC_OPCION_SISTEMARow);
+                return rowTBC_OPCION_SISTEMARow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _TBC_OPCION_SISTEMARow FindByID(string ID) {
-                return ((_TBC_OPCION_SISTEMARow)(this.Rows.Find(new object[] {
+            public TBC_OPCION_SISTEMARow FindByID(string ID) {
+                return ((TBC_OPCION_SISTEMARow)(this.Rows.Find(new object[] {
                             ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                _TBC_OPCION_SISTEMADataTable cln = ((_TBC_OPCION_SISTEMADataTable)(base.Clone()));
+                TBC_OPCION_SISTEMADataTable cln = ((TBC_OPCION_SISTEMADataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -688,7 +710,7 @@ namespace ClsDataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new _TBC_OPCION_SISTEMADataTable();
+                return new TBC_OPCION_SISTEMADataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -697,6 +719,8 @@ namespace ClsDataSets {
                 this.columnID = base.Columns["ID"];
                 this.columnDS_CODI_OPCI_SIST = base.Columns["DS_CODI_OPCI_SIST"];
                 this.columnDS_NOMBRE_FORMA = base.Columns["DS_NOMBRE_FORMA"];
+                this.columnDS_RUTA_FORMA = base.Columns["DS_RUTA_FORMA"];
+                this.columnDS_DESCRIPCION = base.Columns["DS_DESCRIPCION"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -708,6 +732,10 @@ namespace ClsDataSets {
                 base.Columns.Add(this.columnDS_CODI_OPCI_SIST);
                 this.columnDS_NOMBRE_FORMA = new global::System.Data.DataColumn("DS_NOMBRE_FORMA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDS_NOMBRE_FORMA);
+                this.columnDS_RUTA_FORMA = new global::System.Data.DataColumn("DS_RUTA_FORMA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_RUTA_FORMA);
+                this.columnDS_DESCRIPCION = new global::System.Data.DataColumn("DS_DESCRIPCION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_DESCRIPCION);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
@@ -716,28 +744,28 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _TBC_OPCION_SISTEMARow New_TBC_OPCION_SISTEMARow() {
-                return ((_TBC_OPCION_SISTEMARow)(this.NewRow()));
+            public TBC_OPCION_SISTEMARow NewTBC_OPCION_SISTEMARow() {
+                return ((TBC_OPCION_SISTEMARow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new _TBC_OPCION_SISTEMARow(builder);
+                return new TBC_OPCION_SISTEMARow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(_TBC_OPCION_SISTEMARow);
+                return typeof(TBC_OPCION_SISTEMARow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this._TBC_OPCION_SISTEMARowChanged != null)) {
-                    this._TBC_OPCION_SISTEMARowChanged(this, new _TBC_OPCION_SISTEMARowChangeEvent(((_TBC_OPCION_SISTEMARow)(e.Row)), e.Action));
+                if ((this.TBC_OPCION_SISTEMARowChanged != null)) {
+                    this.TBC_OPCION_SISTEMARowChanged(this, new TBC_OPCION_SISTEMARowChangeEvent(((TBC_OPCION_SISTEMARow)(e.Row)), e.Action));
                 }
             }
             
@@ -745,8 +773,8 @@ namespace ClsDataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this._TBC_OPCION_SISTEMARowChanging != null)) {
-                    this._TBC_OPCION_SISTEMARowChanging(this, new _TBC_OPCION_SISTEMARowChangeEvent(((_TBC_OPCION_SISTEMARow)(e.Row)), e.Action));
+                if ((this.TBC_OPCION_SISTEMARowChanging != null)) {
+                    this.TBC_OPCION_SISTEMARowChanging(this, new TBC_OPCION_SISTEMARowChangeEvent(((TBC_OPCION_SISTEMARow)(e.Row)), e.Action));
                 }
             }
             
@@ -754,8 +782,8 @@ namespace ClsDataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this._TBC_OPCION_SISTEMARowDeleted != null)) {
-                    this._TBC_OPCION_SISTEMARowDeleted(this, new _TBC_OPCION_SISTEMARowChangeEvent(((_TBC_OPCION_SISTEMARow)(e.Row)), e.Action));
+                if ((this.TBC_OPCION_SISTEMARowDeleted != null)) {
+                    this.TBC_OPCION_SISTEMARowDeleted(this, new TBC_OPCION_SISTEMARowChangeEvent(((TBC_OPCION_SISTEMARow)(e.Row)), e.Action));
                 }
             }
             
@@ -763,14 +791,14 @@ namespace ClsDataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this._TBC_OPCION_SISTEMARowDeleting != null)) {
-                    this._TBC_OPCION_SISTEMARowDeleting(this, new _TBC_OPCION_SISTEMARowChangeEvent(((_TBC_OPCION_SISTEMARow)(e.Row)), e.Action));
+                if ((this.TBC_OPCION_SISTEMARowDeleting != null)) {
+                    this.TBC_OPCION_SISTEMARowDeleting(this, new TBC_OPCION_SISTEMARowChangeEvent(((TBC_OPCION_SISTEMARow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Remove_TBC_OPCION_SISTEMARow(_TBC_OPCION_SISTEMARow row) {
+            public void RemoveTBC_OPCION_SISTEMARow(TBC_OPCION_SISTEMARow row) {
                 this.Rows.Remove(row);
             }
             
@@ -797,7 +825,7 @@ namespace ClsDataSets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "_TBC_OPCION_SISTEMADataTable";
+                attribute2.FixedValue = "TBC_OPCION_SISTEMADataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1849,6 +1877,8 @@ namespace ClsDataSets {
             
             private global::System.Data.DataColumn columnNM_ORDEN_MENU;
             
+            private global::System.Data.DataColumn columnDS_DESCRIPCION;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TBC_MENU_SISTEMADataTable() {
@@ -1908,6 +1938,14 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_DESCRIPCIONColumn {
+                get {
+                    return this.columnDS_DESCRIPCION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1943,12 +1981,13 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TBC_MENU_SISTEMARow AddTBC_MENU_SISTEMARow(string ID, string DS_DESC_MENU, int NM_ORDEN_MENU) {
+            public TBC_MENU_SISTEMARow AddTBC_MENU_SISTEMARow(string ID, string DS_DESC_MENU, int NM_ORDEN_MENU, string DS_DESCRIPCION) {
                 TBC_MENU_SISTEMARow rowTBC_MENU_SISTEMARow = ((TBC_MENU_SISTEMARow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         DS_DESC_MENU,
-                        NM_ORDEN_MENU};
+                        NM_ORDEN_MENU,
+                        DS_DESCRIPCION};
                 rowTBC_MENU_SISTEMARow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTBC_MENU_SISTEMARow);
                 return rowTBC_MENU_SISTEMARow;
@@ -1974,6 +2013,7 @@ namespace ClsDataSets {
                 this.columnID = base.Columns["ID"];
                 this.columnDS_DESC_MENU = base.Columns["DS_DESC_MENU"];
                 this.columnNM_ORDEN_MENU = base.Columns["NM_ORDEN_MENU"];
+                this.columnDS_DESCRIPCION = base.Columns["DS_DESCRIPCION"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1985,6 +2025,8 @@ namespace ClsDataSets {
                 base.Columns.Add(this.columnDS_DESC_MENU);
                 this.columnNM_ORDEN_MENU = new global::System.Data.DataColumn("NM_ORDEN_MENU", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNM_ORDEN_MENU);
+                this.columnDS_DESCRIPCION = new global::System.Data.DataColumn("DS_DESCRIPCION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_DESCRIPCION);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("GLB_MENUS_SISTEMASKey1", new global::System.Data.DataColumn[] {
                                 this.columnID}, false));
                 this.columnID.Unique = true;
@@ -3357,25 +3399,25 @@ namespace ClsDataSets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class _TBC_OPCION_SISTEMARow : global::System.Data.DataRow {
+        public partial class TBC_OPCION_SISTEMARow : global::System.Data.DataRow {
             
-            private _TBC_OPCION_SISTEMADataTable table_TBC_OPCION_SISTEMA;
+            private TBC_OPCION_SISTEMADataTable tableTBC_OPCION_SISTEMA;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal _TBC_OPCION_SISTEMARow(global::System.Data.DataRowBuilder rb) : 
+            internal TBC_OPCION_SISTEMARow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.table_TBC_OPCION_SISTEMA = ((_TBC_OPCION_SISTEMADataTable)(this.Table));
+                this.tableTBC_OPCION_SISTEMA = ((TBC_OPCION_SISTEMADataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ID {
                 get {
-                    return ((string)(this[this.table_TBC_OPCION_SISTEMA.IDColumn]));
+                    return ((string)(this[this.tableTBC_OPCION_SISTEMA.IDColumn]));
                 }
                 set {
-                    this[this.table_TBC_OPCION_SISTEMA.IDColumn] = value;
+                    this[this.tableTBC_OPCION_SISTEMA.IDColumn] = value;
                 }
             }
             
@@ -3384,15 +3426,15 @@ namespace ClsDataSets {
             public string DS_CODI_OPCI_SIST {
                 get {
                     try {
-                        return ((string)(this[this.table_TBC_OPCION_SISTEMA.DS_CODI_OPCI_SISTColumn]));
+                        return ((string)(this[this.tableTBC_OPCION_SISTEMA.DS_CODI_OPCI_SISTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_CODI_OPCI_SIST\' de la tabla \' TBC_OPCION_SISTEMA\' es D" +
-                                "BNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_CODI_OPCI_SIST\' de la tabla \'TBC_OPCION_SISTEMA\' es DB" +
+                                "Null.", e);
                     }
                 }
                 set {
-                    this[this.table_TBC_OPCION_SISTEMA.DS_CODI_OPCI_SISTColumn] = value;
+                    this[this.tableTBC_OPCION_SISTEMA.DS_CODI_OPCI_SISTColumn] = value;
                 }
             }
             
@@ -3401,40 +3443,98 @@ namespace ClsDataSets {
             public string DS_NOMBRE_FORMA {
                 get {
                     try {
-                        return ((string)(this[this.table_TBC_OPCION_SISTEMA.DS_NOMBRE_FORMAColumn]));
+                        return ((string)(this[this.tableTBC_OPCION_SISTEMA.DS_NOMBRE_FORMAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_NOMBRE_FORMA\' de la tabla \' TBC_OPCION_SISTEMA\' es DBN" +
-                                "ull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_NOMBRE_FORMA\' de la tabla \'TBC_OPCION_SISTEMA\' es DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.table_TBC_OPCION_SISTEMA.DS_NOMBRE_FORMAColumn] = value;
+                    this[this.tableTBC_OPCION_SISTEMA.DS_NOMBRE_FORMAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_RUTA_FORMA {
+                get {
+                    try {
+                        return ((string)(this[this.tableTBC_OPCION_SISTEMA.DS_RUTA_FORMAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_RUTA_FORMA\' de la tabla \'TBC_OPCION_SISTEMA\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableTBC_OPCION_SISTEMA.DS_RUTA_FORMAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_DESCRIPCION {
+                get {
+                    try {
+                        return ((string)(this[this.tableTBC_OPCION_SISTEMA.DS_DESCRIPCIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_DESCRIPCION\' de la tabla \'TBC_OPCION_SISTEMA\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableTBC_OPCION_SISTEMA.DS_DESCRIPCIONColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDS_CODI_OPCI_SISTNull() {
-                return this.IsNull(this.table_TBC_OPCION_SISTEMA.DS_CODI_OPCI_SISTColumn);
+                return this.IsNull(this.tableTBC_OPCION_SISTEMA.DS_CODI_OPCI_SISTColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDS_CODI_OPCI_SISTNull() {
-                this[this.table_TBC_OPCION_SISTEMA.DS_CODI_OPCI_SISTColumn] = global::System.Convert.DBNull;
+                this[this.tableTBC_OPCION_SISTEMA.DS_CODI_OPCI_SISTColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDS_NOMBRE_FORMANull() {
-                return this.IsNull(this.table_TBC_OPCION_SISTEMA.DS_NOMBRE_FORMAColumn);
+                return this.IsNull(this.tableTBC_OPCION_SISTEMA.DS_NOMBRE_FORMAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDS_NOMBRE_FORMANull() {
-                this[this.table_TBC_OPCION_SISTEMA.DS_NOMBRE_FORMAColumn] = global::System.Convert.DBNull;
+                this[this.tableTBC_OPCION_SISTEMA.DS_NOMBRE_FORMAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_RUTA_FORMANull() {
+                return this.IsNull(this.tableTBC_OPCION_SISTEMA.DS_RUTA_FORMAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_RUTA_FORMANull() {
+                this[this.tableTBC_OPCION_SISTEMA.DS_RUTA_FORMAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_DESCRIPCIONNull() {
+                return this.IsNull(this.tableTBC_OPCION_SISTEMA.DS_DESCRIPCIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_DESCRIPCIONNull() {
+                this[this.tableTBC_OPCION_SISTEMA.DS_DESCRIPCIONColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4038,6 +4138,23 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_DESCRIPCION {
+                get {
+                    try {
+                        return ((string)(this[this.tableTBC_MENU_SISTEMA.DS_DESCRIPCIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_DESCRIPCION\' de la tabla \'TBC_MENU_SISTEMA\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableTBC_MENU_SISTEMA.DS_DESCRIPCIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsIDNull() {
                 return this.IsNull(this.tableTBC_MENU_SISTEMA.IDColumn);
             }
@@ -4070,6 +4187,18 @@ namespace ClsDataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNM_ORDEN_MENUNull() {
                 this[this.tableTBC_MENU_SISTEMA.NM_ORDEN_MENUColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_DESCRIPCIONNull() {
+                return this.IsNull(this.tableTBC_MENU_SISTEMA.DS_DESCRIPCIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_DESCRIPCIONNull() {
+                this[this.tableTBC_MENU_SISTEMA.DS_DESCRIPCIONColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4735,22 +4864,22 @@ namespace ClsDataSets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class _TBC_OPCION_SISTEMARowChangeEvent : global::System.EventArgs {
+        public class TBC_OPCION_SISTEMARowChangeEvent : global::System.EventArgs {
             
-            private _TBC_OPCION_SISTEMARow eventRow;
+            private TBC_OPCION_SISTEMARow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _TBC_OPCION_SISTEMARowChangeEvent(_TBC_OPCION_SISTEMARow row, global::System.Data.DataRowAction action) {
+            public TBC_OPCION_SISTEMARowChangeEvent(TBC_OPCION_SISTEMARow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _TBC_OPCION_SISTEMARow Row {
+            public TBC_OPCION_SISTEMARow Row {
                 get {
                     return this.eventRow;
                 }

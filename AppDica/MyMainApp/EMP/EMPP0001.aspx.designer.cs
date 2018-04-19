@@ -2821,24 +2821,6 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.TextBox TxtNombreEntregable;
         
         /// <summary>
-        /// Control Label71.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label71;
-        
-        /// <summary>
-        /// Control TxtDuracionEntregable.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtDuracionEntregable;
-        
-        /// <summary>
         /// Control Label72.
         /// </summary>
         /// <remarks>

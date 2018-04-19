@@ -52,7 +52,7 @@ namespace ClsDataApp
             return objDataSet;
         }
         public DataQuery Actualizacion(string Id, string CodiOpciSist, string NombreForma, string RutaForma, string Descripcion,
-             int OpcionConsulta, string LoginUsuario, TipoActualizacion OpcionActualizacion)
+             string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
             DataQuery objResultado = new DataQuery();
             try
@@ -82,15 +82,16 @@ namespace ClsDataApp
                 ObjParam = new SqlParameter();
                 ObjCommand.CommandType = CommandType.StoredProcedure;
 
-                if (OpcionActualizacion == TipoActualizacion.Adicionar)
-                {
-                    ObjParam = ObjCommand.Parameters.Add("@ID", SqlDbType.Int, 0);
-                    ObjParam.Direction = ParameterDirection.Output;
-                }
-                else
-                {
-                    ObjCommand.Parameters.AddWithValue("@ID", Id);
-                }
+                //if (OpcionActualizacion == TipoActualizacion.Adicionar)
+                //{
+                //    ObjParam = ObjCommand.Parameters.Add("@ID", SqlDbType.Int, 0);
+                //    ObjParam.Direction = ParameterDirection.Output;
+                //}
+                //else
+                //{
+                //    
+                //}
+                ObjCommand.Parameters.AddWithValue("@ID", Id);
                 ObjCommand.Parameters.AddWithValue("@DS_CODI_OPCI_SIST", CodiOpciSist);
                 ObjCommand.Parameters.AddWithValue("@DS_NOMBRE_FORMA", NombreForma);
                 ObjCommand.Parameters.AddWithValue("@DS_RUTA_FORMA", RutaForma);

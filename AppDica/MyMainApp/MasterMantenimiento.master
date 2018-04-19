@@ -2,13 +2,16 @@
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxtoolkit" %>
 <asp:Content ID="Content1" runat="server" contentplaceholderid="CPHPrincipal">
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <asp:Panel ID="Panel1" runat="server"  Width="100%">
      <form id="form1" runat="server">
                     <div align="center">
                         <asp:Label ID="LblTitulo" runat="server" Text="Mantenimiento de Catálogo" Font-Bold="True" Font-Size="20pt"></asp:Label>
                        
                     </div>
                    <br />
-
+         <div class="container-fluid">
+                    <div id="content">
+                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                         <ajaxtoolkit:tabcontainer id="TabContainer1" runat="server" activetabindex="1" bordercolor="#66CCFF" scrollbars="Vertical" height="375px" width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
@@ -87,7 +90,11 @@
                             <%--fin tab datos--%>
                             
                     </ajaxtoolkit:tabcontainer>
+                        </div>
+             </div>
                         </form>
+
+        </asp:Panel>
         </asp:ContentPlaceHolder>
                 </asp:Content>
 

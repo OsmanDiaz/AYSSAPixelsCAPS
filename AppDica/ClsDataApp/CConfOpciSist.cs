@@ -54,7 +54,7 @@ namespace ClsDataApp
         }
         public DataQuery Actualizacion(string IdSistema, string IdMenuSistema, string IdOpcionSistema, int IdCorrConfOpciSist,
             int OrdenOpci, string Descripcion,
-            int OpcionConsulta, string LoginUsuario, TipoActualizacion OpcionActualizacion)
+            string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
             DataQuery objResultado = new DataQuery();
             try
@@ -84,15 +84,16 @@ namespace ClsDataApp
                 ObjParam = new SqlParameter();
                 ObjCommand.CommandType = CommandType.StoredProcedure;
 
-                if (OpcionActualizacion == TipoActualizacion.Adicionar)
-                {
-                    ObjParam = ObjCommand.Parameters.Add("@ID_SISTEMA", SqlDbType.Int, 0);
-                    ObjParam.Direction = ParameterDirection.Output;
-                }
-                else
-                {
-                    ObjCommand.Parameters.AddWithValue("@ID_SISTEMA", IdSistema);
-                }
+                //if (OpcionActualizacion == TipoActualizacion.Adicionar)
+                //{
+                //    ObjParam = ObjCommand.Parameters.Add("@ID_SISTEMA", SqlDbType.Int, 0);
+                //    ObjParam.Direction = ParameterDirection.Output;
+                //}
+                //else
+                //{
+                    
+                //}
+                ObjCommand.Parameters.AddWithValue("@ID_SISTEMA", IdSistema);
                 ObjCommand.Parameters.AddWithValue("@ID_MENU_SISTEMA", IdMenuSistema);
                 ObjCommand.Parameters.AddWithValue("@ID_OPCION_SISTEMA", IdOpcionSistema);
                 ObjCommand.Parameters.AddWithValue("@NM_CORR_CONF_OPCI_SIST", IdCorrConfOpciSist);
