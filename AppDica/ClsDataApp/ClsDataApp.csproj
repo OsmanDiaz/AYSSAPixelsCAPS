@@ -115,6 +115,7 @@
     <Compile Include="CPerfilUsuario.cs" />
     <Compile Include="CPeriodo.cs" />
     <Compile Include="CRepresentanteLegal.cs" />
+    <Compile Include="CSistema.cs" />
     <Compile Include="CSqlvars.cs" />
     <Compile Include="CTipoAspirante.cs" />
     <Compile Include="CTituloAcademico.cs" />

@@ -86,7 +86,7 @@ namespace MyMainApp.MTT
         {
             TxtCodigo.Text = "";
             TxtNombMenu.Text = "";
-            TxtOrden.Text = "0";
+            TxtOrden.Text = "";
             TxtDescripcion.Text = "";
         }
 
@@ -152,5 +152,28 @@ namespace MyMainApp.MTT
             PanelActuMenu.Visible = false;
             PanelMenu.Visible = true;
         }
+
+        protected void GVMenuSistema_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            try
+            {
+                TextBox Id = GVMenuSistema.Rows[e.RowIndex].FindControl("TxtIdCodigo") as TextBox;
+                CMenuSistema objSistema = new CMenuSistema(_DataSistema.ConexionBaseDato);
+                objResultado = objSistema.Actualizacion(Id.Text, "", "", 0, _DataSistema.Cusuario, TipoActualizacion.Eliminar);
+                if (objResultado.CodigoError == 0)
+                {
+                    FillGVMenuSistema();
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPDatos);
+                }
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPDatos);
+            }
+        }
+
         }
     }

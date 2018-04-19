@@ -11,7 +11,7 @@
          <div class="container-fluid">
                     <div id="content">
                         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                        <ajaxtoolkit:tabcontainer id="TabContainer1" runat="server" activetabindex="0" bordercolor="#66CCFF" scrollbars="Vertical" height="375px" width="100%">
+                        <ajaxtoolkit:tabcontainer id="TabContainer1" runat="server" activetabindex="1" bordercolor="#66CCFF" scrollbars="Vertical" height="375px" width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                  <asp:UpdatePanel ID="UPDatos" runat="server">
@@ -20,6 +20,11 @@
                                 <%--inicio tab datos--%>
                                 <br />
                                         <asp:Panel ID="PanelSistema" runat="server">
+                                            <div align="center">
+                                    <asp:Label ID="Label15" runat="server" Font-Size="14pt" Text="MENU - NIVEL 3"></asp:Label>
+                                    <br />
+                                    <br /><br />
+                                </div>
                                         <asp:GridView ID="GVOpcionSistema" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="GVOpcionSistema_SelectedIndexChanged" OnRowDeleting="GVOpcionSistema_RowDeleting">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
@@ -68,7 +73,7 @@
                                             </asp:Panel>
                                         <asp:Panel ID="PanelActuSistema" runat="server" Visible="false">
                                             <div align="center">
-                                    <asp:Label ID="Label5" runat="server" Font-Size="14pt" Text="ACTUALIZACION DE OPCION MENU"></asp:Label>
+                                    <asp:Label ID="Label5" runat="server" Font-Size="14pt" Text="ACTUALIZACION DE MENU - NIVEL 3"></asp:Label>
                                     <br />
                                     <br /><br />
                                 </div><asp:TextBox ID="TxtIdCodiS" runat="server" Text="0" Visible="False"></asp:TextBox>
@@ -132,7 +137,7 @@
                             <ContentTemplate>
                                     <br />
                                     <div align="center">
-                                    <asp:Label ID="Label3" runat="server" Font-Size="14pt" Text="REGISTRO DE OPCION MENU"></asp:Label>
+                                    <asp:Label ID="Label3" runat="server" Font-Size="14pt" Text="REGISTRO DE MENU - NIVEL 3"></asp:Label>
                                     <br />
                                     <br /><br />
                                 </div>

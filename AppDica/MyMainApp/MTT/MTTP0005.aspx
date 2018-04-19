@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterMantenimiento.master" AutoEventWireup="true" CodeBehind="MTTP0003.aspx.cs" Inherits="MyMainApp.MTT.MTTP0003" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterMantenimiento.master" AutoEventWireup="true" CodeBehind="MTTP0005.aspx.cs" Inherits="MyMainApp.MTT.MTTP0005" %>
 
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxtoolkit" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxtoolkit" %>
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
     <asp:Panel ID="Panel1" runat="server" Width="100%">
         <form id="form1" runat="server">
@@ -12,107 +12,115 @@
             <div class="container-fluid">
                 <div id="content">
                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                    <ajaxtoolkit:tabcontainer id="TabContainer1" runat="server" activetabindex="0" bordercolor="#66CCFF" scrollbars="Vertical" height="375px" width="100%">
+                    <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxtoolkit:TabPanel runat="server" HeaderText="DATOS" ID="TabPanel1" Width="100%">
-                            <contenttemplate>
-                        <asp:UpdatePanel ID="UPDatos" runat="server">
                             <ContentTemplate>
-                                <asp:Panel ID="PanelMenu" runat="server">
-                                <div align="center">
-                                    <asp:Label ID="Label15" runat="server" Font-Size="14pt" Text="MENU - NIVEL 2"></asp:Label>
+                                <asp:UpdatePanel ID="UPDatos" runat="server">
+                                    <ContentTemplate>
+                                        <asp:Panel ID="PanelMenu1" runat="server">
+                                        <div align="center">
+                                    <asp:Label ID="Label15" runat="server" Font-Size="14pt" Text="MENU - NIVEL 1"></asp:Label>
                                     <br />
                                     <br /><br />
                                 </div>
-                                <asp:GridView ID="GVMenuSistema" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="GVMenuSistema_SelectedIndexChanged" OnRowDeleting="GVMenuSistema_RowDeleting">
-                                    <AlternatingRowStyle BackColor="White" />
-                                    <Columns>
-                                        <asp:TemplateField Visible="False">
-                                            <ItemTemplate>
-                                           <asp:TextBox ID="TxtIdCodigo" runat="server" Text='<%#Eval("ID")%>' Visible="False"></asp:TextBox>
-                                         </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:BoundField HeaderText="CODIGO" DataField="ID" />
-                                        <asp:BoundField HeaderText="NOMBRE MENU" DataField="DS_DESC_MENU" />
-                                        <asp:BoundField HeaderText="DESCRIPCION" DataField="DS_DESCRIPCION" />
-                                        <asp:BoundField DataField="NM_ORDEN_MENU" HeaderText="ORDEN MENU" />
-                                        <asp:TemplateField HeaderText="ACTUALIZAR">
-                                        <ItemTemplate>
+                                        <asp:GridView ID="GVSistemaList" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="GVSistemaList_SelectedIndexChanged">
+                                            <AlternatingRowStyle BackColor="White" />
+                                            <Columns>
+                                                <asp:TemplateField Visible="False">
+                                                    <ItemTemplate>
+                                                    <asp:TextBox ID="TxtIdCodigo" runat="server" Text='<%#Eval("ID")%>' Visible="False"></asp:TextBox>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:BoundField HeaderText="CODIGO" DataField="ID" />
+                                                <asp:BoundField HeaderText="NOMBRE MENU" DataField="DS_NOMB_SIST" />
+                                                <asp:BoundField HeaderText="# ORDEN" DataField="NM_ORDEN_SIST" />
+                                                <asp:BoundField DataField="DS_DESCRIPCION" HeaderText="DESCRIPCION" />
+                                                <asp:TemplateField HeaderText="ACTUALIZAR">
+                                                    <ItemTemplate>
                                             <asp:Button ID="BtnActuMenu" runat="server" CommandName="Select" Text="Actualizar" />
                                         </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="ELIMINAR">
-                                         <ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="ELIMINAR">
+                                                    <ItemTemplate>
                                            <asp:Button ID="BtnEliminarMenu" runat="server" CommandName="Delete" OnClientClick="return confirm('¿Desea eliminar este registro?');" Text="Eliminar" />
                                         </ItemTemplate>
-                                        </asp:TemplateField>
-                                    </Columns>
-                                    <EditRowStyle BackColor="#2461BF" />
-                                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                                    <RowStyle BackColor="#EFF3FB" />
-                                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                                </asp:GridView>
-                              </asp:Panel>
-                                <asp:Panel ID="PanelActuMenu" runat="server" Visible="false">
+                                                </asp:TemplateField>
+                                            </Columns>
+                                            <EditRowStyle BackColor="#2461BF" />
+                                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                            <RowStyle BackColor="#EFF3FB" />
+                                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                        </asp:GridView>
+
+                                        </asp:Panel>
+                                        <asp:Panel ID="PanelActuMenu1" runat="server" Visible="false">
+                                            <br />
                                     <div align="center">
-                                    <asp:Label ID="Label1" runat="server" Font-Size="14pt" Text="ACTUALIZACION DE MENU - NIVEL 2"></asp:Label>
+                                    <asp:Label ID="Label1" runat="server" Font-Size="14pt" Text="ACTUALIZACION DE MENU - NIVEL 1"></asp:Label>
                                     <br />
                                     <br /><br />
                                 </div><asp:TextBox ID="TxtIdCodiM" runat="server" Text="0" Visible="False"></asp:TextBox>
                                             <div class="form-group">
                                     <asp:Label ID="Label2" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CODIGO:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtCodigo2" runat="server" class="form-control"></asp:TextBox>
-                                     </div>
+                                        <asp:TextBox ID="TxtCodigo1" runat="server" class="form-control"></asp:TextBox>
+                                        
+                                    </div>
                                    </div>
                                 <br />
                                 <br /><div class="form-group">
                                     <asp:Label ID="Label5" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOMBRE MENU:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtNombMenu2" runat="server" class="form-control"></asp:TextBox>
-                                         </div>
+                                        <asp:TextBox ID="TxtNombMenu1" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
                                     <asp:Label ID="Label6" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NUMERO DE ORDEN:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtOrden2" runat="server" class="form-control"></asp:TextBox>
-                                         </div>
+                                        <asp:TextBox ID="TxtNumOrden1" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
                                 </div>
                                 <br />
                                 <br />
                                 <div class="form-group">
                                     <asp:Label class="control-label  col-sm-2" ID="Label7" runat="server" Font-Bold="True" Text="DESCRIPCION:"></asp:Label>
                                     <div class="col-md-9">
-                                        <asp:TextBox class="form-control" ID="TxtDescripcion2" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Width="100%"></asp:TextBox>
+                                        <asp:TextBox class="form-control" ID="TxtDescripcion1" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled" Width="100%"></asp:TextBox>
                                     </div>
                                 </div>
-                                
+                                <p><br />
                                 <br />
-                                <br />
+                                <br /></p>
                                 
                                 <div align="center">
-                                    <asp:Button ID="BtnActuMenu" runat="server" class="btn btn-primary" Text="ACTUALIZAR" OnClick="BtnActuMenu_Click"/>
+                                    <asp:Button ID="BtnActualizar" runat="server" class="btn btn-primary" Text="ACTUALIZAR" OnClick="BtnActualizar_Click" />
                                     <asp:Button ID="BtnRegresar" runat="server" class="btn btn-primary" Text="REGRESAR" OnClick="BtnRegresar_Click" />
                                 </div>
-                                </asp:Panel>
+                                        </asp:Panel>
+                                    </ContentTemplate>
+                                    
+                                </asp:UpdatePanel>
+
+
                             </ContentTemplate>
-                          </asp:UpdatePanel>
-                        </contenttemplate>
 
                         </ajaxtoolkit:TabPanel>
                         <%--fin tab datos--%>
 
                         <ajaxtoolkit:TabPanel runat="server" HeaderText="DETALLE" ID="TabPanel2">
-                            <contenttemplate>
-                        <asp:UpdatePanel ID="UPDetalle" runat="server">
-                            <Triggers><asp:AsyncPostBackTrigger ControlID="BtnGuardarMenu" /></Triggers>
                             <ContentTemplate>
-                                    <br />
+                                <asp:UpdatePanel ID="UPDetalle" runat="server">
+                                    <Triggers>
+                                        <asp:AsyncPostBackTrigger ControlID="BtnGuardar" />
+                                    </Triggers>
+                                    <ContentTemplate>
+                                       <br />
                                     <div align="center">
-                                    <asp:Label ID="Label3" runat="server" Font-Size="14pt" Text="REGISTRO DE MENU - NIVEL 2"></asp:Label>
+                                    <asp:Label ID="Label3" runat="server" Font-Size="14pt" Text="REGISTRO DE MENU - NIVEL 1"></asp:Label>
                                     <br />
                                     <br /><br />
                                 </div>
@@ -149,19 +157,18 @@
                                 <br /></p>
                                 
                                 <div align="center">
-                                    <asp:Button ID="BtnGuardarMenu" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="BtnGuardarMenu_Click"/>
+                                    <asp:Button ID="BtnGuardar" runat="server" class="btn btn-primary" Text="GUARDAR" OnClick="BtnGuardar_Click"/>
                                 </div>
-      
-                            <%--fin tab informacion adicional--%>
-     
+
+                                        <%--fin tab informacion adicional--%>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
-                            
-</contenttemplate>
+
+                            </ContentTemplate>
 
                         </ajaxtoolkit:TabPanel>
                         <%--fin tab datos--%>
-                    </ajaxtoolkit:tabcontainer>
+                    </ajaxtoolkit:TabContainer>
                 </div>
             </div>
         </form>

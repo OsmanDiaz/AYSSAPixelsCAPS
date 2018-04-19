@@ -8,30 +8,28 @@ using ClsInterface;
 
 namespace ClsDataApp
 {
-    public class CConfOpciSist:CSqlvars
+    public class CSistema : CSqlvars
     {
-        public CConfOpciSist(string ConexionData)
+        public CSistema(string ConexionData)
         {
             _ConexionData = ConexionData;
         }
 
-        public ClsDataSets.DS_TBC_SIS Detalle(string IdSistema, string IdMenuSistema, string IdOpcionSistema, int IdCorrConfOpciSist,
-            int OrdenOpci, string Descripcion,
+        public ClsDataSets.DS_TBC_SIS Detalle(string Id, string NombreSis, int NumerOrden, string Descripcion,
             string UsuaCrea, DateTime FechCrea, string UsuaActu, DateTime FechActu, int OpcionConsulta)
         {
             ClsDataSets.DS_TBC_SIS objDataSet = new ClsDataSets.DS_TBC_SIS();
+
             try
             {
                 ObjConnection = new SqlConnection(_ConexionData);
-                ObjAdapter = new SqlDataAdapter("SP_TBC_CONF_OPCI_SIST_GetByAll", ObjConnection);
+                ObjAdapter = new SqlDataAdapter("SP_TBC_SISTEMA_GetByAll", ObjConnection);
                 ObjParam = new SqlParameter();
                 ObjAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
 
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_SISTEMA", IdSistema);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_MENU_SISTEMA", IdMenuSistema);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_OPCION_SISTEMA", IdOpcionSistema);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@NM_CORR_CONF_OPCI_SIST", IdCorrConfOpciSist);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@NM_ORDEN_OPCI", OrdenOpci);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID", Id);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_NOMB_SIST", NombreSis);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@NM_ORDEN_SIST", NumerOrden);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_DESCRIPCION", Descripcion);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_CREA", UsuaCrea);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_CREA", FechCrea);
@@ -39,7 +37,8 @@ namespace ClsDataApp
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_ACTU", FechActu);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@OPCI_CONS", OpcionConsulta);
 
-                ObjAdapter.Fill(objDataSet, "TBC_CONF_OPCI_SIST");
+                ObjAdapter.Fill(objDataSet, "TBC_SISTEMA");
+
                 ObjConnection.Close();
                 if (ObjConnection.State != ConnectionState.Closed)
                 {
@@ -50,12 +49,12 @@ namespace ClsDataApp
             {
                 throw new Exception(ex.Message);
             }
+
             return objDataSet;
-        }
-        public DataQuery Actualizacion(string IdSistema, string IdMenuSistema, string IdOpcionSistema, int IdCorrConfOpciSist,
-            int OrdenOpci, string Descripcion,
+            }
+        public DataQuery Actualizacion(string Id, string NombreSis, int NumerOrden, string Descripcion,
             string LoginUsuario, TipoActualizacion OpcionActualizacion)
-        {
+            {
             DataQuery objResultado = new DataQuery();
             try
             {
@@ -64,13 +63,13 @@ namespace ClsDataApp
                 switch (OpcionActualizacion)
                 {
                     case TipoActualizacion.Adicionar:
-                        StrCommand = "SP_TBC_CONF_OPCI_SIST_INSERT";
+                        StrCommand = "SP_TBC_SISTEMA_INSERT";
                         break;
                     case TipoActualizacion.Actualizar:
-                        StrCommand = "";
+                        StrCommand = "SP_TBC_SISTEMA_UPDATE";
                         break;
                     case TipoActualizacion.Eliminar:
-                        StrCommand = "SP_TBC_CONF_OPCI_SIST_DELETE";
+                        StrCommand = "SP_TBC_SISTEMA_DELETE";
                         break;
                     case TipoActualizacion.No_Definida:
                         objResultado.CodigoError = -1;
@@ -78,6 +77,7 @@ namespace ClsDataApp
                         //return objResultado;
                         break;
                 }
+
                 ObjConnection = new SqlConnection(_ConexionData);
 
                 ObjCommand = new SqlCommand(StrCommand, ObjConnection);
@@ -86,18 +86,16 @@ namespace ClsDataApp
 
                 //if (OpcionActualizacion == TipoActualizacion.Adicionar)
                 //{
-                //    ObjParam = ObjCommand.Parameters.Add("@ID_SISTEMA", SqlDbType.Int, 0);
+                //    ObjParam = ObjCommand.Parameters.Add("@ID", SqlDbType.Int, 0);
                 //    ObjParam.Direction = ParameterDirection.Output;
                 //}
                 //else
                 //{
                     
                 //}
-                ObjCommand.Parameters.AddWithValue("@ID_SISTEMA", IdSistema);
-                ObjCommand.Parameters.AddWithValue("@ID_MENU_SISTEMA", IdMenuSistema);
-                ObjCommand.Parameters.AddWithValue("@ID_OPCION_SISTEMA", IdOpcionSistema);
-                ObjCommand.Parameters.AddWithValue("@NM_CORR_CONF_OPCI_SIST", IdCorrConfOpciSist);
-                ObjCommand.Parameters.AddWithValue("@NM_ORDEN_OPCI", OrdenOpci);
+                ObjCommand.Parameters.AddWithValue("@ID", Id);
+                ObjCommand.Parameters.AddWithValue("@DS_NOMB_SIST", NombreSis);
+                ObjCommand.Parameters.AddWithValue("@NM_ORDEN_SIST", NumerOrden); 
                 ObjCommand.Parameters.AddWithValue("@DS_DESCRIPCION", Descripcion);
                 ObjCommand.Parameters.AddWithValue("@LOGIN_USUARIO", LoginUsuario);
 
@@ -115,7 +113,7 @@ namespace ClsDataApp
                 ObjConnection.Open();
                 ObjCommand.ExecuteNonQuery();
 
-                objResultado.CodigoAuxiliar = (object)ObjCommand.Parameters["@ID_SISTEMA"].Value;
+                objResultado.CodigoAuxiliar = (object)ObjCommand.Parameters["@ID"].Value;
                 objResultado.FilasAfectadas = (int)ObjCommand.Parameters["@FILAS_AFECTADAS"].Value;
                 objResultado.CodigoError = (decimal)ObjCommand.Parameters["@NumeroError"].Value;
                 objResultado.MensajeError = (string)ObjCommand.Parameters["@MensajeError"].Value;
@@ -135,5 +133,6 @@ namespace ClsDataApp
 
             return objResultado;
         }
+        
     }
 }

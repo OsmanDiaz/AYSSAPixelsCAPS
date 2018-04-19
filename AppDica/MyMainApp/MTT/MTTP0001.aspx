@@ -13,7 +13,7 @@
         </asp:ScriptManager>
         <br />
 
-        <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+        <ajaxtoolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
             <ajaxtoolkit:TabPanel runat="server" HeaderText="DATOS" ID="TabPanel1" Width="100%">
                 <ContentTemplate>
                     <asp:UpdatePanel ID="UPDatos" runat="server">
@@ -21,6 +21,11 @@
                             <%--inicio contenido tab--%>
                             <br />
                             <asp:Panel ID="PanelPerfil" runat="server">
+                                <div align="center">
+                                    <asp:Label ID="Label10" runat="server" Font-Size="14pt" Text="PERFIL DE USUARIO"></asp:Label>
+                                    <br />
+                                    <br /><br />
+                                </div>
                             <asp:GridView ID="GVDetallePerfil" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AutoGenerateColumns="False" OnRowDeleting="GVDetallePerfil_RowDeleting" DataKeyNames="ID" OnSelectedIndexChanged="GVDetallePerfil_SelectedIndexChanged">
                                 <AlternatingRowStyle BackColor="White" />
                                 <Columns>
@@ -30,7 +35,7 @@
                                          </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:BoundField DataField="ID" HeaderText="CODIGO" />
-                                    <asp:BoundField HeaderText="NOMBRE" DataField="DS_NOMBRE_PERFIL" />
+                                    <asp:BoundField HeaderText="NOMBRE " DataField="DS_NOMBRE_PERFIL" />
                                     <asp:BoundField HeaderText="DESCRIPCION" DataField="DS_DESCRIPCION" />
                                     <asp:BoundField HeaderText="ESTADO" DataField="CD_ESTADO_PERFIL" />
                                     <asp:TemplateField HeaderText="Actualizar">

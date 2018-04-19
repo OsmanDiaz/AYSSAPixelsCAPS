@@ -7,10 +7,19 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace MyMainApp.MANTENIMIENTOS {
+namespace MyMainApp.MTT {
     
     
-    public partial class MTTP0001 {
+    public partial class MTTP0005 {
+        
+        /// <summary>
+        /// Control Panel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
         /// Control form1.
@@ -67,40 +76,76 @@ namespace MyMainApp.MANTENIMIENTOS {
         protected global::System.Web.UI.UpdatePanel UPDatos;
         
         /// <summary>
-        /// Control PanelPerfil.
+        /// Control PanelMenu1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelPerfil;
+        protected global::System.Web.UI.WebControls.Panel PanelMenu1;
         
         /// <summary>
-        /// Control Label10.
+        /// Control Label15.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label10;
+        protected global::System.Web.UI.WebControls.Label Label15;
         
         /// <summary>
-        /// Control GVDetallePerfil.
+        /// Control GVSistemaList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GVDetallePerfil;
+        protected global::System.Web.UI.WebControls.GridView GVSistemaList;
         
         /// <summary>
-        /// Control PanelActuPerfil.
+        /// Control PanelActuMenu1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelActuPerfil;
+        protected global::System.Web.UI.WebControls.Panel PanelActuMenu1;
+        
+        /// <summary>
+        /// Control Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// Control TxtIdCodiM.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIdCodiM;
+        
+        /// <summary>
+        /// Control Label2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// Control TxtCodigo1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtCodigo1;
         
         /// <summary>
         /// Control Label5.
@@ -112,13 +157,13 @@ namespace MyMainApp.MANTENIMIENTOS {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// Control TxtIdCodiP.
+        /// Control TxtNombMenu1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtIdCodiP;
+        protected global::System.Web.UI.WebControls.TextBox TxtNombMenu1;
         
         /// <summary>
         /// Control Label6.
@@ -130,13 +175,13 @@ namespace MyMainApp.MANTENIMIENTOS {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// Control TxtCodigo2.
+        /// Control TxtNumOrden1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtCodigo2;
+        protected global::System.Web.UI.WebControls.TextBox TxtNumOrden1;
         
         /// <summary>
         /// Control Label7.
@@ -148,58 +193,22 @@ namespace MyMainApp.MANTENIMIENTOS {
         protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// Control TxtNombre2.
+        /// Control TxtDescripcion1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtNombre2;
+        protected global::System.Web.UI.WebControls.TextBox TxtDescripcion1;
         
         /// <summary>
-        /// Control Label8.
+        /// Control BtnActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label8;
-        
-        /// <summary>
-        /// Control TxtDescripcion2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtDescripcion2;
-        
-        /// <summary>
-        /// Control Label9.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label9;
-        
-        /// <summary>
-        /// Control CboEstado2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CboEstado2;
-        
-        /// <summary>
-        /// Control BtnActualizarP.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnActualizarP;
+        protected global::System.Web.UI.WebControls.Button BtnActualizar;
         
         /// <summary>
         /// Control BtnRegresar.
@@ -229,13 +238,13 @@ namespace MyMainApp.MANTENIMIENTOS {
         protected global::System.Web.UI.UpdatePanel UPDetalle;
         
         /// <summary>
-        /// Control PanelGuardar.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelGuardar;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
         /// Control Label4.
@@ -245,15 +254,6 @@ namespace MyMainApp.MANTENIMIENTOS {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
-        /// Control Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// Control TxtCodigo.
@@ -274,40 +274,67 @@ namespace MyMainApp.MANTENIMIENTOS {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// Control Label3.
+        /// Control Label11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label Label11;
         
         /// <summary>
-        /// Control TxtNombre.
+        /// Control TxtNombMenu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtNombre;
+        protected global::System.Web.UI.WebControls.TextBox TxtNombMenu;
         
         /// <summary>
-        /// Control RequiredFieldValidator2.
+        /// Control RequiredFieldValidator3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
-        /// Control Label67.
+        /// Control Label12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label67;
+        protected global::System.Web.UI.WebControls.Label Label12;
+        
+        /// <summary>
+        /// Control TxtOrden.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtOrden;
+        
+        /// <summary>
+        /// Control RequiredFieldValidator4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        
+        /// <summary>
+        /// Control Label13.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label13;
         
         /// <summary>
         /// Control TxtDescripcion.
@@ -319,30 +346,12 @@ namespace MyMainApp.MANTENIMIENTOS {
         protected global::System.Web.UI.WebControls.TextBox TxtDescripcion;
         
         /// <summary>
-        /// Control Label2.
+        /// Control BtnGuardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// Control CboEstadoP.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CboEstadoP;
-        
-        /// <summary>
-        /// Control BtnGuardarPerfil.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnGuardarPerfil;
+        protected global::System.Web.UI.WebControls.Button BtnGuardar;
     }
 }
