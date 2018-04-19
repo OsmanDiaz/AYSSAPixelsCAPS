@@ -82,7 +82,7 @@
                                   }
                                   else
                                   {
-                                      String Menu, SubMenu, SSubMenu, linkMenu, IdMenu;
+                                      String Menu, SubMenu, SSubMenu, linkMenu, IdMenu, SubMenu2;
                                       String UltimoMenu = "";
                                       String UltimoSubMenu = "";
                                       String UltimoSSubMenu = "";
@@ -112,14 +112,19 @@
                                                     <%
                                           ClsDataApp.CMenu OpcionesMenu = new ClsDataApp.CMenu(_DataSistema.ConexionBaseDato);
                                           dt1 = OpcionesMenu.DetalleOpciones(_DataSistema.Cusuario, IdMenu, "", "", 2);
+                                          %>
+                                          <ul class="dropdown-menu multi-level" role="menu">
+                                              <%
                                           foreach (System.Data.DataRow dr1 in dt1.Tables["Table"].Rows)
                                           {
+                                              SubMenu2 = dr1["ID"].ToString();
                                               SubMenu = dr1["DS_DESC_MENU"].ToString();
                                                      %>
-                                                    <ul class="dropdown-menu multi-level" role="menu">
+                                              
                                                         
-                                                          <li class="dropdown-submenu">
+                                                          <li class="dropdown-submenu ">
                                                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+
                                                               <%
                                               if (SubMenu != UltimoSubMenu)
                                               {  %>
@@ -131,7 +136,7 @@
                                                             </a>
                                                             <ul class="dropdown-menu">
                                                             <% 
-                                              dt2 = OpcionesMenu.DetalleOpciones(_DataSistema.Cusuario, IdMenu, SubMenu, "", 3);
+                                              dt2 = OpcionesMenu.DetalleOpciones(_DataSistema.Cusuario, IdMenu, SubMenu2, "", 3);
                                               foreach (System.Data.DataRow dr2 in dt2.Tables["Table"].Rows)
                                               {
                                                   SSubMenu = dr2["DS_NOMBRE_FORMA"].ToString();
@@ -149,8 +154,9 @@
                                                             </ul>
                                                           </li>
                                                         
-                                                    </ul>
+                                                    
                                                     <%} %>
+                                                  </ul>
                                                   </li>
                                                 <% 
                                                 
