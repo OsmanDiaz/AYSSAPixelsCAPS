@@ -2761,6 +2761,8 @@ namespace ClsDataSets {
             
             private global::System.Data.DataColumn columnNM_CORR_OPCI_SIST_PERFIL;
             
+            private global::System.Data.DataColumn columnDS_DESCRIPCION;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TBC_OPCI_SIST_PERFILDataTable() {
@@ -2844,6 +2846,14 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DS_DESCRIPCIONColumn {
+                get {
+                    return this.columnDS_DESCRIPCION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2879,7 +2889,7 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TBC_OPCI_SIST_PERFILRow AddTBC_OPCI_SIST_PERFILRow(string ID_CODI_SIST, string ID_MENU_SISTEMA, string ID_OPCION_SISTEMA, int NM_CORR_CONF_OPCI_SIST, string ID_PERFIL_USUARIO, int NM_CORR_OPCI_SIST_PERFIL) {
+            public TBC_OPCI_SIST_PERFILRow AddTBC_OPCI_SIST_PERFILRow(string ID_CODI_SIST, string ID_MENU_SISTEMA, string ID_OPCION_SISTEMA, int NM_CORR_CONF_OPCI_SIST, string ID_PERFIL_USUARIO, int NM_CORR_OPCI_SIST_PERFIL, string DS_DESCRIPCION) {
                 TBC_OPCI_SIST_PERFILRow rowTBC_OPCI_SIST_PERFILRow = ((TBC_OPCI_SIST_PERFILRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_CODI_SIST,
@@ -2887,7 +2897,8 @@ namespace ClsDataSets {
                         ID_OPCION_SISTEMA,
                         NM_CORR_CONF_OPCI_SIST,
                         ID_PERFIL_USUARIO,
-                        NM_CORR_OPCI_SIST_PERFIL};
+                        NM_CORR_OPCI_SIST_PERFIL,
+                        DS_DESCRIPCION};
                 rowTBC_OPCI_SIST_PERFILRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTBC_OPCI_SIST_PERFILRow);
                 return rowTBC_OPCI_SIST_PERFILRow;
@@ -2916,6 +2927,7 @@ namespace ClsDataSets {
                 this.columnNM_CORR_CONF_OPCI_SIST = base.Columns["NM_CORR_CONF_OPCI_SIST"];
                 this.columnID_PERFIL_USUARIO = base.Columns["ID_PERFIL_USUARIO"];
                 this.columnNM_CORR_OPCI_SIST_PERFIL = base.Columns["NM_CORR_OPCI_SIST_PERFIL"];
+                this.columnDS_DESCRIPCION = base.Columns["DS_DESCRIPCION"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2933,9 +2945,8 @@ namespace ClsDataSets {
                 base.Columns.Add(this.columnID_PERFIL_USUARIO);
                 this.columnNM_CORR_OPCI_SIST_PERFIL = new global::System.Data.DataColumn("NM_CORR_OPCI_SIST_PERFIL", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNM_CORR_OPCI_SIST_PERFIL);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("GLB_OPCI_SIST_PERFILKey1", new global::System.Data.DataColumn[] {
-                                this.columnNM_CORR_OPCI_SIST_PERFIL}, false));
-                this.columnNM_CORR_OPCI_SIST_PERFIL.Unique = true;
+                this.columnDS_DESCRIPCION = new global::System.Data.DataColumn("DS_DESCRIPCION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDS_DESCRIPCION);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4578,6 +4589,23 @@ namespace ClsDataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DS_DESCRIPCION {
+                get {
+                    try {
+                        return ((string)(this[this.tableTBC_OPCI_SIST_PERFIL.DS_DESCRIPCIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DS_DESCRIPCION\' de la tabla \'TBC_OPCI_SIST_PERFIL\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTBC_OPCI_SIST_PERFIL.DS_DESCRIPCIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsID_CODI_SISTNull() {
                 return this.IsNull(this.tableTBC_OPCI_SIST_PERFIL.ID_CODI_SISTColumn);
             }
@@ -4646,6 +4674,18 @@ namespace ClsDataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNM_CORR_OPCI_SIST_PERFILNull() {
                 this[this.tableTBC_OPCI_SIST_PERFIL.NM_CORR_OPCI_SIST_PERFILColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDS_DESCRIPCIONNull() {
+                return this.IsNull(this.tableTBC_OPCI_SIST_PERFIL.DS_DESCRIPCIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDS_DESCRIPCIONNull() {
+                this[this.tableTBC_OPCI_SIST_PERFIL.DS_DESCRIPCIONColumn] = global::System.Convert.DBNull;
             }
         }
         

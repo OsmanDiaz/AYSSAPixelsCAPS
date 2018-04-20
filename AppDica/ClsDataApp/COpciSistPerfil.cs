@@ -16,7 +16,7 @@ namespace ClsDataApp
         }
 
         public ClsDataSets.DS_TBC_SIS Detalle(string IdPerfilUsuario, string IdCodiSist, string IdMenuSistema,
-            string IdOpcionSistema, double CorrConfOpciSist, double CorrOpciSistPerfil,
+            string IdOpcionSistema, double CorrConfOpciSist, double CorrOpciSistPerfil, string Descripcion,
             string UsuaCrea, DateTime FechCrea, string UsuaActu, DateTime FechActu, int OpcionConsulta)
         {
             ClsDataSets.DS_TBC_SIS objDataSet = new ClsDataSets.DS_TBC_SIS();
@@ -33,6 +33,7 @@ namespace ClsDataApp
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_OPCION_SISTEMA", IdOpcionSistema);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@NM_CORR_CONF_OPCI_SIST", CorrConfOpciSist);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@NM_CORR_OPCI_SIST_PERFIL", CorrOpciSistPerfil);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_DESCRIPCION", Descripcion);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_CREA", UsuaCrea);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_CREA", FechCrea);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_ACTU", UsuaActu);
@@ -52,9 +53,9 @@ namespace ClsDataApp
             }
             return objDataSet;
             }
-         public DataQuery Actualizacion(string IdPerfilUsuario, string IdCodiSist, string IdMenuSistema,
-            string IdOpcionSistema, double CorrConfOpciSist, double CorrOpciSistPerfil,
-             int OpcionConsulta, string LoginUsuario, TipoActualizacion OpcionActualizacion)
+        public DataQuery Actualizacion(string IdPerfilUsuario, string IdCodiSist, string IdMenuSistema,
+           string IdOpcionSistema, double CorrConfOpciSist, double CorrOpciSistPerfil, string Descripcion,
+            string LoginUsuario, TipoActualizacion OpcionActualizacion)
          {
              DataQuery objResultado = new DataQuery();
             try
@@ -84,20 +85,22 @@ namespace ClsDataApp
                 ObjParam = new SqlParameter();
                 ObjCommand.CommandType = CommandType.StoredProcedure;
 
-                if (OpcionActualizacion == TipoActualizacion.Adicionar)
-                {
-                    ObjParam = ObjCommand.Parameters.Add("@ID_PERFIL_USUARIO", SqlDbType.Int, 0);
-                    ObjParam.Direction = ParameterDirection.Output;
-                }
-                else
-                {
-                    ObjCommand.Parameters.AddWithValue("@ID_PERFIL_USUARIO", IdPerfilUsuario);
-                }
+                //if (OpcionActualizacion == TipoActualizacion.Adicionar)
+                //{
+                //    ObjParam = ObjCommand.Parameters.Add("@ID_PERFIL_USUARIO", SqlDbType.Int, 0);
+                //    ObjParam.Direction = ParameterDirection.Output;
+                //}
+                //else
+                //{
+                    
+                //}
+                ObjCommand.Parameters.AddWithValue("@ID_PERFIL_USUARIO", IdPerfilUsuario);
                 ObjCommand.Parameters.AddWithValue("@ID_CODI_SIST", IdCodiSist);
                 ObjCommand.Parameters.AddWithValue("@ID_MENU_SISTEMA", IdMenuSistema);
                 ObjCommand.Parameters.AddWithValue("@ID_OPCION_SISTEMA", IdOpcionSistema);
                 ObjCommand.Parameters.AddWithValue("@NM_CORR_CONF_OPCI_SIST", CorrConfOpciSist);
                 ObjCommand.Parameters.AddWithValue("@NM_CORR_OPCI_SIST_PERFIL", CorrOpciSistPerfil);
+                ObjCommand.Parameters.AddWithValue("@DS_DESCRIPCION", Descripcion);
                 ObjCommand.Parameters.AddWithValue("@LOGIN_USUARIO", LoginUsuario);
 
                 ObjParam = ObjCommand.Parameters.Add("@FILAS_AFECTADAS", SqlDbType.Int, 0);

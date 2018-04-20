@@ -70,7 +70,7 @@
                                 <div class="form-group">
                                     <asp:Label ID="Label6" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CODIGO:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtCodigo2" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TxtCodigo2" runat="server" class="form-control" ReadOnly="true"></asp:TextBox>
                                     </div>
                                     <asp:Label ID="Label7" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOMBRE:"></asp:Label>
                                     <div class="col-md-3">

@@ -143,5 +143,27 @@ namespace MyMainApp.MTT
                 DespliegaMensajeUpdatePanel(ex.Message, UPDatos);
             }
         }
+
+        protected void GVSistemaList_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            try
+            {
+                TextBox Id = GVSistemaList.Rows[e.RowIndex].FindControl("TxtIdCodigo") as TextBox;
+                CSistema objListaS = new CSistema(_DataSistema.ConexionBaseDato);
+                objResultado = objListaS.Actualizacion(Id.Text,"",0,"", _DataSistema.Cusuario, TipoActualizacion.Eliminar);
+                if (objResultado.CodigoError == 0)
+                {
+                    FillGVSistemaList();
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPDatos);
+                }
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPDatos);
+            }
+        }
     }
 }

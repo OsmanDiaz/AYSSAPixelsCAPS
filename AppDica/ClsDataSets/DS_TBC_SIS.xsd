@@ -99,6 +99,7 @@
               <xs:element name="NM_CORR_CONF_OPCI_SIST" msprop:Generator_ColumnVarNameInTable="columnNM_CORR_CONF_OPCI_SIST" msprop:Generator_ColumnPropNameInRow="NM_CORR_CONF_OPCI_SIST" msprop:Generator_ColumnPropNameInTable="NM_CORR_CONF_OPCI_SISTColumn" msprop:Generator_UserColumnName="NM_CORR_CONF_OPCI_SIST" type="xs:int" minOccurs="0" />
               <xs:element name="ID_PERFIL_USUARIO" msprop:Generator_ColumnVarNameInTable="columnID_PERFIL_USUARIO" msprop:Generator_ColumnPropNameInRow="ID_PERFIL_USUARIO" msprop:Generator_ColumnPropNameInTable="ID_PERFIL_USUARIOColumn" msprop:Generator_UserColumnName="ID_PERFIL_USUARIO" type="xs:string" minOccurs="0" />
               <xs:element name="NM_CORR_OPCI_SIST_PERFIL" msprop:Generator_ColumnVarNameInTable="columnNM_CORR_OPCI_SIST_PERFIL" msprop:Generator_ColumnPropNameInRow="NM_CORR_OPCI_SIST_PERFIL" msprop:Generator_ColumnPropNameInTable="NM_CORR_OPCI_SIST_PERFILColumn" msprop:Generator_UserColumnName="NM_CORR_OPCI_SIST_PERFIL" type="xs:int" minOccurs="0" />
+              <xs:element name="DS_DESCRIPCION" msprop:Generator_ColumnVarNameInTable="columnDS_DESCRIPCION" msprop:Generator_ColumnPropNameInRow="DS_DESCRIPCION" msprop:Generator_ColumnPropNameInTable="DS_DESCRIPCIONColumn" msprop:Generator_UserColumnName="DS_DESCRIPCION" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -147,10 +148,6 @@
       <xs:field xpath="mstns:ID_MENU_SISTEMA" />
       <xs:field xpath="mstns:ID_OPCION_SISTEMA" />
       <xs:field xpath="mstns:NM_CORR_CONF_OPCI_SIST" />
-    </xs:unique>
-    <xs:unique name="GLB_OPCI_SIST_PERFILKey1">
-      <xs:selector xpath=".//mstns:TBC_OPCI_SIST_PERFIL" />
-      <xs:field xpath="mstns:NM_CORR_OPCI_SIST_PERFIL" />
     </xs:unique>
     <xs:unique name="TBC_CONF_MAILKey1">
       <xs:selector xpath=".//mstns:TBC_CONF_MAIL" />

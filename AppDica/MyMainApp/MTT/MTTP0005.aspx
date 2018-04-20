@@ -23,7 +23,7 @@
                                     <br />
                                     <br /><br />
                                 </div>
-                                        <asp:GridView ID="GVSistemaList" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="GVSistemaList_SelectedIndexChanged">
+                                        <asp:GridView ID="GVSistemaList" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="GVSistemaList_SelectedIndexChanged" OnRowDeleting="GVSistemaList_RowDeleting">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
                                                 <asp:TemplateField Visible="False">
@@ -69,7 +69,7 @@
                                             <div class="form-group">
                                     <asp:Label ID="Label2" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CODIGO:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtCodigo1" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TxtCodigo1" runat="server" class="form-control" ReadOnly="true"></asp:TextBox>
                                         
                                     </div>
                                    </div>

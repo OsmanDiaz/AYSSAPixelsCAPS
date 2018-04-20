@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterMantenimiento.master" AutoEventWireup="true" CodeBehind="MTTP0004.aspx.cs" Inherits="MyMainApp.MTT.MTTP0004" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterMantenimiento.master" AutoEventWireup="true" CodeBehind="MTTP0006.aspx.cs" Inherits="MyMainApp.MTT.MTTP0006" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxtoolkit" %>
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
@@ -17,28 +17,19 @@
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatos" runat="server">
                                     <ContentTemplate>
-                                        <asp:Panel ID="PanelOpcion" runat="server">
-                                        <br />
-                                        <asp:GridView ID="GVOpcionSistema" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AutoGenerateColumns="False" DataKeyNames="ID_SISTEMA,ID_MENU_SISTEMA,ID_OPCION_SISTEMA" OnRowDeleting="GVOpcionSistema_RowDeleting">
+                                     <div align="center">
+                                    <asp:Label ID="Label15" runat="server" Font-Size="14pt" Text="OPCION POR PERFIL"></asp:Label>
+                                    <br />
+                                    <br /><br />
+                                </div>
+                                        <asp:GridView ID="GVPermisoPerfil" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AutoGenerateColumns="False">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
-                                                <asp:TemplateField Visible="False">
-                                                    <ItemTemplate>
-                                           <asp:TextBox ID="TxtIdCodigo" runat="server" Text='<%#Eval("ID_SISTEMA")%>' Visible="False"></asp:TextBox>
-                                           <asp:TextBox ID="TxtIdMenu" runat="server" Text='<%#Eval("ID_MENU_SISTEMA")%>' Visible="False"></asp:TextBox>
-                                           <asp:TextBox ID="TxtIdSistema" runat="server" Text='<%#Eval("ID_OPCION_SISTEMA")%>' Visible="False"></asp:TextBox>
-                                         </ItemTemplate>
-                                                </asp:TemplateField>
-                                                <asp:BoundField HeaderText="CODIGO" DataField="ID_SISTEMA" />
-                                                <asp:BoundField HeaderText="CODIGO MENU" DataField="ID_MENU_SISTEMA" />
-                                                <asp:BoundField HeaderText="CODIGO SISTEMA" DataField="ID_OPCION_SISTEMA" />
-                                                <asp:BoundField DataField="DS_DESCRIPCION" HeaderText="DESCRIPCION" />
-                                                
-                                                <asp:TemplateField HeaderText="ELIMINAR">
-                                                    <ItemTemplate>
-                                            <asp:Button ID="BtnEliminarOpci" runat="server" CommandName="Delete" OnClientClick="return confirm('¿Desea eliminar este registro?');" Text="Eliminar" />
-                                        </ItemTemplate>
-                                                </asp:TemplateField>
+                                                <asp:TemplateField Visible="False"></asp:TemplateField>
+                                                <asp:BoundField HeaderText="PERFIL" DataField="ID_PERFIL_USUARIO" />
+                                                <asp:BoundField HeaderText="MENU-N1" DataField="ID_CODI_SIST" />
+                                                <asp:BoundField HeaderText="MENU N-2" DataField="ID_MENU_SISTEMA" />
+                                                <asp:BoundField DataField="ID_OPCION_SISTEMA" HeaderText="MENU N-3" />
                                             </Columns>
                                             <EditRowStyle BackColor="#2461BF" />
                                             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -51,8 +42,6 @@
                                             <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                         </asp:GridView>
-                                            </asp:Panel>
-                                        
                                     </ContentTemplate>
                                    
                                 </asp:UpdatePanel>
@@ -72,33 +61,49 @@
                                     <ContentTemplate>
                                         <br />
                                     <div align="center">
-                                    <asp:Label ID="Label3" runat="server" Font-Size="14pt" Text="REGISTRO DE PANTALLA"></asp:Label>
+                                    <asp:Label ID="Label3" runat="server" Font-Size="14pt" Text="OPCION POR PERFIL"></asp:Label>
                                     <br />
                                     <br /><br />
                                 </div>
                                             <div class="form-group">
-                                    <asp:Label ID="Label1" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CODIGO SISTEMA:"></asp:Label>
+                                    <asp:Label ID="Label1" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="PERFIL:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:DropDownList ID="CboCodSis" runat="server" class="form-control" DataTextField="ID" DataValueField="ID">
+                                        <asp:DropDownList ID="CboPerfil" runat="server" class="form-control" DataTextField="ID" DataValueField="ID">
+                                        </asp:DropDownList>
+                                    </div>
+                                                <asp:Label ID="Label11" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="MENU NIVEL 1:"></asp:Label>
+                                    <div class="col-md-3">
+                                        <asp:DropDownList ID="CboMenu1" runat="server" class="form-control" DataTextField="ID" DataValueField="ID">
                                         </asp:DropDownList>
                                     </div>
                                    </div>
                                 <br />
-                                <br /><div class="form-group">
-                                    <asp:Label ID="Label11" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CODIGO MENU:"></asp:Label>
+                                <br />
+                                        <div class="form-group">
+                                    <asp:Label ID="Label12" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="MENU NIVEL 2:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:DropDownList ID="CboMenu" runat="server" class="form-control" DataTextField="ID" DataValueField="ID">
+                                        <asp:DropDownList ID="CboMenu2" runat="server" class="form-control" DataTextField="ID" DataValueField="ID">
                                         </asp:DropDownList>
                                     </div>
-                                    <asp:Label ID="Label12" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CODIGO OPCION MENU:"></asp:Label>
+                                    <asp:Label ID="Label2" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="MENU NIVEL 3:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:DropDownList ID="CboOpcionMenu" runat="server" class="form-control" DataTextField="ID" DataValueField="ID">
+                                        <asp:DropDownList ID="CboMenu3" runat="server" class="form-control" DataTextField="ID" DataValueField="ID">
                                         </asp:DropDownList>
-                                        
                                     </div>
                                 </div>
                                 <br />
                                 <br />
+                                        <div class="form-group">
+                                    <asp:Label ID="Label4" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CORRELATIVO SISTEMA:"></asp:Label>
+                                    <div class="col-md-3">
+                                        <asp:TextBox ID="TxtNumSistema" runat="server" class="form-control"></asp:TextBox>
+                                    </div>
+                                    <asp:Label ID="Label5" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CORRELATIVO PERFIL:"></asp:Label>
+                                    <div class="col-md-3">
+                                        <asp:TextBox ID="TxtNumPerfil" runat="server" class="form-control"></asp:TextBox>
+                                    </div>
+                                   </div>
+                                        <br /><br />
                                 <div class="form-group">
                                     <asp:Label class="control-label  col-sm-2" ID="Label13" runat="server" Font-Bold="True" Text="DESCRIPCION:"></asp:Label>
                                     <div class="col-md-9">
@@ -110,7 +115,7 @@
                                 <br /></p>
                                         <div align="center">
                                             <asp:Button ID="BtnDatosGuardar" runat="server" Text="GUARDAR" class="btn btn-primary" OnClick="BtnDatosGuardar_Click" />
-                                            
+                                           
                                         </div>
                                         <br />
 

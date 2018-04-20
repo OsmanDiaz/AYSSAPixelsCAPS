@@ -10,7 +10,7 @@
 namespace MyMainApp.MTT {
     
     
-    public partial class MTTP0004 {
+    public partial class MTTP0006 {
         
         /// <summary>
         /// Control Panel1.
@@ -76,22 +76,22 @@ namespace MyMainApp.MTT {
         protected global::System.Web.UI.UpdatePanel UPDatos;
         
         /// <summary>
-        /// Control PanelOpcion.
+        /// Control Label15.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelOpcion;
+        protected global::System.Web.UI.WebControls.Label Label15;
         
         /// <summary>
-        /// Control GVOpcionSistema.
+        /// Control GVPermisoPerfil.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GVOpcionSistema;
+        protected global::System.Web.UI.WebControls.GridView GVPermisoPerfil;
         
         /// <summary>
         /// Control TabPanel2.
@@ -130,13 +130,13 @@ namespace MyMainApp.MTT {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control CboCodSis.
+        /// Control CboPerfil.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CboCodSis;
+        protected global::System.Web.UI.WebControls.DropDownList CboPerfil;
         
         /// <summary>
         /// Control Label11.
@@ -148,13 +148,13 @@ namespace MyMainApp.MTT {
         protected global::System.Web.UI.WebControls.Label Label11;
         
         /// <summary>
-        /// Control CboMenu.
+        /// Control CboMenu1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CboMenu;
+        protected global::System.Web.UI.WebControls.DropDownList CboMenu1;
         
         /// <summary>
         /// Control Label12.
@@ -166,13 +166,67 @@ namespace MyMainApp.MTT {
         protected global::System.Web.UI.WebControls.Label Label12;
         
         /// <summary>
-        /// Control CboOpcionMenu.
+        /// Control CboMenu2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CboOpcionMenu;
+        protected global::System.Web.UI.WebControls.DropDownList CboMenu2;
+        
+        /// <summary>
+        /// Control Label2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// Control CboMenu3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CboMenu3;
+        
+        /// <summary>
+        /// Control Label4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
+        
+        /// <summary>
+        /// Control TxtNumSistema.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtNumSistema;
+        
+        /// <summary>
+        /// Control Label5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label5;
+        
+        /// <summary>
+        /// Control TxtNumPerfil.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtNumPerfil;
         
         /// <summary>
         /// Control Label13.

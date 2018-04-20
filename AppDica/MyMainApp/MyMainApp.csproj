@@ -130,6 +130,7 @@
     <Content Include="MTT\MTTP0003.aspx" />
     <Content Include="MTT\MTTP0004.aspx" />
     <Content Include="MTT\MTTP0005.aspx" />
+    <Content Include="MTT\MTTP0006.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="TEC\TECC0001.aspx" />
     <Content Include="TEC\TECC0002.aspx" />
@@ -247,6 +248,13 @@
     </Compile>
     <Compile Include="MTT\MTTP0005.aspx.designer.cs">
       <DependentUpon>MTTP0005.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MTT\MTTP0006.aspx.cs">
+      <DependentUpon>MTTP0006.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MTT\MTTP0006.aspx.designer.cs">
+      <DependentUpon>MTTP0006.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro.aspx.cs">
