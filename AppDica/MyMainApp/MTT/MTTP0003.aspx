@@ -12,9 +12,9 @@
             <div class="container-fluid">
                 <div id="content">
                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                    <ajaxtoolkit:tabcontainer id="TabContainer1" runat="server" activetabindex="0" bordercolor="#66CCFF" scrollbars="Vertical" height="375px" width="100%">
+                    <ajaxtoolkit:TabContainer id="TabContainer1" runat="server" ActiveTabIndex="0" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxtoolkit:TabPanel runat="server" HeaderText="DATOS" ID="TabPanel1" Width="100%">
-                            <contenttemplate>
+                            <ContentTemplate>
                         <asp:UpdatePanel ID="UPDatos" runat="server">
                             <ContentTemplate>
                                 <asp:Panel ID="PanelMenu" runat="server">
@@ -67,18 +67,18 @@
                                             <div class="form-group">
                                     <asp:Label ID="Label2" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CODIGO:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtCodigo2" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TxtCodigo2" runat="server" class="form-control" ReadOnly="true"></asp:TextBox>
                                      </div>
                                    </div>
                                 <br />
                                 <br /><div class="form-group">
                                     <asp:Label ID="Label5" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOMBRE MENU:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtNombMenu2" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TxtNombMenu2" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                          </div>
                                     <asp:Label ID="Label6" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NUMERO DE ORDEN:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtOrden2" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TxtOrden2" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                          </div>
                                 </div>
                                 <br />
@@ -100,7 +100,7 @@
                                 </asp:Panel>
                             </ContentTemplate>
                           </asp:UpdatePanel>
-                        </contenttemplate>
+                        </ContentTemplate>
 
                         </ajaxtoolkit:TabPanel>
                         <%--fin tab datos--%>
@@ -119,7 +119,7 @@
                                             <div class="form-group">
                                     <asp:Label ID="Label4" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CODIGO:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtCodigo" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TxtCodigo" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TxtCodigo" ErrorMessage="Llenar codigo" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
                                     </div>
                                    </div>
@@ -127,12 +127,12 @@
                                 <br /><div class="form-group">
                                     <asp:Label ID="Label11" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOMBRE MENU:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtNombMenu" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TxtNombMenu" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TxtNombMenu" ErrorMessage="Llenar Nombre Menu" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
                                     </div>
                                     <asp:Label ID="Label12" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NUMERO DE ORDEN:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtOrden" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TxtOrden" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TxtOrden" ErrorMessage="Llenar Numero de orden" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
@@ -161,7 +161,7 @@
 
                         </ajaxtoolkit:TabPanel>
                         <%--fin tab datos--%>
-                    </ajaxtoolkit:tabcontainer>
+                    </ajaxtoolkit:TabContainer>
                 </div>
             </div>
         </form>

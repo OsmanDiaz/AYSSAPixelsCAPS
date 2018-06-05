@@ -102,11 +102,50 @@ namespace MyMainApp.MTT
             if (objResultado.CodigoError == 0)
             {
                 DespliegaMensajeUpdatePanel("Resgistro Guardado Correctamente", UPDetalle);
+                LimpiarForm();
             }
             else
             {
                 DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPDetalle);
             }
         }
+        protected void LimpiarForm()
+        {
+            FillCboPerfil();
+            FillCboMenu1();
+            FillCboMenu2();
+            FillCboMenu3();
+            TxtDescripcion.Text = "";
+            TxtNumSistema.Text = "";
+            TxtNumPerfil.Text = "";
+        }
+
+        protected void GVPermisoPerfil_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            try
+            {
+                TextBox Id = GVPermisoPerfil.Rows[e.RowIndex].FindControl("TxtIdPerfil") as TextBox;
+                TextBox Id2 = GVPermisoPerfil.Rows[e.RowIndex].FindControl("TxtIdMenu1") as TextBox;
+                TextBox Id3 = GVPermisoPerfil.Rows[e.RowIndex].FindControl("TxtIdMenu2") as TextBox;
+                TextBox Id4 = GVPermisoPerfil.Rows[e.RowIndex].FindControl("TxtIdMenu3") as TextBox;
+                COpciSistPerfil objPerfil = new COpciSistPerfil(_DataSistema.ConexionBaseDato);
+                objResultado = objPerfil.Actualizacion(Id.Text, Id2.Text, Id3.Text, Id4.Text, 0, 0, "", _DataSistema.Cusuario
+                    , TipoActualizacion.Eliminar);
+                if (objResultado.CodigoError == 0)
+                {
+                    FillGVPermisoPerfil();
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPDatos);
+                }
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPDatos);
+            }
+        }
+
+        
     }
 }

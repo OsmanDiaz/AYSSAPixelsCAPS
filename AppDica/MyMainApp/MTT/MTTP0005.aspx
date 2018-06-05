@@ -77,11 +77,11 @@
                                 <br /><div class="form-group">
                                     <asp:Label ID="Label5" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOMBRE MENU:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtNombMenu1" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TxtNombMenu1" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                         </div>
                                     <asp:Label ID="Label6" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NUMERO DE ORDEN:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtNumOrden1" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TxtNumOrden1" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                         </div>
                                 </div>
                                 <br />
@@ -127,7 +127,7 @@
                                             <div class="form-group">
                                     <asp:Label ID="Label4" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CODIGO:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtCodigo" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TxtCodigo" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TxtCodigo" ErrorMessage="Llenar codigo" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
                                     </div>
                                    </div>
@@ -135,12 +135,12 @@
                                 <br /><div class="form-group">
                                     <asp:Label ID="Label11" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NOMBRE MENU:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtNombMenu" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TxtNombMenu" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TxtNombMenu" ErrorMessage="Llenar Nombre Menu" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
                                     </div>
                                     <asp:Label ID="Label12" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="NUMERO DE ORDEN:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtOrden" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TxtOrden" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TxtOrden" ErrorMessage="Llenar Numero de orden" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>

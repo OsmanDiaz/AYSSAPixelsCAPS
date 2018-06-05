@@ -22,14 +22,26 @@
                                     <br />
                                     <br /><br />
                                 </div>
-                                        <asp:GridView ID="GVPermisoPerfil" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AutoGenerateColumns="False">
+                                        <asp:GridView ID="GVPermisoPerfil" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AutoGenerateColumns="False" DataKeyNames="ID_PERFIL_USUARIO,ID_CODI_SIST,ID_MENU_SISTEMA,ID_OPCION_SISTEMA" OnRowDeleting="GVPermisoPerfil_RowDeleting">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
-                                                <asp:TemplateField Visible="False"></asp:TemplateField>
+                                                <asp:TemplateField Visible="False">
+                                                    <ItemTemplate>
+                                                    <asp:TextBox ID="TxtIdPerfil" runat="server" Text='<%#Eval("ID_PERFIL_USUARIO")%>' Visible="False"></asp:TextBox>
+                                                    <asp:TextBox ID="TxtIdMenu1" runat="server" Text='<%#Eval("ID_CODI_SIST")%>' Visible="False"></asp:TextBox>
+                                                    <asp:TextBox ID="TxtIdMenu2" runat="server" Text='<%#Eval("ID_MENU_SISTEMA")%>' Visible="False"></asp:TextBox>
+                                                    <asp:TextBox ID="TxtIdMenu3" runat="server" Text='<%#Eval("ID_OPCION_SISTEMA")%>' Visible="False"></asp:TextBox>
+                                                      </ItemTemplate>
+                                                </asp:TemplateField>
                                                 <asp:BoundField HeaderText="PERFIL" DataField="ID_PERFIL_USUARIO" />
                                                 <asp:BoundField HeaderText="MENU-N1" DataField="ID_CODI_SIST" />
                                                 <asp:BoundField HeaderText="MENU N-2" DataField="ID_MENU_SISTEMA" />
                                                 <asp:BoundField DataField="ID_OPCION_SISTEMA" HeaderText="MENU N-3" />
+                                                <asp:TemplateField HeaderText="ELIMINAR">
+                                                    <ItemTemplate>
+                                            <asp:Button ID="BtnEliminarO" runat="server" CommandName="Delete" OnClientClick="return confirm('¿Desea eliminar este registro?');" Text="Eliminar" />
+                                        </ItemTemplate>
+                                                </asp:TemplateField>
                                             </Columns>
                                             <EditRowStyle BackColor="#2461BF" />
                                             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -42,6 +54,7 @@
                                             <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                         </asp:GridView>
+                                        <p><br /><br /><br /><br /></p>
                                     </ContentTemplate>
                                    
                                 </asp:UpdatePanel>
@@ -96,11 +109,11 @@
                                         <div class="form-group">
                                     <asp:Label ID="Label4" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CORRELATIVO SISTEMA:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtNumSistema" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TxtNumSistema" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                     </div>
                                     <asp:Label ID="Label5" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CORRELATIVO PERFIL:"></asp:Label>
                                     <div class="col-md-3">
-                                        <asp:TextBox ID="TxtNumPerfil" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TxtNumPerfil" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                     </div>
                                    </div>
                                         <br /><br />

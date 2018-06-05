@@ -19,6 +19,11 @@
                                     <ContentTemplate>
                                         <asp:Panel ID="PanelOpcion" runat="server">
                                         <br />
+                                    <div align="center">
+                                    <asp:Label ID="Label2" runat="server" Font-Size="14pt" Text="ASIGNACION DE MENU"></asp:Label>
+                                    <br />
+                                    <br /><br />
+                                </div>
                                         <asp:GridView ID="GVOpcionSistema" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" AutoGenerateColumns="False" DataKeyNames="ID_SISTEMA,ID_MENU_SISTEMA,ID_OPCION_SISTEMA" OnRowDeleting="GVOpcionSistema_RowDeleting">
                                             <AlternatingRowStyle BackColor="White" />
                                             <Columns>
@@ -29,9 +34,9 @@
                                            <asp:TextBox ID="TxtIdSistema" runat="server" Text='<%#Eval("ID_OPCION_SISTEMA")%>' Visible="False"></asp:TextBox>
                                          </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:BoundField HeaderText="CODIGO" DataField="ID_SISTEMA" />
-                                                <asp:BoundField HeaderText="CODIGO MENU" DataField="ID_MENU_SISTEMA" />
-                                                <asp:BoundField HeaderText="CODIGO SISTEMA" DataField="ID_OPCION_SISTEMA" />
+                                                <asp:BoundField HeaderText="MENU NIVEL 1" DataField="ID_SISTEMA" />
+                                                <asp:BoundField HeaderText="MENU NIVEL 2" DataField="ID_MENU_SISTEMA" />
+                                                <asp:BoundField HeaderText="MENU NIVEL 3" DataField="ID_OPCION_SISTEMA" />
                                                 <asp:BoundField DataField="DS_DESCRIPCION" HeaderText="DESCRIPCION" />
                                                 
                                                 <asp:TemplateField HeaderText="ELIMINAR">
@@ -72,12 +77,12 @@
                                     <ContentTemplate>
                                         <br />
                                     <div align="center">
-                                    <asp:Label ID="Label3" runat="server" Font-Size="14pt" Text="REGISTRO DE PANTALLA"></asp:Label>
+                                    <asp:Label ID="Label3" runat="server" Font-Size="14pt" Text="REGISTRO DE ASIGNACION DE MENU"></asp:Label>
                                     <br />
                                     <br /><br />
                                 </div>
                                             <div class="form-group">
-                                    <asp:Label ID="Label1" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CODIGO SISTEMA:"></asp:Label>
+                                    <asp:Label ID="Label1" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="MENU NIVEL 1:"></asp:Label>
                                     <div class="col-md-3">
                                         <asp:DropDownList ID="CboCodSis" runat="server" class="form-control" DataTextField="ID" DataValueField="ID">
                                         </asp:DropDownList>
@@ -85,12 +90,12 @@
                                    </div>
                                 <br />
                                 <br /><div class="form-group">
-                                    <asp:Label ID="Label11" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CODIGO MENU:"></asp:Label>
+                                    <asp:Label ID="Label11" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="MENU NIVEL 2:"></asp:Label>
                                     <div class="col-md-3">
                                         <asp:DropDownList ID="CboMenu" runat="server" class="form-control" DataTextField="ID" DataValueField="ID">
                                         </asp:DropDownList>
                                     </div>
-                                    <asp:Label ID="Label12" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="CODIGO OPCION MENU:"></asp:Label>
+                                    <asp:Label ID="Label12" runat="server" class="control-label  col-sm-2" Font-Bold="True" Text="MENU NIVEL 3:"></asp:Label>
                                     <div class="col-md-3">
                                         <asp:DropDownList ID="CboOpcionMenu" runat="server" class="form-control" DataTextField="ID" DataValueField="ID">
                                         </asp:DropDownList>

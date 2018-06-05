@@ -34,7 +34,7 @@ namespace MyMainApp.MANTENIMIENTOS
         public void Consultar()
         {
             FillGVDetallePerfil();
-            LimpiarForm();
+            //LimpiarForm();
         }
         public void Adicionar() { }
 
