@@ -427,7 +427,7 @@ namespace MyMainApp
         private void FillGVEntregables()
         {
             CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
-            dvEntregables = new DataView(objEntregable.Detalle(0, 0, "", "", DateTime.Today, "", 'X', "", "", _DataSistema.Cusuario, "", DateTime.Today, "", DateTime.Today, 3).TB_CONSULTORIA_ENTREGABLE);
+            dvEntregables = new DataView(objEntregable.Detalle(0, 0, "", "", DateTime.Today, "", 'X', "", "",0, _DataSistema.Cusuario, "", DateTime.Today, "", DateTime.Today, 3).TB_CONSULTORIA_ENTREGABLE);
 
             GVEntregable.DataSource = dvEntregables;
             GVEntregable.DataBind();
@@ -807,7 +807,7 @@ namespace MyMainApp
         private void FillCamposEntregable()
         {            
             CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
-            dvEntregables = new DataView(objEntregable.Detalle(0, 0, "", "", DateTime.Today, "", 'X', "", "", _DataSistema.Cusuario, "", DateTime.Today, "", DateTime.Today, 3).TB_CONSULTORIA_ENTREGABLE);
+            dvEntregables = new DataView(objEntregable.Detalle(0, 0, "", "", DateTime.Today, "", 'X', "", "", 0, _DataSistema.Cusuario, "", DateTime.Today, "", DateTime.Today, 3).TB_CONSULTORIA_ENTREGABLE);
             if (dvEntregables.Count > 0) {                
                 TxtIdConsultoria.Text = dvEntregables.Table.Rows[0]["ID_CONSULTORIA"].ToString();
                 TxtNombreEntregable.Text = dvEntregables.Table.Rows[0]["DS_ENTREGABLE"].ToString();
@@ -827,7 +827,7 @@ namespace MyMainApp
                 string nombreArchivo = _DataSistema.Cusuario + "_" + Convert.ToString(TxtIdConsultoria.Text) + "_" + Convert.ToString(TxtIdEntregable.Text) + "_" + FileEntregable.FileName;
                 CConsultoriaEntregable objConsultoriaEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
                 objResultado = objConsultoriaEntregable.Actualizacion(Convert.ToInt32(TxtIdEntregable.Text), Convert.ToInt32(TxtIdConsultoria.Text), TxtNombreEntregable.Text, TxtDescripcion.Text,
-                Convert.ToDateTime(TxtFechaEntregaEntregable.Text), TxtDuracionEntregable.Text, 'P', Convert.ToString(nombreArchivo), "", _DataSistema.Cusuario, _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+                Convert.ToDateTime(TxtFechaEntregaEntregable.Text), TxtDuracionEntregable.Text, 'P', Convert.ToString(nombreArchivo), "", 0, _DataSistema.Cusuario, _DataSistema.Cusuario, TipoActualizacion.Actualizar);
 
                 if (objResultado.CodigoError == 0)
                 {
@@ -865,7 +865,7 @@ namespace MyMainApp
         private void FillGVEntregableDetalle()
         {
             CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
-            dvEntregables = new DataView(objEntregable.Detalle(0, 0, "", "", DateTime.Today, "", 'X', "", "", _DataSistema.Cusuario, "", DateTime.Today, "", DateTime.Today, 3).TB_CONSULTORIA_ENTREGABLE);
+            dvEntregables = new DataView(objEntregable.Detalle(0, 0, "", "", DateTime.Today, "", 'X', "", "",0, _DataSistema.Cusuario, "", DateTime.Today, "", DateTime.Today, 3).TB_CONSULTORIA_ENTREGABLE);
 
             GVEntregableAspirante.DataSource = dvEntregables;
             GVEntregableAspirante.DataBind();

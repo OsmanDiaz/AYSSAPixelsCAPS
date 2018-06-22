@@ -79,6 +79,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_TB_ASP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_TB_EMP.cs">
+      <DependentUpon>DS_TB_EMP.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DS_TB_EMP.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

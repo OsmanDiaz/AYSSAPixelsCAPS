@@ -2560,6 +2560,24 @@ namespace MyMainApp.EMP {
         protected global::System.Web.UI.WebControls.TextBox TxtDescripPasantia;
         
         /// <summary>
+        /// Control Label71.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label71;
+        
+        /// <summary>
+        /// Control TxtMontoEntregable.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtMontoEntregable;
+        
+        /// <summary>
         /// Control BtnGuardarEntregable.
         /// </summary>
         /// <remarks>
@@ -2603,6 +2621,15 @@ namespace MyMainApp.EMP {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtIdProyecto1;
+        
+        /// <summary>
+        /// Control TxtTotalMontoEntre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtTotalMontoEntre;
         
         /// <summary>
         /// Control BtnNuevoEntregable.

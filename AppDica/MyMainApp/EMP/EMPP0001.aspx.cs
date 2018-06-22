@@ -568,46 +568,66 @@ namespace MyMainApp.EMP
             {
                 if (Convert.ToInt32(TxtIdProyecto.Text) > 0)
                 {
-                    CConsultoriaEntregable objConsultoriaEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
-                    objResultado = objConsultoriaEntregable.Actualizacion(0, Convert.ToInt32(TxtIdProyecto.Text), TxtNombEntregable.Text,
-                        TxtDescripPasantia.Text, Convert.ToDateTime(TxtFechaEntrega.Text), "",
-                        'P', "", "", "", _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+                    double montoDisponible, montoRestante;
+                    
+                    // Evaluando si existe monto para asignar al entregable 
+                    montoDisponible = Convert.ToDouble(TxtMontoPro.Text) - Convert.ToDouble(TxtTotalMontoEntre.Text);
+                    if (montoDisponible > 0) {
+                        // Evaluando si el monto disponible es mayor al monto del entregable
+                        montoRestante = montoDisponible - Convert.ToDouble(TxtMontoEntregable);
 
-                   
-                    if (objResultado.CodigoError == 0)
-                    {
-                        
-
-                        //AQUI VAS A PONER LO DEL CAMBIO DE DIAS LABORALES Y FECHA FINAL PRIMERO VAS A HACER UN SELECT PARA TRAER LA FECHA DE INICIO
-                        //LUEGO VAS A HACER EL CAMBIO DE EL NUMERO DE DIAS SEGUN LA FECHA DEL ULTIMO ENTREGABLE QUE YA SE ESTARA CALCULANDO EN UN PROCEDIMIENTO
-                        //ALMACENADO.
-                        dvConsultoriaEntregable = new DataView(objConsultoriaEntregable.Detalle(0, Convert.ToInt32(TxtIdProyecto.Text), "", "", DateTime.Now, "", 'X', "", "", 
-                            "", _DataSistema.Cusuario, DateTime.Now, _DataSistema.Cusuario, DateTime.Now, 6).TB_CONSULTORIA_ENTREGABLE);
-                        if (dvConsultoriaEntregable.Count > 0) {
-                            fechaInicioConsultoria = dvConsultoriaEntregable.Table.Rows[0]["FECH_INICIO_CONTRATO"].ToString();
-                            fechaFinConsultoria = dvConsultoriaEntregable.Table.Rows[0]["FECH_FINALIZACION_CONTRATO"].ToString();
-                            DiasLaboralesCons = dvConsultoriaEntregable.Table.Rows[0]["DIAS_LABORALES"].ToString();
-                        }
-                        CConsultoriaDias objDiasConsultoria = new CConsultoriaDias(_DataSistema.ConexionBaseDato);
-                        objResultado = objDiasConsultoria.Actualizacion(Convert.ToInt32(TxtIdProyecto.Text), "", "", "", DateTime.Now, 0, DiasLaboralesCons, 'X', 0, _DataSistema.Cusuario, TipoActualizacion.Actualizar);
-
-                        if (objResultado.CodigoError == 0)
+                        if (montoRestante > 0)
                         {
-                            FillGVEntregable();
-                            Consultar();
-                            DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPProyecto);
-                            PanelEntregable.Visible = false;
-                            PanelListaEntregable.Visible = true;
-                            LimpiarCasillasEntregable();
-                        }
-                        
+                            CConsultoriaEntregable objConsultoriaEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
+                            objResultado = objConsultoriaEntregable.Actualizacion(0, Convert.ToInt32(TxtIdProyecto.Text), TxtNombEntregable.Text,
+                                TxtDescripPasantia.Text, Convert.ToDateTime(TxtFechaEntrega.Text), "",
+                                'P', "", "", Convert.ToDouble(TxtMontoEntregable.Text), "", _DataSistema.Cusuario, TipoActualizacion.Adicionar);
 
-                        //
+
+                            if (objResultado.CodigoError == 0)
+                            {
+
+
+                                //AQUI VAS A PONER LO DEL CAMBIO DE DIAS LABORALES Y FECHA FINAL PRIMERO VAS A HACER UN SELECT PARA TRAER LA FECHA DE INICIO
+                                //LUEGO VAS A HACER EL CAMBIO DE EL NUMERO DE DIAS SEGUN LA FECHA DEL ULTIMO ENTREGABLE QUE YA SE ESTARA CALCULANDO EN UN PROCEDIMIENTO
+                                //ALMACENADO.
+                                dvConsultoriaEntregable = new DataView(objConsultoriaEntregable.Detalle(0, Convert.ToInt32(TxtIdProyecto.Text), "", "", DateTime.Now, "", 'X', "", "", 0,
+                                    "", _DataSistema.Cusuario, DateTime.Now, _DataSistema.Cusuario, DateTime.Now, 6).TB_CONSULTORIA_ENTREGABLE);
+                                if (dvConsultoriaEntregable.Count > 0)
+                                {
+                                    fechaInicioConsultoria = dvConsultoriaEntregable.Table.Rows[0]["FECH_INICIO_CONTRATO"].ToString();
+                                    fechaFinConsultoria = dvConsultoriaEntregable.Table.Rows[0]["FECH_FINALIZACION_CONTRATO"].ToString();
+                                    DiasLaboralesCons = dvConsultoriaEntregable.Table.Rows[0]["DIAS_LABORALES"].ToString();
+                                }
+                                CConsultoriaDias objDiasConsultoria = new CConsultoriaDias(_DataSistema.ConexionBaseDato);
+                                objResultado = objDiasConsultoria.Actualizacion(Convert.ToInt32(TxtIdProyecto.Text), "", "", "", DateTime.Now, 0, DiasLaboralesCons, 'X', 0, _DataSistema.Cusuario, TipoActualizacion.Actualizar);
+
+                                if (objResultado.CodigoError == 0)
+                                {
+                                    FillGVEntregable();
+                                    Consultar();
+                                    DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPProyecto);
+                                    PanelEntregable.Visible = false;
+                                    PanelListaEntregable.Visible = true;
+                                    LimpiarCasillasEntregable();
+                                }
+
+
+                            }
+                            else
+                            {
+                                DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPProyecto);
+                            }
+                        }
+                        else
+                        {
+                            DespliegaMensajeUpdatePanel("No se poseen fondos suficientes para asignar al entregable.", UPProyecto);
+                        }
                     }
                     else
                     {
-                        DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPProyecto);
-                    }
+                        DespliegaMensajeUpdatePanel("No se poseen fondos suficientes para asignar al entregable.", UPProyecto);
+                    }  
                 }
                 else
                 {
@@ -625,14 +645,15 @@ namespace MyMainApp.EMP
             TxtNombEntregable.Text = "";
             TxtFechaEntrega.Text = "";
             TxtDescripPasantia.Text = "";
+            TxtMontoEntregable.Text = "";
         }
 
         protected void FillGVEntregable()
         {
             CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
             dvEntregable = new DataView(objEntregable.Detalle(0, Convert.ToInt32(TxtIdProyecto.Text), "", "", DateTime.Now, "",
-                'A', "", "", "",
-                _DataSistema.Cusuario, DateTime.Now, "", DateTime.Now, 2).TB_CONSULTORIA_ENTREGABLE);
+                'A', "", "", 0,
+                _DataSistema.Cusuario, _DataSistema.Cusuario, DateTime.Now, "", DateTime.Now, 2).TB_CONSULTORIA_ENTREGABLE);
 
             GVEntregable.DataSource = dvEntregable;
             GVEntregable.DataBind();
@@ -824,7 +845,7 @@ namespace MyMainApp.EMP
         {
             CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
             DataView dvEntregablesA = new DataView(objEntregable.Detalle(Convert.ToInt32(TxtIdProyecto.Text),
-              Convert.ToInt32(TxtIdConsultoA.Text), "", "", DateTime.Today, "", 'X', "", "", "", "", DateTime.Today,
+              Convert.ToInt32(TxtIdConsultoA.Text), "", "", DateTime.Today, "", 'X', "", "", 0, _DataSistema.Cusuario, _DataSistema.Cusuario, DateTime.Today,
               "", DateTime.Today, 4).TB_CONSULTORIA_ENTREGABLE);
 
                GVAspirantesEntregables.DataSource = dvEntregablesA;
@@ -898,8 +919,8 @@ namespace MyMainApp.EMP
         private void FillCamposEntregable(string IdAspirante)
         {
             CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
-            DataView dvEntregables = new DataView(objEntregable.Detalle(0, 0, "", "", DateTime.Today, "", 'X', "", ""
-                , IdAspirante, _DataSistema.Cusuario, DateTime.Today, "", DateTime.Today, 3).TB_CONSULTORIA_ENTREGABLE);
+            DataView dvEntregables = new DataView(objEntregable.Detalle(0, 0, "", "", DateTime.Today, "", 'X', "", "", 0
+                , _DataSistema.Cusuario, _DataSistema.Cusuario, DateTime.Today, "", DateTime.Today, 3).TB_CONSULTORIA_ENTREGABLE);
             if (dvEntregables.Count > 0)
             {  /*muestra los datos del entregable perteneciente al aspirante */
                 TxtIdConsultoria.Text = dvEntregables.Table.Rows[0]["ID_CONSULTORIA"].ToString();
@@ -936,6 +957,17 @@ namespace MyMainApp.EMP
         {//nuevo registro de entregable
             PanelEntregable.Visible = true;
             PanelListaEntregable.Visible = false;
+            FillInfoMontoEntregable();
+        }
+
+        protected void FillInfoMontoEntregable()
+        {
+            CConsultoriaEntregable objEntregable = new CConsultoriaEntregable(_DataSistema.ConexionBaseDato);
+            dvConsultoriaEntregable = new DataView(objEntregable.Detalle(0, Convert.ToInt32(TxtIdProyecto.Text), "", "", DateTime.Now, "", 'X', "", "", 0,
+                _DataSistema.Cusuario, _DataSistema.Cusuario, DateTime.Now, _DataSistema.Cusuario, DateTime.Now, 7).TB_CONSULTORIA_ENTREGABLE);
+            if (dvConsultoriaEntregable.Count > 0) {
+                TxtTotalMontoEntre.Text = dvConsultoriaEntregable.Table.Rows[0]["NM_MONTO_ENTREGABLE"].ToString();
+            }
         }
 
         protected void BtnRegresarProyec_Click(object sender, EventArgs e)
@@ -1856,7 +1888,7 @@ namespace MyMainApp.EMP
         protected void FillInfoProyectoContrato()
         {
             CConsultoria objConsultoria = new CConsultoria(_DataSistema.ConexionBaseDato);
-            dvInfoProyecto = new DataView(objConsultoria.Detalle(Convert.ToInt32(idProyecto), "", "", "", DateTime.Now,
+            dvInfoProyecto = new DataView(objConsultoria.Detalle(Convert.ToInt32(TxtIdProyecto.Text), "", "", "", DateTime.Now,
                 0, "", 'x', 0, _DataSistema.Cusuario, DateTime.Now, _DataSistema.Cusuario, DateTime.Now, 1).TB_CONSULTORIA);
             if (dvInfoProyecto.Count > 0) {
                 TxtTituloProyecto1.Text = dvInfoProyecto.Table.Rows[0]["DS_NOMBRE_CONSULTORIA"].ToString();

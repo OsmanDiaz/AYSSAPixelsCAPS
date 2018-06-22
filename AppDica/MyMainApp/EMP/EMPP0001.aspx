@@ -1018,6 +1018,12 @@
                                                     <asp:TextBox class="form-control" ID="TxtDescripPasantia" runat="server" TextMode="MultiLine" AutoCompleteType="Disabled"></asp:TextBox>
                                                 </div>
                                             </div>
+                                            <div class="form-group">
+                                                <asp:Label class="control-label  col-sm-3" ID="Label71" runat="server" Font-Bold="True" Text="MONTO DE ENTREGABLE:"></asp:Label>
+                                                <div class="col-md-9">
+                                                    <asp:TextBox ID="TxtMontoEntregable" runat="server" class="form-control" AutoCompleteType="Disabled"></asp:TextBox>
+                                                </div>
+                                            </div>
                                             <br />
                                             <div align="center">
                                                 <asp:Button ID="BtnGuardarEntregable" runat="server" class="btn btn-primary" Text="GUARDAR ENTREGABLE" OnClick="BtnGuardarEntregable_Click" />
@@ -1028,6 +1034,7 @@
                                             <div align="left">
                                                 <asp:TextBox ID="TxtFechInicioPasantia" runat="server" Text="0" Visible="False"></asp:TextBox>
                                                 <asp:TextBox ID="TxtIdProyecto1" runat="server" Text="0" Visible="False"></asp:TextBox>
+                                                <asp:TextBox ID="TxtTotalMontoEntre" runat="server" Text="0" Visible="False"></asp:TextBox>
                                                 <asp:Button ID="BtnNuevoEntregable" runat="server" Text="NUEVO ENTREGABLE" class="btn btn-primary" CausesValidation="False" OnClick="BtnNuevoEntregable_Click" />
                                                 <asp:Button ID="BtnRegresarProyec" runat="server" Text="REGRESAR" class="btn btn-primary" CausesValidation="False" OnClick="BtnRegresarProyec_Click" />
                                             </div>

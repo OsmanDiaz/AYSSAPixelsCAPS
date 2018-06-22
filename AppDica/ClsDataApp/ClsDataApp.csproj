@@ -89,6 +89,7 @@
     <Compile Include="CDocumento.cs" />
     <Compile Include="CDocumentoAspirante.cs" />
     <Compile Include="CEmpresa.cs" />
+    <Compile Include="CEncuesta.cs" />
     <Compile Include="CEncuestaAspirante.cs" />
     <Compile Include="CEncuestaRendimientoAspirante.cs" />
     <Compile Include="CEscolaridad.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="CNivelConocimiento.cs" />
     <Compile Include="CNotaIq.cs" />
     <Compile Include="COpcionAcademica.cs" />
+    <Compile Include="COpcionRespuestaEncuesta.cs" />
     <Compile Include="COpcionSistema.cs" />
     <Compile Include="COpciSistPerfil.cs" />
     <Compile Include="CPais.cs" />
@@ -114,7 +116,9 @@
     <Compile Include="CPasantiaAspirante.cs" />
     <Compile Include="CPerfilUsuario.cs" />
     <Compile Include="CPeriodo.cs" />
+    <Compile Include="CPreguntaEncuesta.cs" />
     <Compile Include="CRepresentanteLegal.cs" />
+    <Compile Include="CRespuestaEncuesta.cs" />
     <Compile Include="CSistema.cs" />
     <Compile Include="CSqlvars.cs" />
     <Compile Include="CTipoAspirante.cs" />

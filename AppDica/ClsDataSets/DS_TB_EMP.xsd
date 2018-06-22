@@ -126,6 +126,7 @@
               <xs:element name="ID_ASPIRANTE" msprop:Generator_ColumnVarNameInTable="columnID_ASPIRANTE" msprop:Generator_ColumnPropNameInRow="ID_ASPIRANTE" msprop:Generator_ColumnPropNameInTable="ID_ASPIRANTEColumn" msprop:Generator_UserColumnName="ID_ASPIRANTE" type="xs:string" minOccurs="0" />
               <xs:element name="DS_NOMBRE_CONSULTORIA" msprop:Generator_ColumnVarNameInTable="columnDS_NOMBRE_CONSULTORIA" msprop:Generator_ColumnPropNameInRow="DS_NOMBRE_CONSULTORIA" msprop:Generator_ColumnPropNameInTable="DS_NOMBRE_CONSULTORIAColumn" msprop:Generator_UserColumnName="DS_NOMBRE_CONSULTORIA" type="xs:string" minOccurs="0" />
               <xs:element name="ID_EMPRESA" msprop:Generator_ColumnVarNameInTable="columnID_EMPRESA" msprop:Generator_ColumnPropNameInRow="ID_EMPRESA" msprop:Generator_ColumnPropNameInTable="ID_EMPRESAColumn" msprop:Generator_UserColumnName="ID_EMPRESA" type="xs:string" minOccurs="0" />
+              <xs:element name="NM_MONTO_ENTREGABLE" msprop:Generator_ColumnVarNameInTable="columnNM_MONTO_ENTREGABLE" msprop:Generator_ColumnPropNameInRow="NM_MONTO_ENTREGABLE" msprop:Generator_ColumnPropNameInTable="NM_MONTO_ENTREGABLEColumn" msprop:Generator_UserColumnName="NM_MONTO_ENTREGABLE" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -220,6 +221,16 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="TB_RESPUESTA" msprop:Generator_TableClassName="TB_RESPUESTADataTable" msprop:Generator_TableVarName="tableTB_RESPUESTA" msprop:Generator_TablePropName="TB_RESPUESTA" msprop:Generator_RowDeletingName="TB_RESPUESTARowDeleting" msprop:Generator_RowChangingName="TB_RESPUESTARowChanging" msprop:Generator_RowEvHandlerName="TB_RESPUESTARowChangeEventHandler" msprop:Generator_RowDeletedName="TB_RESPUESTARowDeleted" msprop:Generator_UserTableName="TB_RESPUESTA" msprop:Generator_RowChangedName="TB_RESPUESTARowChanged" msprop:Generator_RowEvArgName="TB_RESPUESTARowChangeEvent" msprop:Generator_RowClassName="TB_RESPUESTARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_SELECCION" msprop:Generator_ColumnVarNameInTable="columnDS_SELECCION" msprop:Generator_ColumnPropNameInRow="DS_SELECCION" msprop:Generator_ColumnPropNameInTable="DS_SELECCIONColumn" msprop:Generator_UserColumnName="DS_SELECCION" type="xs:string" minOccurs="0" />
+              <xs:element name="DS_EVALUADO" msprop:Generator_ColumnVarNameInTable="columnDS_EVALUADO" msprop:Generator_ColumnPropNameInRow="DS_EVALUADO" msprop:Generator_ColumnPropNameInTable="DS_EVALUADOColumn" msprop:Generator_UserColumnName="DS_EVALUADO" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_OPCION_RESPUESTA_ENCUESTA" msprop:Generator_ColumnVarNameInTable="columnID_OPCION_RESPUESTA_ENCUESTA" msprop:Generator_ColumnPropNameInRow="ID_OPCION_RESPUESTA_ENCUESTA" msprop:Generator_ColumnPropNameInTable="ID_OPCION_RESPUESTA_ENCUESTAColumn" msprop:Generator_UserColumnName="ID_OPCION_RESPUESTA_ENCUESTA" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="TB_EMPRESAKey1">
@@ -268,6 +279,10 @@
     </xs:unique>
     <xs:unique name="TB_PASANTIA_ACTIVIDAD_ASPIRANTEKey1">
       <xs:selector xpath=".//mstns:TB_PASANTIA_ACTIVIDAD_ASPIRANTE" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="TB_RESPUESTAKey1">
+      <xs:selector xpath=".//mstns:TB_RESPUESTA" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
   </xs:element>
