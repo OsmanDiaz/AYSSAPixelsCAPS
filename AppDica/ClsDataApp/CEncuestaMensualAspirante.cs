@@ -1,76 +1,91 @@
-﻿using System;
+﻿using ClsInterface;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data;
 using System.Data.SqlClient;
-using ClsInterface;
+using System.Linq;
+using System.Web;
 
 namespace ClsDataApp
 {
-
-    public class CEncuesta : CSqlvars
+    public class CEncuestaMensualAspirante : CSqlvars
     {
-        public CEncuesta(string ConexionData)
+        public CEncuestaMensualAspirante(string ConexionData)
         {
             _ConexionData = ConexionData;
         }
 
-        public ClsDataSets.DS_TB_EMP Detalle(int Id, string Nombre, char Estado, string UsuaCrea, DateTime FechCrea, string UsuaActu, 
-            DateTime FechActu, int OpcionConsulta){ 
-            ClsDataSets.DS_TB_EMP objDataSet = new ClsDataSets.DS_TB_EMP();
+        public ClsDataSets.DS_TB_ASP Detalle(int Id, string IdAspirante,
+            string Respuesta1, string Respuesta2, string Respuesta3, string Respuesta4, string Respuesta5,
+            string UsuaCrea, DateTime FechCrea, string UsuaActu, DateTime FechActu, int OpcionConsulta)
+        {
+
+            ClsDataSets.DS_TB_ASP objDataSet = new ClsDataSets.DS_TB_ASP();
 
             try
             {
                 ObjConnection = new SqlConnection(_ConexionData);
-                ObjAdapter = new SqlDataAdapter("SP_TBC_ENCUESTA_GetByAll", ObjConnection);
+                ObjAdapter = new SqlDataAdapter("SP_TB_ENCUESTA_SEMANAL_BENEFICIARIO_GetByAll", ObjConnection);
                 ObjParam = new SqlParameter();
                 ObjAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
 
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID", Id);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_NOMBRE", Nombre);
-                ObjAdapter.SelectCommand.Parameters.AddWithValue("@CD_ESTADO", Estado);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@ID_ASPIRANTE", IdAspirante);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_RESPUESTA1", Respuesta1);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_RESPUESTA2", Respuesta2);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_RESPUESTA3", Respuesta3);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_RESPUESTA4", Respuesta4);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@DS_RESPUESTA5", Respuesta5);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_CREA", UsuaCrea);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_CREA", FechCrea);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@USUA_ACTU", UsuaActu);
                 ObjAdapter.SelectCommand.Parameters.AddWithValue("@FECH_ACTU", FechActu);
+                ObjAdapter.SelectCommand.Parameters.AddWithValue("@OPCI_CONS", OpcionConsulta);
 
-                ObjAdapter.Fill(objDataSet, "TBC_ENCUESTA");
+
+                ObjAdapter.Fill(objDataSet, "TB_ENCUESTA_MENSUAL_ASPIRANTE");
+
                 ObjConnection.Close();
 
                 if (ObjConnection.State != ConnectionState.Closed)
                 {
                     ObjConnection.Close();
-                }                
+                }
+
             }
-            catch(Exception ex){
+            catch (Exception ex)
+            {
                 throw new Exception(ex.Message);
             }
 
             return objDataSet;
         }
 
-        public DataQuery Actualizacion(int Id, string Nombre, char Estado, string LoginUsuario, TipoActualizacion OpcionActualizacion)
+        public DataQuery Actualizacion(int Id, string IdAspirante, 
+            string Respuesta1, string Respuesta2, string Respuesta3, string Respuesta4, string Respuesta5,
+            string LoginUsuario, TipoActualizacion OpcionActualizacion)
         {
             DataQuery objResultado = new DataQuery();
+
             try
             {
+
                 string StrCommand = "";
 
                 switch (OpcionActualizacion)
                 {
                     case TipoActualizacion.Adicionar:
-                        StrCommand = "SP_TBC_ENCUESTA_INSERT";
+                        StrCommand = "SP_TB_ENCUESTA_MENSUAL_ASPIRANTE_INSERT";
                         break;
                     case TipoActualizacion.Actualizar:
-                        StrCommand = "SP_TBC_ENCUESTA_UPDATE";
+                        StrCommand = "SP_TB_ENCUESTA_MENSUAL_ASPIRANTE_UPDATE";
                         break;
                     case TipoActualizacion.Eliminar:
-                        StrCommand = "SP_TBC_ENCUESTA_DELETE";
+                        StrCommand = "SP_TB_ENCUESTA_MENSUAL_ASPIRANTE_DELETE";
                         break;
                     case TipoActualizacion.No_Definida:
                         objResultado.CodigoError = -1;
-                        objResultado.MensajeError = "Opcion de Actualizacion No Definida. Objeto COpcionesEncuestas. Metodo Actualizacion";
+                        objResultado.MensajeError = "Opcion de Actualizacion No Definida. Objeto COpcionesSistemas. Metodo Actualizacion";
                         //return objResultado;
                         break;
                 }
@@ -81,17 +96,15 @@ namespace ClsDataApp
                 ObjParam = new SqlParameter();
                 ObjCommand.CommandType = CommandType.StoredProcedure;
 
-                if (OpcionActualizacion == TipoActualizacion.Adicionar)
-                {
-                    ObjParam = ObjCommand.Parameters.Add("@ID", SqlDbType.Int, 0);
-                    ObjParam.Direction = ParameterDirection.Output;
-                }
-                else
-                {
-                    ObjCommand.Parameters.AddWithValue("@ID", Id);
-                }
-                ObjCommand.Parameters.AddWithValue("@DS_NOMBRE", Nombre);
-                ObjCommand.Parameters.AddWithValue("@CD_ESTADO", Estado);
+
+                ObjCommand.Parameters.AddWithValue("@ID", Id);
+                ObjCommand.Parameters.AddWithValue("@ID_ASPIRANTE", IdAspirante);
+                ObjCommand.Parameters.AddWithValue("@DS_RESPUESTA1", Respuesta1);
+                ObjCommand.Parameters.AddWithValue("@DS_RESPUESTA2", Respuesta2);
+                ObjCommand.Parameters.AddWithValue("@DS_RESPUESTA3", Respuesta3);
+                ObjCommand.Parameters.AddWithValue("@DS_RESPUESTA4", Respuesta4);
+                ObjCommand.Parameters.AddWithValue("@DS_RESPUESTA5", Respuesta5);
+
                 ObjCommand.Parameters.AddWithValue("@LOGIN_USUARIO", LoginUsuario);
 
                 ObjParam = ObjCommand.Parameters.Add("@FILAS_AFECTADAS", SqlDbType.Int, 0);
@@ -119,6 +132,7 @@ namespace ClsDataApp
                 {
                     ObjConnection.Close();
                 }
+
             }
             catch (Exception ex)
             {
@@ -127,6 +141,7 @@ namespace ClsDataApp
             }
 
             return objResultado;
+
         }
     }
 }

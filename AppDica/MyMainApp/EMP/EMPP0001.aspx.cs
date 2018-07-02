@@ -11,15 +11,16 @@ using dica;
 using Microsoft.Reporting.WebForms;
 using AjaxControlToolkit;
 using System.IO;
+using System.Collections;
 
 namespace MyMainApp.EMP
 {
     public partial class EMPP0001 : FormaSISWeb, IAcciones
     {
         private DataView dvActividadEconomica, dvEmpresa, dvDepartamento, dvMunicipio, dvHabilidad, dvDestreza, dvPasantia,
-            dvAreaPasantia, dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvEscolaridadPasantia,
-            dvConsultoria, dvEntregable, dvCategoriaEscolaridad, dvPasantiaActividad, dvPasantiaAspirante, dvActividadAspirante,dvRendimiento, objExiste,
-            dvEncuestaRendimiento, dvAceptacionAspirante, dvAspirante, dvPasantiaActividadAspirante, dvAceptacionPasantia, dvConsultoriaEntregable,
+            dvAreaPasantia, dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvEscolaridadPasantia, dvPreguntasEncuesta,
+            dvEncuesta, dvPregunta, dvRespuesta, dvEncuestaMensual, dvConsultoria, dvEntregable, dvCategoriaEscolaridad, dvPasantiaActividad, dvPasantiaAspirante, dvActividadAspirante, dvRendimiento, 
+            objExiste,dvEncuestaRendimiento, dvAceptacionAspirante, dvAspirante, dvPasantiaActividadAspirante, dvAceptacionPasantia, dvConsultoriaEntregable,
             dvInfoProyecto, dvTdr;
 
         String tituloPasantia, nombreEvaluador, emailEva, idEmpresa, areaPasantia, descPasantia,
@@ -94,7 +95,6 @@ namespace MyMainApp.EMP
             FillGVAspirantesEntregables();
             FillDatosEmpresa();
             FillCamposAspirante();
-                     
         }
 
         public void Adicionar() { }
@@ -756,6 +756,7 @@ namespace MyMainApp.EMP
 
         }
 
+              
 
         protected void FillGVActividades()
         {
@@ -1957,6 +1958,211 @@ namespace MyMainApp.EMP
         {
             PanelAceptacionAspirante.Visible = true;
             PanelInfoAspirante.Visible = false;
+        }
+
+        protected void BtnGuardarEncuestaMensualEmpresa_Click(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                CEncuestaMensualContratista objEncustaMenEmp = new CEncuestaMensualContratista(_DataSistema.ConexionBaseDato);
+                objResultado = objEncustaMenEmp.Actualizacion(0, _DataSistema.Cusuario, Convert.ToString(RespEncMenEmp1.SelectedValue), Convert.ToString(RespEncMenEmp2.SelectedValue),
+                     Convert.ToString(RespEncMenEmp3.SelectedValue), Convert.ToString(RespEncMenEmp4.SelectedValue), Convert.ToString(RespEncMenEmp5.SelectedValue),
+                     Convert.ToString(RespEncMenEmp6.SelectedValue), _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+
+                if (objResultado.CodigoError == 0)
+                {
+                    DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPPanelEncMenEmp);
+                    limpiarEncuestaMensEmp();
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPanelEncMenEmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPPanelEncMenEmp);
+            }
+        }
+
+        protected void limpiarEncuestaMensEmp()
+        {
+            RespEncMenEmp1.SelectedValue = null;
+            RespEncMenEmp2.SelectedValue = null;
+            RespEncMenEmp3.SelectedValue = null;
+            RespEncMenEmp4.SelectedValue = null;
+            RespEncMenEmp5.SelectedValue = null;
+            RespEncMenEmp6.SelectedValue = null;
+        }
+
+        protected void BtnGuardarEncuestaSemanalEmpresa_Click(object sender, EventArgs e)
+        {
+            try{
+            CEncuestaSemanalEmpresa objEncSemEmp = new CEncuestaSemanalEmpresa(_DataSistema.ConexionBaseDato);
+            objResultado = objEncSemEmp.Actualizacion(0, _DataSistema.Cusuario, Convert.ToString(RespEncSemEmp1.SelectedValue), Convert.ToString(RespEncSemEmp2.SelectedValue),
+                Convert.ToString(TxtRespuesta3.Text), _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+
+                if (objResultado.CodigoError == 0)
+                {
+                    dvEncuesta = new DataView(objEncSemEmp.Detalle(0, _DataSistema.Cusuario, "", "", "", _DataSistema.Cusuario, DateTime.Now,
+                        _DataSistema.Cusuario, DateTime.Now, 2).TB_ENCUESTA_SEMANAL_EMPRESA);
+                    if(dvEncuesta.Count > 0){
+                        TxtIdEncuestaSemEmp.Text = dvEncuesta.Table.Rows[0]["ID"].ToString();
+                    }
+                    pregunta4Respuestas();
+                    
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPanelEncSemEmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPPanelEncSemEmp);
+            }
+        }
+
+        private void pregunta4Respuestas()
+        {
+            String[] respuestas;
+            string p4v1 = "", p4v2 = "", p4v3 = "", p4v4 = "", p4v5 = "", p4v6 = "", idEncuesta;
+            idEncuesta = TxtIdEncuestaSemEmp.Text;
+
+            respuestas = PreguntasMultiSelect(idEncuesta);
+            for (int x = 0; x < 5; x++)
+            {
+                switch (respuestas[x])
+                {
+                    case "V":
+                        p4v1 = "V";
+                        break;
+                    case "P":
+                        p4v2 = "P";
+                        break;
+                    case "C":
+                        p4v3 = "C";
+                        break;
+                    case "E":
+                        p4v4 = "E";
+                        break;
+                    case "D":
+                        p4v5 = "D";
+                        break;
+                    case "S":
+                        p4v6 = "S";
+                        break;
+                }
+            }
+            try {
+                CEncuestaSemanalEmpresaOpcion objEncSemEmpOpc = new CEncuestaSemanalEmpresaOpcion(_DataSistema.ConexionBaseDato);
+                objResultado = objEncSemEmpOpc.Actualizacion(0, p4v1, p4v2, p4v3, p4v4, p4v5, p4v6, 4, Convert.ToInt32(TxtIdEncuestaSemEmp.Text),
+                    _DataSistema.Cusuario,TipoActualizacion.Adicionar);
+                if (objResultado.CodigoError == 0)
+                {
+                    pregunta5Respuestas();
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPanelEncSemEmp);
+                }
+            }
+            catch (Exception ex) {
+                DespliegaMensajeUpdatePanel(ex.Message, UPPanelEncSemEmp);
+            }
+        }
+
+        private void pregunta5Respuestas()
+        {
+            String[] respuestas;
+            string p5v1 = "", p5v2 = "", p5v3 = "", p5v4 = "", p5v5 = "", p5v6 = "", idEncuesta;
+            idEncuesta = TxtIdEncuestaSemEmp.Text;
+
+            respuestas = PreguntasMultiSelect1(idEncuesta);
+            for (int x = 0; x < 5; x++)
+            {
+                switch (respuestas[x])
+                {
+                    case "PC":
+                        p5v1 = "PC";
+                        break;
+                    case "T":
+                        p5v2 = "T";
+                        break;
+                    case "L":
+                        p5v3 = "L";
+                        break;
+                    case "ET":
+                        p5v4 = "ET";
+                        break;
+                    case "EX":
+                        p5v5 = "EX";
+                        break;
+                    case "EP":
+                        p5v6 = "EP";
+                        break;
+                }
+            }
+            try
+            {
+                CEncuestaSemanalEmpresaOpcion objEncSemEmpOpc = new CEncuestaSemanalEmpresaOpcion(_DataSistema.ConexionBaseDato);
+                objResultado = objEncSemEmpOpc.Actualizacion(0, p5v1, p5v2, p5v3, p5v4, p5v5, p5v6, 5, Convert.ToInt32(TxtIdEncuestaSemEmp.Text),
+                    _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+                if (objResultado.CodigoError == 0)
+                {
+                    DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPPanelEncSemEmp);
+                    limpiarEncuestaSemEmp();
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPanelEncSemEmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                DespliegaMensajeUpdatePanel(ex.Message, UPPanelEncSemEmp);
+            }
+        }
+
+        private void limpiarEncuestaSemEmp()
+        {
+            RespEncSemEmp1.SelectedValue = null;
+            RespEncSemEmp2.SelectedValue = null;
+            TxtRespuesta3.Text = "";
+            ChkPregunta4.ClearSelection();
+            ChkPregunta5.ClearSelection();
+        }
+
+        public String[] PreguntasMultiSelect(String idEncuesta)
+        {
+            string[] total_items = new string[6];
+            int items = 0;
+
+            for (int i = 0; i < ChkPregunta4.Items.Count; i++)
+            {
+                if (ChkPregunta4.Items[i].Selected)
+                {
+                    total_items[items] = ChkPregunta4.Items[i].Value;
+                    items++;
+                }
+            }
+            return total_items;
+        }
+        public String[] PreguntasMultiSelect1(String idEncuesta)
+        {
+            string[] total_items = new string[6];
+            int items = 0;
+
+            for (int i = 0; i < ChkPregunta5.Items.Count; i++)
+            {
+                if (ChkPregunta4.Items[i].Selected)
+                {
+                    total_items[items] = ChkPregunta5.Items[i].Value;
+                    items++;
+                }
+            }
+            return total_items;
         }
         }
        

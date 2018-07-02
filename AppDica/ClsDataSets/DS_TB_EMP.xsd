@@ -221,14 +221,16 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TB_RESPUESTA" msprop:Generator_TableClassName="TB_RESPUESTADataTable" msprop:Generator_TableVarName="tableTB_RESPUESTA" msprop:Generator_TablePropName="TB_RESPUESTA" msprop:Generator_RowDeletingName="TB_RESPUESTARowDeleting" msprop:Generator_RowChangingName="TB_RESPUESTARowChanging" msprop:Generator_RowEvHandlerName="TB_RESPUESTARowChangeEventHandler" msprop:Generator_RowDeletedName="TB_RESPUESTARowDeleted" msprop:Generator_UserTableName="TB_RESPUESTA" msprop:Generator_RowChangedName="TB_RESPUESTARowChanged" msprop:Generator_RowEvArgName="TB_RESPUESTARowChangeEvent" msprop:Generator_RowClassName="TB_RESPUESTARow">
+        <xs:element name="TB_ENCUESTA_SEMANAL_EMPRESA" msprop:Generator_TableClassName="TB_ENCUESTA_SEMANAL_EMPRESADataTable" msprop:Generator_TableVarName="tableTB_ENCUESTA_SEMANAL_EMPRESA" msprop:Generator_TablePropName="TB_ENCUESTA_SEMANAL_EMPRESA" msprop:Generator_RowDeletingName="TB_ENCUESTA_SEMANAL_EMPRESARowDeleting" msprop:Generator_RowChangingName="TB_ENCUESTA_SEMANAL_EMPRESARowChanging" msprop:Generator_RowEvHandlerName="TB_ENCUESTA_SEMANAL_EMPRESARowChangeEventHandler" msprop:Generator_RowDeletedName="TB_ENCUESTA_SEMANAL_EMPRESARowDeleted" msprop:Generator_UserTableName="TB_ENCUESTA_SEMANAL_EMPRESA" msprop:Generator_RowChangedName="TB_ENCUESTA_SEMANAL_EMPRESARowChanged" msprop:Generator_RowEvArgName="TB_ENCUESTA_SEMANAL_EMPRESARowChangeEvent" msprop:Generator_RowClassName="TB_ENCUESTA_SEMANAL_EMPRESARow">
           <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
-              <xs:element name="DS_SELECCION" msprop:Generator_ColumnVarNameInTable="columnDS_SELECCION" msprop:Generator_ColumnPropNameInRow="DS_SELECCION" msprop:Generator_ColumnPropNameInTable="DS_SELECCIONColumn" msprop:Generator_UserColumnName="DS_SELECCION" type="xs:string" minOccurs="0" />
-              <xs:element name="DS_EVALUADO" msprop:Generator_ColumnVarNameInTable="columnDS_EVALUADO" msprop:Generator_ColumnPropNameInRow="DS_EVALUADO" msprop:Generator_ColumnPropNameInTable="DS_EVALUADOColumn" msprop:Generator_UserColumnName="DS_EVALUADO" type="xs:string" minOccurs="0" />
-              <xs:element name="ID_OPCION_RESPUESTA_ENCUESTA" msprop:Generator_ColumnVarNameInTable="columnID_OPCION_RESPUESTA_ENCUESTA" msprop:Generator_ColumnPropNameInRow="ID_OPCION_RESPUESTA_ENCUESTA" msprop:Generator_ColumnPropNameInTable="ID_OPCION_RESPUESTA_ENCUESTAColumn" msprop:Generator_UserColumnName="ID_OPCION_RESPUESTA_ENCUESTA" type="xs:string" minOccurs="0" />
-            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TB_ENCUESTA_SEMANAL_EMPRESA_OPCION" msprop:Generator_TableClassName="TB_ENCUESTA_SEMANAL_EMPRESA_OPCIONDataTable" msprop:Generator_TableVarName="tableTB_ENCUESTA_SEMANAL_EMPRESA_OPCION" msprop:Generator_TablePropName="TB_ENCUESTA_SEMANAL_EMPRESA_OPCION" msprop:Generator_RowDeletingName="TB_ENCUESTA_SEMANAL_EMPRESA_OPCIONRowDeleting" msprop:Generator_RowChangingName="TB_ENCUESTA_SEMANAL_EMPRESA_OPCIONRowChanging" msprop:Generator_RowEvHandlerName="TB_ENCUESTA_SEMANAL_EMPRESA_OPCIONRowChangeEventHandler" msprop:Generator_RowDeletedName="TB_ENCUESTA_SEMANAL_EMPRESA_OPCIONRowDeleted" msprop:Generator_UserTableName="TB_ENCUESTA_SEMANAL_EMPRESA_OPCION" msprop:Generator_RowChangedName="TB_ENCUESTA_SEMANAL_EMPRESA_OPCIONRowChanged" msprop:Generator_RowEvArgName="TB_ENCUESTA_SEMANAL_EMPRESA_OPCIONRowChangeEvent" msprop:Generator_RowClassName="TB_ENCUESTA_SEMANAL_EMPRESA_OPCIONRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TB_ENCUESTA_MENSUAL_EMPRESA" msprop:Generator_TableClassName="TB_ENCUESTA_MENSUAL_EMPRESADataTable" msprop:Generator_TableVarName="tableTB_ENCUESTA_MENSUAL_EMPRESA" msprop:Generator_TablePropName="TB_ENCUESTA_MENSUAL_EMPRESA" msprop:Generator_RowDeletingName="TB_ENCUESTA_MENSUAL_EMPRESARowDeleting" msprop:Generator_RowChangingName="TB_ENCUESTA_MENSUAL_EMPRESARowChanging" msprop:Generator_RowEvHandlerName="TB_ENCUESTA_MENSUAL_EMPRESARowChangeEventHandler" msprop:Generator_RowDeletedName="TB_ENCUESTA_MENSUAL_EMPRESARowDeleted" msprop:Generator_UserTableName="TB_ENCUESTA_MENSUAL_EMPRESA" msprop:Generator_RowChangedName="TB_ENCUESTA_MENSUAL_EMPRESARowChanged" msprop:Generator_RowEvArgName="TB_ENCUESTA_MENSUAL_EMPRESARowChangeEvent" msprop:Generator_RowClassName="TB_ENCUESTA_MENSUAL_EMPRESARow">
+          <xs:complexType>
           </xs:complexType>
         </xs:element>
       </xs:choice>
@@ -279,10 +281,6 @@
     </xs:unique>
     <xs:unique name="TB_PASANTIA_ACTIVIDAD_ASPIRANTEKey1">
       <xs:selector xpath=".//mstns:TB_PASANTIA_ACTIVIDAD_ASPIRANTE" />
-      <xs:field xpath="mstns:ID" />
-    </xs:unique>
-    <xs:unique name="TB_RESPUESTAKey1">
-      <xs:selector xpath=".//mstns:TB_RESPUESTA" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
   </xs:element>

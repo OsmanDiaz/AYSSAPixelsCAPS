@@ -17,8 +17,8 @@ namespace MyMainApp
     public partial class ASPP0001 : FormaSISWeb,IAcciones
     {
         private DataView dvTituloAcademico, dvPais, dvDepartamento, dvMunicipio, dvTipoDocumento, dvDestreza,
-            dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvInstitucion,
-            dvEscolaridad, dvHabilidad, dvDocumento, dvPantallas, dvEntregables, dvCategoriaEscolaridad, dvListaPasantia,
+            dvCategoriaHabilidad, dvConocimiento, dvNivel, dvNivelEducativo, dvOpcionAcademica, dvInstitucion, dvEncuestaSemanalAspirante,
+            dvEscolaridad, dvHabilidad, dvDocumento, dvPantallas, dvEntregables, dvCategoriaEscolaridad, dvListaPasantia, dvEncuestaMensualAspirante,
             dvListaActividad, dvAceptacionPasantia, dvComparativo, dvPasantiaAspirante, dvActividadPasantia, dvHorarioAceptacion;
         private DataSet dsEscolaridad, dsPantalla;
         DataQuery objResultado = new DataQuery();
@@ -1327,6 +1327,95 @@ namespace MyMainApp
         {
             PanelHistorialAceptacionP.Visible = false;
             PanelHistorialOportunidad.Visible = true;
+        }
+
+        protected void BtnGuardarEncuestaSemanalAspirante_Click(object sender, EventArgs e)
+        {
+            CPasantiaAspirante objPasantiaAspirante = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
+            dvPasantiaAspirante = new DataView(objPasantiaAspirante.Detalle(0,_DataSistema.Cusuario,0,_DataSistema.Cusuario,DateTime.Now, _DataSistema.Cusuario,DateTime.Now,4).TB_PASANTIA_ASPIRANTE);
+            if (dvPasantiaAspirante.Count > 0) {
+                TxtIdEmpresaE.Text = dvPasantiaAspirante.Table.Rows[0]["ID_EMPRESA"].ToString();
+                TxtIdPasantia.Text = dvPasantiaAspirante.Table.Rows[0]["ID_PASANTIA"].ToString();
+            }
+            try
+            {
+                CEncuestaSemanalBeneficiario objEncuestaSemAsp = new CEncuestaSemanalBeneficiario(_DataSistema.ConexionBaseDato);
+                objResultado = objEncuestaSemAsp.Actualizacion(0, _DataSistema.Cusuario, TxtIdPasantia.Text, TxtIdEmpresaE.Text, Convert.ToString(RespSEncSemAsp1.SelectedValue),
+                    Convert.ToString(RespSEncSemAsp2.SelectedValue), Convert.ToString(RespSEncSemAsp3.SelectedValue), Convert.ToString(RespSEncSemAsp4.SelectedValue),
+                    Convert.ToString(RespSEncSemAsp5.SelectedValue), Convert.ToString(RespSEncSemAsp6.SelectedValue), Convert.ToString(RespSEncSemAsp7.SelectedValue),
+                    Convert.ToString(RespSEncSemAsp8.SelectedValue), Convert.ToString(RespSEncSemAsp9.SelectedValue), Convert.ToString(RespSEncSemAsp10.SelectedValue),
+                    Convert.ToString(RespSEncSemAsp11.SelectedValue), Convert.ToString(RespSEncSemAsp12.SelectedValue), Convert.ToString(RespSEncSemAsp13.SelectedValue),
+                     Convert.ToString(RespSEncSemAsp14.SelectedValue), Convert.ToString(RespSEncSemAsp15.SelectedValue), _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+                if (objResultado.CodigoError == 0)
+                {
+                    limpiarEncuestaSem();
+                    DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPPanelEncSemAsp);
+                }
+                else {
+                    DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPanelEncSemAsp);
+                }
+            }
+            catch (Exception ex) {
+                DespliegaMensajeUpdatePanel(ex.Message, UPPanelEncSemAsp);
+            }
+        }
+
+        protected void limpiarEncuestaSem()
+        {
+            RespSEncSemAsp1.SelectedValue = null;
+            RespSEncSemAsp2.SelectedValue = null;
+            RespSEncSemAsp3.SelectedValue = null;
+            RespSEncSemAsp4.SelectedValue = null;
+            RespSEncSemAsp5.SelectedValue = null;
+            RespSEncSemAsp6.SelectedValue = null;
+            RespSEncSemAsp7.SelectedValue = null;
+            RespSEncSemAsp8.SelectedValue = null;
+            RespSEncSemAsp9.SelectedValue = null;
+            RespSEncSemAsp10.SelectedValue = null;
+            RespSEncSemAsp11.SelectedValue = null;
+            RespSEncSemAsp12.SelectedValue = null;
+            RespSEncSemAsp13.SelectedValue = null;
+            RespSEncSemAsp14.SelectedValue = null;
+            RespSEncSemAsp15.SelectedValue = null;
+        }
+
+        protected void BtnGuardarEncuestaMensualAspirante_Click(object sender, EventArgs e)
+        {
+            CPasantiaAspirante objPasantiaAspirante = new CPasantiaAspirante(_DataSistema.ConexionBaseDato);
+            dvPasantiaAspirante = new DataView(objPasantiaAspirante.Detalle(0, _DataSistema.Cusuario, 0, _DataSistema.Cusuario, DateTime.Now, _DataSistema.Cusuario, DateTime.Now, 4).TB_PASANTIA_ASPIRANTE);
+            if (dvPasantiaAspirante.Count > 0)
+            {
+                TxtIdEmpresaE.Text = dvPasantiaAspirante.Table.Rows[0]["ID_EMPRESA"].ToString();
+                TxtIdPasantia.Text = dvPasantiaAspirante.Table.Rows[0]["ID_PASANTIA"].ToString();
+            }
+            try {
+                CEncuestaMensualAspirante objEncustaMenAsp = new CEncuestaMensualAspirante(_DataSistema.ConexionBaseDato);
+                objResultado = objEncustaMenAsp.Actualizacion(0, _DataSistema.Cusuario,  Convert.ToString(RespEncMenAsp1.SelectedValue),  Convert.ToString(RespEncMenAsp2.SelectedValue), 
+                     Convert.ToString(RespEncMenAsp3.SelectedValue), Convert.ToString(RespEncMenAsp4.SelectedValue),  Convert.ToString(RespEncMenAsp5.SelectedValue), 
+                     _DataSistema.Cusuario, TipoActualizacion.Adicionar);
+                
+                if (objResultado.CodigoError == 0)
+                {
+                    DespliegaMensajeUpdatePanel("Registro Guardado Correctamente", UPPanelEncSemAsp);
+                    limpiarEncuestaMens();
+                }
+                else
+                {
+                    DespliegaMensajeUpdatePanel(objResultado.MensajeError, UPPanelEncSemAsp);
+                }
+            }
+            catch (Exception ex) {
+                DespliegaMensajeUpdatePanel(ex.Message, UPPanelEncMenAsp);
+            }
+        }
+
+        protected void limpiarEncuestaMens()
+        {
+            RespEncMenAsp1.SelectedValue = null;
+            RespEncMenAsp2.SelectedValue = null;
+            RespEncMenAsp3.SelectedValue = null;
+            RespEncMenAsp4.SelectedValue = null;
+            RespEncMenAsp5.SelectedValue = null;
         }
 
         

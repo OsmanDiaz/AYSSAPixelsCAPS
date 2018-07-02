@@ -32,7 +32,7 @@
             <div class="container-fluid">
                 <div id="content">
                     <%--inicio container-fluid--%>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="2" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="6" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabPanel1" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoGeneral" runat="server">
@@ -143,6 +143,7 @@
                             </ContentTemplate>
                         </ajaxToolkit:TabPanel>
                         <%--fin tab datos--%>
+                        <%-- inicio ajaxtoolkit panel --%>
                         <ajaxToolkit:TabPanel runat="server" HeaderText="PASANTIA" ID="TabPanel2">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPPasantia" runat="server">
@@ -814,6 +815,7 @@
                             </ContentTemplate>
                         </ajaxToolkit:TabPanel>
                         <%--fin tab datos--%>
+                        <%--inicio ajaxtoolkit panel--%>
                         <ajaxToolkit:TabPanel runat="server" HeaderText="PROYECTO" ID="TabPanel3">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPProyecto" runat="server">
@@ -1237,6 +1239,67 @@
                                 </asp:UpdatePanel>
                             </ContentTemplate>
                         </ajaxToolkit:TabPanel>
+
+                        <!-- INICIO ENCUESTA MENSUAL -->
+
+
+                        <%--inicio ajaxtoolkit panel Encuestas--%>
+                        <ajaxToolkit:TabPanel runat="server" HeaderText="ENCUESTA MENSUAL" ID="TabPanel6">
+                            
+                            <ContentTemplate>
+                                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                    <ContentTemplate>
+
+                                        <%--inicio tab Encuestas--%>
+                                        <br />
+                                        <asp:Panel ID="PanelEncuestaMensual" runat="server">
+                                            <asp:TextBox ID="TxtIdEncuesta"  runat="server" Visible="False"></asp:TextBox>
+                                            <asp:TextBox ID="TxtIdPregunta"  runat="server" Visible="False"></asp:TextBox>
+                                            <asp:TextBox ID="TxtIdRespuesta"  runat="server" Visible="False"></asp:TextBox>
+                                            <div align="center">
+                                                <asp:Label ID="LblTipoEncuesta" style="text-align: center; font-weight: bold" Text="" runat="server"></asp:Label>
+                                               
+                                                <br />
+                                            </div>
+                                            <br />
+
+                                            <div align="center">
+                                                <asp:Label ID="LblPregunta" style="text-align: center; font-weight: bold" Text="" runat="server"></asp:Label>
+                                                <br />
+                                                <asp:GridView ID="GVEncuestaMensual" runat="server" AutoGenerateColumns="False">
+                                                    <Columns>
+                                                        <asp:TemplateField>
+                                                            <ItemTemplate>
+                                                                <div>
+                                                                <asp:Label ID="LblPregunta" runat="server" Text='<%# Eval("DS_PREGUNTA") %>'></asp:Label>
+                                                                </div>
+                                                            </ItemTemplate>
+
+                                                            <ControlStyle BorderStyle="None" />
+
+                                                        </asp:TemplateField>
+                                                    </Columns>
+                                                </asp:GridView>
+                                                <br />
+                                            </div>
+                                            <br />
+                                        </asp:Panel>
+
+
+                                        <!-- PANEL PARA MOSTRAR DETALLES DEL PROYECTO -->
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </ContentTemplate>
+                        </ajaxToolkit:TabPanel>
+						<%--fin ajaxtoolkit panel Encuestas--%>
+
+                        <!-- FIN ENCUESTA MENSUAL -->
+
+
+
+
+
+
                         <ajaxToolkit:TabPanel ID="TabPanel5" runat="server" HeaderText="ENCUESTA DESEMPEÑO">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPEncuestaDes" runat="server">
@@ -1353,7 +1416,130 @@
                             </ContentTemplate>
                         </ajaxToolkit:TabPanel>
                         
-                        
+                        <ajaxToolkit:TabPanel ID="TabPanelEncMenEmp" runat="server" HeaderText="ENCUESTA MENSUAL">
+                            <ContentTemplate>
+                                <asp:UpdatePanel ID="UPPanelEncMenEmp" runat="server">
+                                    <ContentTemplate>
+                                    <asp:Panel ID="PanelEncuestaMensualEmpresa" runat="server" Visible="true">
+
+										<div align="center"><b>ENCUESTA MENSUAL A EMPRESA</b></div>
+										<br />
+										<ol>
+										<li>Utiliza estrategias para integrar una perspectiva de género en el aula</li>
+											<asp:RadioButtonList ID="RespEncMenEmp1" runat="server">
+												<asp:ListItem Value="S">Si</asp:ListItem>
+												<asp:ListItem Value="N">No</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										<li>Cuenta con alguna metodología para identificar estudiantes en situación de riesgo</li>
+											<asp:RadioButtonList ID="RespEncMenEmp2" runat="server">
+												<asp:ListItem Value="S">Si</asp:ListItem>
+												<asp:ListItem Value="N">No</asp:ListItem>
+											</asp:RadioButtonList>
+										
+										<li>Dispone de medidas flexibles para apoyar a los estudiantes cuando sea necesario</li>
+											<asp:RadioButtonList ID="RespEncMenEmp3" runat="server">
+												<asp:ListItem Value="S">Si</asp:ListItem>
+												<asp:ListItem Value="N">No</asp:ListItem>
+											</asp:RadioButtonList>
+											
+											
+										<li>Hay cooperación entre su institución y otras instituciones para apoyar estudiantes con problemas de aprendizaje o en situaciones de riesgo</li>
+											<asp:RadioButtonList ID="RespEncMenEmp4" runat="server">
+												<asp:ListItem Value="S">Si</asp:ListItem>
+												<asp:ListItem Value="N">No</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										<li>El personal docente tiene en cuenta las identidades, los intereses y las aspiraciones de todos sus estudiantes para mejorar su aprendizaje</li>
+											<asp:RadioButtonList ID="RespEncMenEmp5" runat="server">
+												<asp:ListItem Value="E">En desacuerdo</asp:ListItem>
+												<asp:ListItem Value="I">Indeciso</asp:ListItem>
+												<asp:ListItem Value="D">De acuerdo</asp:ListItem>
+												<asp:ListItem Value="M">Muy de acuerdo</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										<li>El personal docente tiene oportunidad de reunirse  para compartir ideas y metodologías</li>
+											<asp:RadioButtonList ID="RespEncMenEmp6" runat="server">
+												<asp:ListItem Value="E">En desacuerdo</asp:ListItem>
+												<asp:ListItem Value="I">Indeciso</asp:ListItem>
+												<asp:ListItem Value="D">De acuerdo</asp:ListItem>
+												<asp:ListItem Value="M">Muy de acuerdo</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										</ol>
+										<div align="center">
+											<asp:Button ID="BtnGuardarEncuestaMensualEmpresa" runat="server" class="btn btn-primary" Text="GUARDAR" ValidationGroup="EncuestaMen" OnClientClick="return confirm('¿Desea enviar los resultados?');" OnClick="BtnGuardarEncuestaMensualEmpresa_Click"  />
+										</div><br />
+									</asp:Panel>
+                                       
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </ContentTemplate>
+                        </ajaxToolkit:TabPanel>
+
+
+                        <ajaxToolkit:TabPanel ID="TabPanelEncSemEmp" runat="server" HeaderText="ENCUESTA SEMANAL">
+                            <ContentTemplate>
+                                <asp:UpdatePanel ID="UPPanelEncSemEmp" runat="server">
+                                    <ContentTemplate>
+                                    <asp:Panel ID="PanelEncuestaSemanalEmpresa" runat="server" Visible="true">
+                                        <asp:TextBox ID="TxtIdEncuestaSemEmp"  runat="server" Visible="False"></asp:TextBox>
+										<div align="center"><b>ENCUESTA SEMANAL A EMPRESA</b></div>
+										<br />
+										<ol>
+										<li>Se han impartido los temas previstos en la carta didáctica para la presente semana</li>
+											<asp:RadioButtonList ID="RespEncSemEmp1" runat="server">
+												<asp:ListItem Value="E">En desacuerdo</asp:ListItem>
+												<asp:ListItem Value="I">Indeciso</asp:ListItem>
+												<asp:ListItem Value="D">De acuerdo</asp:ListItem>
+												<asp:ListItem Value="M">Muy de acuerdo</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										<li>Fue necesario agregar o eliminar temas para el adecuado desempeño de las clases</li>
+											<asp:RadioButtonList ID="RespEncSemEmp2" runat="server">
+												<asp:ListItem Value="E">En desacuerdo</asp:ListItem>
+												<asp:ListItem Value="I">Indeciso</asp:ListItem>
+												<asp:ListItem Value="D">De acuerdo</asp:ListItem>
+												<asp:ListItem Value="M">Muy de acuerdo</asp:ListItem>
+											</asp:RadioButtonList>
+										
+										<li>Cuantos alumnos han asistido sin falta a las clases durante la semana</li>
+											<asp:TextBox ID="TxtRespuesta3"  runat="server"></asp:TextBox>
+											
+											
+										<li>Seleccione los métodos y técnicas de enseñanza usados (puede seleccionar varios)</li>
+                                            <asp:CheckBoxList ID="ChkPregunta4" runat="server">
+                                                <asp:ListItem Value="V" >Videos</asp:ListItem>
+												<asp:ListItem Value="P">Presentaciones</asp:ListItem>
+												<asp:ListItem Value="C">Charlas</asp:ListItem>
+												<asp:ListItem Value="E">Ejercicios Prácticos</asp:ListItem>
+												<asp:ListItem Value="D">Documentos</asp:ListItem>
+												<asp:ListItem Value="S">Sitios Web</asp:ListItem>
+                                            </asp:CheckBoxList>
+											
+											
+										<li>Métodos de evaluación usados (puede seleccionar varios)</li>
+										<asp:CheckBoxList ID="ChkPregunta5" runat="server">
+                                                <asp:ListItem Value="PC">Participación en clases</asp:ListItem>
+												<asp:ListItem Value="T">Trabajos Prácticos</asp:ListItem>
+												<asp:ListItem Value="L">Lista de Verificación</asp:ListItem>
+												<asp:ListItem Value="ET">Entrega de tareas</asp:ListItem>
+												<asp:ListItem Value="EX">Exámenes</asp:ListItem>
+												<asp:ListItem Value="EP">Exposiciones</asp:ListItem>
+                                         </asp:CheckBoxList>
+											
+										</ol>
+										<div align="center">
+											<asp:Button ID="BtnGuardarEncuestaSemanalEmpresa" runat="server" class="btn btn-primary" Text="GUARDAR" ValidationGroup="EncuestaSem" OnClientClick="return confirm('¿Desea enviar los resultados?');" OnClick="BtnGuardarEncuestaSemanalEmpresa_Click"  />
+										</div><br />
+									</asp:Panel>
+                                       
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </ContentTemplate>
+                        </ajaxToolkit:TabPanel>
+
+
                         <ajaxToolkit:TabPanel runat="server" HeaderText="ASIGNACION ACTIVIDADES ASPIRANTE" ID="TabPanel4" Width="100%">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPDatoActividadAspirante" runat="server">

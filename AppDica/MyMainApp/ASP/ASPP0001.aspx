@@ -19,7 +19,7 @@
         <div class="container-fluid">
             <div id="content">
                 <asp:Panel ID="Panel1" runat="server" Width="100%">
-                    <ajaxToolkit:TabContainer ID="TabAspirante" runat="server" ActiveTabIndex="4" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
+                    <ajaxToolkit:TabContainer ID="TabAspirante" runat="server" ActiveTabIndex="10" BorderColor="#66CCFF" ScrollBars="Vertical" Height="375px" Width="100%">
 
                         <ajaxToolkit:TabPanel runat="server" HeaderText="DATOS GENERALES" ID="TabDatoGeneral" Width="100%">
                             <ContentTemplate>
@@ -941,6 +941,215 @@
                                 </asp:UpdatePanel>
                             </ContentTemplate>
                         </ajaxToolkit:TabPanel>
+
+
+                        <ajaxToolkit:TabPanel ID="TabPanelEncSemAsp" runat="server" HeaderText="ENCUESTA SEMANAL">
+                            <ContentTemplate>
+                                <asp:UpdatePanel ID="UPPanelEncSemAsp" runat="server">
+                                    <ContentTemplate>
+                                    <asp:Panel ID="PanelEncuestaSemanalAspirante" runat="server" Visible="true">
+                                        <asp:TextBox ID="TxtIdEmpresaE" runat="server" Visible="False"></asp:TextBox>
+										<div align="center"><b>ENCUESTA SEMANAL A ASPIRANTE</b></div>
+										<br />
+										<ol>
+										<li>¿Cómo calificarías las instalaciones físicas donde recibes clases?</li>
+											<asp:RadioButtonList ID="RespSEncSemAsp1" runat="server">
+												<asp:ListItem Value="E">Excelente</asp:ListItem>
+												<asp:ListItem Value="M">Muy Buena</asp:ListItem>
+												<asp:ListItem Value="B">Buena</asp:ListItem>
+												<asp:ListItem Value="R">Regular</asp:ListItem>
+												<asp:ListItem Value="D">Deficiente</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										<li>¿Cómo calificarías el equipo de cómputo en el cual recibes clases?</li>
+											<asp:RadioButtonList ID="RespSEncSemAsp2" runat="server">
+												<asp:ListItem Value="E">Excelente</asp:ListItem>
+												<asp:ListItem Value="M">Muy Buena</asp:ListItem>
+												<asp:ListItem Value="B">Buena</asp:ListItem>
+												<asp:ListItem Value="R">Regular</asp:ListItem>
+												<asp:ListItem Value="D">Deficiente</asp:ListItem>
+											</asp:RadioButtonList>
+										
+										<li>Considera que el profesor prepara adecuadamente las clases</li>
+											<asp:RadioButtonList ID="RespSEncSemAsp3" runat="server">
+												<asp:ListItem Value="N">Nunca</asp:ListItem>
+												<asp:ListItem Value="C">Casi nunca</asp:ListItem>
+												<asp:ListItem Value="V">Mayoria de las veces</asp:ListItem>
+												<asp:ListItem Value="S">Siempre</asp:ListItem>
+											</asp:RadioButtonList>
+											
+											
+										<li>Facilita el profesor la compresión de los temas</li>
+											<asp:RadioButtonList ID="RespSEncSemAsp4" runat="server">
+												<asp:ListItem Value="N">Nunca</asp:ListItem>
+												<asp:ListItem Value="C">Casi nunca</asp:ListItem>
+												<asp:ListItem Value="V">Mayoria de las veces</asp:ListItem>
+												<asp:ListItem Value="S">Siempre</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										<li>El profesor promueve  la participación y/o reflexión de los alumnos en clase</li>
+											<asp:RadioButtonList ID="RespSEncSemAsp5" runat="server">
+												<asp:ListItem Value="N">Nunca</asp:ListItem>
+												<asp:ListItem Value="C">Casi nunca</asp:ListItem>
+												<asp:ListItem Value="V">Mayoria de las veces</asp:ListItem>
+												<asp:ListItem Value="S">Siempre</asp:ListItem>
+											</asp:RadioButtonList>
+											
+											
+										<li>El profesor es puntual en sus clases</li>
+											<asp:RadioButtonList ID="RespSEncSemAsp6" runat="server">
+												<asp:ListItem Value="N">Nunca</asp:ListItem>
+												<asp:ListItem Value="C">Casi nunca</asp:ListItem>
+												<asp:ListItem Value="V">Mayoria de las veces</asp:ListItem>
+												<asp:ListItem Value="S">Siempre</asp:ListItem>
+											</asp:RadioButtonList>
+										
+										<li>El profesor consigue mantener mi atención durante las clases</li>
+											<asp:RadioButtonList ID="RespSEncSemAsp7" runat="server">
+												<asp:ListItem Value="N">Nunca</asp:ListItem>
+												<asp:ListItem Value="C">Casi nunca</asp:ListItem>
+												<asp:ListItem Value="V">Mayoria de las veces</asp:ListItem>
+												<asp:ListItem Value="S">Siempre</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										<li>El profesor demuestra ser un experto en la asignatura</li>
+											<asp:RadioButtonList ID="RespSEncSemAsp8" runat="server">
+												<asp:ListItem Value="N">Nunca</asp:ListItem>
+												<asp:ListItem Value="C">Casi nunca</asp:ListItem>
+												<asp:ListItem Value="V">Mayoria de las veces</asp:ListItem>
+												<asp:ListItem Value="S">Siempre</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										<li>El profesor resuelve mis dudas con exactitud</li>
+											<asp:RadioButtonList ID="RespSEncSemAsp9" runat="server">
+												<asp:ListItem Value="N">Nunca</asp:ListItem>
+												<asp:ListItem Value="C">Casi nunca</asp:ListItem>
+												<asp:ListItem Value="V">Mayoria de las veces</asp:ListItem>
+												<asp:ListItem Value="S">Siempre</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										
+										<li>La formación recibida es útil</li>
+											<asp:RadioButtonList ID="RespSEncSemAsp10" runat="server">
+												<asp:ListItem Value="N">Nunca</asp:ListItem>
+												<asp:ListItem Value="C">Casi nunca</asp:ListItem>
+												<asp:ListItem Value="V">Mayoria de las veces</asp:ListItem>
+												<asp:ListItem Value="S">Siempre</asp:ListItem>
+											</asp:RadioButtonList>
+										
+										<li>El contenido de la asignatura es actual</li>
+											<asp:RadioButtonList ID="RespSEncSemAsp11" runat="server">
+												<asp:ListItem Value="N">Nunca</asp:ListItem>
+												<asp:ListItem Value="C">Casi nunca</asp:ListItem>
+												<asp:ListItem Value="V">Mayoria de las veces</asp:ListItem>
+												<asp:ListItem Value="S">Siempre</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										<li>Recomendaría el curso a otros estudiantes</li>
+											<asp:RadioButtonList ID="RespSEncSemAsp12" runat="server">
+												<asp:ListItem Value="N">Nunca</asp:ListItem>
+												<asp:ListItem Value="C">Casi nunca</asp:ListItem>
+												<asp:ListItem Value="V">Mayoria de las veces</asp:ListItem>
+												<asp:ListItem Value="S">Siempre</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										<li>La carga de la asignatura (horas de estudio o preparación) es correcta</li>
+											<asp:RadioButtonList ID="RespSEncSemAsp13" runat="server">
+												<asp:ListItem Value="N">Nunca</asp:ListItem>
+												<asp:ListItem Value="C">Casi nunca</asp:ListItem>
+												<asp:ListItem Value="V">Mayoria de las veces</asp:ListItem>
+												<asp:ListItem Value="S">Siempre</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										<li>La asignatura tiene una buena coordinación entre teoría y práctica</li>
+											<asp:RadioButtonList ID="RespSEncSemAsp14" runat="server">
+												<asp:ListItem Value="N">Nunca</asp:ListItem>
+												<asp:ListItem Value="C">Casi nunca</asp:ListItem>
+												<asp:ListItem Value="V">Mayoria de las veces</asp:ListItem>
+												<asp:ListItem Value="S">Siempre</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										<li>La asignatura cumple con mis expectativas</li>
+											<asp:RadioButtonList ID="RespSEncSemAsp15" runat="server">
+												<asp:ListItem Value="N">Nunca</asp:ListItem>
+												<asp:ListItem Value="C">Casi nunca</asp:ListItem>
+												<asp:ListItem Value="V">Mayoria de las veces</asp:ListItem>
+												<asp:ListItem Value="S">Siempre</asp:ListItem>
+											</asp:RadioButtonList>
+										</ol>
+										<div align="center">
+											<asp:Button ID="BtnGuardarEncuestaSemanalAspirante" runat="server" class="btn btn-primary" Text="GUARDAR" ValidationGroup="EncuestaSem" OnClientClick="return confirm('¿Desea enviar los resultados?');" OnClick="BtnGuardarEncuestaSemanalAspirante_Click"  />
+										</div><br />
+									</asp:Panel>
+                                       
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </ContentTemplate>
+                        </ajaxToolkit:TabPanel>
+
+
+                        <ajaxToolkit:TabPanel ID="TabPanelEncMenAsp" runat="server" HeaderText="ENCUESTA MENSUAL">
+                            <ContentTemplate>
+                                <asp:UpdatePanel ID="UPPanelEncMenAsp" runat="server">
+                                    <ContentTemplate>
+                                    <asp:Panel ID="PanelEncuestaMensualAspirante" runat="server" Visible="true">
+										<div align="center"><b>ENCUESTA MENSUAL A ASPIRANTE</b></div>
+										<br />
+										<ol>
+										<li>Los profesores que han asumido el desarrollo de las diferentes asignaturas son competentes y profesionales.</li>
+											<asp:RadioButtonList ID="RespEncMenAsp1" runat="server">
+												<asp:ListItem Value="E">En desacuerdo</asp:ListItem>
+												<asp:ListItem Value="I">Indeciso</asp:ListItem>
+												<asp:ListItem Value="D">De acuerdo</asp:ListItem>
+												<asp:ListItem Value="M">Muy de acuerdo</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										<li>Considera  que el desarrollo de este programa de estudio posee un nivel académico adecuado (intelectual, reflexivo y crítico) para el área de estudio.</li>
+											<asp:RadioButtonList ID="RespEncMenAsp2" runat="server">
+												<asp:ListItem Value="E">En desacuerdo</asp:ListItem>
+												<asp:ListItem Value="I">Indeciso</asp:ListItem>
+												<asp:ListItem Value="D">De acuerdo</asp:ListItem>
+												<asp:ListItem Value="M">Muy de acuerdo</asp:ListItem>
+											</asp:RadioButtonList>
+										
+										<li>Considera que los temas vistos en el módulo son pertinentes.</li>
+											<asp:RadioButtonList ID="RespEncMenAsp3" runat="server">
+												<asp:ListItem Value="E">En desacuerdo</asp:ListItem>
+												<asp:ListItem Value="I">Indeciso</asp:ListItem>
+												<asp:ListItem Value="D">De acuerdo</asp:ListItem>
+												<asp:ListItem Value="M">Muy de acuerdo</asp:ListItem>
+											</asp:RadioButtonList>
+											
+											
+										<li>Piensa que al término de estos estudios usted logrará ser un especialista competente en su área.</li>
+											<asp:RadioButtonList ID="RespEncMenAsp4" runat="server">
+												<asp:ListItem Value="E">En desacuerdo</asp:ListItem>
+												<asp:ListItem Value="I">Indeciso</asp:ListItem>
+												<asp:ListItem Value="D">De acuerdo</asp:ListItem>
+												<asp:ListItem Value="M">Muy de acuerdo</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										<li>Las sesiones prácticas han cumplido sus expectativas</li>
+											<asp:RadioButtonList ID="RespEncMenAsp5" runat="server">
+												<asp:ListItem Value="E">En desacuerdo</asp:ListItem>
+												<asp:ListItem Value="I">Indeciso</asp:ListItem>
+												<asp:ListItem Value="D">De acuerdo</asp:ListItem>
+												<asp:ListItem Value="M">Muy de acuerdo</asp:ListItem>
+											</asp:RadioButtonList>
+											
+										</ol>
+										<div align="center">
+											<asp:Button ID="BtnGuardarEncuestaMensualAspirante" runat="server" class="btn btn-primary" Text="GUARDAR" ValidationGroup="EncuestaSem" OnClientClick="return confirm('¿Desea enviar los resultados?');" OnClick="BtnGuardarEncuestaMensualAspirante_Click"  />
+										</div><br />
+									</asp:Panel>
+                                       
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </ContentTemplate>
+                        </ajaxToolkit:TabPanel>
+
+
+
                         <ajaxToolkit:TabPanel ID="TabInformeFinal" runat="server" HeaderText="INFORME FINAL">
                             <ContentTemplate>
                                 <asp:UpdatePanel ID="UPInformeFinal" runat="server">
@@ -1171,6 +1380,10 @@
                             </ContentTemplate>
                         </ajaxToolkit:TabPanel>
                         
+
+
+
+
                     </ajaxToolkit:TabContainer>
                 </asp:Panel>
             </div>

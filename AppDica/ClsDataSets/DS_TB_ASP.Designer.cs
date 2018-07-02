@@ -46,6 +46,10 @@ namespace ClsDataSets {
         
         private TB_INFORME_FINAL_COMPARATIVODataTable tableTB_INFORME_FINAL_COMPARATIVO;
         
+        private TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable tableTB_ENCUESTA_SEMANAL_BENEFICIARIO;
+        
+        private TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable tableTB_ENCUESTA_MENSUAL_ASPIRANTE;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -106,6 +110,12 @@ namespace ClsDataSets {
                 }
                 if ((ds.Tables["TB_INFORME_FINAL_COMPARATIVO"] != null)) {
                     base.Tables.Add(new TB_INFORME_FINAL_COMPARATIVODataTable(ds.Tables["TB_INFORME_FINAL_COMPARATIVO"]));
+                }
+                if ((ds.Tables["TB_ENCUESTA_SEMANAL_BENEFICIARIO"] != null)) {
+                    base.Tables.Add(new TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable(ds.Tables["TB_ENCUESTA_SEMANAL_BENEFICIARIO"]));
+                }
+                if ((ds.Tables["TB_ENCUESTA_MENSUAL_ASPIRANTE"] != null)) {
+                    base.Tables.Add(new TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable(ds.Tables["TB_ENCUESTA_MENSUAL_ASPIRANTE"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -237,6 +247,26 @@ namespace ClsDataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable TB_ENCUESTA_SEMANAL_BENEFICIARIO {
+            get {
+                return this.tableTB_ENCUESTA_SEMANAL_BENEFICIARIO;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable TB_ENCUESTA_MENSUAL_ASPIRANTE {
+            get {
+                return this.tableTB_ENCUESTA_MENSUAL_ASPIRANTE;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -334,6 +364,12 @@ namespace ClsDataSets {
                 }
                 if ((ds.Tables["TB_INFORME_FINAL_COMPARATIVO"] != null)) {
                     base.Tables.Add(new TB_INFORME_FINAL_COMPARATIVODataTable(ds.Tables["TB_INFORME_FINAL_COMPARATIVO"]));
+                }
+                if ((ds.Tables["TB_ENCUESTA_SEMANAL_BENEFICIARIO"] != null)) {
+                    base.Tables.Add(new TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable(ds.Tables["TB_ENCUESTA_SEMANAL_BENEFICIARIO"]));
+                }
+                if ((ds.Tables["TB_ENCUESTA_MENSUAL_ASPIRANTE"] != null)) {
+                    base.Tables.Add(new TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable(ds.Tables["TB_ENCUESTA_MENSUAL_ASPIRANTE"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -434,6 +470,18 @@ namespace ClsDataSets {
                     this.tableTB_INFORME_FINAL_COMPARATIVO.InitVars();
                 }
             }
+            this.tableTB_ENCUESTA_SEMANAL_BENEFICIARIO = ((TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable)(base.Tables["TB_ENCUESTA_SEMANAL_BENEFICIARIO"]));
+            if ((initTable == true)) {
+                if ((this.tableTB_ENCUESTA_SEMANAL_BENEFICIARIO != null)) {
+                    this.tableTB_ENCUESTA_SEMANAL_BENEFICIARIO.InitVars();
+                }
+            }
+            this.tableTB_ENCUESTA_MENSUAL_ASPIRANTE = ((TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable)(base.Tables["TB_ENCUESTA_MENSUAL_ASPIRANTE"]));
+            if ((initTable == true)) {
+                if ((this.tableTB_ENCUESTA_MENSUAL_ASPIRANTE != null)) {
+                    this.tableTB_ENCUESTA_MENSUAL_ASPIRANTE.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -466,6 +514,10 @@ namespace ClsDataSets {
             base.Tables.Add(this.tableTB_INFORME_FINAL_ASPIRANTE);
             this.tableTB_INFORME_FINAL_COMPARATIVO = new TB_INFORME_FINAL_COMPARATIVODataTable();
             base.Tables.Add(this.tableTB_INFORME_FINAL_COMPARATIVO);
+            this.tableTB_ENCUESTA_SEMANAL_BENEFICIARIO = new TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable();
+            base.Tables.Add(this.tableTB_ENCUESTA_SEMANAL_BENEFICIARIO);
+            this.tableTB_ENCUESTA_MENSUAL_ASPIRANTE = new TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable();
+            base.Tables.Add(this.tableTB_ENCUESTA_MENSUAL_ASPIRANTE);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -531,6 +583,18 @@ namespace ClsDataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeTB_INFORME_FINAL_COMPARATIVO() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeTB_ENCUESTA_SEMANAL_BENEFICIARIO() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeTB_ENCUESTA_MENSUAL_ASPIRANTE() {
             return false;
         }
         
@@ -621,6 +685,12 @@ namespace ClsDataSets {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void TB_INFORME_FINAL_COMPARATIVORowChangeEventHandler(object sender, TB_INFORME_FINAL_COMPARATIVORowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void TB_ENCUESTA_SEMANAL_BENEFICIARIORowChangeEventHandler(object sender, TB_ENCUESTA_SEMANAL_BENEFICIARIORowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void TB_ENCUESTA_MENSUAL_ASPIRANTERowChangeEventHandler(object sender, TB_ENCUESTA_MENSUAL_ASPIRANTERowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4712,6 +4782,472 @@ namespace ClsDataSets {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable : global::System.Data.TypedTableBase<TB_ENCUESTA_SEMANAL_BENEFICIARIORow> {
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable() {
+                this.TableName = "TB_ENCUESTA_SEMANAL_BENEFICIARIO";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_SEMANAL_BENEFICIARIORow this[int index] {
+                get {
+                    return ((TB_ENCUESTA_SEMANAL_BENEFICIARIORow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_ENCUESTA_SEMANAL_BENEFICIARIORowChangeEventHandler TB_ENCUESTA_SEMANAL_BENEFICIARIORowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_ENCUESTA_SEMANAL_BENEFICIARIORowChangeEventHandler TB_ENCUESTA_SEMANAL_BENEFICIARIORowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_ENCUESTA_SEMANAL_BENEFICIARIORowChangeEventHandler TB_ENCUESTA_SEMANAL_BENEFICIARIORowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_ENCUESTA_SEMANAL_BENEFICIARIORowChangeEventHandler TB_ENCUESTA_SEMANAL_BENEFICIARIORowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddTB_ENCUESTA_SEMANAL_BENEFICIARIORow(TB_ENCUESTA_SEMANAL_BENEFICIARIORow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_SEMANAL_BENEFICIARIORow AddTB_ENCUESTA_SEMANAL_BENEFICIARIORow() {
+                TB_ENCUESTA_SEMANAL_BENEFICIARIORow rowTB_ENCUESTA_SEMANAL_BENEFICIARIORow = ((TB_ENCUESTA_SEMANAL_BENEFICIARIORow)(this.NewRow()));
+                object[] columnValuesArray = new object[0];
+                rowTB_ENCUESTA_SEMANAL_BENEFICIARIORow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTB_ENCUESTA_SEMANAL_BENEFICIARIORow);
+                return rowTB_ENCUESTA_SEMANAL_BENEFICIARIORow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable cln = ((TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_SEMANAL_BENEFICIARIORow NewTB_ENCUESTA_SEMANAL_BENEFICIARIORow() {
+                return ((TB_ENCUESTA_SEMANAL_BENEFICIARIORow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TB_ENCUESTA_SEMANAL_BENEFICIARIORow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TB_ENCUESTA_SEMANAL_BENEFICIARIORow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TB_ENCUESTA_SEMANAL_BENEFICIARIORowChanged != null)) {
+                    this.TB_ENCUESTA_SEMANAL_BENEFICIARIORowChanged(this, new TB_ENCUESTA_SEMANAL_BENEFICIARIORowChangeEvent(((TB_ENCUESTA_SEMANAL_BENEFICIARIORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TB_ENCUESTA_SEMANAL_BENEFICIARIORowChanging != null)) {
+                    this.TB_ENCUESTA_SEMANAL_BENEFICIARIORowChanging(this, new TB_ENCUESTA_SEMANAL_BENEFICIARIORowChangeEvent(((TB_ENCUESTA_SEMANAL_BENEFICIARIORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TB_ENCUESTA_SEMANAL_BENEFICIARIORowDeleted != null)) {
+                    this.TB_ENCUESTA_SEMANAL_BENEFICIARIORowDeleted(this, new TB_ENCUESTA_SEMANAL_BENEFICIARIORowChangeEvent(((TB_ENCUESTA_SEMANAL_BENEFICIARIORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TB_ENCUESTA_SEMANAL_BENEFICIARIORowDeleting != null)) {
+                    this.TB_ENCUESTA_SEMANAL_BENEFICIARIORowDeleting(this, new TB_ENCUESTA_SEMANAL_BENEFICIARIORowChangeEvent(((TB_ENCUESTA_SEMANAL_BENEFICIARIORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveTB_ENCUESTA_SEMANAL_BENEFICIARIORow(TB_ENCUESTA_SEMANAL_BENEFICIARIORow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DS_TB_ASP ds = new DS_TB_ASP();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable : global::System.Data.TypedTableBase<TB_ENCUESTA_MENSUAL_ASPIRANTERow> {
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable() {
+                this.TableName = "TB_ENCUESTA_MENSUAL_ASPIRANTE";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_MENSUAL_ASPIRANTERow this[int index] {
+                get {
+                    return ((TB_ENCUESTA_MENSUAL_ASPIRANTERow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_ENCUESTA_MENSUAL_ASPIRANTERowChangeEventHandler TB_ENCUESTA_MENSUAL_ASPIRANTERowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_ENCUESTA_MENSUAL_ASPIRANTERowChangeEventHandler TB_ENCUESTA_MENSUAL_ASPIRANTERowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_ENCUESTA_MENSUAL_ASPIRANTERowChangeEventHandler TB_ENCUESTA_MENSUAL_ASPIRANTERowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TB_ENCUESTA_MENSUAL_ASPIRANTERowChangeEventHandler TB_ENCUESTA_MENSUAL_ASPIRANTERowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddTB_ENCUESTA_MENSUAL_ASPIRANTERow(TB_ENCUESTA_MENSUAL_ASPIRANTERow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_MENSUAL_ASPIRANTERow AddTB_ENCUESTA_MENSUAL_ASPIRANTERow() {
+                TB_ENCUESTA_MENSUAL_ASPIRANTERow rowTB_ENCUESTA_MENSUAL_ASPIRANTERow = ((TB_ENCUESTA_MENSUAL_ASPIRANTERow)(this.NewRow()));
+                object[] columnValuesArray = new object[0];
+                rowTB_ENCUESTA_MENSUAL_ASPIRANTERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTB_ENCUESTA_MENSUAL_ASPIRANTERow);
+                return rowTB_ENCUESTA_MENSUAL_ASPIRANTERow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable cln = ((TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_MENSUAL_ASPIRANTERow NewTB_ENCUESTA_MENSUAL_ASPIRANTERow() {
+                return ((TB_ENCUESTA_MENSUAL_ASPIRANTERow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TB_ENCUESTA_MENSUAL_ASPIRANTERow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TB_ENCUESTA_MENSUAL_ASPIRANTERow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TB_ENCUESTA_MENSUAL_ASPIRANTERowChanged != null)) {
+                    this.TB_ENCUESTA_MENSUAL_ASPIRANTERowChanged(this, new TB_ENCUESTA_MENSUAL_ASPIRANTERowChangeEvent(((TB_ENCUESTA_MENSUAL_ASPIRANTERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TB_ENCUESTA_MENSUAL_ASPIRANTERowChanging != null)) {
+                    this.TB_ENCUESTA_MENSUAL_ASPIRANTERowChanging(this, new TB_ENCUESTA_MENSUAL_ASPIRANTERowChangeEvent(((TB_ENCUESTA_MENSUAL_ASPIRANTERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TB_ENCUESTA_MENSUAL_ASPIRANTERowDeleted != null)) {
+                    this.TB_ENCUESTA_MENSUAL_ASPIRANTERowDeleted(this, new TB_ENCUESTA_MENSUAL_ASPIRANTERowChangeEvent(((TB_ENCUESTA_MENSUAL_ASPIRANTERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TB_ENCUESTA_MENSUAL_ASPIRANTERowDeleting != null)) {
+                    this.TB_ENCUESTA_MENSUAL_ASPIRANTERowDeleting(this, new TB_ENCUESTA_MENSUAL_ASPIRANTERowChangeEvent(((TB_ENCUESTA_MENSUAL_ASPIRANTERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveTB_ENCUESTA_MENSUAL_ASPIRANTERow(TB_ENCUESTA_MENSUAL_ASPIRANTERow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DS_TB_ASP ds = new DS_TB_ASP();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class TB_ASPIRANTERow : global::System.Data.DataRow {
@@ -7851,6 +8387,36 @@ namespace ClsDataSets {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TB_ENCUESTA_SEMANAL_BENEFICIARIORow : global::System.Data.DataRow {
+            
+            private TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable tableTB_ENCUESTA_SEMANAL_BENEFICIARIO;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TB_ENCUESTA_SEMANAL_BENEFICIARIORow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTB_ENCUESTA_SEMANAL_BENEFICIARIO = ((TB_ENCUESTA_SEMANAL_BENEFICIARIODataTable)(this.Table));
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TB_ENCUESTA_MENSUAL_ASPIRANTERow : global::System.Data.DataRow {
+            
+            private TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable tableTB_ENCUESTA_MENSUAL_ASPIRANTE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TB_ENCUESTA_MENSUAL_ASPIRANTERow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTB_ENCUESTA_MENSUAL_ASPIRANTE = ((TB_ENCUESTA_MENSUAL_ASPIRANTEDataTable)(this.Table));
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -8210,6 +8776,74 @@ namespace ClsDataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TB_INFORME_FINAL_COMPARATIVORow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class TB_ENCUESTA_SEMANAL_BENEFICIARIORowChangeEvent : global::System.EventArgs {
+            
+            private TB_ENCUESTA_SEMANAL_BENEFICIARIORow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_SEMANAL_BENEFICIARIORowChangeEvent(TB_ENCUESTA_SEMANAL_BENEFICIARIORow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_SEMANAL_BENEFICIARIORow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class TB_ENCUESTA_MENSUAL_ASPIRANTERowChangeEvent : global::System.EventArgs {
+            
+            private TB_ENCUESTA_MENSUAL_ASPIRANTERow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_MENSUAL_ASPIRANTERowChangeEvent(TB_ENCUESTA_MENSUAL_ASPIRANTERow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TB_ENCUESTA_MENSUAL_ASPIRANTERow Row {
                 get {
                     return this.eventRow;
                 }
